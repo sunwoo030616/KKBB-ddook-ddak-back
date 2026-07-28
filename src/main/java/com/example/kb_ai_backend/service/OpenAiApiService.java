@@ -14,9 +14,9 @@ import java.util.Map;
 /**
  * 최종 확정된 3개 캔버스 기준 위젯 카탈로그입니다.
  *
- * ① 해외여행 캔버스: currency_exchange_widget, dcc_block_toggle, card_overseas_toggle
- * ② 동아리/운영진 캔버스: group_account_status, expense_split_widget, receipt_share_widget
- * ③ 지갑/스마트폰 분실 응급 캔버스: card_freeze_all, atm_smart_withdrawal, mobile_id_guide
+ * ① 해외여행 캔버스: travel_card_charge_widget, overseas_qr_payment_widget, travel_insurance_widget
+ * ② 동아리/운영진 캔버스: group_account_status, expense_report_widget, group_card_safety_widget
+ * ③ 지갑/스마트폰 분실 응급 캔버스: card_freeze_all, atm_smart_withdrawal, id_reissue_status_widget
  *
  */
 @Service
@@ -41,19 +41,19 @@ public class OpenAiApiService {
                         "type", "string",
                         "enum", List.of(
                                 // ① 해외여행 캔버스
-                                "currency_exchange_widget",   // 모바일 환전 및 지점 수령
-                                "dcc_block_toggle",             // 해외원화결제(DCC) 차단
-                                "card_overseas_toggle",          // 보유 카드 해외결제 ON/OFF
+                                "travel_card_charge_widget",   // 트래블카드 CNY 충전
+                                "overseas_qr_payment_widget",  // 현지 QR 결제(Alipay+) 연동
+                                "travel_insurance_widget",     // 여행자보험 가입
 
                                 // ② 동아리/운영진 캔버스
-                                "group_account_status",          // KB 모임통장 현황
-                                "expense_split_widget",           // N빵 정산 + 푸시 알림
-                                "receipt_share_widget",            // 영수증 이미지 공유
+                                "group_account_status",        // KB 모임통장 회비 수납 현황
+                                "expense_report_widget",       // 이번 달 지출 리포트
+                                "group_card_safety_widget",    // 모임 전용 체크카드 안심 관리
 
                                 // ③ 지갑/스마트폰 분실 응급 캔버스
-                                "card_freeze_all",                 // 전 카드 일괄 정지
-                                "atm_smart_withdrawal",              // 카드 없는 ATM 스마트출금
-                                "mobile_id_guide"                     // 모바일 신분증 안내
+                                "card_freeze_all",             // 전 카드 일괄 정지
+                                "atm_smart_withdrawal",         // 카드 없는 ATM 스마트출금
+                                "id_reissue_status_widget"      // 신분증 분실 신고 및 재발급 완료 안내
                         )
                 )
         );
@@ -82,7 +82,8 @@ public class OpenAiApiService {
                                         + "실제로 필요한 위젯만 정확히 골라줘. 애매하면 가장 관련 있는 것 1개만 골라. "
                                         + "예를 들어 해외여행/환전/공항 얘기면 해외여행 관련 위젯들을, "
                                         + "모임/회비/총무 얘기면 동아리 관련 위젯들을, "
-                                        + "지갑/카드분실 얘기면 응급 관련 위젯들을 골라야 해."),
+                                        + "지갑/카드분실 얘기면 응급 관련 위젯 3개(card_freeze_all, "
+                                        + "atm_smart_withdrawal, id_reissue_status_widget)를 함께 골라야 해."),
                         Map.of("role", "user", "content", userMessage)
                 ),
                 "tools", List.of(tool),

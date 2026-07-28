@@ -5,11 +5,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 최종 확정된 9개 위젯의 mock 데이터를 만드는 클래스입니다.
- * 실제 KB 기능 이름/동작 방식을 최대한 반영해서 mock 데이터를 만들었습니다
- * (예: 스마트ATM출금의 1회용 인증번호, 이체한도 관련 실제 체계 등).
- */
 @Service
 public class WidgetDataService {
 
@@ -18,30 +13,57 @@ public class WidgetDataService {
 
             // ───────────── ① 해외여행 캔버스 ─────────────
 
-            case "currency_exchange_widget" -> Map.of(
-                    "type", "currency_exchange_widget",
-                    "title", "모바일 환전 신청",
-                    "targetCurrency", "USD",
-                    "requestedAmount", 500,
-                    "currentRate", 1385.2,
-                    "pickupLocation", "인천공항 제1터미널 KB국민은행 환전소",
-                    "pickupAvailableFrom", "출국 2시간 전부터 수령 가능"
+            case "travel_card_charge_widget" -> Map.of(
+                    "type", "travel_card_charge_widget",
+                    "title", "위안화(CNY) 충전하셨나요?",
+                    "currency", "CNY",
+                    "cardBalance", 0,
+                    "exchangeRate", 189.2,
+                    "rateDescription", "우대환율 100% 적용 중",
+                    "chargeButtonLabel", "뚝딱 충전하기",
+                    "quickAmounts", List.of(100, 500, 1000),
+                    "suggestedAmount", 2000,
+                    "estimatedKrw", 378400
             );
 
-            case "dcc_block_toggle" -> Map.of(
-                    "type", "dcc_block_toggle",
-                    "title", "해외원화결제(DCC) 차단",
-                    "description", "해외 원화 결제 시 3~8% 추가 수수료를 막아줍니다",
-                    "enabled", false,
-                    "targetCard", "국민 트래블러스 체크카드"
+            case "overseas_qr_payment_widget" -> Map.of(
+                    "type", "overseas_qr_payment_widget",
+                    "title", "현지 QR 결제 준비하기",
+                    "linkedCard", "내 트래블 카드",
+                    "merchantNetwork", "상하이 현지 가맹점 (Alipay+)",
+                    "benefits", List.of(
+                            "디즈니랜드 기념품 샵 결제 혜택",
+                            "루자방루역 주변 맛집 캐시백"
+                    ),
+                    "agreements", List.of(
+                            Map.of("label", "해외 결제망(Alipay+) 이용 동의", "required", true),
+                            Map.of("label", "개인정보 제3자 제공 동의", "required", true)
+                    )
             );
 
-            case "card_overseas_toggle" -> Map.of(
-                    "type", "card_overseas_toggle",
-                    "title", "카드 해외결제 설정",
-                    "cards", List.of(
-                            Map.of("cardName", "국민 트래블러스 체크카드", "last4", "7710", "overseasEnabled", true),
-                            Map.of("cardName", "국민 다담카드", "last4", "9930", "overseasEnabled", false)
+            case "travel_insurance_widget" -> Map.of(
+                    "type", "travel_insurance_widget",
+                    "title", "상하이, 든든하게 준비할까요?",
+                    "description", "출국 전 나에게 맞는 보장을 선택해 보세요.",
+                    "plans", List.of(
+                            Map.of(
+                                    "planName", "일반형",
+                                    "coverages", List.of(
+                                            "현지 질병/상해 의료비 최대 2천만원",
+                                            "휴대폰 도난 및 파손 최대 30만원",
+                                            "항공기 및 수하물 지연 최대 10만원"
+                                    ),
+                                    "finalPrice", 3500
+                            ),
+                            Map.of(
+                                    "planName", "고급형",
+                                    "coverages", List.of(
+                                            "현지 질병/상해 의료비 최대 3천만원",
+                                            "휴대폰 도난 및 파손 최대 50만원",
+                                            "항공기 및 수하물 지연 최대 20만원"
+                                    ),
+                                    "finalPrice", 5200
+                            )
                     )
             );
 
@@ -49,36 +71,42 @@ public class WidgetDataService {
 
             case "group_account_status" -> Map.of(
                     "type", "group_account_status",
-                    "title", "홍보팀 모임통장 현황",
-                    "balance", 1240000,
-                    "recentTransactions", List.of(
-                            Map.of("desc", "회식비 결제", "amount", -380000, "date", "07-24"),
-                            Map.of("desc", "대관료 이체", "amount", -150000, "date", "07-20")
-                    )
+                    "title", "7월 동아리 회비 수납 현황",
+                    "syncDescription", "KB 모임통장 연동 완료 (AI 입금 자동 매칭 중)",
+                    "balance", 1450000,
+                    "paidCount", 22,
+                    "totalCount", 25,
+                    "unpaidMembers", List.of("김스타", "이국민", "박깨비"),
+                    "notice", "AI를 통한 확인이므로 한 번 더 확인하는 것이 좋습니다."
             );
 
-            case "expense_split_widget" -> {
-                // N빵 정산: 총액을 인원수로 나누는 실제 계산 로직 (LLM 호출 없이 자바 코드로 처리)
-                int totalAmount = 480000;
-                int memberCount = 15;
-                int perPerson = totalAmount / memberCount;
+            case "expense_report_widget" -> Map.of(
+                    "type", "expense_report_widget",
+                    "title", "이번 달 지출 리포트",
+                    "biggestExpense", Map.of("label", "강남 테니스장 대관료", "amount", 450000),
+                    "categories", List.of(
+                            Map.of("label", "시설 대관료", "percent", 50, "amount", 450000),
+                            Map.of("label", "식비 및 회식", "percent", 30, "amount", 270000),
+                            Map.of("label", "장비 및 기타", "percent", 20, "amount", 180000)
+                    ),
+                    "totalAmount", 900000,
+                    "shareTitle", "5월 테니스 동아리 결산"
+            );
 
-                yield Map.of(
-                        "type", "expense_split_widget",
-                        "title", "홍보팀 회식비 정산",
-                        "totalAmount", totalAmount,
-                        "memberCount", memberCount,
-                        "perPersonAmount", perPerson,
-                        "unpaidMembers", List.of("김OO", "이OO", "박OO")
-                );
-            }
-
-            case "receipt_share_widget" -> Map.of(
-                    "type", "receipt_share_widget",
-                    "title", "영수증 모아보기",
-                    "receipts", List.of(
-                            Map.of("merchant", "OO고깃집", "amount", 380000, "date", "07-24"),
-                            Map.of("merchant", "OO스터디룸", "amount", 150000, "date", "07-20")
+            case "group_card_safety_widget" -> Map.of(
+                    "type", "group_card_safety_widget",
+                    "title", "모임 전용 체크카드 안심 관리",
+                    "toggles", List.of(
+                            Map.of(
+                                    "label", "실시간 결제 투명 알림",
+                                    "description", "투명한 장부 운영을 위해 켜두는 것을 권장해요.",
+                                    "enabled", true
+                            ),
+                            Map.of(
+                                    "label", "일일 결제 한도 50만원 제한",
+                                    "description", "큰 금액 결제 시에만 한도를 풀어 안전하게 관리하세요.",
+                                    "enabled", true
+                            )
                     )
             );
 
@@ -86,31 +114,41 @@ public class WidgetDataService {
 
             case "card_freeze_all" -> Map.of(
                     "type", "card_freeze_all",
-                    "title", "전 카드 일괄 정지",
+                    "title", "보유 카드 일괄 정지",
                     "cards", List.of(
-                            Map.of("cardName", "국민 노리카드", "last4", "4821", "frozen", true),
-                            Map.of("cardName", "국민 다담카드", "last4", "9930", "frozen", true)
+                            Map.of("cardName", "KB국민 노리2 체크카드", "frozen", true),
+                            Map.of("cardName", "톡톡카드", "frozen", true)
                     ),
-                    "confirmMessage", "보유하신 카드 2건이 모두 정지되었습니다"
+                    "warningText", "분실된 카드의 모든 결제가 차단됩니다.",
+                    "confirmMessage", "모든 카드가 안전하게 정지되었어요! 분실된 카드의 결제가 차단되었습니다."
             );
 
             case "atm_smart_withdrawal" -> Map.of(
                     "type", "atm_smart_withdrawal",
-                    "title", "스마트ATM출금",
-                    "authCode", "482913",
-                    "expiresInSeconds", 180,
-                    "dailyLimit", 1000000,
-                    "description", "가까운 ATM에서 '예금출금 > 스마트ATM출금' 선택 후 인증번호 입력"
+                    "title", "카드 없는 스마트 출금",
+                    "authCode", "987654",
+                    "expiresInSeconds", 1800,
+                    "nearestAtm", Map.of(
+                            "name", "여의도본점 ATM",
+                            "distance", "150m",
+                            "address", "서울 영등포구 여의도동..."
+                    ),
+                    "steps", List.of(
+                            "ATM 화면에서 '스마트출금' 선택",
+                            "복사한 인증번호 입력",
+                            "출금할 금액 입력",
+                            "현금 수령"
+                    )
             );
 
-            case "mobile_id_guide" -> Map.of(
-                    "type", "mobile_id_guide",
-                    "title", "모바일 신분증 안내",
-                    "steps", List.of(
-                            "KB스타뱅킹 > 인증/보안 메뉴 이동",
-                            "본인 명의 휴대폰 인증",
-                            "모바일 신분증 발급 완료"
-                    )
+            case "id_reissue_status_widget" -> Map.of(
+                    "type", "id_reissue_status_widget",
+                    "title", "분실 신고 및 재발급 신청 완료",
+                    "items", List.of(
+                            Map.of("idType", "주민등록증", "status", "신고 및 재발급 완료", "expectedPeriod", "3~4주"),
+                            Map.of("idType", "운전면허증", "status", "신고 및 재발급 완료", "expectedPeriod", "1~2주")
+                    ),
+                    "description", "정부24 및 경찰청 민원 포털과 연동되어 안전하게 처리됩니다."
             );
 
             default -> Map.of(
