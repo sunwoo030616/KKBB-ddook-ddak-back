@@ -6,6 +6,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -43,8 +44,16 @@ public class OpenAiApiService {
     public record WidgetSelection(List<String> widgets, String currency, String destination,
                                   Integer requestedAmount, String clubName) {}
 
+    private static final WidgetSelection EMPTY_SELECTION =
+            new WidgetSelection(List.of(), null, null, null, null);
+
     @SuppressWarnings("unchecked")
     public WidgetSelection selectWidgets(String userMessage) {
+
+        // 방어 코드: 빈 메시지면 OpenAI 호출 자체를 하지 않음
+        if (userMessage == null || userMessage.isBlank()) {
+            return EMPTY_SELECTION;
+        }
 
         Map<String, Object> widgetsSchema = Map.of(
                 "type", "array",
@@ -159,12 +168,29 @@ public class OpenAiApiService {
 
         HttpEntity<Map<String, Object>> request = new HttpEntity<>(requestBody, headers);
 
-        Map<String, Object> response = restTemplate.postForObject(OPENAI_URL, request, Map.class);
-
+        // ↓↓↓ 수정 포인트: postForObject 호출 자체도 이제 try 안에 있음.
+        // 네트워크 에러, 타임아웃, 401/429 등 OpenAI 쪽 에러가 나도
+        // 여기서 잡혀서 안전하게 EMPTY_SELECTION으로 폴백됨.
         try {
+            Map<String, Object> response = restTemplate.postForObject(OPENAI_URL, request, Map.class);
+
+            if (response == null) {
+                System.err.println("[OpenAiApiService] OpenAI 응답이 null 입니다.");
+                return EMPTY_SELECTION;
+            }
+
             List<Map<String, Object>> choices = (List<Map<String, Object>>) response.get("choices");
+            if (choices == null || choices.isEmpty()) {
+                System.err.println("[OpenAiApiService] choices가 비어있습니다: " + response);
+                return EMPTY_SELECTION;
+            }
+
             Map<String, Object> message = (Map<String, Object>) choices.get(0).get("message");
             List<Map<String, Object>> toolCalls = (List<Map<String, Object>>) message.get("tool_calls");
+            if (toolCalls == null || toolCalls.isEmpty()) {
+                System.err.println("[OpenAiApiService] tool_calls가 비어있습니다: " + message);
+                return EMPTY_SELECTION;
+            }
 
             Map<String, Object> firstCall = toolCalls.get(0);
             Map<String, Object> functionCall = (Map<String, Object>) firstCall.get("function");
@@ -187,10 +213,14 @@ public class OpenAiApiService {
 
             return new WidgetSelection(widgets, currency, destination, requestedAmount, clubName);
 
+        } catch (RestClientException e) {
+            // OpenAI 호출 자체가 실패한 경우 (타임아웃, 네트워크, 401/429 등)
+            System.err.println("[OpenAiApiService] OpenAI 호출 실패: " + e.getMessage());
+            return EMPTY_SELECTION;
         } catch (Exception e) {
-            e.printStackTrace();
+            // 응답은 왔지만 파싱이 실패한 경우
+            System.err.println("[OpenAiApiService] 응답 파싱 실패: " + e.getMessage());
+            return EMPTY_SELECTION;
         }
-
-        return new WidgetSelection(List.of(), null, null, null, null);
     }
 }

@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/canvas")
-@CrossOrigin(origins = "*")
 public class CanvasController {
 
     private final OpenAiApiService openAiApiService;
@@ -26,7 +25,16 @@ public class CanvasController {
     @PostMapping
     public Map<String, Object> generateCanvas(@RequestBody CanvasRequest request) {
 
-        OpenAiApiService.WidgetSelection selection = openAiApiService.selectWidgets(request.message());
+        // 방어 코드: message가 없거나 빈 값이면 OpenAI 호출 없이 바로 빈 응답 반환
+        String userMessage = request == null ? null : request.message();
+        if (userMessage == null || userMessage.isBlank()) {
+            return Map.of(
+                    "greeting", "무엇을 도와드릴까요?",
+                    "widgets", List.of()
+            );
+        }
+
+        OpenAiApiService.WidgetSelection selection = openAiApiService.selectWidgets(userMessage);
 
         List<Map<String, Object>> widgets = selection.widgets().stream()
                 .map(widgetId -> widgetDataService.buildWidget(
