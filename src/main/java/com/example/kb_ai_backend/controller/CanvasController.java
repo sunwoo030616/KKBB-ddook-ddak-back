@@ -26,12 +26,20 @@ public class CanvasController {
     @PostMapping
     public Map<String, Object> generateCanvas(@RequestBody CanvasRequest request) {
 
-        List<String> widgetIds = openAiApiService.selectWidgets(request.message());
+        OpenAiApiService.WidgetSelection selection = openAiApiService.selectWidgets(request.message());
 
-        List<Map<String, Object>> widgets = widgetIds.stream()
-                .map(widgetDataService::buildWidget)
+        List<Map<String, Object>> widgets = selection.widgets().stream()
+                .map(widgetId -> widgetDataService.buildWidget(
+                        widgetId, selection.currency(), selection.destination(),
+                        selection.requestedAmount(), selection.clubName()))
                 .collect(Collectors.toList());
 
-        return Map.of("widgets", widgets);
+        String greeting = widgetDataService.buildGreeting(
+                selection.widgets(), selection.destination(), selection.clubName());
+
+        return Map.of(
+                "greeting", greeting,
+                "widgets", widgets
+        );
     }
 }
