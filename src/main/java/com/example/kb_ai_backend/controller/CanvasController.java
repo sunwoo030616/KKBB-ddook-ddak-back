@@ -39,7 +39,7 @@ public class CanvasController {
         List<Map<String, Object>> widgets = selection.widgets().stream()
                 .map(widgetId -> widgetDataService.buildWidget(
                         widgetId, selection.currency(), selection.destination(),
-                        selection.requestedAmount(), selection.clubName()))
+                        selection.requestedAmount(), selection.clubName(), selection.tripDays()))
                 .collect(Collectors.toList());
 
         String greeting = widgetDataService.buildGreeting(

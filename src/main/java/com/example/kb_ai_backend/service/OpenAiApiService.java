@@ -42,10 +42,10 @@ public class OpenAiApiService {
      * clubName: 메시지에 언급된 동아리/모임 이름 (예: "테니스 동아리", "마술 동아리"). 없으면 null
      */
     public record WidgetSelection(List<String> widgets, String currency, String destination,
-                                  Integer requestedAmount, String clubName) {}
+                                  Integer requestedAmount, String clubName, Integer tripDays) {}
 
     private static final WidgetSelection EMPTY_SELECTION =
-            new WidgetSelection(List.of(), null, null, null, null);
+            new WidgetSelection(List.of(), null, null, null, null, null);
 
     @SuppressWarnings("unchecked")
     public WidgetSelection selectWidgets(String userMessage) {
@@ -106,6 +106,13 @@ public class OpenAiApiService {
                         + "동아리/모임 관련 요청이 아니거나 언급이 없으면 null."
         );
 
+        Map<String, Object> tripDaysSchema = Map.of(
+                "type", List.of("integer", "null"),
+                "description", "사용자가 언급한 여행 기간을 '일수(day)' 정수로 환산해서 채움 "
+                        + "(예: '3박4일'→4, '2박3일'→3, '당일치기'→1, '일주일'→7, '3일'→3). "
+                        + "여행 기간 언급이 없으면 null."
+        );
+
         Map<String, Object> function = Map.of(
                 "name", "select_widgets",
                 "description", "사용자의 요청을 분석해서 화면에 띄워야 할 금융 위젯들을 고르고, "
@@ -117,7 +124,8 @@ public class OpenAiApiService {
                                 "currency", currencySchema,
                                 "destination", destinationSchema,
                                 "requestedAmount", amountSchema,
-                                "clubName", clubNameSchema
+                                "clubName", clubNameSchema,
+                                "tripDays", tripDaysSchema
                         ),
                         "required", List.of("widgets")
                 )
@@ -153,6 +161,8 @@ public class OpenAiApiService {
                                         + "네가 알고 있는 지식으로 추론해서 currency에 채워줘 "
                                         + "(예: '몽골' → MNT, '부탄' → BTN, '런던' → GBP, '방콕' → THB). "
                                         + "금액이 언급됐으면 requestedAmount에도 채워줘. "
+                                        + "여행 기간이 언급됐으면(예: '3박4일', '2박3일', '당일치기', '일주일') "
+                                        + "그걸 '일수' 정수로 환산해서 tripDays에 채워줘 (예: 3박4일→4). 언급 없으면 null. "
                                         + "단, 이건 '어떤 통화를 쓰는지' 판단만 하는 거야. "
                                         + "그 통화의 실제 환율 숫자는 절대로 네가 임의로 추측해서 만들지 마 — "
                                         + "그건 서버가 실시간 데이터로 계산할 거야."),
@@ -211,7 +221,13 @@ public class OpenAiApiService {
                 requestedAmount = ((Number) amountObj).intValue();
             }
 
-            return new WidgetSelection(widgets, currency, destination, requestedAmount, clubName);
+            Integer tripDays = null;
+            Object tripDaysObj = arguments.get("tripDays");
+            if (tripDaysObj instanceof Number) {
+                tripDays = ((Number) tripDaysObj).intValue();
+            }
+
+            return new WidgetSelection(widgets, currency, destination, requestedAmount, clubName, tripDays);
 
         } catch (RestClientException e) {
             // OpenAI 호출 자체가 실패한 경우 (타임아웃, 네트워크, 401/429 등)

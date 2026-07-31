@@ -10,6 +10,8 @@ import java.util.Map;
  * travel_card_charge_widget은 GPT가 추론한 통화 코드를 받아
  * ExchangeRateService(실시간 API)로 실제 환율을 계산합니다.
  * greeting과 동아리 관련 위젯은 캔버스 종류/동아리명에 따라 동적으로 생성됩니다.
+ * travel_insurance_widget의 description은 GPT가 추출한 여행 일수(tripDays)가
+ * 있으면 그 값을 반영하고, 없으면 일반화된 문구로 폴백합니다.
  */
 @Service
 public class WidgetDataService {
@@ -72,11 +74,11 @@ public class WidgetDataService {
     }
 
     public Map<String, Object> buildWidget(String widgetId, String currency, String destination,
-                                           Integer requestedAmount, String clubName) {
+                                           Integer requestedAmount, String clubName, Integer tripDays) {
         return switch (widgetId) {
             case "travel_card_charge_widget" -> buildTravelCardChargeWidget(currency, destination, requestedAmount);
             case "overseas_qr_payment_widget" -> buildOverseasQrPaymentWidget(destination);
-            case "travel_insurance_widget" -> buildTravelInsuranceWidget(destination);
+            case "travel_insurance_widget" -> buildTravelInsuranceWidget(destination, tripDays);
             case "group_account_status" -> buildGroupAccountStatus(clubName);
             case "expense_report_widget" -> buildExpenseReportWidget(clubName);
             default -> buildWidget(widgetId);
@@ -148,11 +150,24 @@ public class WidgetDataService {
         );
     }
 
-    private Map<String, Object> buildTravelInsuranceWidget(String destination) {
+    /**
+     * greeting은 항상 응답에 포함됨.
+     * tripDays가 있으면 "N일 일정" 문구를 반영하고, 없으면 일반화된 문구로 폴백.
+     */
+    private Map<String, Object> buildTravelInsuranceWidget(String destination, Integer tripDays) {
         String label = resolveDestinationLabel(destination);
+
+        String greeting;
+        if (tripDays != null && tripDays > 0) {
+            greeting = "바쁘고 복잡한 여행 준비! 깨비가 " + tripDays + "일 일정에 꼭 필요한 보장만 뚝딱 담았어요.";
+        } else {
+            greeting = "바쁘고 복잡한 여행 준비! 깨비가 꼭 필요한 보장만 뚝딱 담았어요.";
+        }
+
         return Map.ofEntries(
                 Map.entry("type", "travel_insurance_widget"),
                 Map.entry("title", label + ", 든든하게 준비할까요?"),
+                Map.entry("greeting", greeting),
                 Map.entry("description", "출국 전 나에게 맞는 보장을 선택해 보세요."),
                 Map.entry("disclaimer", "정부24 및 경찰청 민원 포털과 연동되어 안전하게 처리됩니다."),
                 Map.entry("plans", List.of(
@@ -218,7 +233,7 @@ public class WidgetDataService {
 
             case "travel_card_charge_widget" -> buildTravelCardChargeWidget(null, null, null);
             case "overseas_qr_payment_widget" -> buildOverseasQrPaymentWidget(null);
-            case "travel_insurance_widget" -> buildTravelInsuranceWidget(null);
+            case "travel_insurance_widget" -> buildTravelInsuranceWidget(null, null);
             case "group_account_status" -> buildGroupAccountStatus(null);
             case "expense_report_widget" -> buildExpenseReportWidget(null);
 
