@@ -38,8 +38,13 @@ class LazyMLXGenerator:
 
 class MLXGenerator:
     def __init__(self, role='generator'):
+        import mlx.core as mx
         from mlx_lm import load
         self.path, self.identity = manifest(role)
+        from .model_integrity import verify_snapshot
+        from .inference_resources import configure_mlx_cache
+        self.verification=verify_snapshot(self.path,self.identity)
+        self.resource_policy=configure_mlx_cache(mx)
         self.model, self.tokenizer = load(str(self.path), tokenizer_config={'trust_remote_code': False})
         os.environ.setdefault('OUTLINES_CACHE_DIR', str(ROOT / 'var' / 'outlines-cache'))
         import outlines
@@ -90,6 +95,8 @@ class CrossEncoderReranker:
         import torch
         from sentence_transformers import CrossEncoder
         self.path, self.identity = manifest('reranker')
+        from .model_integrity import verify_snapshot
+        self.verification=verify_snapshot(self.path,self.identity)
         torch.set_num_threads(2)
         requested=os.getenv('RERANKER_DEVICE','auto')
         if requested not in ('cpu','mps','auto'):raise ValueError('unsupported_reranker_device')
@@ -106,6 +113,8 @@ class CrossEncoderReranker:
             return []
         with self.lock:
             values=self.model.predict(pairs,batch_size=4,show_progress_bar=False,convert_to_numpy=True)
+            from .inference_resources import release_unused_mps
+            self.memory_stats=release_unused_mps(__import__('torch'),self.device)
         scores=[float(v) for v in values]
         if not all(math.isfinite(v) for v in scores):raise ValueError('nonfinite_reranker_score')
         return scores

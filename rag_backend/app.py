@@ -207,19 +207,23 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
     class LiteratureResearch(BaseModel):
         model_config=ConfigDict(extra='forbid')
         question:str=Field(min_length=2,max_length=500,pattern=r'\S')
-        mode:Literal['single','decompose','compact','fast']='single'
+        mode:Literal['single','decompose','compact','fast','contextual']='single'
 
     from threading import Lock
     literature_lock=Lock()
     literature_resources={}
 
-    def get_literature_resources(fast=False):
+    def get_literature_resources(fast=False,english=False):
         # Reuse bounded score caches across requests. Lazy embedding load leaves
         # the existing financial screen startup path unchanged.
         from .retrieval_acceleration import CachedReranker,SpanPrefilter
         with literature_lock:
-            if 'reranker' not in literature_resources:
-                literature_resources['reranker']=CachedReranker(composer.component_ranker)
+            key='english_reranker' if english else 'reranker'
+            if key not in literature_resources:
+                if english:
+                    from .literature_reranker import EnglishLiteratureReranker
+                    literature_resources[key]=CachedReranker(EnglishLiteratureReranker())
+                else:literature_resources[key]=CachedReranker(composer.component_ranker)
             if fast and 'prefilter' not in literature_resources:
                 from .dense import LocalEncoder
                 literature_resources['prefilter']=SpanPrefilter(LocalEncoder(),knowledge_path.with_suffix('.spans.db'))
@@ -230,8 +234,11 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
         if composer is None:raise HTTPException(503,'로컬 모델이 활성화되지 않았습니다.')
         from .knowledge_lab import KnowledgeStore
         from .evidence_graph import EvidenceGraph
-        resources=get_literature_resources(req.mode=='fast')
-        return EvidenceGraph(KnowledgeStore(knowledge_path),composer.generator,resources['reranker'],
+        profile=os.getenv('LITERATURE_RERANKER','bge')
+        if profile not in ('bge','tiny'):raise HTTPException(503,'문헌 재평가 모델 설정을 확인해주세요.')
+        english=profile=='tiny' and req.mode in ('compact','fast','contextual')
+        resources=get_literature_resources(req.mode=='fast',english)
+        return EvidenceGraph(KnowledgeStore(knowledge_path),composer.generator,resources['english_reranker' if english else 'reranker'],
                              prefilter=resources.get('prefilter')).build(req.question,req.mode)
 
     @app.post('/canvas/compose')
