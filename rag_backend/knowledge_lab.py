@@ -71,7 +71,9 @@ class KnowledgeStore:
 
     def connect(self):return sqlite3.connect(self.path,timeout=15)
 
-    def ingest(self,records):
+    def ingest_in_transaction(self,db,records):
+        """Apply one bounded batch inside the caller's existing transaction."""
+        if not db.in_transaction:raise ValueError('active_ingestion_transaction_required')
         prepared=[]
         for r in records:
             if not all(isinstance(r.get(k),str) and r[k].strip() for k in ('id','title','text','source_url','kind')):
@@ -81,17 +83,28 @@ class KnowledgeStore:
             prepared.append((r['id'],hashlib.sha256(payload.encode()).hexdigest(),payload))
         if len({r[0] for r in prepared})!=len(prepared):raise ValueError('duplicate_document_id')
         changed=[]
-        with self.connect() as db:
-            for id,digest,payload in prepared:
-                previous=db.execute('SELECT hash FROM documents WHERE id=?',(id,)).fetchone()
-                if previous and previous[0]==digest:continue
-                db.execute('INSERT OR IGNORE INTO versions VALUES(?,?,?)',(id,digest,payload))
-                db.execute('INSERT OR REPLACE INTO documents VALUES(?,?,?)',(id,digest,payload));changed.append(id)
+        previous={}
+        for offset in range(0,len(prepared),400):
+            ids=[row[0] for row in prepared[offset:offset+400]]
+            previous.update(db.execute('SELECT id,hash FROM documents WHERE id IN ('+','.join('?' for _ in ids)+')',ids).fetchall())
+        updates=[row for row in prepared if previous.get(row[0])!=row[1]]
+        db.executemany('INSERT OR IGNORE INTO versions VALUES(?,?,?)',updates)
+        # UPSERT preserves rowids, allowing indexed FTS triggers to follow
+        # every ingest and restore without orphaned REPLACE rows.
+        db.executemany('INSERT INTO documents(id,hash,payload) VALUES(?,?,?) ON CONFLICT(id) DO UPDATE SET hash=excluded.hash,payload=excluded.payload',updates)
+        changed=[row[0] for row in updates]
         return {'seen':len(prepared),'changed':changed,'unchanged':len(prepared)-len(changed)}
 
+    def ingest(self,records):
+        with self.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            return self.ingest_in_transaction(db,records)
+
     def documents(self,kind=None):
-        with self.connect() as db:rows=db.execute('SELECT id,hash,payload FROM documents ORDER BY id').fetchall()
-        return [dict(json.loads(p),content_hash=h) for id,h,p in rows if kind is None or json.loads(p)['kind']==kind]
+        with self.connect() as db:
+            rows=db.execute('SELECT id,hash,payload FROM documents'+(' WHERE json_extract(payload,\'$.kind\')=?' if kind else '')+' ORDER BY id',
+                            (kind,) if kind else ()).fetchall()
+        return [dict(json.loads(p),content_hash=h) for id,h,p in rows]
 
     def restore(self,id,digest):
         with self.connect() as db:

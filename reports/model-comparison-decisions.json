@@ -1,0 +1,38 @@
+{
+  "scope": "Exploratory rejected routes, not an isolated or complete quality benchmark.",
+  "decisions": [
+    {
+      "configuration": "small OPUS Korean-English translation",
+      "selected": false,
+      "reason": "Technical meaning changed: reflection tokens became touch tokens.",
+      "revision": "e42d1f41b66194e6d10512f8a27bebc1f4f5097e"
+    },
+    {
+      "configuration": "big OPUS local snapshot",
+      "selected": false,
+      "reason": "Observed Korean token IDs largely mapped to unknown tokens in this local configuration. No claim that every use of the upstream model fails.",
+      "revision": "fa26583a41d95346933f26b4cb8f9b700da0d445"
+    },
+    {
+      "configuration": "BGE CPU dynamic int8 qnnpack",
+      "selected": false,
+      "eight_pair_seconds": 19.292840208974667,
+      "development_g1_seconds": 81.32738733303268,
+      "reason": "Latency too high; stopped the partial run."
+    },
+    {
+      "configuration": "short English query plus direct English ranking",
+      "selected": false,
+      "reason": "Lost mechanism detail; exploratory development results retained separately."
+    },
+    {
+      "configuration": "direct small multilingual/English retrieval plus bounded support verification",
+      "selected": true,
+      "reason": "Final actual 36-case and live API artifacts verify the selected route.",
+      "artifacts": [
+        "literature-platform-final.json",
+        "literature-platform-api.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "scope": "Same existing live endpoint before changing the retrieval algorithm. Detailed graph timing; HTTP wall observed separately in the tool run.",
+  "observed_http_seconds": 22.620964541914873,
+  "graph_latency_ms": 22461.499,
+  "trace": [
+    {
+      "step": "request_anchors",
+      "count": 1,
+      "model_calls": 0,
+      "scope": "Surface clauses only; implicit information needs are not proven complete."
+    },
+    {
+      "step": "compact_plan",
+      "clause_id": 0,
+      "attempt": 1,
+      "latency_ms": 18526.888,
+      "prompt_tokens": 539,
+      "output_tokens": 14,
+      "grammar_setup_ms": 0.0,
+      "schema_cache_hit": true,
+      "system_prefix_cache": {
+        "enabled": true,
+        "hit": true,
+        "prefix_tokens": 491,
+        "reused_tokens": 491,
+        "entry_bytes": 72400896
+      },
+      "prompt_sha256": "35c21f6ba177f6287248cf10657cc19d9ce67bb122d609cd686877785f5dbe59",
+      "model_calls": 1,
+      "status": "validated"
+    },
+    {
+      "step": "document_search",
+      "latency_ms": 588.388
+    },
+    {
+      "step": "span_search",
+      "scored_pairs": 26,
+      "catalog_entries": 3,
+      "passage_profile": "sentence_context_480",
+      "latency_ms": 2.332
+    },
+    {
+      "step": "bind_evidence",
+      "format": "evidence_ids",
+      "latency_ms": 3091.657,
+      "prompt_tokens": 449,
+      "output_tokens": 8,
+      "grammar_setup_ms": 0.0,
+      "schema_cache_hit": true,
+      "system_prefix_cache": {
+        "enabled": true,
+        "hit": true,
+        "prefix_tokens": 84,
+        "reused_tokens": 84,
+        "entry_bytes": 12386304
+      },
+      "prompt_sha256": "4005de9af7a71aea6ca59b27218c5f2c370f96afe436be5099ee6cc598f74c1e",
+      "model_calls": 1
+    }
+  ],
+  "source_ids": [
+    "arxiv:2210.03629"
+  ]
+}

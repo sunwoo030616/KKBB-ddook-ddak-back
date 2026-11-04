@@ -212,12 +212,27 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
     class LiteratureResearch(BaseModel):
         model_config=ConfigDict(extra='forbid')
         question:str=Field(min_length=2,max_length=500,pattern=r'\S')
-        mode:Literal['single','decompose','compact','fast','contextual','anchored']='single'
+        mode:Literal['single','decompose','compact','fast','contextual','anchored','adaptive']='adaptive'
         binding_format:Literal['ids','ordinal']='ids'
 
     from threading import Lock
     literature_lock=Lock()
+    literature_admission=Lock()
     literature_resources={}
+
+    def get_adaptive_resources():
+        from .retrieval_acceleration import CachedReranker,SpanPrefilter
+        with literature_lock:
+            if 'multilingual_reranker' not in literature_resources:
+                from .multilingual_literature import MultilingualLiteratureReranker
+                literature_resources['multilingual_reranker']=CachedReranker(MultilingualLiteratureReranker())
+            if 'english_reranker' not in literature_resources:
+                from .literature_reranker import EnglishLiteratureReranker
+                literature_resources['english_reranker']=CachedReranker(EnglishLiteratureReranker())
+            if 'multiview_prefilter' not in literature_resources:
+                from .dense import LocalEncoder
+                literature_resources['multiview_prefilter']=SpanPrefilter(LocalEncoder(),knowledge_path.with_suffix('.adaptive-vectors.db'))
+            return dict(literature_resources)
 
     def get_literature_resources(fast=False,english=False,translated=False):
         # Reuse bounded score caches across requests. Lazy embedding load leaves
@@ -244,18 +259,35 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
 
     @app.post('/knowledge/research')
     def literature_research(req:LiteratureResearch):
-        if composer is None:raise HTTPException(503,'로컬 모델이 활성화되지 않았습니다.')
-        from .knowledge_lab import KnowledgeStore
-        from .evidence_graph import EvidenceGraph
-        profile=os.getenv('LITERATURE_RERANKER','bge')
-        if profile not in ('bge','tiny'):raise HTTPException(503,'문헌 재평가 모델 설정을 확인해주세요.')
-        english=profile=='tiny' and req.mode in ('compact','fast','contextual','anchored')
-        translated=req.mode in ('compact','fast','contextual','anchored')
-        try:resources=get_literature_resources(req.mode=='fast',english,translated)
-        except (FileNotFoundError,ValueError):raise HTTPException(503,'로컬 문헌 모델과 후보 예산 설정을 확인해주세요.') from None
-        return EvidenceGraph(KnowledgeStore(knowledge_path),composer.generator,resources['english_reranker' if english else 'reranker'],
-                             prefilter=resources.get('prefilter'),document_prefilter=resources.get('document_prefilter') if translated else None,
-                             binding_format=req.binding_format).build(req.question,req.mode)
+        import time
+        if not literature_admission.acquire(blocking=False):raise HTTPException(429,'문헌 탐색 처리 중입니다. 잠시 후 다시 요청해주세요.')
+        started=time.perf_counter()
+        try:
+            from .knowledge_lab import KnowledgeStore
+            if req.mode=='adaptive':
+                from .adaptive_literature import AdaptiveLiteratureAgent
+                try:resources=get_adaptive_resources()
+                except (FileNotFoundError,ValueError):raise HTTPException(503,'로컬 다국어 문헌 모델을 먼저 준비해주세요.') from None
+                setup_ms=(time.perf_counter()-started)*1000
+                result=AdaptiveLiteratureAgent(KnowledgeStore(knowledge_path),resources['multilingual_reranker'],
+                    resources['multiview_prefilter'],composer.generator if composer else None,
+                    english_reranker=resources['english_reranker']).build(req.question)
+            else:
+                if composer is None:raise HTTPException(503,'로컬 모델이 활성화되지 않았습니다.')
+                from .evidence_graph import EvidenceGraph
+                profile=os.getenv('LITERATURE_RERANKER','bge')
+                if profile not in ('bge','tiny'):raise HTTPException(503,'문헌 재평가 모델 설정을 확인해주세요.')
+                english=profile=='tiny' and req.mode in ('compact','fast','contextual','anchored')
+                translated=req.mode in ('compact','fast','contextual','anchored')
+                try:resources=get_literature_resources(req.mode=='fast',english,translated)
+                except (FileNotFoundError,ValueError):raise HTTPException(503,'로컬 문헌 모델과 후보 예산 설정을 확인해주세요.') from None
+                setup_ms=(time.perf_counter()-started)*1000
+                result=EvidenceGraph(KnowledgeStore(knowledge_path),composer.generator,resources['english_reranker' if english else 'reranker'],
+                    prefilter=resources.get('prefilter'),document_prefilter=resources.get('document_prefilter') if translated else None,
+                    binding_format=req.binding_format).build(req.question,req.mode)
+            return {**result,'mode':req.mode,'resource_setup_ms':round(setup_ms,3),
+                    'request_latency_ms':round((time.perf_counter()-started)*1000,3)}
+        finally:literature_admission.release()
 
     @app.post('/canvas/compose')
     def canvas_compose(req: ComposeRequest):
