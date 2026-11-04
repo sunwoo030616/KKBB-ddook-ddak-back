@@ -199,3 +199,18 @@ def test_restoring_source_can_resume_stale_job_without_resetting_attempt_budget(
     second=w.claim();assert second['id']==first['id'] and second['attempt']==2
     with pytest.raises(WorkflowConflict):w.complete(first,candidate(first))
     assert w.complete(second,candidate(second))
+
+
+def test_compatible_legacy_cards_migrate_once_without_model_calls_or_approval(tmp_path):
+    import json
+    store,w,c=setup(tmp_path)
+    class Model:
+        identity={'model':'migration-fixture'}
+        def complete(self,*args,**kwargs):return {'text':json.dumps({'span_id':'s0','category':'context','tags':['fixture']})}
+    from rag_backend.knowledge_lab import PROMPT_VERSION
+    model=Model();store.prepare_notes(model)
+    w.enqueue(model.identity,PROMPT_VERSION)
+    assert w.import_legacy(model.identity,PROMPT_VERSION)['imported']==1
+    assert w.import_legacy(model.identity,PROMPT_VERSION)['imported']==0
+    assert w.status()['reviews']=={'pending':1} and w.audit()['valid']
+    assert w.work_one(model,PROMPT_VERSION)['state']=='idle'

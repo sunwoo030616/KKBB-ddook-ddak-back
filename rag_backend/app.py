@@ -45,6 +45,9 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
 
     @app.get('/health')
     def health():
+        active_generator=getattr(app.state.composer,'generator',None)
+        base_generator=getattr(active_generator,'generator',active_generator)
+        prefix_cache=getattr(base_generator,'system_prefix_cache',None)
         return {'status': 'ok', 'chunks': len(pipeline.chunks), 'corpus_version': pipeline.version,
                 'runtime_source_sha256':runtime_sources,
                 'llm_configured': pipeline.generator.configured,
@@ -53,6 +56,8 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
                 'default_generation': 'extractive',
                 'research_configured': app.state.research is not None,
                 'canvas_configured': app.state.composer is not None,
+                'system_prefix_cache':prefix_cache.snapshot() if prefix_cache else None,
+                'model_integrity':getattr(base_generator,'verification',None),
                 'inference_cache':(app.state.composer.generator.snapshot() if app.state.composer is not None
                                    and hasattr(app.state.composer.generator,'snapshot') else None),
                 'reranker_execution':({'device':getattr(app.state.composer.component_ranker,'device','unknown'),
@@ -207,13 +212,13 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
     class LiteratureResearch(BaseModel):
         model_config=ConfigDict(extra='forbid')
         question:str=Field(min_length=2,max_length=500,pattern=r'\S')
-        mode:Literal['single','decompose','compact','fast','contextual']='single'
+        mode:Literal['single','decompose','compact','fast','contextual','anchored']='single'
 
     from threading import Lock
     literature_lock=Lock()
     literature_resources={}
 
-    def get_literature_resources(fast=False,english=False):
+    def get_literature_resources(fast=False,english=False,translated=False):
         # Reuse bounded score caches across requests. Lazy embedding load leaves
         # the existing financial screen startup path unchanged.
         from .retrieval_acceleration import CachedReranker,SpanPrefilter
@@ -227,6 +232,13 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
             if fast and 'prefilter' not in literature_resources:
                 from .dense import LocalEncoder
                 literature_resources['prefilter']=SpanPrefilter(LocalEncoder(),knowledge_path.with_suffix('.spans.db'))
+            pool=int(os.getenv('LITERATURE_DENSE_POOL','0')) if translated else 0
+            if pool and not 3<=pool<=20:raise ValueError('invalid_literature_pool_budget')
+            if pool:
+                from .literature_encoder import EnglishLiteratureEncoder,DocumentPrefilter
+                if 'english_encoder' not in literature_resources:literature_resources['english_encoder']=EnglishLiteratureEncoder()
+                if 'document_prefilter' not in literature_resources:
+                    literature_resources['document_prefilter']=DocumentPrefilter(literature_resources['english_encoder'],knowledge_path.with_suffix('.english-vectors.db'),limit=pool)
             return dict(literature_resources)
 
     @app.post('/knowledge/research')
@@ -236,10 +248,12 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
         from .evidence_graph import EvidenceGraph
         profile=os.getenv('LITERATURE_RERANKER','bge')
         if profile not in ('bge','tiny'):raise HTTPException(503,'문헌 재평가 모델 설정을 확인해주세요.')
-        english=profile=='tiny' and req.mode in ('compact','fast','contextual')
-        resources=get_literature_resources(req.mode=='fast',english)
+        english=profile=='tiny' and req.mode in ('compact','fast','contextual','anchored')
+        translated=req.mode in ('compact','fast','contextual','anchored')
+        try:resources=get_literature_resources(req.mode=='fast',english,translated)
+        except (FileNotFoundError,ValueError):raise HTTPException(503,'로컬 문헌 모델과 후보 예산 설정을 확인해주세요.') from None
         return EvidenceGraph(KnowledgeStore(knowledge_path),composer.generator,resources['english_reranker' if english else 'reranker'],
-                             prefilter=resources.get('prefilter')).build(req.question,req.mode)
+                             prefilter=resources.get('prefilter'),document_prefilter=resources.get('document_prefilter') if translated else None).build(req.question,req.mode)
 
     @app.post('/canvas/compose')
     def canvas_compose(req: ComposeRequest):

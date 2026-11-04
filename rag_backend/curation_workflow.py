@@ -89,6 +89,22 @@ class CurationWorkflow:
         return {'id':id,'lease_token':token,'lease_until':now+lease_seconds,'attempt':attempts+1,
                 'model_hash':model_hash,'prompt':prompt,'document':dict(payload,content_hash=source_hash)}
 
+    def import_legacy(self,model_identity,prompt):
+        """Migrate compatible pending cards, never importing an approval decision."""
+        legacy_model=hashlib.sha256(json.dumps(model_identity,sort_keys=True).encode()).hexdigest()
+        imported=0;invalid=0
+        with self.store.connect() as db:
+            db.execute('BEGIN IMMEDIATE')
+            rows=db.execute("SELECT j.id,j.document_id,j.source_hash,n.payload,d.payload FROM curation_jobs j JOIN notes n ON n.id=j.document_id AND n.hash=j.source_hash JOIN documents d ON d.id=j.document_id AND d.hash=j.source_hash WHERE j.state='queued' AND j.attempts=0 AND j.model_hash=? AND j.prompt=? AND n.model=? AND n.prompt=?",(digest(model_identity),prompt,legacy_model,prompt)).fetchall()
+            for id,document_id,source_hash,payload,source in rows:
+                try:
+                    candidate=json.loads(payload);document=json.loads(source)
+                    self.validate_candidate(candidate,document_id,source_hash,document['text'],document['source_url'])
+                except (ValueError,TypeError,KeyError):invalid+=1;continue
+                db.execute("UPDATE curation_jobs SET state='prepared',result=?,review='pending' WHERE id=?",(payload,id))
+                self.event(db,id,'imported_legacy_candidate',candidate_hash=digest(candidate));imported+=1
+        return {'imported':imported,'invalid':invalid,'automatic_approval':False}
+
     def work_one(self,generator,prompt,lease_seconds=300):
         from .knowledge_lab import select_candidate,validate_selection
         job=self.claim(lease_seconds,model_hash=digest(generator.identity),prompt=prompt)
@@ -292,4 +308,4 @@ class CurationWorkflow:
             return {'status':'stale_release','cards':[],'release_revision':current['revision']}
         selected=[dict(c,score=score) for c,score in ranked if reranker or score>0][:limit]
         return {'status':'ok','cards':selected,'release_id':snapshot['id'],'release_revision':snapshot['revision'],
-                'scope':'Human-reviewed quote cards. Review is not proof of scientific truth or current financial eligibility.'}
+                'scope':'Explicitly approved quote cards. Approval is not proof of scientific truth or current financial eligibility.'}
