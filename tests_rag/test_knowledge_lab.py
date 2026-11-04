@@ -78,3 +78,5 @@ def test_knowledge_api_validation_and_optional_neural_dependency(monkeypatch,tmp
         assert response.status_code==200 and response.json()['hits'][0]['id']=='paper:1'
         assert client.post('/knowledge/search',json={'question':'retrieval','mode':'neural'}).status_code==503
         assert client.post('/knowledge/search',json={'question':'retrieval','kind':'private_files'}).status_code==422
+        assert client.post('/knowledge/research',json={'question':'  '}).status_code==422
+        assert client.post('/knowledge/research',json={'question':'retrieval','mode':'unbounded'}).status_code==422

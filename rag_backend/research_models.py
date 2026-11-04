@@ -12,6 +12,10 @@ from .store import ROOT
 MODEL_ROOT = ROOT / 'var' / 'research_models'
 
 
+def schema_fingerprint(output_type):
+    return hashlib.sha256(json.dumps(output_type.model_json_schema(),sort_keys=True).encode()).hexdigest()
+
+
 def manifest(role):
     path = MODEL_ROOT / role
     data = json.loads((path / 'manifest.local.json').read_text())
@@ -56,20 +60,26 @@ class MLXGenerator:
         started = time.perf_counter()
         with self.lock:
             acquired = time.perf_counter()
+            schema_cache_hit=False;grammar_setup_ms=0
             if output_type is None:
                 text = generate(self.model, self.tokenizer, prompt=prompt, max_tokens=max_tokens,
                                 sampler=make_sampler(temp=0), verbose=False)
             else:
                 import outlines
-                if output_type not in self.structured_generators:
+                schema_key=schema_fingerprint(output_type)
+                schema_cache_hit=schema_key in self.structured_generators
+                setup_started=time.perf_counter()
+                if not schema_cache_hit:
                     # Dynamic per-request schemas must not retain unbounded generators.
                     if len(self.structured_generators)>=64:
                         self.structured_generators.pop(next(iter(self.structured_generators)))
-                    self.structured_generators[output_type] = outlines.Generator(self.constrained_model, output_type)
-                text = self.structured_generators[output_type](prompt, max_tokens=max_tokens,
+                    self.structured_generators[schema_key] = outlines.Generator(self.constrained_model, output_type)
+                grammar_setup_ms=(time.perf_counter()-setup_started)*1000
+                text = self.structured_generators[schema_key](prompt, max_tokens=max_tokens,
                                                                sampler=make_sampler(temp=0), verbose=False)
         return {'text':text, 'latency_ms':round((time.perf_counter()-started)*1000,3),
                 'lock_wait_ms':round((acquired-started)*1000,3),
+                'schema_cache_hit':schema_cache_hit,'grammar_setup_ms':round(grammar_setup_ms,3),
                 'prompt_tokens':len(self.tokenizer.encode(prompt)),
                 'output_tokens':len(self.tokenizer.encode(text)),
                 'max_tokens':max_tokens, 'constrained_decoding':output_type is not None, 'prompt_sha256':hashlib.sha256(prompt.encode()).hexdigest()}

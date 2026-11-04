@@ -1,0 +1,62 @@
+[
+  {
+    "id": "g1",
+    "question": "검색 질의를 고치는 방법과 질문 복잡도에 따라 검색 횟수를 고르는 방법을 각각 찾아줘.",
+    "expected_sources": [
+      "arxiv:2305.14283",
+      "arxiv:2403.14403"
+    ]
+  },
+  {
+    "id": "g2",
+    "question": "성찰 토큰을 쓰는 검색 방식과 추론·도구 실행을 번갈아 하는 방식을 비교할 근거를 찾아줘.",
+    "expected_sources": [
+      "arxiv:2310.11511",
+      "arxiv:2210.03629"
+    ]
+  },
+  {
+    "id": "g3",
+    "question": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+    "expected_sources": [
+      "arxiv:2005.11401",
+      "arxiv:2307.03172"
+    ]
+  },
+  {
+    "id": "g4",
+    "question": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+    "expected_sources": [
+      "arxiv:2210.03629",
+      "arxiv:2310.11511",
+      "arxiv:2403.14403"
+    ]
+  },
+  {
+    "id": "g5",
+    "question": "질문 복잡도로 검색 전략을 고르는 연구에서 단일 검색과 반복 검색에 대한 근거를 찾아줘.",
+    "expected_sources": [
+      "arxiv:2403.14403"
+    ]
+  },
+  {
+    "id": "g6",
+    "question": "Find query rewriting and the positional weakness of long-context models.",
+    "expected_sources": [
+      "arxiv:2305.14283",
+      "arxiv:2307.03172"
+    ]
+  },
+  {
+    "id": "g7",
+    "question": "각 논문의 RTX 5090 GPU 전력 소비량을 와트 단위로 측정한 표를 찾아줘.",
+    "expected_sources": []
+  },
+  {
+    "id": "g8",
+    "question": "성찰 토큰을 쓰는 방법을 찾고, 그 논문의 RTX 5090 전력 소비량 측정값도 찾아줘.",
+    "expected_sources": [
+      "arxiv:2310.11511"
+    ]
+  }
+]
