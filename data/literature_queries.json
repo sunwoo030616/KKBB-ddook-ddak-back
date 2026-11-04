@@ -1,0 +1,62 @@
+[
+  {
+    "id": "0-en",
+    "query": "Finding evidence placed in the middle of long input contexts",
+    "expected": "arxiv:2307.03172"
+  },
+  {
+    "id": "0-ko",
+    "query": "긴 입력에서 근거가 가운데에 있을 때 성능이 떨어지는 현상",
+    "expected": "arxiv:2307.03172"
+  },
+  {
+    "id": "1-en",
+    "query": "Interleaving reasoning with actions and observing external tools",
+    "expected": "arxiv:2210.03629"
+  },
+  {
+    "id": "1-ko",
+    "query": "추론과 도구 실행을 번갈아 수행하고 관측 결과를 활용",
+    "expected": "arxiv:2210.03629"
+  },
+  {
+    "id": "2-en",
+    "query": "Reflection tokens for on-demand retrieval and self critique",
+    "expected": "arxiv:2310.11511"
+  },
+  {
+    "id": "2-ko",
+    "query": "성찰 토큰으로 필요할 때 검색하고 생성 결과를 비평",
+    "expected": "arxiv:2310.11511"
+  },
+  {
+    "id": "3-en",
+    "query": "Rewrite the search query before retrieving documents for the reader",
+    "expected": "arxiv:2305.14283"
+  },
+  {
+    "id": "3-ko",
+    "query": "검색기나 답변기 대신 검색 질의 자체를 고쳐 문서를 찾기",
+    "expected": "arxiv:2305.14283"
+  },
+  {
+    "id": "4-en",
+    "query": "Combining parametric sequence models and non-parametric Wikipedia memory",
+    "expected": "arxiv:2005.11401"
+  },
+  {
+    "id": "4-ko",
+    "query": "모델 내부 지식과 위키피디아 외부 메모리를 결합하는 생성",
+    "expected": "arxiv:2005.11401"
+  },
+  {
+    "id": "5-en",
+    "query": "Selecting no retrieval single retrieval or iterative retrieval by question complexity",
+    "expected": "arxiv:2403.14403"
+  },
+  {
+    "id": "5-ko",
+    "query": "질문 복잡도에 따라 무검색 단일 검색 반복 검색 중 선택",
+    "expected": "arxiv:2403.14403"
+  }
+]

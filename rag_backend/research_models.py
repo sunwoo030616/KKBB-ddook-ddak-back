@@ -19,6 +19,19 @@ def manifest(role):
     return path, data
 
 
+class LazyMLXGenerator:
+    """Unchanged curation jobs need identity checks, not GPU model loading."""
+    def __init__(self,role='canvas_generator'):
+        self.role=role;_,self.identity=manifest(role)
+        self.generator=None;self.lock=Lock();self.loads=0
+
+    def complete(self,*args,**kwargs):
+        with self.lock:
+            if self.generator is None:
+                self.generator=MLXGenerator(self.role);self.loads+=1
+        return self.generator.complete(*args,**kwargs)
+
+
 class MLXGenerator:
     def __init__(self, role='generator'):
         from mlx_lm import load

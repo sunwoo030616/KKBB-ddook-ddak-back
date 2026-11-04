@@ -39,7 +39,8 @@ def start(name,cmd,cwd,url,env=None):
 
 try:
     start('ai',[str(ROOT/'.venv/bin/python'),'-m','uvicorn','rag_backend.app:create_app','--factory','--host','127.0.0.1','--port','8767','--no-access-log'],ROOT,'http://127.0.0.1:8767/health',
-          {'RAG_ENABLE_CANVAS':'1','HF_HUB_OFFLINE':'1','TRANSFORMERS_OFFLINE':'1'})
+          {'RAG_ENABLE_CANVAS':'1','RAG_EXACT_CACHE':os.getenv('RAG_EXACT_CACHE','1'),
+           'HF_HUB_OFFLINE':'1','TRANSFORMERS_OFFLINE':'1'})
     # A POST-free public catalog gives the Spring process a simple, non-generating readiness check.
     offline=['-o'] if os.getenv('DEV_MAVEN_OFFLINE')=='1' else []
     start('spring',[str(ROOT/'mvnw'),'-q',*offline,f'-Dmaven.repo.local={ROOT/"var/maven-repository"}','spring-boot:run','-Dspring-boot.run.arguments=--server.port=8088'],ROOT,'http://127.0.0.1:8088/api/canvas/v2/health',

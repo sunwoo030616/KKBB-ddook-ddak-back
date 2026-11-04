@@ -77,7 +77,7 @@ class EvidenceAgent:
                 trace.append({'step': 'evidence_decision', 'attempt': attempt + 1,
                               'action': action.action, 'latency_ms': raw['latency_ms'],
                               'prompt_tokens':raw.get('prompt_tokens'), 'output_tokens':raw.get('output_tokens'),
-                              'model_calls': 1})
+                              'model_calls': raw.get('model_calls',1),'cache_hit':raw.get('cache_hit',False)})
             except Exception:
                 # An invalid model plan is a visible failure, never silent success.
                 trace.append({'step': 'evidence_decision', 'attempt': attempt + 1,

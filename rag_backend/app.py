@@ -1,4 +1,5 @@
 import os
+from typing import Literal
 from pathlib import Path
 from contextlib import asynccontextmanager
 from pydantic import BaseModel, ConfigDict, Field
@@ -52,6 +53,8 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
                 'default_generation': 'extractive',
                 'research_configured': app.state.research is not None,
                 'canvas_configured': app.state.composer is not None,
+                'inference_cache':(app.state.composer.generator.snapshot() if app.state.composer is not None
+                                   and hasattr(app.state.composer.generator,'snapshot') else None),
                 'reranker_execution':({'device':getattr(app.state.composer.component_ranker,'device','unknown'),
                                        'dtype':getattr(app.state.composer.component_ranker,'dtype','unknown')}
                                       if app.state.composer is not None else None)}
@@ -145,11 +148,38 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
         from .semantic_review import SemanticReviewer
         from .intent_contract import IntentInterpreter
         canvas_generator=MLXGenerator(role=os.getenv('CANVAS_MODEL_ROLE','canvas_generator'))
+        if os.getenv('RAG_EXACT_CACHE')=='1':
+            from .inference_cache import MemoizedGenerator
+            canvas_generator=MemoizedGenerator(canvas_generator)
         composer = CanvasComposer(pipeline, canvas_generator,
                                   str(store.path.with_suffix('.screens.db')), component_ranker=CrossEncoderReranker(),
                                   semantic_reviewer=SemanticReviewer(canvas_generator),
                                   intent_interpreter=IntentInterpreter(canvas_generator))
     app.state.composer = composer
+    knowledge_path=Path(os.getenv('KNOWLEDGE_DB_PATH',str(ROOT/'var/knowledge.sqlite3')))
+
+    @app.get('/knowledge/status')
+    def knowledge_status():
+        from .knowledge_lab import KnowledgeStore
+        kb=KnowledgeStore(knowledge_path)
+        return {'documents':len(kb.documents()),'candidate_notes':len(kb.notes()),
+                'notes_are_approved':False}
+
+    class KnowledgeQuery(BaseModel):
+        model_config=ConfigDict(extra='forbid')
+        question:str=Field(min_length=2,max_length=500)
+        kind:Literal['abstract','financial_summary']='abstract'
+        mode:Literal['lexical','neural']='neural'
+        limit:int=Field(default=3,ge=1,le=5)
+
+    @app.post('/knowledge/search')
+    def knowledge_search(req:KnowledgeQuery):
+        from .knowledge_lab import KnowledgeStore
+        if req.mode=='neural' and composer is None:raise HTTPException(503,'로컬 검색 모델이 활성화되지 않았습니다.')
+        kb=KnowledgeStore(knowledge_path)
+        return {'hits':kb.search(req.question,req.kind,req.limit,
+                composer.component_ranker if req.mode=='neural' else None),
+                'scope':'Local curation corpus; abstracts and financial summaries are separate.'}
 
     @app.get('/canvas/catalog')
     def canvas_catalog():

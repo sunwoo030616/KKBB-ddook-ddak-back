@@ -404,7 +404,8 @@ class CanvasComposer:
                 nodes,added=compile_screen(draft,registry)
                 slots=merged
                 traces.append({'step':'llm_plan','attempt':attempt+1,'status':'validated_with_rejected_slots' if slot_rejections else 'validated_after_deduplication' if deduplicated else 'validated','deduplicated_types':deduplicated,'slot_rejections':slot_rejections,'latency_ms':raw['latency_ms'],
-                               'lock_wait_ms':raw.get('lock_wait_ms'),'prompt_tokens':raw.get('prompt_tokens'),'output_tokens':raw.get('output_tokens')})
+                               'lock_wait_ms':raw.get('lock_wait_ms'),'prompt_tokens':raw.get('prompt_tokens'),'output_tokens':raw.get('output_tokens'),
+                               'model_calls':raw.get('model_calls',1),'cache_hit':raw.get('cache_hit',False)})
                 if debug:traces[-1]['model_output']=raw['text']
                 break
             except (ValueError,TypeError) as error:
