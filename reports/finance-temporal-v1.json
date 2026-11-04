@@ -1,0 +1,1629 @@
+{
+  "created_at": "2026-11-02T10:17:04.375409+00:00",
+  "limits": [
+    "28개는 7개 날짜와 4개 표현을 조합한 상관된 탐색적 사례; 독립 표본 28개가 아님",
+    "공식 출처 2개/정답 청크 2개의 좁은 제도 사례",
+    "분류·검색 평가이며 생성 LLM·실상품 지급 판정 평가 아님",
+    "무기한 effective_until은 최신 정책 자동 확인을 의미하지 않음"
+  ],
+  "dataset_sha256": "2d1b54f52accbd42d70d855f811de806cd9037481bc69c708a2f59344472a56a",
+  "runs": {
+    "bm25": {
+      "n": 28,
+      "without_filter_correct": 10,
+      "with_filter_correct": 22,
+      "cases": [
+        {
+          "as_of": "2025-07-21",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": null,
+          "without_temporal_filter": null,
+          "with_temporal_filter": null,
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": null,
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": false
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": null,
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": false
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": null,
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": false
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": null,
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": false
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": null,
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": false
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": null,
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": false
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        }
+      ]
+    },
+    "hybrid": {
+      "n": 28,
+      "without_filter_correct": 12,
+      "with_filter_correct": 28,
+      "cases": [
+        {
+          "as_of": "2025-07-21",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        }
+      ]
+    },
+    "dense": {
+      "n": 28,
+      "without_filter_correct": 12,
+      "with_filter_correct": 28,
+      "cases": [
+        {
+          "as_of": "2025-07-21",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        }
+      ]
+    },
+    "fusion": {
+      "n": 28,
+      "without_filter_correct": 12,
+      "with_filter_correct": 28,
+      "cases": [
+        {
+          "as_of": "2025-07-21",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-21",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": null,
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": null,
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-07-22",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-30",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-08-31",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-before",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-before",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-01",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2025-09-02",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금보호한도 원금 이자",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금자보호 얼마까지 보호되나요",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "원금과 이자 합해서 예금 보호 한도",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-current",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": true,
+          "filtered_correct": true
+        },
+        {
+          "as_of": "2026-11-02",
+          "question": "예금보험 한도 알려줘",
+          "gold_id": "fsc-protection-current",
+          "without_temporal_filter": "fsc-protection-before",
+          "with_temporal_filter": "fsc-protection-current",
+          "baseline_correct": false,
+          "filtered_correct": true
+        }
+      ]
+    }
+  },
+  "corpus_version": "dc20def3b9a26c5e",
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2@sha256:634d0f66c29dc934c8fa72b8a4fe91dd4d420a22f1d82a241058d4316e659a99",
+  "workflow_examples": [
+    {
+      "request": {
+        "topics": [
+          "protection"
+        ],
+        "as_of": "2025-08-31",
+        "retriever": "hybrid",
+        "calculation": null
+      },
+      "response": {
+        "request_id": "fe2ed237-d335-441e-a466-1cf739b99cba",
+        "status": "answered",
+        "as_of": "2025-08-31",
+        "corpus_version": "dc20def3b9a26c5e",
+        "sections": [
+          {
+            "topic": "protection",
+            "status": "answered",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ],
+            "temporal_note": "공표된 시행 기간 기준"
+          }
+        ],
+        "claims": [
+          {
+            "text": "2025년 7월 22일 금융위원회 발표에서 확인되는 상향 시행 전 종전 예금보호한도는 5천만원입니다. 이 기록은 2025년 7월 22일부터 8월 31일까지의 조회에만 사용합니다. 이후 시행되는 새 한도는 별도 기록으로 조회합니다.",
+            "evidence_id": "fsc-protection-before",
+            "quote": "2025년 7월 22일 금융위원회 발표에서 확인되는 상향 시행 전 종전 예금보호한도는 5천만원입니다. 이 기록은 2025년 7월 22일부터 8월 31일까지의 조회에만 사용합니다. 이후 시행되는 새 한도는 별도 기록으로 조회합니다."
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": "fsc-protection-before",
+            "source_id": "fsc-20250722",
+            "institution": "fsc",
+            "title": "예금보호한도 변경 발표",
+            "section": "2025년 8월 말까지의 종전 한도",
+            "url": "https://www.fsc.go.kr/no010101/84974",
+            "verified_at": "2026-11-02",
+            "text": "2025년 7월 22일 금융위원회 발표에서 확인되는 상향 시행 전 종전 예금보호한도는 5천만원입니다. 이 기록은 2025년 7월 22일부터 8월 31일까지의 조회에만 사용합니다. 이후 시행되는 새 한도는 별도 기록으로 조회합니다.",
+            "score": 0.03278689,
+            "published_at": "2025-07-22",
+            "content_as_of": null,
+            "effective_from": "2025-07-22",
+            "effective_until": "2025-08-31",
+            "temporal_basis": "effective_period"
+          }
+        ],
+        "calculation": null,
+        "missing_topics": [],
+        "trace": [
+          {
+            "step": "plan",
+            "planner": "typed_intent_registry_v1",
+            "max_retrieval_calls": 4,
+            "topics": [
+              "protection"
+            ],
+            "as_of": "2025-08-31"
+          },
+          {
+            "step": "retrieve",
+            "topic": "protection",
+            "institution": "fsc",
+            "eligible_ids": [
+              "fsc-protection-before"
+            ],
+            "selected_ids": [
+              "fsc-protection-before"
+            ]
+          }
+        ],
+        "latency_ms": 0.346,
+        "generation": "extractive_with_deterministic_tools",
+        "real_transactions_executed": false
+      }
+    },
+    {
+      "request": {
+        "topics": [
+          "protection"
+        ],
+        "as_of": "2025-09-01",
+        "retriever": "hybrid",
+        "calculation": null
+      },
+      "response": {
+        "request_id": "9b9231fa-ac58-4439-b775-b88fa4d5a0d4",
+        "status": "answered",
+        "as_of": "2025-09-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "sections": [
+          {
+            "topic": "protection",
+            "status": "answered",
+            "evidence_ids": [
+              "fsc-protection-current"
+            ],
+            "temporal_note": "공표된 시행 기간 기준"
+          }
+        ],
+        "claims": [
+          {
+            "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+            "evidence_id": "fsc-protection-current",
+            "quote": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다."
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": "fsc-protection-current",
+            "source_id": "fsc-20250901",
+            "institution": "fsc",
+            "title": "예금보호한도 상향 시행",
+            "section": "2025년 9월 1일부터의 한도",
+            "url": "https://www.fsc.go.kr/no010101/85200",
+            "verified_at": "2026-11-02",
+            "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+            "score": 0.03278689,
+            "published_at": "2025-09-01",
+            "content_as_of": null,
+            "effective_from": "2025-09-01",
+            "effective_until": null,
+            "temporal_basis": "effective_period"
+          }
+        ],
+        "calculation": null,
+        "missing_topics": [],
+        "trace": [
+          {
+            "step": "plan",
+            "planner": "typed_intent_registry_v1",
+            "max_retrieval_calls": 4,
+            "topics": [
+              "protection"
+            ],
+            "as_of": "2025-09-01"
+          },
+          {
+            "step": "retrieve",
+            "topic": "protection",
+            "institution": "fsc",
+            "eligible_ids": [
+              "fsc-protection-current"
+            ],
+            "selected_ids": [
+              "fsc-protection-current"
+            ]
+          }
+        ],
+        "latency_ms": 0.204,
+        "generation": "extractive_with_deterministic_tools",
+        "real_transactions_executed": false
+      }
+    },
+    {
+      "request": {
+        "topics": [
+          "protection",
+          "collateral",
+          "funding_compare"
+        ],
+        "as_of": "2026-11-02",
+        "retriever": "hybrid",
+        "calculation": null
+      },
+      "response": {
+        "request_id": "1b19369c-4bc1-4820-b62a-ed58a8174e94",
+        "status": "answered",
+        "as_of": "2026-11-02",
+        "corpus_version": "dc20def3b9a26c5e",
+        "sections": [
+          {
+            "topic": "protection",
+            "status": "answered",
+            "evidence_ids": [
+              "fsc-protection-current"
+            ],
+            "temporal_note": "공표된 시행 기간 기준"
+          },
+          {
+            "topic": "collateral",
+            "status": "answered",
+            "evidence_ids": [
+              "kb-collateral-concept"
+            ],
+            "temporal_note": "출처 작성시점의 설명; 현재 상품 조건 재확인 필요"
+          },
+          {
+            "topic": "funding_compare",
+            "status": "answered",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ],
+            "temporal_note": "출처 작성시점의 설명; 현재 상품 조건 재확인 필요"
+          }
+        ],
+        "claims": [
+          {
+            "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+            "evidence_id": "fsc-protection-current",
+            "quote": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다."
+          },
+          {
+            "text": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다.",
+            "evidence_id": "kb-collateral-concept",
+            "quote": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다."
+          },
+          {
+            "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+            "evidence_id": "kb-funding-compare",
+            "quote": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다."
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": "fsc-protection-current",
+            "source_id": "fsc-20250901",
+            "institution": "fsc",
+            "title": "예금보호한도 상향 시행",
+            "section": "2025년 9월 1일부터의 한도",
+            "url": "https://www.fsc.go.kr/no010101/85200",
+            "verified_at": "2026-11-02",
+            "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+            "score": 0.03278689,
+            "published_at": "2025-09-01",
+            "content_as_of": null,
+            "effective_from": "2025-09-01",
+            "effective_until": null,
+            "temporal_basis": "effective_period"
+          },
+          {
+            "chunk_id": "kb-collateral-concept",
+            "source_id": "kbthink-collateral",
+            "institution": "kb_bank",
+            "title": "예금담보대출 안내",
+            "section": "담보와 대상",
+            "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+            "verified_at": "2026-11-02",
+            "text": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다.",
+            "score": 0.03278689,
+            "published_at": "2026-06-22",
+            "content_as_of": "2026-06-17",
+            "effective_from": null,
+            "effective_until": null,
+            "temporal_basis": "publication_snapshot"
+          },
+          {
+            "chunk_id": "kb-funding-compare",
+            "source_id": "kbthink-funding",
+            "institution": "kb_bank",
+            "title": "긴급자금 마련 방법 비교",
+            "section": "비용 비교 원칙",
+            "url": "https://kbthink.com/loan/find/emergency-funds.html",
+            "verified_at": "2026-11-02",
+            "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+            "score": 0.03278689,
+            "published_at": "2026-07-27",
+            "content_as_of": "2026-07-20",
+            "effective_from": null,
+            "effective_until": null,
+            "temporal_basis": "publication_snapshot"
+          }
+        ],
+        "calculation": null,
+        "missing_topics": [],
+        "trace": [
+          {
+            "step": "plan",
+            "planner": "typed_intent_registry_v1",
+            "max_retrieval_calls": 4,
+            "topics": [
+              "protection",
+              "collateral",
+              "funding_compare"
+            ],
+            "as_of": "2026-11-02"
+          },
+          {
+            "step": "retrieve",
+            "topic": "protection",
+            "institution": "fsc",
+            "eligible_ids": [
+              "fsc-protection-current"
+            ],
+            "selected_ids": [
+              "fsc-protection-current"
+            ]
+          },
+          {
+            "step": "retrieve",
+            "topic": "collateral",
+            "institution": "kb_bank",
+            "eligible_ids": [
+              "kb-collateral-concept"
+            ],
+            "selected_ids": [
+              "kb-collateral-concept"
+            ]
+          },
+          {
+            "step": "retrieve",
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "eligible_ids": [
+              "kb-funding-compare"
+            ],
+            "selected_ids": [
+              "kb-funding-compare"
+            ]
+          }
+        ],
+        "latency_ms": 0.446,
+        "generation": "extractive_with_deterministic_tools",
+        "real_transactions_executed": false
+      }
+    },
+    {
+      "request": {
+        "topics": [
+          "protection",
+          "collateral"
+        ],
+        "as_of": "2025-09-01",
+        "retriever": "hybrid",
+        "calculation": null
+      },
+      "response": {
+        "request_id": "cf7c97d8-dab1-4321-bb78-85df900472a3",
+        "status": "partial",
+        "as_of": "2025-09-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "sections": [
+          {
+            "topic": "protection",
+            "status": "answered",
+            "evidence_ids": [
+              "fsc-protection-current"
+            ],
+            "temporal_note": "공표된 시행 기간 기준"
+          },
+          {
+            "topic": "collateral",
+            "status": "not_found",
+            "reason": "no_dated_topic_evidence"
+          }
+        ],
+        "claims": [
+          {
+            "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+            "evidence_id": "fsc-protection-current",
+            "quote": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다."
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": "fsc-protection-current",
+            "source_id": "fsc-20250901",
+            "institution": "fsc",
+            "title": "예금보호한도 상향 시행",
+            "section": "2025년 9월 1일부터의 한도",
+            "url": "https://www.fsc.go.kr/no010101/85200",
+            "verified_at": "2026-11-02",
+            "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+            "score": 0.03278689,
+            "published_at": "2025-09-01",
+            "content_as_of": null,
+            "effective_from": "2025-09-01",
+            "effective_until": null,
+            "temporal_basis": "effective_period"
+          }
+        ],
+        "calculation": null,
+        "missing_topics": [
+          "collateral"
+        ],
+        "trace": [
+          {
+            "step": "plan",
+            "planner": "typed_intent_registry_v1",
+            "max_retrieval_calls": 4,
+            "topics": [
+              "protection",
+              "collateral"
+            ],
+            "as_of": "2025-09-01"
+          },
+          {
+            "step": "retrieve",
+            "topic": "protection",
+            "institution": "fsc",
+            "eligible_ids": [
+              "fsc-protection-current"
+            ],
+            "selected_ids": [
+              "fsc-protection-current"
+            ]
+          },
+          {
+            "step": "retrieve",
+            "topic": "collateral",
+            "institution": "kb_bank",
+            "eligible_ids": [],
+            "selected_ids": []
+          }
+        ],
+        "latency_ms": 0.152,
+        "generation": "extractive_with_deterministic_tools",
+        "real_transactions_executed": false
+      }
+    },
+    {
+      "request": {
+        "topics": [
+          "funding_compare",
+          "funding_inputs"
+        ],
+        "as_of": "2026-11-02",
+        "retriever": "hybrid",
+        "calculation": {
+          "kind": "funding_comparison",
+          "maturity_interest_net_won": "1000000",
+          "early_interest_net_won": "300000",
+          "loan_principal_won": "10000000",
+          "annual_loan_rate_percent": "3.65",
+          "loan_days": 100,
+          "day_basis": 365,
+          "extra_loan_cost_won": "10000"
+        }
+      },
+      "response": {
+        "request_id": "db037a30-b688-4422-b840-c314d64e4056",
+        "status": "answered",
+        "as_of": "2026-11-02",
+        "corpus_version": "dc20def3b9a26c5e",
+        "sections": [
+          {
+            "topic": "funding_compare",
+            "status": "answered",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ],
+            "temporal_note": "출처 작성시점의 설명; 현재 상품 조건 재확인 필요"
+          },
+          {
+            "topic": "funding_inputs",
+            "status": "answered",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ],
+            "temporal_note": "출처 작성시점의 설명; 현재 상품 조건 재확인 필요"
+          }
+        ],
+        "claims": [
+          {
+            "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+            "evidence_id": "kb-funding-compare",
+            "quote": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다."
+          },
+          {
+            "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+            "evidence_id": "kb-funding-inputs",
+            "quote": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다."
+          }
+        ],
+        "citations": [
+          {
+            "chunk_id": "kb-funding-compare",
+            "source_id": "kbthink-funding",
+            "institution": "kb_bank",
+            "title": "긴급자금 마련 방법 비교",
+            "section": "비용 비교 원칙",
+            "url": "https://kbthink.com/loan/find/emergency-funds.html",
+            "verified_at": "2026-11-02",
+            "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+            "score": 0.03278689,
+            "published_at": "2026-07-27",
+            "content_as_of": "2026-07-20",
+            "effective_from": null,
+            "effective_until": null,
+            "temporal_basis": "publication_snapshot"
+          },
+          {
+            "chunk_id": "kb-funding-inputs",
+            "source_id": "kbthink-funding",
+            "institution": "kb_bank",
+            "title": "긴급자금 마련 방법 비교",
+            "section": "비교에 필요한 정보",
+            "url": "https://kbthink.com/loan/find/emergency-funds.html",
+            "verified_at": "2026-11-02",
+            "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+            "score": 0.03278689,
+            "published_at": "2026-07-27",
+            "content_as_of": "2026-07-20",
+            "effective_from": null,
+            "effective_until": null,
+            "temporal_basis": "publication_snapshot"
+          }
+        ],
+        "calculation": {
+          "tool": "funding_comparison",
+          "input": {
+            "kind": "funding_comparison",
+            "maturity_interest_net_won": "1000000",
+            "early_interest_net_won": "300000",
+            "loan_principal_won": "10000000",
+            "annual_loan_rate_percent": "3.65",
+            "loan_days": 100,
+            "day_basis": 365,
+            "extra_loan_cost_won": "10000"
+          },
+          "values": {
+            "loan_interest_won": "100000",
+            "total_loan_cost_won": "110000",
+            "retained_net_interest_won": "890000",
+            "interest_difference_won": "590000",
+            "interest_only_result": "retain_higher"
+          },
+          "formula": "difference = maturity_interest_net - (principal * annual_rate / 100 * days / day_basis + extra_cost) - early_interest_net",
+          "rounding": "KRW integer, ROUND_HALF_UP",
+          "assumptions": [
+            "세후 만기/해지 이자는 사용자 입력",
+            "고정금리 만기일시상환 대출 단리",
+            "대출 원금은 별도로 상환해야 함",
+            "이자 수익만 비교하며 서로 다른 시점의 재투자·기회비용·할인율·추가 자금 흐름은 제외",
+            "상품 추천이나 대출 가능 여부 판단이 아님"
+          ],
+          "origin": "deterministic_decimal_tool_v1",
+          "generated_by_llm": false
+        },
+        "missing_topics": [],
+        "trace": [
+          {
+            "step": "plan",
+            "planner": "typed_intent_registry_v1",
+            "max_retrieval_calls": 4,
+            "topics": [
+              "funding_compare",
+              "funding_inputs"
+            ],
+            "as_of": "2026-11-02"
+          },
+          {
+            "step": "retrieve",
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "eligible_ids": [
+              "kb-funding-compare"
+            ],
+            "selected_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "retrieve",
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "eligible_ids": [
+              "kb-funding-inputs"
+            ],
+            "selected_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "calculate",
+            "tool": "funding_comparison",
+            "input_origin": "user_supplied",
+            "rate_inferred_from_documents": false
+          }
+        ],
+        "latency_ms": 0.303,
+        "generation": "extractive_with_deterministic_tools",
+        "real_transactions_executed": false
+      }
+    }
+  ]
+}

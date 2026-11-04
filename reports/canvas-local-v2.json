@@ -1,0 +1,1205 @@
+{
+  "scope": "Actual local MLX model through localhost HTTP. Small developer-authored UI composition checks, not external benchmark.",
+  "cases": [
+    {
+      "id": "finance",
+      "message": "예금 중도해지와 담보대출의 비용을 비교하고 예금보호 기준도 같이 보여줘",
+      "expected_widgets": [
+        "deposit_protection_widget",
+        "funding_comparison_widget",
+        "funding_inputs_widget"
+      ],
+      "actual_widgets": [
+        "card_freeze_all",
+        "deposit_protection_widget",
+        "funding_comparison_widget",
+        "funding_inputs_widget"
+      ],
+      "exact_match": false,
+      "response": {
+        "status": "composed",
+        "session_id": "952ece9c-1092-4ae3-a78f-6527fc9b36b3",
+        "revision": 1,
+        "greeting": "예금 비용 비교 및 예금보호",
+        "widgets": [
+          {
+            "id": "card_freeze_all",
+            "type": "card_freeze_all",
+            "title": "카드 정지 요청 검토",
+            "order": 0,
+            "layout": {
+              "columns": 12,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [
+              {
+                "id": "review_request",
+                "enabled": false,
+                "requires_user_confirmation": true,
+                "reason": "실제 금융기관 연결과 본인인증이 필요합니다."
+              }
+            ],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "funding_inputs_widget",
+            "type": "funding_inputs_widget",
+            "title": "자금 비교 조건 입력",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "funding_comparison_widget",
+            "type": "funding_comparison_widget",
+            "title": "예금 유지·해지 비용 비교",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "funding_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "funding_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "input_required",
+            "data": {
+              "required_calculation": "funding_comparison"
+            },
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "deposit_protection_widget",
+            "type": "deposit_protection_widget",
+            "title": "예금보호 기준 확인",
+            "order": 3,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "evidence": [
+                {
+                  "chunk_id": "fsc-protection-current",
+                  "source_id": "fsc-20250901",
+                  "institution": "fsc",
+                  "title": "예금보호한도 상향 시행",
+                  "section": "2025년 9월 1일부터의 한도",
+                  "url": "https://www.fsc.go.kr/no010101/85200",
+                  "verified_at": "2026-11-02",
+                  "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+                  "score": 0.03278689,
+                  "published_at": "2025-09-01",
+                  "content_as_of": null,
+                  "effective_from": "2025-09-01",
+                  "effective_until": null,
+                  "temporal_basis": "effective_period"
+                }
+              ]
+            },
+            "data_origin": "reviewed_official_source"
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "card_freeze_all",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "funding_inputs_widget",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "funding_comparison_widget",
+            "index": 2
+          },
+          {
+            "op": "add",
+            "id": "deposit_protection_widget",
+            "index": 3
+          }
+        ],
+        "clarification": "분실 카드 처리 시 정지 요청 대신 해제 절차를 선택해야 하며, 카드 정지와 해제를 동시에 선택하지 마세요.",
+        "registry_version": "df0a0049b8d1afa2",
+        "trace": [
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "rejected",
+            "reason": "freeze_and_recovery_conflict",
+            "latency_ms": 11059.983
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 2,
+            "status": "validated",
+            "latency_ms": 7163.574
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [
+              "funding_inputs_widget"
+            ],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 18247.192
+      }
+    },
+    {
+      "id": "loan",
+      "message": "대출 원금과 금리를 입력해서 매달 납입액과 남은 잔액을 표로 보고 싶어",
+      "expected_widgets": [
+        "loan_inputs_widget",
+        "loan_repayment_schedule_widget"
+      ],
+      "actual_widgets": [
+        "funding_inputs_widget",
+        "loan_inputs_widget",
+        "loan_repayment_schedule_widget"
+      ],
+      "exact_match": false,
+      "response": {
+        "status": "composed",
+        "session_id": "a61d73a6-668c-4bef-baf6-67261bd67c9e",
+        "revision": 1,
+        "greeting": "대출 계산 및 금액 표",
+        "widgets": [
+          {
+            "id": "loan_inputs_widget",
+            "type": "loan_inputs_widget",
+            "title": "대출 상환 조건 입력",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "funding_inputs_widget",
+            "type": "funding_inputs_widget",
+            "title": "자금 비교 조건 입력",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "loan_repayment_schedule_widget",
+            "type": "loan_repayment_schedule_widget",
+            "title": "대출 월 상환표",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "loan_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "loan_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "input_required",
+            "data": {
+              "required_calculation": "amortized_loan"
+            },
+            "data_origin": "unconnected_demo_adapter"
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "loan_inputs_widget",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "funding_inputs_widget",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "loan_repayment_schedule_widget",
+            "index": 2
+          }
+        ],
+        "clarification": "이 화면은 대출 원금, 금리를 입력하여 매월 납입액과 남은 잔액을 표로 보는 기능입니다.",
+        "registry_version": "df0a0049b8d1afa2",
+        "trace": [
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "latency_ms": 6347.123
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 6350.607
+      }
+    },
+    {
+      "id": "travel_mix",
+      "message": "일본 여행 환전과 모임 회비 수납 현황을 같이 보여줘. 보험은 빼줘",
+      "expected_widgets": [
+        "group_account_status",
+        "travel_card_charge_widget"
+      ],
+      "actual_widgets": [
+        "funding_comparison_widget",
+        "funding_inputs_widget",
+        "group_account_status",
+        "loan_inputs_widget",
+        "loan_repayment_schedule_widget",
+        "overseas_qr_payment_widget"
+      ],
+      "exact_match": false,
+      "response": {
+        "status": "composed",
+        "session_id": "12540139-7a10-4580-a929-97f5072cd386",
+        "revision": 1,
+        "greeting": "해외여행 현황",
+        "widgets": [
+          {
+            "id": "overseas_qr_payment_widget",
+            "type": "overseas_qr_payment_widget",
+            "title": "해외 QR 결제",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "group_account_status",
+            "type": "group_account_status",
+            "title": "모임 회비 현황",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "funding_inputs_widget",
+            "type": "funding_inputs_widget",
+            "title": "자금 비교 조건 입력",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "funding_comparison_widget",
+            "type": "funding_comparison_widget",
+            "title": "예금 유지·해지 비용 비교",
+            "order": 3,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "funding_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "funding_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "input_required",
+            "data": {
+              "required_calculation": "funding_comparison"
+            },
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "loan_inputs_widget",
+            "type": "loan_inputs_widget",
+            "title": "대출 상환 조건 입력",
+            "order": 4,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "loan_repayment_schedule_widget",
+            "type": "loan_repayment_schedule_widget",
+            "title": "대출 월 상환표",
+            "order": 5,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "loan_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "loan_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "input_required",
+            "data": {
+              "required_calculation": "amortized_loan"
+            },
+            "data_origin": "unconnected_demo_adapter"
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "overseas_qr_payment_widget",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "group_account_status",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "funding_inputs_widget",
+            "index": 2
+          },
+          {
+            "op": "add",
+            "id": "funding_comparison_widget",
+            "index": 3
+          },
+          {
+            "op": "add",
+            "id": "loan_inputs_widget",
+            "index": 4
+          },
+          {
+            "op": "add",
+            "id": "loan_repayment_schedule_widget",
+            "index": 5
+          }
+        ],
+        "clarification": "이 화면은 여행 관련 금융 내역을 확인하고, 예금 유지/해지, 대출 상환 계획을 보여줍니다.",
+        "registry_version": "df0a0049b8d1afa2",
+        "trace": [
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "latency_ms": 7340.763
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 7341.917
+      }
+    },
+    {
+      "id": "recovered",
+      "message": "분실 신고했던 KB국민카드를 찾았어. 정지 해제 절차를 보여줘",
+      "expected_widgets": [
+        "card_recovery_widget"
+      ],
+      "actual_widgets": [],
+      "exact_match": false,
+      "response": {
+        "status": "invalid_plan",
+        "greeting": "화면 구성을 확인하지 못했습니다. 필요한 기능을 다시 설명해주세요.",
+        "widgets": [],
+        "trace": [
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "rejected",
+            "reason": "freeze_and_recovery_conflict",
+            "latency_ms": 6434.514
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 2,
+            "status": "rejected",
+            "reason": "freeze_and_recovery_conflict",
+            "latency_ms": 6785.828
+          }
+        ]
+      }
+    },
+    {
+      "id": "only_fx",
+      "message": "미국 달러 환전 화면만 필요해. 다른 것은 넣지 마",
+      "expected_widgets": [
+        "travel_card_charge_widget"
+      ],
+      "actual_widgets": [
+        "overseas_qr_payment_widget",
+        "travel_card_charge_widget",
+        "travel_insurance_widget"
+      ],
+      "exact_match": false,
+      "response": {
+        "status": "composed",
+        "session_id": "2b4be7c7-f0ce-4c66-a994-b0bed2ca9923",
+        "revision": 1,
+        "greeting": "미국 달러 환전 환율 확인",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "overseas_qr_payment_widget",
+            "type": "overseas_qr_payment_widget",
+            "title": "해외 QR 결제",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "travel_insurance_widget",
+            "type": "travel_insurance_widget",
+            "title": "여행 보험",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "overseas_qr_payment_widget",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "travel_insurance_widget",
+            "index": 2
+          }
+        ],
+        "clarification": "이 화면은 미국 달러 환전에 관련된 통화 및 환전 준비 기능만 포함되어 있습니다.",
+        "registry_version": "df0a0049b8d1afa2",
+        "trace": [
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "latency_ms": 6265.624
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 6266.924
+      }
+    },
+    {
+      "id": "domestic",
+      "message": "부산 국내여행인데 해외 환전이나 해외 QR결제는 필요 없어",
+      "expected_widgets": [],
+      "actual_widgets": [
+        "expense_report_widget",
+        "group_account_status",
+        "travel_card_charge_widget"
+      ],
+      "exact_match": false,
+      "response": {
+        "status": "composed",
+        "session_id": "b40bd01b-d7b8-4dd1-a054-6a7fc3d28b72",
+        "revision": 1,
+        "greeting": "부산 국내여행 준비",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "group_account_status",
+            "type": "group_account_status",
+            "title": "모임 회비 현황",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "expense_report_widget",
+            "type": "expense_report_widget",
+            "title": "모임 지출 리포트",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "group_account_status",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "expense_report_widget",
+            "index": 2
+          }
+        ],
+        "clarification": "해외 환전이나 QR 결제는 필요 없으므로, 해당 위젯은 제외됩니다.",
+        "registry_version": "df0a0049b8d1afa2",
+        "trace": [
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "latency_ms": 5336.3
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 5339.575
+      }
+    },
+    {
+      "id": "lost_cash",
+      "message": "카드를 잃어버렸고 당장 현금도 필요해. 카드 정지와 카드 없는 출금 화면을 보여줘",
+      "expected_widgets": [
+        "atm_smart_withdrawal",
+        "card_freeze_all"
+      ],
+      "actual_widgets": [],
+      "exact_match": false,
+      "response": {
+        "status": "invalid_plan",
+        "greeting": "화면 구성을 확인하지 못했습니다. 필요한 기능을 다시 설명해주세요.",
+        "widgets": [],
+        "trace": [
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "rejected",
+            "reason": "freeze_and_recovery_conflict",
+            "latency_ms": 5825.578
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 2,
+            "status": "rejected",
+            "reason": "freeze_and_recovery_conflict",
+            "latency_ms": 5260.703
+          }
+        ]
+      }
+    },
+    {
+      "id": "group",
+      "message": "동아리 회비 수납과 지출 리포트를 같이 보고 싶어",
+      "expected_widgets": [
+        "expense_report_widget",
+        "group_account_status"
+      ],
+      "actual_widgets": [
+        "expense_report_widget",
+        "group_account_status",
+        "group_card_safety_widget"
+      ],
+      "exact_match": false,
+      "response": {
+        "status": "composed",
+        "session_id": "c247684f-494f-4717-9136-71129bd69b14",
+        "revision": 1,
+        "greeting": "모임·동아리 회비 및 지출 리포트",
+        "widgets": [
+          {
+            "id": "group_account_status",
+            "type": "group_account_status",
+            "title": "모임 회비 현황",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "expense_report_widget",
+            "type": "expense_report_widget",
+            "title": "모임 지출 리포트",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          },
+          {
+            "id": "group_card_safety_widget",
+            "type": "group_card_safety_widget",
+            "title": "모임 카드 관리",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter"
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "group_account_status",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "expense_report_widget",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "group_card_safety_widget",
+            "index": 2
+          }
+        ],
+        "clarification": "이 화면은 모임·동아리 회비 수납과 지출 리포트를 확인하고 공유할 수 있습니다.",
+        "registry_version": "df0a0049b8d1afa2",
+        "trace": [
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "latency_ms": 5924.282
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 5925.732
+      }
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "chunks": 26,
+    "corpus_version": "dc20def3b9a26c5e",
+    "llm_configured": false,
+    "retrievers": [
+      "bm25",
+      "hybrid"
+    ],
+    "embedding_model": null,
+    "default_generation": "extractive",
+    "research_configured": false,
+    "canvas_configured": true
+  },
+  "followup_add": {
+    "status": "composed",
+    "session_id": "952ece9c-1092-4ae3-a78f-6527fc9b36b3",
+    "revision": 2,
+    "greeting": "예금 비용 비교 및 예금보호",
+    "widgets": [
+      {
+        "id": "card_freeze_all",
+        "type": "card_freeze_all",
+        "title": "카드 정지 요청 검토",
+        "order": 0,
+        "layout": {
+          "columns": 12,
+          "mobile_columns": 12
+        },
+        "depends_on": [],
+        "bindings": [],
+        "actions": [
+          {
+            "id": "review_request",
+            "enabled": false,
+            "requires_user_confirmation": true,
+            "reason": "실제 금융기관 연결과 본인인증이 필요합니다."
+          }
+        ],
+        "state": "preview",
+        "data": {},
+        "data_origin": "unconnected_demo_adapter"
+      },
+      {
+        "id": "funding_inputs_widget",
+        "type": "funding_inputs_widget",
+        "title": "자금 비교 조건 입력",
+        "order": 1,
+        "layout": {
+          "columns": 6,
+          "mobile_columns": 12
+        },
+        "depends_on": [],
+        "bindings": [],
+        "actions": [],
+        "state": "input_required",
+        "data": {},
+        "data_origin": "unconnected_demo_adapter"
+      },
+      {
+        "id": "funding_comparison_widget",
+        "type": "funding_comparison_widget",
+        "title": "예금 유지·해지 비용 비교",
+        "order": 2,
+        "layout": {
+          "columns": 6,
+          "mobile_columns": 12
+        },
+        "depends_on": [
+          "funding_inputs_widget"
+        ],
+        "bindings": [
+          {
+            "source": "funding_inputs_widget",
+            "output": "form_values",
+            "target": "calculation_inputs"
+          }
+        ],
+        "actions": [],
+        "state": "input_required",
+        "data": {
+          "required_calculation": "funding_comparison"
+        },
+        "data_origin": "unconnected_demo_adapter"
+      },
+      {
+        "id": "deposit_protection_widget",
+        "type": "deposit_protection_widget",
+        "title": "예금보호 기준 확인",
+        "order": 3,
+        "layout": {
+          "columns": 6,
+          "mobile_columns": 12
+        },
+        "depends_on": [],
+        "bindings": [],
+        "actions": [],
+        "state": "ready",
+        "data": {
+          "evidence": [
+            {
+              "chunk_id": "fsc-protection-current",
+              "source_id": "fsc-20250901",
+              "institution": "fsc",
+              "title": "예금보호한도 상향 시행",
+              "section": "2025년 9월 1일부터의 한도",
+              "url": "https://www.fsc.go.kr/no010101/85200",
+              "verified_at": "2026-11-02",
+              "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+              "score": 0.03278689,
+              "published_at": "2025-09-01",
+              "content_as_of": null,
+              "effective_from": "2025-09-01",
+              "effective_until": null,
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "data_origin": "reviewed_official_source"
+      }
+    ],
+    "patch": [],
+    "clarification": "이 화면은 예금 유지/해지 비용 비교와 예금보호 한도 확인을 위한 위젯입니다. 해외여행 관련 위젯은 포함되지 않았습니다.",
+    "registry_version": "df0a0049b8d1afa2",
+    "trace": [
+      {
+        "step": "llm_plan",
+        "attempt": 1,
+        "status": "validated",
+        "latency_ms": 7518.735
+      },
+      {
+        "step": "compile",
+        "dependencies_added": [],
+        "checks": [
+          "allowlist",
+          "widget_budget",
+          "conflicting_actions",
+          "acyclic_dependencies",
+          "confirmed_actions_only"
+        ]
+      }
+    ],
+    "real_transactions_executed": false,
+    "latency_ms": 7522.419
+  },
+  "stale_revision_http_status": 409,
+  "followup_calculation": {
+    "status": "composed",
+    "session_id": "952ece9c-1092-4ae3-a78f-6527fc9b36b3",
+    "revision": 3,
+    "greeting": "예금 비용 비교 및 예금보호",
+    "widgets": [
+      {
+        "id": "funding_inputs_widget",
+        "type": "funding_inputs_widget",
+        "title": "자금 비교 조건 입력",
+        "order": 0,
+        "layout": {
+          "columns": 6,
+          "mobile_columns": 12
+        },
+        "depends_on": [],
+        "bindings": [],
+        "actions": [],
+        "state": "ready",
+        "data": {
+          "values": {
+            "kind": "funding_comparison",
+            "maturity_interest_net_won": "1000000",
+            "early_interest_net_won": "300000",
+            "loan_principal_won": "10000000",
+            "annual_loan_rate_percent": "3.65",
+            "loan_days": 100,
+            "day_basis": 365,
+            "extra_loan_cost_won": "10000"
+          }
+        },
+        "data_origin": "user_input"
+      },
+      {
+        "id": "funding_comparison_widget",
+        "type": "funding_comparison_widget",
+        "title": "예금 유지·해지 비용 비교",
+        "order": 1,
+        "layout": {
+          "columns": 6,
+          "mobile_columns": 12
+        },
+        "depends_on": [
+          "funding_inputs_widget"
+        ],
+        "bindings": [
+          {
+            "source": "funding_inputs_widget",
+            "output": "form_values",
+            "target": "calculation_inputs"
+          }
+        ],
+        "actions": [],
+        "state": "ready",
+        "data": {
+          "tool": "funding_comparison",
+          "input": {
+            "kind": "funding_comparison",
+            "maturity_interest_net_won": "1000000",
+            "early_interest_net_won": "300000",
+            "loan_principal_won": "10000000",
+            "annual_loan_rate_percent": "3.65",
+            "loan_days": 100,
+            "day_basis": 365,
+            "extra_loan_cost_won": "10000"
+          },
+          "values": {
+            "loan_interest_won": "100000",
+            "total_loan_cost_won": "110000",
+            "retained_net_interest_won": "890000",
+            "interest_difference_won": "590000",
+            "interest_only_result": "retain_higher"
+          },
+          "formula": "difference = maturity_interest_net - (principal * annual_rate / 100 * days / day_basis + extra_cost) - early_interest_net",
+          "rounding": "KRW integer, ROUND_HALF_UP",
+          "assumptions": [
+            "세후 만기/해지 이자는 사용자 입력",
+            "고정금리 만기일시상환 대출 단리",
+            "대출 원금은 별도로 상환해야 함",
+            "이자 수익만 비교하며 서로 다른 시점의 재투자·기회비용·할인율·추가 자금 흐름은 제외",
+            "상품 추천이나 대출 가능 여부 판단이 아님"
+          ],
+          "origin": "deterministic_decimal_tool_v1",
+          "generated_by_llm": false
+        },
+        "data_origin": "server_decimal_calculator"
+      },
+      {
+        "id": "deposit_protection_widget",
+        "type": "deposit_protection_widget",
+        "title": "예금보호 기준 확인",
+        "order": 2,
+        "layout": {
+          "columns": 6,
+          "mobile_columns": 12
+        },
+        "depends_on": [],
+        "bindings": [],
+        "actions": [],
+        "state": "ready",
+        "data": {
+          "evidence": [
+            {
+              "chunk_id": "fsc-protection-current",
+              "source_id": "fsc-20250901",
+              "institution": "fsc",
+              "title": "예금보호한도 상향 시행",
+              "section": "2025년 9월 1일부터의 한도",
+              "url": "https://www.fsc.go.kr/no010101/85200",
+              "verified_at": "2026-11-02",
+              "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+              "score": 0.03278689,
+              "published_at": "2025-09-01",
+              "content_as_of": null,
+              "effective_from": "2025-09-01",
+              "effective_until": null,
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "data_origin": "reviewed_official_source"
+      }
+    ],
+    "patch": [
+      {
+        "op": "remove",
+        "id": "card_freeze_all"
+      },
+      {
+        "op": "update",
+        "id": "funding_inputs_widget",
+        "index": 0
+      },
+      {
+        "op": "update",
+        "id": "funding_comparison_widget",
+        "index": 1
+      },
+      {
+        "op": "update",
+        "id": "deposit_protection_widget",
+        "index": 2
+      }
+    ],
+    "clarification": "이 화면은 예금 유지/해지 비용 비교 및 예금보호 한도 확인에 사용됩니다.",
+    "registry_version": "df0a0049b8d1afa2",
+    "trace": [
+      {
+        "step": "llm_plan",
+        "attempt": 1,
+        "status": "validated",
+        "latency_ms": 5887.241
+      },
+      {
+        "step": "compile",
+        "dependencies_added": [],
+        "checks": [
+          "allowlist",
+          "widget_budget",
+          "conflicting_actions",
+          "acyclic_dependencies",
+          "confirmed_actions_only"
+        ]
+      }
+    ],
+    "real_transactions_executed": false,
+    "latency_ms": 5889.523
+  },
+  "summary": {
+    "n": 8,
+    "exact_match": 0
+  }
+}

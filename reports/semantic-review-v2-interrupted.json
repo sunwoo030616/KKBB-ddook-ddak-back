@@ -1,0 +1,158 @@
+{
+  "scope": "Developer-written 12-case exploratory regression; manually labeled, shared widget catalog, not an external or independent benchmark. Frozen before semantic review model inference.",
+  "dataset_sha256": "c72119a5d3e5f6d8670548fba7645bac97a6e39a6a585f1a2b7141af3bba3f3a",
+  "protocol": "Paired off/repair, greedy Qwen3-4B-4bit; fixture previous screens, no labels in inference. V2 adds history/capability-specific critic grammar after partial v1 format failures. Same-model critique is fallible. All outcomes retained.",
+  "results": [
+    {
+      "id": "s01",
+      "mode": "off",
+      "gold": [
+        "travel_card_charge_widget"
+      ],
+      "actual": [
+        "travel_card_charge_widget"
+      ],
+      "exact": true,
+      "wall_ms": 19874.0,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "4fe4c059-6678-45ce-a574-30efa7d52de5",
+        "revision": 1,
+        "greeting": "오사카 여행 환전 준비",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": null,
+              "currency": null,
+              "tripDays": null,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "travel_card_charge_widget",
+              "overseas_qr_payment_widget"
+            ],
+            "scores": [
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.12699027359485626
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.06420604884624481
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.013835396617650986
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.0011211796663701534
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 1.792178227333352e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 1.656601671129465e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 1.653429353609681e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 1.6477688404847868e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 1.645516931603197e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 1.6454228898510337e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 1.6445836081402376e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 1.6394473277614452e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 1.637893910810817e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.6173986296053044e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 14381.63
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 19575.24
+      }
+    }
+  ],
+  "incomplete": true,
+  "stopped_reason": "Execution environment interrupted; local model server and evaluator terminated."
+}

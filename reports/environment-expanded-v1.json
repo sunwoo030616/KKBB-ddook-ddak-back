@@ -1,0 +1,34 @@
+{
+  "python": "3.12.14",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "date": "2026-11-02",
+  "code_status": "local uncommitted working tree",
+  "dependencies": {
+    "fastapi": "0.162.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pytest": "9.2.0",
+    "pypdf": "6.21.4",
+    "fastembed": "0.9.1",
+    "onnxruntime": "1.31.1",
+    "numpy": "2.5.4"
+  },
+  "source_sha256": {
+    "rag_backend/__init__.py": "d4e85bc05e507686083583ee94dbf39ff041915ffbd982eef80615b0199d5595",
+    "rag_backend/app.py": "e4d8d10e98b9b67f63ae453479e9285fd0b9ee25940adc08033fbf7d24e9541c",
+    "rag_backend/dense.py": "be5c2e5b83f3070d7eb96b83c10d6cf27f34ba521b962ef4223374de530127ef",
+    "rag_backend/evaluate.py": "8d58ce3ade51ad523c8141bcb87d1609899335f7a5674cf4bad0ab3a0a67f9ed",
+    "rag_backend/evaluate_finance.py": "b54e18f9b3276df62b6bc86957b626cc323732628a9490375fd97e9a115c03fb",
+    "rag_backend/finance.py": "14695440b24dfb2bbf2ca09d6ca42bc397be13d11f1ce56ab1019e3fe04a8020",
+    "rag_backend/generation.py": "91b9127647a9df3fcde87d63e0168328238197ae93b68a2c0f31fcc40f136bdf",
+    "rag_backend/models.py": "0b370267e2ce2cce14ad86fbd5ac3a8a4263c70ee6c4d3b79040fadcf0e8d3bf",
+    "rag_backend/pipeline.py": "67fb5a1b6cd1e7ce79ec38bd18fea078b98fa45a7236da7a4b3c0cb5baabd9c5",
+    "rag_backend/prepare_document.py": "4a64702e691c3ce18a4f6bf6d4c320d201c0c63778597f116e71764e0a72410c",
+    "rag_backend/retrieval.py": "51e359e5ce34ef523cd53ae82e19acf379118ed30b945d637bfbf78ac75fa47f",
+    "rag_backend/store.py": "410632bdf3b339d0a0d2fab9368b9d7e4cd4f206a89c92b43573dfd8e9a6d5f9",
+    "tests_rag/test_dense.py": "eee65d6b85fe87ed76d3ba5de1dff155683b6cbd14c25f536594b1dce76dc29f",
+    "tests_rag/test_documents.py": "0b2cf31b0b4f4974527e6a4a7a4413cee86090db48659933486f2ebe4d551412",
+    "tests_rag/test_finance.py": "40fffe3cb0ac9477eb1cfac636ab5f5b2b2db7c6119e627f84af32c6f6c3a8c3",
+    "tests_rag/test_pipeline.py": "4aca38309dbd60ad03f3667cf194006236739aabf21652fb42df5d56b807ddd9"
+  }
+}

@@ -65,3 +65,21 @@ def test_interrupted_jobs_are_not_silently_replayed(tmp_path):
     reopened=CanvasJobs(None,path=path)
     try:assert reopened.get('old')['stage']=='interrupted'
     finally:reopened.close()
+
+
+def test_expired_queued_job_never_reaches_the_model(monkeypatch):
+    from types import SimpleNamespace
+    clock=[0.0]
+    monkeypatch.setattr('rag_backend.canvas_jobs.time',SimpleNamespace(time=lambda:clock[0]))
+    composer=BlockingComposer();jobs=CanvasJobs(composer,capacity=2,max_wait=1)
+    try:
+        first=jobs.submit(ComposeRequest(message='먼저 실행'),str(uuid.uuid4()))
+        assert composer.started.wait(1)
+        second=jobs.submit(ComposeRequest(message='대기중 만료'),str(uuid.uuid4()))
+        clock[0]=5;composer.release.set()
+        # Let the queued task reach its deadline check; close() deliberately cancels it.
+        jobs.executor.shutdown(wait=True,cancel_futures=False)
+        assert composer.calls==1 and jobs.get(first['job_id'])['status']=='completed'
+        assert jobs.get(second['job_id'])['status']=='failed'
+        assert '대기시간' in jobs.get(second['job_id'])['error']['message']
+    finally:composer.release.set();jobs.close()

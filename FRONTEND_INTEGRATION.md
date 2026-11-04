@@ -8,13 +8,14 @@
 
 ```bash
 # backend 디렉터리
+python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-research.txt
 .venv/bin/python -m rag_backend.prepare_research_models --download --role canvas_generator --role reranker
 # frontend 디렉터리
 npm ci
 ```
 
-Maven 의존성은 최초 한 번 네트워크로 준비해야 합니다. 이후 개발 스택 실행:
+Java 17과 Node/npm이 필요합니다. 첫 실행은 Maven 의존성을 네트워크로 준비합니다. 이미 준비한 환경에서만 `DEV_MAVEN_OFFLINE=1`로 오프라인 실행할 수 있습니다. 개발 스택 실행:
 
 ```bash
 # backend 디렉터리

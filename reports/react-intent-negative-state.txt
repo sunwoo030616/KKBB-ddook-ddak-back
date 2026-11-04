@@ -1,0 +1,19 @@
+Browser tab: 1, Title: "kkbb-ddook-ddak-front", URL: "http://localhost:5173/".
+0 AXWebArea kkbb-ddook-ddak-front, URL: localhost:5173/
+	1 container root
+		2 container
+			3 button
+			4 heading 깨비뚝딱, Value: 1
+				5 text 깨비뚝딱
+			6 image Star
+			7 button
+		8 container
+			22 container 대화
+				26 text 국내 부산 여행이라 환전이나 해외 결제, 해외여행 보험 모두 필요 없어.
+				27 image 깨비
+				28 text 새로 필요한 금융 기능을 알려주세요. 제외한 기능은 추가하지 않을게요.
+			23 container 맞춤 금융 화면
+			24 text entry area (settable) 금융 상황 입력
+			25 button (disabled) 메시지 전송
+
+The focused UI element is 0 AXWebArea kkbb-ddook-ddak-front, URL: localhost:5173/

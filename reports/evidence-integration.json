@@ -1,0 +1,620 @@
+{
+  "scope": "Actual local Spring/model integration, not a public financial service.",
+  "checks": {
+    "official_evidence_on_financial_screen": true,
+    "zero_model_call_calculation_preserves_evidence": true,
+    "real_model_paper_tools_return_only_observed_metadata": true
+  },
+  "initial": {
+    "job_id": "eb96e4c9-1326-491f-b611-33819265f1d3",
+    "status": "completed",
+    "stage": "completed",
+    "result": {
+      "status": "composed",
+      "session_id": "72347d43-735e-407f-a192-cf597fd38e75",
+      "revision": 1,
+      "greeting": "예금 해지 및 대출 비용 비교",
+      "widgets": [
+        {
+          "id": "funding_inputs_widget",
+          "type": "funding_inputs_widget",
+          "title": "자금 비교 조건 입력",
+          "order": 0,
+          "layout": {
+            "columns": 6,
+            "mobile_columns": 12
+          },
+          "depends_on": [],
+          "bindings": [],
+          "actions": [],
+          "state": "input_required",
+          "data": {},
+          "data_origin": "unconnected_demo_adapter",
+          "context": {}
+        },
+        {
+          "id": "funding_comparison_widget",
+          "type": "funding_comparison_widget",
+          "title": "예금 유지·해지 비용 비교",
+          "order": 1,
+          "layout": {
+            "columns": 6,
+            "mobile_columns": 12
+          },
+          "depends_on": [
+            "funding_inputs_widget"
+          ],
+          "bindings": [
+            {
+              "source": "funding_inputs_widget",
+              "output": "form_values",
+              "target": "calculation_inputs"
+            }
+          ],
+          "actions": [],
+          "state": "input_required",
+          "data": {
+            "required_calculation": "funding_comparison"
+          },
+          "data_origin": "unconnected_demo_adapter",
+          "context": {},
+          "knowledge": {
+            "evidence": [
+              {
+                "chunk_id": "kb-funding-compare",
+                "source_id": "kbthink-funding",
+                "institution": "kb_bank",
+                "title": "긴급자금 마련 방법 비교",
+                "section": "비용 비교 원칙",
+                "url": "https://kbthink.com/loan/find/emergency-funds.html",
+                "verified_at": "2026-11-02",
+                "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+                "score": 0.76416015625,
+                "published_at": "2026-07-27",
+                "content_as_of": "2026-07-20",
+                "effective_from": null,
+                "effective_until": null,
+                "temporal_basis": "publication_snapshot"
+              },
+              {
+                "chunk_id": "kb-funding-inputs",
+                "source_id": "kbthink-funding",
+                "institution": "kb_bank",
+                "title": "긴급자금 마련 방법 비교",
+                "section": "비교에 필요한 정보",
+                "url": "https://kbthink.com/loan/find/emergency-funds.html",
+                "verified_at": "2026-11-02",
+                "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+                "score": 0.58837890625,
+                "published_at": "2026-07-27",
+                "content_as_of": "2026-07-20",
+                "effective_from": null,
+                "effective_until": null,
+                "temporal_basis": "publication_snapshot"
+              },
+              {
+                "chunk_id": "kb-collateral-close",
+                "source_id": "kbthink-collateral",
+                "institution": "kb_bank",
+                "title": "예금담보대출 안내",
+                "section": "예금 해지와 대출 상환",
+                "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+                "verified_at": "2026-11-02",
+                "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+                "score": 0.998046875,
+                "published_at": "2026-06-22",
+                "content_as_of": "2026-06-17",
+                "effective_from": null,
+                "effective_until": null,
+                "temporal_basis": "publication_snapshot"
+              }
+            ],
+            "missing_topics": [],
+            "as_of": "2026-11-04",
+            "corpus_version": "dc20def3b9a26c5e"
+          }
+        }
+      ],
+      "patch": [
+        {
+          "op": "add",
+          "id": "funding_inputs_widget",
+          "index": 0
+        },
+        {
+          "op": "add",
+          "id": "funding_comparison_widget",
+          "index": 1
+        }
+      ],
+      "clarification": "",
+      "registry_version": "b2b7d3c3ef3891c3",
+      "context": {},
+      "trace": [
+        {
+          "step": "component_retrieval",
+          "mode": "multi",
+          "candidate_ids": [
+            "funding_comparison_widget"
+          ],
+          "scores": [
+            {
+              "type": "funding_comparison_widget",
+              "score": 1.0,
+              "full_query_score": 0.39306640625
+            },
+            {
+              "type": "loan_repayment_schedule_widget",
+              "score": 0.0023364712732919257,
+              "full_query_score": 0.0009183883666992188
+            },
+            {
+              "type": "deposit_protection_widget",
+              "score": 0.0010172020574534162,
+              "full_query_score": 0.0003998279571533203
+            },
+            {
+              "type": "travel_insurance_widget",
+              "score": 0.0001137301048136646,
+              "full_query_score": 4.470348358154297e-05
+            },
+            {
+              "type": "atm_smart_withdrawal",
+              "score": 5.898801436335404e-05,
+              "full_query_score": 2.3186206817626953e-05
+            },
+            {
+              "type": "group_card_safety_widget",
+              "score": 4.670516304347826e-05,
+              "full_query_score": 1.8358230590820312e-05
+            },
+            {
+              "type": "expense_report_widget",
+              "score": 4.3824000388198756e-05,
+              "full_query_score": 1.722574234008789e-05
+            },
+            {
+              "type": "autopay_relink_widget",
+              "score": 4.215595885093168e-05,
+              "full_query_score": 1.6570091247558594e-05
+            },
+            {
+              "type": "card_freeze_all",
+              "score": 4.215595885093168e-05,
+              "full_query_score": 1.6570091247558594e-05
+            },
+            {
+              "type": "group_account_status",
+              "score": 4.215595885093168e-05,
+              "full_query_score": 1.6570091247558594e-05
+            },
+            {
+              "type": "card_recovery_widget",
+              "score": 4.185267857142857e-05,
+              "full_query_score": 1.6450881958007812e-05
+            },
+            {
+              "type": "overseas_qr_payment_widget",
+              "score": 4.185267857142857e-05,
+              "full_query_score": 1.6450881958007812e-05
+            },
+            {
+              "type": "travel_card_charge_widget",
+              "score": 4.185267857142857e-05,
+              "full_query_score": 1.6450881958007812e-05
+            },
+            {
+              "type": "id_reissue_status_widget",
+              "score": 4.124611801242236e-05,
+              "full_query_score": 1.621246337890625e-05
+            }
+          ]
+        },
+        {
+          "step": "llm_plan",
+          "attempt": 1,
+          "status": "validated",
+          "deduplicated_types": [],
+          "slot_rejections": [],
+          "latency_ms": 9868.173,
+          "lock_wait_ms": 0.021,
+          "prompt_tokens": 880,
+          "output_tokens": 47
+        },
+        {
+          "step": "evidence_decision",
+          "attempt": 1,
+          "action": "search",
+          "latency_ms": 8695.752,
+          "prompt_tokens": 298,
+          "output_tokens": 95,
+          "model_calls": 1
+        },
+        {
+          "step": "evidence_search",
+          "attempt": 1,
+          "topic": "funding_compare",
+          "institution": "kb_bank",
+          "evidence_ids": [
+            "kb-funding-compare"
+          ]
+        },
+        {
+          "step": "evidence_search",
+          "attempt": 1,
+          "topic": "funding_inputs",
+          "institution": "kb_bank",
+          "evidence_ids": [
+            "kb-funding-inputs"
+          ]
+        },
+        {
+          "step": "evidence_search",
+          "attempt": 1,
+          "topic": "collateral_close",
+          "institution": "kb_bank",
+          "evidence_ids": [
+            "kb-collateral-close"
+          ]
+        },
+        {
+          "step": "evidence_coverage",
+          "status": "complete",
+          "missing_topics": [],
+          "latency_ms": 9302.934
+        },
+        {
+          "step": "context_merge",
+          "normalized_changes": [],
+          "model_changes": []
+        },
+        {
+          "step": "compile",
+          "dependencies_added": [
+            "funding_inputs_widget"
+          ],
+          "checks": [
+            "allowlist",
+            "widget_budget",
+            "conflicting_actions",
+            "acyclic_dependencies",
+            "confirmed_actions_only"
+          ]
+        }
+      ],
+      "real_transactions_executed": false,
+      "latency_ms": 20094.463
+    },
+    "error": null,
+    "timings_ms": {
+      "queued": 1.74,
+      "context": 1.9869999999999999,
+      "understanding": 0.637,
+      "component_retrieval": 908.34,
+      "planning": 9879.392,
+      "binding": 1.788,
+      "evidence": 9304.197,
+      "committing": 4.548,
+      "total": 20102.629
+    }
+  },
+  "calculation": {
+    "job_id": "376969a0-e9da-4521-bad2-1c179e0e11ec",
+    "status": "completed",
+    "stage": "completed",
+    "result": {
+      "status": "composed",
+      "session_id": "72347d43-735e-407f-a192-cf597fd38e75",
+      "revision": 2,
+      "greeting": "예금 해지 및 대출 비용 비교",
+      "widgets": [
+        {
+          "id": "funding_inputs_widget",
+          "type": "funding_inputs_widget",
+          "title": "자금 비교 조건 입력",
+          "order": 0,
+          "layout": {
+            "columns": 6,
+            "mobile_columns": 12
+          },
+          "depends_on": [],
+          "bindings": [],
+          "actions": [],
+          "state": "ready",
+          "data": {
+            "values": {
+              "kind": "funding_comparison",
+              "maturity_interest_net_won": "1000000",
+              "early_interest_net_won": "300000",
+              "loan_principal_won": "10000000",
+              "annual_loan_rate_percent": "3.65",
+              "loan_days": 100,
+              "day_basis": 365,
+              "extra_loan_cost_won": "10000"
+            }
+          },
+          "data_origin": "user_input",
+          "context": {}
+        },
+        {
+          "id": "funding_comparison_widget",
+          "type": "funding_comparison_widget",
+          "title": "예금 유지·해지 비용 비교",
+          "order": 1,
+          "layout": {
+            "columns": 6,
+            "mobile_columns": 12
+          },
+          "depends_on": [
+            "funding_inputs_widget"
+          ],
+          "bindings": [
+            {
+              "source": "funding_inputs_widget",
+              "output": "form_values",
+              "target": "calculation_inputs"
+            }
+          ],
+          "actions": [],
+          "state": "ready",
+          "data": {
+            "tool": "funding_comparison",
+            "input": {
+              "kind": "funding_comparison",
+              "maturity_interest_net_won": "1000000",
+              "early_interest_net_won": "300000",
+              "loan_principal_won": "10000000",
+              "annual_loan_rate_percent": "3.65",
+              "loan_days": 100,
+              "day_basis": 365,
+              "extra_loan_cost_won": "10000"
+            },
+            "values": {
+              "loan_interest_won": "100000",
+              "total_loan_cost_won": "110000",
+              "retained_net_interest_won": "890000",
+              "interest_difference_won": "590000",
+              "interest_only_result": "retain_higher"
+            },
+            "formula": "difference = maturity_interest_net - (principal * annual_rate / 100 * days / day_basis + extra_cost) - early_interest_net",
+            "rounding": "KRW integer, ROUND_HALF_UP",
+            "assumptions": [
+              "세후 만기/해지 이자는 사용자 입력",
+              "고정금리 만기일시상환 대출 단리",
+              "대출 원금은 별도로 상환해야 함",
+              "이자 수익만 비교하며 서로 다른 시점의 재투자·기회비용·할인율·추가 자금 흐름은 제외",
+              "상품 추천이나 대출 가능 여부 판단이 아님"
+            ],
+            "origin": "deterministic_decimal_tool_v1",
+            "generated_by_llm": false
+          },
+          "data_origin": "server_decimal_calculator",
+          "context": {},
+          "knowledge": {
+            "evidence": [
+              {
+                "chunk_id": "kb-funding-compare",
+                "source_id": "kbthink-funding",
+                "institution": "kb_bank",
+                "title": "긴급자금 마련 방법 비교",
+                "section": "비용 비교 원칙",
+                "url": "https://kbthink.com/loan/find/emergency-funds.html",
+                "verified_at": "2026-11-02",
+                "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+                "score": 0.76416015625,
+                "published_at": "2026-07-27",
+                "content_as_of": "2026-07-20",
+                "effective_from": null,
+                "effective_until": null,
+                "temporal_basis": "publication_snapshot"
+              },
+              {
+                "chunk_id": "kb-funding-inputs",
+                "source_id": "kbthink-funding",
+                "institution": "kb_bank",
+                "title": "긴급자금 마련 방법 비교",
+                "section": "비교에 필요한 정보",
+                "url": "https://kbthink.com/loan/find/emergency-funds.html",
+                "verified_at": "2026-11-02",
+                "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+                "score": 0.58837890625,
+                "published_at": "2026-07-27",
+                "content_as_of": "2026-07-20",
+                "effective_from": null,
+                "effective_until": null,
+                "temporal_basis": "publication_snapshot"
+              },
+              {
+                "chunk_id": "kb-collateral-close",
+                "source_id": "kbthink-collateral",
+                "institution": "kb_bank",
+                "title": "예금담보대출 안내",
+                "section": "예금 해지와 대출 상환",
+                "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+                "verified_at": "2026-11-02",
+                "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+                "score": 0.998046875,
+                "published_at": "2026-06-22",
+                "content_as_of": "2026-06-17",
+                "effective_from": null,
+                "effective_until": null,
+                "temporal_basis": "publication_snapshot"
+              }
+            ],
+            "missing_topics": [],
+            "as_of": "2026-11-04",
+            "corpus_version": "dc20def3b9a26c5e"
+          }
+        }
+      ],
+      "patch": [
+        {
+          "op": "update",
+          "id": "funding_inputs_widget",
+          "index": 0
+        },
+        {
+          "op": "update",
+          "id": "funding_comparison_widget",
+          "index": 1
+        }
+      ],
+      "clarification": "",
+      "registry_version": "b2b7d3c3ef3891c3",
+      "context": {},
+      "trace": [
+        {
+          "step": "component_retrieval",
+          "mode": "single",
+          "candidate_ids": [
+            "atm_smart_withdrawal",
+            "autopay_relink_widget",
+            "card_freeze_all",
+            "card_recovery_widget",
+            "deposit_protection_widget",
+            "expense_report_widget",
+            "funding_comparison_widget",
+            "funding_inputs_widget",
+            "group_account_status",
+            "group_card_safety_widget",
+            "id_reissue_status_widget",
+            "loan_inputs_widget",
+            "loan_repayment_schedule_widget",
+            "overseas_qr_payment_widget",
+            "travel_card_charge_widget",
+            "travel_insurance_widget"
+          ],
+          "scores": []
+        },
+        {
+          "step": "router",
+          "route": "parameter_or_form_update",
+          "model_calls": 0
+        },
+        {
+          "step": "context_merge",
+          "normalized_changes": [],
+          "model_changes": []
+        },
+        {
+          "step": "compile",
+          "dependencies_added": [],
+          "checks": [
+            "allowlist",
+            "widget_budget",
+            "conflicting_actions",
+            "acyclic_dependencies",
+            "confirmed_actions_only"
+          ]
+        }
+      ],
+      "real_transactions_executed": false,
+      "latency_ms": 5.218
+    },
+    "error": null,
+    "timings_ms": {
+      "queued": 1.074,
+      "context": 5.059,
+      "component_retrieval": 0.916,
+      "binding": 0.924,
+      "committing": 1.46,
+      "total": 9.433
+    }
+  },
+  "papers": {
+    "status": "metadata_found",
+    "records": [
+      {
+        "doi": "10.21203/rs.3.rs-11197970/v1",
+        "title": "Evidence-Grounded Large Language Model Reasoning for Patient Safety Using Knowledge Graphs and Retrieval-Augmented Generation: Development and Evaluation Study",
+        "authors": [
+          "Sharare Taheri Moghadam",
+          "Md Shafiqur Rahman Jabin"
+        ],
+        "year": 2026,
+        "url": "https://doi.org/10.21203/rs.3.rs-11197970/v1",
+        "type": "posted-content"
+      }
+    ],
+    "search_results": [
+      {
+        "doi": "10.21203/rs.3.rs-11197970/v1",
+        "title": "Evidence-Grounded Large Language Model Reasoning for Patient Safety Using Knowledge Graphs and Retrieval-Augmented Generation: Development and Evaluation Study",
+        "authors": [
+          "Sharare Taheri Moghadam",
+          "Md Shafiqur Rahman Jabin"
+        ],
+        "year": 2026,
+        "url": "https://doi.org/10.21203/rs.3.rs-11197970/v1",
+        "type": "posted-content"
+      },
+      {
+        "doi": "10.21203/rs.3.rs-11233939/v1",
+        "title": "Evidence-Grounded Retrieval- Augmented Generation and Knowledge-Graph Grounding for Patient-Safety Reasoning: A Comparative Evaluation",
+        "authors": [
+          "Sharare Taheri Moghadam",
+          "Md Shafiqur Rahman Jabin"
+        ],
+        "year": 2026,
+        "url": "https://doi.org/10.21203/rs.3.rs-11233939/v1",
+        "type": "posted-content"
+      },
+      {
+        "doi": "10.21203/rs.3.rs-9882260/v1",
+        "title": "Operationalizing Reliability Gaps in Large Language Models: A Semi-Systematic Evidence Map of Reasoning, Factuality, Evaluation, and Retrieval-Augmented Generation",
+        "authors": [
+          "Kushal Budha",
+          "Nikesh Lagun"
+        ],
+        "year": 2026,
+        "url": "https://doi.org/10.21203/rs.3.rs-9882260/v1",
+        "type": "posted-content"
+      },
+      {
+        "doi": "10.2196/82026",
+        "title": "Multi-Evidence Clinical Reasoning With Retrieval-Augmented Generation for Emergency Triage: Retrospective Evaluation Study",
+        "authors": [
+          "Hang Sheung Wong",
+          "Tsz Kwan Wong"
+        ],
+        "year": 2026,
+        "url": "https://doi.org/10.2196/82026",
+        "type": "journal-article"
+      },
+      {
+        "doi": "10.2196/preprints.77107",
+        "title": "Optimizing Retrieval-Augmented Generation for Evidence-Based Nursing in Wound Care: Evaluation Study Using German Nursing Guidelines (Preprint)",
+        "authors": [
+          "David Powering",
+          "Eva Rothgang"
+        ],
+        "year": 2026,
+        "url": "https://doi.org/10.2196/preprints.77107",
+        "type": "posted-content"
+      }
+    ],
+    "trace": [
+      {
+        "tool": "search",
+        "result_dois": [
+          "10.21203/rs.3.rs-11197970/v1",
+          "10.21203/rs.3.rs-11233939/v1",
+          "10.21203/rs.3.rs-9882260/v1",
+          "10.2196/82026",
+          "10.2196/preprints.77107"
+        ],
+        "latency_ms": 6618.365
+      },
+      {
+        "tool": "lookup",
+        "doi": "10.21203/rs.3.rs-11197970/v1",
+        "latency_ms": 5168.932
+      },
+      {
+        "tool": "finish",
+        "latency_ms": 5109.831
+      }
+    ],
+    "scope": "Bibliographic metadata only; no full-text access or semantic answer accuracy claim."
+  }
+}

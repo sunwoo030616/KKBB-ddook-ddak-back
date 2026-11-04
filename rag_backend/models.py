@@ -85,7 +85,7 @@ class SearchHit(BaseModel):
     content_as_of: date | None = None
     effective_from: date | None = None
     effective_until: date | None = None
-    temporal_basis: str = 'undated' 
+    temporal_basis: str = 'undated'
 
 
 class Claim(BaseModel):

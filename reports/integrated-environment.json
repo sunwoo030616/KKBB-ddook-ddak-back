@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-03",
+  "python": "3.12.14",
+  "packages": {
+    "fastapi": "0.162.0",
+    "mlx-lm": "0.32.2",
+    "outlines": "1.3.3",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.15.0"
+  },
+  "source_sha256": {
+    "rag_backend/__init__.py": "d4e85bc05e507686083583ee94dbf39ff041915ffbd982eef80615b0199d5595",
+    "rag_backend/app.py": "a5be1090a84dbd1eafe6854ae5015d148e857cfd647c155c7ad50ac07a8b87b0",
+    "rag_backend/calibrate_research.py": "b697f25d0c29477f4ddf559a8acce9c0db88dc426490e5441ea1e1cd2c5692eb",
+    "rag_backend/canvas.py": "2a40d15a329fc613cc92cdb2b8af94f75dccfb5ebd1cc477d0bbf234836bf43a",
+    "rag_backend/canvas_context.py": "2a7d55e5ecce37685711cdfbcf8757b2158619c9f28c67d7418f3a99e05cc9ef",
+    "rag_backend/canvas_jobs.py": "11d8ca0b6630fde52736bc1bf05732d6d70e56f42c98094e868f08566050b4ca",
+    "rag_backend/dense.py": "be5c2e5b83f3070d7eb96b83c10d6cf27f34ba521b962ef4223374de530127ef",
+    "rag_backend/evaluate.py": "8d58ce3ade51ad523c8141bcb87d1609899335f7a5674cf4bad0ab3a0a67f9ed",
+    "rag_backend/evaluate_canvas_http.py": "fee27b9f4e4b9a5f4c128067aab56ab707f2787ad68fdaf04e92f2ab37ba39df",
+    "rag_backend/evaluate_finance.py": "b54e18f9b3276df62b6bc86957b626cc323732628a9490375fd97e9a115c03fb",
+    "rag_backend/evaluate_integrated_ui.py": "b5028b69bd0276b78cc9a67433d63b09d5a631a39995de7ce310471c574a4fb6",
+    "rag_backend/evaluate_research.py": "c1300319104ae64e77296833e3d86fb10034c3a3513692837b6bcead416658a6",
+    "rag_backend/finance.py": "14695440b24dfb2bbf2ca09d6ca42bc397be13d11f1ce56ab1019e3fe04a8020",
+    "rag_backend/generation.py": "91b9127647a9df3fcde87d63e0168328238197ae93b68a2c0f31fcc40f136bdf",
+    "rag_backend/models.py": "0b370267e2ce2cce14ad86fbd5ac3a8a4263c70ee6c4d3b79040fadcf0e8d3bf",
+    "rag_backend/pipeline.py": "67fb5a1b6cd1e7ce79ec38bd18fea078b98fa45a7236da7a4b3c0cb5baabd9c5",
+    "rag_backend/prepare_document.py": "4a64702e691c3ce18a4f6bf6d4c320d201c0c63778597f116e71764e0a72410c",
+    "rag_backend/prepare_research_models.py": "81b0a331e216bbcbefec5ae9e9189b7cbe8ddb3a14217fa3a0dc5b26968f82ac",
+    "rag_backend/render_research_figures.py": "1522f385e94c332ddbf25391b267f0648236c4d688a77cc234015f7b777f0433",
+    "rag_backend/research.py": "bea10d359e3af46bf54d9d422bf8ed11cb0e1dbddd8fa32cd943d76f61a2bb27",
+    "rag_backend/research_models.py": "fc73062dd224e413c4869fa52b66d930dc23251a80cdeea40b65473024affc3c",
+    "rag_backend/retrieval.py": "51e359e5ce34ef523cd53ae82e19acf379118ed30b945d637bfbf78ac75fa47f",
+    "rag_backend/store.py": "410632bdf3b339d0a0d2fab9368b9d7e4cd4f206a89c92b43573dfd8e9a6d5f9",
+    "rag_backend/train_encoder.py": "a5ad5d148a69f5270613f2a071d3a449a2e2b58a3e458e63e87b347900607f77",
+    "rag_backend/widget_registry.py": "29c40157b74c928ea9119dcb94cbff17c6ad3c8db020291ec826db86415b4b16",
+    "scripts/dev_stack.py": "2ccb007130362b65b62322f2c3fdb85d3fe069aa6227bedd273560dcd922e8b9"
+  }
+}

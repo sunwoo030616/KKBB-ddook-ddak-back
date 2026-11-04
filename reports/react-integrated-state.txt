@@ -1,0 +1,74 @@
+Browser tab: 3, Title: "kkbb-ddook-ddak-front", URL: "http://localhost:5173/".
+1 AXWebArea kkbb-ddook-ddak-front, URL: localhost:5173/
+	2 container root
+		3 container
+			4 button
+			5 heading 깨비뚝딱, Value: 1
+				6 text 깨비뚝딱
+			7 image Star
+			8 button
+		9 container
+			23 container 대화
+				27 text 예금 중도해지와 담보대출 비용을 비교하고 예금보호 기준도 같이 보여줘
+				28 image 깨비
+				29 text 예금 관련 비용 비교
+				62 text 현재 화면을 유지하고 입력한 조건으로 예금 유지·해지 비용을 계산해줘
+				63 image 깨비
+				64 text 예금 관련 비용 비교
+				66 text 지금 화면에 대출 월 상환표도 추가해줘
+				67 image 깨비
+				68 text 예금 관련 비용 비교
+			24 container 맞춤 금융 화면
+				30 container
+					31 heading 자금 비교 조건 입력, Value: 1
+						32 text 자금 비교 조건 입력
+					33 container
+						34 text 세후 만기 이자 (원)
+						35 stepper (settable, integer) Description: 세후 만기 이자 (원), Value: 1000000
+					36 container
+						37 text 세후 중도해지 이자 (원)
+						38 stepper (settable, integer) Description: 세후 중도해지 이자 (원), Value: 300000
+					39 container
+						40 text 필요한 대출 원금 (원)
+						41 stepper (settable, integer) Description: 필요한 대출 원금 (원), Value: 10000000
+					42 container
+						43 text 연 금리 (%)
+						44 stepper (settable, float) Description: 연 금리 (%), Value: 3.6500000953674316, Details: 3.65
+					45 container
+						46 text 사용 일수
+						47 stepper (settable, integer) Description: 사용 일수, Value: 100
+					48 container
+						49 text 추가 비용 (없으면 0원)
+						50 stepper (settable, integer) Description: 추가 비용 (없으면 0원), Value: 10000
+					51 button 이 조건으로 계산
+				52 container
+					53 heading 예금 유지·해지 비용 비교, Value: 1
+						54 text 예금 유지·해지 비용 비교
+					65 text 대출 비용을 뺀 만기 이자와 중도해지 이자의 차이 590,000 원 입력한 조건의 이자 차이예요. 재투자와 다른 시점의 현금흐름은 포함하지 않아요.
+				56 container
+					57 heading 예금보호 기준 확인, Value: 1
+						58 text 예금보호 기준 확인
+					59 text 금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.
+					60 link Description: 공식 안내 확인 ↗, Value: fsc.go.kr/no010101/85200
+				69 container
+					70 heading 대출 상환 조건 입력, Value: 1
+						71 text 대출 상환 조건 입력
+					72 container
+						73 text 대출 원금 (원)
+						74 stepper (settable) 대출 원금 (원)
+					75 container
+						76 text 연 금리 (%)
+						77 stepper (settable) 연 금리 (%)
+					78 container
+						79 text 상환 개월 수
+						80 stepper (settable) 상환 개월 수
+					81 button 이 조건으로 계산
+				82 container
+					83 heading 대출 월 상환표, Value: 1
+						84 text 대출 월 상환표
+					85 text 입력 위젯에 조건을 넣으면 계산 결과를 보여드릴게요.
+			25 text entry area (settable) 금융 상황 입력
+			26 button (disabled) 메시지 전송
+			61 button 새 대화 시작
+
+The focused UI element is 1 AXWebArea kkbb-ddook-ddak-front, URL: localhost:5173/

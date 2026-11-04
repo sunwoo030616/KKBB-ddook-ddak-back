@@ -30,4 +30,3 @@ public class CanvasV2Controller {
     @GetMapping("/jobs/{jobId:[a-f0-9-]{36}}")
     public ResponseEntity<?> jobStatus(@PathVariable String jobId) { return enrich(composer.jobStatus(jobId)); }
 }
-

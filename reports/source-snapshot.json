@@ -1,0 +1,71 @@
+{
+  "scope": "Unreviewed extraction candidates; not an expanded approved corpus. No financial dates inferred.",
+  "sources": [
+    {
+      "source_id": "kbthink-lost",
+      "url": "https://kbthink.com/card/lost.html",
+      "retrieved_at": "2026-11-04T01:15:46.469530+00:00",
+      "approved_for_retrieval": false,
+      "policy_dates": "unverified",
+      "status": "prepared",
+      "sha256": "d54c0ff1dd13d1061c734fadf515e2db9e8bc9674e2bcd4ec0c9cf3c4fb9190f",
+      "candidate_count": 21,
+      "changed": false
+    },
+    {
+      "source_id": "kbsec-card-faq",
+      "url": "https://www.kbsec.com/go.able?linkcd=s010423030000",
+      "retrieved_at": "2026-11-04T01:15:47.181381+00:00",
+      "approved_for_retrieval": false,
+      "policy_dates": "unverified",
+      "status": "prepared",
+      "sha256": "14c25aebec70efc7b903e987e8ee46dbd6448e30d260f59054e4cc9e8d3bf9e0",
+      "candidate_count": 6,
+      "changed": false
+    },
+    {
+      "source_id": "kbbank-security-help",
+      "url": "https://obank.kbstar.com/quics?helppage=C019937&page=C019698",
+      "retrieved_at": "2026-11-04T01:15:47.322943+00:00",
+      "approved_for_retrieval": false,
+      "policy_dates": "unverified",
+      "status": "prepared",
+      "sha256": "e09025ca1f838ee929c41189a18ba25a6da1eb4e0526bf77d4fc30519c945ca9",
+      "candidate_count": 2,
+      "changed": false
+    },
+    {
+      "source_id": "shinhan-check-guide",
+      "url": "https://www.shinhancard.com/pconts/html/helpdesk/guide/CONFM90016/CONFM90016R03.html",
+      "retrieved_at": "2026-11-04T01:15:48.051859+00:00",
+      "approved_for_retrieval": false,
+      "policy_dates": "unverified",
+      "status": "prepared",
+      "sha256": "08c2fb0cd276a86ccc3eb0c83076e70279ba3348cc48edaa6d2c8858c2b3fab2",
+      "candidate_count": 16,
+      "changed": false
+    },
+    {
+      "source_id": "fsc-20250722",
+      "url": "https://www.fsc.go.kr/no010101/84974",
+      "retrieved_at": "2026-11-04T01:15:48.122279+00:00",
+      "approved_for_retrieval": false,
+      "policy_dates": "unverified",
+      "status": "prepared",
+      "sha256": "960524bfe10d25c7b9f46f7cfe67e85aa9b358f93e253286753faec0f21cbd22",
+      "candidate_count": 24,
+      "changed": false
+    },
+    {
+      "source_id": "fsc-20250901",
+      "url": "https://www.fsc.go.kr/no010101/85200",
+      "retrieved_at": "2026-11-04T01:15:48.830827+00:00",
+      "approved_for_retrieval": false,
+      "policy_dates": "unverified",
+      "status": "prepared",
+      "sha256": "91ef655e2115a5d476c0b5fd730781fadc5790b2e14e0f90fa32c410b4d8bacf",
+      "candidate_count": 23,
+      "changed": false
+    }
+  ]
+}

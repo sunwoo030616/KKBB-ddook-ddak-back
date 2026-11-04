@@ -41,7 +41,8 @@ try:
     start('ai',[str(ROOT/'.venv/bin/python'),'-m','uvicorn','rag_backend.app:create_app','--factory','--host','127.0.0.1','--port','8767','--no-access-log'],ROOT,'http://127.0.0.1:8767/health',
           {'RAG_ENABLE_CANVAS':'1','HF_HUB_OFFLINE':'1','TRANSFORMERS_OFFLINE':'1'})
     # A POST-free public catalog gives the Spring process a simple, non-generating readiness check.
-    start('spring',[str(ROOT/'mvnw'),'-q','-o',f'-Dmaven.repo.local={ROOT/"var/maven-repository"}','spring-boot:run','-Dspring-boot.run.arguments=--server.port=8088'],ROOT,'http://127.0.0.1:8088/api/canvas/v2/health',
+    offline=['-o'] if os.getenv('DEV_MAVEN_OFFLINE')=='1' else []
+    start('spring',[str(ROOT/'mvnw'),'-q',*offline,f'-Dmaven.repo.local={ROOT/"var/maven-repository"}','spring-boot:run','-Dspring-boot.run.arguments=--server.port=8088'],ROOT,'http://127.0.0.1:8088/api/canvas/v2/health',
           {'MAVEN_USER_HOME':str(ROOT/'var/maven-home')})
     start('front',['npm','run','dev'],FRONT,'http://localhost:5173')
     print('Open http://localhost:5173 — Ctrl+C stops only processes launched here.',flush=True)

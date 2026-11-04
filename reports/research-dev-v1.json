@@ -1,0 +1,1262 @@
+{
+  "created_at": "2026-11-03T02:07:11.515252+00:00",
+  "split": "dev",
+  "evaluation_k": [
+    2,
+    4
+  ],
+  "dataset_sha256": "88129574455bb734a218b1dd11cf9333f2c4f4d2e81da679d3893ffcc6cf6253",
+  "dataset_snapshot": "research-dev-v1.questions.json",
+  "models": {
+    "generator": {
+      "repo_id": "mlx-community/Qwen3-1.7B-4bit",
+      "revision": "3b1b1768f8f8cf8351c712464f906e86c2b8269e",
+      "files": {
+        "added_tokens.json": {
+          "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+          "bytes": 707
+        },
+        "config.json": {
+          "sha256": "507a6701220524eb8b283425bf0856a9ae4f21f4052e563896ddd668994b1dc7",
+          "bytes": 937
+        },
+        "merges.txt": {
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "bytes": 1671853
+        },
+        "model.safetensors": {
+          "sha256": "0e86d9677e519323849eac1bc272caae88567a481ff188c431f70be543d9995f",
+          "bytes": 968080210
+        },
+        "model.safetensors.index.json": {
+          "sha256": "1e3058d4ba4b04e4de35b74467725cbef90ff022198404218e48f21adc9cfa15",
+          "bytes": 49731
+        },
+        "special_tokens_map.json": {
+          "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+          "bytes": 613
+        },
+        "tokenizer.json": {
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "bytes": 11422654
+        },
+        "tokenizer_config.json": {
+          "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+          "bytes": 9706
+        },
+        "vocab.json": {
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "bytes": 2776833
+        }
+      }
+    },
+    "reranker": {
+      "repo_id": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "files": {
+        "config.json": {
+          "sha256": "13dcd6c31d9fec9d1d8e158702072f62d7fa7d312a64b9fe057bec9a08cfe41a",
+          "bytes": 795
+        },
+        "model.safetensors": {
+          "sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+          "bytes": 2271071852
+        },
+        "sentencepiece.bpe.model": {
+          "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "bytes": 5069051
+        },
+        "special_tokens_map.json": {
+          "sha256": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+          "bytes": 964
+        },
+        "tokenizer.json": {
+          "sha256": "69564b696052886ed0ac63fa393e928384e0f8caada38c1f4864a9bfbf379c15",
+          "bytes": 17098273
+        },
+        "tokenizer_config.json": {
+          "sha256": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+          "bytes": 1173
+        }
+      }
+    }
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2",
+      "sentence-transformers": "5.7.0",
+      "torch": "2.15.0",
+      "outlines": "1.3.3"
+    }
+  },
+  "generation_case_ids": [
+    "d01",
+    "d02",
+    "d03",
+    "d04",
+    "d05",
+    "d06"
+  ],
+  "limits": [
+    "Small same-author hand-labeled dataset and 26 reviewed paraphrases, not independent financial benchmark",
+    "Test generation subset declared before inference; retrieval evaluated on all test cases",
+    "Citation validity and gold evidence coverage do not establish semantic entailment or financial advice accuracy",
+    "Greedy local generation, constrained JSON decoding; no model training or new research-method claim",
+    "Single run; no confidence intervals or cross-model generalization claim"
+  ],
+  "cases": [
+    {
+      "id": "d01",
+      "split": "dev",
+      "question": "국민은행 예금담보대출이 뭔지, 이 대출이 남아 있을 때 예금을 해지하려면 어떻게 하는지 설명해줘",
+      "institutions": [
+        "kb_bank"
+      ],
+      "as_of": "2026-11-02",
+      "gold_ids": [
+        "kb-collateral-concept",
+        "kb-collateral-close"
+      ],
+      "category": "multi_evidence",
+      "plan": {
+        "status": "valid",
+        "text": "{\"subqueries\":[\"국민은행 예금담보대출 개념\",\"국민은행 예금담보대출 남은 예금 해지 절차\"]}",
+        "latency_ms": 2290.29,
+        "max_tokens": 240,
+        "constrained_decoding": true,
+        "prompt_sha256": "fc25eda6fe945152d7ecc02ecca8d65e4393b53e7aba0b6f7bb04a2b34882875"
+      },
+      "subqueries": [
+        "국민은행 예금담보대출 개념",
+        "국민은행 예금담보대출 남은 예금 해지 절차"
+      ],
+      "variants": {
+        "baseline": {
+          "selected_ids": [
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kbbank-security-release",
+            "kb-collateral-eligibility"
+          ],
+          "candidate_ids": [
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kbbank-security-release",
+            "kb-collateral-eligibility",
+            "kb-funding-compare"
+          ],
+          "scores": [
+            0.01639344262295082,
+            0.016129032258064516,
+            0.015873015873015872,
+            0.015625
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 16.682,
+          "retrieval_plus_plan_ms": 16.682,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"kb-collateral-close\",\"text\":\"예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다.\"}, {\"evidence_id\":\"kb-collateral-concept\",\"text\":\"예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다.\"}]}",
+              "latency_ms": 11132.356,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "0d50f3b34c1dffa8dfb8b01872059caf5bc2015e5e5986694e42f9132d218e77"
+            },
+            "claims": [
+              {
+                "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다.",
+                "evidence_id": "kb-collateral-close",
+                "quote": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다."
+              },
+              {
+                "text": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다.",
+                "evidence_id": "kb-collateral-concept",
+                "quote": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": true,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        },
+        "rerank": {
+          "selected_ids": [
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-collateral-eligibility",
+            "kb-funding-compare"
+          ],
+          "candidate_ids": [
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kbbank-security-release",
+            "kb-collateral-eligibility",
+            "kb-funding-compare"
+          ],
+          "scores": [
+            0.9942792654037476,
+            0.870307445526123,
+            0.006073600146919489,
+            0.0011532568605616689
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 3254.862,
+          "retrieval_plus_plan_ms": 3254.862
+        },
+        "decompose": {
+          "selected_ids": [
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-collateral-eligibility",
+            "kbbank-security-release"
+          ],
+          "candidate_ids": [
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-collateral-eligibility",
+            "kbbank-security-release",
+            "kb-funding-compare"
+          ],
+          "scores": [
+            0.04841188524590165,
+            0.04839549075403121,
+            0.04788306451612903,
+            0.047371031746031744
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 2.738,
+          "retrieval_plus_plan_ms": 2307.391
+        },
+        "decompose_rerank": {
+          "selected_ids": [
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-collateral-eligibility",
+            "kb-funding-compare"
+          ],
+          "candidate_ids": [
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-collateral-eligibility",
+            "kbbank-security-release",
+            "kb-funding-compare"
+          ],
+          "scores": [
+            0.9942792654037476,
+            0.870307445526123,
+            0.006073600146919489,
+            0.0011532568605616689
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 725.641,
+          "retrieval_plus_plan_ms": 3030.294,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"kb-collateral-close\",\"text\":\"예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다.\"}, {\"evidence_id\":\"kb-collateral-concept\",\"text\":\"예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다.\"}]}",
+              "latency_ms": 7087.064,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "7192586b748ab374e31bd9e37fd3efea579cd3ae035dd4f99372e19c7e22b0a3"
+            },
+            "claims": [
+              {
+                "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다.",
+                "evidence_id": "kb-collateral-close",
+                "quote": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다."
+              },
+              {
+                "text": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다.",
+                "evidence_id": "kb-collateral-concept",
+                "quote": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": true,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        }
+      }
+    },
+    {
+      "id": "d02",
+      "split": "dev",
+      "question": "예금 중도해지와 담보대출을 비교할 때 비용과 준비해야 하는 정보를 알려줘",
+      "institutions": [
+        "kb_bank"
+      ],
+      "as_of": "2026-11-02",
+      "gold_ids": [
+        "kb-funding-compare",
+        "kb-funding-inputs"
+      ],
+      "category": "multi_evidence",
+      "plan": {
+        "status": "valid",
+        "text": "{\"subqueries\":[\"예금 중도해지 시 발생하는 비용\",\"담보대출 준비해야 하는 정보\",\"예금 중도해지와 담보대출의 비용 비교\"]}",
+        "latency_ms": 1405.54,
+        "max_tokens": 240,
+        "constrained_decoding": true,
+        "prompt_sha256": "5a7c3746df4c76067e824181fc1d73b86f9ae8943f2fc9a003f7a0dcd5cfb6e0"
+      },
+      "subqueries": [
+        "예금 중도해지 시 발생하는 비용",
+        "담보대출 준비해야 하는 정보",
+        "예금 중도해지와 담보대출의 비용 비교"
+      ],
+      "variants": {
+        "baseline": {
+          "selected_ids": [
+            "kb-funding-compare",
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-funding-inputs"
+          ],
+          "candidate_ids": [
+            "kb-funding-compare",
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-funding-inputs",
+            "kb-collateral-eligibility"
+          ],
+          "scores": [
+            0.01639344262295082,
+            0.016129032258064516,
+            0.015873015873015872,
+            0.015625
+          ],
+          "recall_at_2": 0.5,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 3.492,
+          "retrieval_plus_plan_ms": 3.492,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"kb-funding-inputs\",\"text\":\"비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다.\"}, {\"evidence_id\":\"kb-funding-inputs\",\"text\":\"자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.\"}]}",
+              "latency_ms": 5272.866,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "d0a680bb9c75a9918bc8e23035707e2ae2960979e210601f8c08f802494a8965"
+            },
+            "claims": [
+              {
+                "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다.",
+                "evidence_id": "kb-funding-inputs",
+                "quote": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다."
+              },
+              {
+                "text": "자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+                "evidence_id": "kb-funding-inputs",
+                "quote": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": false,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        },
+        "rerank": {
+          "selected_ids": [
+            "kb-funding-inputs",
+            "kb-funding-compare",
+            "kb-collateral-close",
+            "kb-collateral-concept"
+          ],
+          "candidate_ids": [
+            "kb-funding-compare",
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-funding-inputs",
+            "kb-collateral-eligibility"
+          ],
+          "scores": [
+            0.5230230093002319,
+            0.4725725054740906,
+            0.10667932033538818,
+            0.06824509054422379
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 1916.598,
+          "retrieval_plus_plan_ms": 1916.598
+        },
+        "decompose": {
+          "selected_ids": [
+            "kb-funding-compare",
+            "kb-funding-inputs",
+            "kb-collateral-close",
+            "kb-collateral-concept"
+          ],
+          "candidate_ids": [
+            "kb-funding-compare",
+            "kb-funding-inputs",
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-collateral-eligibility"
+          ],
+          "scores": [
+            0.06456494325346784,
+            0.06402049075403121,
+            0.0637560803891449,
+            0.06350006400409626
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 2.484,
+          "retrieval_plus_plan_ms": 1410.665
+        },
+        "decompose_rerank": {
+          "selected_ids": [
+            "kb-funding-inputs",
+            "kb-funding-compare",
+            "kb-collateral-close",
+            "kb-collateral-concept"
+          ],
+          "candidate_ids": [
+            "kb-funding-compare",
+            "kb-funding-inputs",
+            "kb-collateral-close",
+            "kb-collateral-concept",
+            "kb-collateral-eligibility"
+          ],
+          "scores": [
+            0.5230230093002319,
+            0.4725725054740906,
+            0.10667932033538818,
+            0.06824509054422379
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 682.153,
+          "retrieval_plus_plan_ms": 2090.334,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"kb-funding-inputs\",\"text\":\"비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다.\"}, {\"evidence_id\":\"kb-funding-compare\",\"text\":\"예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다.\"}]}",
+              "latency_ms": 6408.639,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "dd1a291395d9f45f9641788db6127b2eae7ed8779da46587818a42fe14668551"
+            },
+            "claims": [
+              {
+                "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다.",
+                "evidence_id": "kb-funding-inputs",
+                "quote": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다."
+              },
+              {
+                "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다.",
+                "evidence_id": "kb-funding-compare",
+                "quote": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": true,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        }
+      }
+    },
+    {
+      "id": "d03",
+      "split": "dev",
+      "question": "예금보호 한도에 이자가 포함되는지 궁금해",
+      "institutions": [
+        "fsc"
+      ],
+      "as_of": "2026-11-02",
+      "gold_ids": [
+        "fsc-protection-current"
+      ],
+      "category": "multi_evidence",
+      "plan": {
+        "status": "valid",
+        "text": "{\"subqueries\":[\"예금보호 한도 내 이자가 포함되는지 확인\",\"예금보호 한도의 적용 범위에 대해 궁금해\"]}",
+        "latency_ms": 1459.617,
+        "max_tokens": 240,
+        "constrained_decoding": true,
+        "prompt_sha256": "8feccb81197ccd83dbe71f76d5bdb7ea9824f310c7da90dc5e9b509f1d8d4ad8"
+      },
+      "subqueries": [
+        "예금보호 한도 내 이자가 포함되는지 확인",
+        "예금보호 한도의 적용 범위에 대해 궁금해"
+      ],
+      "variants": {
+        "baseline": {
+          "selected_ids": [
+            "fsc-protection-current"
+          ],
+          "candidate_ids": [
+            "fsc-protection-current"
+          ],
+          "scores": [
+            0.01639344262295082
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 1.412,
+          "retrieval_plus_plan_ms": 1.412,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"fsc-protection-current\",\"text\":\"금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다.\"}]}",
+              "latency_ms": 2896.358,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "1d5ff6aeecb14dde3b35b59bb4ff3b2a35be1a39716ef04791a2af0b9b65c672"
+            },
+            "claims": [
+              {
+                "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다.",
+                "evidence_id": "fsc-protection-current",
+                "quote": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": true,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        },
+        "rerank": {
+          "selected_ids": [
+            "fsc-protection-current"
+          ],
+          "candidate_ids": [
+            "fsc-protection-current"
+          ],
+          "scores": [
+            0.9709547162055969
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 3159.742,
+          "retrieval_plus_plan_ms": 3159.742
+        },
+        "decompose": {
+          "selected_ids": [
+            "fsc-protection-current"
+          ],
+          "candidate_ids": [
+            "fsc-protection-current"
+          ],
+          "scores": [
+            0.04918032786885246
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 1.97,
+          "retrieval_plus_plan_ms": 1462.149
+        },
+        "decompose_rerank": {
+          "selected_ids": [
+            "fsc-protection-current"
+          ],
+          "candidate_ids": [
+            "fsc-protection-current"
+          ],
+          "scores": [
+            0.9709547162055969
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 1349.834,
+          "retrieval_plus_plan_ms": 2810.013,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"fsc-protection-current\",\"text\":\"금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다.\"}]}",
+              "latency_ms": 3612.005,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "dfd7c1a17e6ef570dcfb7011a766ce1f11dfab909ab1a3b17e0fac2768bf492e"
+            },
+            "claims": [
+              {
+                "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다.",
+                "evidence_id": "fsc-protection-current",
+                "quote": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": true,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        }
+      }
+    },
+    {
+      "id": "d04",
+      "split": "dev",
+      "question": "KB증권 체크카드는 해외 사용이나 할부가 가능해?",
+      "institutions": [
+        "kb_securities"
+      ],
+      "as_of": "2026-11-02",
+      "gold_ids": [
+        "kbsec-overseas",
+        "kbsec-installment"
+      ],
+      "category": "multi_evidence",
+      "plan": {
+        "status": "valid",
+        "text": "{\"subqueries\":[\"KB증권 체크카드 해외 사용 가능 여부\",\"KB증권 체크카드 할부 기능\"]}",
+        "latency_ms": 1640.854,
+        "max_tokens": 240,
+        "constrained_decoding": true,
+        "prompt_sha256": "056ba5ea282b0978d618563e296eb36a3d37c44f80b5183b8896d30648521853"
+      },
+      "subqueries": [
+        "KB증권 체크카드 해외 사용 가능 여부",
+        "KB증권 체크카드 할부 기능"
+      ],
+      "variants": {
+        "baseline": {
+          "selected_ids": [
+            "kbsec-installment",
+            "kbsec-overseas",
+            "kbsec-declined",
+            "kbsec-refund"
+          ],
+          "candidate_ids": [
+            "kbsec-installment",
+            "kbsec-overseas",
+            "kbsec-declined",
+            "kbsec-refund",
+            "kbsec-fee"
+          ],
+          "scores": [
+            0.01639344262295082,
+            0.016129032258064516,
+            0.015873015873015872,
+            0.015625
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 2.571,
+          "retrieval_plus_plan_ms": 2.571,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"kbsec-installment\",\"text\":\"KB증권 체크카드는 할부로 결제할 수 없으며 일시불 결제만 가능합니다.\"}, {\"evidence_id\":\"kbsec-overseas\",\"text\":\"해당 KB증권 FAQ에서 안내하는 체크카드는 국내 전용이므로 해외에서 사용할 수 없습니다.\"}]}",
+              "latency_ms": 5197.945,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "916b62f86d705da947231b6249b115700536164d3871c1eb4ac84691289aa6e6"
+            },
+            "claims": [
+              {
+                "text": "KB증권 체크카드는 할부로 결제할 수 없으며 일시불 결제만 가능합니다.",
+                "evidence_id": "kbsec-installment",
+                "quote": "KB증권 체크카드는 할부로 결제할 수 없으며 일시불 결제만 가능합니다."
+              },
+              {
+                "text": "해당 KB증권 FAQ에서 안내하는 체크카드는 국내 전용이므로 해외에서 사용할 수 없습니다.",
+                "evidence_id": "kbsec-overseas",
+                "quote": "해당 KB증권 FAQ에서 안내하는 체크카드는 국내 전용이므로 해외에서 사용할 수 없습니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": true,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        },
+        "rerank": {
+          "selected_ids": [
+            "kbsec-overseas",
+            "kbsec-installment",
+            "kbsec-declined",
+            "kbsec-fee"
+          ],
+          "candidate_ids": [
+            "kbsec-installment",
+            "kbsec-overseas",
+            "kbsec-declined",
+            "kbsec-refund",
+            "kbsec-fee"
+          ],
+          "scores": [
+            0.9976348876953125,
+            0.9914901852607727,
+            0.031164197251200676,
+            0.021637912839651108
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 4152.249,
+          "retrieval_plus_plan_ms": 4152.249
+        },
+        "decompose": {
+          "selected_ids": [
+            "kbsec-installment",
+            "kbsec-overseas",
+            "kbsec-fee",
+            "kbsec-declined"
+          ],
+          "candidate_ids": [
+            "kbsec-installment",
+            "kbsec-overseas",
+            "kbsec-fee",
+            "kbsec-declined",
+            "kbsec-release",
+            "kbsec-limits",
+            "kbsec-refund"
+          ],
+          "scores": [
+            0.04865990111891752,
+            0.04839549075403121,
+            0.0471386476426799,
+            0.04664224664224664
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 4.727,
+          "retrieval_plus_plan_ms": 1647.582
+        },
+        "decompose_rerank": {
+          "selected_ids": [
+            "kbsec-overseas",
+            "kbsec-installment",
+            "kbsec-release",
+            "kbsec-declined"
+          ],
+          "candidate_ids": [
+            "kbsec-installment",
+            "kbsec-overseas",
+            "kbsec-fee",
+            "kbsec-declined",
+            "kbsec-release",
+            "kbsec-limits",
+            "kbsec-refund"
+          ],
+          "scores": [
+            0.9976348876953125,
+            0.9914900660514832,
+            0.03622809424996376,
+            0.031164197251200676
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 767.782,
+          "retrieval_plus_plan_ms": 2410.638,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"kbsec-overseas\",\"text\":\"KB증권 체크카드는 국내 전용이므로 해외에서 사용할 수 없습니다.\"}]}",
+              "latency_ms": 4373.237,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "54a0ec4f99961a5520d9d11acf4b5ee368952d9c055bc186ac23f0d1fe4f14ee"
+            },
+            "claims": [
+              {
+                "text": "KB증권 체크카드는 국내 전용이므로 해외에서 사용할 수 없습니다.",
+                "evidence_id": "kbsec-overseas",
+                "quote": "해당 KB증권 FAQ에서 안내하는 체크카드는 국내 전용이므로 해외에서 사용할 수 없습니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": false,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        }
+      }
+    },
+    {
+      "id": "d05",
+      "split": "dev",
+      "question": "국민은행 예금담보대출 오늘 확정 금리 알려줘",
+      "institutions": [
+        "kb_bank"
+      ],
+      "as_of": "2026-11-02",
+      "gold_ids": [],
+      "category": "unanswerable",
+      "plan": {
+        "status": "valid",
+        "text": "{\"subqueries\":[\"국민은행 예금담보대출 금리 확인\",\"국민은행 예금담보대출 확정 날짜 확인\",\"국민은행 예금담보대출 현금화 처리 방법\"]}",
+        "latency_ms": 1778.112,
+        "max_tokens": 240,
+        "constrained_decoding": true,
+        "prompt_sha256": "594e86ad74a10d321fd167964defa0478297b00a9da57f83d4361210b90a0831"
+      },
+      "subqueries": [
+        "국민은행 예금담보대출 금리 확인",
+        "국민은행 예금담보대출 확정 날짜 확인",
+        "국민은행 예금담보대출 현금화 처리 방법"
+      ],
+      "variants": {
+        "baseline": {
+          "selected_ids": [
+            "kb-collateral-concept",
+            "kb-collateral-eligibility",
+            "kbbank-security-release",
+            "kb-collateral-close"
+          ],
+          "candidate_ids": [
+            "kb-collateral-concept",
+            "kb-collateral-eligibility",
+            "kbbank-security-release",
+            "kb-collateral-close",
+            "kb-funding-inputs"
+          ],
+          "scores": [
+            0.01639344262295082,
+            0.016129032258064516,
+            0.015873015873015872,
+            0.015625
+          ],
+          "recall_at_2": null,
+          "recall_at_4": null,
+          "all_evidence_at_4": null,
+          "retrieval_ms": 1.176,
+          "retrieval_plus_plan_ms": 1.176,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"kb-collateral-concept\",\"text\":\"예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다.\"}, {\"evidence_id\":\"kb-collateral-eligibility\",\"text\":\"KB국민은행의 2026년 6월 17일 기준 안내는 신규 가입 직후, 제3자 명의, 공동명의, 잔액증명서 발급 당일 등의 대출 제한을 설명합니다.\"}, {\"evidence_id\":\"kb-collateral-close\",\"text\":\"예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다.\"}]}",
+              "latency_ms": 8024.626,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "b1f91f635e2e029b89d0fd6bbfd19e9da8543ad429fa3d846bdef48e40c17edd"
+            },
+            "claims": [
+              {
+                "text": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다.",
+                "evidence_id": "kb-collateral-concept",
+                "quote": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다."
+              },
+              {
+                "text": "KB국민은행의 2026년 6월 17일 기준 안내는 신규 가입 직후, 제3자 명의, 공동명의, 잔액증명서 발급 당일 등의 대출 제한을 설명합니다.",
+                "evidence_id": "kb-collateral-eligibility",
+                "quote": "KB국민은행의 2026년 6월 17일 기준 안내는 신규 가입 직후, 제3자 명의, 공동명의, 잔액증명서 발급 당일 등의 대출 제한을 설명합니다. 실제 신청 가능 여부는 당시 상품 약관과 은행 확인이 필요합니다."
+              },
+              {
+                "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다.",
+                "evidence_id": "kb-collateral-close",
+                "quote": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": false,
+            "complete_evidence_coverage": null,
+            "emitted_evidence_precision": 0.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        },
+        "rerank": {
+          "selected_ids": [
+            "kb-collateral-concept",
+            "kb-collateral-close",
+            "kb-collateral-eligibility",
+            "kb-funding-inputs"
+          ],
+          "candidate_ids": [
+            "kb-collateral-concept",
+            "kb-collateral-eligibility",
+            "kbbank-security-release",
+            "kb-collateral-close",
+            "kb-funding-inputs"
+          ],
+          "scores": [
+            0.023385604843497276,
+            0.0017786266980692744,
+            0.001746328896842897,
+            0.0005646709469147027
+          ],
+          "recall_at_2": null,
+          "recall_at_4": null,
+          "all_evidence_at_4": null,
+          "retrieval_ms": 3800.724,
+          "retrieval_plus_plan_ms": 3800.724
+        },
+        "decompose": {
+          "selected_ids": [
+            "kb-collateral-eligibility",
+            "kb-collateral-concept",
+            "kbbank-security-release",
+            "kb-collateral-close"
+          ],
+          "candidate_ids": [
+            "kb-collateral-eligibility",
+            "kb-collateral-concept",
+            "kbbank-security-release",
+            "kb-collateral-close",
+            "kb-funding-compare",
+            "kb-funding-inputs"
+          ],
+          "scores": [
+            0.06478893337698204,
+            0.06403612252369524,
+            0.06401249024199844,
+            0.0625
+          ],
+          "recall_at_2": null,
+          "recall_at_4": null,
+          "all_evidence_at_4": null,
+          "retrieval_ms": 2.845,
+          "retrieval_plus_plan_ms": 1782.696
+        },
+        "decompose_rerank": {
+          "selected_ids": [
+            "kb-collateral-concept",
+            "kb-collateral-close",
+            "kb-collateral-eligibility",
+            "kb-funding-inputs"
+          ],
+          "candidate_ids": [
+            "kb-collateral-eligibility",
+            "kb-collateral-concept",
+            "kbbank-security-release",
+            "kb-collateral-close",
+            "kb-funding-compare",
+            "kb-funding-inputs"
+          ],
+          "scores": [
+            0.02338562160730362,
+            0.0017786266980692744,
+            0.001746328896842897,
+            0.0005646709469147027
+          ],
+          "recall_at_2": null,
+          "recall_at_4": null,
+          "all_evidence_at_4": null,
+          "retrieval_ms": 747.012,
+          "retrieval_plus_plan_ms": 2526.862,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"kb-collateral-concept\",\"text\":\"예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다.\"}, {\"evidence_id\":\"kb-collateral-close\",\"text\":\"예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다.\"}, {\"evidence_id\":\"kb-collateral-eligibility\",\"text\":\"KB국민은행의 2026년 6월 17일 기준 안내는 신규 가입 직후, 제3자 명의, 공동명의, 잔액증명서 발급 당일 등의 대출 제한을 설명합니다.\"}]}",
+              "latency_ms": 8172.845,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "b07596a3c372c561048659015e6ed54c5286bcc7566d399f054ea7c407efef14"
+            },
+            "claims": [
+              {
+                "text": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다.",
+                "evidence_id": "kb-collateral-concept",
+                "quote": "예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다. 예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다."
+              },
+              {
+                "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다.",
+                "evidence_id": "kb-collateral-close",
+                "quote": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다."
+              },
+              {
+                "text": "KB국민은행의 2026년 6월 17일 기준 안내는 신규 가입 직후, 제3자 명의, 공동명의, 잔액증명서 발급 당일 등의 대출 제한을 설명합니다.",
+                "evidence_id": "kb-collateral-eligibility",
+                "quote": "KB국민은행의 2026년 6월 17일 기준 안내는 신규 가입 직후, 제3자 명의, 공동명의, 잔액증명서 발급 당일 등의 대출 제한을 설명합니다. 실제 신청 가능 여부는 당시 상품 약관과 은행 확인이 필요합니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": false,
+            "complete_evidence_coverage": null,
+            "emitted_evidence_precision": 0.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        }
+      }
+    },
+    {
+      "id": "d06",
+      "split": "dev",
+      "question": "신한 체크카드를 새로 받으면 자동납부랑 사용등록은 어떻게 해?",
+      "institutions": [
+        "shinhan_card"
+      ],
+      "as_of": "2026-11-02",
+      "gold_ids": [
+        "shinhan-autopay",
+        "shinhan-registration"
+      ],
+      "category": "multi_evidence",
+      "plan": {
+        "status": "valid",
+        "text": "{\"subqueries\":[\"신한 체크카드 자동납부 설정 방법\",\"신한 체크카드 사용등록 절차\",\"신한 체크카드 초기 설정 과정\"]}",
+        "latency_ms": 1563.068,
+        "max_tokens": 240,
+        "constrained_decoding": true,
+        "prompt_sha256": "2c3781bf0d557cf9c4ab03c8b74abe0279404273237a342da07ec948bd75ccdf"
+      },
+      "subqueries": [
+        "신한 체크카드 자동납부 설정 방법",
+        "신한 체크카드 사용등록 절차",
+        "신한 체크카드 초기 설정 과정"
+      ],
+      "variants": {
+        "baseline": {
+          "selected_ids": [
+            "shinhan-autopay",
+            "shinhan-registration",
+            "shinhan-report",
+            "shinhan-overseas"
+          ],
+          "candidate_ids": [
+            "shinhan-autopay",
+            "shinhan-registration",
+            "shinhan-report",
+            "shinhan-overseas"
+          ],
+          "scores": [
+            0.01639344262295082,
+            0.016129032258064516,
+            0.015873015873015872,
+            0.015625
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 2.013,
+          "retrieval_plus_plan_ms": 2.013,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"shinhan-autopay\",\"text\":\"신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.\"}, {\"evidence_id\":\"shinhan-registration\",\"text\":\"신한 체크카드는 사용 등록 후 이용할 수 있습니다. 고객이 직접 수령한 경우에는 사용안내 문자메시지를 받은 뒤 사용할 수 있다고 안내합니다.\"}]}",
+              "latency_ms": 6122.531,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "5b546ec9e9405779b6a3a26e4d63fc5ed2376e59593a59bf021f71bbf663a1d8"
+            },
+            "claims": [
+              {
+                "text": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.",
+                "evidence_id": "shinhan-autopay",
+                "quote": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다."
+              },
+              {
+                "text": "신한 체크카드는 사용 등록 후 이용할 수 있습니다. 고객이 직접 수령한 경우에는 사용안내 문자메시지를 받은 뒤 사용할 수 있다고 안내합니다.",
+                "evidence_id": "shinhan-registration",
+                "quote": "신한 체크카드는 사용 등록 후 이용할 수 있습니다. 고객이 직접 수령한 경우에는 사용안내 문자메시지를 받은 뒤 사용할 수 있다고 안내합니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": true,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        },
+        "rerank": {
+          "selected_ids": [
+            "shinhan-autopay",
+            "shinhan-registration",
+            "shinhan-report",
+            "shinhan-overseas"
+          ],
+          "candidate_ids": [
+            "shinhan-autopay",
+            "shinhan-registration",
+            "shinhan-report",
+            "shinhan-overseas"
+          ],
+          "scores": [
+            0.6806946992874146,
+            0.34123125672340393,
+            0.001047919038683176,
+            0.0006345692090690136
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 725.229,
+          "retrieval_plus_plan_ms": 725.229
+        },
+        "decompose": {
+          "selected_ids": [
+            "shinhan-autopay",
+            "shinhan-report",
+            "shinhan-registration",
+            "shinhan-overseas"
+          ],
+          "candidate_ids": [
+            "shinhan-autopay",
+            "shinhan-report",
+            "shinhan-registration",
+            "shinhan-overseas"
+          ],
+          "scores": [
+            0.06453291699193339,
+            0.06452452301209573,
+            0.06377247488101534,
+            0.06325204813108039
+          ],
+          "recall_at_2": 0.5,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 1.471,
+          "retrieval_plus_plan_ms": 1565.41
+        },
+        "decompose_rerank": {
+          "selected_ids": [
+            "shinhan-autopay",
+            "shinhan-registration",
+            "shinhan-report",
+            "shinhan-overseas"
+          ],
+          "candidate_ids": [
+            "shinhan-autopay",
+            "shinhan-report",
+            "shinhan-registration",
+            "shinhan-overseas"
+          ],
+          "scores": [
+            0.6806946992874146,
+            0.34123125672340393,
+            0.001047919038683176,
+            0.0006345692090690136
+          ],
+          "recall_at_2": 1.0,
+          "recall_at_4": 1.0,
+          "all_evidence_at_4": true,
+          "retrieval_ms": 475.526,
+          "retrieval_plus_plan_ms": 2039.465,
+          "generation": {
+            "raw": {
+              "status": "valid_structure_and_citations",
+              "quote_origin": "server_full_source_passage",
+              "text": "{\"answerable\":true,\"claims\": [{\"evidence_id\":\"shinhan-autopay\",\"text\":\"신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.\"}, {\"evidence_id\":\"shinhan-registration\",\"text\":\"신한 체크카드는 사용 등록 후 이용할 수 있습니다. 고객이 직접 수령한 경우에는 사용안내 문자메시지를 받은 뒤 사용할 수 있다고 안내합니다.\"}]}",
+              "latency_ms": 6314.347,
+              "max_tokens": 700,
+              "constrained_decoding": true,
+              "prompt_sha256": "b7b96d9bee604afc277dd9162514ab58fac5ab63684c996dcaf13968edca1348"
+            },
+            "claims": [
+              {
+                "text": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.",
+                "evidence_id": "shinhan-autopay",
+                "quote": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다."
+              },
+              {
+                "text": "신한 체크카드는 사용 등록 후 이용할 수 있습니다. 고객이 직접 수령한 경우에는 사용안내 문자메시지를 받은 뒤 사용할 수 있다고 안내합니다.",
+                "evidence_id": "shinhan-registration",
+                "quote": "신한 체크카드는 사용 등록 후 이용할 수 있습니다. 고객이 직접 수령한 경우에는 사용안내 문자메시지를 받은 뒤 사용할 수 있다고 안내합니다."
+              }
+            ],
+            "answered": true,
+            "answerability_correct": true,
+            "complete_evidence_coverage": true,
+            "emitted_evidence_precision": 1.0,
+            "schema_and_citation_valid": true,
+            "status": "answered"
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "retrieval_n": 6,
+      "answerable_n": 5,
+      "mean_recall_at_2": 0.9,
+      "mean_recall_at_4": 1.0,
+      "all_evidence_at_4": 1,
+      "retrieval_plus_plan_p50_ms": 2.292,
+      "generated_n": 6,
+      "answerability_accuracy": 0.8333333333333334,
+      "complete_generation_evidence_coverage": 0.8,
+      "valid_generated_structure_and_citations": 1
+    },
+    "rerank": {
+      "retrieval_n": 6,
+      "answerable_n": 5,
+      "mean_recall_at_2": 1.0,
+      "mean_recall_at_4": 1.0,
+      "all_evidence_at_4": 1,
+      "retrieval_plus_plan_p50_ms": 3207.302,
+      "generated_n": 0,
+      "answerability_accuracy": null,
+      "complete_generation_evidence_coverage": null,
+      "valid_generated_structure_and_citations": null
+    },
+    "decompose": {
+      "retrieval_n": 6,
+      "answerable_n": 5,
+      "mean_recall_at_2": 0.9,
+      "mean_recall_at_4": 1.0,
+      "all_evidence_at_4": 1,
+      "retrieval_plus_plan_p50_ms": 1606.496,
+      "generated_n": 0,
+      "answerability_accuracy": null,
+      "complete_generation_evidence_coverage": null,
+      "valid_generated_structure_and_citations": null
+    },
+    "decompose_rerank": {
+      "retrieval_n": 6,
+      "answerable_n": 5,
+      "mean_recall_at_2": 1.0,
+      "mean_recall_at_4": 1.0,
+      "all_evidence_at_4": 1,
+      "retrieval_plus_plan_p50_ms": 2468.75,
+      "generated_n": 6,
+      "answerability_accuracy": 0.8333333333333334,
+      "complete_generation_evidence_coverage": 0.8,
+      "valid_generated_structure_and_citations": 1
+    }
+  },
+  "corpus_version": "dc20def3b9a26c5e",
+  "plan_valid_rate": 1,
+  "elapsed_seconds": 114.585,
+  "protocol_issue": "SUPERSEDED: Outlines rewrapped an already formatted chat prompt. Do not use these runs for performance claims; corrected generation protocol requires a new run."
+}

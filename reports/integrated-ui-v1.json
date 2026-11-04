@@ -1,0 +1,1296 @@
+{
+  "scope": "Actual local neural models through Spring async job API; developer-authored regression, not independent benchmark.",
+  "requests": [
+    {
+      "message": "일본 여행 갈 거야",
+      "response": {
+        "status": "composed",
+        "session_id": "eb7f3004-9dbd-4fb8-9947-1622995f0df6",
+        "revision": 1,
+        "greeting": "일본 여행 준비",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "일본 · 여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": "일본",
+              "currency": "JPY",
+              "tripDays": null,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {
+              "destination": "일본",
+              "currency": "JPY",
+              "travel_scope": "international"
+            }
+          },
+          {
+            "id": "overseas_qr_payment_widget",
+            "type": "overseas_qr_payment_widget",
+            "title": "일본 · 해외 QR 결제",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": "일본",
+              "currency": "JPY",
+              "tripDays": null,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {
+              "destination": "일본",
+              "currency": "JPY",
+              "travel_scope": "international"
+            }
+          },
+          {
+            "id": "travel_insurance_widget",
+            "type": "travel_insurance_widget",
+            "title": "일본 · 여행 보험",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": "일본",
+              "currency": "JPY",
+              "tripDays": null,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {
+              "destination": "일본",
+              "currency": "JPY",
+              "travel_scope": "international"
+            }
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "overseas_qr_payment_widget",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "travel_insurance_widget",
+            "index": 2
+          }
+        ],
+        "clarification": "해외여행 통화와 환전, QR 결제, 보험 준비를 선택했습니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {
+          "destination": {
+            "value": "일본",
+            "quote": "일본",
+            "origin": "user_quote"
+          },
+          "currency": {
+            "value": "JPY",
+            "quote": "일본",
+            "origin": "destination_lookup"
+          },
+          "travel_scope": {
+            "value": "international",
+            "quote": "일본",
+            "origin": "destination_lookup"
+          }
+        },
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "travel_insurance_widget",
+              "travel_card_charge_widget",
+              "overseas_qr_payment_widget"
+            ],
+            "scores": [
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.9270764589309692
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.8639023900032043
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.06998513638973236
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.003899046452715993
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.00048398535000160336
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 1.75892000697786e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 1.6283049262710847e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 1.6255928130703978e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.621426417841576e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 1.6203335690079257e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 1.6133732060552575e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 1.6116326150950044e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 1.610480285307858e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 1.6085921743069775e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 12740.433
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [
+              "destination"
+            ],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 16167.25
+      },
+      "observed_stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "duplicate_job_reused": true,
+      "wall_ms": 16508.9
+    },
+    {
+      "message": "3박4일이야. 보험은 빼줘",
+      "response": {
+        "status": "composed",
+        "session_id": "eb7f3004-9dbd-4fb8-9947-1622995f0df6",
+        "revision": 2,
+        "greeting": "일본 여행 준비",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "일본 · 여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": "일본",
+              "currency": "JPY",
+              "tripDays": 4,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {
+              "destination": "일본",
+              "currency": "JPY",
+              "travel_scope": "international",
+              "trip_days": 4
+            }
+          },
+          {
+            "id": "overseas_qr_payment_widget",
+            "type": "overseas_qr_payment_widget",
+            "title": "일본 · 해외 QR 결제",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": "일본",
+              "currency": "JPY",
+              "tripDays": 4,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {
+              "destination": "일본",
+              "currency": "JPY",
+              "travel_scope": "international",
+              "trip_days": 4
+            }
+          }
+        ],
+        "patch": [
+          {
+            "op": "remove",
+            "id": "travel_insurance_widget"
+          },
+          {
+            "op": "update",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          },
+          {
+            "op": "update",
+            "id": "overseas_qr_payment_widget",
+            "index": 1
+          }
+        ],
+        "clarification": "보험 기능은 요청에서 제외되었습니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {
+          "destination": {
+            "value": "일본",
+            "quote": "일본",
+            "origin": "user_quote"
+          },
+          "currency": {
+            "value": "JPY",
+            "quote": "일본",
+            "origin": "destination_lookup"
+          },
+          "travel_scope": {
+            "value": "international",
+            "quote": "일본",
+            "origin": "destination_lookup"
+          },
+          "trip_days": {
+            "value": 4,
+            "quote": "3박4일",
+            "origin": "user_quote"
+          }
+        },
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "travel_insurance_widget",
+              "travel_card_charge_widget",
+              "overseas_qr_payment_widget"
+            ],
+            "scores": [
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.16390126943588257
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.0007253986550495028
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 2.742724427662324e-05
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 1.813505878089927e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 1.6263478755718097e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 1.621959927433636e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 1.621338196855504e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 1.618785972823389e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 1.6185265849344432e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 1.6179603335331194e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 1.617696398170665e-05
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 1.6169498849194497e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.612038249731995e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 1.6096786566777155e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated_with_rejected_slots",
+            "slot_rejections": [
+              {
+                "slot": "destination",
+                "reason": "slot_quote_not_in_current_message"
+              }
+            ],
+            "latency_ms": 13499.795
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [
+              "trip_days"
+            ],
+            "model_changes": [
+              "trip_days"
+            ]
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 17639.991
+      },
+      "observed_stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "duplicate_job_reused": true,
+      "wall_ms": 18031.2
+    },
+    {
+      "message": "2만엔으로 환전 금액을 바꿔줘",
+      "response": {
+        "status": "composed",
+        "session_id": "eb7f3004-9dbd-4fb8-9947-1622995f0df6",
+        "revision": 3,
+        "greeting": "일본 여행 준비",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "일본 · 여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": "일본",
+              "currency": "JPY",
+              "tripDays": 4,
+              "requested_amount": {
+                "value": "20000",
+                "currency": "JPY"
+              }
+            },
+            "data_origin": "conversation_context",
+            "context": {
+              "destination": "일본",
+              "currency": "JPY",
+              "travel_scope": "international",
+              "trip_days": 4,
+              "amount": {
+                "value": "20000",
+                "currency": "JPY"
+              }
+            }
+          },
+          {
+            "id": "overseas_qr_payment_widget",
+            "type": "overseas_qr_payment_widget",
+            "title": "일본 · 해외 QR 결제",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": "일본",
+              "currency": "JPY",
+              "tripDays": 4,
+              "requested_amount": {
+                "value": "20000",
+                "currency": "JPY"
+              }
+            },
+            "data_origin": "conversation_context",
+            "context": {
+              "destination": "일본",
+              "currency": "JPY",
+              "travel_scope": "international",
+              "trip_days": 4,
+              "amount": {
+                "value": "20000",
+                "currency": "JPY"
+              }
+            }
+          }
+        ],
+        "patch": [
+          {
+            "op": "update",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          },
+          {
+            "op": "update",
+            "id": "overseas_qr_payment_widget",
+            "index": 1
+          }
+        ],
+        "clarification": "",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {
+          "destination": {
+            "value": "일본",
+            "quote": "일본",
+            "origin": "user_quote"
+          },
+          "currency": {
+            "value": "JPY",
+            "quote": "일본",
+            "origin": "destination_lookup"
+          },
+          "travel_scope": {
+            "value": "international",
+            "quote": "일본",
+            "origin": "destination_lookup"
+          },
+          "trip_days": {
+            "value": 4,
+            "quote": "3박4일",
+            "origin": "user_quote"
+          },
+          "amount": {
+            "value": {
+              "value": "20000",
+              "currency": "JPY"
+            },
+            "quote": "2만엔",
+            "origin": "user_quote"
+          }
+        },
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "atm_smart_withdrawal",
+              "autopay_relink_widget",
+              "card_freeze_all",
+              "card_recovery_widget",
+              "deposit_protection_widget",
+              "expense_report_widget",
+              "funding_comparison_widget",
+              "funding_inputs_widget",
+              "group_account_status",
+              "group_card_safety_widget",
+              "id_reissue_status_widget",
+              "loan_inputs_widget",
+              "loan_repayment_schedule_widget",
+              "overseas_qr_payment_widget",
+              "travel_card_charge_widget",
+              "travel_insurance_widget"
+            ],
+            "scores": []
+          },
+          {
+            "step": "router",
+            "route": "parameter_or_form_update",
+            "model_calls": 0
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [
+              "amount"
+            ],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 3.183
+      },
+      "observed_stages": [
+        "completed"
+      ],
+      "duplicate_job_reused": true,
+      "wall_ms": 20.9
+    },
+    {
+      "message": "분실 신고한 국민카드를 찾았어. 정지 해제 절차를 보여줘",
+      "response": {
+        "status": "composed",
+        "session_id": "257c48da-f8b8-4727-aa15-ac92caf0d3b3",
+        "revision": 1,
+        "greeting": "카드 찾음",
+        "widgets": [
+          {
+            "id": "card_recovery_widget",
+            "type": "card_recovery_widget",
+            "title": "찾은 카드의 정지 해제 절차",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "evidence": [
+                {
+                  "chunk_id": "kbcard-release",
+                  "source_id": "kbthink-lost",
+                  "institution": "kb_card",
+                  "title": "KB국민카드 분실 안내",
+                  "section": "카드를 되찾은 경우",
+                  "url": "https://kbthink.com/card/lost.html",
+                  "verified_at": "2026-11-02",
+                  "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+                  "score": 0.03226646,
+                  "published_at": null,
+                  "content_as_of": null,
+                  "effective_from": null,
+                  "effective_until": null,
+                  "temporal_basis": "undated"
+                }
+              ]
+            },
+            "data_origin": "reviewed_official_source",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "card_recovery_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "card_recovery_widget"
+            ],
+            "scores": [
+              {
+                "type": "card_recovery_widget",
+                "score": 0.9929419755935669
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.9065330624580383
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.041480373591184616
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.0009341238765046
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 0.00024891571956686676
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 6.0263744671829045e-05
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 1.7870343071990646e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 1.6669899196131155e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 1.6447276721009985e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 1.6428215531050228e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 1.6282458091154695e-05
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 1.6248581232503057e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.622150193725247e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 1.618634632905014e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 11039.043
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": [
+              "rejected_irrelevant_destination"
+            ]
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 13669.684
+      },
+      "observed_stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "duplicate_job_reused": true,
+      "wall_ms": 13971.8
+    },
+    {
+      "message": "예금 중도해지와 담보대출 비용을 비교하고 예금보호 기준도 같이 보여줘",
+      "response": {
+        "status": "composed",
+        "session_id": "b2b5c808-c937-46b0-95f5-2fcb40aa418f",
+        "revision": 1,
+        "greeting": "예금 관련 비용 비교",
+        "widgets": [
+          {
+            "id": "funding_inputs_widget",
+            "type": "funding_inputs_widget",
+            "title": "자금 비교 조건 입력",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "funding_comparison_widget",
+            "type": "funding_comparison_widget",
+            "title": "예금 유지·해지 비용 비교",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "funding_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "funding_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "input_required",
+            "data": {
+              "required_calculation": "funding_comparison"
+            },
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "deposit_protection_widget",
+            "type": "deposit_protection_widget",
+            "title": "예금보호 기준 확인",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "evidence": [
+                {
+                  "chunk_id": "fsc-protection-current",
+                  "source_id": "fsc-20250901",
+                  "institution": "fsc",
+                  "title": "예금보호한도 상향 시행",
+                  "section": "2025년 9월 1일부터의 한도",
+                  "url": "https://www.fsc.go.kr/no010101/85200",
+                  "verified_at": "2026-11-02",
+                  "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+                  "score": 0.03278689,
+                  "published_at": "2025-09-01",
+                  "content_as_of": null,
+                  "effective_from": "2025-09-01",
+                  "effective_until": null,
+                  "temporal_basis": "effective_period"
+                }
+              ]
+            },
+            "data_origin": "reviewed_official_source",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "funding_inputs_widget",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "funding_comparison_widget",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "deposit_protection_widget",
+            "index": 2
+          }
+        ],
+        "clarification": "",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "funding_comparison_widget",
+              "deposit_protection_widget"
+            ],
+            "scores": [
+              {
+                "type": "funding_comparison_widget",
+                "score": 0.8801423907279968
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.4240093529224396
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.0002841430250555277
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 9.05822089407593e-05
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 7.459228800144047e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 6.496383139165118e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 4.9072110414272174e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 3.572970672394149e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 1.8765986169455573e-05
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 1.7115406080847606e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 1.6812709873192944e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 1.640093068999704e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 1.636078377487138e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 1.6288018741761334e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 10713.354
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [
+              "funding_inputs_widget"
+            ],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 12839.948
+      },
+      "observed_stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "duplicate_job_reused": true,
+      "wall_ms": 12880.7
+    },
+    {
+      "message": "현재 화면은 유지하면서 입력 조건으로 예금 유지·해지 비용을 계산해줘",
+      "response": {
+        "status": "composed",
+        "session_id": "b2b5c808-c937-46b0-95f5-2fcb40aa418f",
+        "revision": 2,
+        "greeting": "예금 관련 비용 비교",
+        "widgets": [
+          {
+            "id": "funding_inputs_widget",
+            "type": "funding_inputs_widget",
+            "title": "자금 비교 조건 입력",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "values": {
+                "kind": "funding_comparison",
+                "maturity_interest_net_won": "1000000",
+                "early_interest_net_won": "300000",
+                "loan_principal_won": "10000000",
+                "annual_loan_rate_percent": "3.65",
+                "loan_days": 100,
+                "day_basis": 365,
+                "extra_loan_cost_won": "10000"
+              }
+            },
+            "data_origin": "user_input",
+            "context": {}
+          },
+          {
+            "id": "funding_comparison_widget",
+            "type": "funding_comparison_widget",
+            "title": "예금 유지·해지 비용 비교",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "funding_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "funding_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "tool": "funding_comparison",
+              "input": {
+                "kind": "funding_comparison",
+                "maturity_interest_net_won": "1000000",
+                "early_interest_net_won": "300000",
+                "loan_principal_won": "10000000",
+                "annual_loan_rate_percent": "3.65",
+                "loan_days": 100,
+                "day_basis": 365,
+                "extra_loan_cost_won": "10000"
+              },
+              "values": {
+                "loan_interest_won": "100000",
+                "total_loan_cost_won": "110000",
+                "retained_net_interest_won": "890000",
+                "interest_difference_won": "590000",
+                "interest_only_result": "retain_higher"
+              },
+              "formula": "difference = maturity_interest_net - (principal * annual_rate / 100 * days / day_basis + extra_cost) - early_interest_net",
+              "rounding": "KRW integer, ROUND_HALF_UP",
+              "assumptions": [
+                "세후 만기/해지 이자는 사용자 입력",
+                "고정금리 만기일시상환 대출 단리",
+                "대출 원금은 별도로 상환해야 함",
+                "이자 수익만 비교하며 서로 다른 시점의 재투자·기회비용·할인율·추가 자금 흐름은 제외",
+                "상품 추천이나 대출 가능 여부 판단이 아님"
+              ],
+              "origin": "deterministic_decimal_tool_v1",
+              "generated_by_llm": false
+            },
+            "data_origin": "server_decimal_calculator",
+            "context": {}
+          },
+          {
+            "id": "deposit_protection_widget",
+            "type": "deposit_protection_widget",
+            "title": "예금보호 기준 확인",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "evidence": [
+                {
+                  "chunk_id": "fsc-protection-current",
+                  "source_id": "fsc-20250901",
+                  "institution": "fsc",
+                  "title": "예금보호한도 상향 시행",
+                  "section": "2025년 9월 1일부터의 한도",
+                  "url": "https://www.fsc.go.kr/no010101/85200",
+                  "verified_at": "2026-11-02",
+                  "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+                  "score": 0.03278689,
+                  "published_at": "2025-09-01",
+                  "content_as_of": null,
+                  "effective_from": "2025-09-01",
+                  "effective_until": null,
+                  "temporal_basis": "effective_period"
+                }
+              ]
+            },
+            "data_origin": "reviewed_official_source",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "update",
+            "id": "funding_inputs_widget",
+            "index": 0
+          },
+          {
+            "op": "update",
+            "id": "funding_comparison_widget",
+            "index": 1
+          }
+        ],
+        "clarification": "",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "atm_smart_withdrawal",
+              "autopay_relink_widget",
+              "card_freeze_all",
+              "card_recovery_widget",
+              "deposit_protection_widget",
+              "expense_report_widget",
+              "funding_comparison_widget",
+              "funding_inputs_widget",
+              "group_account_status",
+              "group_card_safety_widget",
+              "id_reissue_status_widget",
+              "loan_inputs_widget",
+              "loan_repayment_schedule_widget",
+              "overseas_qr_payment_widget",
+              "travel_card_charge_widget",
+              "travel_insurance_widget"
+            ],
+            "scores": []
+          },
+          {
+            "step": "router",
+            "route": "parameter_or_form_update",
+            "model_calls": 0
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 1.42
+      },
+      "observed_stages": [
+        "completed"
+      ],
+      "duplicate_job_reused": true,
+      "wall_ms": 97.2
+    }
+  ],
+  "checks": [
+    {
+      "name": "destination_initial",
+      "passed": true
+    },
+    {
+      "name": "duration_merged",
+      "passed": true
+    },
+    {
+      "name": "destination_preserved",
+      "passed": true
+    },
+    {
+      "name": "insurance_removed",
+      "passed": true
+    },
+    {
+      "name": "amount_currency",
+      "passed": true
+    },
+    {
+      "name": "duration_still_preserved",
+      "passed": true
+    },
+    {
+      "name": "recovery_not_freeze",
+      "passed": true
+    },
+    {
+      "name": "server_calculation",
+      "passed": true
+    },
+    {
+      "name": "evidence_widget_preserved",
+      "passed": true
+    },
+    {
+      "name": "all_submissions_idempotent",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "checks": 10,
+    "passed": 10,
+    "requests": 6
+  },
+  "model_identity": {
+    "canvas_generator": {
+      "repo": "mlx-community/Qwen3-4B-4bit",
+      "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+      "weight_sha256": {
+        "model.safetensors": "e240c0bdc0ebb0681bf0da0f98d9719fd6ebe269a3633f81542c13e81345651d"
+      }
+    },
+    "reranker": {
+      "repo": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "weight_sha256": {
+        "model.safetensors": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286"
+      }
+    }
+  },
+  "protocol": "Single chat-template application; server validates quoted slots; same-author iterative regression.",
+  "routing_profile": {
+    "rows": [
+      {
+        "message": "일본 여행 갈 거야",
+        "llm_calls": 1,
+        "route": "neural_plan",
+        "wall_ms": 16508.9
+      },
+      {
+        "message": "3박4일이야. 보험은 빼줘",
+        "llm_calls": 1,
+        "route": "neural_plan",
+        "wall_ms": 18031.2
+      },
+      {
+        "message": "2만엔으로 환전 금액을 바꿔줘",
+        "llm_calls": 0,
+        "route": "parameter_or_form_update",
+        "wall_ms": 20.9
+      },
+      {
+        "message": "분실 신고한 국민카드를 찾았어. 정지 해제 절차를 보여줘",
+        "llm_calls": 1,
+        "route": "neural_plan",
+        "wall_ms": 13971.8
+      },
+      {
+        "message": "예금 중도해지와 담보대출 비용을 비교하고 예금보호 기준도 같이 보여줘",
+        "llm_calls": 1,
+        "route": "neural_plan",
+        "wall_ms": 12880.7
+      },
+      {
+        "message": "현재 화면은 유지하면서 입력 조건으로 예금 유지·해지 비용을 계산해줘",
+        "llm_calls": 0,
+        "route": "parameter_or_form_update",
+        "wall_ms": 97.2
+      }
+    ],
+    "total_llm_calls": 4,
+    "zero_llm_requests": 2,
+    "note": "Descriptive counts for six iterative regression requests; not a measured production cost reduction or randomized ablation."
+  }
+}
