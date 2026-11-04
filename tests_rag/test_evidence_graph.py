@@ -161,6 +161,12 @@ def test_boolean_cannot_masquerade_as_a_selection_index(tmp_path):
     assert result['status']=='invalid_selection'
 
 
+def test_korean_measurement_intent_is_available_before_query_generation():
+    from rag_backend.evidence_graph import measurement_entities
+    assert measurement_entities('RTX 5090 전력 측정값','RTX 5090 전력 측정값')==['RTX 5090']
+    assert measurement_entities('A100을 사용하는 방법','A100을 사용하는 방법')==[]
+
+
 def test_snapshot_checks_selected_sources_even_without_an_edge(tmp_path):
     kb=store(tmp_path);other=dict(DOC,id='paper:2');kb.ingest([other])
     class ChangesUnusedSource(Model):

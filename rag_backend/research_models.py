@@ -75,7 +75,7 @@ class MLXGenerator:
         return cache
 
     def complete(self, system, user, max_tokens=500, output_type=None):
-        from mlx_lm import generate
+        from mlx_lm import stream_generate
         from mlx_lm.sample_utils import make_sampler
         prompt = self.tokenizer.apply_chat_template(
             [{'role':'system','content':system},{'role':'user','content':user}],
@@ -84,14 +84,14 @@ class MLXGenerator:
         with self.lock:
             acquired = time.perf_counter()
             schema_cache_hit=False;grammar_setup_ms=0
+            prefix_started=time.perf_counter()
             generation_prompt=prompt;extras={};prefix_trace={'enabled':False,'reused_tokens':0}
             if self.system_prefix_cache is not None:
                 generation_prompt,prompt_cache,prefix_trace=self.system_prefix_cache.prepare(system,prompt)
                 if prompt_cache is not None:extras['prompt_cache']=prompt_cache
-            if output_type is None:
-                text = generate(self.model, self.tokenizer, prompt=generation_prompt, max_tokens=max_tokens,
-                                sampler=make_sampler(temp=0), verbose=False,**extras)
-            else:
+            prefix_setup_ms=(time.perf_counter()-prefix_started)*1000
+            processors=None
+            if output_type is not None:
                 import outlines
                 schema_key=schema_fingerprint(output_type)
                 schema_cache_hit=schema_key in self.structured_generators
@@ -102,11 +102,22 @@ class MLXGenerator:
                         self.structured_generators.pop(next(iter(self.structured_generators)))
                     self.structured_generators[schema_key] = outlines.Generator(self.constrained_model, output_type)
                 grammar_setup_ms=(time.perf_counter()-setup_started)*1000
-                text = self.structured_generators[schema_key](generation_prompt, max_tokens=max_tokens,
-                                                               sampler=make_sampler(temp=0), verbose=False,**extras)
+                processor=self.structured_generators[schema_key].logits_processor
+                if processor is not None:processor.reset();processors=[processor]
+            # Same MLX stream used by mlx_lm.generate, with first-token and
+            # prefill/decode observations instead of an opaque total only.
+            generation_started=time.perf_counter();first_token_ms=None;response=None;text=''
+            for response in stream_generate(self.model,self.tokenizer,prompt=generation_prompt,
+                    max_tokens=max_tokens,sampler=make_sampler(temp=0),logits_processors=processors,**extras):
+                if first_token_ms is None:first_token_ms=(time.perf_counter()-generation_started)*1000
+                text+=response.text
+            generation_ms=(time.perf_counter()-generation_started)*1000
         return {'text':text, 'latency_ms':round((time.perf_counter()-started)*1000,3),
                 'lock_wait_ms':round((acquired-started)*1000,3),
                 'schema_cache_hit':schema_cache_hit,'grammar_setup_ms':round(grammar_setup_ms,3),
+                'prefix_setup_ms':round(prefix_setup_ms,3),'first_token_ms':round(first_token_ms,3) if first_token_ms is not None else None,
+                'generation_ms':round(generation_ms,3),'prefill_ms':round(response.prompt_tokens/response.prompt_tps*1000,3) if response and response.prompt_tps>0 else None,
+                'generation_tps':response.generation_tps if response else None,'finish_reason':response.finish_reason if response else None,
                 'system_prefix_cache':prefix_trace,
                 'prompt_tokens':len(self.tokenizer.encode(prompt)),
                 'output_tokens':len(self.tokenizer.encode(text)),
