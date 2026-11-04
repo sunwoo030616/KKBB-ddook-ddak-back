@@ -103,3 +103,23 @@ def test_fast_prefilter_bounds_cross_encoder_span_work(tmp_path):
 def test_fixed_need_count_rejects_extra_or_missing_queries(tmp_path):
     graph=EvidenceGraph(store(tmp_path),Model({'count':2},{'queries':['only one query']}),Ranker())
     assert graph.build('Compare two independent methods','compact')['status']=='invalid_plan'
+
+
+def test_missing_named_hardware_measurement_skips_retrieval_and_selector(tmp_path):
+    class NeverRank:
+        def score_pairs(self,pairs):raise AssertionError('unsupported hardware must not be scored')
+    result=EvidenceGraph(store(tmp_path),Model(),NeverRank()).build('Measured RTX 5090 power consumption','single')
+    assert result['status']=='not_found' and result['missing_task_ids']==['t0']
+    assert any(t['step']=='measurement_source_presence' for t in result['trace'])
+
+
+def test_measurement_entity_gate_does_not_block_a_method_task(tmp_path):
+    graph=EvidenceGraph(store(tmp_path),Model({'count':2},{'queries':['reasoning tool observations','RTX 5090 power consumption']},{'t0':['e0'],'t1':[]}),Ranker())
+    result=graph.build('Find tool observations and RTX 5090 power consumption','compact')
+    assert result['status']=='partial' and result['missing_task_ids']==['t1']
+
+
+def test_hardware_presence_is_whitespace_tolerant_but_not_a_variant_substring():
+    from rag_backend.evidence_graph import mentions_entities
+    assert mentions_entities('We used RTX 5090 in the experiment.',['RTX5090'])
+    assert not mentions_entities('We used RTX5090Ti in the experiment.',['RTX5090'])
