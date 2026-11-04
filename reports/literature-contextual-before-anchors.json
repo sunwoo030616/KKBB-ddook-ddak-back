@@ -1,0 +1,1703 @@
+{
+  "scope": "Combined profile: Qwen3-4B + CPU English MiniLM reranker + named measurement source-presence guard + opt-in MLX allocator cap. No response cache. Not an isolated causal ablation against older BGE runs.",
+  "generator": {
+    "repo_id": "mlx-community/Qwen3-4B-4bit",
+    "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+    "files": {
+      "added_tokens.json": {
+        "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+        "bytes": 707
+      },
+      "config.json": {
+        "sha256": "b5efdcf3b0035a3638e7228dad4d85f5c4a23f156eb7cdb0b44c8366a5d34d9b",
+        "bytes": 937
+      },
+      "merges.txt": {
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "bytes": 1671853
+      },
+      "model.safetensors": {
+        "sha256": "e240c0bdc0ebb0681bf0da0f98d9719fd6ebe269a3633f81542c13e81345651d",
+        "bytes": 2263022529
+      },
+      "model.safetensors.index.json": {
+        "sha256": "f7825defe5865d179c3b593173d37056be5f202dcb7153985cf74e75ecf1628b",
+        "bytes": 63924
+      },
+      "special_tokens_map.json": {
+        "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+        "bytes": 613
+      },
+      "tokenizer.json": {
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "bytes": 11422654
+      },
+      "tokenizer_config.json": {
+        "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+        "bytes": 9706
+      },
+      "vocab.json": {
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "bytes": 2776833
+      }
+    }
+  },
+  "reranker": {
+    "repo_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "language": "en",
+    "license": "apache-2.0",
+    "scope": "English literature queries and abstracts only. No hosted inference.",
+    "files": {
+      "config.json": {
+        "sha256": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc",
+        "bytes": 794
+      },
+      "model.safetensors": {
+        "sha256": "821d1aa69520101d6e0737f78a042ae25b19e5cb9160701909d10434f4aeb0ae",
+        "bytes": 90870598
+      },
+      "tokenizer.json": {
+        "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+        "bytes": 711396
+      },
+      "tokenizer_config.json": {
+        "sha256": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+        "bytes": 1330
+      },
+      "special_tokens_map.json": {
+        "sha256": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+        "bytes": 132
+      },
+      "vocab.txt": {
+        "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+        "bytes": 231508
+      }
+    }
+  },
+  "resource_policy": {
+    "cache_limit_bytes": 134217728,
+    "configured": true
+  },
+  "mode": "contextual",
+  "setup_seconds": 12.407240625005215,
+  "corpus": {
+    "arxiv:2005.11401": "80972defe22fe913ce23654fe4c298793bc86341c789e39acb968204bd63af58",
+    "arxiv:2210.03629": "698b7bfbf88e48be5e5d72994ca1ec2b4d3e71626149a8822ba92ee13c55cbf0",
+    "arxiv:2305.14283": "5ef26176b00432076bd1bb7e066313049f8fe57bff7189e7e00ed7b67bfbf803",
+    "arxiv:2307.03172": "187dd4ac8c177a6d3de421d19407199ddc86218a639228ca81a732888f8359b2",
+    "arxiv:2310.11511": "d24e3d5447ac556cdb70397617d49f80c994f48cb9e7ee77e1e7002fd88a130a",
+    "arxiv:2403.14403": "1df3d0a2a910c44d56e69e0a530b68b6601a358ea114c9878c4f110aa82e24e2"
+  },
+  "source_sha256": {
+    "rag_backend/evaluate_research.py": "c1300319104ae64e77296833e3d86fb10034c3a3513692837b6bcead416658a6",
+    "rag_backend/inference_cache.py": "226163f4d1225b28561876886633c0cf24f89f7e4dbc2b8f553e08602dea4eb0",
+    "rag_backend/store.py": "663633043f6bfe622625cf5f2392095530a131098e48b214c63df3b2fdfe381c",
+    "rag_backend/evaluate_intent_contract.py": "bb7896bcb6cbe8cf9edef486cc453104cfc7c6007ad5445ab1357bab2b0a514e",
+    "rag_backend/intent_contract.py": "9a0d754529ff4cd77e4169fca69b51ffdff0f9f859fd6bf376d681fa86b5160b",
+    "rag_backend/finance.py": "14695440b24dfb2bbf2ca09d6ca42bc397be13d11f1ce56ab1019e3fe04a8020",
+    "rag_backend/evaluate_finance.py": "b54e18f9b3276df62b6bc86957b626cc323732628a9490375fd97e9a115c03fb",
+    "rag_backend/generation.py": "91b9127647a9df3fcde87d63e0168328238197ae93b68a2c0f31fcc40f136bdf",
+    "rag_backend/models.py": "8bbfe8f57c6f9e420da282e2f4ffcec8ea04851b413cf20247c992c27045c3db",
+    "rag_backend/evaluate_semantic_review.py": "6fdff311e6f52668a351c5ad01be7e123fbfd210abefc6dcaafc25b2d62d057b",
+    "rag_backend/semantic_review.py": "2e90734a7ebe953da184f894bbe8dbdd370a9d0fdf5cb99a6dfbc717632d7ba4",
+    "rag_backend/research.py": "bea10d359e3af46bf54d9d422bf8ed11cb0e1dbddd8fa32cd943d76f61a2bb27",
+    "rag_backend/research_models.py": "fe1e3d78ead83e23a7e9fdc8bc4ede5e61b6c5e729fc0cc3281bd5a0adeee2fd",
+    "rag_backend/canvas_context.py": "2a7d55e5ecce37685711cdfbcf8757b2158619c9f28c67d7418f3a99e05cc9ef",
+    "rag_backend/dense.py": "be5c2e5b83f3070d7eb96b83c10d6cf27f34ba521b962ef4223374de530127ef",
+    "rag_backend/prepare_research_models.py": "81b0a331e216bbcbefec5ae9e9189b7cbe8ddb3a14217fa3a0dc5b26968f82ac",
+    "rag_backend/literature_reranker.py": "a8c6ca8547431437aa595fe443e7f6b4f300500f8440669b811d7c6d4574c712",
+    "rag_backend/evaluate_integrated_ui.py": "b5028b69bd0276b78cc9a67433d63b09d5a631a39995de7ce310471c574a4fb6",
+    "rag_backend/curation_workflow.py": "b60994f05f731b3e8b790941a7c61b182ccd9067ada1a4380b234ffb36fd6f8a",
+    "rag_backend/train_encoder.py": "a5ad5d148a69f5270613f2a071d3a449a2e2b58a3e458e63e87b347900607f77",
+    "rag_backend/knowledge_lab.py": "b6eb947665b2449f0178ceed9d250dcb41c8d718af6e7ae3a2936bb75bb222dd",
+    "rag_backend/__init__.py": "d4e85bc05e507686083583ee94dbf39ff041915ffbd982eef80615b0199d5595",
+    "rag_backend/model_integrity.py": "3cd9ad78ccaa34b584424d3264324d64e0c3779c74fbe8aca04da94c7576acd4",
+    "rag_backend/paper_agent.py": "c63383b991eda4d4627e0652c3aba0a5677425b99d2e96ff0aaea5d67c60067a",
+    "rag_backend/evidence_graph.py": "c7874373cf787cba58686773b6fe4eb978be0713f6e07c1d1533044123a8f4b7",
+    "rag_backend/evidence_agent.py": "345690781da335b9573d65b31096adfd3d9fa0fef92cb1a5557c2b0a4197a542",
+    "rag_backend/canvas_jobs.py": "201ffda2753e5065c2f3ad52c4cf7d9f8337e7f10334ba0c018da7e880923df2",
+    "rag_backend/render_research_figures.py": "1522f385e94c332ddbf25391b267f0648236c4d688a77cc234015f7b777f0433",
+    "rag_backend/evaluate_component_queries.py": "2dc3976ae6df2c005a1a0c234a3f47b8da6162664d29ea5969274d374eb27df5",
+    "rag_backend/research_passages.py": "80fed3a4765872f60414a4dca86dc214e3d7b2e4d81f07eaaabd5319d9408534",
+    "rag_backend/pipeline.py": "67fb5a1b6cd1e7ce79ec38bd18fea078b98fa45a7236da7a4b3c0cb5baabd9c5",
+    "rag_backend/component_queries.py": "0e5b9d7cba75d48b3ec441c5d86b1e628987f04a257897471a68567f1e13fd96",
+    "rag_backend/retrieval.py": "51e359e5ce34ef523cd53ae82e19acf379118ed30b945d637bfbf78ac75fa47f",
+    "rag_backend/app.py": "37366742af38df697a1524017ca2c925eb660db79b0b3aa9d12becae487b66e9",
+    "rag_backend/evaluate_canvas_http.py": "fee27b9f4e4b9a5f4c128067aab56ab707f2787ad68fdaf04e92f2ab37ba39df",
+    "rag_backend/retrieval_acceleration.py": "63235b8360182a25a6927396cfffe43e59c25a131c98cc04bf48d781b73fa120",
+    "rag_backend/evaluate.py": "8d58ce3ade51ad523c8141bcb87d1609899335f7a5674cf4bad0ab3a0a67f9ed",
+    "rag_backend/widget_registry.py": "29c40157b74c928ea9119dcb94cbff17c6ad3c8db020291ec826db86415b4b16",
+    "rag_backend/verify_intent_repair.py": "ae3c181232788dd603dafa89d113158cae55190081c2459bdce16caa3b549956",
+    "rag_backend/prepare_document.py": "4a64702e691c3ce18a4f6bf6d4c320d201c0c63778597f116e71764e0a72410c",
+    "rag_backend/calibrate_research.py": "b697f25d0c29477f4ddf559a8acce9c0db88dc426490e5441ea1e1cd2c5692eb",
+    "rag_backend/canvas.py": "440903b709f6cb5ef4d5fe1de52b89342ef3cfef189db4de0d7b73e53e56d5da",
+    "rag_backend/inference_resources.py": "d82362dc80dd2808e8e5f245e90668b882ebfa989aca699d684ca68a02b52a70"
+  },
+  "rows": [
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2305.14283",
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "검색 질의를 고치는 방법과 질문 복잡도에 따라 검색 횟수를 고르는 방법을 각각 찾아줘.",
+          "query": "method to adjust search queries",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "검색 질의를 고치는 방법과 질문 복잡도에 따라 검색 횟수를 고르는 방법을 각각 찾아줘.",
+          "query": "search query selection based on question complexity",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 5945.38,
+          "prompt_tokens": 145,
+          "output_tokens": 6,
+          "grammar_setup_ms": 629.633,
+          "schema_cache_hit": false,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 28197.359,
+          "prompt_tokens": 362,
+          "output_tokens": 23,
+          "grammar_setup_ms": 12721.4,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 1560.259
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 48,
+          "catalog_entries": 5,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 639.796
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 14067.308,
+          "prompt_tokens": 688,
+          "output_tokens": 16,
+          "grammar_setup_ms": 1514.403,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2305.14283",
+          "source_hash": "5ef26176b00432076bd1bb7e066313049f8fe57bff7189e7e00ed7b67bfbf803",
+          "start": 336,
+          "end": 676
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2403.14403",
+          "source_hash": "1df3d0a2a910c44d56e69e0a530b68b6601a358ea114c9878c4f110aa82e24e2",
+          "start": 570,
+          "end": 791
+        }
+      ],
+      "id": "g1",
+      "split": "dev",
+      "expected": [
+        "arxiv:2305.14283",
+        "arxiv:2403.14403"
+      ],
+      "seconds": 50.76191491691861,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 117721578,
+        "process_peak_bytes": 2946222056,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "성찰 토큰을 쓰는 검색 방식과 추론·도구 실행을 번갈아 하는 방식을 비교할 근거를 찾아줘.",
+          "query": "search method with character token",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "성찰 토큰을 쓰는 검색 방식과 추론·도구 실행을 번갈아 하는 방식을 비교할 근거를 찾아줘.",
+          "query": "reasoning and tool execution alternation method",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 3034.665,
+          "prompt_tokens": 152,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 7292.724,
+          "prompt_tokens": 369,
+          "output_tokens": 20,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 619.569
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 46,
+          "catalog_entries": 5,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 396.521
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 13281.34,
+          "prompt_tokens": 702,
+          "output_tokens": 16,
+          "grammar_setup_ms": 1135.506,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2310.11511",
+          "source_hash": "d24e3d5447ac556cdb70397617d49f80c994f48cb9e7ee77e1e7002fd88a130a",
+          "start": 748,
+          "end": 1105
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2210.03629",
+          "source_hash": "698b7bfbf88e48be5e5d72994ca1ec2b4d3e71626149a8822ba92ee13c55cbf0",
+          "start": 302,
+          "end": 710
+        }
+      ],
+      "id": "g2",
+      "split": "dev",
+      "expected": [
+        "arxiv:2310.11511",
+        "arxiv:2210.03629"
+      ],
+      "seconds": 24.697719124960713,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 117727778,
+        "process_peak_bytes": 2958526496,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2005.11401",
+        "arxiv:2307.03172"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+          "query": "methods using external wikipedia memory for generation",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+          "query": "context loss in long document reasoning",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 2973.352,
+          "prompt_tokens": 149,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 9101.221,
+          "prompt_tokens": 366,
+          "output_tokens": 24,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 957.422
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 40,
+          "catalog_entries": 6,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 385.072
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 17710.405,
+          "prompt_tokens": 772,
+          "output_tokens": 16,
+          "grammar_setup_ms": 2865.382,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2005.11401",
+          "source_hash": "80972defe22fe913ce23654fe4c298793bc86341c789e39acb968204bd63af58",
+          "start": 671,
+          "end": 1054
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2307.03172",
+          "source_hash": "187dd4ac8c177a6d3de421d19407199ddc86218a639228ca81a732888f8359b2",
+          "start": 0,
+          "end": 333
+        }
+      ],
+      "id": "g3",
+      "split": "dev",
+      "expected": [
+        "arxiv:2005.11401",
+        "arxiv:2307.03172"
+      ],
+      "seconds": 31.245160083053634,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 136278666,
+        "process_peak_bytes": 2958526496,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511",
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+          "query": "reasoning with actions",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+          "query": "reflection-token retrieval",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t2",
+          "request_quote": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+          "query": "question-complexity routing",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 3350.215,
+          "prompt_tokens": 131,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 3,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 19803.58,
+          "prompt_tokens": 348,
+          "output_tokens": 25,
+          "grammar_setup_ms": 8668.71,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 1215.418
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 63,
+          "catalog_entries": 7,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 904.617
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 19540.32,
+          "prompt_tokens": 839,
+          "output_tokens": 24,
+          "grammar_setup_ms": 2192.604,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2210.03629",
+          "source_hash": "698b7bfbf88e48be5e5d72994ca1ec2b4d3e71626149a8822ba92ee13c55cbf0",
+          "start": 302,
+          "end": 710
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2310.11511",
+          "source_hash": "d24e3d5447ac556cdb70397617d49f80c994f48cb9e7ee77e1e7002fd88a130a",
+          "start": 570,
+          "end": 957
+        },
+        {
+          "task_id": "t2",
+          "source_id": "arxiv:2403.14403",
+          "source_hash": "1df3d0a2a910c44d56e69e0a530b68b6601a358ea114c9878c4f110aa82e24e2",
+          "start": 792,
+          "end": 1070
+        }
+      ],
+      "id": "g4",
+      "split": "dev",
+      "expected": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511",
+        "arxiv:2403.14403"
+      ],
+      "seconds": 45.43516437499784,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 136287002,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "질문 복잡도로 검색 전략을 고르는 연구에서 단일 검색과 반복 검색에 대한 근거를 찾아줘.",
+          "query": "search strategy for complex question based on question complexity",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "질문 복잡도로 검색 전략을 고르는 연구에서 단일 검색과 반복 검색에 대한 근거를 찾아줘.",
+          "query": "single search vs repeated search in question complexity analysis",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 3544.228,
+          "prompt_tokens": 147,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 8612.202,
+          "prompt_tokens": 364,
+          "output_tokens": 29,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 600.11
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 42,
+          "catalog_entries": 4,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 287.997
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 13178.025,
+          "prompt_tokens": 606,
+          "output_tokens": 16,
+          "grammar_setup_ms": 1026.042,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2403.14403",
+          "source_hash": "1df3d0a2a910c44d56e69e0a530b68b6601a358ea114c9878c4f110aa82e24e2",
+          "start": 570,
+          "end": 791
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2403.14403",
+          "source_hash": "1df3d0a2a910c44d56e69e0a530b68b6601a358ea114c9878c4f110aa82e24e2",
+          "start": 1071,
+          "end": 1531
+        }
+      ],
+      "id": "g5",
+      "split": "dev",
+      "expected": [
+        "arxiv:2403.14403"
+      ],
+      "seconds": 26.322815333027393,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 117727746,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2305.14283",
+        "arxiv:2307.03172"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "Find query rewriting and the positional weakness of long-context models.",
+          "query": "query rewriting",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "Find query rewriting and the positional weakness of long-context models.",
+          "query": "positional weakness of long-context models",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 2770.188,
+          "prompt_tokens": 124,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 8217.309,
+          "prompt_tokens": 341,
+          "output_tokens": 20,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 570.727
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 42,
+          "catalog_entries": 6,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 297.601
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 11620.144,
+          "prompt_tokens": 728,
+          "output_tokens": 16,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2305.14283",
+          "source_hash": "5ef26176b00432076bd1bb7e066313049f8fe57bff7189e7e00ed7b67bfbf803",
+          "start": 155,
+          "end": 579
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2307.03172",
+          "source_hash": "187dd4ac8c177a6d3de421d19407199ddc86218a639228ca81a732888f8359b2",
+          "start": 334,
+          "end": 540
+        }
+      ],
+      "id": "g6",
+      "split": "dev",
+      "expected": [
+        "arxiv:2305.14283",
+        "arxiv:2307.03172"
+      ],
+      "seconds": 23.509650791995227,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 117723786,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "not_found",
+      "actual": [],
+      "exact": true,
+      "missing": [
+        "t0",
+        "t1"
+      ],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "각 논문의 RTX 5090 GPU 전력 소비량을 와트 단위로 측정한 표를 찾아줘.",
+          "query": "RTX 5090 GPU power consumption measurements",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "각 논문의 RTX 5090 GPU 전력 소비량을 와트 단위로 측정한 표를 찾아줘.",
+          "query": "RTX 5090 GPU wattage consumption data",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 3216.078,
+          "prompt_tokens": 147,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 9981.265,
+          "prompt_tokens": 364,
+          "output_tokens": 34,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "measurement_source_presence",
+          "task_id": "t0",
+          "entities": [
+            "RTX 5090"
+          ],
+          "eligible_documents": 0,
+          "scope": "Necessary entity presence only; not measurement or entailment proof."
+        },
+        {
+          "step": "measurement_source_presence",
+          "task_id": "t1",
+          "entities": [
+            "RTX 5090"
+          ],
+          "eligible_documents": 0,
+          "scope": "Necessary entity presence only; not measurement or entailment proof."
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 12.996
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 0,
+          "catalog_entries": 0,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 0.295
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [],
+      "id": "g7",
+      "split": "dev",
+      "expected": [],
+      "seconds": 13.280868457979523,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 79968906,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "partial",
+      "actual": [
+        "arxiv:2310.11511"
+      ],
+      "exact": true,
+      "missing": [
+        "t1"
+      ],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "성찰 토큰을 쓰는 방법을 찾고, 그 논문의 RTX 5090 전력 소비량 측정값도 찾아줘.",
+          "query": "method for using char token",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "성찰 토큰을 쓰는 방법을 찾고, 그 논문의 RTX 5090 전력 소비량 측정값도 찾아줘.",
+          "query": "power consumption of RTX 5090 in the paper",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 2957.678,
+          "prompt_tokens": 155,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 9777.819,
+          "prompt_tokens": 372,
+          "output_tokens": 29,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "measurement_source_presence",
+          "task_id": "t1",
+          "entities": [
+            "RTX 5090"
+          ],
+          "eligible_documents": 0,
+          "scope": "Necessary entity presence only; not measurement or entailment proof."
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 1098.066
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 24,
+          "catalog_entries": 3,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 352.575
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 31319.285,
+          "prompt_tokens": 560,
+          "output_tokens": 14,
+          "grammar_setup_ms": 8193.265,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2310.11511",
+          "source_hash": "d24e3d5447ac556cdb70397617d49f80c994f48cb9e7ee77e1e7002fd88a130a",
+          "start": 748,
+          "end": 1105
+        }
+      ],
+      "id": "g8",
+      "split": "dev",
+      "expected": [
+        "arxiv:2310.11511"
+      ],
+      "seconds": 46.62522308307234,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 117718586,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2005.11401",
+        "arxiv:2210.03629",
+        "arxiv:2310.11511"
+      ],
+      "exact": false,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "도구로 행동하는 추론 연구와 스스로 성찰 토큰을 생성하는 검색 연구를 각각 찾아줘.",
+          "query": "tool-based reasoning research",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "도구로 행동하는 추론 연구와 스스로 성찰 토큰을 생성하는 검색 연구를 각각 찾아줘.",
+          "query": "self-reflective token generation research",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t2",
+          "request_quote": "도구로 행동하는 추론 연구와 스스로 성찰 토큰을 생성하는 검색 연구를 각각 찾아줘.",
+          "query": "autonomous self-assessment methods",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 5324.789,
+          "prompt_tokens": 141,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 3,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 9880.684,
+          "prompt_tokens": 358,
+          "output_tokens": 30,
+          "grammar_setup_ms": 0.001,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 8848.327
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 69,
+          "catalog_entries": 8,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 3469.293
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 66930.625,
+          "prompt_tokens": 919,
+          "output_tokens": 24,
+          "grammar_setup_ms": 5574.903,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2210.03629",
+          "source_hash": "698b7bfbf88e48be5e5d72994ca1ec2b4d3e71626149a8822ba92ee13c55cbf0",
+          "start": 302,
+          "end": 710
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2310.11511",
+          "source_hash": "d24e3d5447ac556cdb70397617d49f80c994f48cb9e7ee77e1e7002fd88a130a",
+          "start": 570,
+          "end": 957
+        },
+        {
+          "task_id": "t2",
+          "source_id": "arxiv:2005.11401",
+          "source_hash": "80972defe22fe913ce23654fe4c298793bc86341c789e39acb968204bd63af58",
+          "start": 0,
+          "end": 360
+        }
+      ],
+      "id": "h1",
+      "split": "holdout",
+      "expected": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511"
+      ],
+      "seconds": 97.35091549996287,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 136278666,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2305.14283",
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "질문 난이도로 검색 전략을 선택하는 방식과 검색어를 다시 작성하는 방식의 문헌을 보여줘.",
+          "query": "question difficulty based search strategy selection",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "질문 난이도로 검색 전략을 선택하는 방식과 검색어를 다시 작성하는 방식의 문헌을 보여줘.",
+          "query": "search term rewording methodology",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 7133.421,
+          "prompt_tokens": 146,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 8584.23,
+          "prompt_tokens": 363,
+          "output_tokens": 23,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 4170.718
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 50,
+          "catalog_entries": 6,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 722.114
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 37197.816,
+          "prompt_tokens": 784,
+          "output_tokens": 16,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2403.14403",
+          "source_hash": "1df3d0a2a910c44d56e69e0a530b68b6601a358ea114c9878c4f110aa82e24e2",
+          "start": 570,
+          "end": 791
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2305.14283",
+          "source_hash": "5ef26176b00432076bd1bb7e066313049f8fe57bff7189e7e00ed7b67bfbf803",
+          "start": 155,
+          "end": 579
+        }
+      ],
+      "id": "h2",
+      "split": "holdout",
+      "expected": [
+        "arxiv:2403.14403",
+        "arxiv:2305.14283"
+      ],
+      "seconds": 59.85191395797301,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 136278666,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2005.11401",
+        "arxiv:2307.03172"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "긴 입력에서 정보 위치가 성능에 주는 영향과 외부 메모리 기반 생성 모델을 조사해줘.",
+          "query": "impact of information location on performance",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "긴 입력에서 정보 위치가 성능에 주는 영향과 외부 메모리 기반 생성 모델을 조사해줘.",
+          "query": "external memory based generation model",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 1686.614,
+          "prompt_tokens": 143,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 5479.022,
+          "prompt_tokens": 360,
+          "output_tokens": 22,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 2193.482
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 40,
+          "catalog_entries": 5,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 479.42
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 27004.76,
+          "prompt_tokens": 659,
+          "output_tokens": 16,
+          "grammar_setup_ms": 7816.489,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2307.03172",
+          "source_hash": "187dd4ac8c177a6d3de421d19407199ddc86218a639228ca81a732888f8359b2",
+          "start": 334,
+          "end": 540
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2005.11401",
+          "source_hash": "80972defe22fe913ce23654fe4c298793bc86341c789e39acb968204bd63af58",
+          "start": 671,
+          "end": 1054
+        }
+      ],
+      "id": "h3",
+      "split": "holdout",
+      "expected": [
+        "arxiv:2307.03172",
+        "arxiv:2005.11401"
+      ],
+      "seconds": 38.95968233293388,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 117723786,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "추론하고 도구로 행동하는 과정을 교대로 수행하는 하나의 방법을 찾아줘.",
+          "query": "method for alternating inference and tool use",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 6509.485,
+          "prompt_tokens": 135,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 1,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 38769.21,
+          "prompt_tokens": 352,
+          "output_tokens": 12,
+          "grammar_setup_ms": 9595.484,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 2830.647
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 21,
+          "catalog_entries": 3,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 324.587
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 22245.877,
+          "prompt_tokens": 514,
+          "output_tokens": 8,
+          "grammar_setup_ms": 1230.519,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2210.03629",
+          "source_hash": "698b7bfbf88e48be5e5d72994ca1ec2b4d3e71626149a8822ba92ee13c55cbf0",
+          "start": 302,
+          "end": 710
+        }
+      ],
+      "id": "h4",
+      "split": "holdout",
+      "expected": [
+        "arxiv:2210.03629"
+      ],
+      "seconds": 73.92069091601297,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 117724554,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2310.11511"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "검색과 자기 비판을 특수 토큰으로 함께 수행하는 모델을 찾아줘.",
+          "query": "model with search and self-criticism tokens",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "검색과 자기 비판을 특수 토큰으로 함께 수행하는 모델을 찾아줘.",
+          "query": "model incorporating search and self-criticism tokens",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 3729.729,
+          "prompt_tokens": 136,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 8810.635,
+          "prompt_tokens": 353,
+          "output_tokens": 29,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 1188.82
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 52,
+          "catalog_entries": 3,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 1361.086
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 16490.906,
+          "prompt_tokens": 539,
+          "output_tokens": 16,
+          "grammar_setup_ms": 3588.042,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2310.11511",
+          "source_hash": "d24e3d5447ac556cdb70397617d49f80c994f48cb9e7ee77e1e7002fd88a130a",
+          "start": 570,
+          "end": 957
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2310.11511",
+          "source_hash": "d24e3d5447ac556cdb70397617d49f80c994f48cb9e7ee77e1e7002fd88a130a",
+          "start": 570,
+          "end": 957
+        }
+      ],
+      "id": "h5",
+      "split": "holdout",
+      "expected": [
+        "arxiv:2310.11511"
+      ],
+      "seconds": 32.59124287497252,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 117729586,
+        "process_peak_bytes": 2992820324,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2005.11401",
+        "arxiv:2305.14283",
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "Find query reformulation, complexity-based retrieval selection, and generation with external Wikipedia memory.",
+          "query": "query reformulation techniques",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "Find query reformulation, complexity-based retrieval selection, and generation with external Wikipedia memory.",
+          "query": "complexity based retrieval methods",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t2",
+          "request_quote": "Find query reformulation, complexity-based retrieval selection, and generation with external Wikipedia memory.",
+          "query": "generation using external wikipedia memory",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 3213.825,
+          "prompt_tokens": 129,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 3,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 9646.324,
+          "prompt_tokens": 346,
+          "output_tokens": 27,
+          "grammar_setup_ms": 0.001,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 3414.514
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 75,
+          "catalog_entries": 7,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 863.514
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 21910.413,
+          "prompt_tokens": 877,
+          "output_tokens": 24,
+          "grammar_setup_ms": 1130.302,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2305.14283",
+          "source_hash": "5ef26176b00432076bd1bb7e066313049f8fe57bff7189e7e00ed7b67bfbf803",
+          "start": 155,
+          "end": 579
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2403.14403",
+          "source_hash": "1df3d0a2a910c44d56e69e0a530b68b6601a358ea114c9878c4f110aa82e24e2",
+          "start": 1071,
+          "end": 1531
+        },
+        {
+          "task_id": "t2",
+          "source_id": "arxiv:2005.11401",
+          "source_hash": "80972defe22fe913ce23654fe4c298793bc86341c789e39acb968204bd63af58",
+          "start": 671,
+          "end": 1054
+        }
+      ],
+      "id": "h6",
+      "split": "holdout",
+      "expected": [
+        "arxiv:2305.14283",
+        "arxiv:2403.14403",
+        "arxiv:2005.11401"
+      ],
+      "seconds": 39.65120295796078,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 136287610,
+        "process_peak_bytes": 3019280484,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "not_found",
+      "actual": [],
+      "exact": true,
+      "missing": [
+        "t0",
+        "t1"
+      ],
+      "missing_aspect_ok": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "Find measured memory consumption in GB on an Apple M4 for these papers.",
+          "query": "measured memory consumption Apple M4",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "Find measured memory consumption in GB on an Apple M4 for these papers.",
+          "query": "memory usage measurement Apple M4",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 2931.676,
+          "prompt_tokens": 127,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 13035.805,
+          "prompt_tokens": 344,
+          "output_tokens": 20,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "measurement_source_presence",
+          "task_id": "t0",
+          "entities": [
+            "Apple M4"
+          ],
+          "eligible_documents": 0,
+          "scope": "Necessary entity presence only; not measurement or entailment proof."
+        },
+        {
+          "step": "measurement_source_presence",
+          "task_id": "t1",
+          "entities": [
+            "Apple M4"
+          ],
+          "eligible_documents": 0,
+          "scope": "Necessary entity presence only; not measurement or entailment proof."
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 82.117
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 0,
+          "catalog_entries": 0,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 7.866
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [],
+      "id": "h7",
+      "split": "holdout",
+      "expected": [],
+      "seconds": 16.4569262919249,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 79971978,
+        "process_peak_bytes": 3019280484,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2005.11401"
+      ],
+      "exact": true,
+      "missing": [],
+      "missing_aspect_ok": false,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "위키피디아 외부 메모리 생성 연구와 Apple M4에서 측정한 전력 소비량을 각각 찾아줘.",
+          "query": "external memory generation in wikipedia",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "위키피디아 외부 메모리 생성 연구와 Apple M4에서 측정한 전력 소비량을 각각 찾아줘.",
+          "query": "power consumption measurements on apple m4",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 3590.025,
+          "prompt_tokens": 148,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 9520.501,
+          "prompt_tokens": 365,
+          "output_tokens": 23,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 2281.809
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 52,
+          "catalog_entries": 5,
+          "passage_profile": "sentence_context_480",
+          "latency_ms": 653.393
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 20930.534,
+          "prompt_tokens": 674,
+          "output_tokens": 16,
+          "grammar_setup_ms": 9630.242,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "source_versions_current": true,
+      "edges": [
+        {
+          "task_id": "t0",
+          "source_id": "arxiv:2005.11401",
+          "source_hash": "80972defe22fe913ce23654fe4c298793bc86341c789e39acb968204bd63af58",
+          "start": 671,
+          "end": 1054
+        },
+        {
+          "task_id": "t1",
+          "source_id": "arxiv:2005.11401",
+          "source_hash": "80972defe22fe913ce23654fe4c298793bc86341c789e39acb968204bd63af58",
+          "start": 482,
+          "end": 857
+        }
+      ],
+      "id": "h8",
+      "split": "holdout",
+      "expected": [
+        "arxiv:2005.11401"
+      ],
+      "seconds": 38.252890083007514,
+      "memory": {
+        "allocator": "mlx",
+        "active_bytes": 2264693768,
+        "cached_bytes": 117729482,
+        "process_peak_bytes": 3019280484,
+        "scope": "MLX allocator only; not total process or system memory."
+      }
+    }
+  ],
+  "datasets": {
+    "dev": "dd0fbf2cc224a08cd0ee9536d7d03a0a3c3152104316b3af9c916283789d5f1f",
+    "holdout": "8678954a3a78d724e667ee63b0eccbe47aed5fafe8ca502437ae0d1e63303e9c"
+  },
+  "dev": {
+    "n": 8,
+    "exact": 8,
+    "missing_aspect_failures": 0,
+    "median_seconds": 28.783987708040513
+  },
+  "holdout": {
+    "n": 8,
+    "exact": 7,
+    "missing_aspect_failures": 1,
+    "median_seconds": 39.30544264544733
+  },
+  "score_cache_stats": {
+    "requested_pairs": 838,
+    "computed_pairs": 838,
+    "reused_pairs": 0
+  }
+}

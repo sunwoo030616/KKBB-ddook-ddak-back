@@ -82,3 +82,99 @@ def test_source_change_during_selection_cannot_return_fresh_evidence(tmp_path):
     result=graph.build('tool observations','single')
     assert result['status']=='stale_snapshot' and result['edges']==[]
     assert result['source_versions_current'] is False
+
+
+def test_compact_plan_keeps_server_owned_request_provenance(tmp_path):
+    kb=store(tmp_path);model=Model({'count':1},{'queries':['reasoning tool observations']},{'t0':['e0']})
+    graph=EvidenceGraph(kb,model,Ranker())
+    result=graph.build('A method combining reasoning and tool use','compact')
+    assert len(result['tasks'])==1 and result['tasks'][0]['anchor_scope']=='whole_request'
+    assert result['tasks'][0]['request_quote']=='A method combining reasoning and tool use'
+
+
+def test_fast_prefilter_bounds_cross_encoder_span_work(tmp_path):
+    kb=store(tmp_path)
+    class Filter:
+        def select(self,query,spans):return spans[:1]
+    result=EvidenceGraph(kb,Model({'count':1},{'queries':['tool observations']},{'t0':['e0']}),Ranker(),prefilter=Filter()).build('Find tools','fast')
+    assert next(t['scored_pairs'] for t in result['trace'] if t['step']=='span_search')==1
+
+
+def test_fixed_need_count_rejects_extra_or_missing_queries(tmp_path):
+    graph=EvidenceGraph(store(tmp_path),Model({'count':2},{'queries':['only one query']}),Ranker())
+    assert graph.build('Compare two independent methods','compact')['status']=='invalid_plan'
+
+
+def test_missing_named_hardware_measurement_skips_retrieval_and_selector(tmp_path):
+    class NeverRank:
+        def score_pairs(self,pairs):raise AssertionError('unsupported hardware must not be scored')
+    result=EvidenceGraph(store(tmp_path),Model(),NeverRank()).build('Measured RTX 5090 power consumption','single')
+    assert result['status']=='not_found' and result['missing_task_ids']==['t0']
+    assert any(t['step']=='measurement_source_presence' for t in result['trace'])
+
+
+def test_measurement_entity_gate_does_not_block_a_method_task(tmp_path):
+    graph=EvidenceGraph(store(tmp_path),Model({'count':2},{'queries':['reasoning tool observations','RTX 5090 power consumption']},{'t0':['e0'],'t1':[]}),Ranker())
+    result=graph.build('Find tool observations and RTX 5090 power consumption','compact')
+    assert result['status']=='partial' and result['missing_task_ids']==['t1']
+
+
+def test_hardware_presence_is_whitespace_tolerant_but_not_a_variant_substring():
+    from rag_backend.evidence_graph import mentions_entities
+    assert mentions_entities('We used RTX 5090 in the experiment.',['RTX5090'])
+    assert not mentions_entities('We used RTX5090Ti in the experiment.',['RTX5090'])
+
+
+def test_anchored_mode_uses_server_offsets_and_skips_count_model(tmp_path):
+    question='Find tool observations; find a second method.'
+    model=Model({'query':'tool observations'},{'query':'second method'},{'choices':[0,-1]})
+    result=EvidenceGraph(store(tmp_path),model,Ranker(),per_clause=True,binding_format='ordinal').build(question,'anchored')
+    assert result['status']=='partial'
+    assert not any(t['step']=='count_needs' for t in result['trace'])
+    assert result['tasks'][0]['anchor_scope']=='exact_quote'
+    for task in result['tasks']:
+        assert question[task['anchor_start']:task['anchor_end']]==task['request_quote']
+
+
+def test_korean_postpositions_do_not_hide_measurement_system_identifiers(tmp_path):
+    from rag_backend.evidence_graph import measurement_entities
+    assert 'Apple M4' in measurement_entities('Apple M4에서 측정한 전력 소비량','measured power consumption')
+    assert 'MI300X' in measurement_entities('AMD MI300X에서 전력 실측값','measured power consumption')
+    result=EvidenceGraph(store(tmp_path),Model({'query':'Apple M4 measured power consumption'}),Ranker(),per_clause=True).build('Apple M4에서 전력 실측값을 찾아줘.','anchored')
+    assert result['status']=='not_found' and result['missing_task_ids']==['t0']
+
+
+def test_invalid_query_plan_has_one_bounded_repair(tmp_path):
+    graph=EvidenceGraph(store(tmp_path),Model({'query':'# invalid'},{'query':'tool observations'},{'choices':[0]}),Ranker(),per_clause=True,binding_format='ordinal')
+    result=graph.build('Find tool observations','anchored')
+    plans=[t for t in result['trace'] if t['step']=='compact_plan']
+    assert result['status']=='candidate_complete' and [p['status'] for p in plans]==['rejected','validated']
+
+
+def test_fixed_ordinal_decoder_still_checks_actual_candidate_pool(tmp_path):
+    result=EvidenceGraph(store(tmp_path),Model({'queries':['tool observations']},{'choices':[2]}),Ranker(),binding_format='ordinal').build('Find tool observations','anchored')
+    assert result['status']=='invalid_selection' and result['edges']==[]
+
+
+def test_boolean_cannot_masquerade_as_a_selection_index(tmp_path):
+    result=EvidenceGraph(store(tmp_path),Model({'queries':['tool observations']},{'choices':[True]}),Ranker(),binding_format='ordinal').build('Find tool observations','anchored')
+    assert result['status']=='invalid_selection'
+
+
+def test_snapshot_checks_selected_sources_even_without_an_edge(tmp_path):
+    kb=store(tmp_path);other=dict(DOC,id='paper:2');kb.ingest([other])
+    class ChangesUnusedSource(Model):
+        def complete(self,*args,**kwargs):
+            kb.ingest([dict(other,text='A different source replaced during selection without a selected edge.')])
+            return super().complete(*args,**kwargs)
+    result=EvidenceGraph(kb,ChangesUnusedSource({'t0':['e0']}),Ranker()).build('tool observations','single')
+    assert result['status']=='stale_snapshot' and result['edges']==[]
+
+
+def test_default_anchored_group_plan_preserves_verified_source(tmp_path):
+    kb=store(tmp_path)
+    result=EvidenceGraph(kb,Model({'queries':['tool observations']},{'t0':['e0']}),Ranker()).build('Find tool observations','anchored')
+    assert result['status']=='candidate_complete' and result['source_versions_current']
+    edge=result['edges'][0]
+    assert DOC['text'][edge['start']:edge['end']]==edge['text']
+    assert next(t for t in result['trace'] if t['step']=='bind_evidence')['format']=='evidence_ids'

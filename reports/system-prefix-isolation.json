@@ -1,0 +1,117 @@
+{
+  "scope": "Actual 4B constrained generation: changing user codes under the same system prefix. No response memoization. Off warms grammar before on; latency is diagnostic, not a causal speed estimate.",
+  "rows": [
+    {
+      "mode": "off",
+      "input": "alpha",
+      "output": "alpha",
+      "correct": true,
+      "seconds": 4.22841795894783,
+      "prefix": {
+        "enabled": false,
+        "reused_tokens": 0
+      }
+    },
+    {
+      "mode": "off",
+      "input": "beta",
+      "output": "beta",
+      "correct": true,
+      "seconds": 2.285293999942951,
+      "prefix": {
+        "enabled": false,
+        "reused_tokens": 0
+      }
+    },
+    {
+      "mode": "off",
+      "input": "gamma",
+      "output": "gamma",
+      "correct": true,
+      "seconds": 2.1273362500360236,
+      "prefix": {
+        "enabled": false,
+        "reused_tokens": 0
+      }
+    },
+    {
+      "mode": "off",
+      "input": "alpha",
+      "output": "alpha",
+      "correct": true,
+      "seconds": 2.0247620419831946,
+      "prefix": {
+        "enabled": false,
+        "reused_tokens": 0
+      }
+    },
+    {
+      "mode": "on",
+      "input": "alpha",
+      "output": "alpha",
+      "correct": true,
+      "seconds": 2.26145016704686,
+      "prefix": {
+        "enabled": true,
+        "hit": false,
+        "prefix_tokens": 29,
+        "reused_tokens": 0,
+        "entry_bytes": 4276224
+      }
+    },
+    {
+      "mode": "on",
+      "input": "beta",
+      "output": "beta",
+      "correct": true,
+      "seconds": 1.5333285420201719,
+      "prefix": {
+        "enabled": true,
+        "hit": true,
+        "prefix_tokens": 29,
+        "reused_tokens": 29,
+        "entry_bytes": 4276224
+      }
+    },
+    {
+      "mode": "on",
+      "input": "gamma",
+      "output": "gamma",
+      "correct": true,
+      "seconds": 1.7337743749376386,
+      "prefix": {
+        "enabled": true,
+        "hit": true,
+        "prefix_tokens": 29,
+        "reused_tokens": 29,
+        "entry_bytes": 4276224
+      }
+    },
+    {
+      "mode": "on",
+      "input": "alpha",
+      "output": "alpha",
+      "correct": true,
+      "seconds": 1.63589220889844,
+      "prefix": {
+        "enabled": true,
+        "hit": true,
+        "prefix_tokens": 29,
+        "reused_tokens": 29,
+        "entry_bytes": 4276224
+      }
+    }
+  ],
+  "cache": {
+    "hits": 3,
+    "misses": 1,
+    "bypasses": 0,
+    "evictions": 0,
+    "reused_tokens": 87,
+    "entries": 1,
+    "bytes": 4276224,
+    "scope": "System-prefix KV only, in process. No user tokens or full response memoization."
+  },
+  "all_inputs_respected": true,
+  "actual_prefix_reuse": true
+}

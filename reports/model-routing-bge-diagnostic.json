@@ -1,0 +1,1638 @@
+{
+  "scope": "Internal developer-authored six-source comparison; heldout wording shares corpus. One generator per child process. No LLM response cache.",
+  "datasets": {
+    "dev": "dd0fbf2cc224a08cd0ee9536d7d03a0a3c3152104316b3af9c916283789d5f1f",
+    "holdout": "8678954a3a78d724e667ee63b0eccbe47aed5fafe8ca502437ae0d1e63303e9c"
+  },
+  "source_sha256": {
+    "rag_backend/evidence_graph.py": "08c1813aa66a2687b15fdf0486d2f8a6d7eb9bf0aedfa7d6f1b1ff2e2041a700",
+    "rag_backend/retrieval_acceleration.py": "63235b8360182a25a6927396cfffe43e59c25a131c98cc04bf48d781b73fa120",
+    "rag_backend/knowledge_lab.py": "b6eb947665b2449f0178ceed9d250dcb41c8d718af6e7ae3a2936bb75bb222dd",
+    "scripts/compare_model_routes.py": "2a38555b52f4faad23f1d2abe2313794fd5b68c17fea743f2ef8742a9ac48a73"
+  },
+  "rows": [
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2305.14283",
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "검색 질의를 고치는 방법과 질문 복잡도에 따라 검색 횟수를 고르는 방법을 각각 찾아줘.",
+          "query": "method to adjust search queries",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "검색 질의를 고치는 방법과 질문 복잡도에 따라 검색 횟수를 고르는 방법을 각각 찾아줘.",
+          "query": "method to determine search frequency based on question complexity",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 5375.35,
+          "prompt_tokens": 145,
+          "output_tokens": 6,
+          "grammar_setup_ms": 503.407,
+          "schema_cache_hit": false,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 27977.105,
+          "prompt_tokens": 332,
+          "output_tokens": 25,
+          "grammar_setup_ms": 10349.415,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 22461.871
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 78,
+          "latency_ms": 8092.457
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 37257.035,
+          "prompt_tokens": 777,
+          "output_tokens": 16,
+          "grammar_setup_ms": 4111.645,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 78,
+      "id": "g1",
+      "split": "dev",
+      "config": "4b_compact",
+      "seconds": 101.63754708308261,
+      "expected": [
+        "arxiv:2305.14283",
+        "arxiv:2403.14403"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "성찰 토큰을 쓰는 검색 방식과 추론·도구 실행을 번갈아 하는 방식을 비교할 근거를 찾아줘.",
+          "query": "reasoning and tool execution alternation",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "성찰 토큰을 쓰는 검색 방식과 추론·도구 실행을 번갈아 하는 방식을 비교할 근거를 찾아줘.",
+          "query": "token-based search method",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 5044.952,
+          "prompt_tokens": 152,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 12221.341,
+          "prompt_tokens": 339,
+          "output_tokens": 18,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 17783.227
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 82,
+          "latency_ms": 9230.704
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 22779.221,
+          "prompt_tokens": 742,
+          "output_tokens": 16,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 82,
+      "id": "g2",
+      "split": "dev",
+      "config": "4b_compact",
+      "seconds": 67.26292566698976,
+      "expected": [
+        "arxiv:2310.11511",
+        "arxiv:2210.03629"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629",
+        "arxiv:2307.03172"
+      ],
+      "exact": false,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+          "query": "methods using external wikipedia memory",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+          "query": "context loss in long text generation",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 4318.14,
+          "prompt_tokens": 149,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 6861.823,
+          "prompt_tokens": 336,
+          "output_tokens": 22,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 7244.767
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 74,
+          "latency_ms": 1980.639
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 9355.435,
+          "prompt_tokens": 736,
+          "output_tokens": 16,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 74,
+      "id": "g3",
+      "split": "dev",
+      "config": "4b_compact",
+      "seconds": 29.82883045892231,
+      "expected": [
+        "arxiv:2005.11401",
+        "arxiv:2307.03172"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511",
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+          "query": "reasoning with actions",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+          "query": "reflection-token retrieval",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t2",
+          "request_quote": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+          "query": "question-complexity routing",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 1771.604,
+          "prompt_tokens": 131,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 3,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 7600.162,
+          "prompt_tokens": 318,
+          "output_tokens": 25,
+          "grammar_setup_ms": 3383.451,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 6361.261
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 123,
+          "latency_ms": 4073.195
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 13887.617,
+          "prompt_tokens": 1006,
+          "output_tokens": 25,
+          "grammar_setup_ms": 655.841,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 123,
+      "id": "g4",
+      "split": "dev",
+      "config": "4b_compact",
+      "seconds": 33.72304575005546,
+      "expected": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511",
+        "arxiv:2403.14403"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "질문 복잡도로 검색 전략을 고르는 연구에서 단일 검색과 반복 검색에 대한 근거를 찾아줘.",
+          "query": "search strategy for choosing based on question complexity",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "질문 복잡도로 검색 전략을 고르는 연구에서 단일 검색과 반복 검색에 대한 근거를 찾아줘.",
+          "query": "single search vs repeated search in research justification",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 3062.81,
+          "prompt_tokens": 147,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 6929.396,
+          "prompt_tokens": 334,
+          "output_tokens": 27,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 5472.895
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 80,
+          "latency_ms": 3661.08
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 12571.662,
+          "prompt_tokens": 765,
+          "output_tokens": 16,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 80,
+      "id": "g5",
+      "split": "dev",
+      "config": "4b_compact",
+      "seconds": 31.74343949998729,
+      "expected": [
+        "arxiv:2403.14403"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2305.14283",
+        "arxiv:2307.03172"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "Find query rewriting and the positional weakness of long-context models.",
+          "query": "query rewriting",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "Find query rewriting and the positional weakness of long-context models.",
+          "query": "positional weakness of long-context models",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 2369.626,
+          "prompt_tokens": 124,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 6424.447,
+          "prompt_tokens": 311,
+          "output_tokens": 20,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 5515.827
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 70,
+          "latency_ms": 3212.541
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 42958.037,
+          "prompt_tokens": 715,
+          "output_tokens": 16,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 70,
+      "id": "g6",
+      "split": "dev",
+      "config": "4b_compact",
+      "seconds": 60.66386958397925,
+      "expected": [
+        "arxiv:2305.14283",
+        "arxiv:2307.03172"
+      ]
+    },
+    {
+      "status": "not_found",
+      "actual": [],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "각 논문의 RTX 5090 GPU 전력 소비량을 와트 단위로 측정한 표를 찾아줘.",
+          "query": "RTX 5090 GPU power consumption measurements",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "각 논문의 RTX 5090 GPU 전력 소비량을 와트 단위로 측정한 표를 찾아줘.",
+          "query": "GPU power draw RTX 5090 in watts",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [
+        "t0",
+        "t1"
+      ],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 9922.27,
+          "prompt_tokens": 147,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 28292.259,
+          "prompt_tokens": 334,
+          "output_tokens": 34,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 20605.378
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 80,
+          "latency_ms": 6936.155
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 22987.553,
+          "prompt_tokens": 786,
+          "output_tokens": 11,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 80,
+      "id": "g7",
+      "split": "dev",
+      "config": "4b_compact",
+      "seconds": 89.67757537495345,
+      "expected": []
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2310.11511"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "성찰 토큰을 쓰는 방법을 찾고, 그 논문의 RTX 5090 전력 소비량 측정값도 찾아줘.",
+          "query": "method for using char token",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "성찰 토큰을 쓰는 방법을 찾고, 그 논문의 RTX 5090 전력 소비량 측정값도 찾아줘.",
+          "query": "power consumption measurement of RTX 5090 in the paper",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 2975.751,
+          "prompt_tokens": 155,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 9430.25,
+          "prompt_tokens": 342,
+          "output_tokens": 30,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 6575.045
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 82,
+          "latency_ms": 6776.401
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 24343.873,
+          "prompt_tokens": 774,
+          "output_tokens": 16,
+          "grammar_setup_ms": 0.002,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": false,
+      "span_pairs": 82,
+      "id": "g8",
+      "split": "dev",
+      "config": "4b_compact",
+      "seconds": 50.33343141700607,
+      "expected": [
+        "arxiv:2310.11511"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2305.14283"
+      ],
+      "exact": false,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "검색 질의를 고치는 방법과 질문 복잡도에 따라 검색 횟수를 고르는 방법을 각각 찾아줘.",
+          "query": "Search query refinement method based on search frequency and question complexity",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 1086.557,
+          "prompt_tokens": 145,
+          "output_tokens": 6,
+          "grammar_setup_ms": 315.464,
+          "schema_cache_hit": false,
+          "count": 1,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 2640.613,
+          "prompt_tokens": 332,
+          "output_tokens": 16,
+          "grammar_setup_ms": 1271.307,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 2544.065
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 40,
+          "latency_ms": 2752.749
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 3221.091,
+          "prompt_tokens": 486,
+          "output_tokens": 8,
+          "grammar_setup_ms": 595.004,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 40,
+      "id": "g1",
+      "split": "dev",
+      "config": "1.7b_compact",
+      "seconds": 12.268178083002567,
+      "expected": [
+        "arxiv:2305.14283",
+        "arxiv:2403.14403"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2310.11511"
+      ],
+      "exact": false,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "성찰 토큰을 쓰는 검색 방식과 추론·도구 실행을 번갈아 하는 방식을 비교할 근거를 찾아줘.",
+          "query": "discussion token search and inference tool execution alternation basis",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 923.283,
+          "prompt_tokens": 152,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 1,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 1936.791,
+          "prompt_tokens": 339,
+          "output_tokens": 15,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 2323.06
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 39,
+          "latency_ms": 2232.661
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 3498.324,
+          "prompt_tokens": 484,
+          "output_tokens": 8,
+          "grammar_setup_ms": 0.001,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 39,
+      "id": "g2",
+      "split": "dev",
+      "config": "1.7b_compact",
+      "seconds": 10.93289375002496,
+      "expected": [
+        "arxiv:2310.11511",
+        "arxiv:2210.03629"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2005.11401",
+        "arxiv:2210.03629"
+      ],
+      "exact": false,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+          "query": "external memory usage in generation methods",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+          "query": "omission of contextual evidence in generation processes",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t2",
+          "request_quote": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+          "query": "missing contextual support in generation methods",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 1231.987,
+          "prompt_tokens": 149,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.001,
+          "schema_cache_hit": true,
+          "count": 3,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 9897.561,
+          "prompt_tokens": 336,
+          "output_tokens": 29,
+          "grammar_setup_ms": 7524.228,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 9418.137
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 123,
+          "latency_ms": 5960.253
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 10905.945,
+          "prompt_tokens": 1041,
+          "output_tokens": 26,
+          "grammar_setup_ms": 2492.404,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 123,
+      "id": "g3",
+      "split": "dev",
+      "config": "1.7b_compact",
+      "seconds": 37.484272541012615,
+      "expected": [
+        "arxiv:2005.11401",
+        "arxiv:2307.03172"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511",
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+          "query": "reasoning-action integration",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+          "query": "reflection-token retrieval",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t2",
+          "request_quote": "Find the work combining reasoning with actions, reflection-token retrieval, and question-complexity routing.",
+          "query": "question-complexity routing",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 952.935,
+          "prompt_tokens": 131,
+          "output_tokens": 7,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 3,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 5003.385,
+          "prompt_tokens": 318,
+          "output_tokens": 21,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 22184.273
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 123,
+          "latency_ms": 15023.317
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 21551.724,
+          "prompt_tokens": 1026,
+          "output_tokens": 25,
+          "grammar_setup_ms": 0.093,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 123,
+      "id": "g4",
+      "split": "dev",
+      "config": "1.7b_compact",
+      "seconds": 65.57216283399612,
+      "expected": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511",
+        "arxiv:2403.14403"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "질문 복잡도로 검색 전략을 고르는 연구에서 단일 검색과 반복 검색에 대한 근거를 찾아줘.",
+          "query": "search strategy based on complexity level, single search vs repeated search",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 2968.035,
+          "prompt_tokens": 147,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.001,
+          "schema_cache_hit": true,
+          "count": 1,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 7237.716,
+          "prompt_tokens": 334,
+          "output_tokens": 17,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 19193.768
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 40,
+          "latency_ms": 5042.159
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 13438.877,
+          "prompt_tokens": 476,
+          "output_tokens": 8,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 40,
+      "id": "g5",
+      "split": "dev",
+      "config": "1.7b_compact",
+      "seconds": 48.11598462506663,
+      "expected": [
+        "arxiv:2403.14403"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2305.14283"
+      ],
+      "exact": false,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "Find query rewriting and the positional weakness of long-context models.",
+          "query": "query rewriting",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "Find query rewriting and the positional weakness of long-context models.",
+          "query": "positional weakness of long-context models",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 2959.634,
+          "prompt_tokens": 124,
+          "output_tokens": 7,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 19441.68,
+          "prompt_tokens": 311,
+          "output_tokens": 16,
+          "grammar_setup_ms": 12366.206,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 16274.753
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 70,
+          "latency_ms": 7297.529
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 17313.837,
+          "prompt_tokens": 715,
+          "output_tokens": 17,
+          "grammar_setup_ms": 3067.722,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 70,
+      "id": "g6",
+      "split": "dev",
+      "config": "1.7b_compact",
+      "seconds": 63.460367499967106,
+      "expected": [
+        "arxiv:2305.14283",
+        "arxiv:2307.03172"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629"
+      ],
+      "exact": false,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "각 논문의 RTX 5090 GPU 전력 소비량을 와트 단위로 측정한 표를 찾아줘.",
+          "query": "RTX 5090 GPU power consumption in watts",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 1447.434,
+          "prompt_tokens": 147,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 1,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 3559.947,
+          "prompt_tokens": 334,
+          "output_tokens": 17,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 6657.369
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 42,
+          "latency_ms": 2256.873
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 4150.589,
+          "prompt_tokens": 503,
+          "output_tokens": 8,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": false,
+      "span_pairs": 42,
+      "id": "g7",
+      "split": "dev",
+      "config": "1.7b_compact",
+      "seconds": 18.124221250065602,
+      "expected": []
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2310.11511"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "성찰 토큰을 쓰는 방법을 찾고, 그 논문의 RTX 5090 전력 소비량 측정값도 찾아줘.",
+          "query": "conversation token generation method",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "성찰 토큰을 쓰는 방법을 찾고, 그 논문의 RTX 5090 전력 소비량 측정값도 찾아줘.",
+          "query": "RTX 5090 power consumption measurement value",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t2",
+          "request_quote": "성찰 토큰을 쓰는 방법을 찾고, 그 논문의 RTX 5090 전력 소비량 측정값도 찾아줘.",
+          "query": "conversation token generation process",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 1429.291,
+          "prompt_tokens": 155,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 3,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 3789.824,
+          "prompt_tokens": 342,
+          "output_tokens": 28,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 8240.088
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 123,
+          "latency_ms": 6033.753
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 8170.01,
+          "prompt_tokens": 1052,
+          "output_tokens": 25,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": false,
+      "span_pairs": 123,
+      "id": "g8",
+      "split": "dev",
+      "config": "1.7b_compact",
+      "seconds": 27.69036312494427,
+      "expected": [
+        "arxiv:2310.11511"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2305.14283",
+        "arxiv:2403.14403"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "검색 질의를 고치는 방법과 질문 복잡도에 따라 검색 횟수를 고르는 방법을 각각 찾아줘.",
+          "query": "method to adjust search queries",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "검색 질의를 고치는 방법과 질문 복잡도에 따라 검색 횟수를 고르는 방법을 각각 찾아줘.",
+          "query": "method to determine search frequency based on question complexity",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 25530.129,
+          "prompt_tokens": 145,
+          "output_tokens": 6,
+          "grammar_setup_ms": 1177.521,
+          "schema_cache_hit": false,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 17923.666,
+          "prompt_tokens": 332,
+          "output_tokens": 25,
+          "grammar_setup_ms": 4594.308,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 21640.799
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 12,
+          "latency_ms": 1817.801
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 41805.424,
+          "prompt_tokens": 762,
+          "output_tokens": 16,
+          "grammar_setup_ms": 4096.198,
+          "schema_cache_hit": false,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 12,
+      "id": "g1",
+      "split": "dev",
+      "config": "4b_fast",
+      "seconds": 111.143544291961,
+      "expected": [
+        "arxiv:2305.14283",
+        "arxiv:2403.14403"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511"
+      ],
+      "exact": true,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "성찰 토큰을 쓰는 검색 방식과 추론·도구 실행을 번갈아 하는 방식을 비교할 근거를 찾아줘.",
+          "query": "reasoning and tool execution alternation",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "성찰 토큰을 쓰는 검색 방식과 추론·도구 실행을 번갈아 하는 방식을 비교할 근거를 찾아줘.",
+          "query": "token-based search method",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 6789.419,
+          "prompt_tokens": 152,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.001,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 8675.359,
+          "prompt_tokens": 339,
+          "output_tokens": 18,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 25440.27
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 12,
+          "latency_ms": 2765.648
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 46945.169,
+          "prompt_tokens": 764,
+          "output_tokens": 16,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 12,
+      "id": "g2",
+      "split": "dev",
+      "config": "4b_fast",
+      "seconds": 93.1161814170191,
+      "expected": [
+        "arxiv:2310.11511",
+        "arxiv:2210.03629"
+      ]
+    },
+    {
+      "status": "candidate_complete",
+      "actual": [
+        "arxiv:2210.03629",
+        "arxiv:2307.03172"
+      ],
+      "exact": false,
+      "tasks": [
+        {
+          "id": "t0",
+          "request_quote": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+          "query": "methods using external wikipedia memory",
+          "anchor_scope": "whole_request"
+        },
+        {
+          "id": "t1",
+          "request_quote": "위키피디아 외부 메모리를 사용하는 생성 방법과 긴 문맥 가운데 근거를 놓치는 현상을 찾아줘.",
+          "query": "context loss in long text generation",
+          "anchor_scope": "whole_request"
+        }
+      ],
+      "missing": [],
+      "trace": [
+        {
+          "step": "count_needs",
+          "latency_ms": 7333.966,
+          "prompt_tokens": 149,
+          "output_tokens": 6,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "count": 2,
+          "model_calls": 1
+        },
+        {
+          "step": "compact_plan",
+          "latency_ms": 9599.518,
+          "prompt_tokens": 336,
+          "output_tokens": 22,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        },
+        {
+          "step": "document_search",
+          "latency_ms": 14836.403
+        },
+        {
+          "step": "span_search",
+          "scored_pairs": 12,
+          "latency_ms": 1641.298
+        },
+        {
+          "step": "bind_evidence",
+          "latency_ms": 28621.782,
+          "prompt_tokens": 736,
+          "output_tokens": 16,
+          "grammar_setup_ms": 0.0,
+          "schema_cache_hit": true,
+          "model_calls": 1
+        }
+      ],
+      "missing_aspect_ok": true,
+      "span_pairs": 12,
+      "id": "g3",
+      "split": "dev",
+      "config": "4b_fast",
+      "seconds": 66.21331295801792,
+      "expected": [
+        "arxiv:2005.11401",
+        "arxiv:2307.03172"
+      ]
+    }
+  ],
+  "execution": {
+    "4b_compact:dev": {
+      "setup_seconds": 24.777401624945924,
+      "generator": {
+        "repo_id": "mlx-community/Qwen3-4B-4bit",
+        "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+        "files": {
+          "added_tokens.json": {
+            "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+            "bytes": 707
+          },
+          "config.json": {
+            "sha256": "b5efdcf3b0035a3638e7228dad4d85f5c4a23f156eb7cdb0b44c8366a5d34d9b",
+            "bytes": 937
+          },
+          "merges.txt": {
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "bytes": 1671853
+          },
+          "model.safetensors": {
+            "sha256": "e240c0bdc0ebb0681bf0da0f98d9719fd6ebe269a3633f81542c13e81345651d",
+            "bytes": 2263022529
+          },
+          "model.safetensors.index.json": {
+            "sha256": "f7825defe5865d179c3b593173d37056be5f202dcb7153985cf74e75ecf1628b",
+            "bytes": 63924
+          },
+          "special_tokens_map.json": {
+            "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+            "bytes": 613
+          },
+          "tokenizer.json": {
+            "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+            "bytes": 11422654
+          },
+          "tokenizer_config.json": {
+            "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+            "bytes": 9706
+          },
+          "vocab.json": {
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "bytes": 2776833
+          }
+        }
+      },
+      "reranker": {
+        "repo_id": "BAAI/bge-reranker-v2-m3",
+        "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+        "files": {
+          "config.json": {
+            "sha256": "13dcd6c31d9fec9d1d8e158702072f62d7fa7d312a64b9fe057bec9a08cfe41a",
+            "bytes": 795
+          },
+          "model.safetensors": {
+            "sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+            "bytes": 2271071852
+          },
+          "sentencepiece.bpe.model": {
+            "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+            "bytes": 5069051
+          },
+          "special_tokens_map.json": {
+            "sha256": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+            "bytes": 964
+          },
+          "tokenizer.json": {
+            "sha256": "69564b696052886ed0ac63fa393e928384e0f8caada38c1f4864a9bfbf379c15",
+            "bytes": 17098273
+          },
+          "tokenizer_config.json": {
+            "sha256": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+            "bytes": 1173
+          }
+        }
+      },
+      "embedding": null,
+      "reranker_stats": {
+        "requested_pairs": 771,
+        "computed_pairs": 771,
+        "reused_pairs": 0
+      }
+    },
+    "1.7b_compact:dev": {
+      "setup_seconds": 12.444750332972035,
+      "generator": {
+        "repo_id": "mlx-community/Qwen3-1.7B-4bit",
+        "revision": "3b1b1768f8f8cf8351c712464f906e86c2b8269e",
+        "files": {
+          "added_tokens.json": {
+            "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+            "bytes": 707
+          },
+          "config.json": {
+            "sha256": "507a6701220524eb8b283425bf0856a9ae4f21f4052e563896ddd668994b1dc7",
+            "bytes": 937
+          },
+          "merges.txt": {
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "bytes": 1671853
+          },
+          "model.safetensors": {
+            "sha256": "0e86d9677e519323849eac1bc272caae88567a481ff188c431f70be543d9995f",
+            "bytes": 968080210
+          },
+          "model.safetensors.index.json": {
+            "sha256": "1e3058d4ba4b04e4de35b74467725cbef90ff022198404218e48f21adc9cfa15",
+            "bytes": 49731
+          },
+          "special_tokens_map.json": {
+            "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+            "bytes": 613
+          },
+          "tokenizer.json": {
+            "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+            "bytes": 11422654
+          },
+          "tokenizer_config.json": {
+            "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+            "bytes": 9706
+          },
+          "vocab.json": {
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "bytes": 2776833
+          }
+        }
+      },
+      "reranker": {
+        "repo_id": "BAAI/bge-reranker-v2-m3",
+        "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+        "files": {
+          "config.json": {
+            "sha256": "13dcd6c31d9fec9d1d8e158702072f62d7fa7d312a64b9fe057bec9a08cfe41a",
+            "bytes": 795
+          },
+          "model.safetensors": {
+            "sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+            "bytes": 2271071852
+          },
+          "sentencepiece.bpe.model": {
+            "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+            "bytes": 5069051
+          },
+          "special_tokens_map.json": {
+            "sha256": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+            "bytes": 964
+          },
+          "tokenizer.json": {
+            "sha256": "69564b696052886ed0ac63fa393e928384e0f8caada38c1f4864a9bfbf379c15",
+            "bytes": 17098273
+          },
+          "tokenizer_config.json": {
+            "sha256": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+            "bytes": 1173
+          }
+        }
+      },
+      "embedding": null,
+      "reranker_stats": {
+        "requested_pairs": 690,
+        "computed_pairs": 690,
+        "reused_pairs": 0
+      }
+    },
+    "4b_fast:dev": {
+      "setup_seconds": 23.200738625018857,
+      "generator": {
+        "repo_id": "mlx-community/Qwen3-4B-4bit",
+        "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+        "files": {
+          "added_tokens.json": {
+            "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+            "bytes": 707
+          },
+          "config.json": {
+            "sha256": "b5efdcf3b0035a3638e7228dad4d85f5c4a23f156eb7cdb0b44c8366a5d34d9b",
+            "bytes": 937
+          },
+          "merges.txt": {
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "bytes": 1671853
+          },
+          "model.safetensors": {
+            "sha256": "e240c0bdc0ebb0681bf0da0f98d9719fd6ebe269a3633f81542c13e81345651d",
+            "bytes": 2263022529
+          },
+          "model.safetensors.index.json": {
+            "sha256": "f7825defe5865d179c3b593173d37056be5f202dcb7153985cf74e75ecf1628b",
+            "bytes": 63924
+          },
+          "special_tokens_map.json": {
+            "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+            "bytes": 613
+          },
+          "tokenizer.json": {
+            "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+            "bytes": 11422654
+          },
+          "tokenizer_config.json": {
+            "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+            "bytes": 9706
+          },
+          "vocab.json": {
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "bytes": 2776833
+          }
+        }
+      },
+      "reranker": {
+        "repo_id": "BAAI/bge-reranker-v2-m3",
+        "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+        "files": {
+          "config.json": {
+            "sha256": "13dcd6c31d9fec9d1d8e158702072f62d7fa7d312a64b9fe057bec9a08cfe41a",
+            "bytes": 795
+          },
+          "model.safetensors": {
+            "sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+            "bytes": 2271071852
+          },
+          "sentencepiece.bpe.model": {
+            "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+            "bytes": 5069051
+          },
+          "special_tokens_map.json": {
+            "sha256": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+            "bytes": 964
+          },
+          "tokenizer.json": {
+            "sha256": "69564b696052886ed0ac63fa393e928384e0f8caada38c1f4864a9bfbf379c15",
+            "bytes": 17098273
+          },
+          "tokenizer_config.json": {
+            "sha256": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+            "bytes": 1173
+          }
+        }
+      },
+      "embedding": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2@sha256:634d0f66c29dc934c8fa72b8a4fe91dd4d420a22f1d82a241058d4316e659a99"
+    }
+  },
+  "dev": {
+    "4b_compact": {
+      "n": 8,
+      "exact": 7,
+      "missing_aspect_failures": 1,
+      "invalid": 0,
+      "median_seconds": 55.49865050049266,
+      "span_pairs": 669
+    },
+    "1.7b_compact": {
+      "n": 8,
+      "exact": 3,
+      "missing_aspect_failures": 2,
+      "invalid": 0,
+      "median_seconds": 32.58731783297844,
+      "span_pairs": 600
+    },
+    "4b_fast": {
+      "n": 3,
+      "exact": 2,
+      "missing_aspect_failures": 0,
+      "invalid": 0,
+      "median_seconds": 93.1161814170191,
+      "span_pairs": 36
+    }
+  },
+  "stopped_reason": "Post-hoc operational triage: BGE compact is slower than target, 1.7B loses needed sources/missing aspects, dense prefilter path has 66-111s initial calls and remaining source error. Holdout not started.",
+  "selected_from_dev": null,
+  "completed_holdout_rows": 0
+}

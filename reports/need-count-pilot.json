@@ -1,0 +1,130 @@
+[
+  {
+    "role": "canvas_generator",
+    "id": "g1",
+    "output": {
+      "text": "{\"count\": 2}",
+      "latency_ms": 4022.434,
+      "lock_wait_ms": 0.003,
+      "schema_cache_hit": false,
+      "grammar_setup_ms": 462.666,
+      "prompt_tokens": 145,
+      "output_tokens": 6,
+      "max_tokens": 16,
+      "constrained_decoding": true,
+      "prompt_sha256": "d7e9d02647a1499a45ad4ae516aacd087149c149255dc0c458e2d70cff0af5ab"
+    }
+  },
+  {
+    "role": "canvas_generator",
+    "id": "g2",
+    "output": {
+      "text": "{\"count\": 2}",
+      "latency_ms": 2582.482,
+      "lock_wait_ms": 0.001,
+      "schema_cache_hit": true,
+      "grammar_setup_ms": 0.0,
+      "prompt_tokens": 152,
+      "output_tokens": 6,
+      "max_tokens": 16,
+      "constrained_decoding": true,
+      "prompt_sha256": "c9c6590802b8854c4c28c499b8b81572a507db66a4c4b202a54bef51577bed8d"
+    }
+  },
+  {
+    "role": "canvas_generator",
+    "id": "g5",
+    "output": {
+      "text": "{\"count\": 2}",
+      "latency_ms": 2865.043,
+      "lock_wait_ms": 0.007,
+      "schema_cache_hit": true,
+      "grammar_setup_ms": 0.0,
+      "prompt_tokens": 147,
+      "output_tokens": 6,
+      "max_tokens": 16,
+      "constrained_decoding": true,
+      "prompt_sha256": "cce7785c15c89c2dd6c4732ed6a93b03413a88628958f6cc3e3236056e92338e"
+    }
+  },
+  {
+    "role": "canvas_generator",
+    "id": "g8",
+    "output": {
+      "text": "{\"count\": 2}",
+      "latency_ms": 2974.122,
+      "lock_wait_ms": 0.002,
+      "schema_cache_hit": true,
+      "grammar_setup_ms": 0.0,
+      "prompt_tokens": 155,
+      "output_tokens": 6,
+      "max_tokens": 16,
+      "constrained_decoding": true,
+      "prompt_sha256": "6bc6ac5299db45f5670d68f3f8d057b003818ffef706f2aad4196baa01867aeb"
+    }
+  },
+  {
+    "role": "generator",
+    "id": "g1",
+    "output": {
+      "text": "{\"count\": 1}",
+      "latency_ms": 5901.467,
+      "lock_wait_ms": 0.021,
+      "schema_cache_hit": false,
+      "grammar_setup_ms": 1342.837,
+      "prompt_tokens": 145,
+      "output_tokens": 6,
+      "max_tokens": 16,
+      "constrained_decoding": true,
+      "prompt_sha256": "d7e9d02647a1499a45ad4ae516aacd087149c149255dc0c458e2d70cff0af5ab"
+    }
+  },
+  {
+    "role": "generator",
+    "id": "g2",
+    "output": {
+      "text": "{\"count\": 1}",
+      "latency_ms": 2398.862,
+      "lock_wait_ms": 0.002,
+      "schema_cache_hit": true,
+      "grammar_setup_ms": 0.0,
+      "prompt_tokens": 152,
+      "output_tokens": 6,
+      "max_tokens": 16,
+      "constrained_decoding": true,
+      "prompt_sha256": "c9c6590802b8854c4c28c499b8b81572a507db66a4c4b202a54bef51577bed8d"
+    }
+  },
+  {
+    "role": "generator",
+    "id": "g5",
+    "output": {
+      "text": "{\"count\": 1}",
+      "latency_ms": 1966.541,
+      "lock_wait_ms": 0.002,
+      "schema_cache_hit": true,
+      "grammar_setup_ms": 0.0,
+      "prompt_tokens": 147,
+      "output_tokens": 6,
+      "max_tokens": 16,
+      "constrained_decoding": true,
+      "prompt_sha256": "cce7785c15c89c2dd6c4732ed6a93b03413a88628958f6cc3e3236056e92338e"
+    }
+  },
+  {
+    "role": "generator",
+    "id": "g8",
+    "output": {
+      "text": "{\"count\": 3}",
+      "latency_ms": 1875.284,
+      "lock_wait_ms": 0.005,
+      "schema_cache_hit": true,
+      "grammar_setup_ms": 0.0,
+      "prompt_tokens": 155,
+      "output_tokens": 6,
+      "max_tokens": 16,
+      "constrained_decoding": true,
+      "prompt_sha256": "6bc6ac5299db45f5670d68f3f8d057b003818ffef706f2aad4196baa01867aeb"
+    }
+  }
+]

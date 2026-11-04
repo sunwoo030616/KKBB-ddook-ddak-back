@@ -45,6 +45,9 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
 
     @app.get('/health')
     def health():
+        active_generator=getattr(app.state.composer,'generator',None)
+        base_generator=getattr(active_generator,'generator',active_generator)
+        prefix_cache=getattr(base_generator,'system_prefix_cache',None)
         return {'status': 'ok', 'chunks': len(pipeline.chunks), 'corpus_version': pipeline.version,
                 'runtime_source_sha256':runtime_sources,
                 'llm_configured': pipeline.generator.configured,
@@ -53,6 +56,8 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
                 'default_generation': 'extractive',
                 'research_configured': app.state.research is not None,
                 'canvas_configured': app.state.composer is not None,
+                'system_prefix_cache':prefix_cache.snapshot() if prefix_cache else None,
+                'model_integrity':getattr(base_generator,'verification',None),
                 'inference_cache':(app.state.composer.generator.snapshot() if app.state.composer is not None
                                    and hasattr(app.state.composer.generator,'snapshot') else None),
                 'reranker_execution':({'device':getattr(app.state.composer.component_ranker,'device','unknown'),
@@ -167,7 +172,7 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
 
     class KnowledgeQuery(BaseModel):
         model_config=ConfigDict(extra='forbid')
-        question:str=Field(min_length=2,max_length=500)
+        question:str=Field(min_length=2,max_length=500,pattern=r'\S')
         kind:Literal['abstract','financial_summary']='abstract'
         mode:Literal['lexical','neural']='neural'
         limit:int=Field(default=3,ge=1,le=5)
@@ -181,6 +186,23 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
                 composer.component_ranker if req.mode=='neural' else None),
                 'scope':'Local curation corpus; abstracts and financial summaries are separate.'}
 
+    def curation_workflow():
+        from .knowledge_lab import KnowledgeStore
+        from .curation_workflow import CurationWorkflow
+        return CurationWorkflow(KnowledgeStore(knowledge_path))
+
+    @app.get('/knowledge/curation/status')
+    def curation_status():return curation_workflow().status()
+
+    @app.get('/knowledge/curation/audit')
+    def curation_audit():return curation_workflow().audit()
+
+    @app.post('/knowledge/reviewed-search')
+    def reviewed_search(req:KnowledgeQuery):
+        if req.mode=='neural' and composer is None:raise HTTPException(503,'로컬 검색 모델이 활성화되지 않았습니다.')
+        return curation_workflow().search_reviewed(req.question,req.kind,req.limit,
+            composer.component_ranker if req.mode=='neural' else None)
+
     @app.get('/canvas/catalog')
     def canvas_catalog():
         from .canvas import REGISTRY
@@ -190,14 +212,50 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
     class LiteratureResearch(BaseModel):
         model_config=ConfigDict(extra='forbid')
         question:str=Field(min_length=2,max_length=500,pattern=r'\S')
-        mode:Literal['single','decompose']='single'
+        mode:Literal['single','decompose','compact','fast','contextual','anchored']='single'
+        binding_format:Literal['ids','ordinal']='ids'
+
+    from threading import Lock
+    literature_lock=Lock()
+    literature_resources={}
+
+    def get_literature_resources(fast=False,english=False,translated=False):
+        # Reuse bounded score caches across requests. Lazy embedding load leaves
+        # the existing financial screen startup path unchanged.
+        from .retrieval_acceleration import CachedReranker,SpanPrefilter
+        with literature_lock:
+            key='english_reranker' if english else 'reranker'
+            if key not in literature_resources:
+                if english:
+                    from .literature_reranker import EnglishLiteratureReranker
+                    literature_resources[key]=CachedReranker(EnglishLiteratureReranker())
+                else:literature_resources[key]=CachedReranker(composer.component_ranker)
+            if fast and 'prefilter' not in literature_resources:
+                from .dense import LocalEncoder
+                literature_resources['prefilter']=SpanPrefilter(LocalEncoder(),knowledge_path.with_suffix('.spans.db'))
+            pool=int(os.getenv('LITERATURE_DENSE_POOL','0')) if translated else 0
+            if pool and not 3<=pool<=20:raise ValueError('invalid_literature_pool_budget')
+            if pool:
+                from .literature_encoder import EnglishLiteratureEncoder,DocumentPrefilter
+                if 'english_encoder' not in literature_resources:literature_resources['english_encoder']=EnglishLiteratureEncoder()
+                if 'document_prefilter' not in literature_resources:
+                    literature_resources['document_prefilter']=DocumentPrefilter(literature_resources['english_encoder'],knowledge_path.with_suffix('.english-vectors.db'),limit=pool)
+            return dict(literature_resources)
 
     @app.post('/knowledge/research')
     def literature_research(req:LiteratureResearch):
         if composer is None:raise HTTPException(503,'로컬 모델이 활성화되지 않았습니다.')
         from .knowledge_lab import KnowledgeStore
         from .evidence_graph import EvidenceGraph
-        return EvidenceGraph(KnowledgeStore(knowledge_path),composer.generator,composer.component_ranker).build(req.question,req.mode)
+        profile=os.getenv('LITERATURE_RERANKER','bge')
+        if profile not in ('bge','tiny'):raise HTTPException(503,'문헌 재평가 모델 설정을 확인해주세요.')
+        english=profile=='tiny' and req.mode in ('compact','fast','contextual','anchored')
+        translated=req.mode in ('compact','fast','contextual','anchored')
+        try:resources=get_literature_resources(req.mode=='fast',english,translated)
+        except (FileNotFoundError,ValueError):raise HTTPException(503,'로컬 문헌 모델과 후보 예산 설정을 확인해주세요.') from None
+        return EvidenceGraph(KnowledgeStore(knowledge_path),composer.generator,resources['english_reranker' if english else 'reranker'],
+                             prefilter=resources.get('prefilter'),document_prefilter=resources.get('document_prefilter') if translated else None,
+                             binding_format=req.binding_format).build(req.question,req.mode)
 
     @app.post('/canvas/compose')
     def canvas_compose(req: ComposeRequest):

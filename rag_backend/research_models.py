@@ -38,8 +38,13 @@ class LazyMLXGenerator:
 
 class MLXGenerator:
     def __init__(self, role='generator'):
+        import mlx.core as mx
         from mlx_lm import load
         self.path, self.identity = manifest(role)
+        from .model_integrity import verify_snapshot
+        from .inference_resources import configure_mlx_cache
+        self.verification=verify_snapshot(self.path,self.identity)
+        self.resource_policy=configure_mlx_cache(mx)
         self.model, self.tokenizer = load(str(self.path), tokenizer_config={'trust_remote_code': False})
         os.environ.setdefault('OUTLINES_CACHE_DIR', str(ROOT / 'var' / 'outlines-cache'))
         import outlines
@@ -50,6 +55,24 @@ class MLXGenerator:
         self.constrained_model.type_adapter.has_chat_template = False
         self.structured_generators = {}
         self.lock = Lock()
+        self.system_prefix_cache=None
+        if os.getenv('RAG_SYSTEM_PREFIX_CACHE')=='1':
+            from .system_prefix_cache import SystemPrefixCache
+            self.system_prefix_cache=SystemPrefixCache(self.tokenizer,self._prefill_system)
+
+    def _prefill_system(self,tokens):
+        import mlx.core as mx
+        from mlx_lm.models.cache import make_prompt_cache,KVCache
+        cache=make_prompt_cache(self.model)
+        if any(type(layer) is not KVCache for layer in cache):raise ValueError('unsupported_system_prefix_cache_type')
+        self.model(mx.array(tokens)[None],cache=cache)
+        mx.eval([layer.state for layer in cache])
+        # Store only system tokens, including no unused capacity or user suffix.
+        for layer in cache:
+            keys,values,offset=layer.state
+            layer.state=(mx.asarray(keys[...,:offset,:],copy=True),mx.asarray(values[...,:offset,:],copy=True),offset)
+        mx.eval([layer.state for layer in cache])
+        return cache
 
     def complete(self, system, user, max_tokens=500, output_type=None):
         from mlx_lm import generate
@@ -61,9 +84,13 @@ class MLXGenerator:
         with self.lock:
             acquired = time.perf_counter()
             schema_cache_hit=False;grammar_setup_ms=0
+            generation_prompt=prompt;extras={};prefix_trace={'enabled':False,'reused_tokens':0}
+            if self.system_prefix_cache is not None:
+                generation_prompt,prompt_cache,prefix_trace=self.system_prefix_cache.prepare(system,prompt)
+                if prompt_cache is not None:extras['prompt_cache']=prompt_cache
             if output_type is None:
-                text = generate(self.model, self.tokenizer, prompt=prompt, max_tokens=max_tokens,
-                                sampler=make_sampler(temp=0), verbose=False)
+                text = generate(self.model, self.tokenizer, prompt=generation_prompt, max_tokens=max_tokens,
+                                sampler=make_sampler(temp=0), verbose=False,**extras)
             else:
                 import outlines
                 schema_key=schema_fingerprint(output_type)
@@ -75,11 +102,12 @@ class MLXGenerator:
                         self.structured_generators.pop(next(iter(self.structured_generators)))
                     self.structured_generators[schema_key] = outlines.Generator(self.constrained_model, output_type)
                 grammar_setup_ms=(time.perf_counter()-setup_started)*1000
-                text = self.structured_generators[schema_key](prompt, max_tokens=max_tokens,
-                                                               sampler=make_sampler(temp=0), verbose=False)
+                text = self.structured_generators[schema_key](generation_prompt, max_tokens=max_tokens,
+                                                               sampler=make_sampler(temp=0), verbose=False,**extras)
         return {'text':text, 'latency_ms':round((time.perf_counter()-started)*1000,3),
                 'lock_wait_ms':round((acquired-started)*1000,3),
                 'schema_cache_hit':schema_cache_hit,'grammar_setup_ms':round(grammar_setup_ms,3),
+                'system_prefix_cache':prefix_trace,
                 'prompt_tokens':len(self.tokenizer.encode(prompt)),
                 'output_tokens':len(self.tokenizer.encode(text)),
                 'max_tokens':max_tokens, 'constrained_decoding':output_type is not None, 'prompt_sha256':hashlib.sha256(prompt.encode()).hexdigest()}
@@ -90,6 +118,8 @@ class CrossEncoderReranker:
         import torch
         from sentence_transformers import CrossEncoder
         self.path, self.identity = manifest('reranker')
+        from .model_integrity import verify_snapshot
+        self.verification=verify_snapshot(self.path,self.identity)
         torch.set_num_threads(2)
         requested=os.getenv('RERANKER_DEVICE','auto')
         if requested not in ('cpu','mps','auto'):raise ValueError('unsupported_reranker_device')
@@ -106,8 +136,10 @@ class CrossEncoderReranker:
             return []
         with self.lock:
             values=self.model.predict(pairs,batch_size=4,show_progress_bar=False,convert_to_numpy=True)
-        scores=[float(v) for v in values]
-        if not all(math.isfinite(v) for v in scores):raise ValueError('nonfinite_reranker_score')
+            scores=[float(v) for v in values]
+            if not all(math.isfinite(v) for v in scores):raise ValueError('nonfinite_reranker_score')
+            from .inference_resources import release_unused_mps
+            self.memory_stats=release_unused_mps(__import__('torch'),getattr(self,'device','cpu'))
         return scores
 
     def rerank(self, question, hits, top_k):
