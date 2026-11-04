@@ -1,0 +1,185 @@
+{
+  "checks": {
+    "new_request_has_distinct_screen_session": true,
+    "duplicate_plan_requires_zero_actual_model_calls": true,
+    "current_date_uses_current_evidence": true,
+    "past_date_does_not_reuse_current_financial_data": true,
+    "knowledge_store_has_32_documents": true,
+    "neural_knowledge_api_retrieves_query_rewriting": true
+  },
+  "first_screen": "b2b2f584-ae7f-4f5b-9b6c-1fc64b0f42d0",
+  "second_screen": "856388ec-30bd-47be-8eca-8cf6fc07b0c9",
+  "current_evidence_ids": [
+    "fsc-protection-current"
+  ],
+  "past_evidence_ids": [
+    "fsc-protection-before"
+  ],
+  "duplicate_trace": [
+    {
+      "step": "llm_plan",
+      "attempt": 1,
+      "status": "validated",
+      "deduplicated_types": [],
+      "slot_rejections": [],
+      "latency_ms": 1.284,
+      "lock_wait_ms": 0.001,
+      "prompt_tokens": 870,
+      "output_tokens": 42,
+      "model_calls": 0,
+      "cache_hit": true
+    },
+    {
+      "step": "evidence_decision",
+      "attempt": 1,
+      "action": "search",
+      "latency_ms": 1.214,
+      "prompt_tokens": 224,
+      "output_tokens": 55,
+      "model_calls": 0,
+      "cache_hit": true
+    }
+  ],
+  "knowledge_status": {
+    "documents": 32,
+    "candidate_notes": 32,
+    "notes_are_approved": false
+  },
+  "knowledge_search_ids": [
+    "arxiv:2305.14283",
+    "arxiv:2310.11511",
+    "arxiv:2403.14403"
+  ],
+  "environment": {
+    "status": "ok",
+    "chunks": 26,
+    "corpus_version": "dc20def3b9a26c5e",
+    "runtime_source_sha256": {
+      "rag_backend/evaluate_research.py": "c1300319104ae64e77296833e3d86fb10034c3a3513692837b6bcead416658a6",
+      "rag_backend/inference_cache.py": "226163f4d1225b28561876886633c0cf24f89f7e4dbc2b8f553e08602dea4eb0",
+      "rag_backend/store.py": "663633043f6bfe622625cf5f2392095530a131098e48b214c63df3b2fdfe381c",
+      "rag_backend/evaluate_intent_contract.py": "bb7896bcb6cbe8cf9edef486cc453104cfc7c6007ad5445ab1357bab2b0a514e",
+      "rag_backend/intent_contract.py": "9a0d754529ff4cd77e4169fca69b51ffdff0f9f859fd6bf376d681fa86b5160b",
+      "rag_backend/finance.py": "14695440b24dfb2bbf2ca09d6ca42bc397be13d11f1ce56ab1019e3fe04a8020",
+      "rag_backend/evaluate_finance.py": "b54e18f9b3276df62b6bc86957b626cc323732628a9490375fd97e9a115c03fb",
+      "rag_backend/generation.py": "91b9127647a9df3fcde87d63e0168328238197ae93b68a2c0f31fcc40f136bdf",
+      "rag_backend/models.py": "8bbfe8f57c6f9e420da282e2f4ffcec8ea04851b413cf20247c992c27045c3db",
+      "rag_backend/evaluate_semantic_review.py": "6fdff311e6f52668a351c5ad01be7e123fbfd210abefc6dcaafc25b2d62d057b",
+      "rag_backend/semantic_review.py": "2e90734a7ebe953da184f894bbe8dbdd370a9d0fdf5cb99a6dfbc717632d7ba4",
+      "rag_backend/research.py": "bea10d359e3af46bf54d9d422bf8ed11cb0e1dbddd8fa32cd943d76f61a2bb27",
+      "rag_backend/research_models.py": "c90b707d7faff75d7aef72e4750d1741be0125117a4a3085aeffd7d70dd1fe7d",
+      "rag_backend/canvas_context.py": "2a7d55e5ecce37685711cdfbcf8757b2158619c9f28c67d7418f3a99e05cc9ef",
+      "rag_backend/dense.py": "be5c2e5b83f3070d7eb96b83c10d6cf27f34ba521b962ef4223374de530127ef",
+      "rag_backend/prepare_research_models.py": "81b0a331e216bbcbefec5ae9e9189b7cbe8ddb3a14217fa3a0dc5b26968f82ac",
+      "rag_backend/evaluate_integrated_ui.py": "b5028b69bd0276b78cc9a67433d63b09d5a631a39995de7ce310471c574a4fb6",
+      "rag_backend/train_encoder.py": "a5ad5d148a69f5270613f2a071d3a449a2e2b58a3e458e63e87b347900607f77",
+      "rag_backend/knowledge_lab.py": "94d10e088eb5b2fd8a6dbe8fbfffd819486adb2cbfa3fa2bde74be62050ae55b",
+      "rag_backend/__init__.py": "d4e85bc05e507686083583ee94dbf39ff041915ffbd982eef80615b0199d5595",
+      "rag_backend/paper_agent.py": "c63383b991eda4d4627e0652c3aba0a5677425b99d2e96ff0aaea5d67c60067a",
+      "rag_backend/evidence_agent.py": "345690781da335b9573d65b31096adfd3d9fa0fef92cb1a5557c2b0a4197a542",
+      "rag_backend/canvas_jobs.py": "201ffda2753e5065c2f3ad52c4cf7d9f8337e7f10334ba0c018da7e880923df2",
+      "rag_backend/render_research_figures.py": "1522f385e94c332ddbf25391b267f0648236c4d688a77cc234015f7b777f0433",
+      "rag_backend/evaluate_component_queries.py": "2dc3976ae6df2c005a1a0c234a3f47b8da6162664d29ea5969274d374eb27df5",
+      "rag_backend/pipeline.py": "67fb5a1b6cd1e7ce79ec38bd18fea078b98fa45a7236da7a4b3c0cb5baabd9c5",
+      "rag_backend/component_queries.py": "0e5b9d7cba75d48b3ec441c5d86b1e628987f04a257897471a68567f1e13fd96",
+      "rag_backend/retrieval.py": "51e359e5ce34ef523cd53ae82e19acf379118ed30b945d637bfbf78ac75fa47f",
+      "rag_backend/app.py": "5a6d11e3cb71dd6e37678dd9d5c671e80746d0526ea6585797e1bbb53b859e70",
+      "rag_backend/evaluate_canvas_http.py": "fee27b9f4e4b9a5f4c128067aab56ab707f2787ad68fdaf04e92f2ab37ba39df",
+      "rag_backend/evaluate.py": "8d58ce3ade51ad523c8141bcb87d1609899335f7a5674cf4bad0ab3a0a67f9ed",
+      "rag_backend/widget_registry.py": "29c40157b74c928ea9119dcb94cbff17c6ad3c8db020291ec826db86415b4b16",
+      "rag_backend/verify_intent_repair.py": "ae3c181232788dd603dafa89d113158cae55190081c2459bdce16caa3b549956",
+      "rag_backend/prepare_document.py": "4a64702e691c3ce18a4f6bf6d4c320d201c0c63778597f116e71764e0a72410c",
+      "rag_backend/calibrate_research.py": "b697f25d0c29477f4ddf559a8acce9c0db88dc426490e5441ea1e1cd2c5692eb",
+      "rag_backend/canvas.py": "440903b709f6cb5ef4d5fe1de52b89342ef3cfef189db4de0d7b73e53e56d5da"
+    },
+    "llm_configured": false,
+    "retrievers": [
+      "bm25",
+      "hybrid"
+    ],
+    "embedding_model": null,
+    "default_generation": "extractive",
+    "research_configured": false,
+    "canvas_configured": true,
+    "inference_cache": {
+      "hits": 0,
+      "misses": 0,
+      "waits": 0,
+      "executions": 0,
+      "entries": 0,
+      "bytes": 0,
+      "capacity": 32,
+      "ttl_seconds": 300
+    },
+    "reranker_execution": {
+      "device": "mps",
+      "dtype": "float16"
+    }
+  },
+  "after": {
+    "status": "ok",
+    "chunks": 26,
+    "corpus_version": "dc20def3b9a26c5e",
+    "runtime_source_sha256": {
+      "rag_backend/evaluate_research.py": "c1300319104ae64e77296833e3d86fb10034c3a3513692837b6bcead416658a6",
+      "rag_backend/inference_cache.py": "226163f4d1225b28561876886633c0cf24f89f7e4dbc2b8f553e08602dea4eb0",
+      "rag_backend/store.py": "663633043f6bfe622625cf5f2392095530a131098e48b214c63df3b2fdfe381c",
+      "rag_backend/evaluate_intent_contract.py": "bb7896bcb6cbe8cf9edef486cc453104cfc7c6007ad5445ab1357bab2b0a514e",
+      "rag_backend/intent_contract.py": "9a0d754529ff4cd77e4169fca69b51ffdff0f9f859fd6bf376d681fa86b5160b",
+      "rag_backend/finance.py": "14695440b24dfb2bbf2ca09d6ca42bc397be13d11f1ce56ab1019e3fe04a8020",
+      "rag_backend/evaluate_finance.py": "b54e18f9b3276df62b6bc86957b626cc323732628a9490375fd97e9a115c03fb",
+      "rag_backend/generation.py": "91b9127647a9df3fcde87d63e0168328238197ae93b68a2c0f31fcc40f136bdf",
+      "rag_backend/models.py": "8bbfe8f57c6f9e420da282e2f4ffcec8ea04851b413cf20247c992c27045c3db",
+      "rag_backend/evaluate_semantic_review.py": "6fdff311e6f52668a351c5ad01be7e123fbfd210abefc6dcaafc25b2d62d057b",
+      "rag_backend/semantic_review.py": "2e90734a7ebe953da184f894bbe8dbdd370a9d0fdf5cb99a6dfbc717632d7ba4",
+      "rag_backend/research.py": "bea10d359e3af46bf54d9d422bf8ed11cb0e1dbddd8fa32cd943d76f61a2bb27",
+      "rag_backend/research_models.py": "c90b707d7faff75d7aef72e4750d1741be0125117a4a3085aeffd7d70dd1fe7d",
+      "rag_backend/canvas_context.py": "2a7d55e5ecce37685711cdfbcf8757b2158619c9f28c67d7418f3a99e05cc9ef",
+      "rag_backend/dense.py": "be5c2e5b83f3070d7eb96b83c10d6cf27f34ba521b962ef4223374de530127ef",
+      "rag_backend/prepare_research_models.py": "81b0a331e216bbcbefec5ae9e9189b7cbe8ddb3a14217fa3a0dc5b26968f82ac",
+      "rag_backend/evaluate_integrated_ui.py": "b5028b69bd0276b78cc9a67433d63b09d5a631a39995de7ce310471c574a4fb6",
+      "rag_backend/train_encoder.py": "a5ad5d148a69f5270613f2a071d3a449a2e2b58a3e458e63e87b347900607f77",
+      "rag_backend/knowledge_lab.py": "94d10e088eb5b2fd8a6dbe8fbfffd819486adb2cbfa3fa2bde74be62050ae55b",
+      "rag_backend/__init__.py": "d4e85bc05e507686083583ee94dbf39ff041915ffbd982eef80615b0199d5595",
+      "rag_backend/paper_agent.py": "c63383b991eda4d4627e0652c3aba0a5677425b99d2e96ff0aaea5d67c60067a",
+      "rag_backend/evidence_agent.py": "345690781da335b9573d65b31096adfd3d9fa0fef92cb1a5557c2b0a4197a542",
+      "rag_backend/canvas_jobs.py": "201ffda2753e5065c2f3ad52c4cf7d9f8337e7f10334ba0c018da7e880923df2",
+      "rag_backend/render_research_figures.py": "1522f385e94c332ddbf25391b267f0648236c4d688a77cc234015f7b777f0433",
+      "rag_backend/evaluate_component_queries.py": "2dc3976ae6df2c005a1a0c234a3f47b8da6162664d29ea5969274d374eb27df5",
+      "rag_backend/pipeline.py": "67fb5a1b6cd1e7ce79ec38bd18fea078b98fa45a7236da7a4b3c0cb5baabd9c5",
+      "rag_backend/component_queries.py": "0e5b9d7cba75d48b3ec441c5d86b1e628987f04a257897471a68567f1e13fd96",
+      "rag_backend/retrieval.py": "51e359e5ce34ef523cd53ae82e19acf379118ed30b945d637bfbf78ac75fa47f",
+      "rag_backend/app.py": "5a6d11e3cb71dd6e37678dd9d5c671e80746d0526ea6585797e1bbb53b859e70",
+      "rag_backend/evaluate_canvas_http.py": "fee27b9f4e4b9a5f4c128067aab56ab707f2787ad68fdaf04e92f2ab37ba39df",
+      "rag_backend/evaluate.py": "8d58ce3ade51ad523c8141bcb87d1609899335f7a5674cf4bad0ab3a0a67f9ed",
+      "rag_backend/widget_registry.py": "29c40157b74c928ea9119dcb94cbff17c6ad3c8db020291ec826db86415b4b16",
+      "rag_backend/verify_intent_repair.py": "ae3c181232788dd603dafa89d113158cae55190081c2459bdce16caa3b549956",
+      "rag_backend/prepare_document.py": "4a64702e691c3ce18a4f6bf6d4c320d201c0c63778597f116e71764e0a72410c",
+      "rag_backend/calibrate_research.py": "b697f25d0c29477f4ddf559a8acce9c0db88dc426490e5441ea1e1cd2c5692eb",
+      "rag_backend/canvas.py": "440903b709f6cb5ef4d5fe1de52b89342ef3cfef189db4de0d7b73e53e56d5da"
+    },
+    "llm_configured": false,
+    "retrievers": [
+      "bm25",
+      "hybrid"
+    ],
+    "embedding_model": null,
+    "default_generation": "extractive",
+    "research_configured": false,
+    "canvas_configured": true,
+    "inference_cache": {
+      "hits": 4,
+      "misses": 2,
+      "waits": 0,
+      "executions": 2,
+      "entries": 2,
+      "bytes": 825,
+      "capacity": 32,
+      "ttl_seconds": 300
+    },
+    "reranker_execution": {
+      "device": "mps",
+      "dtype": "float16"
+    }
+  }
+}

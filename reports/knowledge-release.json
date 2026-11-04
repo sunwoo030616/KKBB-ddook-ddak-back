@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-04",
+  "python_tests_passed": 176,
+  "frontend_tests_passed": 8,
+  "frontend_lint": "passed",
+  "frontend_build": "passed",
+  "paid_generation_api_calls": 0,
+  "paid_gpu_jobs": 0,
+  "models": [
+    "mlx-community/Qwen3-4B-4bit",
+    "BAAI/bge-reranker-v2-m3"
+  ],
+  "reports": [
+    "knowledge-automation.json",
+    "incremental-refresh.json",
+    "literature-retrieval.json",
+    "exact-inference-cache.json",
+    "knowledge-service.json"
+  ],
+  "limits": [
+    "32 notes are pending review, not approved scientific or financial facts.",
+    "Retrieval uses 6 abstracts and 12 language-paired developer-authored topic queries.",
+    "Inference cache experiment repeats two inputs; no general production hit-rate claim."
+  ],
+  "review": [
+    "Exact-input cache keeps schema/token/model/input isolation and rejects invalid JSON caching.",
+    "Source-offset selection, version invalidation, rollback and incremental reuse have tests.",
+    "Actual Spring check confirms separate sessions and as-of evidence despite inference reuse.",
+    "Existing v1 frontend endpoint contract is preserved; local v2 remains available."
+  ]
+}

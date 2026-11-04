@@ -1,0 +1,62 @@
+{
+  "first_ingest": {
+    "seen": 32,
+    "changed": [
+      "arxiv:2307.03172",
+      "arxiv:2210.03629",
+      "arxiv:2310.11511",
+      "arxiv:2305.14283",
+      "arxiv:2005.11401",
+      "arxiv:2403.14403",
+      "finance:kbcard-report",
+      "finance:kbcard-hours",
+      "finance:kbcard-overseas-report",
+      "finance:kbcard-bulk",
+      "finance:kbcard-release",
+      "finance:kbcard-reissue",
+      "finance:kbsec-overseas",
+      "finance:kbsec-refund",
+      "finance:kbsec-reissue",
+      "finance:kbsec-release",
+      "finance:kbsec-fee",
+      "finance:kbsec-installment",
+      "finance:kbsec-declined",
+      "finance:kbsec-limits",
+      "finance:kbbank-security-release",
+      "finance:shinhan-overseas",
+      "finance:shinhan-report",
+      "finance:shinhan-autopay",
+      "finance:shinhan-registration",
+      "finance:fsc-protection-before",
+      "finance:fsc-protection-current",
+      "finance:kb-collateral-concept",
+      "finance:kb-collateral-eligibility",
+      "finance:kb-collateral-close",
+      "finance:kb-funding-compare",
+      "finance:kb-funding-inputs"
+    ],
+    "unchanged": 0
+  },
+  "first_run": {
+    "processed": 32,
+    "reused": 0,
+    "failed": 0,
+    "model_calls": 32,
+    "scope": "Exact quote provenance only. Category/tags are unapproved AI suggestions; failed attempts are not silently retried."
+  },
+  "second_ingest": {
+    "seen": 32,
+    "changed": [],
+    "unchanged": 32
+  },
+  "second_run": {
+    "processed": 0,
+    "reused": 32,
+    "failed": 0,
+    "model_calls": 0,
+    "scope": "Exact quote provenance only. Category/tags are unapproved AI suggestions; failed attempts are not silently retried."
+  },
+  "notes": 32,
+  "all_source_offsets_valid": true,
+  "scope": "Pending-review source spans, NOT approved factual claims. Full abstracts and quotes are local only."
+}
