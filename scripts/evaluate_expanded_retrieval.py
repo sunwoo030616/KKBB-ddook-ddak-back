@@ -32,20 +32,22 @@ def rank(records,query,reranker,prefilter=None,pool=20):
 def run(kind):
     from rag_backend.knowledge_lab import KnowledgeStore
     from rag_backend.retrieval_acceleration import CachedReranker,SpanPrefilter
-    from rag_backend.dense import LocalEncoder
     store=KnowledgeStore(ROOT/'var/research-expanded.sqlite3')
     records=store.documents('abstract');cases=json.loads((ROOT/'data/expanded_literature_queries.json').read_text())
     report=json.loads(OUT.read_text());setup=time.perf_counter()
-    prefilter=SpanPrefilter(LocalEncoder(),ROOT/'var/expanded-vectors.sqlite3')
-    prefilter.vectors([d['title']+'\n'+d['text'] for d in records])
     if kind=='bge':
+        from rag_backend.dense import LocalEncoder
+        prefilter=SpanPrefilter(LocalEncoder(),ROOT/'var/expanded-vectors.sqlite3')
         from rag_backend.research_models import CrossEncoderReranker
         base=CrossEncoderReranker()
         configs={'bge_overlap20':(None,20),'bge_dense20':(prefilter,20),'bge_dense10':(prefilter,10)}
     else:
         from rag_backend.literature_reranker import EnglishLiteratureReranker
+        from rag_backend.literature_encoder import EnglishLiteratureEncoder
+        prefilter=SpanPrefilter(EnglishLiteratureEncoder(),ROOT/'var/expanded-vectors.sqlite3')
         base=EnglishLiteratureReranker();configs={'tiny_en_dense10':(prefilter,10)}
         cases=[c for c in cases if c['language']=='en']
+    prefilter.vectors([d['title']+'\n'+d['text'] for d in records])
     rankers={key:CachedReranker(base) for key in configs}
     report.setdefault('execution',{})[kind]={'model':base.identity,'device':base.device,'dtype':base.dtype,
         'embedding':prefilter.encoder.name,'setup_seconds':time.perf_counter()-setup};save(report)
