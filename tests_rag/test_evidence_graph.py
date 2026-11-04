@@ -85,7 +85,7 @@ def test_source_change_during_selection_cannot_return_fresh_evidence(tmp_path):
 
 
 def test_compact_plan_keeps_server_owned_request_provenance(tmp_path):
-    kb=store(tmp_path);model=Model({'queries':['reasoning tool observations']},{'t0':['e0']})
+    kb=store(tmp_path);model=Model({'count':1},{'queries':['reasoning tool observations']},{'t0':['e0']})
     graph=EvidenceGraph(kb,model,Ranker())
     result=graph.build('A method combining reasoning and tool use','compact')
     assert len(result['tasks'])==1 and result['tasks'][0]['anchor_scope']=='whole_request'
@@ -96,5 +96,10 @@ def test_fast_prefilter_bounds_cross_encoder_span_work(tmp_path):
     kb=store(tmp_path)
     class Filter:
         def select(self,query,spans):return spans[:1]
-    result=EvidenceGraph(kb,Model({'queries':['tool observations']},{'t0':['e0']}),Ranker(),prefilter=Filter()).build('Find tools','fast')
+    result=EvidenceGraph(kb,Model({'count':1},{'queries':['tool observations']},{'t0':['e0']}),Ranker(),prefilter=Filter()).build('Find tools','fast')
     assert next(t['scored_pairs'] for t in result['trace'] if t['step']=='span_search')==1
+
+
+def test_fixed_need_count_rejects_extra_or_missing_queries(tmp_path):
+    graph=EvidenceGraph(store(tmp_path),Model({'count':2},{'queries':['only one query']}),Ranker())
+    assert graph.build('Compare two independent methods','compact')['status']=='invalid_plan'
