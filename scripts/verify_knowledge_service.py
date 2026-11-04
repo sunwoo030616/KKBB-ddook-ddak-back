@@ -45,7 +45,7 @@ if __name__=='__main__':
             'duplicate_plan_requires_zero_actual_model_calls':bool(steps) and all(t.get('model_calls')==0 for t in steps),
             'current_date_uses_current_evidence':'fsc-protection-current' in evidence(first),
             'past_date_does_not_reuse_current_financial_data':evidence(past)=={'fsc-protection-before'},
-            'knowledge_store_has_32_documents':status['documents']==32,
+            'knowledge_store_has_expected_corpus':status['documents']==len(json.loads((ROOT/'data/financial_guides.json').read_text())['chunks'])+len(json.loads((ROOT/'data/expanded_literature_manifest.json').read_text())['records']),
             'neural_knowledge_api_retrieves_query_rewriting':'arxiv:2305.14283' in [h['id'] for h in search['hits']]}
     result={'checks':checks,'first_screen':first['session_id'],'second_screen':second['session_id'],
             'current_evidence_ids':sorted(evidence(first)),'past_evidence_ids':sorted(evidence(past)),

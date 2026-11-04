@@ -1,0 +1,73 @@
+[
+  {
+    "id": "v1",
+    "question": "정답 계산 프로그램을 전문가가 주석한 재무보고서 데이터셋과 표 셀·본문을 함께 읽어 집계 연산하는 금융 벤치마크를 각각 찾아줘.",
+    "expected_sources": [
+      "arxiv:2109.00122",
+      "arxiv:2105.07624"
+    ],
+    "expects_missing": false
+  },
+  {
+    "id": "v2",
+    "question": "이전 계산을 이어가는 여러 턴 금융 질문 연구와 금융 감성 분류에 도메인 BERT를 적용한 연구를 찾아줘.",
+    "expected_sources": [
+      "arxiv:2210.03849",
+      "arxiv:1908.10063"
+    ],
+    "expects_missing": false
+  },
+  {
+    "id": "v3",
+    "question": "Find paged management of key-value caches; find IO-aware exact attention.",
+    "expected_sources": [
+      "arxiv:2309.06180",
+      "arxiv:2205.14135"
+    ],
+    "expects_missing": false
+  },
+  {
+    "id": "v4",
+    "question": "Find verification of tokens proposed by a draft model and prediction of future tokens using multiple decoding heads.",
+    "expected_sources": [
+      "arxiv:2211.17192",
+      "arxiv:2401.10774"
+    ],
+    "expects_missing": false
+  },
+  {
+    "id": "v5",
+    "question": "재귀적으로 군집화하고 요약한 트리를 검색하는 방법과 엔티티 그래프의 커뮤니티 요약을 활용하는 방법을 찾아줘.",
+    "expected_sources": [
+      "arxiv:2401.18059",
+      "arxiv:2404.16130"
+    ],
+    "expects_missing": false
+  },
+  {
+    "id": "v6",
+    "question": "Find RAG judges corrected with prediction-powered inference; find reference-free evaluation of retrieval and generation.",
+    "expected_sources": [
+      "arxiv:2311.09476",
+      "arxiv:2309.15217"
+    ],
+    "expects_missing": false
+  },
+  {
+    "id": "v7",
+    "question": "API를 언제 어떤 인자로 호출할지 스스로 학습하는 모델과 추론·도구 행동을 교대로 생성하는 방식을 찾아줘.",
+    "expected_sources": [
+      "arxiv:2302.04761",
+      "arxiv:2210.03629"
+    ],
+    "expects_missing": false
+  },
+  {
+    "id": "v8",
+    "question": "검색 질의를 재작성하는 방법과 AMD MI300X에서 측정한 전력 소비량을 각각 찾아줘.",
+    "expected_sources": [
+      "arxiv:2305.14283"
+    ],
+    "expects_missing": true
+  }
+]
