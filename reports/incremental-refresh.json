@@ -1,17 +1,51 @@
 {
   "ingest": {
-    "seen": 32,
+    "seen": 56,
     "changed": [],
-    "unchanged": 32
+    "unchanged": 56
   },
+  "corpus": "expanded",
+  "documents": 56,
   "curation": {
+    "enqueued": 0,
+    "legacy_migration": {
+      "imported": 0,
+      "invalid": 0,
+      "automatic_approval": false
+    },
     "processed": 0,
-    "reused": 32,
-    "failed": 0,
     "model_calls": 0,
-    "scope": "Exact quote provenance only. Category/tags are unapproved AI suggestions; failed attempts are not silently retried."
+    "rows": [],
+    "status": {
+      "states": {
+        "prepared": 56
+      },
+      "reviews": {
+        "pending": 56
+      },
+      "expired_leases": 0,
+      "delayed_jobs": 0,
+      "active": {
+        "id": null,
+        "revision": 0,
+        "valid": false,
+        "manifest": []
+      }
+    },
+    "audit": {
+      "valid": true,
+      "jobs": 56,
+      "prepared_candidates": 56,
+      "historical_candidates": 0,
+      "events": 142,
+      "problems": [],
+      "scope": "Local provenance and state replay; no semantic correctness or tamper-proof claim."
+    },
+    "model_call_scope": "Completed generation returns; interrupted in-flight calls may have unknown execution count."
   },
   "model_loads": 0,
-  "seconds": 0.006825666059739888,
-  "automatic_live_publication": false
+  "seconds": 0.030775666004046798,
+  "automatic_approval": false,
+  "automatic_live_publication": false,
+  "deadline_scope": "Checked between jobs; does not interrupt an in-flight generation."
 }
