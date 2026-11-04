@@ -187,6 +187,18 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
         active, version = composer.registry.snapshot() if composer else (REGISTRY, 'builtin')
         return {'version':version, 'widgets':[{'type':k,**v} for k,v in active.items()]}
 
+    class LiteratureResearch(BaseModel):
+        model_config=ConfigDict(extra='forbid')
+        question:str=Field(min_length=2,max_length=500,pattern=r'\S')
+        mode:Literal['single','decompose']='single'
+
+    @app.post('/knowledge/research')
+    def literature_research(req:LiteratureResearch):
+        if composer is None:raise HTTPException(503,'로컬 모델이 활성화되지 않았습니다.')
+        from .knowledge_lab import KnowledgeStore
+        from .evidence_graph import EvidenceGraph
+        return EvidenceGraph(KnowledgeStore(knowledge_path),composer.generator,composer.component_ranker).build(req.question,req.mode)
+
     @app.post('/canvas/compose')
     def canvas_compose(req: ComposeRequest):
         if composer is None:
