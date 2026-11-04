@@ -80,3 +80,5 @@ def test_knowledge_api_validation_and_optional_neural_dependency(monkeypatch,tmp
         assert client.post('/knowledge/search',json={'question':'retrieval','kind':'private_files'}).status_code==422
         assert client.post('/knowledge/research',json={'question':'  '}).status_code==422
         assert client.post('/knowledge/research',json={'question':'retrieval','mode':'unbounded'}).status_code==422
+        for mode in ('compact','fast'):
+            assert client.post('/knowledge/research',json={'question':'retrieval','mode':mode}).status_code==503

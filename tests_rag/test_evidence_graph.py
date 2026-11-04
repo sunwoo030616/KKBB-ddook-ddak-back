@@ -82,3 +82,19 @@ def test_source_change_during_selection_cannot_return_fresh_evidence(tmp_path):
     result=graph.build('tool observations','single')
     assert result['status']=='stale_snapshot' and result['edges']==[]
     assert result['source_versions_current'] is False
+
+
+def test_compact_plan_keeps_server_owned_request_provenance(tmp_path):
+    kb=store(tmp_path);model=Model({'queries':['reasoning tool observations']},{'t0':['e0']})
+    graph=EvidenceGraph(kb,model,Ranker())
+    result=graph.build('A method combining reasoning and tool use','compact')
+    assert len(result['tasks'])==1 and result['tasks'][0]['anchor_scope']=='whole_request'
+    assert result['tasks'][0]['request_quote']=='A method combining reasoning and tool use'
+
+
+def test_fast_prefilter_bounds_cross_encoder_span_work(tmp_path):
+    kb=store(tmp_path)
+    class Filter:
+        def select(self,query,spans):return spans[:1]
+    result=EvidenceGraph(kb,Model({'queries':['tool observations']},{'t0':['e0']}),Ranker(),prefilter=Filter()).build('Find tools','fast')
+    assert next(t['scored_pairs'] for t in result['trace'] if t['step']=='span_search')==1
