@@ -93,12 +93,14 @@ JSON의 queries 배열에 영어 키워드 3~7개로 된 질의를 1~3개 반환
 
 
 class EvidenceGraph:
-    def __init__(self,store,generator,reranker,planner=None,prefilter=None,counter=None,document_prefilter=None,per_clause=False):
+    def __init__(self,store,generator,reranker,planner=None,prefilter=None,counter=None,document_prefilter=None,per_clause=False,binding_format='ids'):
+        if binding_format not in ('ids','ordinal'):raise ValueError('unsupported_binding_format')
         self.store=store;self.generator=generator;self.reranker=reranker
         self.planner=planner or generator;self.prefilter=prefilter
         self.counter=counter or self.planner
         self.document_prefilter=document_prefilter
         self.per_clause=per_clause
+        self.binding_format=binding_format
 
     def build(self,question,mode='decompose'):
         started=time.perf_counter();trace=[]
@@ -217,7 +219,7 @@ class EvidenceGraph:
         if catalog:
             fields={id:(list[Literal[tuple(ids)]] if ids else list[str],
                         Field(max_length=(3 if mode=='single' else 1) if ids else 0)) for id,ids in pools.items()}
-            indexed=mode=='anchored'
+            indexed=mode=='anchored' and self.binding_format=='ordinal'
             schema=(create_model('IndexedEvidenceBindings'+str(len(pools)),__config__=ConfigDict(extra='forbid'),
                 choices=(list[Literal[-1,0,1,2]],Field(min_length=len(pools),max_length=len(pools))))
                 if indexed else create_model('EvidenceBindings',__config__=ConfigDict(extra='forbid'),**fields))

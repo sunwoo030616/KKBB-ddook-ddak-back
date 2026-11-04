@@ -213,6 +213,7 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
         model_config=ConfigDict(extra='forbid')
         question:str=Field(min_length=2,max_length=500,pattern=r'\S')
         mode:Literal['single','decompose','compact','fast','contextual','anchored']='single'
+        binding_format:Literal['ids','ordinal']='ids'
 
     from threading import Lock
     literature_lock=Lock()
@@ -253,7 +254,8 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
         try:resources=get_literature_resources(req.mode=='fast',english,translated)
         except (FileNotFoundError,ValueError):raise HTTPException(503,'로컬 문헌 모델과 후보 예산 설정을 확인해주세요.') from None
         return EvidenceGraph(KnowledgeStore(knowledge_path),composer.generator,resources['english_reranker' if english else 'reranker'],
-                             prefilter=resources.get('prefilter'),document_prefilter=resources.get('document_prefilter') if translated else None).build(req.question,req.mode)
+                             prefilter=resources.get('prefilter'),document_prefilter=resources.get('document_prefilter') if translated else None,
+                             binding_format=req.binding_format).build(req.question,req.mode)
 
     @app.post('/canvas/compose')
     def canvas_compose(req: ComposeRequest):
