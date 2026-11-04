@@ -29,7 +29,7 @@ def rank(records,query,reranker,prefilter=None,pool=20):
     return [d['id'] for d,s in ordered[:3]],[d['id'] for d in candidates]
 
 
-def run(kind):
+def run(kind,max_seconds=None):
     from rag_backend.knowledge_lab import KnowledgeStore
     from rag_backend.retrieval_acceleration import CachedReranker,SpanPrefilter
     store=KnowledgeStore(ROOT/'var/research-expanded.sqlite3')
@@ -51,7 +51,10 @@ def run(kind):
     rankers={key:CachedReranker(base) for key in configs}
     report.setdefault('execution',{})[kind]={'model':base.identity,'device':base.device,'dtype':base.dtype,
         'embedding':prefilter.encoder.name,'setup_seconds':time.perf_counter()-setup};save(report)
+    evaluation_started=time.monotonic();completed=True
     for index,case in enumerate(cases):
+        if max_seconds is not None and time.monotonic()-evaluation_started>=max_seconds:
+            completed=False;break
         keys=list(configs);keys=keys[index%len(keys):]+keys[:index%len(keys)]
         for key in keys:
             filter_,pool=configs[key];started=time.perf_counter()
@@ -63,12 +66,40 @@ def run(kind):
                        scored_pairs=len(candidates),seconds=time.perf_counter()-started)
             report['rows'].append(row);save(report)
             print(case['id'],key,row['hit_at_1'],round(row['seconds'],2),flush=True)
-    report['execution'][kind]['score_caches']={k:r.stats for k,r in rankers.items()};save(report)
+    report['execution'][kind].update(score_caches={k:r.stats for k,r in rankers.items()},
+        complete=completed,stop_reason=None if completed else 'between_query_time_budget',
+        max_seconds=max_seconds);save(report)
+
+
+def summarize(report):
+    report['summary']={}
+    for mode in sorted({r['mode'] for r in report['rows']}):
+        report['summary'][mode]={}
+        for language in ('ko','en'):
+            rows=[r for r in report['rows'] if r['mode']==mode and r['language']==language]
+            if not rows:continue
+            report['summary'][mode][language]={'n':len(rows),'hit_at_1':sum(r['hit_at_1'] for r in rows),
+                'hit_at_3':sum(r['hit_at_3'] for r in rows),'mrr_at_3':statistics.mean(r['rr_at_3'] for r in rows),
+                'median_seconds':statistics.median(r['seconds'] for r in rows),'scored_pairs':sum(r['scored_pairs'] for r in rows),
+                'target_in_pool':sum(r.get('target_in_pool',False) for r in rows) if mode!='token_overlap' else None}
+    # A stopped expensive run must only be compared with other pipelines on the
+    # exact same queries; never treat the tiny model's extra queries as paired.
+    modes=sorted(report['summary']);common=set.intersection(*[
+        {r['id'] for r in report['rows'] if r['mode']==mode and r['language']=='en'} for mode in modes])
+    report['paired_english']={'query_ids':sorted(common),'n':len(common),'modes':{}}
+    for mode in modes:
+        rows=[r for r in report['rows'] if r['mode']==mode and r['id'] in common]
+        report['paired_english']['modes'][mode]={'n':len(rows),'hit_at_1':sum(r['hit_at_1'] for r in rows),
+            'hit_at_3':sum(r['hit_at_3'] for r in rows),'mrr_at_3':statistics.mean(r['rr_at_3'] for r in rows) if rows else None,
+            'median_seconds':statistics.median(r['seconds'] for r in rows) if rows else None}
+    return report
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--worker',choices=('bge','tiny'));args=parser.parse_args()
-    if args.worker:run(args.worker);return
+    parser=argparse.ArgumentParser();parser.add_argument('--worker',choices=('bge','tiny'))
+    parser.add_argument('--bge-max-seconds',type=float,default=1200);args=parser.parse_args()
+    if args.bge_max_seconds<=0:parser.error('positive BGE budget required')
+    if args.worker:run(args.worker,args.bge_max_seconds if args.worker=='bge' else None);return
     from rag_backend.knowledge_lab import KnowledgeStore
     abstracts=json.loads((ROOT/'var/literature/expanded-abstracts.json').read_text())['records']
     store=KnowledgeStore(ROOT/'var/research-expanded.sqlite3');store.ingest(abstracts)
@@ -87,17 +118,8 @@ def main():
             'rr_at_3':1/position if position else 0,'seconds':time.perf_counter()-begin,'scored_pairs':0})
     save(report)
     for kind in ('bge','tiny'):
-        subprocess.run([sys.executable,str(Path(__file__)),'--worker',kind],cwd=ROOT,check=True)
-    report=json.loads(OUT.read_text());report['summary']={}
-    for mode in sorted({r['mode'] for r in report['rows']}):
-        report['summary'][mode]={}
-        for language in ('ko','en'):
-            rows=[r for r in report['rows'] if r['mode']==mode and r['language']==language]
-            if not rows:continue
-            report['summary'][mode][language]={'n':len(rows),'hit_at_1':sum(r['hit_at_1'] for r in rows),
-                'hit_at_3':sum(r['hit_at_3'] for r in rows),'mrr_at_3':statistics.mean(r['rr_at_3'] for r in rows),
-                'median_seconds':statistics.median(r['seconds'] for r in rows),'scored_pairs':sum(r['scored_pairs'] for r in rows),
-                'target_in_pool':sum(r.get('target_in_pool',False) for r in rows) if mode!='token_overlap' else None}
+        subprocess.run([sys.executable,str(Path(__file__)),'--worker',kind,'--bge-max-seconds',str(args.bge_max_seconds)],cwd=ROOT,check=True)
+    report=summarize(json.loads(OUT.read_text()))
     save(report);print(json.dumps(report['summary']),flush=True)
 
 
