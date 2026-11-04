@@ -20,7 +20,7 @@ def test_actual_mcp_handshake_discovery_and_version_checked_quote(tmp_path):
     async def check():
         async with Client(create_server(s)) as client:
             tools=await client.list_tools()
-            assert {t.name for t in tools.tools}=={'catalog_sources','search_sources','read_source_span','research_literature','curation_status'}
+            assert {t.name for t in tools.tools}=={'catalog_sources','search_sources','read_source_span','research_literature','curation_status','knowledge_statistics'}
             assert all(t.annotations.read_only_hint and not t.annotations.destructive_hint for t in tools.tools)
             result=await client.call_tool('search_sources',{'question':'retrieval'})
             assert not result.is_error

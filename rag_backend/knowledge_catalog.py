@@ -75,3 +75,16 @@ class KnowledgeCatalog:
         with self.store.connect() as db:
             rows=db.execute("EXPLAIN QUERY PLAN SELECT id FROM documents WHERE json_extract(payload,'$.kind')=? AND id>? ORDER BY id LIMIT 25",(kind,after)).fetchall()
         return [row[3] for row in rows]
+
+    def statistics(self):
+        with self.store.connect() as db:
+            db.execute('BEGIN')
+            rows=db.execute("SELECT json_extract(payload,'$.kind'),COUNT(*),SUM(length(json_extract(payload,'$.text'))),AVG(length(json_extract(payload,'$.text'))),MAX(length(json_extract(payload,'$.text'))) FROM documents GROUP BY json_extract(payload,'$.kind') ORDER BY 1").fetchall()
+            versions=db.execute('SELECT COUNT(*) FROM versions').fetchone()[0]
+            indexed=db.execute('SELECT COUNT(*) FROM knowledge_fts').fetchone()[0]
+            duplicates=db.execute("SELECT COUNT(*),MIN(id) FROM documents GROUP BY json_extract(payload,'$.text') HAVING COUNT(*)>1 ORDER BY COUNT(*) DESC,MIN(id) LIMIT 10").fetchall()
+        return {'kinds':[{'kind':kind,'documents':n,'text_characters':chars,'average_characters':avg,'maximum_characters':maximum}
+                         for kind,n,chars,avg,maximum in rows],
+            'versions':versions,'indexed_documents':indexed,
+            'duplicate_text_samples':[{'documents':n,'sample_id':id} for n,id in duplicates],
+            'scope':'One local read snapshot. Corpus aggregation is a batch analysis; duplicate samples are bounded to 10 groups.'}

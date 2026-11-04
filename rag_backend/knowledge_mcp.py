@@ -68,6 +68,11 @@ def create_server(store,research=local_research):
         return {**result,'requires_human_review':True,'approval_performed':False}
 
     @server.tool(annotations=annotations,structured_output=True)
+    def knowledge_statistics()->dict[str,Any]:
+        """하나의 읽기 스냅샷에서 종류별 문서·문자 수·버전·중복 표본을 집계합니다."""
+        return catalog.statistics()
+
+    @server.tool(annotations=annotations,structured_output=True)
     def curation_status()->dict[str,Any]:
         """검토 작업 상태를 읽습니다. 승인·반려·발행 기능은 제공하지 않습니다."""
         from .curation_workflow import CurationWorkflow

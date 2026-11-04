@@ -58,3 +58,12 @@ def test_unchanged_batch_reuses_rowids_and_does_not_duplicate_fts(tmp_path):
     with c.store.connect() as db:
         assert before==dict(db.execute('SELECT id,rowid FROM documents'))
         assert db.execute('SELECT COUNT(*) FROM knowledge_fts').fetchone()[0]==802
+
+
+def test_statistics_distinguish_versions_from_current_documents(tmp_path):
+    c=catalog(tmp_path);c.store.ingest([{**DOC,'id':'test:b'}])
+    c.store.ingest([{**DOC,'text':DOC['text']+' Updated.'}])
+    result=c.statistics()
+    assert result['kinds'][0]['documents']==result['indexed_documents']==2
+    assert result['versions']==3
+    assert result['duplicate_text_samples']==[]
