@@ -39,15 +39,15 @@ def test_missing_hardware_skips_every_model(tmp_path):
 
 
 def test_uncertain_tasks_share_one_bounded_adjudication(tmp_path):
-    model=Model({'choices':[0,1]});a=agent(tmp_path,model,Ranker(True))
+    model=Model({'t0':['a'],'t1':['b']});a=agent(tmp_path,model,Ranker(True))
     result=a.build('알파 연구와 베타 연구를 찾아줘.')
     assert model.calls==1 and len(result['edges'])==2
     assert result['status']=='candidate_complete'
 
 
-@pytest.mark.parametrize('choice',[True,4,-2])
+@pytest.mark.parametrize('choice',[True,'e',-2])
 def test_invalid_choice_abstains_instead_of_inventing_source(tmp_path,choice):
-    model=Model({'choices':[choice]});result=agent(tmp_path,model,Ranker(True)).build('Find the mechanism')
+    model=Model({'t0':[choice]});result=agent(tmp_path,model,Ranker(True)).build('Find the mechanism')
     assert result['edges']==[] and model.calls==1
     assert next(t for t in result['trace'] if t['step']=='adjudicate')['status']=='invalid_abstained'
 
@@ -62,5 +62,17 @@ def test_source_change_during_adjudication_invalidates_all_candidates(tmp_path):
     class Changing(Model):
         def complete(self,*args,**kwargs):
             a.store.ingest([{**DOC,'text':DOC['text']+' Changed.'}]);return super().complete(*args,**kwargs)
-    a.generator=Changing({'choices':[0]});result=a.build('Find the mechanism')
+    a.generator=Changing({'t0':['a']});result=a.build('Find the mechanism')
     assert result['status']=='stale_snapshot' and result['edges']==[]
+
+
+def test_verifier_cannot_demote_the_best_supported_retrieval_candidate(tmp_path):
+    model=Model({'t0':['b','a']});result=agent(tmp_path,model,Ranker(True)).build('Find the mechanism')
+    assert result['edges'][0]['source_id']==DOC['id']
+
+
+def test_unrelated_low_scores_skip_generator(tmp_path):
+    class Unrelated(Ranker):
+        def score_pairs(self,pairs):return [-9. for _ in pairs]
+    model=Model({});result=agent(tmp_path,model,Unrelated()).build('Find a sourdough baking method')
+    assert result['status']=='not_found' and model.calls==0
