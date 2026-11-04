@@ -82,3 +82,22 @@ def test_knowledge_api_validation_and_optional_neural_dependency(monkeypatch,tmp
         assert client.post('/knowledge/research',json={'question':'retrieval','mode':'unbounded'}).status_code==422
         for mode in ('compact','fast'):
             assert client.post('/knowledge/research',json={'question':'retrieval','mode':mode}).status_code==503
+        assert client.get('/knowledge/curation/status').json()['states']=={}
+        assert client.get('/knowledge/curation/audit').json()['valid']
+        response=client.post('/knowledge/reviewed-search',json={'question':'retrieval','mode':'lexical'})
+        assert response.json()['status']=='unavailable' and response.json()['cards']==[]
+        assert client.post('/knowledge/reviewed-search',json={'question':'  ','mode':'lexical'}).status_code==422
+
+
+def test_dense_candidates_prevent_multilingual_pool_starvation_and_allowlist_is_enforced(tmp_path):
+    store=KnowledgeStore(tmp_path/'kb.db')
+    docs=[dict(DOC,id=f'paper:{i:02}') for i in range(25)]
+    docs[-1]['text']='This target clue is deliberately sorted after the twenty document lexical tie budget.'
+    store.ingest(docs)
+    class Ranker:
+        def score_pairs(self,pairs):return [2.0 if 'target clue' in text else 1.0 for query,text in pairs]
+    class Prefilter:
+        def select(self,query,spans,per_document):return list(reversed(spans))
+    assert docs[-1]['id'] not in [d['id'] for d in store.search('문헌 검색',reranker=Ranker())]
+    assert store.search('문헌 검색',reranker=Ranker(),prefilter=Prefilter())[0]['id']==docs[-1]['id']
+    assert store.search('문헌 검색',reranker=Ranker(),prefilter=Prefilter(),allowed_ids=set())==[]

@@ -167,7 +167,7 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
 
     class KnowledgeQuery(BaseModel):
         model_config=ConfigDict(extra='forbid')
-        question:str=Field(min_length=2,max_length=500)
+        question:str=Field(min_length=2,max_length=500,pattern=r'\S')
         kind:Literal['abstract','financial_summary']='abstract'
         mode:Literal['lexical','neural']='neural'
         limit:int=Field(default=3,ge=1,le=5)
@@ -180,6 +180,23 @@ def create_app(db_path=None, generator=None, enable_dense=None, enable_research=
         return {'hits':kb.search(req.question,req.kind,req.limit,
                 composer.component_ranker if req.mode=='neural' else None),
                 'scope':'Local curation corpus; abstracts and financial summaries are separate.'}
+
+    def curation_workflow():
+        from .knowledge_lab import KnowledgeStore
+        from .curation_workflow import CurationWorkflow
+        return CurationWorkflow(KnowledgeStore(knowledge_path))
+
+    @app.get('/knowledge/curation/status')
+    def curation_status():return curation_workflow().status()
+
+    @app.get('/knowledge/curation/audit')
+    def curation_audit():return curation_workflow().audit()
+
+    @app.post('/knowledge/reviewed-search')
+    def reviewed_search(req:KnowledgeQuery):
+        if req.mode=='neural' and composer is None:raise HTTPException(503,'로컬 검색 모델이 활성화되지 않았습니다.')
+        return curation_workflow().search_reviewed(req.question,req.kind,req.limit,
+            composer.component_ranker if req.mode=='neural' else None)
 
     @app.get('/canvas/catalog')
     def canvas_catalog():
