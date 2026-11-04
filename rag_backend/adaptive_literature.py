@@ -6,6 +6,7 @@ uncertain tasks share one fixed-schema call, using original request clauses.
 import hashlib
 import json
 import math
+import re
 import time
 from typing import Literal
 
@@ -15,8 +16,9 @@ from .evidence_graph import EvidenceGraph,GENERATION_FIELDS,measurement_entities
 from .prompt_registry import load_prompt
 from .request_anchors import request_anchors
 from .research import parse_json
-from .research_passages import context_passages
+from .research_passages import contribution_passages,context_passages
 from .literature_qualifiers import QualifierPolicy
+from .research_scope import requests_catalog_mutation
 
 
 class AdaptiveLiteratureAgent:
@@ -32,7 +34,13 @@ class AdaptiveLiteratureAgent:
         self.min_candidate_score=min_candidate_score
 
     def build(self,question):
-        started=time.perf_counter();anchors=request_anchors(question);corpus=self.store.documents('abstract')
+        started=time.perf_counter()
+        if requests_catalog_mutation(question):
+            return {'status':'out_of_scope','tasks':[],'edges':[],'missing_task_ids':[],
+                'source_versions_current':True,'trace':[{'step':'request_scope_guard','model_calls':0,'decision':'rejected_mutation'}],
+                'latency_ms':round((time.perf_counter()-started)*1000,3),
+                'scope':'This endpoint retrieves research candidates and does not approve, publish or delete knowledge.'}
+        anchors=request_anchors(question);corpus=self.store.documents('abstract')
         trace=[{'step':'request_anchors','count':len(anchors),'model_calls':0}];tasks=[];options={};documents={};choices={};uncertain=[]
         for i,anchor in enumerate(anchors):
             begin=time.perf_counter();text=anchor['text'];entities=measurement_entities(text,text)
@@ -40,6 +48,9 @@ class AdaptiveLiteratureAgent:
             if entities:trace.append({'step':'measurement_source_presence','task_id':f't{i}','entities':entities,
                 'eligible_documents':len(allowed),'model_calls':0})
             qualifiers=self.qualifiers.constraints(text)
+            required_span_qualifiers=self.qualifiers.span_constraints(qualifiers)
+            method_request=bool(any(name=='interleaved_actions' for name,p in qualifiers) or
+                re.search(r'방법|방식|기법|\bmethod\b|\bframework\b|\balgorithm\b|work combining|\bapproach\b',text,re.I))
             if qualifiers:
                 allowed=[d for d in allowed if self.qualifiers.matches(d['title']+'\n'+d['text'],qualifiers)]
                 trace.append({'step':'explicit_qualifiers','task_id':f't{i}','rules':[name for name,p in qualifiers],
@@ -59,7 +70,8 @@ class AdaptiveLiteratureAgent:
             options[i]=[];documents.update({d['id']:d for d,s in ranked})
             all_spans=[]
             for doc,score in ranked:
-                spans=context_passages(doc['text'],max_chars=self.context_chars)
+                spans=contribution_passages(doc['text'],max_chars=self.context_chars) if method_request else {
+                    id:{**span,'evidence_role':'abstract_context'} for id,span in context_passages(doc['text'],max_chars=self.context_chars).items()}
                 all_spans.extend((doc,span_id,span) for span_id,span in spans.items())
             span_scores=ranker.score_pairs([(text,span['text']) for doc,id,span in all_spans]) if all_spans else []
             if len(span_scores)!=len(all_spans) or not all(math.isfinite(s) for s in span_scores):raise ValueError('invalid_passage_scores')
@@ -70,9 +82,14 @@ class AdaptiveLiteratureAgent:
             for doc,score in ranked:
                 if doc['id'] in best_spans:
                     span_id,span,span_score,coverage=best_spans[doc['id']]
+                    if not self.qualifiers.matches(span['text'],required_span_qualifiers):continue
+                    if method_request and span['evidence_role']=='author_claim_context':
+                        claim=doc['text'][span['claim_start']:span['claim_end']]
+                        if not self.qualifiers.matches(claim,required_span_qualifiers):continue
                     options[i].append({'document':doc,'span_id':span_id,'span':span,'document_score':float(score),'passage_score':span_score})
-            margin=ranked[0][1]-ranked[1][1] if len(ranked)>1 else None
-            direct=bool(options[i] and ranked[0][1]>=self.min_score and options[i][0]['passage_score']>=self.min_direct_passage_score
+            margin=options[i][0]['document_score']-options[i][1]['document_score'] if len(options[i])>1 else None
+            direct=bool(options[i] and options[i][0]['document_score']>=self.min_score and options[i][0]['passage_score']>=self.min_direct_passage_score
+                        and (not method_request or options[i][0]['span']['evidence_role']=='author_claim_context')
                         and (margin is None or margin>=self.min_margin))
             if direct:choices[i]=0
             elif options[i]:uncertain.append(i)
@@ -85,6 +102,7 @@ class AdaptiveLiteratureAgent:
                 'scored_passages':len(all_spans),'latency_ms':round((time.perf_counter()-begin)*1000,3),
                 'direct':direct,'document_margin':float(margin) if margin is not None else None,
                 'ranker':ranker.identity if hasattr(ranker,'identity') else {},
+                'passage_profile':'author_claim_context' if method_request else 'abstract_context',
                 'candidate_score_floor':self.min_candidate_score,
                 'candidates':[{'source_id':c['document']['id'],'document_score':c['document_score'],'passage_score':c['passage_score']} for c in options[i]],
                 'model_calls':0,'scope':'Raw ranking logits, not calibrated truth probabilities.'})
@@ -97,7 +115,7 @@ class AdaptiveLiteratureAgent:
                 schema=create_model('LiteratureDecisions',__config__=ConfigDict(extra='forbid'),
                     **{f't{i}':(list[Literal[tuple(slots[i])]],Field(max_length=len(slots[i]))) for i in uncertain})
                 payload={'tasks':[{'id':f't{i}','request_quote':anchors[i]['text'],'allowed_slots':slots[i],'candidates':[
-                    {'slot':slots[i][j],'title':c['document']['title'][:180],'passage':c['span']['text']}
+                    {'slot':slots[i][j],'title':c['document']['title'][:180],'passage':c['span']['text'],'evidence_role':c['span']['evidence_role']}
                     for j,c in enumerate(options[i])]} for i in uncertain]}
                 completed_calls=0;attempted=False
                 try:

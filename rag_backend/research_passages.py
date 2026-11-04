@@ -1,6 +1,29 @@
 """Exact-offset overlapping sentence context for research selection."""
 import re
 
+CLAIM=re.compile(r'\bwe (?:propose|introduce|present|develop|explore|design|study|investigate|provide|build|release|demonstrate|show|find)\b|'
+    r'\bour (?:method|approach|framework|model|system|algorithm|illustrative work)\b|'
+    r'\bthis (?:paper|work|study) (?:addresses|proposes|introduces|presents|explores|studies|develops|provides)\b|'
+    r'\bpropos(?:e|es|ing) (?:a|an|the|our)\b',re.I)
+
+
+def contribution_passages(text,max_chars=480):
+    """Author-claim sentence windows, a disclosed heuristic, not discourse truth."""
+    boundaries=[0]+[m.end() for m in re.finditer(r'(?<=[.!?])\s+(?=[A-Z])',text)]+[len(text)]
+    selected={}
+    for i,(start,end) in enumerate(zip(boundaries,boundaries[1:])):
+        if not CLAIM.search(text[start:end]):continue
+        window_end=boundaries[i+2] if i+2<len(boundaries) else end
+        for local in context_passages(text[start:window_end],max_chars).values():
+            if not CLAIM.search(local['text']):continue
+            a=start+local['start'];b=start+local['end']
+            selected[(a,b)]={'start':a,'end':b,'text':text[a:b],'evidence_role':'author_claim_context',
+                'claim_start':start,'claim_end':end}
+            if len(selected)>=12:break
+        if len(selected)>=12:break
+    if not selected:return {id:{**s,'evidence_role':'abstract_context'} for id,s in context_passages(text,max_chars).items()}
+    return {f'c{i}':span for i,span in enumerate(selected.values())}
+
 
 def context_passages(text,max_chars=480):
     if not 80<=max_chars<=1000:raise ValueError('invalid_passage_budget')

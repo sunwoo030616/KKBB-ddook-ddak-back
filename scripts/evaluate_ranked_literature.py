@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import statistics
+import subprocess
 import sys
 import time
 
@@ -12,8 +13,8 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--split',choices=('dev','regression','fresh','all'),default='all')
-    parser.add_argument('--engine',choices=('ranked','adaptive'),default='ranked')
+    parser=argparse.ArgumentParser();parser.add_argument('--split',choices=('dev','regression','fresh','guard','all'),default='all')
+    parser.add_argument('--engine',choices=('ranked','adaptive'),default='adaptive')
     parser.add_argument('--output',default='reports/ranked-literature.json');args=parser.parse_args()
     os.environ.update(HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1')
     from rag_backend.research_models import MLXGenerator
@@ -37,18 +38,21 @@ def main():
         prefilter=DocumentPrefilter(EnglishLiteratureEncoder(),ROOT/'var/ranked-literature-vectors.sqlite3',limit=10)
         search=RankedLiteratureSearch(store,generator,ranker,prefilter)
     report={'scope':'Internal developer-authored diagnostic, not blind external accuracy. One process, no exact result cache.',
+        'code_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+        'dirty_source_files':subprocess.check_output(['git','diff','--name-only','--','rag_backend','scripts','data'],cwd=ROOT,text=True).splitlines(),
+        'resource_policy':generator.resource_policy,'system_prefix_cache_enabled':generator.system_prefix_cache is not None,
         'setup_seconds':time.perf_counter()-start,'engine':args.engine,'generator':generator.identity,'reranker':ranker.identity,
         'sources':{d['id']:d['content_hash'] for d in store.documents('abstract')},
         'source_sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'rag_backend').glob('*.py')},
         'datasets':{},'rows':[]}
-    for split,file in [('dev','evidence_graph_cases.json'),('regression','model_routing_holdout.json'),('fresh','literature_fresh_validation.json')]:
+    for split,file in [('dev','evidence_graph_cases.json'),('regression','model_routing_holdout.json'),('fresh','literature_fresh_validation.json'),('guard','literature_guard_cases.json')]:
         if args.split not in ('all',split):continue
         data=(ROOT/'data'/file).read_bytes();report['datasets'][split]=hashlib.sha256(data).hexdigest()
         for case in json.loads(data):
             begin=time.perf_counter();result=search.build(case['question']);actual=sorted({e['source_id'] for e in result['edges']})
             valid=result['status'] not in ('invalid_plan','model_unavailable','stale_snapshot')
             row={'id':case['id'],'split':split,'expected':sorted(case['expected_sources']),'actual':actual,
-                'exact':valid and actual==sorted(case['expected_sources']),
+                'exact':valid and actual==sorted(case['expected_sources']) and (not case.get('expected_status') or result['status']==case['expected_status']),
                 'missing_aspect_ok':bool(result.get('missing_task_ids')) if case.get('expects_missing',case['id'] in ('g7','g8','h7','h8')) else True,
                 'seconds':time.perf_counter()-begin,'status':result['status'],'tasks':result['tasks'],
                 'trace':result['trace'],'source_versions_current':result.get('source_versions_current'),
