@@ -1,0 +1,15 @@
+{
+  "transport": "stdio",
+  "initialized": true,
+  "tools": [
+    "catalog_sources",
+    "search_sources",
+    "read_source_span",
+    "research_literature",
+    "curation_status"
+  ],
+  "read_only_annotations": true,
+  "actual_search_and_quote": true,
+  "invalid_input_rejected": true,
+  "scope": "Synthetic protocol test; no neural call or approval performed."
+}

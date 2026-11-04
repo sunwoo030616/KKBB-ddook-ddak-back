@@ -1,0 +1,72 @@
+{
+  "scope": "Synthetic local SQLite benchmark; no real research documents, models, production TPS or distributed scale claim.",
+  "synthetic_documents": 5000,
+  "batch_size": 200,
+  "first": {
+    "dataset_sha256": "8962d22e6e4d115b6ffa6c3f8167a4ed113eacaa565e739bb09f6ed8b94868dc",
+    "state": {
+      "offset": 1167780,
+      "line": 5000,
+      "seen": 5000,
+      "changed": 5000,
+      "unchanged": 0,
+      "batches": 25,
+      "complete": 1,
+      "revision": 25
+    },
+    "batches_this_run": 25,
+    "seconds": 0.25688204204197973,
+    "scope": "Local bounded batches; document versions, FTS and cursor share one SQLite transaction. Not distributed ingestion."
+  },
+  "unchanged_run": {
+    "dataset_sha256": "8962d22e6e4d115b6ffa6c3f8167a4ed113eacaa565e739bb09f6ed8b94868dc",
+    "state": {
+      "offset": 1167780,
+      "line": 5000,
+      "seen": 5000,
+      "changed": 5000,
+      "unchanged": 0,
+      "batches": 25,
+      "complete": 1,
+      "revision": 25
+    },
+    "batches_this_run": 0,
+    "seconds": 0.00037391704972833395,
+    "scope": "Local bounded batches; document versions, FTS and cursor share one SQLite transaction. Not distributed ingestion."
+  },
+  "one_changed_record": {
+    "dataset_sha256": "d685cd9bf0986edca2f59aea3c6d009e7ee21ef05cc5bc7a87dd52fe91f71fbf",
+    "state": {
+      "offset": 1167804,
+      "line": 5000,
+      "seen": 5000,
+      "changed": 1,
+      "unchanged": 4999,
+      "batches": 25,
+      "complete": 1,
+      "revision": 25
+    },
+    "batches_this_run": 25,
+    "seconds": 0.061887084040790796,
+    "scope": "Local bounded batches; document versions, FTS and cursor share one SQLite transaction. Not distributed ingestion."
+  },
+  "batch_existing_version_selects_first": 25,
+  "deep_page": {
+    "repetitions": 20,
+    "median_seconds": 0.0001809375244192779,
+    "scope": "Repeated identical warmed keyset query, not independent production traffic.",
+    "query_plan": [
+      "SEARCH documents USING COVERING INDEX documents_kind_id (<expr>=? AND id>?)"
+    ]
+  },
+  "fts": {
+    "target_id": "synthetic:004999",
+    "seconds": 0.0009685419499874115
+  },
+  "final_counts": {
+    "documents": 5000,
+    "versions": 5001,
+    "knowledge_fts": 5000
+  },
+  "real_knowledge_database_modified": false
+}
