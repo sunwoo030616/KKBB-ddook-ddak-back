@@ -1,0 +1,407 @@
+[
+  {
+    "id": "dev-0-0",
+    "split": "dev",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금을 해지하는 비용과 담보대출을 비교하려고 해. 확인할 조건을 찾아줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "dev-0-1",
+    "split": "dev",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2025-08-31",
+    "message": "이 날짜의 예금보호 기준을 확인할래. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "dev-0-2",
+    "split": "dev",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2026-11-04",
+    "message": "잃어버린 카드를 되찾았어. 해제 절차의 공식 근거를 찾아줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "dev-0-3",
+    "split": "dev",
+    "widgets": [
+      "autopay_relink_widget"
+    ],
+    "institution": "shinhan_card",
+    "as_of": "2026-11-04",
+    "message": "재발급 카드로 통신비 자동납부를 다시 연결하려면? 필요한 설명만 골라줘."
+  },
+  {
+    "id": "dev-0-4",
+    "split": "dev",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2025-01-01",
+    "message": "과거 시점의 예금보호 근거만 확인해줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "dev-0-5",
+    "split": "dev",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "fsc",
+    "as_of": "2026-11-04",
+    "message": "이 기관 자료에 카드 해제 설명이 있는지 확인해줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "dev-0-6",
+    "split": "dev",
+    "widgets": [
+      "funding_comparison_widget",
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금 비용 비교 조건과 예금보호 자료를 같이 찾아줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "dev-0-7",
+    "split": "dev",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2020-01-01",
+    "message": "2020년 기준 자료에 담보대출과 예금 해지 비교가 있는지 찾아줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "dev-1-0",
+    "split": "dev",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금을 해지하는 비용과 담보대출을 비교하려고 해. 확인할 조건을 찾아줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "dev-1-1",
+    "split": "dev",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2025-08-31",
+    "message": "이 날짜의 예금보호 기준을 확인할래. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "dev-1-2",
+    "split": "dev",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2026-11-04",
+    "message": "잃어버린 카드를 되찾았어. 해제 절차의 공식 근거를 찾아줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "dev-1-3",
+    "split": "dev",
+    "widgets": [
+      "autopay_relink_widget"
+    ],
+    "institution": "shinhan_card",
+    "as_of": "2026-11-04",
+    "message": "재발급 카드로 통신비 자동납부를 다시 연결하려면? 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "dev-1-4",
+    "split": "dev",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2025-01-01",
+    "message": "과거 시점의 예금보호 근거만 확인해줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "dev-1-5",
+    "split": "dev",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "fsc",
+    "as_of": "2026-11-04",
+    "message": "이 기관 자료에 카드 해제 설명이 있는지 확인해줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "dev-1-6",
+    "split": "dev",
+    "widgets": [
+      "funding_comparison_widget",
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금 비용 비교 조건과 예금보호 자료를 같이 찾아줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "dev-1-7",
+    "split": "dev",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2020-01-01",
+    "message": "2020년 기준 자료에 담보대출과 예금 해지 비교가 있는지 찾아줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "dev-2-0",
+    "split": "dev",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금을 해지하는 비용과 담보대출을 비교하려고 해. 확인할 조건을 찾아줘. 원문에서 확인할 수 있는 부분만 보여줘."
+  },
+  {
+    "id": "dev-2-1",
+    "split": "dev",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2025-08-31",
+    "message": "이 날짜의 예금보호 기준을 확인할래. 원문에서 확인할 수 있는 부분만 보여줘."
+  },
+  {
+    "id": "dev-2-2",
+    "split": "dev",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2026-11-04",
+    "message": "잃어버린 카드를 되찾았어. 해제 절차의 공식 근거를 찾아줘. 원문에서 확인할 수 있는 부분만 보여줘."
+  },
+  {
+    "id": "dev-2-3",
+    "split": "dev",
+    "widgets": [
+      "autopay_relink_widget"
+    ],
+    "institution": "shinhan_card",
+    "as_of": "2026-11-04",
+    "message": "재발급 카드로 통신비 자동납부를 다시 연결하려면? 원문에서 확인할 수 있는 부분만 보여줘."
+  },
+  {
+    "id": "dev-2-4",
+    "split": "dev",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2025-01-01",
+    "message": "과거 시점의 예금보호 근거만 확인해줘. 원문에서 확인할 수 있는 부분만 보여줘."
+  },
+  {
+    "id": "dev-2-5",
+    "split": "dev",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "fsc",
+    "as_of": "2026-11-04",
+    "message": "이 기관 자료에 카드 해제 설명이 있는지 확인해줘. 원문에서 확인할 수 있는 부분만 보여줘."
+  },
+  {
+    "id": "dev-2-6",
+    "split": "dev",
+    "widgets": [
+      "funding_comparison_widget",
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금 비용 비교 조건과 예금보호 자료를 같이 찾아줘. 원문에서 확인할 수 있는 부분만 보여줘."
+  },
+  {
+    "id": "dev-2-7",
+    "split": "dev",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2020-01-01",
+    "message": "2020년 기준 자료에 담보대출과 예금 해지 비교가 있는지 찾아줘. 원문에서 확인할 수 있는 부분만 보여줘."
+  },
+  {
+    "id": "test-0-0",
+    "split": "test",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금을 해지하는 비용과 담보대출을 비교하려고 해. 확인할 조건을 찾아줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "test-0-1",
+    "split": "test",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2025-08-31",
+    "message": "이 날짜의 예금보호 기준을 확인할래. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "test-0-2",
+    "split": "test",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2026-11-04",
+    "message": "잃어버린 카드를 되찾았어. 해제 절차의 공식 근거를 찾아줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "test-0-3",
+    "split": "test",
+    "widgets": [
+      "autopay_relink_widget"
+    ],
+    "institution": "shinhan_card",
+    "as_of": "2026-11-04",
+    "message": "재발급 카드로 통신비 자동납부를 다시 연결하려면? 필요한 설명만 골라줘."
+  },
+  {
+    "id": "test-0-4",
+    "split": "test",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2025-01-01",
+    "message": "과거 시점의 예금보호 근거만 확인해줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "test-0-5",
+    "split": "test",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "fsc",
+    "as_of": "2026-11-04",
+    "message": "이 기관 자료에 카드 해제 설명이 있는지 확인해줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "test-0-6",
+    "split": "test",
+    "widgets": [
+      "funding_comparison_widget",
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금 비용 비교 조건과 예금보호 자료를 같이 찾아줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "test-0-7",
+    "split": "test",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2020-01-01",
+    "message": "2020년 기준 자료에 담보대출과 예금 해지 비교가 있는지 찾아줘. 필요한 설명만 골라줘."
+  },
+  {
+    "id": "test-1-0",
+    "split": "test",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금을 해지하는 비용과 담보대출을 비교하려고 해. 확인할 조건을 찾아줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "test-1-1",
+    "split": "test",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2025-08-31",
+    "message": "이 날짜의 예금보호 기준을 확인할래. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "test-1-2",
+    "split": "test",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "kb_card",
+    "as_of": "2026-11-04",
+    "message": "잃어버린 카드를 되찾았어. 해제 절차의 공식 근거를 찾아줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "test-1-3",
+    "split": "test",
+    "widgets": [
+      "autopay_relink_widget"
+    ],
+    "institution": "shinhan_card",
+    "as_of": "2026-11-04",
+    "message": "재발급 카드로 통신비 자동납부를 다시 연결하려면? 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "test-1-4",
+    "split": "test",
+    "widgets": [
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2025-01-01",
+    "message": "과거 시점의 예금보호 근거만 확인해줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "test-1-5",
+    "split": "test",
+    "widgets": [
+      "card_recovery_widget"
+    ],
+    "institution": "fsc",
+    "as_of": "2026-11-04",
+    "message": "이 기관 자료에 카드 해제 설명이 있는지 확인해줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "test-1-6",
+    "split": "test",
+    "widgets": [
+      "funding_comparison_widget",
+      "deposit_protection_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2026-11-04",
+    "message": "예금 비용 비교 조건과 예금보호 자료를 같이 찾아줘. 자료가 부족하면 없다고 알려줘."
+  },
+  {
+    "id": "test-1-7",
+    "split": "test",
+    "widgets": [
+      "funding_comparison_widget"
+    ],
+    "institution": "kb_bank",
+    "as_of": "2020-01-01",
+    "message": "2020년 기준 자료에 담보대출과 예금 해지 비교가 있는지 찾아줘. 자료가 부족하면 없다고 알려줘."
+  }
+]
