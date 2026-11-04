@@ -1,0 +1,54 @@
+{
+  "pytest_passed": 301,
+  "live_api_checks": {
+    "default_adaptive": true,
+    "cold_first_request_under_60_seconds": true,
+    "h4_correct_after_fresh_start": true,
+    "all_source_versions_current": true,
+    "at_most_one_generative_call_per_request": true,
+    "unsupported_measurement_skips_llm": true,
+    "mutation_request_rejected_without_llm": true,
+    "no_source_data_changes": true,
+    "review_state_unchanged": true,
+    "paid_generation_unconfigured": true
+  },
+  "financial_checks": {
+    "new_request_has_distinct_screen_session": true,
+    "duplicate_plan_requires_zero_actual_model_calls": true,
+    "current_date_uses_current_evidence": true,
+    "past_date_does_not_reuse_current_financial_data": true,
+    "knowledge_store_has_expected_corpus": true,
+    "neural_knowledge_api_retrieves_query_rewriting": true
+  },
+  "mcp_live_checks": {
+    "actual_ai_endpoint_connected": true,
+    "source_versions_current": true,
+    "human_review_required": true,
+    "approval_not_performed": true,
+    "review_state_unchanged": true
+  },
+  "quality_existing_cases": {
+    "n": 24,
+    "strict_source_set_matches": 22
+  },
+  "guard_cases": {
+    "n": 12,
+    "passed": 12,
+    "scope": "Internal regression checks; observed failures were used to improve routing."
+  },
+  "cold_h4_http_seconds": 6.939676083973609,
+  "paid_generation_configured": false,
+  "secret_scan": {
+    "files": 77,
+    "findings": []
+  },
+  "local_document_link_errors": [],
+  "skill_validated": true,
+  "runtime_source_matches_worktree": true,
+  "synthetic_load_test_documents": 5000,
+  "known_limitations": [
+    "Two source-set omissions remain in 24 internal diagnostic cases.",
+    "Source and role heuristics are not general semantic entailment.",
+    "No production SLA, distributed serving or large real-corpus scaling claim."
+  ]
+}

@@ -1,0 +1,1028 @@
+{
+  "scope": "Actual HTTP default adaptive route. First request follows fresh server readiness; repeated request may use exact generation cache.",
+  "environment": {
+    "status": "ok",
+    "chunks": 26,
+    "corpus_version": "dc20def3b9a26c5e",
+    "runtime_source_sha256": {
+      "rag_backend/evaluate_research.py": "c1300319104ae64e77296833e3d86fb10034c3a3513692837b6bcead416658a6",
+      "rag_backend/inference_cache.py": "226163f4d1225b28561876886633c0cf24f89f7e4dbc2b8f553e08602dea4eb0",
+      "rag_backend/prompt_registry.py": "9c8c7dc4a63ab094883cb093c04682a5420bb7e4d5dd1e4e090a6094ff26a4cc",
+      "rag_backend/store.py": "663633043f6bfe622625cf5f2392095530a131098e48b214c63df3b2fdfe381c",
+      "rag_backend/batch_ingest.py": "8200ab28473c0a8a34964c2c31cbba327bad845582b874d0fc2d962b39d2fa62",
+      "rag_backend/evaluate_intent_contract.py": "bb7896bcb6cbe8cf9edef486cc453104cfc7c6007ad5445ab1357bab2b0a514e",
+      "rag_backend/intent_contract.py": "9a0d754529ff4cd77e4169fca69b51ffdff0f9f859fd6bf376d681fa86b5160b",
+      "rag_backend/finance.py": "14695440b24dfb2bbf2ca09d6ca42bc397be13d11f1ce56ab1019e3fe04a8020",
+      "rag_backend/evaluate_finance.py": "b54e18f9b3276df62b6bc86957b626cc323732628a9490375fd97e9a115c03fb",
+      "rag_backend/generation.py": "91b9127647a9df3fcde87d63e0168328238197ae93b68a2c0f31fcc40f136bdf",
+      "rag_backend/models.py": "8bbfe8f57c6f9e420da282e2f4ffcec8ea04851b413cf20247c992c27045c3db",
+      "rag_backend/adaptive_literature.py": "c2df710fba2911fe89b7ddb14b91ad11fd22de2292606da09790f83d9446f19d",
+      "rag_backend/evaluate_semantic_review.py": "6fdff311e6f52668a351c5ad01be7e123fbfd210abefc6dcaafc25b2d62d057b",
+      "rag_backend/knowledge_mcp.py": "63aca49951d04520436f706942c09cac6182fd7b6d54b473b3c6e0e3af027aaa",
+      "rag_backend/semantic_review.py": "2e90734a7ebe953da184f894bbe8dbdd370a9d0fdf5cb99a6dfbc717632d7ba4",
+      "rag_backend/research.py": "bea10d359e3af46bf54d9d422bf8ed11cb0e1dbddd8fa32cd943d76f61a2bb27",
+      "rag_backend/research_models.py": "3d4d1c6a816dd36e22432377bdddde10ffab63304a218fda8b1b8d2a2e5ae3f0",
+      "rag_backend/canvas_context.py": "2a7d55e5ecce37685711cdfbcf8757b2158619c9f28c67d7418f3a99e05cc9ef",
+      "rag_backend/dense.py": "be5c2e5b83f3070d7eb96b83c10d6cf27f34ba521b962ef4223374de530127ef",
+      "rag_backend/prepare_research_models.py": "81b0a331e216bbcbefec5ae9e9189b7cbe8ddb3a14217fa3a0dc5b26968f82ac",
+      "rag_backend/literature_reranker.py": "a8c6ca8547431437aa595fe443e7f6b4f300500f8440669b811d7c6d4574c712",
+      "rag_backend/evaluate_integrated_ui.py": "b5028b69bd0276b78cc9a67433d63b09d5a631a39995de7ce310471c574a4fb6",
+      "rag_backend/curation_workflow.py": "dc34c9c61b281000bc0b581be623885f57c7bd8d48fcb7ee377b9b85135b5d9e",
+      "rag_backend/request_anchors.py": "db25739931320b77b73f25a4618800bd08c2a823d4a6701bed32bdebc87303c9",
+      "rag_backend/train_encoder.py": "a5ad5d148a69f5270613f2a071d3a449a2e2b58a3e458e63e87b347900607f77",
+      "rag_backend/literature_translation.py": "f80e9e3fbc26c4eb76eb6d47ec8c3bf7138d9e82f92b568aa8e9e5e05c1c60f4",
+      "rag_backend/ranked_literature.py": "b14d2e7acc9a0b0a05f92d3e4e28d3dd003520e89c22861f89a07b33374bafa5",
+      "rag_backend/knowledge_lab.py": "6446d6776ed872fc3b05fd00836908553f3566283408a37dfeec6e0988436a38",
+      "rag_backend/knowledge_catalog.py": "017bdea5cc8ddd6856c4b1e4a91956ca8469ce2e5d166e96776aa348529fb931",
+      "rag_backend/__init__.py": "d4e85bc05e507686083583ee94dbf39ff041915ffbd982eef80615b0199d5595",
+      "rag_backend/literature_encoder.py": "bf3f5713647f187e3072719f4e99fa8da378806525777d5fe04422c614b34ec9",
+      "rag_backend/system_prefix_cache.py": "d43c168b02f38fb2bf3e7e3a7cdf1299d6fde9223330413573ee53a14719eecc",
+      "rag_backend/model_integrity.py": "3cd9ad78ccaa34b584424d3264324d64e0c3779c74fbe8aca04da94c7576acd4",
+      "rag_backend/paper_agent.py": "c63383b991eda4d4627e0652c3aba0a5677425b99d2e96ff0aaea5d67c60067a",
+      "rag_backend/evidence_graph.py": "128335bb719547e77cbbe9c16519d78993d89e0f2e8ca37599f9be9aa9df0b24",
+      "rag_backend/evidence_agent.py": "345690781da335b9573d65b31096adfd3d9fa0fef92cb1a5557c2b0a4197a542",
+      "rag_backend/canvas_jobs.py": "201ffda2753e5065c2f3ad52c4cf7d9f8337e7f10334ba0c018da7e880923df2",
+      "rag_backend/render_research_figures.py": "1522f385e94c332ddbf25391b267f0648236c4d688a77cc234015f7b777f0433",
+      "rag_backend/evaluate_component_queries.py": "2dc3976ae6df2c005a1a0c234a3f47b8da6162664d29ea5969274d374eb27df5",
+      "rag_backend/research_passages.py": "28db1de1eb1eaaf2755be30238cc7ca35d890598ea18b7726684dc5479252850",
+      "rag_backend/pipeline.py": "67fb5a1b6cd1e7ce79ec38bd18fea078b98fa45a7236da7a4b3c0cb5baabd9c5",
+      "rag_backend/component_queries.py": "0e5b9d7cba75d48b3ec441c5d86b1e628987f04a257897471a68567f1e13fd96",
+      "rag_backend/retrieval.py": "51e359e5ce34ef523cd53ae82e19acf379118ed30b945d637bfbf78ac75fa47f",
+      "rag_backend/app.py": "96b37644e3d4165afed794a7cb640c0f7e5ea7046dea8eefb23a3d260fffbc71",
+      "rag_backend/evaluate_canvas_http.py": "fee27b9f4e4b9a5f4c128067aab56ab707f2787ad68fdaf04e92f2ab37ba39df",
+      "rag_backend/retrieval_acceleration.py": "63235b8360182a25a6927396cfffe43e59c25a131c98cc04bf48d781b73fa120",
+      "rag_backend/evaluate.py": "8d58ce3ade51ad523c8141bcb87d1609899335f7a5674cf4bad0ab3a0a67f9ed",
+      "rag_backend/multilingual_literature.py": "d495913edf8fc4cd474944b77660b82d1d85651c9fdf95c22df29665a0d15fcf",
+      "rag_backend/widget_registry.py": "29c40157b74c928ea9119dcb94cbff17c6ad3c8db020291ec826db86415b4b16",
+      "rag_backend/verify_intent_repair.py": "ae3c181232788dd603dafa89d113158cae55190081c2459bdce16caa3b549956",
+      "rag_backend/prepare_document.py": "4a64702e691c3ce18a4f6bf6d4c320d201c0c63778597f116e71764e0a72410c",
+      "rag_backend/calibrate_research.py": "b697f25d0c29477f4ddf559a8acce9c0db88dc426490e5441ea1e1cd2c5692eb",
+      "rag_backend/literature_qualifiers.py": "e7d786b43252e9eb51283521b8fec1a6b5f4fa2841fee153ac982bce6566fca7",
+      "rag_backend/canvas.py": "440903b709f6cb5ef4d5fe1de52b89342ef3cfef189db4de0d7b73e53e56d5da",
+      "rag_backend/research_scope.py": "da34695e95986df9ea4485a6f4e28bbf9310a5713e1615156c4c8b04fdc465e7",
+      "rag_backend/inference_resources.py": "d82362dc80dd2808e8e5f245e90668b882ebfa989aca699d684ca68a02b52a70"
+    },
+    "llm_configured": false,
+    "retrievers": [
+      "bm25",
+      "hybrid"
+    ],
+    "embedding_model": null,
+    "default_generation": "extractive",
+    "research_configured": false,
+    "canvas_configured": true,
+    "system_prefix_cache": {
+      "hits": 0,
+      "misses": 0,
+      "bypasses": 0,
+      "evictions": 0,
+      "reused_tokens": 0,
+      "entries": 0,
+      "bytes": 0,
+      "scope": "System-prefix KV only, in process. No user tokens or full response memoization."
+    },
+    "model_integrity": {
+      "files_checked": 9,
+      "files_reused": 0
+    },
+    "inference_cache": {
+      "hits": 0,
+      "misses": 0,
+      "waits": 0,
+      "executions": 0,
+      "entries": 0,
+      "bytes": 0,
+      "capacity": 32,
+      "ttl_seconds": 300
+    },
+    "reranker_execution": {
+      "device": "mps",
+      "dtype": "float16"
+    }
+  },
+  "rows": [
+    {
+      "id": "h4",
+      "seconds": 6.939676083973609,
+      "status": "candidate_complete",
+      "mode": "adaptive",
+      "actual": [
+        "arxiv:2210.03629"
+      ],
+      "expected": [
+        "arxiv:2210.03629"
+      ],
+      "strict_source_match": true,
+      "resource_setup_ms": 2572.685,
+      "request_latency_ms": 6935.729,
+      "graph_latency_ms": 4360.904,
+      "source_versions_current": true,
+      "trace": [
+        {
+          "step": "request_anchors",
+          "count": 1,
+          "model_calls": 0
+        },
+        {
+          "step": "explicit_qualifiers",
+          "task_id": "t0",
+          "rules": [
+            "interleaved_actions"
+          ],
+          "eligible_documents": 3,
+          "policy": {
+            "version": "2",
+            "sha256": "7d069eaa905bef98dd06cfd5417b8a380078375692da3ab5915ca9f98890c141"
+          },
+          "model_calls": 0,
+          "scope": "Necessary lexical presence only. Conservative domain heuristics, not general semantic parsing."
+        },
+        {
+          "step": "multilingual_retrieval",
+          "task_id": "t0",
+          "candidate_documents": 3,
+          "candidate_strategy": "exhaustive_small_corpus",
+          "candidate_source_ids": [
+            "arxiv:2210.03629",
+            "arxiv:2212.10509",
+            "arxiv:2305.18323"
+          ],
+          "scored_passages": 5,
+          "latency_ms": 288.182,
+          "direct": false,
+          "document_margin": 1.5873069763183594,
+          "ranker": {
+            "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+            "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+            "license": "apache-2.0",
+            "language": "multilingual",
+            "files": {
+              "config.json": {
+                "sha256": "cc2cfe51aa3fd759d21d21acf5dfd6994aa67a3c9210636d22e143699d336c77",
+                "bytes": 891
+              },
+              "model.safetensors": {
+                "sha256": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+                "bytes": 470592698
+              },
+              "tokenizer.json": {
+                "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+                "bytes": 17082660
+              },
+              "tokenizer_config.json": {
+                "sha256": "e7fbfbfa6347b4e414c1cee50d142e2c2f9a895dad68b068ae83a8b564c3837e",
+                "bytes": 435
+              },
+              "special_tokens_map.json": {
+                "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+                "bytes": 239
+              },
+              "sentencepiece.bpe.model": {
+                "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+                "bytes": 5069051
+              }
+            }
+          },
+          "passage_profile": "author_claim_context",
+          "candidate_score_floor": -6.0,
+          "candidates": [
+            {
+              "source_id": "arxiv:2210.03629",
+              "document_score": -0.6749546527862549,
+              "passage_score": -2.8159103393554688
+            },
+            {
+              "source_id": "arxiv:2212.10509",
+              "document_score": -2.2622616291046143,
+              "passage_score": -5.242415904998779
+            }
+          ],
+          "model_calls": 0,
+          "scope": "Raw ranking logits, not calibrated truth probabilities."
+        },
+        {
+          "step": "adjudicate",
+          "status": "validated",
+          "prompt_version": "3",
+          "prompt_sha256": "7486725c21b865b8d94203837d77abe6e397574e6279aa0e602e00162ba11f0c",
+          "selected_slots": {
+            "t0": [
+              "a",
+              "b"
+            ]
+          },
+          "input_chars": 1253,
+          "generation_prompt_sha256": "a1cc972ef5bbf2aef7cf546da1b767692e2f32c21785fa628237826bf978a42a",
+          "latency_ms": 4056.524,
+          "prompt_tokens": 466,
+          "output_tokens": 10,
+          "grammar_setup_ms": 342.917,
+          "schema_cache_hit": false,
+          "system_prefix_cache": {
+            "enabled": true,
+            "hit": false,
+            "prefix_tokens": 134,
+            "reused_tokens": 0,
+            "entry_bytes": 19759104
+          },
+          "lock_wait_ms": 0.001,
+          "prefix_setup_ms": 1001.153,
+          "first_token_ms": 2100.349,
+          "generation_ms": 2711.345,
+          "prefill_ms": 2073.335,
+          "generation_tps": 19.01741208725505,
+          "finish_reason": "stop",
+          "model_calls": 1
+        }
+      ],
+      "llm_calls": 1
+    },
+    {
+      "id": "h4",
+      "seconds": 0.006030832999385893,
+      "status": "candidate_complete",
+      "mode": "adaptive",
+      "actual": [
+        "arxiv:2210.03629"
+      ],
+      "expected": [
+        "arxiv:2210.03629"
+      ],
+      "strict_source_match": true,
+      "resource_setup_ms": 0.016,
+      "request_latency_ms": 4.036,
+      "graph_latency_ms": 3.091,
+      "source_versions_current": true,
+      "trace": [
+        {
+          "step": "request_anchors",
+          "count": 1,
+          "model_calls": 0
+        },
+        {
+          "step": "explicit_qualifiers",
+          "task_id": "t0",
+          "rules": [
+            "interleaved_actions"
+          ],
+          "eligible_documents": 3,
+          "policy": {
+            "version": "2",
+            "sha256": "7d069eaa905bef98dd06cfd5417b8a380078375692da3ab5915ca9f98890c141"
+          },
+          "model_calls": 0,
+          "scope": "Necessary lexical presence only. Conservative domain heuristics, not general semantic parsing."
+        },
+        {
+          "step": "multilingual_retrieval",
+          "task_id": "t0",
+          "candidate_documents": 3,
+          "candidate_strategy": "exhaustive_small_corpus",
+          "candidate_source_ids": [
+            "arxiv:2210.03629",
+            "arxiv:2212.10509",
+            "arxiv:2305.18323"
+          ],
+          "scored_passages": 5,
+          "latency_ms": 1.662,
+          "direct": false,
+          "document_margin": 1.5873069763183594,
+          "ranker": {
+            "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+            "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+            "license": "apache-2.0",
+            "language": "multilingual",
+            "files": {
+              "config.json": {
+                "sha256": "cc2cfe51aa3fd759d21d21acf5dfd6994aa67a3c9210636d22e143699d336c77",
+                "bytes": 891
+              },
+              "model.safetensors": {
+                "sha256": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+                "bytes": 470592698
+              },
+              "tokenizer.json": {
+                "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+                "bytes": 17082660
+              },
+              "tokenizer_config.json": {
+                "sha256": "e7fbfbfa6347b4e414c1cee50d142e2c2f9a895dad68b068ae83a8b564c3837e",
+                "bytes": 435
+              },
+              "special_tokens_map.json": {
+                "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+                "bytes": 239
+              },
+              "sentencepiece.bpe.model": {
+                "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+                "bytes": 5069051
+              }
+            }
+          },
+          "passage_profile": "author_claim_context",
+          "candidate_score_floor": -6.0,
+          "candidates": [
+            {
+              "source_id": "arxiv:2210.03629",
+              "document_score": -0.6749546527862549,
+              "passage_score": -2.8159103393554688
+            },
+            {
+              "source_id": "arxiv:2212.10509",
+              "document_score": -2.2622616291046143,
+              "passage_score": -5.242415904998779
+            }
+          ],
+          "model_calls": 0,
+          "scope": "Raw ranking logits, not calibrated truth probabilities."
+        },
+        {
+          "step": "adjudicate",
+          "status": "validated",
+          "prompt_version": "3",
+          "prompt_sha256": "7486725c21b865b8d94203837d77abe6e397574e6279aa0e602e00162ba11f0c",
+          "selected_slots": {
+            "t0": [
+              "a",
+              "b"
+            ]
+          },
+          "input_chars": 1253,
+          "generation_prompt_sha256": "a1cc972ef5bbf2aef7cf546da1b767692e2f32c21785fa628237826bf978a42a",
+          "latency_ms": 0.249,
+          "prompt_tokens": 466,
+          "output_tokens": 10,
+          "grammar_setup_ms": 342.917,
+          "schema_cache_hit": false,
+          "system_prefix_cache": {
+            "enabled": true,
+            "hit": false,
+            "prefix_tokens": 134,
+            "reused_tokens": 0,
+            "entry_bytes": 19759104
+          },
+          "lock_wait_ms": 0.001,
+          "prefix_setup_ms": 1001.153,
+          "first_token_ms": 2100.349,
+          "generation_ms": 2711.345,
+          "prefill_ms": 2073.335,
+          "generation_tps": 19.01741208725505,
+          "finish_reason": "stop",
+          "model_calls": 0
+        }
+      ],
+      "llm_calls": 0
+    },
+    {
+      "id": "g2",
+      "seconds": 4.585712917032652,
+      "status": "candidate_complete",
+      "mode": "adaptive",
+      "actual": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511"
+      ],
+      "expected": [
+        "arxiv:2210.03629",
+        "arxiv:2310.11511"
+      ],
+      "strict_source_match": true,
+      "resource_setup_ms": 0.005,
+      "request_latency_ms": 4583.104,
+      "graph_latency_ms": 4580.002,
+      "source_versions_current": true,
+      "trace": [
+        {
+          "step": "request_anchors",
+          "count": 2,
+          "model_calls": 0
+        },
+        {
+          "step": "explicit_qualifiers",
+          "task_id": "t0",
+          "rules": [
+            "reflection_tokens"
+          ],
+          "eligible_documents": 1,
+          "policy": {
+            "version": "2",
+            "sha256": "7d069eaa905bef98dd06cfd5417b8a380078375692da3ab5915ca9f98890c141"
+          },
+          "model_calls": 0,
+          "scope": "Necessary lexical presence only. Conservative domain heuristics, not general semantic parsing."
+        },
+        {
+          "step": "multilingual_retrieval",
+          "task_id": "t0",
+          "candidate_documents": 1,
+          "candidate_strategy": "exhaustive_small_corpus",
+          "candidate_source_ids": [
+            "arxiv:2310.11511"
+          ],
+          "scored_passages": 3,
+          "latency_ms": 122.543,
+          "direct": false,
+          "document_margin": null,
+          "ranker": {
+            "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+            "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+            "license": "apache-2.0",
+            "language": "multilingual",
+            "files": {
+              "config.json": {
+                "sha256": "cc2cfe51aa3fd759d21d21acf5dfd6994aa67a3c9210636d22e143699d336c77",
+                "bytes": 891
+              },
+              "model.safetensors": {
+                "sha256": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+                "bytes": 470592698
+              },
+              "tokenizer.json": {
+                "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+                "bytes": 17082660
+              },
+              "tokenizer_config.json": {
+                "sha256": "e7fbfbfa6347b4e414c1cee50d142e2c2f9a895dad68b068ae83a8b564c3837e",
+                "bytes": 435
+              },
+              "special_tokens_map.json": {
+                "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+                "bytes": 239
+              },
+              "sentencepiece.bpe.model": {
+                "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+                "bytes": 5069051
+              }
+            }
+          },
+          "passage_profile": "author_claim_context",
+          "candidate_score_floor": -6.0,
+          "candidates": [
+            {
+              "source_id": "arxiv:2310.11511",
+              "document_score": -1.7910475730895996,
+              "passage_score": -0.9743803143501282
+            }
+          ],
+          "model_calls": 0,
+          "scope": "Raw ranking logits, not calibrated truth probabilities."
+        },
+        {
+          "step": "explicit_qualifiers",
+          "task_id": "t1",
+          "rules": [
+            "interleaved_actions"
+          ],
+          "eligible_documents": 3,
+          "policy": {
+            "version": "2",
+            "sha256": "7d069eaa905bef98dd06cfd5417b8a380078375692da3ab5915ca9f98890c141"
+          },
+          "model_calls": 0,
+          "scope": "Necessary lexical presence only. Conservative domain heuristics, not general semantic parsing."
+        },
+        {
+          "step": "multilingual_retrieval",
+          "task_id": "t1",
+          "candidate_documents": 3,
+          "candidate_strategy": "exhaustive_small_corpus",
+          "candidate_source_ids": [
+            "arxiv:2210.03629",
+            "arxiv:2212.10509",
+            "arxiv:2305.18323"
+          ],
+          "scored_passages": 5,
+          "latency_ms": 291.082,
+          "direct": false,
+          "document_margin": 2.671231985092163,
+          "ranker": {
+            "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+            "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+            "license": "apache-2.0",
+            "language": "multilingual",
+            "files": {
+              "config.json": {
+                "sha256": "cc2cfe51aa3fd759d21d21acf5dfd6994aa67a3c9210636d22e143699d336c77",
+                "bytes": 891
+              },
+              "model.safetensors": {
+                "sha256": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+                "bytes": 470592698
+              },
+              "tokenizer.json": {
+                "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+                "bytes": 17082660
+              },
+              "tokenizer_config.json": {
+                "sha256": "e7fbfbfa6347b4e414c1cee50d142e2c2f9a895dad68b068ae83a8b564c3837e",
+                "bytes": 435
+              },
+              "special_tokens_map.json": {
+                "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+                "bytes": 239
+              },
+              "sentencepiece.bpe.model": {
+                "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+                "bytes": 5069051
+              }
+            }
+          },
+          "passage_profile": "author_claim_context",
+          "candidate_score_floor": -6.0,
+          "candidates": [
+            {
+              "source_id": "arxiv:2210.03629",
+              "document_score": -1.1013832092285156,
+              "passage_score": -3.075350046157837
+            },
+            {
+              "source_id": "arxiv:2212.10509",
+              "document_score": -3.7726151943206787,
+              "passage_score": -4.807553291320801
+            }
+          ],
+          "model_calls": 0,
+          "scope": "Raw ranking logits, not calibrated truth probabilities."
+        },
+        {
+          "step": "adjudicate",
+          "status": "validated",
+          "prompt_version": "3",
+          "prompt_sha256": "7486725c21b865b8d94203837d77abe6e397574e6279aa0e602e00162ba11f0c",
+          "selected_slots": {
+            "t0": [
+              "a"
+            ],
+            "t1": [
+              "a",
+              "b"
+            ]
+          },
+          "input_chars": 1857,
+          "generation_prompt_sha256": "9f5531f5bdb1ee18f57bfe7d36263032bc3d0739ab46268a03d045d2b243d5e1",
+          "latency_ms": 4161.007,
+          "prompt_tokens": 608,
+          "output_tokens": 17,
+          "grammar_setup_ms": 432.272,
+          "schema_cache_hit": false,
+          "system_prefix_cache": {
+            "enabled": true,
+            "hit": true,
+            "prefix_tokens": 134,
+            "reused_tokens": 134,
+            "entry_bytes": 19759104
+          },
+          "lock_wait_ms": 0.0,
+          "prefix_setup_ms": 2.387,
+          "first_token_ms": 2748.111,
+          "generation_ms": 3726.191,
+          "prefill_ms": 2746.588,
+          "generation_tps": 18.987674758772307,
+          "finish_reason": "stop",
+          "model_calls": 1
+        }
+      ],
+      "llm_calls": 1
+    },
+    {
+      "id": "v2",
+      "seconds": 2.762437792029232,
+      "status": "candidate_complete",
+      "mode": "adaptive",
+      "actual": [
+        "arxiv:1908.10063",
+        "arxiv:2210.03849"
+      ],
+      "expected": [
+        "arxiv:1908.10063",
+        "arxiv:2210.03849"
+      ],
+      "strict_source_match": true,
+      "resource_setup_ms": 0.018,
+      "request_latency_ms": 2759.093,
+      "graph_latency_ms": 2754.743,
+      "source_versions_current": true,
+      "trace": [
+        {
+          "step": "request_anchors",
+          "count": 2,
+          "model_calls": 0
+        },
+        {
+          "step": "explicit_qualifiers",
+          "task_id": "t0",
+          "rules": [
+            "financial_domain",
+            "conversational"
+          ],
+          "eligible_documents": 1,
+          "policy": {
+            "version": "2",
+            "sha256": "7d069eaa905bef98dd06cfd5417b8a380078375692da3ab5915ca9f98890c141"
+          },
+          "model_calls": 0,
+          "scope": "Necessary lexical presence only. Conservative domain heuristics, not general semantic parsing."
+        },
+        {
+          "step": "multilingual_retrieval",
+          "task_id": "t0",
+          "candidate_documents": 1,
+          "candidate_strategy": "exhaustive_small_corpus",
+          "candidate_source_ids": [
+            "arxiv:2210.03849"
+          ],
+          "scored_passages": 8,
+          "latency_ms": 145.934,
+          "direct": false,
+          "document_margin": null,
+          "ranker": {
+            "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+            "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+            "license": "apache-2.0",
+            "language": "multilingual",
+            "files": {
+              "config.json": {
+                "sha256": "cc2cfe51aa3fd759d21d21acf5dfd6994aa67a3c9210636d22e143699d336c77",
+                "bytes": 891
+              },
+              "model.safetensors": {
+                "sha256": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+                "bytes": 470592698
+              },
+              "tokenizer.json": {
+                "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+                "bytes": 17082660
+              },
+              "tokenizer_config.json": {
+                "sha256": "e7fbfbfa6347b4e414c1cee50d142e2c2f9a895dad68b068ae83a8b564c3837e",
+                "bytes": 435
+              },
+              "special_tokens_map.json": {
+                "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+                "bytes": 239
+              },
+              "sentencepiece.bpe.model": {
+                "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+                "bytes": 5069051
+              }
+            }
+          },
+          "passage_profile": "abstract_context",
+          "candidate_score_floor": -6.0,
+          "candidates": [
+            {
+              "source_id": "arxiv:2210.03849",
+              "document_score": -0.6089096665382385,
+              "passage_score": -4.674905776977539
+            }
+          ],
+          "model_calls": 0,
+          "scope": "Raw ranking logits, not calibrated truth probabilities."
+        },
+        {
+          "step": "explicit_qualifiers",
+          "task_id": "t1",
+          "rules": [
+            "financial_domain"
+          ],
+          "eligible_documents": 6,
+          "policy": {
+            "version": "2",
+            "sha256": "7d069eaa905bef98dd06cfd5417b8a380078375692da3ab5915ca9f98890c141"
+          },
+          "model_calls": 0,
+          "scope": "Necessary lexical presence only. Conservative domain heuristics, not general semantic parsing."
+        },
+        {
+          "step": "multilingual_retrieval",
+          "task_id": "t1",
+          "candidate_documents": 6,
+          "candidate_strategy": "exhaustive_small_corpus",
+          "candidate_source_ids": [
+            "arxiv:1908.10063",
+            "arxiv:2105.07624",
+            "arxiv:2109.00122",
+            "arxiv:2210.03849",
+            "arxiv:2303.17564",
+            "arxiv:2306.06031"
+          ],
+          "scored_passages": 40,
+          "latency_ms": 699.737,
+          "direct": true,
+          "document_margin": 7.899466037750244,
+          "ranker": {
+            "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+            "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+            "license": "apache-2.0",
+            "language": "multilingual",
+            "files": {
+              "config.json": {
+                "sha256": "cc2cfe51aa3fd759d21d21acf5dfd6994aa67a3c9210636d22e143699d336c77",
+                "bytes": 891
+              },
+              "model.safetensors": {
+                "sha256": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+                "bytes": 470592698
+              },
+              "tokenizer.json": {
+                "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+                "bytes": 17082660
+              },
+              "tokenizer_config.json": {
+                "sha256": "e7fbfbfa6347b4e414c1cee50d142e2c2f9a895dad68b068ae83a8b564c3837e",
+                "bytes": 435
+              },
+              "special_tokens_map.json": {
+                "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d",
+                "bytes": 239
+              },
+              "sentencepiece.bpe.model": {
+                "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+                "bytes": 5069051
+              }
+            }
+          },
+          "passage_profile": "abstract_context",
+          "candidate_score_floor": -6.0,
+          "candidates": [
+            {
+              "source_id": "arxiv:1908.10063",
+              "document_score": 3.9776546955108643,
+              "passage_score": 2.1315267086029053
+            },
+            {
+              "source_id": "arxiv:2109.00122",
+              "document_score": -3.92181134223938,
+              "passage_score": -3.482034206390381
+            },
+            {
+              "source_id": "arxiv:2303.17564",
+              "document_score": -4.309675693511963,
+              "passage_score": -4.6656413078308105
+            },
+            {
+              "source_id": "arxiv:2210.03849",
+              "document_score": -4.407980442047119,
+              "passage_score": -4.274392604827881
+            },
+            {
+              "source_id": "arxiv:2105.07624",
+              "document_score": -4.855234622955322,
+              "passage_score": -5.367367267608643
+            }
+          ],
+          "model_calls": 0,
+          "scope": "Raw ranking logits, not calibrated truth probabilities."
+        },
+        {
+          "step": "adjudicate",
+          "status": "validated",
+          "prompt_version": "3",
+          "prompt_sha256": "7486725c21b865b8d94203837d77abe6e397574e6279aa0e602e00162ba11f0c",
+          "selected_slots": {
+            "t0": [
+              "a"
+            ]
+          },
+          "input_chars": 543,
+          "generation_prompt_sha256": "4594fa40596496a97e79b4ee05b255a7799b5cbcaa08ae24cdf284f7406f1a03",
+          "latency_ms": 1904.43,
+          "prompt_tokens": 283,
+          "output_tokens": 7,
+          "grammar_setup_ms": 415.014,
+          "schema_cache_hit": false,
+          "system_prefix_cache": {
+            "enabled": true,
+            "hit": true,
+            "prefix_tokens": 134,
+            "reused_tokens": 134,
+            "entry_bytes": 19759104
+          },
+          "lock_wait_ms": 0.0,
+          "prefix_setup_ms": 1.792,
+          "first_token_ms": 1061.515,
+          "generation_ms": 1487.483,
+          "prefill_ms": 1060.322,
+          "generation_tps": 20.36281014402778,
+          "finish_reason": "stop",
+          "model_calls": 1
+        }
+      ],
+      "llm_calls": 1
+    },
+    {
+      "id": "h7",
+      "seconds": 0.009263082989491522,
+      "status": "not_found",
+      "mode": "adaptive",
+      "actual": [],
+      "expected": [],
+      "strict_source_match": true,
+      "resource_setup_ms": 0.016,
+      "request_latency_ms": 6.662,
+      "graph_latency_ms": 4.712,
+      "source_versions_current": true,
+      "trace": [
+        {
+          "step": "request_anchors",
+          "count": 1,
+          "model_calls": 0
+        },
+        {
+          "step": "measurement_source_presence",
+          "task_id": "t0",
+          "entities": [
+            "Apple M4",
+            "M4"
+          ],
+          "eligible_documents": 0,
+          "model_calls": 0
+        },
+        {
+          "step": "multilingual_retrieval",
+          "task_id": "t0",
+          "candidate_documents": 0,
+          "candidate_strategy": "exhaustive_small_corpus",
+          "candidate_source_ids": [],
+          "scored_passages": 0,
+          "latency_ms": 3.771,
+          "direct": false,
+          "document_margin": null,
+          "ranker": {
+            "repo_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+            "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+            "language": "en",
+            "license": "apache-2.0",
+            "scope": "English literature queries and abstracts only. No hosted inference.",
+            "files": {
+              "config.json": {
+                "sha256": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc",
+                "bytes": 794
+              },
+              "model.safetensors": {
+                "sha256": "821d1aa69520101d6e0737f78a042ae25b19e5cb9160701909d10434f4aeb0ae",
+                "bytes": 90870598
+              },
+              "tokenizer.json": {
+                "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+                "bytes": 711396
+              },
+              "tokenizer_config.json": {
+                "sha256": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+                "bytes": 1330
+              },
+              "special_tokens_map.json": {
+                "sha256": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+                "bytes": 132
+              },
+              "vocab.txt": {
+                "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+                "bytes": 231508
+              }
+            }
+          },
+          "passage_profile": "abstract_context",
+          "candidate_score_floor": -6.0,
+          "candidates": [],
+          "model_calls": 0,
+          "scope": "Raw ranking logits, not calibrated truth probabilities."
+        }
+      ],
+      "llm_calls": 0
+    },
+    {
+      "id": "q11",
+      "seconds": 0.002648542053066194,
+      "status": "out_of_scope",
+      "mode": "adaptive",
+      "actual": [],
+      "expected": [],
+      "strict_source_match": true,
+      "resource_setup_ms": 0.012,
+      "request_latency_ms": 0.815,
+      "graph_latency_ms": 0.014,
+      "source_versions_current": true,
+      "trace": [
+        {
+          "step": "request_scope_guard",
+          "model_calls": 0,
+          "decision": "rejected_mutation"
+        }
+      ],
+      "llm_calls": 0
+    }
+  ],
+  "checks": {
+    "default_adaptive": true,
+    "cold_first_request_under_60_seconds": true,
+    "h4_correct_after_fresh_start": true,
+    "all_source_versions_current": true,
+    "at_most_one_generative_call_per_request": true,
+    "unsupported_measurement_skips_llm": true,
+    "mutation_request_rejected_without_llm": true,
+    "no_source_data_changes": true,
+    "review_state_unchanged": true,
+    "paid_generation_unconfigured": true
+  },
+  "after": {
+    "status": "ok",
+    "chunks": 26,
+    "corpus_version": "dc20def3b9a26c5e",
+    "runtime_source_sha256": {
+      "rag_backend/evaluate_research.py": "c1300319104ae64e77296833e3d86fb10034c3a3513692837b6bcead416658a6",
+      "rag_backend/inference_cache.py": "226163f4d1225b28561876886633c0cf24f89f7e4dbc2b8f553e08602dea4eb0",
+      "rag_backend/prompt_registry.py": "9c8c7dc4a63ab094883cb093c04682a5420bb7e4d5dd1e4e090a6094ff26a4cc",
+      "rag_backend/store.py": "663633043f6bfe622625cf5f2392095530a131098e48b214c63df3b2fdfe381c",
+      "rag_backend/batch_ingest.py": "8200ab28473c0a8a34964c2c31cbba327bad845582b874d0fc2d962b39d2fa62",
+      "rag_backend/evaluate_intent_contract.py": "bb7896bcb6cbe8cf9edef486cc453104cfc7c6007ad5445ab1357bab2b0a514e",
+      "rag_backend/intent_contract.py": "9a0d754529ff4cd77e4169fca69b51ffdff0f9f859fd6bf376d681fa86b5160b",
+      "rag_backend/finance.py": "14695440b24dfb2bbf2ca09d6ca42bc397be13d11f1ce56ab1019e3fe04a8020",
+      "rag_backend/evaluate_finance.py": "b54e18f9b3276df62b6bc86957b626cc323732628a9490375fd97e9a115c03fb",
+      "rag_backend/generation.py": "91b9127647a9df3fcde87d63e0168328238197ae93b68a2c0f31fcc40f136bdf",
+      "rag_backend/models.py": "8bbfe8f57c6f9e420da282e2f4ffcec8ea04851b413cf20247c992c27045c3db",
+      "rag_backend/adaptive_literature.py": "c2df710fba2911fe89b7ddb14b91ad11fd22de2292606da09790f83d9446f19d",
+      "rag_backend/evaluate_semantic_review.py": "6fdff311e6f52668a351c5ad01be7e123fbfd210abefc6dcaafc25b2d62d057b",
+      "rag_backend/knowledge_mcp.py": "63aca49951d04520436f706942c09cac6182fd7b6d54b473b3c6e0e3af027aaa",
+      "rag_backend/semantic_review.py": "2e90734a7ebe953da184f894bbe8dbdd370a9d0fdf5cb99a6dfbc717632d7ba4",
+      "rag_backend/research.py": "bea10d359e3af46bf54d9d422bf8ed11cb0e1dbddd8fa32cd943d76f61a2bb27",
+      "rag_backend/research_models.py": "3d4d1c6a816dd36e22432377bdddde10ffab63304a218fda8b1b8d2a2e5ae3f0",
+      "rag_backend/canvas_context.py": "2a7d55e5ecce37685711cdfbcf8757b2158619c9f28c67d7418f3a99e05cc9ef",
+      "rag_backend/dense.py": "be5c2e5b83f3070d7eb96b83c10d6cf27f34ba521b962ef4223374de530127ef",
+      "rag_backend/prepare_research_models.py": "81b0a331e216bbcbefec5ae9e9189b7cbe8ddb3a14217fa3a0dc5b26968f82ac",
+      "rag_backend/literature_reranker.py": "a8c6ca8547431437aa595fe443e7f6b4f300500f8440669b811d7c6d4574c712",
+      "rag_backend/evaluate_integrated_ui.py": "b5028b69bd0276b78cc9a67433d63b09d5a631a39995de7ce310471c574a4fb6",
+      "rag_backend/curation_workflow.py": "dc34c9c61b281000bc0b581be623885f57c7bd8d48fcb7ee377b9b85135b5d9e",
+      "rag_backend/request_anchors.py": "db25739931320b77b73f25a4618800bd08c2a823d4a6701bed32bdebc87303c9",
+      "rag_backend/train_encoder.py": "a5ad5d148a69f5270613f2a071d3a449a2e2b58a3e458e63e87b347900607f77",
+      "rag_backend/literature_translation.py": "f80e9e3fbc26c4eb76eb6d47ec8c3bf7138d9e82f92b568aa8e9e5e05c1c60f4",
+      "rag_backend/ranked_literature.py": "b14d2e7acc9a0b0a05f92d3e4e28d3dd003520e89c22861f89a07b33374bafa5",
+      "rag_backend/knowledge_lab.py": "6446d6776ed872fc3b05fd00836908553f3566283408a37dfeec6e0988436a38",
+      "rag_backend/knowledge_catalog.py": "017bdea5cc8ddd6856c4b1e4a91956ca8469ce2e5d166e96776aa348529fb931",
+      "rag_backend/__init__.py": "d4e85bc05e507686083583ee94dbf39ff041915ffbd982eef80615b0199d5595",
+      "rag_backend/literature_encoder.py": "bf3f5713647f187e3072719f4e99fa8da378806525777d5fe04422c614b34ec9",
+      "rag_backend/system_prefix_cache.py": "d43c168b02f38fb2bf3e7e3a7cdf1299d6fde9223330413573ee53a14719eecc",
+      "rag_backend/model_integrity.py": "3cd9ad78ccaa34b584424d3264324d64e0c3779c74fbe8aca04da94c7576acd4",
+      "rag_backend/paper_agent.py": "c63383b991eda4d4627e0652c3aba0a5677425b99d2e96ff0aaea5d67c60067a",
+      "rag_backend/evidence_graph.py": "128335bb719547e77cbbe9c16519d78993d89e0f2e8ca37599f9be9aa9df0b24",
+      "rag_backend/evidence_agent.py": "345690781da335b9573d65b31096adfd3d9fa0fef92cb1a5557c2b0a4197a542",
+      "rag_backend/canvas_jobs.py": "201ffda2753e5065c2f3ad52c4cf7d9f8337e7f10334ba0c018da7e880923df2",
+      "rag_backend/render_research_figures.py": "1522f385e94c332ddbf25391b267f0648236c4d688a77cc234015f7b777f0433",
+      "rag_backend/evaluate_component_queries.py": "2dc3976ae6df2c005a1a0c234a3f47b8da6162664d29ea5969274d374eb27df5",
+      "rag_backend/research_passages.py": "28db1de1eb1eaaf2755be30238cc7ca35d890598ea18b7726684dc5479252850",
+      "rag_backend/pipeline.py": "67fb5a1b6cd1e7ce79ec38bd18fea078b98fa45a7236da7a4b3c0cb5baabd9c5",
+      "rag_backend/component_queries.py": "0e5b9d7cba75d48b3ec441c5d86b1e628987f04a257897471a68567f1e13fd96",
+      "rag_backend/retrieval.py": "51e359e5ce34ef523cd53ae82e19acf379118ed30b945d637bfbf78ac75fa47f",
+      "rag_backend/app.py": "96b37644e3d4165afed794a7cb640c0f7e5ea7046dea8eefb23a3d260fffbc71",
+      "rag_backend/evaluate_canvas_http.py": "fee27b9f4e4b9a5f4c128067aab56ab707f2787ad68fdaf04e92f2ab37ba39df",
+      "rag_backend/retrieval_acceleration.py": "63235b8360182a25a6927396cfffe43e59c25a131c98cc04bf48d781b73fa120",
+      "rag_backend/evaluate.py": "8d58ce3ade51ad523c8141bcb87d1609899335f7a5674cf4bad0ab3a0a67f9ed",
+      "rag_backend/multilingual_literature.py": "d495913edf8fc4cd474944b77660b82d1d85651c9fdf95c22df29665a0d15fcf",
+      "rag_backend/widget_registry.py": "29c40157b74c928ea9119dcb94cbff17c6ad3c8db020291ec826db86415b4b16",
+      "rag_backend/verify_intent_repair.py": "ae3c181232788dd603dafa89d113158cae55190081c2459bdce16caa3b549956",
+      "rag_backend/prepare_document.py": "4a64702e691c3ce18a4f6bf6d4c320d201c0c63778597f116e71764e0a72410c",
+      "rag_backend/calibrate_research.py": "b697f25d0c29477f4ddf559a8acce9c0db88dc426490e5441ea1e1cd2c5692eb",
+      "rag_backend/literature_qualifiers.py": "e7d786b43252e9eb51283521b8fec1a6b5f4fa2841fee153ac982bce6566fca7",
+      "rag_backend/canvas.py": "440903b709f6cb5ef4d5fe1de52b89342ef3cfef189db4de0d7b73e53e56d5da",
+      "rag_backend/research_scope.py": "da34695e95986df9ea4485a6f4e28bbf9310a5713e1615156c4c8b04fdc465e7",
+      "rag_backend/inference_resources.py": "d82362dc80dd2808e8e5f245e90668b882ebfa989aca699d684ca68a02b52a70"
+    },
+    "llm_configured": false,
+    "retrievers": [
+      "bm25",
+      "hybrid"
+    ],
+    "embedding_model": null,
+    "default_generation": "extractive",
+    "research_configured": false,
+    "canvas_configured": true,
+    "system_prefix_cache": {
+      "hits": 2,
+      "misses": 1,
+      "bypasses": 0,
+      "evictions": 0,
+      "reused_tokens": 268,
+      "entries": 1,
+      "bytes": 19759104,
+      "scope": "System-prefix KV only, in process. No user tokens or full response memoization."
+    },
+    "model_integrity": {
+      "files_checked": 9,
+      "files_reused": 0
+    },
+    "inference_cache": {
+      "hits": 1,
+      "misses": 3,
+      "waits": 0,
+      "executions": 3,
+      "entries": 3,
+      "bytes": 1828,
+      "capacity": 32,
+      "ttl_seconds": 300
+    },
+    "reranker_execution": {
+      "device": "mps",
+      "dtype": "float16"
+    }
+  },
+  "complete": true
+}

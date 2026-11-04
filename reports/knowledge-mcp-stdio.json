@@ -6,6 +6,7 @@
     "search_sources",
     "read_source_span",
     "research_literature",
+    "knowledge_statistics",
     "curation_status"
   ],
   "read_only_annotations": true,

@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "startup_seconds": 12.783203499973752,
+  "steps": [
+    {
+      "script": "verify_literature_platform.py",
+      "seconds": 14.598469333024696
+    },
+    {
+      "script": "verify_knowledge_service.py",
+      "seconds": 27.16950554191135
+    },
+    {
+      "script": "verify_knowledge_mcp_live.py",
+      "seconds": 1.7793691250262782
+    },
+    {
+      "script": "verify_knowledge_mcp.py",
+      "seconds": 0.9133541249902919
+    }
+  ]
+}
