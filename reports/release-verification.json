@@ -1,0 +1,162 @@
+{
+  "date": "2026-11-04",
+  "scope": "Local implementation verification, not public deployment or independent research benchmark.",
+  "tests": {
+    "python": {
+      "passed": 164,
+      "warnings": 1
+    },
+    "java": {
+      "passed": 8
+    },
+    "frontend": {
+      "passed": 7,
+      "lint": "passed",
+      "build": "passed"
+    }
+  },
+  "integration_checks": {
+    "official_evidence_on_financial_screen": true,
+    "zero_model_call_calculation_preserves_evidence": true,
+    "real_model_paper_tools_return_only_observed_metadata": true
+  },
+  "browser_evidence": [
+    "evidence-ui.png",
+    "evidence-ui-state.txt"
+  ],
+  "configuration": {
+    "frontend_evidence_mode": "once",
+    "intent_mode": "auto",
+    "retrieval_mode": "multi",
+    "review_mode": "off"
+  },
+  "data_scope": {
+    "approved_sources": 8,
+    "approved_chunks": 26,
+    "fetched_source_candidates": 6,
+    "reviewed_excerpt_samples": 4,
+    "crossref_metadata_records": 25
+  },
+  "limits": [
+    "Developer-authored wording variants from 8 categories; topic coverage is not semantic answer accuracy.",
+    "Source extraction candidates and excerpt samples are separate from the approved live corpus.",
+    "Single Apple Silicon model worker; not distributed training, multi-GPU serving, or actual banking transactions."
+  ],
+  "models": {
+    "canvas_generator": {
+      "repo_id": "mlx-community/Qwen3-4B-4bit",
+      "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+      "files": {
+        "added_tokens.json": {
+          "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+          "bytes": 707
+        },
+        "config.json": {
+          "sha256": "b5efdcf3b0035a3638e7228dad4d85f5c4a23f156eb7cdb0b44c8366a5d34d9b",
+          "bytes": 937
+        },
+        "merges.txt": {
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "bytes": 1671853
+        },
+        "model.safetensors": {
+          "sha256": "e240c0bdc0ebb0681bf0da0f98d9719fd6ebe269a3633f81542c13e81345651d",
+          "bytes": 2263022529
+        },
+        "model.safetensors.index.json": {
+          "sha256": "f7825defe5865d179c3b593173d37056be5f202dcb7153985cf74e75ecf1628b",
+          "bytes": 63924
+        },
+        "special_tokens_map.json": {
+          "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+          "bytes": 613
+        },
+        "tokenizer.json": {
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "bytes": 11422654
+        },
+        "tokenizer_config.json": {
+          "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+          "bytes": 9706
+        },
+        "vocab.json": {
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "bytes": 2776833
+        }
+      }
+    },
+    "reranker": {
+      "repo_id": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "files": {
+        "config.json": {
+          "sha256": "13dcd6c31d9fec9d1d8e158702072f62d7fa7d312a64b9fe057bec9a08cfe41a",
+          "bytes": 795
+        },
+        "model.safetensors": {
+          "sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+          "bytes": 2271071852
+        },
+        "sentencepiece.bpe.model": {
+          "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "bytes": 5069051
+        },
+        "special_tokens_map.json": {
+          "sha256": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+          "bytes": 964
+        },
+        "tokenizer.json": {
+          "sha256": "69564b696052886ed0ac63fa393e928384e0f8caada38c1f4864a9bfbf379c15",
+          "bytes": 17098273
+        },
+        "tokenizer_config.json": {
+          "sha256": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+          "bytes": 1173
+        }
+      }
+    }
+  },
+  "current_source_sha256": {
+    "rag_backend/evaluate_research.py": "c1300319104ae64e77296833e3d86fb10034c3a3513692837b6bcead416658a6",
+    "rag_backend/store.py": "663633043f6bfe622625cf5f2392095530a131098e48b214c63df3b2fdfe381c",
+    "rag_backend/evaluate_intent_contract.py": "bb7896bcb6cbe8cf9edef486cc453104cfc7c6007ad5445ab1357bab2b0a514e",
+    "rag_backend/intent_contract.py": "9a0d754529ff4cd77e4169fca69b51ffdff0f9f859fd6bf376d681fa86b5160b",
+    "rag_backend/finance.py": "14695440b24dfb2bbf2ca09d6ca42bc397be13d11f1ce56ab1019e3fe04a8020",
+    "rag_backend/evaluate_finance.py": "b54e18f9b3276df62b6bc86957b626cc323732628a9490375fd97e9a115c03fb",
+    "rag_backend/generation.py": "91b9127647a9df3fcde87d63e0168328238197ae93b68a2c0f31fcc40f136bdf",
+    "rag_backend/models.py": "8bbfe8f57c6f9e420da282e2f4ffcec8ea04851b413cf20247c992c27045c3db",
+    "rag_backend/evaluate_semantic_review.py": "6fdff311e6f52668a351c5ad01be7e123fbfd210abefc6dcaafc25b2d62d057b",
+    "rag_backend/semantic_review.py": "2e90734a7ebe953da184f894bbe8dbdd370a9d0fdf5cb99a6dfbc717632d7ba4",
+    "rag_backend/research.py": "bea10d359e3af46bf54d9d422bf8ed11cb0e1dbddd8fa32cd943d76f61a2bb27",
+    "rag_backend/research_models.py": "79ee156f3e68304c50ee16cfae089e73013a888c39fddc496cb693b460c7fae0",
+    "rag_backend/canvas_context.py": "2a7d55e5ecce37685711cdfbcf8757b2158619c9f28c67d7418f3a99e05cc9ef",
+    "rag_backend/dense.py": "be5c2e5b83f3070d7eb96b83c10d6cf27f34ba521b962ef4223374de530127ef",
+    "rag_backend/prepare_research_models.py": "81b0a331e216bbcbefec5ae9e9189b7cbe8ddb3a14217fa3a0dc5b26968f82ac",
+    "rag_backend/evaluate_integrated_ui.py": "b5028b69bd0276b78cc9a67433d63b09d5a631a39995de7ce310471c574a4fb6",
+    "rag_backend/train_encoder.py": "a5ad5d148a69f5270613f2a071d3a449a2e2b58a3e458e63e87b347900607f77",
+    "rag_backend/__init__.py": "d4e85bc05e507686083583ee94dbf39ff041915ffbd982eef80615b0199d5595",
+    "rag_backend/paper_agent.py": "c63383b991eda4d4627e0652c3aba0a5677425b99d2e96ff0aaea5d67c60067a",
+    "rag_backend/evidence_agent.py": "fed71d47e8762c24d87523e4ccc579ebe0c61ac13ad6dc37f61e9999b8a7f3ea",
+    "rag_backend/canvas_jobs.py": "201ffda2753e5065c2f3ad52c4cf7d9f8337e7f10334ba0c018da7e880923df2",
+    "rag_backend/render_research_figures.py": "1522f385e94c332ddbf25391b267f0648236c4d688a77cc234015f7b777f0433",
+    "rag_backend/evaluate_component_queries.py": "2dc3976ae6df2c005a1a0c234a3f47b8da6162664d29ea5969274d374eb27df5",
+    "rag_backend/pipeline.py": "67fb5a1b6cd1e7ce79ec38bd18fea078b98fa45a7236da7a4b3c0cb5baabd9c5",
+    "rag_backend/component_queries.py": "0e5b9d7cba75d48b3ec441c5d86b1e628987f04a257897471a68567f1e13fd96",
+    "rag_backend/retrieval.py": "51e359e5ce34ef523cd53ae82e19acf379118ed30b945d637bfbf78ac75fa47f",
+    "rag_backend/app.py": "c27ba639f5e22108672185f86e54d7f17e1b84af11d2f92fe2ff040c1ef23711",
+    "rag_backend/evaluate_canvas_http.py": "fee27b9f4e4b9a5f4c128067aab56ab707f2787ad68fdaf04e92f2ab37ba39df",
+    "rag_backend/evaluate.py": "8d58ce3ade51ad523c8141bcb87d1609899335f7a5674cf4bad0ab3a0a67f9ed",
+    "rag_backend/widget_registry.py": "29c40157b74c928ea9119dcb94cbff17c6ad3c8db020291ec826db86415b4b16",
+    "rag_backend/verify_intent_repair.py": "ae3c181232788dd603dafa89d113158cae55190081c2459bdce16caa3b549956",
+    "rag_backend/prepare_document.py": "4a64702e691c3ce18a4f6bf6d4c320d201c0c63778597f116e71764e0a72410c",
+    "rag_backend/calibrate_research.py": "b697f25d0c29477f4ddf559a8acce9c0db88dc426490e5441ea1e1cd2c5692eb",
+    "rag_backend/canvas.py": "4d632277e77918038ff5dcdab1dd4150f908d3d2240f951bfd294c9044b87368"
+  },
+  "serving_levels_completed": 3,
+  "actual_model_results": [
+    "evidence-dev.json",
+    "evidence-test.json",
+    "evidence-integration.json",
+    "serving-load.json"
+  ]
+}

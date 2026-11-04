@@ -1,0 +1,60 @@
+{
+  "records": [
+    {
+      "source_id": "kbthink-lost",
+      "url": "https://kbthink.com/card/lost.html",
+      "source_sha256": "d54c0ff1dd13d1061c734fadf515e2db9e8bc9674e2bcd4ec0c9cf3c4fb9190f",
+      "candidate_id": "kbthink-lost-d54c0ff1-9",
+      "normalization": "Unicode whitespace collapsed to one space",
+      "start": 186,
+      "end": 283,
+      "text": "분실한 카드를 다시 찾았다면, KB국민카드 고객센터(국내 +82-2-1588-1688, 해외 +82-2-6300-7300)나 KB Pay 앱에서 분실 신고 해제할 수 있어요.",
+      "reviewed_topic": "payment_card_release",
+      "verified_at": "2026-11-04",
+      "policy_dates": "not inferred; source-specific review required",
+      "review_scope": "Exact excerpt location and topic checked; separate review set, NOT automatically ingested into live corpus"
+    },
+    {
+      "source_id": "shinhan-check-guide",
+      "url": "https://www.shinhancard.com/pconts/html/helpdesk/guide/CONFM90016/CONFM90016R03.html",
+      "source_sha256": "08c2fb0cd276a86ccc3eb0c83076e70279ba3348cc48edaa6d2c8858c2b3fab2",
+      "candidate_id": "shinhan-check-guide-08c2fb0c-13",
+      "normalization": "Unicode whitespace collapsed to one space",
+      "start": 113,
+      "end": 178,
+      "text": "체크카드가 재발급된 경우, 변경된 카드번호로 통신요금이 자동 승계되지 않습니다. 변경된 체크카드로 다시 신청해주세요.",
+      "reviewed_topic": "autopay",
+      "verified_at": "2026-11-04",
+      "policy_dates": "not inferred; source-specific review required",
+      "review_scope": "Exact excerpt location and topic checked; separate review set, NOT automatically ingested into live corpus"
+    },
+    {
+      "source_id": "kbbank-security-help",
+      "url": "https://obank.kbstar.com/quics?helppage=C019937&page=C019698",
+      "source_sha256": "e09025ca1f838ee929c41189a18ba25a6da1eb4e0526bf77d4fc30519c945ca9",
+      "candidate_id": "kbbank-security-help-e09025ca-1",
+      "normalization": "Unicode whitespace collapsed to one space",
+      "start": 183,
+      "end": 244,
+      "text": "분실신고 해제는 KB스타뱅킹 APP[전체메뉴 > 스타샷 > 변경/신고/재발급]이나 영업점을 통해서 가능합니다.",
+      "reviewed_topic": "security_device_release",
+      "verified_at": "2026-11-04",
+      "policy_dates": "not inferred; source-specific review required",
+      "review_scope": "Exact excerpt location and topic checked; separate review set, NOT automatically ingested into live corpus"
+    },
+    {
+      "source_id": "fsc-20250901",
+      "url": "https://www.fsc.go.kr/no010101/85200",
+      "source_sha256": "91ef655e2115a5d476c0b5fd730781fadc5790b2e14e0f90fa32c410b4d8bacf",
+      "candidate_id": "fsc-20250901-91ef655e-15",
+      "normalization": "Unicode whitespace collapsed to one space",
+      "start": 291,
+      "end": 394,
+      "text": "이번 방문은 ’25.9.1일부터 예금보호한도 1억원(원금 및 이자 포함)이 시행된다는 사실을 보다 많은 국민들께 알리고, 예금보험관계 표시·설명·확인* 제도를 소개하기 위해 이루어졌다.",
+      "reviewed_topic": "protection",
+      "verified_at": "2026-11-04",
+      "policy_dates": "not inferred; source-specific review required",
+      "review_scope": "Exact excerpt location and topic checked; separate review set, NOT automatically ingested into live corpus"
+    }
+  ]
+}

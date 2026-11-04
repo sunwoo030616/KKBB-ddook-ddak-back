@@ -1,0 +1,73 @@
+{
+  "device": "mps",
+  "dtype": "float16",
+  "scope": "Full-query reranker numerical comparison against retained CPU float32 scores. Same model snapshot, no LLM. Very low-scoring ties may reorder. Not a general accuracy guarantee.",
+  "rows": [
+    {
+      "id": "s01",
+      "max_absolute_score_delta": 6.536021828651428e-05,
+      "top1_same": true,
+      "wall_ms": 6814.8
+    },
+    {
+      "id": "s02",
+      "max_absolute_score_delta": 0.0004960000514984131,
+      "top1_same": true,
+      "wall_ms": 827.3
+    },
+    {
+      "id": "s03",
+      "max_absolute_score_delta": 0.0002637803554534912,
+      "top1_same": true,
+      "wall_ms": 977.7
+    },
+    {
+      "id": "s04",
+      "max_absolute_score_delta": 0.0011023283004760742,
+      "top1_same": true,
+      "wall_ms": 804.7
+    },
+    {
+      "id": "s05",
+      "max_absolute_score_delta": 0.0012038052082061768,
+      "top1_same": true,
+      "wall_ms": 1274.9
+    },
+    {
+      "id": "s06",
+      "max_absolute_score_delta": 0.0001220703125,
+      "top1_same": true,
+      "wall_ms": 1256.8
+    },
+    {
+      "id": "s07",
+      "max_absolute_score_delta": 7.62993295211345e-08,
+      "top1_same": true,
+      "wall_ms": 622.3
+    },
+    {
+      "id": "s08",
+      "max_absolute_score_delta": 1.9855331629514694e-05,
+      "top1_same": true,
+      "wall_ms": 751.0
+    },
+    {
+      "id": "s09",
+      "max_absolute_score_delta": 5.3532421588897705e-06,
+      "top1_same": true,
+      "wall_ms": 3626.4
+    },
+    {
+      "id": "s10",
+      "max_absolute_score_delta": 0.00029306113719940186,
+      "top1_same": true,
+      "wall_ms": 807.3
+    },
+    {
+      "id": "s12",
+      "max_absolute_score_delta": 1.2544114724732935e-07,
+      "top1_same": true,
+      "wall_ms": 132.1
+    }
+  ]
+}

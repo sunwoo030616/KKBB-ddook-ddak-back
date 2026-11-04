@@ -1,0 +1,53 @@
+{
+  "request_id": "784e4160-746e-46a1-8c8e-66ba6c05d889",
+  "status": "not_found",
+  "reason": "invalid_generated_answer",
+  "answer": "",
+  "claims": [],
+  "citations": [],
+  "calculation": null,
+  "trace": [
+    {
+      "step": "llm_decompose",
+      "status": "valid",
+      "subqueries": [
+        "예금 중도해지 시 발생하는 비용 비교",
+        "담보대출의 비용 구조 및 차이점"
+      ],
+      "latency_ms": 3907.135,
+      "model_output": "{\"subqueries\":[\"예금 중도해지 시 발생하는 비용 비교\",\"담보대출의 비용 구조 및 차이점\"]}"
+    },
+    {
+      "step": "retrieve_rerank",
+      "candidate_ids": [
+        "kb-funding-compare",
+        "kb-funding-inputs",
+        "kb-collateral-close",
+        "kb-collateral-concept",
+        "kb-collateral-eligibility"
+      ],
+      "selected_ids": [
+        "kb-funding-inputs",
+        "kb-funding-compare",
+        "kb-collateral-concept",
+        "kb-collateral-close"
+      ],
+      "cross_encoder": true,
+      "institution_scope": [
+        "kb_bank"
+      ],
+      "as_of": "2026-11-03"
+    },
+    {
+      "step": "local_llm_answer",
+      "validation": "invalid_model_answer",
+      "latency_ms": 7868.744,
+      "model_output": "{\n  \"answerable\": true,\n  \"claims\": [\n    {\"text\": \"예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다.\", \"evidence_id\": \"kb-funding-compare\"},\n    {\"text\": \"중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다.\", \"evidence_id\": \"kb-funding-compare\"},\n    {\"text\": \"예금담보대출은 본인 명의 예금·적금 등의 예치금을 담보로 자금을 빌리는 방식입니다.\", \"evidence_id\": \"kb-collateral-concept\"},\n    {\"text\": \"예금을 유지하면서 자금을 활용하지만 대출 이자가 발생합니다.\", \"evidence_id\": \"kb-collateral-concept\"}\n  ]\n}"
+    }
+  ],
+  "latency_ms": 15361.658,
+  "corpus_version": "dc20def3b9a26c5e",
+  "as_of": "2026-11-03",
+  "generation": "local_llm",
+  "semantic_entailment_verified": false
+}

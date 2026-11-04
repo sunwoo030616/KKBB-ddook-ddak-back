@@ -1,0 +1,136 @@
+{
+  "name": "Generative UI semantic review benchmark v1",
+  "created_before_review_inference": true,
+  "limits": "Developer-written 12-case exploratory regression; manually labeled, shared widget catalog, not an external or independent benchmark. Frozen before semantic review model inference.",
+  "cases": [
+    {
+      "id": "s01",
+      "message": "다음 달 오사카 가는데 환전만 할 거야. 보험이나 QR 결제는 넣지 마.",
+      "gold_roots": [
+        "travel_card_charge_widget"
+      ],
+      "previous_roots": [],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s02",
+      "message": "모임 총무인데 누가 회비를 안 냈는지와 돈을 어디에 썼는지 한 화면으로 봐야 해. 카드 설정은 필요 없어.",
+      "gold_roots": [
+        "group_account_status",
+        "expense_report_widget"
+      ],
+      "previous_roots": [],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s03",
+      "message": "예금을 깨는 것과 담보로 돈을 빌리는 비용을 비교하고, 대출을 받으면 매달 얼마씩 갚는지도 보고 싶어. 예금보호 설명은 빼줘.",
+      "gold_roots": [
+        "funding_comparison_widget",
+        "loan_repayment_schedule_widget"
+      ],
+      "previous_roots": [],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s04",
+      "message": "여행 갈 때 쓸 돈을 엔화로 바꾸고 동아리 회비도 같이 확인하고 싶어. 여행 보험은 이미 가입했어.",
+      "gold_roots": [
+        "travel_card_charge_widget",
+        "group_account_status"
+      ],
+      "previous_roots": [],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s05",
+      "message": "분실 신고한 카드를 찾았어. 새 카드 발급이나 다시 정지 말고, 신고를 푸는 절차만 보여줘.",
+      "gold_roots": [
+        "card_recovery_widget"
+      ],
+      "previous_roots": [],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s06",
+      "message": "신한 체크카드 번호가 바뀌었는데 휴대폰 요금이 예전 카드에 걸려 있어. 자동납부를 어떻게 연결하는지 보여줘.",
+      "gold_roots": [
+        "autopay_relink_widget"
+      ],
+      "previous_roots": [],
+      "supported_widgets": null,
+      "institution": "shinhan_card"
+    },
+    {
+      "id": "s07",
+      "message": "삼성전자 주식을 지금 시장가로 자동 매수하는 화면을 만들어줘.",
+      "gold_roots": [],
+      "previous_roots": [],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s08",
+      "message": "국내 부산 여행이라 환전이나 해외 결제, 해외여행 보험 모두 필요 없어.",
+      "gold_roots": [],
+      "previous_roots": [],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s09",
+      "message": "다른 건 빼고 보험만 남겨줘.",
+      "gold_roots": [
+        "travel_insurance_widget"
+      ],
+      "previous_roots": [
+        "travel_card_charge_widget",
+        "overseas_qr_payment_widget",
+        "travel_insurance_widget"
+      ],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s10",
+      "message": "예금보호 기준만 빼고 대출 월 상환표를 추가해줘. 기존 예금 비용 비교는 유지해.",
+      "gold_roots": [
+        "funding_comparison_widget",
+        "loan_repayment_schedule_widget"
+      ],
+      "previous_roots": [
+        "funding_comparison_widget",
+        "deposit_protection_widget"
+      ],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s11",
+      "message": "아까 화면은 전부 없애고 이제 예금보호 기준 하나만 볼게.",
+      "gold_roots": [
+        "deposit_protection_widget"
+      ],
+      "previous_roots": [
+        "loan_repayment_schedule_widget"
+      ],
+      "supported_widgets": null,
+      "institution": "kb_card"
+    },
+    {
+      "id": "s12",
+      "message": "대출 원금과 금리를 넣어서 월 상환액을 계산하는 화면을 만들어줘.",
+      "gold_roots": [],
+      "previous_roots": [],
+      "supported_widgets": [
+        "travel_card_charge_widget"
+      ],
+      "institution": "kb_card"
+    }
+  ]
+}

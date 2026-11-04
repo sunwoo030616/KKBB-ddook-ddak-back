@@ -1,0 +1,106 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>깨비뚝딱 · 내 금융 화면</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;color:#1e293b;background:#f5f6f8}*{box-sizing:border-box}body{margin:0}header{padding:22px 5vw;border-bottom:1px solid #e2e8f0;background:white;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:850;font-size:22px}.tag{font-size:12px;color:#64748b}main{max-width:1180px;margin:auto;padding:36px 24px}h1{font-size:32px;letter-spacing:-1.4px;margin:4px 0 12px}p{line-height:1.6;color:#64748b}.compose{background:white;border:1px solid #e2e8f0;padding:22px;border-radius:18px;box-shadow:0 4px 20px #18243505}textarea{display:block;width:100%;resize:vertical;min-height:84px;border:none;background:#f8fafc;border-radius:10px;padding:15px;font:inherit;outline-color:#d0a62e}.controls{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}select,input{font:inherit;border:1px solid #dbe0e7;border-radius:7px;padding:9px;max-width:100%}button{font:inherit;border:0;border-radius:9px;padding:11px 17px;background:#ffda54;color:#30270c;font-weight:700;cursor:pointer}button:disabled{opacity:.5;cursor:wait}.secondary{background:#f1f5f9;color:#475569}.controls .primary{margin-left:auto}.examples{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0 28px}.examples button{font-size:12px;padding:8px 12px;border:1px solid #e2e8f0;background:white;color:#64748b;font-weight:500}.screen-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}h2{font-size:22px;margin:0;letter-spacing:-.6px}.status{font-size:13px;color:#64748b;min-height:20px}#grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.widget{grid-column:span 6;background:white;border:1px solid #e2e8f0;border-radius:16px;padding:22px;min-height:180px}.widget h3{font-size:18px;letter-spacing:-.5px;margin:8px 0 12px}.eyebrow{font-size:11px;letter-spacing:1px;color:#998443}.widget p{font-size:14px}.widget.critical{border-top:3px solid #cf6255}.empty{grid-column:1/-1;border:1px dashed #cbd5e1;border-radius:16px;padding:48px;text-align:center;color:#94a3b8}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:6px;font-size:12px;color:#64748b}.field input{width:100%}.fields button{grid-column:1/-1;margin-top:8px}.metric{font-size:28px;color:#1e293b;font-weight:750;margin:12px 0}.source{font-size:12px;color:#7d682b;text-decoration:underline}table{width:100%;font-size:12px;border-collapse:collapse}td,th{padding:9px 4px;text-align:right;border-bottom:1px solid #f1f5f9}th:first-child,td:first-child{text-align:left}.notice{display:inline-block;border-radius:5px;background:#f1f5f9;padding:7px 9px;font-size:12px;color:#64748b}.links{display:flex;gap:15px;font-size:12px;margin-top:26px}.links a{color:#64748b}#error{color:#b45342;font-size:14px;margin:12px 0;white-space:pre-wrap}@media(max-width:700px){main{padding:25px 16px}h1{font-size:26px}.widget{grid-column:span 12!important}.tag{max-width:150px;text-align:right}.controls .primary{margin-left:0}.fields{grid-template-columns:1fr}}
+
+.chat-main{display:flex;flex-direction:column;min-height:calc(100vh - 80px);padding-bottom:180px}.chat-main>p{margin-top:10vh!important}.chat-main h1{margin-bottom:28px}.conversation{display:flex;flex-direction:column;gap:12px;margin:12px 0 24px}.bubble{max-width:80%;padding:15px 19px;border-radius:18px;font-size:15px;line-height:1.6}.bubble.user{align-self:flex-end;background:#ffda54;color:#30270c;border-bottom-right-radius:5px}.bubble.assistant{align-self:flex-start;background:white;border:1px solid #e2e8f0;border-bottom-left-radius:5px}.chat-main .compose{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);width:min(1132px,calc(100% - 32px));z-index:10;padding:12px 16px;box-shadow:0 8px 30px #18243515}.chat-main textarea{min-height:42px;height:48px;background:white;padding:10px 3px}.chat-main .controls{margin-top:0}.context-options{font-size:12px;color:#64748b}.context-options summary{cursor:pointer}.context-options[open]{display:flex}.context-options select,.context-options input{font-size:12px;margin-top:8px}.has-canvas>p,.has-canvas>h1{display:none}.has-canvas .examples{display:none}.has-canvas .conversation{margin-top:0}.screen-heading{scroll-margin-top:20px}@media(max-width:700px){.bubble{max-width:95%}.chat-main>p{margin-top:7vh!important}.chat-main .compose{bottom:9px}.chat-main .controls .primary{margin-left:auto}}
+</style>
+<header><div class="brand">깨비뚝딱<span style="color:#d6a800">.</span></div><span class="tag">금융기관 미연결 · 화면 구성 미리보기</span></header>
+<main><p style="font-size:13px;margin:0">필요한 일을 말하면, 필요한 화면이 모여요.</p><h1>어떤 금융 서비스가 필요하신가요?</h1>
+<section class="compose"><textarea id="message" aria-label="필요한 금융 화면" placeholder="지금 필요한 금융 서비스를 말해주세요."></textarea><div class="controls"><select id="institution" aria-label="이용 기관"><option value="kb_card">KB국민카드</option><option value="kb_bank">KB국민은행</option><option value="kb_securities">KB증권</option><option value="shinhan_card">신한카드</option></select><input id="date" type="date" value="2026-11-03" aria-label="정보 기준일"><button id="reset" class="secondary">새 대화</button><button id="compose" class="primary">보내기 ↑</button></div></section>
+<div class="examples"><button data-message="예금 중도해지와 담보대출 비용을 비교하고 예금보호 기준도 한 화면에서 보고 싶어">예금 비교 + 보호 기준</button><button data-message="대출 원금과 금리를 입력해서 매달 납입액과 남은 잔액을 표로 보고 싶어">대출 월 상환표</button><button data-message="일본 여행 환전 화면과 모임 회비 수납 현황을 같이 보여줘. 보험은 빼줘">여행 준비 + 모임 관리</button><button data-message="분실 신고했던 국민카드를 찾았어. 정지 해제 절차를 보고 싶어">찾은 카드 다시 쓰기</button></div>
+<div class="screen-heading"><h2 id="heading">내 금융 화면</h2><span id="status" class="status"></span></div><div id="error" role="alert"></div><div id="grid"><div class="empty">원하는 일을 입력하면 여기에 금융 위젯을 구성해요.<br>화면을 만든 뒤 “보험은 빼줘”, “상환표도 추가해줘”처럼 수정할 수 있어요.</div></div><div class="links"><a href="/docs" target="_blank">개발용 API 문서</a></div></main>
+<script>
+let session=null,revision=0,busy=false;
+const el=id=>document.getElementById(id),grid=el('grid');
+function element(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
+function money(value){return Number(value).toLocaleString('ko-KR')+'원';}
+function setBusy(value){
+ busy=value;el('compose').disabled=value;el('reset').disabled=value;
+ document.querySelectorAll('form button').forEach(b=>b.disabled=value);
+ el('status').textContent=value?'AI가 필요한 위젯을 구성하고 있어요…':session?'현재 화면에서 이어서 수정할 수 있어요':'';
+}
+async function compose(message,calculation){
+ if(busy)return;setBusy(true);el('error').textContent='';
+ el('conversation').append(element('div',message,'bubble user'));el('message').value='';
+ try{
+  const body={message,institution:el('institution').value,as_of:el('date').value,expected_revision:revision};
+  if(session)body.session_id=session;if(calculation)body.calculation=calculation;
+  const response=await fetch('/canvas/compose',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const result=await response.json();
+  if(!response.ok)throw Error(typeof result.detail==='string'?result.detail:'요청 내용을 확인해주세요.');
+  if(result.status!=='composed'){el('conversation').append(element('div',result.greeting,'bubble assistant'));return;}
+  session=result.session_id;revision=result.revision;el('heading').textContent=result.greeting;el('message').placeholder='화면에 추가하거나 바꿀 내용을 말해주세요.';
+  document.querySelector('main').classList.add('has-canvas');grid.style.display='grid';document.querySelector('.screen-heading').style.display='flex';
+  el('conversation').append(element('div','말씀하신 상황에 필요한 금융 기능을 한 화면에 모았어요.','bubble assistant'));render(result.widgets);
+ }catch(error){el('error').textContent=error.message;}finally{setBusy(false);}
+}
+const fields={
+ funding_inputs_widget:[['maturity_interest_net_won','세후 만기 이자 (원)'],['early_interest_net_won','세후 중도해지 이자 (원)'],['loan_principal_won','필요한 대출 원금 (원)'],['annual_loan_rate_percent','연 대출 금리 (%)'],['loan_days','대출 사용 일수'],['extra_loan_cost_won','추가 비용 (원, 없으면 0)']],
+ loan_inputs_widget:[['principal_won','대출 원금 (원)'],['annual_rate_percent','연 금리 (%)'],['months','상환 개월 수']]
+};
+function renderForm(node,card){
+ const form=element('form',undefined,'fields');
+ fields[node.type].forEach(([key,label])=>{
+  const wrap=element('label',label,'field'),input=element('input');
+  input.type='number';input.step=key.includes('rate')?'0.000001':'1';input.min='0';input.name=key;input.required=true;
+  if(node.data.values&&node.data.values[key]!==undefined)input.value=node.data.values[key];
+  wrap.append(input);form.append(wrap);
+ });
+ const button=element('button','이 조건으로 계산');button.type='submit';form.append(button);
+ form.onsubmit=e=>{
+  e.preventDefault();const calculation=Object.fromEntries(new FormData(form));
+  calculation.kind=node.type==='funding_inputs_widget'?'funding_comparison':'amortized_loan';
+  for(const key of ['loan_days','months'])if(key in calculation)calculation[key]=Number(calculation[key]);
+  compose(node.type==='funding_inputs_widget'?'현재 화면을 유지하면서 입력한 조건으로 예금 유지·해지 비용을 계산해줘':'현재 화면을 유지하면서 입력한 조건으로 월 상환표를 계산해줘',calculation);
+ };
+ card.append(form);
+}
+function renderCalculation(node,card){
+ const values=node.data.values;
+ if(values.interest_difference_won!==undefined){
+  card.append(element('p','대출 비용을 뺀 만기 이자와 중도해지 이자의 차이'),element('div',money(values.interest_difference_won),'metric'),element('p','입력한 가정에서의 이자 차이예요. 재투자와 시점별 현금흐름은 포함하지 않아요.'));
+ }
+ if(values.schedule){
+  card.append(element('p','일반 회차 월 납입액'),element('div',money(values.regular_payment_won),'metric'));
+  const table=element('table'),head=element('tr');
+  ['회차','납입액','남은 원금'].forEach(t=>head.append(element('th',t)));table.append(head);
+  values.schedule.slice(0,6).forEach(row=>{
+   const tr=element('tr');[row.month,money(row.payment_won),money(row.balance_won)].forEach(v=>tr.append(element('td',v)));table.append(tr);
+  });
+  card.append(table,element('p','총 이자 '+money(values.total_interest_won)));
+ }
+}
+function render(nodes){
+ grid.replaceChildren();
+ nodes.forEach((node,index)=>{
+  const card=element('section',undefined,'widget'+(node.type==='card_freeze_all'?' critical':''));
+  card.style.gridColumn='span '+node.layout.columns;
+  card.append(element('div',String(index+1).padStart(2,'0'),'eyebrow'),element('h3',node.title));
+  if(fields[node.type])renderForm(node,card);
+  else if(node.data_origin==='server_decimal_calculator')renderCalculation(node,card);
+  else if(node.data.evidence){
+   if(!node.data.evidence.length)card.append(element('p','선택한 기관과 기준일에 맞는 안내를 확인하지 못했어요.'));
+   node.data.evidence.forEach(h=>{
+    card.append(element('p',h.text));const link=element('a','공식 안내 확인 ↗','source');
+    link.href=h.url;link.target='_blank';link.rel='noopener';card.append(link);
+   });
+  }else if(node.state==='input_required')card.append(element('p','옆의 입력 위젯에 조건을 넣으면 계산 결과가 여기에 표시돼요.'));
+  else{
+   const descriptions={travel_card_charge_widget:'여행 통화와 환전 금액을 확인하는 화면이에요.',overseas_qr_payment_widget:'현지 결제 준비와 필요한 연결 상태를 확인해요.',travel_insurance_widget:'여행 일정에 맞는 보장 조건을 확인해요.',group_account_status:'모임통장 잔액과 회비 수납 현황을 모아보는 화면이에요.',expense_report_widget:'모임 지출과 결산을 살펴보는 화면이에요.',group_card_safety_widget:'모임 카드 이용 조건을 확인하는 화면이에요.',card_freeze_all:'정지할 카드를 확인하고 본인인증 후 요청을 진행하는 화면이에요.',atm_smart_withdrawal:'본인인증과 금융기관 연결 후 출금 요청을 준비할 수 있어요.',id_reissue_status_widget:'신분증 재발급에 필요한 절차를 확인하는 화면이에요.'};
+   card.append(element('p',descriptions[node.type]||'필요한 금융 기능을 준비했어요.'),element('span','금융기관 연결 전','notice'));
+  }
+  grid.append(card);
+ });
+}
+const main=document.querySelector('main');main.classList.add('chat-main');
+const conversation=element('section',undefined,'conversation');conversation.id='conversation';
+main.insertBefore(conversation,document.querySelector('.screen-heading'));
+main.append(document.querySelector('.compose'));grid.style.display='none';document.querySelector('.screen-heading').style.display='none';
+const options=element('details',undefined,'context-options');options.append(element('summary','설정'));
+options.append(el('institution'),el('date'));document.querySelector('.controls').prepend(options);
+el('compose').onclick=()=>compose(el('message').value);
+el('message').onkeydown=e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter')compose(el('message').value);};
+el('reset').onclick=()=>{session=null;revision=0;el('conversation').replaceChildren();document.querySelector('main').classList.remove('has-canvas');grid.style.display='none';document.querySelector('.screen-heading').style.display='none';grid.replaceChildren(element('div','새로운 금융 화면을 구성해보세요.','empty'));el('heading').textContent='내 금융 화면';el('status').textContent='';};
+document.querySelectorAll('[data-message]').forEach(button=>button.onclick=()=>{el('message').value=button.dataset.message;compose(button.dataset.message);});
+
+</script></html>

@@ -1,0 +1,61 @@
+{
+  "api_url": "https://export.arxiv.org/api/query?id_list=2005.11401%2C2210.03629%2C2310.11511%2C2403.14403%2C2305.14283%2C2307.03172&max_results=6",
+  "response_sha256": "98d405e48097d484b0a461be922c89b39c399078151ba130c22a3417dadeb953",
+  "scope": "Abstracts, not full papers; full text is not included in Git.",
+  "records": [
+    {
+      "id": "arxiv:2307.03172",
+      "title": "Lost in the Middle: How Language Models Use Long Contexts",
+      "source_url": "https://arxiv.org/abs/2307.03172v3",
+      "kind": "abstract",
+      "published_at": "2023-07-06T17:54:11Z",
+      "updated_at": "2023-11-20T23:09:34Z",
+      "text_sha256": "9597f645fa2ed241ae31cd867771e71ea15ede9d498117e1d1b409403c10aa88"
+    },
+    {
+      "id": "arxiv:2210.03629",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "source_url": "https://arxiv.org/abs/2210.03629v3",
+      "kind": "abstract",
+      "published_at": "2022-10-06T01:00:32Z",
+      "updated_at": "2023-03-10T01:00:17Z",
+      "text_sha256": "d54d4d76519ed21b2bfeedd94901a9bb559802e0c0bde7e09fb1e0a8bcdb3679"
+    },
+    {
+      "id": "arxiv:2310.11511",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "source_url": "https://arxiv.org/abs/2310.11511v1",
+      "kind": "abstract",
+      "published_at": "2023-10-17T18:18:32Z",
+      "updated_at": "2023-10-17T18:18:32Z",
+      "text_sha256": "814a0385136a61001126f1bf731b56ffa68fd09e048d30a5d9272706cfdc64c4"
+    },
+    {
+      "id": "arxiv:2305.14283",
+      "title": "Query Rewriting for Retrieval-Augmented Large Language Models",
+      "source_url": "https://arxiv.org/abs/2305.14283v3",
+      "kind": "abstract",
+      "published_at": "2023-05-23T17:27:50Z",
+      "updated_at": "2023-10-23T02:34:49Z",
+      "text_sha256": "ef5ee5808bea36ec3168a52c178f17722d89d23b3972a6bbf8636b59768a5fc6"
+    },
+    {
+      "id": "arxiv:2005.11401",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "source_url": "https://arxiv.org/abs/2005.11401v4",
+      "kind": "abstract",
+      "published_at": "2020-05-22T21:34:34Z",
+      "updated_at": "2021-04-12T15:42:18Z",
+      "text_sha256": "766b22c091b5e3c8cdd736cd8c8d1529a5abe2f4895f6bd8f01df31f93851d55"
+    },
+    {
+      "id": "arxiv:2403.14403",
+      "title": "Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity",
+      "source_url": "https://arxiv.org/abs/2403.14403v2",
+      "kind": "abstract",
+      "published_at": "2024-03-21T13:52:30Z",
+      "updated_at": "2024-03-28T06:45:11Z",
+      "text_sha256": "1eafe85004a732f24cb4c8d67897496d0acf4ecaaa63bb050a094d6b9eb33305"
+    }
+  ]
+}

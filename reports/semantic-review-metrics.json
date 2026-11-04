@@ -1,0 +1,19 @@
+{
+  "metrics": {
+    "off": {
+      "calls": 13,
+      "micro_precision": 0.7272727272727273,
+      "micro_recall": 0.6153846153846154
+    },
+    "repair": {
+      "calls": 25,
+      "micro_precision": 0.75,
+      "micro_recall": 0.6923076923076923
+    }
+  },
+  "trace_counts": {
+    "semantic_review/invalid_review": 9,
+    "semantic_review/valid": 1,
+    "semantic_refinement/accepted": 1
+  }
+}

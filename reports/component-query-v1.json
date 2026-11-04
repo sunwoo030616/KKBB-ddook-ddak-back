@@ -1,0 +1,2296 @@
+{
+  "scope": "Developer diagnostic set reused after observing single-query failures; exploratory development, not held-out or external performance.",
+  "protocol": "End-to-end development comparison: retained CPU-float32 single-query baseline vs MPS-float16 multi-query/abstention system. Same neural weight snapshots and planner prompt/schema, but retrieval and execution precision both change; not a one-factor causal ablation. Model review disabled in both.",
+  "execution": {
+    "reranker_device": "mps",
+    "reranker_dtype": "float16",
+    "precision_check": "reports/reranker-mps-parity.json",
+    "actual_health": {
+      "device": "mps",
+      "dtype": "float16"
+    }
+  },
+  "baseline_report_sha256": "f539cc27e01f62d83cae7f154653808bfdd9ba1e3436e8e360c634c073a1045f",
+  "dataset_sha256": "c72119a5d3e5f6d8670548fba7645bac97a6e39a6a585f1a2b7141af3bba3f3a",
+  "baseline_models": {
+    "canvas_generator": {
+      "repo_id": "mlx-community/Qwen3-4B-4bit",
+      "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+      "files": {
+        "added_tokens.json": {
+          "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+          "bytes": 707
+        },
+        "config.json": {
+          "sha256": "b5efdcf3b0035a3638e7228dad4d85f5c4a23f156eb7cdb0b44c8366a5d34d9b",
+          "bytes": 937
+        },
+        "merges.txt": {
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "bytes": 1671853
+        },
+        "model.safetensors": {
+          "sha256": "e240c0bdc0ebb0681bf0da0f98d9719fd6ebe269a3633f81542c13e81345651d",
+          "bytes": 2263022529
+        },
+        "model.safetensors.index.json": {
+          "sha256": "f7825defe5865d179c3b593173d37056be5f202dcb7153985cf74e75ecf1628b",
+          "bytes": 63924
+        },
+        "special_tokens_map.json": {
+          "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+          "bytes": 613
+        },
+        "tokenizer.json": {
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "bytes": 11422654
+        },
+        "tokenizer_config.json": {
+          "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+          "bytes": 9706
+        },
+        "vocab.json": {
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "bytes": 2776833
+        }
+      }
+    },
+    "reranker": {
+      "repo_id": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "files": {
+        "config.json": {
+          "sha256": "13dcd6c31d9fec9d1d8e158702072f62d7fa7d312a64b9fe057bec9a08cfe41a",
+          "bytes": 795
+        },
+        "model.safetensors": {
+          "sha256": "d9e3e081faff1eefb84019509b2f5558fd74c1a05a2c7db22f74174fcedb5286",
+          "bytes": 2271071852
+        },
+        "sentencepiece.bpe.model": {
+          "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "bytes": 5069051
+        },
+        "special_tokens_map.json": {
+          "sha256": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+          "bytes": 964
+        },
+        "tokenizer.json": {
+          "sha256": "69564b696052886ed0ac63fa393e928384e0f8caada38c1f4864a9bfbf379c15",
+          "bytes": 17098273
+        },
+        "tokenizer_config.json": {
+          "sha256": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+          "bytes": 1173
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "rag_backend/canvas.py": "f305fb9da3c9e33735d06ca30cf0ab61cda5f42aa81d1bc1462872df27a2c3ff",
+    "rag_backend/component_queries.py": "0e5b9d7cba75d48b3ec441c5d86b1e628987f04a257897471a68567f1e13fd96",
+    "rag_backend/research_models.py": "c7abe3d461182535f9aab63716ff54a9aeed5690bffd6c0c87e2cf5c7167234d"
+  },
+  "results": [
+    {
+      "id": "s01",
+      "gold": [
+        "travel_card_charge_widget"
+      ],
+      "actual": [
+        "travel_card_charge_widget"
+      ],
+      "exact": true,
+      "baseline_exact": true,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 53405.6,
+      "candidate_covered": 1,
+      "baseline_candidate_covered": 1,
+      "candidate_count": 3,
+      "baseline_candidate_count": 2,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "06a9d3c9-11d6-4969-982e-158aa1c9bf48",
+        "revision": 1,
+        "greeting": "오사카 여행 환전 준비",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": null,
+              "currency": null,
+              "tripDays": null,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "travel_card_charge_widget",
+              "overseas_qr_payment_widget",
+              "travel_insurance_widget"
+            ],
+            "scores": [
+              {
+                "type": "travel_card_charge_widget",
+                "score": 1.0,
+                "full_query_score": 0.126953125
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.9954714970697922,
+                "full_query_score": 0.064208984375
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.9801517805020432,
+                "full_query_score": 0.0139007568359375
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.028999307479224377,
+                "full_query_score": 0.0011243820190429688
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.00014594279042615295,
+                "full_query_score": 1.7940998077392578e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 0.00014594279042615295,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.00014594279042615295,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 0.00014594279042615295,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.00014594279042615295,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 0.00014594279042615295,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.00013052133413461538,
+                "full_query_score": 1.6570091247558594e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 0.00013052133413461538,
+                "full_query_score": 1.6570091247558594e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.00012958233173076923,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.00012958233173076923,
+                "full_query_score": 1.6450881958007812e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 42345.422
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 52375.88
+      }
+    },
+    {
+      "id": "s02",
+      "gold": [
+        "expense_report_widget",
+        "group_account_status"
+      ],
+      "actual": [
+        "expense_report_widget",
+        "group_account_status"
+      ],
+      "exact": true,
+      "baseline_exact": true,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 42663.4,
+      "candidate_covered": 2,
+      "baseline_candidate_covered": 2,
+      "candidate_count": 3,
+      "baseline_candidate_count": 2,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "ec6e94cc-ce3e-4ba4-ac3d-d92420d290b4",
+        "revision": 1,
+        "greeting": "모임 회비 및 지출 관리",
+        "widgets": [
+          {
+            "id": "group_account_status",
+            "type": "group_account_status",
+            "title": "모임 회비 현황",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "expense_report_widget",
+            "type": "expense_report_widget",
+            "title": "모임 지출 리포트",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "group_account_status",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "expense_report_widget",
+            "index": 1
+          }
+        ],
+        "clarification": "사용자가 모임 회비 및 지출을 한 화면에서 확인하는 요청입니다. 카드 설정은 필요하지 않습니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "group_account_status",
+              "expense_report_widget",
+              "atm_smart_withdrawal"
+            ],
+            "scores": [
+              {
+                "type": "group_account_status",
+                "score": 1.0,
+                "full_query_score": 0.2076416015625
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.9988242210464433,
+                "full_query_score": 0.2073974609375
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.9914134320735445,
+                "full_query_score": 0.0005421638488769531
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.11089065255731922,
+                "full_query_score": 0.0230255126953125
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 0.07300178753830439,
+                "full_query_score": 4.57763671875e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.07051200204290092,
+                "full_query_score": 0.0002199411392211914
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.06987359550561797,
+                "full_query_score": 2.4139881134033203e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.012704290091930541,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 0.011427477017364658,
+                "full_query_score": 1.6987323760986328e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.007245914198161389,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.00035112359550561797,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.00022344228804902964,
+                "full_query_score": 2.2292137145996094e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.0001914659575249853,
+                "full_query_score": 3.975629806518555e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 7.721790490887714e-05,
+                "full_query_score": 1.6033649444580078e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 31984.835
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 42149.76
+      }
+    },
+    {
+      "id": "s03",
+      "gold": [
+        "funding_comparison_widget",
+        "loan_repayment_schedule_widget"
+      ],
+      "actual": [
+        "funding_comparison_widget",
+        "loan_repayment_schedule_widget"
+      ],
+      "exact": true,
+      "baseline_exact": false,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 27927.8,
+      "candidate_covered": 2,
+      "baseline_candidate_covered": 1,
+      "candidate_count": 3,
+      "baseline_candidate_count": 1,
+      "stages": [
+        "context",
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "3f21e683-31c7-4f7a-94cf-4bf53037174d",
+        "revision": 1,
+        "greeting": "예금 해지 vs 담보 대출 비용 비교",
+        "widgets": [
+          {
+            "id": "funding_inputs_widget",
+            "type": "funding_inputs_widget",
+            "title": "자금 비교 조건 입력",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "funding_comparison_widget",
+            "type": "funding_comparison_widget",
+            "title": "예금 유지·해지 비용 비교",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "funding_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "funding_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "input_required",
+            "data": {
+              "required_calculation": "funding_comparison"
+            },
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "loan_inputs_widget",
+            "type": "loan_inputs_widget",
+            "title": "대출 상환 조건 입력",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "loan_repayment_schedule_widget",
+            "type": "loan_repayment_schedule_widget",
+            "title": "대출 월 상환표",
+            "order": 3,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "loan_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "loan_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "input_required",
+            "data": {
+              "required_calculation": "amortized_loan"
+            },
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "funding_inputs_widget",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "funding_comparison_widget",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "loan_inputs_widget",
+            "index": 2
+          },
+          {
+            "op": "add",
+            "id": "loan_repayment_schedule_widget",
+            "index": 3
+          }
+        ],
+        "clarification": "예금보호 설명은 요청하지 않았으므로 제외했습니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "funding_comparison_widget",
+              "loan_repayment_schedule_widget",
+              "deposit_protection_widget"
+            ],
+            "scores": [
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.0,
+                "full_query_score": 0.4462890625
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.9997916666666666,
+                "full_query_score": 0.0003905296325683594
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.9906215772179627,
+                "full_query_score": 0.0022525787353515625
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 0.013999178532311063,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.013622672508214678,
+                "full_query_score": 6.502866744995117e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.0010263480392156863,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.0007530120481927711,
+                "full_query_score": 2.0444393157958984e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 0.00037650602409638556,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.00013691128148959474,
+                "full_query_score": 1.7642974853515625e-05
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 9.121884402352298e-05,
+                "full_query_score": 4.07099723815918e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 6.845564074479737e-05,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 6.845564074479737e-05,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 6.845564074479737e-05,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 5.8898258000547044e-05,
+                "full_query_score": 2.6285648345947266e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 18414.152
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [
+              "funding_inputs_widget",
+              "loan_inputs_widget"
+            ],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 27602.799
+      }
+    },
+    {
+      "id": "s04",
+      "gold": [
+        "group_account_status",
+        "travel_card_charge_widget"
+      ],
+      "actual": [
+        "group_account_status",
+        "travel_card_charge_widget"
+      ],
+      "exact": true,
+      "baseline_exact": true,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 19169.8,
+      "candidate_covered": 2,
+      "baseline_candidate_covered": 2,
+      "candidate_count": 4,
+      "baseline_candidate_count": 3,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "67746975-f45f-4521-acd3-ebf44442463c",
+        "revision": 1,
+        "greeting": "여행 및 동아리 관련 준비",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": null,
+              "currency": null,
+              "tripDays": null,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {}
+          },
+          {
+            "id": "group_account_status",
+            "type": "group_account_status",
+            "title": "모임 회비 현황",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "group_account_status",
+            "index": 1
+          }
+        ],
+        "clarification": "사용자가 여행용 환전 및 동아리 회비 확인을 요청했으며, 여행 보험은 이미 가입되었으므로 관련 위젯은 제외했습니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "group_account_status",
+              "travel_card_charge_widget",
+              "travel_insurance_widget",
+              "expense_report_widget"
+            ],
+            "scores": [
+              {
+                "type": "group_account_status",
+                "score": 1.0,
+                "full_query_score": 0.50537109375
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.999978481448477,
+                "full_query_score": 0.35302734375
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.9998978365384615,
+                "full_query_score": 0.17822265625
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.3120946153597309,
+                "full_query_score": 0.0004222393035888672
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.008595974055383022,
+                "full_query_score": 0.00014770030975341797
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.0033778683574879225,
+                "full_query_score": 0.0017070770263671875
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.0010680857487922705,
+                "full_query_score": 0.0005397796630859375
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.000690198520531401,
+                "full_query_score": 0.00034880638122558594
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 4.5171912741545896e-05,
+                "full_query_score": 2.282857894897461e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 3.255208333333333e-05,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 3.231619867149758e-05,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 3.231619867149758e-05,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 3.231619867149758e-05,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 3.208031400966184e-05,
+                "full_query_score": 1.621246337890625e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated_with_rejected_slots",
+            "slot_rejections": [
+              {
+                "slot": "currency",
+                "reason": "unsupported_currency"
+              }
+            ],
+            "latency_ms": 15961.413
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 18972.383
+      }
+    },
+    {
+      "id": "s05",
+      "gold": [
+        "card_recovery_widget"
+      ],
+      "actual": [
+        "card_recovery_widget"
+      ],
+      "exact": true,
+      "baseline_exact": true,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 20243.7,
+      "candidate_covered": 1,
+      "baseline_candidate_covered": 1,
+      "candidate_count": 2,
+      "baseline_candidate_count": 2,
+      "stages": [
+        "context",
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "1f5b9ca5-eddf-4b09-b8de-b8173726ca06",
+        "revision": 1,
+        "greeting": "카드 찾음 신고 해제",
+        "widgets": [
+          {
+            "id": "card_recovery_widget",
+            "type": "card_recovery_widget",
+            "title": "찾은 카드의 정지 해제 절차",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "evidence": [
+                {
+                  "chunk_id": "kbcard-release",
+                  "source_id": "kbthink-lost",
+                  "institution": "kb_card",
+                  "title": "KB국민카드 분실 안내",
+                  "section": "카드를 되찾은 경우",
+                  "url": "https://kbthink.com/card/lost.html",
+                  "verified_at": "2026-11-02",
+                  "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+                  "score": 0.03226646,
+                  "published_at": null,
+                  "content_as_of": null,
+                  "effective_from": null,
+                  "effective_until": null,
+                  "temporal_basis": "undated"
+                }
+              ]
+            },
+            "data_origin": "reviewed_official_source",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "card_recovery_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "card_recovery_widget",
+              "id_reissue_status_widget"
+            ],
+            "scores": [
+              {
+                "type": "card_recovery_widget",
+                "score": 1.0,
+                "full_query_score": 0.921875
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.999803972069597,
+                "full_query_score": 0.5859375
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.3087923728813559,
+                "full_query_score": 0.28466796875
+              },
+              {
+                "type": "group_account_status",
+                "score": 0.11521648626144879,
+                "full_query_score": 1.6689300537109375e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 0.03368675595238095,
+                "full_query_score": 0.00040602684020996094
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.02560525412087912,
+                "full_query_score": 0.004680633544921875
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.009679433805162365,
+                "full_query_score": 2.6464462280273438e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.005916609432234432,
+                "full_query_score": 0.0001442432403564453
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.004995836802664446,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.0022836538461538463,
+                "full_query_score": 0.0004029273986816406
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.0006244796003330558,
+                "full_query_score": 3.0219554901123047e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.0004929315476190476,
+                "full_query_score": 2.1278858184814453e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.00020815986677768527,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.758640095338983e-05,
+                "full_query_score": 1.621246337890625e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated_with_rejected_slots",
+            "slot_rejections": [
+              {
+                "slot": "trip_days",
+                "reason": "slot_quote_not_in_current_message"
+              },
+              {
+                "slot": "amount",
+                "reason": "slot_quote_not_in_current_message"
+              },
+              {
+                "slot": "currency",
+                "reason": "slot_quote_not_in_current_message"
+              }
+            ],
+            "latency_ms": 18272.025
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": [
+              "rejected_irrelevant_destination"
+            ]
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 20227.137
+      }
+    },
+    {
+      "id": "s06",
+      "gold": [
+        "autopay_relink_widget"
+      ],
+      "actual": [
+        "autopay_relink_widget"
+      ],
+      "exact": true,
+      "baseline_exact": true,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 25518.1,
+      "candidate_covered": 1,
+      "baseline_candidate_covered": 1,
+      "candidate_count": 3,
+      "baseline_candidate_count": 1,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "0bf01f56-e88e-4bef-b9ed-7a72701bbab2",
+        "revision": 1,
+        "greeting": "자동납부 재신청 안내",
+        "widgets": [
+          {
+            "id": "autopay_relink_widget",
+            "type": "autopay_relink_widget",
+            "title": "자동납부 재연결 확인",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "evidence": [
+                {
+                  "chunk_id": "shinhan-autopay",
+                  "source_id": "shinhan-check-guide",
+                  "institution": "shinhan_card",
+                  "title": "신한카드 체크카드 이용안내",
+                  "section": "재발급 후 통신요금 자동납부",
+                  "url": "https://www.shinhancard.com/pconts/html/helpdesk/guide/CONFM90016/CONFM90016R03.html",
+                  "verified_at": "2026-11-02",
+                  "text": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.",
+                  "score": 0.03278689,
+                  "published_at": null,
+                  "content_as_of": null,
+                  "effective_from": null,
+                  "effective_until": null,
+                  "temporal_basis": "undated"
+                }
+              ]
+            },
+            "data_origin": "reviewed_official_source",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "autopay_relink_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "사용자가 신한 체크카드 번호가 변경되었으나 휴대폰 요금이 이전 카드에 연결되어 있는 상황을 설명했습니다. 자동납부 재신청을 위해 필요한 정보를 제공합니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "autopay_relink_widget",
+              "atm_smart_withdrawal",
+              "overseas_qr_payment_widget"
+            ],
+            "scores": [
+              {
+                "type": "autopay_relink_widget",
+                "score": 1.0,
+                "full_query_score": 0.04620361328125
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.9611428571428572,
+                "full_query_score": 0.0021991729736328125
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.17585714285714285,
+                "full_query_score": 8.285045623779297e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.12419250645994832,
+                "full_query_score": 0.00015473365783691406
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 0.07579672695951765,
+                "full_query_score": 7.903575897216797e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.03940568475452196,
+                "full_query_score": 1.6570091247558594e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 0.03357142857142857,
+                "full_query_score": 1.8477439880371094e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.008,
+                "full_query_score": 1.7762184143066406e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.0031761412575366066,
+                "full_query_score": 9.459257125854492e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.0014534883720930232,
+                "full_query_score": 2.86102294921875e-05
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.0005714285714285715,
+                "full_query_score": 1.722574234008789e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.0005714285714285715,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.0003534717635402906,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 0.00035089167767503305,
+                "full_query_score": 1.621246337890625e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated_with_rejected_slots",
+            "slot_rejections": [
+              {
+                "slot": "trip_days",
+                "reason": "trip_days_missing_explicit_duration"
+              }
+            ],
+            "latency_ms": 23858.658
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": [
+              "rejected_irrelevant_destination",
+              "rejected_irrelevant_group_name"
+            ]
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 25359.31
+      }
+    },
+    {
+      "id": "s07",
+      "gold": [],
+      "actual": [],
+      "exact": true,
+      "baseline_exact": false,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 1536.6,
+      "candidate_covered": 0,
+      "baseline_candidate_covered": 0,
+      "candidate_count": 0,
+      "baseline_candidate_count": 6,
+      "stages": [
+        "component_retrieval",
+        "completed"
+      ],
+      "response": {
+        "status": "clarify",
+        "greeting": "현재 화면에서 지원할 수 있는 금융 기능을 찾지 못했어요. 필요한 업무를 알려주세요.",
+        "widgets": [],
+        "session_id": null,
+        "revision": 0,
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [],
+            "scores": [
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.0,
+                "full_query_score": 1.9252300262451172e-05
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.0,
+                "full_query_score": 1.6689300537109375e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 0.0,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 0.0,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 0.0,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 0.0,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.0,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.0,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.0,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.0,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.0,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.0,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.0,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.0,
+                "full_query_score": 1.621246337890625e-05
+              }
+            ],
+            "abstention": "no_supported_component"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s08",
+      "gold": [],
+      "actual": [
+        "deposit_protection_widget"
+      ],
+      "exact": false,
+      "baseline_exact": false,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 16412.0,
+      "candidate_covered": 0,
+      "baseline_candidate_covered": 0,
+      "candidate_count": 2,
+      "baseline_candidate_count": 1,
+      "stages": [
+        "context",
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "426823a3-5237-402e-b2d6-ace7ff8a691e",
+        "revision": 1,
+        "greeting": "국내 부산 여행",
+        "widgets": [
+          {
+            "id": "deposit_protection_widget",
+            "type": "deposit_protection_widget",
+            "title": "예금보호 기준 확인",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "evidence": [
+                {
+                  "chunk_id": "fsc-protection-current",
+                  "source_id": "fsc-20250901",
+                  "institution": "fsc",
+                  "title": "예금보호한도 상향 시행",
+                  "section": "2025년 9월 1일부터의 한도",
+                  "url": "https://www.fsc.go.kr/no010101/85200",
+                  "verified_at": "2026-11-02",
+                  "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+                  "score": 0.03278689,
+                  "published_at": "2025-09-01",
+                  "content_as_of": null,
+                  "effective_from": "2025-09-01",
+                  "effective_until": null,
+                  "temporal_basis": "effective_period"
+                }
+              ]
+            },
+            "data_origin": "reviewed_official_source",
+            "context": {
+              "destination": "부산",
+              "currency": "KRW",
+              "travel_scope": "domestic"
+            }
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "deposit_protection_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "해외 여행 보험 및 환전, 해외 결제 기능은 국내 여행이라 필요하지 않습니다. 예금 보호 기능만 제공합니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {
+          "destination": {
+            "value": "부산",
+            "quote": "부산",
+            "origin": "user_quote"
+          },
+          "currency": {
+            "value": "KRW",
+            "quote": "부산",
+            "origin": "destination_lookup"
+          },
+          "travel_scope": {
+            "value": "domestic",
+            "quote": "부산",
+            "origin": "destination_lookup"
+          }
+        },
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "atm_smart_withdrawal",
+              "deposit_protection_widget"
+            ],
+            "scores": [
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 1.0,
+                "full_query_score": 0.0031719207763671875
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.5997023809523809,
+                "full_query_score": 4.398822784423828e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 0.00744047619047619,
+                "full_query_score": 1.6033649444580078e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.006107185808779315,
+                "full_query_score": 1.9371509552001953e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.00565619362597715,
+                "full_query_score": 1.7940998077392578e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.005468280216476247,
+                "full_query_score": 1.7344951629638672e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 0.005261575466025256,
+                "full_query_score": 1.6689300537109375e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 0.005111244738424534,
+                "full_query_score": 1.621246337890625e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.005054870715574263,
+                "full_query_score": 1.6033649444580078e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 0.005054870715574263,
+                "full_query_score": 1.6033649444580078e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.005054870715574263,
+                "full_query_score": 1.6033649444580078e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 15139.77
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [
+              "destination"
+            ],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 16273.399
+      }
+    },
+    {
+      "id": "s09",
+      "gold": [
+        "travel_insurance_widget"
+      ],
+      "actual": [
+        "travel_insurance_widget"
+      ],
+      "exact": true,
+      "baseline_exact": true,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 11726.4,
+      "candidate_covered": 1,
+      "baseline_candidate_covered": 1,
+      "candidate_count": 3,
+      "baseline_candidate_count": 3,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "22432c3c-ccc1-4b90-980d-5bfe7d0d6046",
+        "revision": 2,
+        "greeting": "보험만",
+        "widgets": [
+          {
+            "id": "travel_insurance_widget",
+            "type": "travel_insurance_widget",
+            "title": "여행 보험",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": null,
+              "currency": null,
+              "tripDays": null,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "remove",
+            "id": "travel_card_charge_widget"
+          },
+          {
+            "op": "remove",
+            "id": "overseas_qr_payment_widget"
+          },
+          {
+            "op": "update",
+            "id": "travel_insurance_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "보험 관련 기능만 선택했습니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "travel_insurance_widget",
+              "travel_card_charge_widget",
+              "overseas_qr_payment_widget"
+            ],
+            "scores": [
+              {
+                "type": "travel_insurance_widget",
+                "score": 1.0,
+                "full_query_score": 0.006191253662109375
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.12405193932411675,
+                "full_query_score": 1.895427703857422e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 0.08411338325652842,
+                "full_query_score": 1.6987323760986328e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.06827236943164362,
+                "full_query_score": 4.869699478149414e-05
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.028981854838709676,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 0.022940829037800686,
+                "full_query_score": 9.316205978393555e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.0215653801843318,
+                "full_query_score": 2.092123031616211e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.021157354070660522,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.019837269585253458,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.01965725806451613,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 0.015360983102918587,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 0.01520497311827957,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 0.011364727342549924,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.0026378619839802836,
+                "full_query_score": 1.633167266845703e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 10437.595
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 11689.968
+      }
+    },
+    {
+      "id": "s10",
+      "gold": [
+        "funding_comparison_widget",
+        "loan_repayment_schedule_widget"
+      ],
+      "actual": [
+        "funding_comparison_widget",
+        "loan_repayment_schedule_widget"
+      ],
+      "exact": true,
+      "baseline_exact": false,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 17041.5,
+      "candidate_covered": 2,
+      "baseline_candidate_covered": 1,
+      "candidate_count": 3,
+      "baseline_candidate_count": 2,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "39c0585b-d4b5-4681-8c5f-0b7fa229fac6",
+        "revision": 2,
+        "greeting": "예금 비용 비교 및 대출 상환표",
+        "widgets": [
+          {
+            "id": "funding_inputs_widget",
+            "type": "funding_inputs_widget",
+            "title": "자금 비교 조건 입력",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "funding_comparison_widget",
+            "type": "funding_comparison_widget",
+            "title": "예금 유지·해지 비용 비교",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "funding_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "funding_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "input_required",
+            "data": {
+              "required_calculation": "funding_comparison"
+            },
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "loan_inputs_widget",
+            "type": "loan_inputs_widget",
+            "title": "대출 상환 조건 입력",
+            "order": 2,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "input_required",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "loan_repayment_schedule_widget",
+            "type": "loan_repayment_schedule_widget",
+            "title": "대출 월 상환표",
+            "order": 3,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [
+              "loan_inputs_widget"
+            ],
+            "bindings": [
+              {
+                "source": "loan_inputs_widget",
+                "output": "form_values",
+                "target": "calculation_inputs"
+              }
+            ],
+            "actions": [],
+            "state": "input_required",
+            "data": {
+              "required_calculation": "amortized_loan"
+            },
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "remove",
+            "id": "deposit_protection_widget"
+          },
+          {
+            "op": "update",
+            "id": "funding_inputs_widget",
+            "index": 0
+          },
+          {
+            "op": "update",
+            "id": "funding_comparison_widget",
+            "index": 1
+          },
+          {
+            "op": "add",
+            "id": "loan_inputs_widget",
+            "index": 2
+          },
+          {
+            "op": "add",
+            "id": "loan_repayment_schedule_widget",
+            "index": 3
+          }
+        ],
+        "clarification": "예금 보호 기준은 제외하고, 대출 월 상환표를 추가했습니다. 기존 예금 비용 비교는 유지합니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "deposit_protection_widget",
+              "loan_repayment_schedule_widget",
+              "funding_comparison_widget"
+            ],
+            "scores": [
+              {
+                "type": "deposit_protection_widget",
+                "score": 1.0,
+                "full_query_score": 0.090576171875
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.999380105017503,
+                "full_query_score": 0.00815582275390625
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 0.9956610515569168,
+                "full_query_score": 0.00937652587890625
+              },
+              {
+                "type": "group_account_status",
+                "score": 0.021184277692700357,
+                "full_query_score": 3.427267074584961e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.01569678407350689,
+                "full_query_score": 8.887052536010742e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.005278577302631579,
+                "full_query_score": 6.300210952758789e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.0018912672675202157,
+                "full_query_score": 0.00017130374908447266
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.0006874486019736842,
+                "full_query_score": 3.4809112548828125e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 0.000592546674445741,
+                "full_query_score": 1.996755599975586e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.0003532489789964994,
+                "full_query_score": 2.0623207092285156e-05
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.00033890140667115906,
+                "full_query_score": 3.069639205932617e-05
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.00027046306435309976,
+                "full_query_score": 2.4497509002685547e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 0.00022101151315789475,
+                "full_query_score": 1.6987323760986328e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.00018162483153638813,
+                "full_query_score": 1.6450881958007812e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 14026.616
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [
+              "funding_inputs_widget",
+              "loan_inputs_widget"
+            ],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 16600.826
+      }
+    },
+    {
+      "id": "s11",
+      "gold": [
+        "deposit_protection_widget"
+      ],
+      "actual": [
+        "deposit_protection_widget"
+      ],
+      "exact": true,
+      "baseline_exact": false,
+      "baseline_infrastructure_error": true,
+      "wall_ms": 16366.5,
+      "candidate_covered": 1,
+      "baseline_candidate_covered": 0,
+      "candidate_count": 2,
+      "baseline_candidate_count": 0,
+      "stages": [
+        "context",
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "3872a1e6-cc25-4756-97df-d26c803fc566",
+        "revision": 2,
+        "greeting": "예금보호 기준",
+        "widgets": [
+          {
+            "id": "deposit_protection_widget",
+            "type": "deposit_protection_widget",
+            "title": "예금보호 기준 확인",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "ready",
+            "data": {
+              "evidence": [
+                {
+                  "chunk_id": "fsc-protection-current",
+                  "source_id": "fsc-20250901",
+                  "institution": "fsc",
+                  "title": "예금보호한도 상향 시행",
+                  "section": "2025년 9월 1일부터의 한도",
+                  "url": "https://www.fsc.go.kr/no010101/85200",
+                  "verified_at": "2026-11-02",
+                  "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+                  "score": 0.03278689,
+                  "published_at": "2025-09-01",
+                  "content_as_of": null,
+                  "effective_from": "2025-09-01",
+                  "effective_until": null,
+                  "temporal_basis": "effective_period"
+                }
+              ]
+            },
+            "data_origin": "reviewed_official_source",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "remove",
+            "id": "loan_inputs_widget"
+          },
+          {
+            "op": "remove",
+            "id": "loan_repayment_schedule_widget"
+          },
+          {
+            "op": "add",
+            "id": "deposit_protection_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "기존 화면의 loan_inputs_widget와 loan_repayment_schedule_widget은 제거되었습니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [
+              "deposit_protection_widget",
+              "loan_repayment_schedule_widget"
+            ],
+            "scores": [
+              {
+                "type": "deposit_protection_widget",
+                "score": 1.0,
+                "full_query_score": 0.033721923828125
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.0456140350877193,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 0.021052631578947368,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 0.021052631578947368,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 0.014035087719298246,
+                "full_query_score": 1.6570091247558594e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 0.014035087719298246,
+                "full_query_score": 1.633167266845703e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 0.007017543859649123,
+                "full_query_score": 4.684925079345703e-05
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.007017543859649123,
+                "full_query_score": 1.710653305053711e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 0.007017543859649123,
+                "full_query_score": 1.6570091247558594e-05
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.0007441317873303167,
+                "full_query_score": 2.5093555450439453e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.0005108173076923077,
+                "full_query_score": 1.722574234008789e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.0004878393665158371,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.0004878393665158371,
+                "full_query_score": 1.6450881958007812e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.0004878393665158371,
+                "full_query_score": 1.6450881958007812e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 14249.403
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 16081.28
+      }
+    },
+    {
+      "id": "s12",
+      "gold": [],
+      "actual": [],
+      "exact": true,
+      "baseline_exact": false,
+      "baseline_infrastructure_error": false,
+      "wall_ms": 1023.1,
+      "candidate_covered": 0,
+      "baseline_candidate_covered": 0,
+      "candidate_count": 0,
+      "baseline_candidate_count": 1,
+      "stages": [
+        "component_retrieval",
+        "completed"
+      ],
+      "response": {
+        "status": "clarify",
+        "greeting": "현재 화면에서 지원할 수 있는 금융 기능을 찾지 못했어요. 필요한 업무를 알려주세요.",
+        "widgets": [],
+        "session_id": null,
+        "revision": 0,
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "mode": "multi",
+            "candidate_ids": [],
+            "scores": [
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.0,
+                "full_query_score": 5.9664249420166016e-05
+              }
+            ],
+            "abstention": "no_supported_component"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "single_exact": 6,
+    "multi_exact": 11,
+    "total": 12,
+    "improved": [
+      "s03",
+      "s07",
+      "s10",
+      "s11",
+      "s12"
+    ],
+    "regressed": [],
+    "single_candidate_recall": 0.8333333333333334,
+    "multi_candidate_recall": 1.0,
+    "multi_median_wall_ms": 18105.65,
+    "comparable_model_pairs": {
+      "total": 11,
+      "single_exact": 6,
+      "multi_exact": 10
+    },
+    "model_improved": [
+      "s03",
+      "s07",
+      "s10",
+      "s12"
+    ],
+    "model_regressed": [],
+    "baseline_infrastructure_errors": [
+      "s11"
+    ]
+  }
+}

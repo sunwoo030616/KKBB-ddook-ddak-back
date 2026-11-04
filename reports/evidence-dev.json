@@ -1,0 +1,4258 @@
+{
+  "scope": "Frozen developer-authored cases; evidence tool only, not independent or semantic answer benchmark.",
+  "dataset_sha256": "de5a6dd22c3234df3f05284f37ef89c16b3ffb987e366e621aa21924d8e271b6",
+  "split": "dev",
+  "rows": [
+    {
+      "id": "dev-0-0",
+      "mode": "once",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 12553.352,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          }
+        ],
+        "latency_ms": 13643.315
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 13.671
+    },
+    {
+      "id": "dev-0-0",
+      "mode": "adaptive",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 6832.271,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          }
+        ],
+        "latency_ms": 7306.614
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 7.313
+    },
+    {
+      "id": "dev-0-1",
+      "mode": "once",
+      "expected_covered": [
+        "protection"
+      ],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-before",
+              "source_id": "fsc-20250722",
+              "institution": "fsc",
+              "title": "예금보호한도 변경 발표",
+              "section": "2025년 8월 말까지의 종전 한도",
+              "url": "https://www.fsc.go.kr/no010101/84974",
+              "verified_at": "2026-11-02",
+              "text": "2025년 7월 22일 금융위원회 발표에서 확인되는 상향 시행 전 종전 예금보호한도는 5천만원입니다. 이 기록은 2025년 7월 22일부터 8월 31일까지의 조회에만 사용합니다. 이후 시행되는 새 한도는 별도 기록으로 조회합니다.",
+              "score": 0.007518768310546875,
+              "published_at": "2025-07-22",
+              "content_as_of": null,
+              "effective_from": "2025-07-22",
+              "effective_until": "2025-08-31",
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2025-08-31",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 4823.981,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          }
+        ],
+        "latency_ms": 5040.238
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 5.044
+    },
+    {
+      "id": "dev-0-1",
+      "mode": "adaptive",
+      "expected_covered": [
+        "protection"
+      ],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-before",
+              "source_id": "fsc-20250722",
+              "institution": "fsc",
+              "title": "예금보호한도 변경 발표",
+              "section": "2025년 8월 말까지의 종전 한도",
+              "url": "https://www.fsc.go.kr/no010101/84974",
+              "verified_at": "2026-11-02",
+              "text": "2025년 7월 22일 금융위원회 발표에서 확인되는 상향 시행 전 종전 예금보호한도는 5천만원입니다. 이 기록은 2025년 7월 22일부터 8월 31일까지의 조회에만 사용합니다. 이후 시행되는 새 한도는 별도 기록으로 조회합니다.",
+              "score": 0.007518768310546875,
+              "published_at": "2025-07-22",
+              "content_as_of": null,
+              "effective_from": "2025-07-22",
+              "effective_until": "2025-08-31",
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2025-08-31",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 4857.284,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          }
+        ],
+        "latency_ms": 5077.233
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 5.081
+    },
+    {
+      "id": "dev-0-2",
+      "mode": "once",
+      "expected_covered": [
+        "release"
+      ],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [
+          "release"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "release": [
+            {
+              "chunk_id": "kbcard-release",
+              "source_id": "kbthink-lost",
+              "institution": "kb_card",
+              "title": "KB국민카드 분실 안내",
+              "section": "카드를 되찾은 경우",
+              "url": "https://kbthink.com/card/lost.html",
+              "verified_at": "2026-11-02",
+              "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+              "score": 0.245849609375,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 5241.99,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          }
+        ],
+        "latency_ms": 5810.818
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 5.819
+    },
+    {
+      "id": "dev-0-2",
+      "mode": "adaptive",
+      "expected_covered": [
+        "release"
+      ],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [
+          "release"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "release": [
+            {
+              "chunk_id": "kbcard-release",
+              "source_id": "kbthink-lost",
+              "institution": "kb_card",
+              "title": "KB국민카드 분실 안내",
+              "section": "카드를 되찾은 경우",
+              "url": "https://kbthink.com/card/lost.html",
+              "verified_at": "2026-11-02",
+              "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+              "score": 0.245849609375,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 5286.266,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          }
+        ],
+        "latency_ms": 5715.841
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 5.722
+    },
+    {
+      "id": "dev-0-3",
+      "mode": "once",
+      "expected_covered": [
+        "autopay"
+      ],
+      "required": [
+        "autopay"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "autopay"
+        ],
+        "covered_topics": [
+          "autopay"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "autopay": [
+            {
+              "chunk_id": "shinhan-autopay",
+              "source_id": "shinhan-check-guide",
+              "institution": "shinhan_card",
+              "title": "신한카드 체크카드 이용안내",
+              "section": "재발급 후 통신요금 자동납부",
+              "url": "https://www.shinhancard.com/pconts/html/helpdesk/guide/CONFM90016/CONFM90016R03.html",
+              "verified_at": "2026-11-02",
+              "text": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.",
+              "score": 0.85302734375,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 5538.45,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          }
+        ],
+        "latency_ms": 6006.923
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 6.015
+    },
+    {
+      "id": "dev-0-3",
+      "mode": "adaptive",
+      "expected_covered": [
+        "autopay"
+      ],
+      "required": [
+        "autopay"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "autopay"
+        ],
+        "covered_topics": [
+          "autopay"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "autopay": [
+            {
+              "chunk_id": "shinhan-autopay",
+              "source_id": "shinhan-check-guide",
+              "institution": "shinhan_card",
+              "title": "신한카드 체크카드 이용안내",
+              "section": "재발급 후 통신요금 자동납부",
+              "url": "https://www.shinhancard.com/pconts/html/helpdesk/guide/CONFM90016/CONFM90016R03.html",
+              "verified_at": "2026-11-02",
+              "text": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.",
+              "score": 0.85302734375,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 5723.746,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          }
+        ],
+        "latency_ms": 6270.71
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 6.277
+    },
+    {
+      "id": "dev-0-4",
+      "mode": "once",
+      "expected_covered": [],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "protection"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2025-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 3152.728,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 3153.49
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 3.157
+    },
+    {
+      "id": "dev-0-4",
+      "mode": "adaptive",
+      "expected_covered": [],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "protection"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2025-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 3355.242,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_decision",
+            "attempt": 2,
+            "action": "clarify",
+            "latency_ms": 3593.442,
+            "model_calls": 1
+          }
+        ],
+        "latency_ms": 6950.05
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 2,
+      "wall_seconds": 6.957
+    },
+    {
+      "id": "dev-0-5",
+      "mode": "once",
+      "expected_covered": [],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "release"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 5236.308,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 5237.558
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 5.242
+    },
+    {
+      "id": "dev-0-5",
+      "mode": "adaptive",
+      "expected_covered": [],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "release"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 5089.46,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_decision",
+            "attempt": 2,
+            "action": "search",
+            "latency_ms": 5346.159,
+            "model_calls": 1
+          }
+        ],
+        "latency_ms": 10436.995
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 2,
+      "wall_seconds": 10.442
+    },
+    {
+      "id": "dev-0-6",
+      "mode": "once",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-current",
+              "source_id": "fsc-20250901",
+              "institution": "fsc",
+              "title": "예금보호한도 상향 시행",
+              "section": "2025년 9월 1일부터의 한도",
+              "url": "https://www.fsc.go.kr/no010101/85200",
+              "verified_at": "2026-11-02",
+              "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+              "score": 0.951171875,
+              "published_at": "2025-09-01",
+              "content_as_of": null,
+              "effective_from": "2025-09-01",
+              "effective_until": null,
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 14799.058,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-current"
+            ]
+          }
+        ],
+        "latency_ms": 21111.839
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 21.123
+    },
+    {
+      "id": "dev-0-6",
+      "mode": "adaptive",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-current",
+              "source_id": "fsc-20250901",
+              "institution": "fsc",
+              "title": "예금보호한도 상향 시행",
+              "section": "2025년 9월 1일부터의 한도",
+              "url": "https://www.fsc.go.kr/no010101/85200",
+              "verified_at": "2026-11-02",
+              "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+              "score": 0.951171875,
+              "published_at": "2025-09-01",
+              "content_as_of": null,
+              "effective_from": "2025-09-01",
+              "effective_until": null,
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 11145.607,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-current"
+            ]
+          }
+        ],
+        "latency_ms": 11778.666
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 11.79
+    },
+    {
+      "id": "dev-0-7",
+      "mode": "once",
+      "expected_covered": [],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2020-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 8213.679,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 8217.641
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 8.234
+    },
+    {
+      "id": "dev-0-7",
+      "mode": "adaptive",
+      "expected_covered": [],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2020-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 7756.076,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_decision",
+            "attempt": 2,
+            "action": "search",
+            "latency_ms": 7840.674,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 2,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 15603.97
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 2,
+      "wall_seconds": 15.613
+    },
+    {
+      "id": "dev-1-0",
+      "mode": "once",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 12537.424,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          }
+        ],
+        "latency_ms": 13642.9
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 13.655
+    },
+    {
+      "id": "dev-1-0",
+      "mode": "adaptive",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 12451.773,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          }
+        ],
+        "latency_ms": 14732.829
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 14.747
+    },
+    {
+      "id": "dev-1-1",
+      "mode": "once",
+      "expected_covered": [
+        "protection"
+      ],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-before",
+              "source_id": "fsc-20250722",
+              "institution": "fsc",
+              "title": "예금보호한도 변경 발표",
+              "section": "2025년 8월 말까지의 종전 한도",
+              "url": "https://www.fsc.go.kr/no010101/84974",
+              "verified_at": "2026-11-02",
+              "text": "2025년 7월 22일 금융위원회 발표에서 확인되는 상향 시행 전 종전 예금보호한도는 5천만원입니다. 이 기록은 2025년 7월 22일부터 8월 31일까지의 조회에만 사용합니다. 이후 시행되는 새 한도는 별도 기록으로 조회합니다.",
+              "score": 0.007518768310546875,
+              "published_at": "2025-07-22",
+              "content_as_of": null,
+              "effective_from": "2025-07-22",
+              "effective_until": "2025-08-31",
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2025-08-31",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 9755.79,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          }
+        ],
+        "latency_ms": 10704.099
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 10.718
+    },
+    {
+      "id": "dev-1-1",
+      "mode": "adaptive",
+      "expected_covered": [
+        "protection"
+      ],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-before",
+              "source_id": "fsc-20250722",
+              "institution": "fsc",
+              "title": "예금보호한도 변경 발표",
+              "section": "2025년 8월 말까지의 종전 한도",
+              "url": "https://www.fsc.go.kr/no010101/84974",
+              "verified_at": "2026-11-02",
+              "text": "2025년 7월 22일 금융위원회 발표에서 확인되는 상향 시행 전 종전 예금보호한도는 5천만원입니다. 이 기록은 2025년 7월 22일부터 8월 31일까지의 조회에만 사용합니다. 이후 시행되는 새 한도는 별도 기록으로 조회합니다.",
+              "score": 0.007518768310546875,
+              "published_at": "2025-07-22",
+              "content_as_of": null,
+              "effective_from": "2025-07-22",
+              "effective_until": "2025-08-31",
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2025-08-31",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 11115.25,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          }
+        ],
+        "latency_ms": 12582.388
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 12.598
+    },
+    {
+      "id": "dev-1-2",
+      "mode": "once",
+      "expected_covered": [
+        "release"
+      ],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [
+          "release"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "release": [
+            {
+              "chunk_id": "kbcard-release",
+              "source_id": "kbthink-lost",
+              "institution": "kb_card",
+              "title": "KB국민카드 분실 안내",
+              "section": "카드를 되찾은 경우",
+              "url": "https://kbthink.com/card/lost.html",
+              "verified_at": "2026-11-02",
+              "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+              "score": 0.245849609375,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 11395.251,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          }
+        ],
+        "latency_ms": 12569.089
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 12.613
+    },
+    {
+      "id": "dev-1-2",
+      "mode": "adaptive",
+      "expected_covered": [
+        "release"
+      ],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [
+          "release"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "release": [
+            {
+              "chunk_id": "kbcard-release",
+              "source_id": "kbthink-lost",
+              "institution": "kb_card",
+              "title": "KB국민카드 분실 안내",
+              "section": "카드를 되찾은 경우",
+              "url": "https://kbthink.com/card/lost.html",
+              "verified_at": "2026-11-02",
+              "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+              "score": 0.245849609375,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 16709.911,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          }
+        ],
+        "latency_ms": 18383.797
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 18.407
+    },
+    {
+      "id": "dev-1-3",
+      "mode": "once",
+      "expected_covered": [
+        "autopay"
+      ],
+      "required": [
+        "autopay"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "autopay"
+        ],
+        "covered_topics": [
+          "autopay"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "autopay": [
+            {
+              "chunk_id": "shinhan-autopay",
+              "source_id": "shinhan-check-guide",
+              "institution": "shinhan_card",
+              "title": "신한카드 체크카드 이용안내",
+              "section": "재발급 후 통신요금 자동납부",
+              "url": "https://www.shinhancard.com/pconts/html/helpdesk/guide/CONFM90016/CONFM90016R03.html",
+              "verified_at": "2026-11-02",
+              "text": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.",
+              "score": 0.85107421875,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 12345.825,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          }
+        ],
+        "latency_ms": 13747.43
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 13.759
+    },
+    {
+      "id": "dev-1-3",
+      "mode": "adaptive",
+      "expected_covered": [
+        "autopay"
+      ],
+      "required": [
+        "autopay"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "autopay"
+        ],
+        "covered_topics": [
+          "autopay"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "autopay": [
+            {
+              "chunk_id": "shinhan-autopay",
+              "source_id": "shinhan-check-guide",
+              "institution": "shinhan_card",
+              "title": "신한카드 체크카드 이용안내",
+              "section": "재발급 후 통신요금 자동납부",
+              "url": "https://www.shinhancard.com/pconts/html/helpdesk/guide/CONFM90016/CONFM90016R03.html",
+              "verified_at": "2026-11-02",
+              "text": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.",
+              "score": 0.85107421875,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 12148.365,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          }
+        ],
+        "latency_ms": 13499.001
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 13.524
+    },
+    {
+      "id": "dev-1-4",
+      "mode": "once",
+      "expected_covered": [],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "protection"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2025-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 9216.485,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 9218.86
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 9.234
+    },
+    {
+      "id": "dev-1-4",
+      "mode": "adaptive",
+      "expected_covered": [],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "protection"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2025-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 8205.204,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_decision",
+            "attempt": 2,
+            "action": "clarify",
+            "latency_ms": 12090.69,
+            "model_calls": 1
+          }
+        ],
+        "latency_ms": 20299.778
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 2,
+      "wall_seconds": 20.312
+    },
+    {
+      "id": "dev-1-5",
+      "mode": "once",
+      "expected_covered": [],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "release"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 12139.042,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 12142.044
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 12.162
+    },
+    {
+      "id": "dev-1-5",
+      "mode": "adaptive",
+      "expected_covered": [],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "release"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 9680.296,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_decision",
+            "attempt": 2,
+            "action": "search",
+            "latency_ms": 11150.357,
+            "model_calls": 1
+          }
+        ],
+        "latency_ms": 20835.482
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 2,
+      "wall_seconds": 20.854
+    },
+    {
+      "id": "dev-1-6",
+      "mode": "once",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-current",
+              "source_id": "fsc-20250901",
+              "institution": "fsc",
+              "title": "예금보호한도 상향 시행",
+              "section": "2025년 9월 1일부터의 한도",
+              "url": "https://www.fsc.go.kr/no010101/85200",
+              "verified_at": "2026-11-02",
+              "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+              "score": 0.951171875,
+              "published_at": "2025-09-01",
+              "content_as_of": null,
+              "effective_from": "2025-09-01",
+              "effective_until": null,
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 16254.532,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-current"
+            ]
+          }
+        ],
+        "latency_ms": 16878.34
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 16.888
+    },
+    {
+      "id": "dev-1-6",
+      "mode": "adaptive",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-current",
+              "source_id": "fsc-20250901",
+              "institution": "fsc",
+              "title": "예금보호한도 상향 시행",
+              "section": "2025년 9월 1일부터의 한도",
+              "url": "https://www.fsc.go.kr/no010101/85200",
+              "verified_at": "2026-11-02",
+              "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+              "score": 0.951171875,
+              "published_at": "2025-09-01",
+              "content_as_of": null,
+              "effective_from": "2025-09-01",
+              "effective_until": null,
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 9063.827,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-current"
+            ]
+          }
+        ],
+        "latency_ms": 9762.573
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 9.777
+    },
+    {
+      "id": "dev-1-7",
+      "mode": "once",
+      "expected_covered": [],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2020-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 9012.629,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 9014.355
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 9.022
+    },
+    {
+      "id": "dev-1-7",
+      "mode": "adaptive",
+      "expected_covered": [],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2020-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 8667.999,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_decision",
+            "attempt": 2,
+            "action": "clarify",
+            "latency_ms": 10277.269,
+            "model_calls": 1
+          }
+        ],
+        "latency_ms": 18948.322
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 2,
+      "wall_seconds": 18.962
+    },
+    {
+      "id": "dev-2-0",
+      "mode": "once",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 6957.971,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          }
+        ],
+        "latency_ms": 7510.139
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 7.533
+    },
+    {
+      "id": "dev-2-0",
+      "mode": "adaptive",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 8087.072,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          }
+        ],
+        "latency_ms": 8745.671
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 8.758
+    },
+    {
+      "id": "dev-2-1",
+      "mode": "once",
+      "expected_covered": [
+        "protection"
+      ],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-before",
+              "source_id": "fsc-20250722",
+              "institution": "fsc",
+              "title": "예금보호한도 변경 발표",
+              "section": "2025년 8월 말까지의 종전 한도",
+              "url": "https://www.fsc.go.kr/no010101/84974",
+              "verified_at": "2026-11-02",
+              "text": "2025년 7월 22일 금융위원회 발표에서 확인되는 상향 시행 전 종전 예금보호한도는 5천만원입니다. 이 기록은 2025년 7월 22일부터 8월 31일까지의 조회에만 사용합니다. 이후 시행되는 새 한도는 별도 기록으로 조회합니다.",
+              "score": 0.1248779296875,
+              "published_at": "2025-07-22",
+              "content_as_of": null,
+              "effective_from": "2025-07-22",
+              "effective_until": "2025-08-31",
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2025-08-31",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 6666.44,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          }
+        ],
+        "latency_ms": 7494.974
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 7.501
+    },
+    {
+      "id": "dev-2-1",
+      "mode": "adaptive",
+      "expected_covered": [
+        "protection"
+      ],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-before",
+              "source_id": "fsc-20250722",
+              "institution": "fsc",
+              "title": "예금보호한도 변경 발표",
+              "section": "2025년 8월 말까지의 종전 한도",
+              "url": "https://www.fsc.go.kr/no010101/84974",
+              "verified_at": "2026-11-02",
+              "text": "2025년 7월 22일 금융위원회 발표에서 확인되는 상향 시행 전 종전 예금보호한도는 5천만원입니다. 이 기록은 2025년 7월 22일부터 8월 31일까지의 조회에만 사용합니다. 이후 시행되는 새 한도는 별도 기록으로 조회합니다.",
+              "score": 0.1248779296875,
+              "published_at": "2025-07-22",
+              "content_as_of": null,
+              "effective_from": "2025-07-22",
+              "effective_until": "2025-08-31",
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2025-08-31",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 6365.966,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-before"
+            ]
+          }
+        ],
+        "latency_ms": 7637.115
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 7.655
+    },
+    {
+      "id": "dev-2-2",
+      "mode": "once",
+      "expected_covered": [
+        "release"
+      ],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [
+          "release"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "release": [
+            {
+              "chunk_id": "kbcard-release",
+              "source_id": "kbthink-lost",
+              "institution": "kb_card",
+              "title": "KB국민카드 분실 안내",
+              "section": "카드를 되찾은 경우",
+              "url": "https://kbthink.com/card/lost.html",
+              "verified_at": "2026-11-02",
+              "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+              "score": 0.205810546875,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 7479.367,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          }
+        ],
+        "latency_ms": 8053.414
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 8.064
+    },
+    {
+      "id": "dev-2-2",
+      "mode": "adaptive",
+      "expected_covered": [
+        "release"
+      ],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [
+          "release"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "release": [
+            {
+              "chunk_id": "kbcard-release",
+              "source_id": "kbthink-lost",
+              "institution": "kb_card",
+              "title": "KB국민카드 분실 안내",
+              "section": "카드를 되찾은 경우",
+              "url": "https://kbthink.com/card/lost.html",
+              "verified_at": "2026-11-02",
+              "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+              "score": 0.205810546875,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 6796.496,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "kb_card",
+            "evidence_ids": [
+              "kbcard-release"
+            ]
+          }
+        ],
+        "latency_ms": 8959.174
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 8.982
+    },
+    {
+      "id": "dev-2-3",
+      "mode": "once",
+      "expected_covered": [
+        "autopay"
+      ],
+      "required": [
+        "autopay"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "autopay"
+        ],
+        "covered_topics": [
+          "autopay"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "autopay": [
+            {
+              "chunk_id": "shinhan-autopay",
+              "source_id": "shinhan-check-guide",
+              "institution": "shinhan_card",
+              "title": "신한카드 체크카드 이용안내",
+              "section": "재발급 후 통신요금 자동납부",
+              "url": "https://www.shinhancard.com/pconts/html/helpdesk/guide/CONFM90016/CONFM90016R03.html",
+              "verified_at": "2026-11-02",
+              "text": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.",
+              "score": 0.78759765625,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 8945.156,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          }
+        ],
+        "latency_ms": 9511.325
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 9.53
+    },
+    {
+      "id": "dev-2-3",
+      "mode": "adaptive",
+      "expected_covered": [
+        "autopay"
+      ],
+      "required": [
+        "autopay"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "autopay"
+        ],
+        "covered_topics": [
+          "autopay"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "autopay": [
+            {
+              "chunk_id": "shinhan-autopay",
+              "source_id": "shinhan-check-guide",
+              "institution": "shinhan_card",
+              "title": "신한카드 체크카드 이용안내",
+              "section": "재발급 후 통신요금 자동납부",
+              "url": "https://www.shinhancard.com/pconts/html/helpdesk/guide/CONFM90016/CONFM90016R03.html",
+              "verified_at": "2026-11-02",
+              "text": "신한 체크카드를 재발급받아 카드번호가 변경된 경우 통신요금 자동납부가 새 카드로 자동 승계되지 않으므로 다시 신청해야 합니다.",
+              "score": 0.78759765625,
+              "published_at": null,
+              "content_as_of": null,
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "undated"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 8531.468,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "autopay",
+            "institution": "shinhan_card",
+            "evidence_ids": [
+              "shinhan-autopay"
+            ]
+          }
+        ],
+        "latency_ms": 9431.728
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 9.442
+    },
+    {
+      "id": "dev-2-4",
+      "mode": "once",
+      "expected_covered": [],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "protection"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2025-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 4293.215,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 4294.852
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 4.316
+    },
+    {
+      "id": "dev-2-4",
+      "mode": "adaptive",
+      "expected_covered": [],
+      "required": [
+        "protection"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "protection"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "protection"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2025-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 3598.808,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_decision",
+            "attempt": 2,
+            "action": "clarify",
+            "latency_ms": 3823.411,
+            "model_calls": 1
+          }
+        ],
+        "latency_ms": 7426.07
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 2,
+      "wall_seconds": 7.442
+    },
+    {
+      "id": "dev-2-5",
+      "mode": "once",
+      "expected_covered": [],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "release"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 5396.868,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 5398.531
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 5.403
+    },
+    {
+      "id": "dev-2-5",
+      "mode": "adaptive",
+      "expected_covered": [],
+      "required": [
+        "release"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "release"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "release"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 5840.281,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "release",
+            "institution": "fsc",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_decision",
+            "attempt": 2,
+            "action": "search",
+            "latency_ms": 5878.376,
+            "model_calls": 1
+          }
+        ],
+        "latency_ms": 11722.567
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 2,
+      "wall_seconds": 11.728
+    },
+    {
+      "id": "dev-2-6",
+      "mode": "once",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-current",
+              "source_id": "fsc-20250901",
+              "institution": "fsc",
+              "title": "예금보호한도 상향 시행",
+              "section": "2025년 9월 1일부터의 한도",
+              "url": "https://www.fsc.go.kr/no010101/85200",
+              "verified_at": "2026-11-02",
+              "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+              "score": 0.951171875,
+              "published_at": "2025-09-01",
+              "content_as_of": null,
+              "effective_from": "2025-09-01",
+              "effective_until": null,
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 8753.148,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-current"
+            ]
+          }
+        ],
+        "latency_ms": 9426.626
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 9.443
+    },
+    {
+      "id": "dev-2-6",
+      "mode": "adaptive",
+      "expected_covered": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close",
+        "protection"
+      ],
+      "output": {
+        "status": "complete",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "covered_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close",
+          "protection"
+        ],
+        "missing_topics": [],
+        "evidence_by_topic": {
+          "funding_compare": [
+            {
+              "chunk_id": "kb-funding-compare",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비용 비교 원칙",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "예금 유지 후 대출을 받으면 만기 이자를 받는 대신 대출 이자를 부담합니다. 중도해지는 대출 이자가 없지만 약정 이자를 일부 포기할 수 있습니다. 필요한 금액과 기간에 따라 두 비용을 비교해야 합니다.",
+              "score": 0.76416015625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "funding_inputs": [
+            {
+              "chunk_id": "kb-funding-inputs",
+              "source_id": "kbthink-funding",
+              "institution": "kb_bank",
+              "title": "긴급자금 마련 방법 비교",
+              "section": "비교에 필요한 정보",
+              "url": "https://kbthink.com/loan/find/emergency-funds.html",
+              "verified_at": "2026-11-02",
+              "text": "비교 전 필요한 자금과 사용 기간, 예금의 만기와 예상 만기 이자, 중도해지 때의 이자를 확인합니다. 자금 상환 계획과 실제 대출 가능 여부도 확인해야 합니다.",
+              "score": 0.58837890625,
+              "published_at": "2026-07-27",
+              "content_as_of": "2026-07-20",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "collateral_close": [
+            {
+              "chunk_id": "kb-collateral-close",
+              "source_id": "kbthink-collateral",
+              "institution": "kb_bank",
+              "title": "예금담보대출 안내",
+              "section": "예금 해지와 대출 상환",
+              "url": "https://kbthink.com/loan-guide/deposit-mortgage.html?gf=false",
+              "verified_at": "2026-11-02",
+              "text": "예금담보대출이 남아 있는 예금을 해지하려면 먼저 대출을 상환해야 한다고 안내합니다. 직접 상환하거나 예금 해지금액에서 대출금을 차감하는 처리가 설명되어 있습니다.",
+              "score": 0.998046875,
+              "published_at": "2026-06-22",
+              "content_as_of": "2026-06-17",
+              "effective_from": null,
+              "effective_until": null,
+              "temporal_basis": "publication_snapshot"
+            }
+          ],
+          "protection": [
+            {
+              "chunk_id": "fsc-protection-current",
+              "source_id": "fsc-20250901",
+              "institution": "fsc",
+              "title": "예금보호한도 상향 시행",
+              "section": "2025년 9월 1일부터의 한도",
+              "url": "https://www.fsc.go.kr/no010101/85200",
+              "verified_at": "2026-11-02",
+              "text": "금융위원회는 2025년 9월 1일 예금보호한도 1억원 시행을 발표했습니다. 한도에는 원금과 이자가 포함됩니다. 이 일반 제도 안내만으로 개별 금융상품의 보호 대상 여부나 실제 지급액을 확정할 수는 없습니다.",
+              "score": 0.951171875,
+              "published_at": "2025-09-01",
+              "content_as_of": null,
+              "effective_from": "2025-09-01",
+              "effective_until": null,
+              "temporal_basis": "effective_period"
+            }
+          ]
+        },
+        "as_of": "2026-11-04",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 8434.56,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-compare"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-funding-inputs"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": [
+              "kb-collateral-close"
+            ]
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "protection",
+            "institution": "fsc",
+            "evidence_ids": [
+              "fsc-protection-current"
+            ]
+          }
+        ],
+        "latency_ms": 9008.987
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 9.021
+    },
+    {
+      "id": "dev-2-7",
+      "mode": "once",
+      "expected_covered": [],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2020-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 7999.361,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 8000.695
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 1,
+      "wall_seconds": 8.014
+    },
+    {
+      "id": "dev-2-7",
+      "mode": "adaptive",
+      "expected_covered": [],
+      "required": [
+        "funding_compare",
+        "funding_inputs",
+        "collateral_close"
+      ],
+      "output": {
+        "status": "not_found",
+        "required_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "covered_topics": [],
+        "missing_topics": [
+          "funding_compare",
+          "funding_inputs",
+          "collateral_close"
+        ],
+        "evidence_by_topic": {},
+        "as_of": "2020-01-01",
+        "corpus_version": "dc20def3b9a26c5e",
+        "coverage_is_not_entailment": true,
+        "trace": [
+          {
+            "step": "evidence_decision",
+            "attempt": 1,
+            "action": "search",
+            "latency_ms": 8623.996,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_compare",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "funding_inputs",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 1,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          },
+          {
+            "step": "evidence_decision",
+            "attempt": 2,
+            "action": "search",
+            "latency_ms": 10953.087,
+            "model_calls": 1
+          },
+          {
+            "step": "evidence_search",
+            "attempt": 2,
+            "topic": "collateral_close",
+            "institution": "kb_bank",
+            "evidence_ids": []
+          }
+        ],
+        "latency_ms": 19582.553
+      },
+      "covered_exact": true,
+      "missing_exact": true,
+      "model_calls": 2,
+      "wall_seconds": 19.599
+    }
+  ],
+  "summary": {
+    "once": {
+      "n": 24,
+      "exact_covered": 24,
+      "exact_missing": 24,
+      "errors": 0,
+      "median_seconds": 8.628
+    },
+    "adaptive": {
+      "n": 24,
+      "exact_covered": 24,
+      "exact_missing": 24,
+      "errors": 0,
+      "median_seconds": 10.1095
+    }
+  }
+}

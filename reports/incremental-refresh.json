@@ -1,0 +1,17 @@
+{
+  "ingest": {
+    "seen": 32,
+    "changed": [],
+    "unchanged": 32
+  },
+  "curation": {
+    "processed": 0,
+    "reused": 32,
+    "failed": 0,
+    "model_calls": 0,
+    "scope": "Exact quote provenance only. Category/tags are unapproved AI suggestions; failed attempts are not silently retried."
+  },
+  "model_loads": 0,
+  "seconds": 0.006825666059739888,
+  "automatic_live_publication": false
+}

@@ -1,0 +1,74 @@
+{
+  "scope": "Eight developer-authored challenge cases frozen before intent-contract inference. Separate expressions from old diagnostic set; not external/independent benchmark. Old s08 failure informed feature direction.",
+  "cases": [
+    {
+      "id": "n01",
+      "message": "보험은 이미 준비했으니 추가하지 말고, 엔화 환전 화면만 보여줘.",
+      "gold_roots": [
+        "travel_card_charge_widget"
+      ],
+      "previous_roots": []
+    },
+    {
+      "id": "n02",
+      "message": "이번엔 강릉으로 국내여행 가. 환전도 해외 결제도 여행보험도 전부 필요 없어.",
+      "gold_roots": [],
+      "previous_roots": []
+    },
+    {
+      "id": "n03",
+      "message": "동호회에서 아직 회비 안 낸 사람을 보고 싶어. 지출 분석은 필요 없어.",
+      "gold_roots": [
+        "group_account_status"
+      ],
+      "previous_roots": []
+    },
+    {
+      "id": "n04",
+      "message": "예금보호 설명 말고 대출을 매달 얼마씩 갚는지만 계산하고 싶어.",
+      "gold_roots": [
+        "loan_repayment_schedule_widget"
+      ],
+      "previous_roots": []
+    },
+    {
+      "id": "n05",
+      "message": "잃어버린 카드를 다시 찾았어. 또 정지시키지 말고 분실 신고를 해제하는 방법만 보여줘.",
+      "gold_roots": [
+        "card_recovery_widget"
+      ],
+      "previous_roots": []
+    },
+    {
+      "id": "n06",
+      "message": "국내여행 갈 돈이 필요해. 예금 중도해지와 담보대출 비용은 비교하되 보험 화면은 빼줘.",
+      "gold_roots": [
+        "funding_comparison_widget"
+      ],
+      "previous_roots": []
+    },
+    {
+      "id": "n07",
+      "message": "환전이랑 QR 결제는 다 빼고 보험 하나만 남겨줘.",
+      "gold_roots": [
+        "travel_insurance_widget"
+      ],
+      "previous_roots": [
+        "travel_card_charge_widget",
+        "overseas_qr_payment_widget",
+        "travel_insurance_widget"
+      ]
+    },
+    {
+      "id": "n08",
+      "message": "기존 화면은 지우고 예금보호 한도만 새로 보여줘.",
+      "gold_roots": [
+        "deposit_protection_widget"
+      ],
+      "previous_roots": [
+        "funding_comparison_widget",
+        "loan_repayment_schedule_widget"
+      ]
+    }
+  ]
+}

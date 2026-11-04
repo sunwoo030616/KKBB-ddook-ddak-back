@@ -1,0 +1,282 @@
+{
+  "health": {
+    "status": "ok",
+    "chunks": 19,
+    "corpus_version": "958da9ca841d3318",
+    "llm_configured": false,
+    "retrievers": [
+      "bm25",
+      "hybrid",
+      "dense",
+      "fusion"
+    ],
+    "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2@sha256:634d0f66c29dc934c8fa72b8a4fe91dd4d420a22f1d82a241058d4316e659a99",
+    "default_generation": "extractive"
+  },
+  "responses": [
+    {
+      "request_id": "294b2a96-2291-43c2-80a0-83a3a87b7b33",
+      "status": "answered",
+      "answer": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다. [kbcard-release]",
+      "claims": [
+        {
+          "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+          "evidence_id": "kbcard-release",
+          "quote": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다."
+        }
+      ],
+      "citations": [
+        {
+          "chunk_id": "kbcard-release",
+          "source_id": "kbthink-lost",
+          "institution": "kb_card",
+          "title": "KB국민카드 분실 안내",
+          "section": "카드를 되찾은 경우",
+          "url": "https://kbthink.com/card/lost.html",
+          "verified_at": "2026-11-02",
+          "text": "분실했던 KB국민카드를 되찾았다면 KB Pay 앱 또는 KB국민카드 고객센터에서 신고 해제를 진행할 수 있습니다. 앱에는 분실신고해제 메뉴가 있습니다.",
+          "score": 0.03252247
+        }
+      ],
+      "generation": "extractive",
+      "reason": "grounded_excerpt",
+      "corpus_version": "958da9ca841d3318",
+      "trace": [
+        {
+          "step": "route",
+          "topics": [
+            "release",
+            "report"
+          ]
+        },
+        {
+          "step": "scope",
+          "institution": "kb_card",
+          "topic": "release"
+        },
+        {
+          "step": "retrieve",
+          "method": "hybrid",
+          "candidate_ids": [
+            "kbcard-bulk",
+            "kbcard-release",
+            "kbcard-report",
+            "kbcard-hours",
+            "kbcard-overseas-report"
+          ]
+        },
+        {
+          "step": "validate",
+          "evidence_ids": [
+            "kbcard-release"
+          ],
+          "checks": [
+            "known_evidence_id",
+            "exact_supporting_quote",
+            "numeric_consistency"
+          ],
+          "semantic_entailment_checked": false
+        }
+      ],
+      "latency_ms": 4.109
+    },
+    {
+      "request_id": "2faabb9c-4be3-42c9-a207-1bf872327729",
+      "status": "answered",
+      "answer": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다. [kbsec-release]",
+      "claims": [
+        {
+          "text": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다.",
+          "evidence_id": "kbsec-release",
+          "quote": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다."
+        }
+      ],
+      "citations": [
+        {
+          "chunk_id": "kbsec-release",
+          "source_id": "kbsec-card-faq",
+          "institution": "kb_securities",
+          "title": "KB증권 체크카드 FAQ",
+          "section": "분실 신고 해지",
+          "url": "https://www.kbsec.com/go.able?linkcd=s010423030000",
+          "verified_at": "2026-11-02",
+          "text": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다.",
+          "score": 0.03278689
+        }
+      ],
+      "generation": "extractive",
+      "reason": "grounded_excerpt",
+      "corpus_version": "958da9ca841d3318",
+      "trace": [
+        {
+          "step": "route",
+          "topics": [
+            "release",
+            "report"
+          ]
+        },
+        {
+          "step": "scope",
+          "institution": "kb_securities",
+          "topic": "release"
+        },
+        {
+          "step": "retrieve",
+          "method": "hybrid",
+          "candidate_ids": [
+            "kbsec-release",
+            "kbsec-reissue",
+            "kbsec-declined",
+            "kbsec-fee",
+            "kbsec-installment"
+          ]
+        },
+        {
+          "step": "validate",
+          "evidence_ids": [
+            "kbsec-release"
+          ],
+          "checks": [
+            "known_evidence_id",
+            "exact_supporting_quote",
+            "numeric_consistency"
+          ],
+          "semantic_entailment_checked": false
+        }
+      ],
+      "latency_ms": 1.915
+    },
+    {
+      "request_id": "05c25b38-26d4-407c-82f9-6e6b87300c4c",
+      "status": "answered",
+      "answer": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다. [kbsec-release]",
+      "claims": [
+        {
+          "text": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다.",
+          "evidence_id": "kbsec-release",
+          "quote": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다."
+        }
+      ],
+      "citations": [
+        {
+          "chunk_id": "kbsec-release",
+          "source_id": "kbsec-card-faq",
+          "institution": "kb_securities",
+          "title": "KB증권 체크카드 FAQ",
+          "section": "분실 신고 해지",
+          "url": "https://www.kbsec.com/go.able?linkcd=s010423030000",
+          "verified_at": "2026-11-02",
+          "text": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다.",
+          "score": 0.41767783389113416
+        }
+      ],
+      "generation": "extractive",
+      "reason": "grounded_excerpt",
+      "corpus_version": "958da9ca841d3318",
+      "trace": [
+        {
+          "step": "route",
+          "topics": [
+            "release",
+            "report"
+          ]
+        },
+        {
+          "step": "scope",
+          "institution": "kb_securities",
+          "topic": "release"
+        },
+        {
+          "step": "retrieve",
+          "method": "dense",
+          "candidate_ids": [
+            "kbsec-release",
+            "kbsec-declined",
+            "kbsec-refund",
+            "kbsec-reissue",
+            "kbsec-fee"
+          ]
+        },
+        {
+          "step": "validate",
+          "evidence_ids": [
+            "kbsec-release"
+          ],
+          "checks": [
+            "known_evidence_id",
+            "exact_supporting_quote",
+            "numeric_consistency"
+          ],
+          "semantic_entailment_checked": false
+        }
+      ],
+      "latency_ms": 243.052
+    },
+    {
+      "request_id": "fe371065-437f-4ad4-8b08-a15ea7843788",
+      "status": "answered",
+      "answer": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다. [kbsec-release]",
+      "claims": [
+        {
+          "text": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다.",
+          "evidence_id": "kbsec-release",
+          "quote": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다."
+        }
+      ],
+      "citations": [
+        {
+          "chunk_id": "kbsec-release",
+          "source_id": "kbsec-card-faq",
+          "institution": "kb_securities",
+          "title": "KB증권 체크카드 FAQ",
+          "section": "분실 신고 해지",
+          "url": "https://www.kbsec.com/go.able?linkcd=s010423030000",
+          "verified_at": "2026-11-02",
+          "text": "분실 신고한 KB증권 체크카드를 되찾은 경우 영업점에 방문하여 신고를 해지한 후 다시 사용할 수 있다고 FAQ에 안내되어 있습니다.",
+          "score": 0.03278688524590164
+        }
+      ],
+      "generation": "extractive",
+      "reason": "grounded_excerpt",
+      "corpus_version": "958da9ca841d3318",
+      "trace": [
+        {
+          "step": "route",
+          "topics": [
+            "release",
+            "report"
+          ]
+        },
+        {
+          "step": "scope",
+          "institution": "kb_securities",
+          "topic": "release"
+        },
+        {
+          "step": "retrieve",
+          "method": "fusion",
+          "candidate_ids": [
+            "kbsec-release",
+            "kbsec-declined",
+            "kbsec-reissue",
+            "kbsec-fee",
+            "kbsec-refund"
+          ]
+        },
+        {
+          "step": "validate",
+          "evidence_ids": [
+            "kbsec-release"
+          ],
+          "checks": [
+            "known_evidence_id",
+            "exact_supporting_quote",
+            "numeric_consistency"
+          ],
+          "semantic_entailment_checked": false
+        }
+      ],
+      "latency_ms": 15.663
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "path": "Spring /api/canvas/v2 -> Python -> local screen composer",
+  "http_status": 200,
+  "response": {
+    "status": "composed",
+    "session_id": "c4b89d08-cb8d-4d0f-8033-bde815b1c047",
+    "revision": 1,
+    "greeting": "대출 상환표",
+    "widgets": [
+      {
+        "id": "loan_inputs_widget",
+        "type": "loan_inputs_widget",
+        "title": "대출 상환 조건 입력",
+        "order": 0,
+        "layout": {
+          "columns": 6,
+          "mobile_columns": 12
+        },
+        "depends_on": [],
+        "bindings": [],
+        "actions": [],
+        "state": "input_required",
+        "data": {},
+        "data_origin": "unconnected_demo_adapter"
+      },
+      {
+        "id": "loan_repayment_schedule_widget",
+        "type": "loan_repayment_schedule_widget",
+        "title": "대출 월 상환표",
+        "order": 1,
+        "layout": {
+          "columns": 6,
+          "mobile_columns": 12
+        },
+        "depends_on": [
+          "loan_inputs_widget"
+        ],
+        "bindings": [
+          {
+            "source": "loan_inputs_widget",
+            "output": "form_values",
+            "target": "calculation_inputs"
+          }
+        ],
+        "actions": [],
+        "state": "input_required",
+        "data": {
+          "required_calculation": "amortized_loan"
+        },
+        "data_origin": "unconnected_demo_adapter"
+      }
+    ],
+    "patch": [
+      {
+        "op": "add",
+        "id": "loan_inputs_widget",
+        "index": 0
+      },
+      {
+        "op": "add",
+        "id": "loan_repayment_schedule_widget",
+        "index": 1
+      }
+    ],
+    "clarification": "",
+    "registry_version": "df0a0049b8d1afa2",
+    "trace": [
+      {
+        "step": "component_retrieval",
+        "candidate_ids": [
+          "loan_repayment_schedule_widget"
+        ],
+        "scores": [
+          {
+            "type": "loan_repayment_schedule_widget",
+            "score": 0.6453763246536255
+          },
+          {
+            "type": "group_account_status",
+            "score": 0.0029746084474027157
+          },
+          {
+            "type": "deposit_protection_widget",
+            "score": 8.405998232774436e-05
+          },
+          {
+            "type": "expense_report_widget",
+            "score": 6.655207107542083e-05
+          },
+          {
+            "type": "group_card_safety_widget",
+            "score": 2.665627653186675e-05
+          },
+          {
+            "type": "atm_smart_withdrawal",
+            "score": 2.2847663785796613e-05
+          },
+          {
+            "type": "travel_card_charge_widget",
+            "score": 1.8087835996993817e-05
+          },
+          {
+            "type": "overseas_qr_payment_widget",
+            "score": 1.698879168543499e-05
+          },
+          {
+            "type": "travel_insurance_widget",
+            "score": 1.6427009541075677e-05
+          },
+          {
+            "type": "funding_comparison_widget",
+            "score": 1.6387313735322095e-05
+          },
+          {
+            "type": "autopay_relink_widget",
+            "score": 1.636819615669083e-05
+          },
+          {
+            "type": "card_freeze_all",
+            "score": 1.6326617696904577e-05
+          },
+          {
+            "type": "card_recovery_widget",
+            "score": 1.623611206014175e-05
+          },
+          {
+            "type": "id_reissue_status_widget",
+            "score": 1.622888339625206e-05
+          }
+        ]
+      },
+      {
+        "step": "llm_plan",
+        "attempt": 1,
+        "status": "validated",
+        "latency_ms": 9449.198
+      },
+      {
+        "step": "compile",
+        "dependencies_added": [
+          "loan_inputs_widget"
+        ],
+        "checks": [
+          "allowlist",
+          "widget_budget",
+          "conflicting_actions",
+          "acyclic_dependencies",
+          "confirmed_actions_only"
+        ]
+      }
+    ],
+    "real_transactions_executed": false,
+    "latency_ms": 13183.353
+  }
+}

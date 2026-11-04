@@ -1,0 +1,659 @@
+{
+  "scope": "Developer-written 12-case exploratory regression; manually labeled, shared widget catalog, not an external or independent benchmark. Frozen before semantic review model inference.",
+  "dataset_sha256": "c72119a5d3e5f6d8670548fba7645bac97a6e39a6a585f1a2b7141af3bba3f3a",
+  "protocol": "Paired off/repair, greedy Qwen3-4B-4bit; fixture previous screens, no labels in inference. Same-model critique is fallible. All outcomes retained.",
+  "results": [
+    {
+      "id": "s01",
+      "mode": "off",
+      "gold": [
+        "travel_card_charge_widget"
+      ],
+      "actual": [
+        "travel_card_charge_widget"
+      ],
+      "exact": true,
+      "wall_ms": 26310.6,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "b919e20e-1771-48c9-b2bc-a33e3efcc255",
+        "revision": 1,
+        "greeting": "오사카 여행 환전 준비",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": null,
+              "currency": null,
+              "tripDays": null,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "travel_card_charge_widget",
+              "overseas_qr_payment_widget"
+            ],
+            "scores": [
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.12699027359485626
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.06420604884624481
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.013835396617650986
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.0011211796663701534
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 1.792178227333352e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 1.656601671129465e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 1.653429353609681e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 1.6477688404847868e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 1.645516931603197e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 1.6454228898510337e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 1.6445836081402376e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 1.6394473277614452e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 1.637893910810817e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.6173986296053044e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 12331.847
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 25878.221
+      }
+    },
+    {
+      "id": "s01",
+      "mode": "repair",
+      "gold": [
+        "travel_card_charge_widget"
+      ],
+      "actual": [
+        "travel_card_charge_widget"
+      ],
+      "exact": true,
+      "wall_ms": 46173.5,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "reviewing",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "c3e3f6a3-6228-4bd2-bf94-63538b7f62df",
+        "revision": 1,
+        "greeting": "오사카 여행 환전 준비",
+        "widgets": [
+          {
+            "id": "travel_card_charge_widget",
+            "type": "travel_card_charge_widget",
+            "title": "여행 환전·충전",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {
+              "destination": null,
+              "currency": null,
+              "tripDays": null,
+              "requested_amount": null
+            },
+            "data_origin": "conversation_context",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "travel_card_charge_widget",
+            "index": 0
+          }
+        ],
+        "clarification": "",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "travel_card_charge_widget",
+              "overseas_qr_payment_widget"
+            ],
+            "scores": [
+              {
+                "type": "travel_card_charge_widget",
+                "score": 0.12699027359485626
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 0.06420604884624481
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 0.013835396617650986
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.0011211796663701534
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 1.792178227333352e-05
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 1.656601671129465e-05
+              },
+              {
+                "type": "group_account_status",
+                "score": 1.653429353609681e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 1.6477688404847868e-05
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 1.645516931603197e-05
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 1.6454228898510337e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 1.6445836081402376e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 1.6394473277614452e-05
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 1.637893910810817e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.6173986296053044e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 13255.12
+          },
+          {
+            "step": "semantic_review",
+            "status": "invalid_review",
+            "reason": "review_invented_history",
+            "latency_ms": 28045.447,
+            "needs_revision": false
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 46071.569
+      }
+    },
+    {
+      "id": "s02",
+      "mode": "off",
+      "gold": [
+        "expense_report_widget",
+        "group_account_status"
+      ],
+      "actual": [
+        "expense_report_widget",
+        "group_account_status"
+      ],
+      "exact": true,
+      "wall_ms": 52743.4,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "a990b3b0-fa44-40e3-b475-d523fb35ead4",
+        "revision": 1,
+        "greeting": "모임 회비 및 지출 분석",
+        "widgets": [
+          {
+            "id": "group_account_status",
+            "type": "group_account_status",
+            "title": "모임 회비 현황",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "expense_report_widget",
+            "type": "expense_report_widget",
+            "title": "모임 지출 리포트",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "group_account_status",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "expense_report_widget",
+            "index": 1
+          }
+        ],
+        "clarification": "사용자가 모임 총무로서 회비 미납자 및 지출 내역을 한 화면에서 확인하고자 하는 요청입니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "group_account_status",
+              "expense_report_widget"
+            ],
+            "scores": [
+              {
+                "type": "group_account_status",
+                "score": 0.2080523669719696
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.2069014608860016
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.022914979606866837
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.0005417760694399476
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.0002185314951930195
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 4.566524876281619e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 3.935620770789683e-05
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 2.402020982117392e-05
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 2.2289972548605874e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 1.695603168627713e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 1.6358753782697022e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 1.6282443539239466e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 1.6187364963116124e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.6054014849942178e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 29749.155
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 52331.888
+      }
+    },
+    {
+      "id": "s02",
+      "mode": "repair",
+      "gold": [
+        "expense_report_widget",
+        "group_account_status"
+      ],
+      "actual": [
+        "expense_report_widget",
+        "group_account_status"
+      ],
+      "exact": true,
+      "wall_ms": 76079.3,
+      "stages": [
+        "component_retrieval",
+        "planning",
+        "reviewing",
+        "completed"
+      ],
+      "response": {
+        "status": "composed",
+        "session_id": "f13d8dba-d373-4530-80bb-0ff31692fa03",
+        "revision": 1,
+        "greeting": "모임 회비 및 지출 분석",
+        "widgets": [
+          {
+            "id": "group_account_status",
+            "type": "group_account_status",
+            "title": "모임 회비 현황",
+            "order": 0,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          },
+          {
+            "id": "expense_report_widget",
+            "type": "expense_report_widget",
+            "title": "모임 지출 리포트",
+            "order": 1,
+            "layout": {
+              "columns": 6,
+              "mobile_columns": 12
+            },
+            "depends_on": [],
+            "bindings": [],
+            "actions": [],
+            "state": "preview",
+            "data": {},
+            "data_origin": "unconnected_demo_adapter",
+            "context": {}
+          }
+        ],
+        "patch": [
+          {
+            "op": "add",
+            "id": "group_account_status",
+            "index": 0
+          },
+          {
+            "op": "add",
+            "id": "expense_report_widget",
+            "index": 1
+          }
+        ],
+        "clarification": "사용자가 모임 총무로서 회비 미납자 및 지출 내역을 한 화면에서 확인하고자 하는 요청입니다.",
+        "registry_version": "b2b7d3c3ef3891c3",
+        "context": {},
+        "trace": [
+          {
+            "step": "component_retrieval",
+            "candidate_ids": [
+              "group_account_status",
+              "expense_report_widget"
+            ],
+            "scores": [
+              {
+                "type": "group_account_status",
+                "score": 0.2080523669719696
+              },
+              {
+                "type": "expense_report_widget",
+                "score": 0.2069014608860016
+              },
+              {
+                "type": "group_card_safety_widget",
+                "score": 0.022914979606866837
+              },
+              {
+                "type": "atm_smart_withdrawal",
+                "score": 0.0005417760694399476
+              },
+              {
+                "type": "card_freeze_all",
+                "score": 0.0002185314951930195
+              },
+              {
+                "type": "card_recovery_widget",
+                "score": 4.566524876281619e-05
+              },
+              {
+                "type": "loan_repayment_schedule_widget",
+                "score": 3.935620770789683e-05
+              },
+              {
+                "type": "overseas_qr_payment_widget",
+                "score": 2.402020982117392e-05
+              },
+              {
+                "type": "deposit_protection_widget",
+                "score": 2.2289972548605874e-05
+              },
+              {
+                "type": "autopay_relink_widget",
+                "score": 1.695603168627713e-05
+              },
+              {
+                "type": "travel_card_charge_widget",
+                "score": 1.6358753782697022e-05
+              },
+              {
+                "type": "travel_insurance_widget",
+                "score": 1.6282443539239466e-05
+              },
+              {
+                "type": "id_reissue_status_widget",
+                "score": 1.6187364963116124e-05
+              },
+              {
+                "type": "funding_comparison_widget",
+                "score": 1.6054014849942178e-05
+              }
+            ]
+          },
+          {
+            "step": "llm_plan",
+            "attempt": 1,
+            "status": "validated",
+            "slot_rejections": [],
+            "latency_ms": 16886.362
+          },
+          {
+            "step": "semantic_review",
+            "status": "invalid_review",
+            "reason": "review_invented_history",
+            "latency_ms": 33336.331,
+            "needs_revision": false
+          },
+          {
+            "step": "context_merge",
+            "normalized_changes": [],
+            "model_changes": []
+          },
+          {
+            "step": "compile",
+            "dependencies_added": [],
+            "checks": [
+              "allowlist",
+              "widget_budget",
+              "conflicting_actions",
+              "acyclic_dependencies",
+              "confirmed_actions_only"
+            ]
+          }
+        ],
+        "real_transactions_executed": false,
+        "latency_ms": 75693.344
+      }
+    }
+  ],
+  "incomplete": true,
+  "stopped_reason": "First critique generated references to nonexistent previous widgets; stopped to add history/capability-specific constrained decoding. All completed outcomes retained. Not a completed 12-case benchmark."
+}
