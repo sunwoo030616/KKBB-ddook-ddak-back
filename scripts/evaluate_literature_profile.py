@@ -15,7 +15,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--mode',choices=('compact','contextual','anchored'),default='contextual')
-    parser.add_argument('--dense-candidates',action='store_true');args=parser.parse_args()
+    parser.add_argument('--dense-candidates',action='store_true');parser.add_argument('--per-clause',action='store_true');args=parser.parse_args()
     import mlx.core as mx
     from rag_backend.inference_resources import configure_mlx_cache,mlx_memory
     from rag_backend.research_models import MLXGenerator
@@ -36,6 +36,7 @@ def main():
             'dirty_source_files':subprocess.check_output(['git','diff','--name-only','--','rag_backend','scripts','data'],cwd=ROOT,text=True).splitlines(),
             'generator':generator.identity,'reranker':ranker.identity,'resource_policy':policy,'mode':args.mode,
             'system_prefix_cache_enabled':generator.system_prefix_cache is not None,
+            'per_clause_prototype':args.per_clause,
             'document_prefilter':document_prefilter.encoder.identity if document_prefilter else None,
             'setup_seconds':time.perf_counter()-setup,'corpus':{d['id']:d['content_hash'] for d in store.documents('abstract')},
             'source_sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'rag_backend').glob('*.py')},
@@ -48,7 +49,7 @@ def main():
         for case in json.loads(raw):
             begin=time.perf_counter()
             try:
-                graph=EvidenceGraph(store,generator,ranker,document_prefilter=document_prefilter).build(case['question'],args.mode)
+                graph=EvidenceGraph(store,generator,ranker,document_prefilter=document_prefilter,per_clause=args.per_clause).build(case['question'],args.mode)
                 (rawdir/(case['id']+'.json')).write_text(json.dumps(graph,ensure_ascii=False,indent=2)+'\n')
                 actual=sorted({e['source_id'] for e in graph['edges']});valid=graph['status'] not in ('invalid_plan','invalid_selection','stale_snapshot')
                 row={'status':graph['status'],'actual':actual,'exact':valid and actual==sorted(case['expected_sources']),

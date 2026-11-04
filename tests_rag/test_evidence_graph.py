@@ -128,7 +128,7 @@ def test_hardware_presence_is_whitespace_tolerant_but_not_a_variant_substring():
 def test_anchored_mode_uses_server_offsets_and_skips_count_model(tmp_path):
     question='Find tool observations; find a second method.'
     model=Model({'query':'tool observations'},{'query':'second method'},{'choices':[0,-1]})
-    result=EvidenceGraph(store(tmp_path),model,Ranker()).build(question,'anchored')
+    result=EvidenceGraph(store(tmp_path),model,Ranker(),per_clause=True).build(question,'anchored')
     assert result['status']=='partial'
     assert not any(t['step']=='count_needs' for t in result['trace'])
     assert result['tasks'][0]['anchor_scope']=='exact_quote'
@@ -140,24 +140,24 @@ def test_korean_postpositions_do_not_hide_measurement_system_identifiers(tmp_pat
     from rag_backend.evidence_graph import measurement_entities
     assert 'Apple M4' in measurement_entities('Apple M4에서 측정한 전력 소비량','measured power consumption')
     assert 'MI300X' in measurement_entities('AMD MI300X에서 전력 실측값','measured power consumption')
-    result=EvidenceGraph(store(tmp_path),Model({'query':'Apple M4 measured power consumption'}),Ranker()).build('Apple M4에서 전력 실측값을 찾아줘.','anchored')
+    result=EvidenceGraph(store(tmp_path),Model({'query':'Apple M4 measured power consumption'}),Ranker(),per_clause=True).build('Apple M4에서 전력 실측값을 찾아줘.','anchored')
     assert result['status']=='not_found' and result['missing_task_ids']==['t0']
 
 
 def test_invalid_query_plan_has_one_bounded_repair(tmp_path):
-    graph=EvidenceGraph(store(tmp_path),Model({'query':'# invalid'},{'query':'tool observations'},{'choices':[0]}),Ranker())
+    graph=EvidenceGraph(store(tmp_path),Model({'query':'# invalid'},{'query':'tool observations'},{'choices':[0]}),Ranker(),per_clause=True)
     result=graph.build('Find tool observations','anchored')
     plans=[t for t in result['trace'] if t['step']=='compact_plan']
     assert result['status']=='candidate_complete' and [p['status'] for p in plans]==['rejected','validated']
 
 
 def test_fixed_ordinal_decoder_still_checks_actual_candidate_pool(tmp_path):
-    result=EvidenceGraph(store(tmp_path),Model({'query':'tool observations'},{'choices':[2]}),Ranker()).build('Find tool observations','anchored')
+    result=EvidenceGraph(store(tmp_path),Model({'queries':['tool observations']},{'choices':[2]}),Ranker()).build('Find tool observations','anchored')
     assert result['status']=='invalid_selection' and result['edges']==[]
 
 
 def test_boolean_cannot_masquerade_as_a_selection_index(tmp_path):
-    result=EvidenceGraph(store(tmp_path),Model({'query':'tool observations'},{'choices':[True]}),Ranker()).build('Find tool observations','anchored')
+    result=EvidenceGraph(store(tmp_path),Model({'queries':['tool observations']},{'choices':[True]}),Ranker()).build('Find tool observations','anchored')
     assert result['status']=='invalid_selection'
 
 
@@ -169,3 +169,12 @@ def test_snapshot_checks_selected_sources_even_without_an_edge(tmp_path):
             return super().complete(*args,**kwargs)
     result=EvidenceGraph(kb,ChangesUnusedSource({'t0':['e0']}),Ranker()).build('tool observations','single')
     assert result['status']=='stale_snapshot' and result['edges']==[]
+
+
+def test_default_anchored_group_plan_maps_fixed_indices_to_verified_source(tmp_path):
+    kb=store(tmp_path)
+    result=EvidenceGraph(kb,Model({'queries':['tool observations']},{'choices':[0]}),Ranker()).build('Find tool observations','anchored')
+    assert result['status']=='candidate_complete' and result['source_versions_current']
+    edge=result['edges'][0]
+    assert DOC['text'][edge['start']:edge['end']]==edge['text']
+    assert next(t for t in result['trace'] if t['step']=='bind_evidence')['format']=='local_ordinal'

@@ -93,11 +93,12 @@ JSON의 queries 배열에 영어 키워드 3~7개로 된 질의를 1~3개 반환
 
 
 class EvidenceGraph:
-    def __init__(self,store,generator,reranker,planner=None,prefilter=None,counter=None,document_prefilter=None):
+    def __init__(self,store,generator,reranker,planner=None,prefilter=None,counter=None,document_prefilter=None,per_clause=False):
         self.store=store;self.generator=generator;self.reranker=reranker
         self.planner=planner or generator;self.prefilter=prefilter
         self.counter=counter or self.planner
         self.document_prefilter=document_prefilter
+        self.per_clause=per_clause
 
     def build(self,question,mode='decompose'):
         started=time.perf_counter();trace=[]
@@ -131,15 +132,16 @@ class EvidenceGraph:
                 budget=('\nReturn one query per supplied clause, in order.' if anchors else
                         f'\nExactly {count} independently requested subjects. Output exactly {count} queries.')
                 queries=[]
-                inputs=[a['text'] for a in anchors] if anchors else [payload]
+                individual=bool(anchors and self.per_clause)
+                inputs=[a['text'] for a in anchors] if individual else [payload]
                 for clause_id,input_ in enumerate(inputs):
                     for attempt in range(2):
                         feedback='\nPrevious output failed validation. Use only short English keywords; no markdown or sentence.' if attempt else ''
-                        raw=self.planner.complete((CLAUSE_PROMPT if anchors else instruction+detail+budget)+feedback,
-                            input_,max_tokens=60 if anchors else 100,output_type=ClauseQuery if anchors else schema)
+                        raw=self.planner.complete((CLAUSE_PROMPT if individual else instruction+detail+budget)+feedback,
+                            input_,max_tokens=60 if individual else 100,output_type=ClauseQuery if individual else schema)
                         trace.append({'step':'compact_plan','clause_id':clause_id,'attempt':attempt+1,**{k:raw.get(k) for k in ('latency_ms','prompt_tokens','output_tokens','grammar_setup_ms','schema_cache_hit','system_prefix_cache','prompt_sha256')},'model_calls':raw.get('model_calls',1)})
                         try:
-                            values=[ClauseQuery.model_validate(parse_json(raw['text'])).query] if anchors else schema.model_validate(parse_json(raw['text'])).queries
+                            values=[ClauseQuery.model_validate(parse_json(raw['text'])).query] if individual else schema.model_validate(parse_json(raw['text'])).queries
                             queries.extend(values);trace[-1]['status']='validated';break
                         except (ValueError,TypeError):
                             trace[-1]['status']='rejected'
