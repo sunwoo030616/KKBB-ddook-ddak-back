@@ -61,7 +61,7 @@ def create_server(store,research=local_research):
         if not isinstance(result,dict) or result.get('source_versions_current') is not True:
             raise ValueError('research_source_versions_unverified')
         edges=result.get('edges',[])
-        if not isinstance(edges,list) or len(edges)>3:raise ValueError('research_edge_budget')
+        if not isinstance(edges,list) or len(edges)>6:raise ValueError('research_edge_budget')
         for edge in edges:
             span=catalog.source_span(edge['source_id'],edge['source_hash'],edge['start'],edge['end'])
             if span['quote']!=edge['text']:raise ValueError('research_quote_mismatch')
