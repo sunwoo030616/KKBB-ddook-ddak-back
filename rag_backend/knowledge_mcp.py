@@ -61,10 +61,14 @@ def create_server(store,research=local_research):
         if not isinstance(result,dict) or result.get('source_versions_current') is not True:
             raise ValueError('research_source_versions_unverified')
         edges=result.get('edges',[])
-        if not isinstance(edges,list) or len(edges)>3:raise ValueError('research_edge_budget')
+        if not isinstance(edges,list) or len(edges)>6:raise ValueError('research_edge_budget')
         for edge in edges:
             span=catalog.source_span(edge['source_id'],edge['source_hash'],edge['start'],edge['end'])
             if span['quote']!=edge['text']:raise ValueError('research_quote_mismatch')
+            if edge.get('page') is not None:
+                location=span['citation_location']
+                if location.get('page')!=edge['page'] or location['url']!=edge.get('url'):
+                    raise ValueError('research_page_location_mismatch')
         return {**result,'requires_human_review':True,'approval_performed':False}
 
     @server.tool(annotations=annotations,structured_output=True)

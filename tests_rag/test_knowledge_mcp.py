@@ -52,3 +52,15 @@ def test_mcp_neural_result_rechecks_hash_instead_of_trusting_backend_flag(tmp_pa
             result=await client.call_tool('research_literature',{'question':'retrieval'})
             assert result.is_error and result.structured_content is None
     asyncio.run(check())
+
+
+def test_mcp_rechecks_every_quote_in_a_multi_citation_result(tmp_path):
+    s=store(tmp_path);hash=s.documents()[0]['content_hash']
+    def backend(question):
+        return {'source_versions_current':True,'edges':[
+            {'source_id':DOC['id'],'source_hash':hash,'start':0,'end':9,'text':'Synthetic'},
+            {'source_id':DOC['id'],'source_hash':hash,'start':10,'end':16,'text':'FORGED'}]}
+    async def check():
+        async with Client(create_server(s,backend)) as client:
+            assert (await client.call_tool('research_literature',{'question':'retrieval'})).is_error
+    asyncio.run(check())

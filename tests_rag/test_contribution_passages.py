@@ -22,3 +22,10 @@ def test_following_background_sentence_is_not_a_standalone_author_claim():
     text='We propose a method that separates observations from reasoning. Previous methods interleave tool calls and reasoning.'
     spans=contribution_passages(text)
     assert all(not s['text'].startswith('Previous') for s in spans.values())
+
+
+def test_long_author_claim_retains_late_qualifier_without_requiring_repeated_we():
+    text='We introduce a method with '+('controlled context '*24)+'and a dense index of Wikipedia. Previous work uses unrelated models.'
+    spans=contribution_passages(text,max_chars=240)
+    assert any('Wikipedia' in s['text'] for s in spans.values())
+    assert all(s['start']<text.index('Previous') for s in spans.values())

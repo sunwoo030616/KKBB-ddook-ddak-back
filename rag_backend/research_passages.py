@@ -15,8 +15,11 @@ def contribution_passages(text,max_chars=480):
         if not CLAIM.search(text[start:end]):continue
         window_end=boundaries[i+2] if i+2<len(boundaries) else end
         for local in context_passages(text[start:window_end],max_chars).values():
-            if not CLAIM.search(local['text']):continue
             a=start+local['start'];b=start+local['end']
+            # Retain later chunks of the SAME long author sentence, even if
+            # its 'We introduce' marker fell into the first chunk. Never mark
+            # a following background-only sentence as an author claim.
+            if a>=end:continue
             selected[(a,b)]={'start':a,'end':b,'text':text[a:b],'evidence_role':'author_claim_context',
                 'claim_start':start,'claim_end':end}
             if len(selected)>=12:break

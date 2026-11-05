@@ -1,0 +1,7 @@
+{
+  "scope": "Observed regression acceptance for the two known omissions. Not a holdout or retrieval rule.",
+  "cases": {
+    "g3": {"t0": ["arxiv:2005.11401"], "t1": ["arxiv:2307.03172"]},
+    "v4": {"t0": ["arxiv:2211.17192"], "t1": ["arxiv:2401.10774"]}
+  }
+}
