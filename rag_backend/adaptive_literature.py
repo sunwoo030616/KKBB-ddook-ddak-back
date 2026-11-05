@@ -24,10 +24,10 @@ from .fulltext import document_passages
 
 class AdaptiveLiteratureAgent:
     def __init__(self,store,reranker,prefilter,generator=None,min_score=0.,min_margin=1.,
-                 max_candidates=5,context_chars=480,english_reranker=None,min_direct_passage_score=-2.,prompt_version='4',min_candidate_score=-6.):
+                 max_candidates=5,context_chars=480,english_reranker=None,min_direct_passage_score=-2.,prompt_version='5',min_candidate_score=-6.):
         if not 1<=max_candidates<=5 or not 80<=context_chars<=1000:raise ValueError('invalid_agent_budget')
         if not all(math.isfinite(x) for x in (min_score,min_margin,min_direct_passage_score,min_candidate_score)) or min_margin<0:raise ValueError('invalid_agent_confidence')
-        if prompt_version!='4':raise ValueError('unsupported_adjudication_contract')
+        if prompt_version!='5':raise ValueError('unsupported_adjudication_contract')
         self.store=store;self.reranker=reranker;self.prefilter=prefilter;self.generator=generator
         self.min_score=min_score;self.min_margin=min_margin;self.max_candidates=max_candidates;self.context_chars=context_chars
         self.english_reranker=english_reranker;self.qualifiers=QualifierPolicy();self.min_direct_passage_score=min_direct_passage_score
@@ -155,10 +155,11 @@ class AdaptiveLiteratureAgent:
                 schema=create_model('LiteratureDecisions',__config__=ConfigDict(extra='forbid'),
                     **{f't{i}':(list[Literal[tuple(slots[i])]],Field(max_length=len(slots[i]))) for i in uncertain})
                 payload={'tasks':[{'id':f't{i}','request_quote':anchors[i]['text'],'allowed_slots':slots[i],'candidates':[
-                    {'title':c['document']['title'][:180],'passages':[
-                        {'slot':slot,'text':c['citations'][k]['text'],'evidence_role':c['citations'][k]['evidence_role']}
-                        for slot,(candidate_index,k) in citation_slots[i].items() if candidate_index==j]}
-                    for j,c in enumerate(options[i])]} for i in uncertain]}
+                    {'slot':slot,'title':options[i][j]['document']['title'][:180],
+                        'passage':options[i][j]['citations'][k]['text'],
+                        'evidence_role':options[i][j]['citations'][k]['evidence_role']}
+                    for slot,(j,k) in citation_slots[i].items()]} for i in uncertain]}
+
                 completed_calls=0;attempted=False
                 try:
                     user_payload=json.dumps(payload,ensure_ascii=False)

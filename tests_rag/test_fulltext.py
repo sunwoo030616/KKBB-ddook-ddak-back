@@ -70,7 +70,8 @@ def test_verifier_selects_each_citation_not_entire_document(tmp_path,slots,count
     store=KnowledgeStore(tmp_path/'db');store.ingest([enriched()]);model=Selector(slots)
     result=AdaptiveLiteratureAgent(store,Ranker(),None,model).build('Find verification of proposed tokens')
     assert len(result['edges'])==count and result['source_versions_current']
-    assert len(model.payload['tasks'][0]['candidates'][0]['passages'])==2
+    assert len(model.payload['tasks'][0]['candidates'])==2
+    assert {c['slot'] for c in model.payload['tasks'][0]['candidates']}=={'a','b'}
     assert len({e['source_id'] for e in result['edges']})<=1
     if count:
         assert all(e.get('page')==2 for e in result['edges'])
