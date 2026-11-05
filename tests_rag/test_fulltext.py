@@ -99,3 +99,14 @@ def test_body_prefilter_preserves_abstract_candidates_and_caps_expensive_pairs(t
     assert prefilter.budget==8 and prefilter.body_count>1
     assert trace['scored_passages']<=trace['unfiltered_passages']
     assert result['source_versions_current']
+
+
+def test_catalog_reread_preserves_pdf_page_location(tmp_path):
+    from rag_backend.knowledge_catalog import KnowledgeCatalog
+    store=KnowledgeStore(tmp_path/'db');record=enriched();store.ingest([record]);current=store.documents()[0]
+    page=record['fulltext']['pages'][0]
+    reread=KnowledgeCatalog(store).source_span(record['id'],current['content_hash'],page['start'],page['start']+20)
+    assert reread['citation_location']['kind']=='paper_body'
+    assert reread['citation_location']['page']==2
+    assert reread['citation_location']['url'].endswith('#page=2')
+    assert reread['quote']==record['text'][page['start']:page['start']+20]

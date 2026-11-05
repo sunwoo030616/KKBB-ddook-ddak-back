@@ -65,6 +65,10 @@ def create_server(store,research=local_research):
         for edge in edges:
             span=catalog.source_span(edge['source_id'],edge['source_hash'],edge['start'],edge['end'])
             if span['quote']!=edge['text']:raise ValueError('research_quote_mismatch')
+            if edge.get('page') is not None:
+                location=span['citation_location']
+                if location.get('page')!=edge['page'] or location['url']!=edge.get('url'):
+                    raise ValueError('research_page_location_mismatch')
         return {**result,'requires_human_review':True,'approval_performed':False}
 
     @server.tool(annotations=annotations,structured_output=True)

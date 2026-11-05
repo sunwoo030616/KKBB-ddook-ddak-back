@@ -66,8 +66,15 @@ class KnowledgeCatalog:
         if row[0]!=expected_hash:raise ValueError('stale_source_version')
         document=json.loads(row[1])
         if end>len(document['text']):raise ValueError('source_span_out_of_range')
+        location={'kind':'document','url':document['source_url'],'offset_scope':'stored_normalized_text'}
+        for page in document.get('fulltext',{}).get('pages',[]):
+            if page['start']<=start<end<=page['end']:
+                location={'kind':'paper_body','url':page['url'],'page':page['page'],
+                    'pdf_sha256':document['fulltext'].get('pdf_sha256'),
+                    'offset_scope':'normalized_pdf_extraction'}
+                break
         return {'id':id,'hash':row[0],'title':document['title'],'source_url':document['source_url'],
-            'start':start,'end':end,'quote':document['text'][start:end],
+            'start':start,'end':end,'quote':document['text'][start:end],'citation_location':location,
             'scope':'Current at this read; revalidate before later use. Provenance, not semantic truth.'}
 
     def query_plan(self,kind='abstract',after=''):
