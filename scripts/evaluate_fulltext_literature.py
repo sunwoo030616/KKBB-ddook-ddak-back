@@ -21,7 +21,8 @@ def main():
     from rag_backend.adaptive_literature import AdaptiveLiteratureAgent
     from rag_backend.multilingual_literature import MultilingualLiteratureReranker
     from rag_backend.literature_reranker import EnglishLiteratureReranker
-    from rag_backend.retrieval_acceleration import CachedReranker
+    from rag_backend.retrieval_acceleration import CachedReranker,SpanPrefilter
+    from rag_backend.dense import LocalEncoder
     files=['literature_preregistered_evaluation.json'] if args.suite=='preregistered' else [
         'evidence_graph_cases.json','model_routing_holdout.json','literature_fresh_validation.json','literature_guard_cases.json']
     datasets={name:(ROOT/'data'/name).read_bytes() for name in files}
@@ -30,7 +31,7 @@ def main():
         if hashlib.sha256(next(iter(datasets.values()))).hexdigest()!=protocol['dataset_sha256']:
             raise ValueError('preregistered_dataset_changed')
     setup=time.perf_counter();generator=MLXGenerator('canvas_generator');store=KnowledgeStore(ROOT/'var/knowledge.sqlite3')
-    a=AdaptiveLiteratureAgent(store,CachedReranker(MultilingualLiteratureReranker()),None,generator,
+    a=AdaptiveLiteratureAgent(store,CachedReranker(MultilingualLiteratureReranker()),SpanPrefilter(LocalEncoder(),ROOT/'var/fulltext-evaluation-vectors.sqlite3'),generator,
         english_reranker=CachedReranker(EnglishLiteratureReranker()))
     before={d['id']:d['content_hash'] for d in store.documents()}
     report={'suite':args.suite,'scope':'Developer-authored preregistered holdout or observed regression. NOT external independent human evaluation. First-three-page corpus extension is targeted; old/new corpora differ.',
@@ -51,7 +52,7 @@ def main():
                 'unexpected_sources':sorted(set(actual)-set(expected)),'missing_sources':sorted(set(expected)-set(actual)),
                 'seconds':elapsed,'status':graph['status'],'quotes_valid':quotes_valid,'citation_count':len(graph['edges']),
                 'missing_aspect_ok':bool(graph['missing_task_ids']) if case.get('expects_missing',case['id'] in ('g7','g8','h7','h8')) else True,
-                'graph':graph}
+                'graph':{**graph,'edges':[{k:v for k,v in e.items() if k!='text'}|{'quote_sha256':hashlib.sha256(e['text'].encode()).hexdigest(),'quote_chars':len(e['text'])} for e in graph['edges']]}}
             report['rows'].append(row)
             (ROOT/args.output).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
             print(case['id'],row['exact'],round(elapsed,3),actual,'citations',row['citation_count'],flush=True)

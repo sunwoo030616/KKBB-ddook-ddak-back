@@ -74,6 +74,21 @@ class AdaptiveLiteratureAgent:
                 spans=document_passages(doc,max_chars=self.context_chars) if doc.get('fulltext') else contribution_passages(doc['text'],max_chars=self.context_chars) if method_request else {
                     id:{**span,'evidence_role':'abstract_context'} for id,span in context_passages(doc['text'],max_chars=self.context_chars).items()}
                 all_spans.extend((doc,span_id,span) for span_id,span in spans.items())
+            original_span_count=len(all_spans)
+            if self.prefilter is not None:
+                body=[row for row in all_spans if row[2]['evidence_role']=='paper_body_context']
+                if body:
+                    dense=self.prefilter.select(text,body,per_document=8)
+                    # English lexical candidates complement semantic recall.
+                    # For Korean there may be no English token overlap.
+                    words=set(re.findall(r'[a-zA-Z]{3,}',text.lower()))-{'the','and','find','for','with','from','that','model','models'}
+                    lexical=[]
+                    for doc,score in ranked:
+                        rows=[row for row in body if row[0]['id']==doc['id']]
+                        key=lambda row:len(words & set(re.findall(r'[a-zA-Z]{3,}',row[2]['text'].lower())))
+                        lexical.extend(row for row in sorted(rows,key=lambda row:(-key(row),row[2]['start']))[:2] if key(row)>0)
+                    keep={(doc['id'],id) for doc,id,span in dense+lexical}
+                    all_spans=[row for row in all_spans if row[2]['evidence_role']!='paper_body_context' or (row[0]['id'],row[1]) in keep]
             span_scores=ranker.score_pairs([(text,span['text']) for doc,id,span in all_spans]) if all_spans else []
             if len(span_scores)!=len(all_spans) or not all(math.isfinite(s) for s in span_scores):raise ValueError('invalid_passage_scores')
             by_document={}
@@ -122,7 +137,7 @@ class AdaptiveLiteratureAgent:
             trace.append({'step':'multilingual_retrieval','task_id':f't{i}','candidate_documents':len(pool),
                 'candidate_strategy':'exhaustive_small_corpus' if len(allowed)<=64 else 'bounded_multiview',
                 'candidate_source_ids':[d['id'] for d in pool],
-                'scored_passages':len(all_spans),'latency_ms':round((time.perf_counter()-begin)*1000,3),
+                'scored_passages':len(all_spans),'unfiltered_passages':original_span_count,'latency_ms':round((time.perf_counter()-begin)*1000,3),
                 'direct':direct,'document_margin':float(margin) if margin is not None else None,
                 'ranker':ranker.identity if hasattr(ranker,'identity') else {},
                 'passage_profile':'author_claim_context' if method_request else 'abstract_context',

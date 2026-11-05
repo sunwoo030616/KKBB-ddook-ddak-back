@@ -84,3 +84,18 @@ def test_fulltext_update_invalidates_selected_quotes(tmp_path):
     result=AdaptiveLiteratureAgent(store,Ranker(),None,Selector(['a','b'])).build('Find verification of proposed tokens')
     store.ingest([{**record,'text':record['text']+' Changed.'}])
     assert not EvidenceGraph(store,None,Ranker()).validate(result)
+
+
+def test_body_prefilter_preserves_abstract_candidates_and_caps_expensive_pairs(tmp_path):
+    store=KnowledgeStore(tmp_path/'db');store.ingest([enriched()])
+    class Prefilter:
+        def __init__(self):self.body_count=0;self.budget=None
+        def select(self,query,rows,per_document):
+            self.body_count=len(rows);self.budget=per_document
+            return rows[:1]
+    prefilter=Prefilter();model=Selector(['a'])
+    result=AdaptiveLiteratureAgent(store,Ranker(),prefilter,model).build('Find verification of proposed tokens')
+    trace=next(t for t in result['trace'] if t['step']=='multilingual_retrieval')
+    assert prefilter.budget==8 and prefilter.body_count>1
+    assert trace['scored_passages']<=trace['unfiltered_passages']
+    assert result['source_versions_current']
