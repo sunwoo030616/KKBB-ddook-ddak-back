@@ -1,0 +1,15 @@
+{
+  "tests": {
+    "passed": 319,
+    "log_sha256": "a06ae3257824a47f26a8fd94f5ad60ef6985a71541cee5408c5c475c5728dbce"
+  },
+  "api_mcp_checks_passed": 14,
+  "changed_files_scanned": 42,
+  "markdown_local_links_checked": 20,
+  "python_ast_valid": true,
+  "json_valid": true,
+  "secret_pattern_hits": 0,
+  "scope": "Pattern scan, not proof of absence of secrets; parsed changed code/artifacts, verified relative documentation links and recorded actual test log.",
+  "financial_service_checks_passed": 6,
+  "frontend_http_ok": true
+}

@@ -1,0 +1,302 @@
+{
+  "scope": "Post-holdout functional routing repair. First-pass 10/12 remains unchanged; not a retuned holdout score.",
+  "source_path": "rag_backend/research_scope.py",
+  "before_commit": "93d56b5f3249c75f3392e9b6fec0ece810e8dd76",
+  "before_sha256": "da34695e95986df9ea4485a6f4e28bbf9310a5713e1615156c4c8b04fdc465e7",
+  "after_sha256": "82271009169f5071ae3ba2aafa0e7e2c7973c78f0be4de8f8b52ff7f1df75404",
+  "rows": [
+    {
+      "id": "g1",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "g2",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "g3",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "g4",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "g5",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "g6",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "g7",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "g8",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "h1",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "h2",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "h3",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "h4",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "h5",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "h6",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "h7",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "h8",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "v1",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "v2",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "v3",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "v4",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "v5",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "v6",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "v7",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "v8",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q1",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q2",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q3",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q4",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q5",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q6",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q7",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q8",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q9",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q10",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "q11",
+      "old_rejected": true,
+      "new_rejected": true,
+      "changed": false
+    },
+    {
+      "id": "q12",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i01",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i02",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i03",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i04",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i05",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i06",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i07",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i08",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i09",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i10",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    },
+    {
+      "id": "i11",
+      "old_rejected": false,
+      "new_rejected": true,
+      "changed": true
+    },
+    {
+      "id": "i12",
+      "old_rejected": false,
+      "new_rejected": false,
+      "changed": false
+    }
+  ],
+  "checks": {
+    "only_i11_routing_changed": true,
+    "existing_36_routes_unchanged": true
+  },
+  "complete": true
+}
