@@ -1,5 +1,2 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
-
-# 실행 원본을 보존하면서 GitHub에서 생성 보고서의 diff를 접습니다.
-reports/*.json linguist-generated=true

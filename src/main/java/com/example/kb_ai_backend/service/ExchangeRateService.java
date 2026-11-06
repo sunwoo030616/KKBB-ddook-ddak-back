@@ -1,72 +1,80 @@
 package com.example.kb_ai_backend.service;
 
 import org.springframework.stereotype.Service;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.time.Instant;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.LongSupplier;
 
-/** Public indicative FX quotes, immutable snapshots, single-flight refresh and outage backoff. */
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+/**
+ * open.er-api.com (무료, API 키 불필요)에서 실시간 환율을 받아와 캐싱하는 서비스.
+ * KRW 기준으로 조회해서 "1 외화 = 몇 원"을 계산해준다.
+ */
 @Service
 public class ExchangeRateService {
-    static final String API_URL = "https://open.er-api.com/v6/latest/KRW";
-    private final RestTemplate http;
-    private final long ttlMillis;
-    private final long retryMillis;
-    private final LongSupplier clock;
-    private final Object refreshLock = new Object();
-    private volatile Snapshot snapshot;
-    private volatile long lastAttempt = -1;
-    private record Snapshot(Map<String,BigDecimal> rates, long fetchedAt, Instant sourceUpdatedAt) {}
-    public record Quote(String currency, BigDecimal krwPerUnit, Instant fetchedAt, Instant sourceUpdatedAt, boolean stale, String source) {}
 
-    public ExchangeRateService() { this(createHttp(), 21600000L, 60000L, System::currentTimeMillis); }
-    ExchangeRateService(RestTemplate http, long ttlMillis, long retryMillis, LongSupplier clock) {
-        this.http=http;this.ttlMillis=ttlMillis;this.retryMillis=retryMillis;this.clock=clock;
-    }
-    private static RestTemplate createHttp() {
-        var factory=new SimpleClientHttpRequestFactory();factory.setConnectTimeout(2000);factory.setReadTimeout(3000);
-        return new RestTemplate(factory);
-    }
-    public Double getKrwRateFor(String code) { var quote=getQuote(code);return quote==null?null:quote.krwPerUnit().doubleValue(); }
-    public Quote getQuote(String currency) {
-        if(currency==null || !currency.toUpperCase().matches("[A-Z]{3}"))return null;
-        String code=currency.toUpperCase();
-        var current=snapshot;
-        if(current==null || clock.getAsLong()-current.fetchedAt()>=ttlMillis)refresh();
-        current=snapshot;
-        if(current==null)return null;
-        var value=current.rates().get(code);if(value==null)return null;
-        return new Quote(code,BigDecimal.ONE.divide(value,MathContext.DECIMAL128),Instant.ofEpochMilli(current.fetchedAt()),
-                         current.sourceUpdatedAt(),clock.getAsLong()-current.fetchedAt()>=ttlMillis,API_URL);
-    }
+    private static final String API_URL = "https://open.er-api.com/v6/latest/KRW";
+    private static final long CACHE_TTL_MILLIS = 1000 * 60 * 60 * 6; // 6시간 캐싱
+
+    private final RestTemplate restTemplate = new RestTemplate();
+
+    private volatile Map<String, Double> cachedRates = null; // KRW -> 외화 환율 (1원 = ? 외화)
+    private volatile long lastFetchedAt = 0;
+
+    /**
+     * 지정한 통화 코드(ISO 4217, 예: "USD", "MNT")의 "1단위당 원화 환율"을 반환.
+     * 지원하지 않는 통화거나 API 호출 실패 시 null 반환 (절대 임의의 값을 만들어내지 않음).
+     */
     @SuppressWarnings("unchecked")
-    private void refresh() {
-        synchronized(refreshLock) {
-            long now=clock.getAsLong();var current=snapshot;
-            if(current!=null && now-current.fetchedAt()<ttlMillis)return;
-            if(lastAttempt>=0 && now-lastAttempt<retryMillis)return;
-            lastAttempt=now;
-            try {
-                Map<String,Object> response=http.getForObject(API_URL,Map.class);
-                if(response==null || !"success".equals(response.get("result")) || !"KRW".equals(response.get("base_code")))return;
-                if(!(response.get("rates") instanceof Map<?,?> raw))return;
-                Map<String,BigDecimal> parsed=new HashMap<>();
-                for(var entry:raw.entrySet()) {
-                    if(!(entry.getKey() instanceof String code) || !code.matches("[A-Z]{3}") || !(entry.getValue() instanceof Number n))continue;
-                    double number=n.doubleValue();if(!Double.isFinite(number) || number<=0)continue;
-                    parsed.put(code,new BigDecimal(n.toString()));
+    public synchronized Double getKrwRateFor(String currencyCode) {
+        if (currencyCode == null || currencyCode.isBlank()) {
+            return null;
+        }
+
+        String code = currencyCode.toUpperCase();
+
+        refreshCacheIfStale();
+
+        if (cachedRates == null) {
+            return null; // API 호출 자체가 실패한 경우
+        }
+
+        Double krwToForeign = cachedRates.get(code); // 1원 = krwToForeign 외화
+        if (krwToForeign == null || krwToForeign == 0) {
+            return null; // 이 API가 지원하지 않는 통화
+        }
+
+        return 1.0 / krwToForeign; // 1 외화 = 몇 원
+    }
+
+    @SuppressWarnings("unchecked")
+    private void refreshCacheIfStale() {
+        long now = System.currentTimeMillis();
+        if (cachedRates != null && (now - lastFetchedAt) < CACHE_TTL_MILLIS) {
+            return; // 캐시 아직 유효함
+        }
+
+        try {
+            Map<String, Object> response = restTemplate.getForObject(API_URL, Map.class);
+            if (response == null) return;
+
+            Object ratesObj = response.get("rates");
+            if (!(ratesObj instanceof Map)) return;
+
+            Map<String, Object> rawRates = (Map<String, Object>) ratesObj;
+            Map<String, Double> parsed = new ConcurrentHashMap<>();
+            for (Map.Entry<String, Object> entry : rawRates.entrySet()) {
+                if (entry.getValue() instanceof Number) {
+                    parsed.put(entry.getKey(), ((Number) entry.getValue()).doubleValue());
                 }
-                if(parsed.isEmpty())return;
-                Instant updated=response.get("time_last_update_unix") instanceof Number n?Instant.ofEpochSecond(n.longValue()):null;
-                snapshot=new Snapshot(Map.copyOf(parsed),clock.getAsLong(),updated);
-            } catch(Exception ignored) {
-                // Preserve the last valid snapshot, clearly marked stale. Do not log provider bodies.
             }
+
+            cachedRates = parsed;
+            lastFetchedAt = now;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // 실패해도 기존 캐시(있다면)는 유지, 없으면 null 그대로 둠
         }
     }
 }

@@ -1,2 +1,0 @@
--r requirements-rag.txt
-mcp==2.3.0

@@ -51,7 +51,7 @@ public class OpenAiApiService {
     public WidgetSelection selectWidgets(String userMessage) {
 
         // 방어 코드: 빈 메시지면 OpenAI 호출 자체를 하지 않음
-        if (userMessage == null || userMessage.isBlank() || apiKey == null || apiKey.isBlank()) {
+        if (userMessage == null || userMessage.isBlank()) {
             return EMPTY_SELECTION;
         }
 

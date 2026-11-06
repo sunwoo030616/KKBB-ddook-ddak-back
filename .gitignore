@@ -32,10 +32,3 @@ build/
 ### VS Code ###
 .vscode/
 .run/
-.venv/
-__pycache__/
-.pytest_cache/
-.env
-var/
-.DS_Store
-reports/*.log
