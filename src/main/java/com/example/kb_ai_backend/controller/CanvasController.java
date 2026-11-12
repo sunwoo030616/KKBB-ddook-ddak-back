@@ -17,12 +17,16 @@ public class CanvasController {
         this.canvas = canvas;
     }
 
-    public record CanvasRequest(String message) {}
+    public record CanvasRequest(String message, String sessionId) {}
 
     @PostMapping
     public Map<String, Object> generateCanvas(@RequestBody CanvasRequest request) {
 
-        return canvas.compose(request == null ? null : request.message());
+        if (request == null) return canvas.compose(null);
+        // sessionId가 있으면 이전 대화(되묻기)를 이어서 처리한다
+        return request.sessionId() == null
+                ? canvas.compose(request.message())
+                : canvas.compose(request.message(), request.sessionId());
     }
 
     @ExceptionHandler(ResponseStatusException.class)
