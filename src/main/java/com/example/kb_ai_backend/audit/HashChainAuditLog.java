@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  * 추가만 가능한(append-only) 해시체인 감사 로그.
- * - 각 기록의 hash = SHA-256(prevHash | seq | 시각 | 이벤트 | 주체 | 대상 | 정렬된 상세)
+ * - 각 필드에 길이를 붙여 직렬화한 뒤 이전 해시와 함께 SHA-256으로 계산한다
  * - verify()로 처음부터 다시 계산해 위·변조, 삭제, 순서 변경을 찾아낸다
  * - OTP·인증번호·계좌번호 같은 민감값은 저장 전에 마스킹한다
  *
@@ -76,10 +76,18 @@ public class HashChainAuditLog {
 
     private static String hash(String prev, long seq, String at, String event, String actor, String subject,
                                Map<String, String> details) {
-        var canonical = new StringBuilder()
-                .append(prev).append('|').append(seq).append('|').append(at).append('|')
-                .append(event).append('|').append(actor).append('|').append(subject);
-        new TreeMap<>(details).forEach((k, v) -> canonical.append('|').append(k).append('=').append(v));
+        var canonical = new StringBuilder();
+        appendField(canonical, prev);
+        appendField(canonical, Long.toString(seq));
+        appendField(canonical, at);
+        appendField(canonical, event);
+        appendField(canonical, actor);
+        appendField(canonical, subject);
+        appendField(canonical, Integer.toString(details.size()));
+        new TreeMap<>(details).forEach((key, value) -> {
+            appendField(canonical, key);
+            appendField(canonical, value);
+        });
         try {
             byte[] digest = MessageDigest.getInstance("SHA-256").digest(canonical.toString().getBytes(StandardCharsets.UTF_8));
             return HexFormat.of().formatHex(digest);
@@ -87,4 +95,12 @@ public class HashChainAuditLog {
             throw new IllegalStateException("SHA-256을 사용할 수 없습니다.", e);
         }
     }
+    private static void appendField(StringBuilder buffer, String value) {
+        if (value == null) {
+            buffer.append("-1:");
+        } else {
+            buffer.append(value.length()).append(':').append(value);
+        }
+    }
+
 }

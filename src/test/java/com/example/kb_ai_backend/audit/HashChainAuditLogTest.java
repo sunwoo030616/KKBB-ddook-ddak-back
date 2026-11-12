@@ -47,6 +47,18 @@ class HashChainAuditLogTest {
         assertEquals(2L, result.brokenAtSeq());
     }
 
+    @Test void movingTextAcrossFieldBoundariesInvalidatesTheHash() {
+        var log = new HashChainAuditLog(clock);
+        var original = log.append("ACTION_PREPARED", "user|extra", "action", Map.of("a", "b|c=d"));
+        var changedActor = new AuditEntry(original.seq(), original.at(), original.event(), "user",
+                "extra|action", original.details(), original.prevHash(), original.hash());
+        var changedDetails = new AuditEntry(original.seq(), original.at(), original.event(), original.actor(),
+                original.subject(), Map.of("a", "b", "c", "d"), original.prevHash(), original.hash());
+
+        assertFalse(HashChainAuditLog.verify(java.util.List.of(changedActor)).valid());
+        assertFalse(HashChainAuditLog.verify(java.util.List.of(changedDetails)).valid());
+    }
+
     @Test void deletingEntryIsDetected() {
         var entries = new ArrayList<>(sample().entries());
         entries.remove(1);
