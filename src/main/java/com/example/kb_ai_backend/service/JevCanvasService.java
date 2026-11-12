@@ -1,5 +1,7 @@
 package com.example.kb_ai_backend.service;
 
+import com.example.kb_ai_backend.feedback.FeedbackEvent;
+import com.example.kb_ai_backend.feedback.FeedbackRanker;
 import com.example.kb_ai_backend.session.ConversationSession;
 import com.example.kb_ai_backend.session.InMemorySessionStore;
 import com.example.kb_ai_backend.session.SessionStore;
@@ -22,6 +24,7 @@ import java.util.*;
  * 필수 정보가 빠진 위젯만 보류하고 clarification_widget으로 그 정보만 되묻는다.
  * 다음 발화가 빠진 정보를 채우면 jev를 다시 부르지 않고 세션에 남은 위젯을 마저 그린다.
  * 모든 요청은 판단 과정을 DecisionTrace로 남긴다 (GET /api/canvas/{requestId}/trace).
+ * 바로 그릴 수 있는 위젯들은 사용자 반응 점수(FeedbackRanker)로 순서만 보정한다.
  */
 @Service
 public class JevCanvasService {
@@ -34,6 +37,7 @@ public class JevCanvasService {
     private final WidgetDataService data;
     private final SessionStore sessions;
     private final TraceStore traces;
+    private final FeedbackRanker ranker;
     private final Clock clock;
 
     public JevCanvasService(WidgetSelectionExperimentService selector, CanvasParameters parameters, WidgetDataService data) {
@@ -45,11 +49,18 @@ public class JevCanvasService {
         this(selector, parameters, data, sessions, new TraceStore(Clock.systemUTC(), Duration.ofHours(1), 500), Clock.systemUTC());
     }
 
-    @Autowired
     public JevCanvasService(WidgetSelectionExperimentService selector, CanvasParameters parameters,
                             WidgetDataService data, SessionStore sessions, TraceStore traces, Clock clock) {
+        this(selector, parameters, data, sessions, traces,
+                new FeedbackRanker(WidgetSelectionExperimentService.WIDGETS.keySet(), 20), clock);
+    }
+
+    @Autowired
+    public JevCanvasService(WidgetSelectionExperimentService selector, CanvasParameters parameters,
+                            WidgetDataService data, SessionStore sessions, TraceStore traces,
+                            FeedbackRanker ranker, Clock clock) {
         this.selector = selector; this.parameters = parameters; this.data = data;
-        this.sessions = sessions; this.traces = traces; this.clock = clock;
+        this.sessions = sessions; this.traces = traces; this.ranker = ranker; this.clock = clock;
     }
 
     public Optional<DecisionTrace> trace(String requestId) {
@@ -133,11 +144,13 @@ public class JevCanvasService {
         slotValues.put("amount", slots.amount());
         slotValues.put("tripDays", slots.tripDays());
         trace.slots(slotValues);
-        var ready = ids.stream().filter(id -> SlotRequirements.missingFor(id, slots).isEmpty()).toList();
+        var ready = ranker.rank(ids.stream().filter(id -> SlotRequirements.missingFor(id, slots).isEmpty()).toList());
         var blocked = ids.stream().filter(id -> !ready.contains(id)).toList();
+        trace.ranking(ranker.scores(ready));
         var widgets = new ArrayList<Map<String, Object>>();
         for (String id : ready) {
             widgets.add(data.buildWidget(id, slots.currency(), slots.destination(), slots.amount(), null, slots.tripDays()));
+            ranker.record(id, FeedbackEvent.SHOWN);
         }
 
         var missing = SlotRequirements.missingFor(blocked, slots);

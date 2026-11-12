@@ -6,6 +6,7 @@ import com.example.kb_ai_backend.action.rules.NightTimeRule;
 import com.example.kb_ai_backend.action.rules.RiskLevelRule;
 import com.example.kb_ai_backend.action.rules.VelocityRule;
 import com.example.kb_ai_backend.audit.HashChainAuditLog;
+import com.example.kb_ai_backend.feedback.FeedbackRanker;
 import com.example.kb_ai_backend.session.InMemorySessionStore;
 import com.example.kb_ai_backend.session.SessionStore;
 import com.example.kb_ai_backend.trace.TraceStore;
@@ -17,6 +18,7 @@ import java.time.Clock;
 import java.time.Duration;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 프레임워크에 의존하지 않는 도메인 객체들을 여기서만 빈으로 등록한다.
@@ -42,6 +44,15 @@ public class BackendConfig {
                                  @Value("${app.trace.retention-minutes:60}") long retentionMinutes,
                                  @Value("${app.trace.max-traces:500}") int maxTraces) {
         return new TraceStore(clock, Duration.ofMinutes(retentionMinutes), maxTraces);
+    }
+
+    @Bean
+    public FeedbackRanker feedbackRanker(@Value("${app.feedback.min-exposures:20}") int minExposures) {
+        // 위젯 허용 목록과 같은 9개만 받는다
+        return new FeedbackRanker(Set.of(
+                "travel_card_charge_widget", "overseas_qr_payment_widget", "travel_insurance_widget",
+                "group_account_status", "expense_report_widget", "group_card_safety_widget",
+                "card_freeze_all", "atm_smart_withdrawal", "id_reissue_status_widget"), minExposures);
     }
 
     @Bean
