@@ -66,6 +66,7 @@ class ActionServiceTest {
         var done = service.confirm("u1", prepared.actionId(), code);
         assertEquals(ActionStatus.EXECUTED, done.status());
         assertEquals(6, ((String) done.result().get("authCode")).length());
+        assertTrue(otp.lastCodeFor(prepared.actionId()).isEmpty());
     }
 
     @Test void threeWrongOtpsLockTheActionAndItNeverExecutes() {
@@ -80,6 +81,7 @@ class ActionServiceTest {
         var third = assertThrows(ActionException.class, () -> service.confirm("u1", prepared.actionId(), wrong));
         assertEquals(ActionException.Code.LOCKED, third.code());
 
+        assertTrue(otp.lastCodeFor(prepared.actionId()).isEmpty());
         // 잠긴 뒤에는 맞는 번호도 통하지 않는다
         var after = assertThrows(ActionException.class, () -> service.confirm("u1", prepared.actionId(), code));
         assertEquals(ActionException.Code.LOCKED, after.code());
@@ -163,6 +165,19 @@ class ActionServiceTest {
         var error = assertThrows(ActionException.class, () -> service.confirm("u1", prepared.actionId(), null));
         assertEquals(ActionException.Code.EXPIRED, error.code());
         assertEquals(0, executions.get());
+    }
+
+    @Test void anExpiredActionDoesNotReturnItsOtpOrAwaitingStatus() {
+        var prepared = service.prepare("u1", ActionType.CARD_UNFREEZE_ALL, Map.of(), "restore");
+        assertTrue(otp.lastCodeFor(prepared.actionId()).isPresent());
+        clock.now = clock.now.plus(Duration.ofMinutes(5));
+
+        var retried = service.prepare("u1", ActionType.CARD_UNFREEZE_ALL, Map.of(), "restore");
+        assertEquals(ActionStatus.EXPIRED, retried.status());
+        assertEquals(ActionStatus.EXPIRED, service.get("u1", prepared.actionId()).status());
+        assertTrue(otp.lastCodeFor(prepared.actionId()).isEmpty());
+        assertEquals(1, audit.entriesFor(prepared.actionId()).stream()
+                .filter(entry -> entry.event().equals("ACTION_EXPIRED")).count());
     }
 
     @Test void otherUsersCannotSeeOrConfirmTheAction() {
