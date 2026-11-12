@@ -32,6 +32,7 @@ public class ActionService {
     private final Duration actionTtl;
     private final Duration velocityWindow;
     private final int maxOtpAttempts;
+    private final CardFreezeReceiptStore freezeReceipts;
 
     private final SecureRandom random = new SecureRandom();
     private final ConcurrentHashMap<String, PendingAction> actions = new ConcurrentHashMap<>();
@@ -44,6 +45,12 @@ public class ActionService {
 
     public ActionService(PolicyEngine policy, ActionExecutor executor, OtpSender otpSender, HashChainAuditLog audit,
                          Clock clock, Duration actionTtl, Duration velocityWindow, int maxOtpAttempts) {
+        this(policy, executor, otpSender, audit, clock, actionTtl, velocityWindow, maxOtpAttempts, null);
+    }
+
+    public ActionService(PolicyEngine policy, ActionExecutor executor, OtpSender otpSender, HashChainAuditLog audit,
+                         Clock clock, Duration actionTtl, Duration velocityWindow, int maxOtpAttempts,
+                         CardFreezeReceiptStore freezeReceipts) {
         this.policy = policy;
         this.executor = executor;
         this.otpSender = otpSender;
@@ -52,6 +59,7 @@ public class ActionService {
         this.actionTtl = actionTtl;
         this.velocityWindow = velocityWindow;
         this.maxOtpAttempts = maxOtpAttempts;
+        this.freezeReceipts = freezeReceipts;
     }
 
     public synchronized ActionView prepare(String userId, ActionType type, Map<String, Object> params, String idempotencyKey) {
@@ -68,12 +76,18 @@ public class ActionService {
         IdempotencyScope scope = idempotencyKey == null || idempotencyKey.isBlank()
                 ? null : new IdempotencyScope(userId, idempotencyKey);
         if (scope != null) {
+            if (freezeReceipts != null) {
+                var receipt = freezeReceipts.findByKey(userId, idempotencyKey);
+                if (receipt.isPresent()) {
+                    return replay(receipt.get(), freezeReceipts.fingerprint(type, safeParams));
+                }
+            }
             String existingId = idempotencyKeys.get(scope);
             if (existingId != null) {
                 PendingAction existing = actions.get(existingId);
                 if (existing != null) {
                     if (existing.type != type || !existing.params.equals(safeParams)) {
-                        throw new ActionException(ActionException.Code.IDEMPOTENCY_CONFLICT, "같은 요청 키로 다른 액션 또는 파라미터를 보냈습니다.");
+                        throw keyConflict();
                     }
                     return viewAt(existing, now);
                 }
@@ -84,7 +98,8 @@ public class ActionService {
         int recent = recordAttempt(userId, type, now);
         PolicyDecision decision = policy.evaluate(new ActionContext(userId, type, amountKrw, now, recent));
 
-        var action = new PendingAction(UUID.randomUUID().toString(), userId, type, safeParams, decision, now.plus(actionTtl));
+        var action = new PendingAction(UUID.randomUUID().toString(), userId, type, safeParams, decision,
+                now.plus(actionTtl), scope == null ? null : scope.key());
         switch (decision.outcome()) {
             case DENY -> action.status = ActionStatus.DENIED;
             case STEP_UP -> {
@@ -107,6 +122,10 @@ public class ActionService {
     }
 
     public ActionView confirm(String userId, String actionId, String otp) {
+        var stored = storedReceipt(userId, actionId);
+        if (stored.isPresent()) {
+            return confirmedResult(storedResult(stored.get()));
+        }
         PendingAction action = find(userId, actionId);
         synchronized (action) {
             expireIfPending(action, clock.instant());
@@ -115,26 +134,86 @@ public class ActionService {
                 case DENIED -> throw new ActionException(ActionException.Code.DENIED, String.join(" ", action.decision.reasons()));
                 case LOCKED -> throw new ActionException(ActionException.Code.LOCKED, "인증에 여러 번 실패해 잠긴 요청입니다. 처음부터 다시 진행해주세요.");
                 case EXPIRED -> throw new ActionException(ActionException.Code.EXPIRED, "확인 시간이 지났습니다. 다시 요청해주세요.");
-                case FAILED -> throw new ActionException(ActionException.Code.EXECUTION_FAILED, "실행에 실패한 요청입니다. 다시 요청해주세요.");
+                case FAILED -> throw executionFailed();
                 default -> { }
             }
-            if (action.status == ActionStatus.AWAITING_OTP) verifyOtp(action, otp);
+            boolean needsOtp = action.status == ActionStatus.AWAITING_OTP;
+            if (needsOtp) verifyOtp(action, otp);
+            String fingerprint = null;
+            if (action.type == ActionType.CARD_FREEZE_ALL && freezeReceipts != null) {
+                fingerprint = freezeReceipts.fingerprint(action.type, action.params);
+                if (!freezeReceipts.reserve(userId, action.id, action.idempotencyKey, fingerprint)) {
+                    var receipt = freezeReceipts.findById(userId, action.id)
+                            .or(() -> freezeReceipts.findByKey(userId, action.idempotencyKey));
+                    if (receipt.isEmpty()) throw executionInProgress();
+                    return confirmedResult(replay(receipt.get(), fingerprint));
+                }
+            }
+            if (needsOtp) {
+                clearOtp(action);
+                audit.append("OTP_PASSED", userId, action.id, Map.of());
+            }
 
             try {
                 action.result = Map.copyOf(executor.execute(action.type, userId, action.params));
             } catch (RuntimeException e) {
                 action.status = ActionStatus.FAILED;
                 audit.append("ACTION_FAILED", userId, action.id, Map.of("type", action.type.name(), "error", e.getClass().getSimpleName()));
+                saveReceipt(action, fingerprint);
                 throw new ActionException(ActionException.Code.EXECUTION_FAILED, "금융 시스템 처리 중 문제가 생겼어요. 잠시 후 다시 시도해주세요.");
             }
             action.status = ActionStatus.EXECUTED;
             audit.append("ACTION_EXECUTED", userId, action.id, Map.of("type", action.type.name()));
+            saveReceipt(action, fingerprint);
             return action.view();
         }
     }
 
     public ActionView get(String userId, String actionId) {
+        var receipt = storedReceipt(userId, actionId);
+        if (receipt.isPresent()) return storedResult(receipt.get());
         return viewAt(find(userId, actionId), clock.instant());
+    }
+
+    private Optional<CardFreezeReceiptStore.Receipt> storedReceipt(String userId, String actionId) {
+        if (freezeReceipts == null || userId == null || userId.isBlank() || actionId == null) return Optional.empty();
+        var local = actions.get(actionId);
+        if (local != null && local.type != ActionType.CARD_FREEZE_ALL) return Optional.empty();
+        return freezeReceipts.findById(userId, actionId);
+    }
+
+    private void saveReceipt(PendingAction action, String fingerprint) {
+        if (fingerprint != null) {
+            freezeReceipts.complete(action.userId, action.idempotencyKey,
+                    new CardFreezeReceiptStore.Receipt(fingerprint, action.view()));
+        }
+    }
+
+    private static ActionView replay(CardFreezeReceiptStore.Receipt receipt, String fingerprint) {
+        if (!receipt.fingerprint().equals(fingerprint)) throw keyConflict();
+        return storedResult(receipt);
+    }
+
+    private static ActionView storedResult(CardFreezeReceiptStore.Receipt receipt) {
+        if (receipt.result() == null) throw executionInProgress();
+        return receipt.result();
+    }
+
+    private static ActionView confirmedResult(ActionView view) {
+        if (view.status() == ActionStatus.FAILED) throw executionFailed();
+        return view;
+    }
+
+    private static ActionException keyConflict() {
+        return new ActionException(ActionException.Code.IDEMPOTENCY_CONFLICT, "같은 요청 키로 다른 액션 또는 파라미터를 보냈습니다.");
+    }
+
+    private static ActionException executionInProgress() {
+        return new ActionException(ActionException.Code.EXECUTION_IN_PROGRESS, "이미 실행 요청을 받았습니다. 같은 요청으로 결과를 다시 확인해주세요.");
+    }
+
+    private static ActionException executionFailed() {
+        return new ActionException(ActionException.Code.EXECUTION_FAILED, "실행에 실패한 요청입니다. 다시 요청해주세요.");
     }
 
     private ActionView viewAt(PendingAction action, Instant now) {
@@ -164,11 +243,7 @@ public class ActionService {
         boolean ok = MessageDigest.isEqual(
                 action.otpHash.getBytes(StandardCharsets.UTF_8),
                 otpHash(action.id, otp.trim()).getBytes(StandardCharsets.UTF_8));
-        if (ok) {
-            clearOtp(action);
-            audit.append("OTP_PASSED", action.userId, action.id, Map.of());
-            return;
-        }
+        if (ok) return;
         action.otpFailures++;
         audit.append("OTP_FAILED", action.userId, action.id, Map.of("failures", action.otpFailures));
         if (action.otpFailures >= maxOtpAttempts) {
@@ -247,19 +322,21 @@ public class ActionService {
         final Map<String, Object> params;
         final PolicyDecision decision;
         final Instant expiresAt;
+        final String idempotencyKey;
         ActionStatus status;
         String otpHash;
         int otpFailures;
         Map<String, Object> result;
 
         PendingAction(String id, String userId, ActionType type, Map<String, Object> params,
-                      PolicyDecision decision, Instant expiresAt) {
+                      PolicyDecision decision, Instant expiresAt, String idempotencyKey) {
             this.id = id;
             this.userId = userId;
             this.type = type;
             this.params = params;
             this.decision = decision;
             this.expiresAt = expiresAt;
+            this.idempotencyKey = idempotencyKey;
         }
 
         synchronized ActionView view() {

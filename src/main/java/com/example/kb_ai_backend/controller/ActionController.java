@@ -116,8 +116,9 @@ public class ActionController {
             case EXPIRED -> HttpStatus.GONE;
             case OTP_REQUIRED, OTP_MISMATCH -> HttpStatus.UNPROCESSABLE_ENTITY;
             case LOCKED -> HttpStatus.LOCKED;
-            case IDEMPOTENCY_CONFLICT -> HttpStatus.CONFLICT;
+            case IDEMPOTENCY_CONFLICT, EXECUTION_IN_PROGRESS -> HttpStatus.CONFLICT;
             case EXECUTION_FAILED -> HttpStatus.BAD_GATEWAY;
+            case STORAGE_UNAVAILABLE -> HttpStatus.SERVICE_UNAVAILABLE;
         };
     }
 }
