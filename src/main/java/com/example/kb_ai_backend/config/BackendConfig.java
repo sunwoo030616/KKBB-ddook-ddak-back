@@ -93,11 +93,14 @@ public class BackendConfig {
 
     @Bean
     public ActionService actionService(PolicyEngine policyEngine, ActionExecutor executor, DemoOtpSender otpSender,
-                                       HashChainAuditLog auditLog, Clock clock,
+                                       HashChainAuditLog auditLog, Clock clock, StringRedisTemplate redis, ObjectMapper mapper,
+                                       @Value("${app.action.redis-enabled:false}") boolean redisEnabled,
+                                       @Value("${app.action.receipt-retention-minutes:1440}") long receiptRetentionMinutes,
                                        @Value("${app.action.ttl-minutes:5}") long ttlMinutes,
                                        @Value("${app.policy.velocity-window-minutes:10}") long windowMinutes,
                                        @Value("${app.action.max-otp-attempts:3}") int maxOtpAttempts) {
+        var receipts = redisEnabled ? new RedisCardFreezeReceiptStore(redis, mapper, Duration.ofMinutes(receiptRetentionMinutes)) : null;
         return new ActionService(policyEngine, executor, otpSender, auditLog, clock,
-                Duration.ofMinutes(ttlMinutes), Duration.ofMinutes(windowMinutes), maxOtpAttempts);
+                Duration.ofMinutes(ttlMinutes), Duration.ofMinutes(windowMinutes), maxOtpAttempts, receipts);
     }
 }

@@ -5,7 +5,7 @@ public class ActionException extends RuntimeException {
 
     public enum Code {
         INVALID_REQUEST, NOT_FOUND, DENIED, EXPIRED, OTP_REQUIRED, OTP_MISMATCH, LOCKED,
-        IDEMPOTENCY_CONFLICT, EXECUTION_FAILED
+        IDEMPOTENCY_CONFLICT, EXECUTION_IN_PROGRESS, EXECUTION_FAILED, STORAGE_UNAVAILABLE
     }
 
     private final Code code;
