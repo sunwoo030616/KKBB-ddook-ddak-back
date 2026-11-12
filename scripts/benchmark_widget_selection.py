@@ -43,7 +43,11 @@ def main():
                         result = json.load(response)
                         row['requestId'] = response.headers.get('X-Request-Id')
                     row.update({k: result.get(k) for k in ['model', 'durationMs', 'inputTokens', 'outputTokens', 'needsReview', 'widgets']})
-                    row['correct'] = set(row['widgets']) == set(case['expected'])
+                    expected = set(case['expected'])
+                    selected = set(row['widgets'])
+                    row['missingWidgets'] = sorted(expected - selected)
+                    row['extraWidgets'] = sorted(selected - expected)
+                    row['correct'] = not row['missingWidgets'] and not row['extraWidgets']
                     row['success'] = True
                 except urllib.error.HTTPError as error:
                     row.update(success=False, correct=False, error='HTTP ' + str(error.code))
@@ -60,6 +64,8 @@ def main():
         report['summary'][provider] = {
             'requests': len(rows), 'successful': len(good),
             'exactWidgetMatches': sum(r['correct'] for r in rows),
+            'requestsWithMissingWidgets': sum(bool(r['missingWidgets']) for r in good),
+            'requestsWithExtraWidgets': sum(bool(r['extraWidgets']) for r in good),
             'reviewNeeded': sum(bool(r.get('needsReview')) for r in good),
             'meanDurationMs': round(statistics.mean(durations), 1) if durations else None,
             'p95DurationMs': durations[max(0, math.ceil(len(durations) * .95) - 1)] if durations else None,

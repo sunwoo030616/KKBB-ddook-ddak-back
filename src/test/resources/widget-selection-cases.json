@@ -1,5 +1,20 @@
 [
   {
+    "id": "exchange-qr-without-destination",
+    "message": "외화도 바꾸고 현지에서 QR로 결제할 수 있게 준비해줘",
+    "expected": ["travel_card_charge_widget", "overseas_qr_payment_widget"]
+  },
+  {
+    "id": "exchange-qr-with-destination",
+    "message": "도쿄에서 쓸 엔화랑 현지 QR 결제 준비해줘",
+    "expected": ["travel_card_charge_widget", "overseas_qr_payment_widget"]
+  },
+  {
+    "id": "freeze-only-after-loss",
+    "message": "지갑을 잃어버렸는데 다른 안내는 됐고 분실 카드만 정지해줘",
+    "expected": ["card_freeze_all"]
+  },
+  {
     "id": "exchange",
     "message": "나 상하이여행 환전하고 싶어",
     "expected": [
