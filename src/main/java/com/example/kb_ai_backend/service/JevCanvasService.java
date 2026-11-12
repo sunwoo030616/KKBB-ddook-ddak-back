@@ -39,6 +39,7 @@ public class JevCanvasService {
     private final TraceStore traces;
     private final FeedbackRanker ranker;
     private final Clock clock;
+    private final Optional<PresentationScenarios> presentation;
 
     public JevCanvasService(WidgetSelectionExperimentService selector, CanvasParameters parameters, WidgetDataService data) {
         this(selector, parameters, data, new InMemorySessionStore(Clock.systemUTC(), Duration.ofMinutes(30), 10_000));
@@ -55,12 +56,19 @@ public class JevCanvasService {
                 new FeedbackRanker(WidgetSelectionExperimentService.WIDGETS.keySet(), 20), clock);
     }
 
-    @Autowired
     public JevCanvasService(WidgetSelectionExperimentService selector, CanvasParameters parameters,
                             WidgetDataService data, SessionStore sessions, TraceStore traces,
                             FeedbackRanker ranker, Clock clock) {
+        this(selector, parameters, data, sessions, traces, ranker, clock, Optional.empty());
+    }
+
+    @Autowired
+    public JevCanvasService(WidgetSelectionExperimentService selector, CanvasParameters parameters,
+                            WidgetDataService data, SessionStore sessions, TraceStore traces,
+                            FeedbackRanker ranker, Clock clock, Optional<PresentationScenarios> presentation) {
         this.selector = selector; this.parameters = parameters; this.data = data;
         this.sessions = sessions; this.traces = traces; this.ranker = ranker; this.clock = clock;
+        this.presentation = presentation;
     }
 
     public Optional<DecisionTrace> trace(String requestId) {
@@ -77,6 +85,8 @@ public class JevCanvasService {
         try {
             Map<String, Object> body = compose(message, sessionId, trace);
             body.put("requestId", requestId);
+            body.put("resumedFromSession", trace.resumedFromSession());
+            if (presentation.isPresent()) body.put("demo", true);
             trace.finish((String) body.get("status"), renderedTypes(body));
             return body;
         } catch (RuntimeException e) {
@@ -103,8 +113,8 @@ public class JevCanvasService {
         }
 
         started = System.nanoTime();
-        var selection = selector.select(message, "jev");
-        trace.stage("selection", started, "jev 응답 " + selection.durationMs() + "ms");
+        var selection = presentation.map(demo -> demo.select(message)).orElseGet(() -> selector.select(message, "jev"));
+        trace.stage("selection", started, selection.provider() + " 응답 " + selection.durationMs() + "ms");
         trace.selection(selection.provider(), selection.model(), selection.needsReview(), selection.widgets(), candidates(selection));
         var ids = selection.widgets();
         if (ids == null || ids.size() > 3 || new HashSet<>(ids).size() != ids.size()
@@ -152,19 +162,19 @@ public class JevCanvasService {
         var widgets = new ArrayList<Map<String, Object>>();
         for (String id : ready) {
             widgets.add(data.buildWidget(id, slots.currency(), slots.destination(), slots.amount(), null, slots.tripDays()));
-            ranker.record(id, FeedbackEvent.SHOWN);
         }
 
         var missing = SlotRequirements.missingFor(blocked, slots);
         trace.missingSlots(missing);
         trace.stage("build", started, ready.size() + "개 위젯 구성");
-        if (missing.isEmpty()) {
-            sessions.save(session.withSlots(slots).resolved());
-            return response(readyGreeting, "ready", widgets, session.id());
+        ConversationSession updated = session.withSlots(slots);
+        if (!sessions.save(missing.isEmpty() ? updated.resolved() : updated.awaiting(blocked, missing))) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "대화가 다른 요청에서 갱신됐거나 만료됐어요. 다시 보내 주세요.");
         }
+        ready.forEach(id -> ranker.record(id, FeedbackEvent.SHOWN));
+        if (missing.isEmpty()) return response(readyGreeting, "ready", widgets, session.id());
 
         widgets.add(clarificationWidget(blocked, missing));
-        sessions.save(session.withSlots(slots).awaiting(blocked, missing));
         String question = SlotRequirements.guide(missing.get(0)).question();
         String greeting = ready.isEmpty() ? question : "준비된 기능부터 보여드릴게요. " + question;
         return response(greeting, "needs_clarification", widgets, session.id());

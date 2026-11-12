@@ -108,9 +108,9 @@ public class WidgetDataService {
             );
         }
 
-        Double rate = exchangeRateService.getKrwRateFor(code); // 1 외화 = 몇 원 (실시간 API)
+        ExchangeRateService.Quote quote = exchangeRateService.getKrwQuoteFor(code);
 
-        if (rate == null) {
+        if (quote == null) {
             return Map.ofEntries(
                     Map.entry("type", "travel_card_charge_widget"),
                     Map.entry("supported", false),
@@ -122,7 +122,9 @@ public class WidgetDataService {
 
         String displayName = CURRENCY_DISPLAY_NAME.getOrDefault(code, code);
         int suggestedAmount = (requestedAmount != null && requestedAmount > 0) ? requestedAmount : 2000;
-        long estimatedKrw = Math.round(suggestedAmount * rate);
+        long estimatedKrw = Math.round(suggestedAmount * quote.rate());
+        String rateDescription = quote.demo() ? "시연용 예시 환율"
+                : quote.stale() ? "최근 저장된 환율" : "외부 API 조회 환율";
 
         return Map.ofEntries(
                 Map.entry("type", "travel_card_charge_widget"),
@@ -130,8 +132,8 @@ public class WidgetDataService {
                 Map.entry("title", displayName + " 충전하셨나요?"),
                 Map.entry("currency", code),
                 Map.entry("cardBalance", 0),
-                Map.entry("exchangeRate", Math.round(rate * 100.0) / 100.0),
-                Map.entry("rateDescription", "우대환율 100% 적용 중"),
+                Map.entry("exchangeRate", Math.round(quote.rate() * 100.0) / 100.0),
+                Map.entry("rateDescription", rateDescription),
                 Map.entry("chargeButtonLabel", "뚝딱 충전하기"),
                 Map.entry("quickAmounts", List.of(100, 500, 1000)),
                 Map.entry("suggestedAmount", suggestedAmount),

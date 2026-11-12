@@ -13,6 +13,11 @@ public class DemoOtpSender implements OtpSender {
         lastCodes.put(actionId, code);
     }
 
+    @Override
+    public void discard(String actionId) {
+        lastCodes.remove(actionId);
+    }
+
     public Optional<String> lastCodeFor(String actionId) {
         return Optional.ofNullable(lastCodes.get(actionId));
     }

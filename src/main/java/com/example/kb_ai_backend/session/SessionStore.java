@@ -10,8 +10,8 @@ public interface SessionStore {
 
     Optional<ConversationSession> find(String sessionId);
 
-    /** 저장하면서 마지막 사용 시각을 갱신한다 (TTL 연장) */
-    ConversationSession save(ConversationSession session);
+    /** 읽었던 리비전이 여전히 최신일 때만 저장하고 TTL을 연장한다. */
+    boolean save(ConversationSession session);
 
     ConversationSession create();
 }

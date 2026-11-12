@@ -41,16 +41,21 @@ public class InMemorySessionStore implements SessionStore {
     }
 
     @Override
-    public ConversationSession save(ConversationSession session) {
-        ConversationSession touched = session.touchedAt(clock.instant());
-        sessions.put(touched.id(), touched);
-        if (sessions.size() > maxSessions) evict();
-        return touched;
+    public boolean save(ConversationSession session) {
+        Instant now = clock.instant();
+        ConversationSession next = session.advancedAt(now);
+        return sessions.computeIfPresent(session.id(), (id, current) -> {
+            if (expired(current, now)) return null;
+            return current.revision() == session.revision() ? next : current;
+        }) == next;
     }
 
     @Override
-    public ConversationSession create() {
-        return save(ConversationSession.start(UUID.randomUUID().toString(), clock.instant()));
+    public synchronized ConversationSession create() {
+        var session = ConversationSession.start(UUID.randomUUID().toString(), clock.instant());
+        sessions.put(session.id(), session);
+        if (sessions.size() > maxSessions) evict(session.id());
+        return session;
     }
 
     int size() {
@@ -58,14 +63,15 @@ public class InMemorySessionStore implements SessionStore {
     }
 
     private boolean expired(ConversationSession session, Instant now) {
-        return session.updatedAt().plus(ttl).isBefore(now);
+        return !now.isBefore(session.updatedAt().plus(ttl));
     }
 
-    private synchronized void evict() {
+    private void evict(String newSessionId) {
         Instant now = clock.instant();
         sessions.values().removeIf(s -> expired(s, now));
         while (sessions.size() > maxSessions) {
             sessions.values().stream()
+                    .filter(session -> !session.id().equals(newSessionId))
                     .min(Comparator.comparing(ConversationSession::updatedAt))
                     .ifPresent(oldest -> sessions.remove(oldest.id(), oldest));
         }

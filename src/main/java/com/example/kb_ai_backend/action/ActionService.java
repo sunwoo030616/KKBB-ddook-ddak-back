@@ -36,9 +36,11 @@ public class ActionService {
     private final SecureRandom random = new SecureRandom();
     private final ConcurrentHashMap<String, PendingAction> actions = new ConcurrentHashMap<>();
     private final Map<IdempotencyScope, String> idempotencyKeys = new HashMap<>();
+    private final Map<AttemptScope, Deque<Instant>> attempts = new HashMap<>();
+    private Instant nextCleanupAt = Instant.MIN;
 
     private record IdempotencyScope(String userId, String key) {}
-    private final ConcurrentHashMap<String, Deque<Instant>> attempts = new ConcurrentHashMap<>();
+    private record AttemptScope(String userId, ActionType type) {}
 
     public ActionService(PolicyEngine policy, ActionExecutor executor, OtpSender otpSender, HashChainAuditLog audit,
                          Clock clock, Duration actionTtl, Duration velocityWindow, int maxOtpAttempts) {
@@ -73,7 +75,7 @@ public class ActionService {
                     if (existing.type != type || !existing.params.equals(safeParams)) {
                         throw new ActionException(ActionException.Code.IDEMPOTENCY_CONFLICT, "같은 요청 키로 다른 액션 또는 파라미터를 보냈습니다.");
                     }
-                    return existing.view();
+                    return viewAt(existing, now);
                 }
             }
         }
@@ -107,6 +109,7 @@ public class ActionService {
     public ActionView confirm(String userId, String actionId, String otp) {
         PendingAction action = find(userId, actionId);
         synchronized (action) {
+            expireIfPending(action, clock.instant());
             switch (action.status) {
                 case EXECUTED -> { return action.view(); } // 재요청은 같은 결과 반환, 재실행 안 함
                 case DENIED -> throw new ActionException(ActionException.Code.DENIED, String.join(" ", action.decision.reasons()));
@@ -114,11 +117,6 @@ public class ActionService {
                 case EXPIRED -> throw new ActionException(ActionException.Code.EXPIRED, "확인 시간이 지났습니다. 다시 요청해주세요.");
                 case FAILED -> throw new ActionException(ActionException.Code.EXECUTION_FAILED, "실행에 실패한 요청입니다. 다시 요청해주세요.");
                 default -> { }
-            }
-            if (!clock.instant().isBefore(action.expiresAt)) {
-                action.status = ActionStatus.EXPIRED;
-                audit.append("ACTION_EXPIRED", userId, action.id, Map.of("type", action.type.name()));
-                throw new ActionException(ActionException.Code.EXPIRED, "확인 시간이 지났습니다. 다시 요청해주세요.");
             }
             if (action.status == ActionStatus.AWAITING_OTP) verifyOtp(action, otp);
 
@@ -136,7 +134,27 @@ public class ActionService {
     }
 
     public ActionView get(String userId, String actionId) {
-        return find(userId, actionId).view();
+        return viewAt(find(userId, actionId), clock.instant());
+    }
+
+    private ActionView viewAt(PendingAction action, Instant now) {
+        synchronized (action) {
+            expireIfPending(action, now);
+            return action.view();
+        }
+    }
+
+    private void expireIfPending(PendingAction action, Instant now) {
+        if (now.isBefore(action.expiresAt)
+                || (action.status != ActionStatus.AWAITING_OTP && action.status != ActionStatus.AWAITING_CONFIRM)) return;
+        action.status = ActionStatus.EXPIRED;
+        clearOtp(action);
+        audit.append("ACTION_EXPIRED", action.userId, action.id, Map.of("type", action.type.name()));
+    }
+
+    private void clearOtp(PendingAction action) {
+        action.otpHash = null;
+        otpSender.discard(action.id);
     }
 
     private void verifyOtp(PendingAction action, String otp) {
@@ -147,6 +165,7 @@ public class ActionService {
                 action.otpHash.getBytes(StandardCharsets.UTF_8),
                 otpHash(action.id, otp.trim()).getBytes(StandardCharsets.UTF_8));
         if (ok) {
+            clearOtp(action);
             audit.append("OTP_PASSED", action.userId, action.id, Map.of());
             return;
         }
@@ -154,6 +173,7 @@ public class ActionService {
         audit.append("OTP_FAILED", action.userId, action.id, Map.of("failures", action.otpFailures));
         if (action.otpFailures >= maxOtpAttempts) {
             action.status = ActionStatus.LOCKED;
+            clearOtp(action);
             audit.append("ACTION_LOCKED", action.userId, action.id, Map.of("type", action.type.name()));
             throw new ActionException(ActionException.Code.LOCKED, "인증에 여러 번 실패해 잠겼어요. 처음부터 다시 진행해주세요.", 0);
         }
@@ -183,20 +203,31 @@ public class ActionService {
     }
 
     private int recordAttempt(String userId, ActionType type, Instant now) {
-        Deque<Instant> history = attempts.computeIfAbsent(userId + ":" + type, k -> new ArrayDeque<>());
-        synchronized (history) {
-            Instant from = now.minus(velocityWindow);
-            while (!history.isEmpty() && history.peekFirst().isBefore(from)) history.pollFirst();
-            history.addLast(now);
-            return history.size();
-        }
+        var history = attempts.computeIfAbsent(new AttemptScope(userId, type), ignored -> new ArrayDeque<>());
+        trimAttempts(history, now.minus(velocityWindow));
+        history.addLast(now);
+        return history.size();
     }
 
-    /** 끝난 지 한참 지난 액션은 메모리에서 정리 (운영에서는 DB 보관 + TTL 인덱스) */
+    private static void trimAttempts(Deque<Instant> history, Instant from) {
+        while (!history.isEmpty() && history.peekFirst().isBefore(from)) history.pollFirst();
+    }
+
+    /** 준비 요청이 들어올 때 만료된 기록을 한 번씩 정리한다. */
     private void purgeOld(Instant now) {
+        if (now.isBefore(nextCleanupAt)) return;
+        nextCleanupAt = now.plusSeconds(30);
         Instant cutoff = now.minus(actionTtl.multipliedBy(12));
-        actions.values().removeIf(a -> a.expiresAt.isBefore(cutoff));
+        actions.values().removeIf(action -> {
+            if (!now.isBefore(action.expiresAt)) otpSender.discard(action.id);
+            return action.expiresAt.isBefore(cutoff);
+        });
         idempotencyKeys.values().removeIf(id -> !actions.containsKey(id));
+        Instant attemptsFrom = now.minus(velocityWindow);
+        attempts.values().removeIf(history -> {
+            trimAttempts(history, attemptsFrom);
+            return history.isEmpty();
+        });
     }
 
     private static String otpHash(String actionId, String code) {
