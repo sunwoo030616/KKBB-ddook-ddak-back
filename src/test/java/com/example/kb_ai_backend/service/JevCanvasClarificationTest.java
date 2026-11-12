@@ -80,6 +80,29 @@ class JevCanvasClarificationTest {
         verify(selector).select("지갑을 잃어버렸어", "jev");
     }
 
+    @Test void aNewRequestThatMentionsCurrencyStillGoesThroughSelection() {
+        selected("여행 환전", List.of("travel_card_charge_widget"));
+        String sessionId = (String) service.compose("여행 환전").get("sessionId");
+        String newRequest = "엔화 말고 카드 정지해줘";
+        selected(newRequest, List.of("card_freeze_all"));
+
+        var response = service.compose(newRequest, sessionId);
+
+        assertEquals(List.of("card_freeze_all"), types(response));
+        verify(selector).select(newRequest, "jev");
+    }
+
+    @Test void answeringWithAnUnrequestedSlotDoesNotBypassSelection() {
+        selected("여행 환전", List.of("travel_card_charge_widget"));
+        String sessionId = (String) service.compose("여행 환전").get("sessionId");
+        selected("3박4일", List.of("travel_card_charge_widget"));
+
+        var response = service.compose("3박4일", sessionId);
+
+        assertEquals(List.of("clarification_widget"), types(response));
+        verify(selector).select("3박4일", "jev");
+    }
+
     @Test void expiredOrUnknownSessionStartsFresh() {
         selected("지갑을 잃어버렸어", List.of("card_freeze_all"));
         var response = service.compose("지갑을 잃어버렸어", "없는-세션");

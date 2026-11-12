@@ -129,7 +129,10 @@ public class JevCanvasService {
         var values = parameters.extract(message);
         if (values.needsReview()) return null;
         var answer = toSlots(values);
-        if (answer.isEmpty()) return null; // 답이 아니라 새 요청으로 본다
+        if (!parameters.isSlotAnswer(message)
+                || SlotRequirements.missingFor(session.pendingWidgets(), answer).size() >= session.missingSlots().size()) {
+            return null;
+        }
         trace.stage("resume", started, "되묻기 응답으로 판단, 위젯 선택 생략");
         trace.session(session.id(), true);
         return render(session.pendingWidgets(), session.slots().mergedWith(answer), session, "알려주신 정보로 마저 채웠어요.", trace);

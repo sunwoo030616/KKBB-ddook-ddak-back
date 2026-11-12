@@ -34,6 +34,20 @@ public class CanvasParameters {
 
     public record Values(String currency, String destination, Integer amount, Integer tripDays, boolean needsReview) {}
 
+    boolean isSlotAnswer(String message) {
+        String remainder = PREFIX_AMOUNT.matcher(message).replaceAll(" ");
+        remainder = AMOUNT.matcher(remainder).replaceAll(" ");
+        remainder = NAMED_CURRENCY.matcher(remainder).replaceAll(" ");
+        remainder = ISO.matcher(remainder).replaceAll(match ->
+                isCurrencyCode(match.group().toUpperCase(Locale.ROOT)) ? " " : match.group());
+        remainder = DAYS.matcher(remainder).replaceAll(" ");
+        for (String destination : DESTINATIONS.keySet()) {
+            remainder = remainder.replace(destination, " ");
+        }
+        remainder = remainder.replace("일주일", " ").replace("당일치기", " ");
+        return remainder.matches("[\\s,.!?]*(?:(?:으로|로|이고|이요|요|입니다|해주세요|해 주세요|주세요|줘)[\\s,.!?]*)*");
+    }
+
     public Values extract(String message) {
         var places = DESTINATIONS.keySet().stream().filter(message::contains)
                 .sorted(Comparator.<String>comparingInt(message::indexOf).thenComparing(Comparator.comparingInt(String::length).reversed())).toList();
@@ -45,7 +59,7 @@ public class CanvasParameters {
         while (codes.find()) {
             String code = codes.group().toUpperCase(Locale.ROOT);
             // Only ISO codes understood by the JDK; arbitrary three-letter words are ignored.
-            try { Currency.getInstance(code); currencies.add(code); } catch (IllegalArgumentException ignored) { }
+            if (isCurrencyCode(code)) currencies.add(code);
         }
         var names = NAMED_CURRENCY.matcher(message);
         while (names.find()) currencies.add(UNITS.get(names.group()));
@@ -85,4 +99,13 @@ public class CanvasParameters {
         if (days == null && message.contains("당일치기")) days = 1;
         return new Values(currency, places.isEmpty() ? null : places.get(0), amount, days, review);
     }
+    private static boolean isCurrencyCode(String code) {
+        try {
+            Currency.getInstance(code);
+            return true;
+        } catch (IllegalArgumentException invalid) {
+            return false;
+        }
+    }
+
 }
