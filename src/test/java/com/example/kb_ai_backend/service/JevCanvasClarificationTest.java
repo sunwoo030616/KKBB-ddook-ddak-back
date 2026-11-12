@@ -69,6 +69,20 @@ class JevCanvasClarificationTest {
         verify(data).buildWidget("travel_card_charge_widget", "JPY", "일본", null, null, 4);
     }
 
+    @Test void changingCurrencyDoesNotReuseThePreviousCurrencyAmount() {
+        var widget = List.of("travel_card_charge_widget");
+        selected("여행 환전", widget);
+        selected("달러로 환전해줘", widget);
+        String sessionId = (String) service.compose("여행 환전").get("sessionId");
+        assertEquals("ready", service.compose("2만엔", sessionId).get("status"));
+        verify(data).buildWidget("travel_card_charge_widget", "JPY", null, 20000, null, null);
+
+        var response = service.compose("달러로 환전해줘", sessionId);
+
+        assertEquals("ready", response.get("status"));
+        verify(data).buildWidget("travel_card_charge_widget", "USD", null, null, null, null);
+    }
+
     @Test void unrelatedMessageWhileWaitingStartsNewSelection() {
         selected("여행 환전", List.of("travel_card_charge_widget"));
         String sessionId = (String) service.compose("여행 환전").get("sessionId");
