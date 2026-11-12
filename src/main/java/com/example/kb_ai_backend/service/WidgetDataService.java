@@ -1,7 +1,9 @@
 package com.example.kb_ai_backend.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,8 +20,12 @@ public class WidgetDataService {
 
     private final ExchangeRateService exchangeRateService;
 
-    public WidgetDataService(ExchangeRateService exchangeRateService) {
+    private final boolean demoActionsEnabled;
+
+    public WidgetDataService(ExchangeRateService exchangeRateService,
+                             @Value("${app.action.demo-enabled:false}") boolean demoActionsEnabled) {
         this.exchangeRateService = exchangeRateService;
+        this.demoActionsEnabled = demoActionsEnabled;
     }
 
     // 통화 코드 -> 표기명 (표에 없는 코드는 코드 그대로 표시)
@@ -75,7 +81,7 @@ public class WidgetDataService {
 
     public Map<String, Object> buildWidget(String widgetId, String currency, String destination,
                                            Integer requestedAmount, String clubName, Integer tripDays) {
-        return switch (widgetId) {
+        Map<String, Object> widget = switch (widgetId) {
             case "travel_card_charge_widget" -> buildTravelCardChargeWidget(currency, destination, requestedAmount);
             case "overseas_qr_payment_widget" -> buildOverseasQrPaymentWidget(destination);
             case "travel_insurance_widget" -> buildTravelInsuranceWidget(destination, tripDays);
@@ -83,6 +89,7 @@ public class WidgetDataService {
             case "expense_report_widget" -> buildExpenseReportWidget(clubName);
             default -> buildWidget(widgetId);
         };
+        return withAvailableActions(widget);
     }
 
     private Map<String, Object> buildTravelCardChargeWidget(String currency, String destination, Integer requestedAmount) {
@@ -128,7 +135,8 @@ public class WidgetDataService {
                 Map.entry("chargeButtonLabel", "뚝딱 충전하기"),
                 Map.entry("quickAmounts", List.of(100, 500, 1000)),
                 Map.entry("suggestedAmount", suggestedAmount),
-                Map.entry("estimatedKrw", estimatedKrw)
+                Map.entry("estimatedKrw", estimatedKrw),
+                Map.entry("action", action("TRAVEL_CARD_CHARGE", Map.of("amountKrw", estimatedKrw, "currency", code)))
         );
     }
 
@@ -228,8 +236,16 @@ public class WidgetDataService {
         );
     }
 
+    /**
+     * 위젯 버튼이 호출할 실행 정보. 위젯은 "무엇을 할 수 있는지"만 알려주고,
+     * 실제 실행 여부는 POST /api/actions 에서 정책 평가·추가 인증을 거쳐 결정된다.
+     */
+    private static Map<String, Object> action(String type, Map<String, Object> params) {
+        return Map.of("type", type, "endpoint", "/api/actions", "params", params);
+    }
+
     public Map<String, Object> buildWidget(String widgetId) {
-        return switch (widgetId) {
+        Map<String, Object> widget = switch (widgetId) {
 
             case "travel_card_charge_widget" -> buildTravelCardChargeWidget(null, null, null);
             case "overseas_qr_payment_widget" -> buildOverseasQrPaymentWidget(null);
@@ -262,7 +278,8 @@ public class WidgetDataService {
                             Map.ofEntries(Map.entry("cardName", "톡톡카드"), Map.entry("frozen", true))
                     )),
                     Map.entry("warningText", "분실된 카드의 모든 결제가 차단됩니다."),
-                    Map.entry("confirmMessage", "모든 카드가 안전하게 정지되었어요! 분실된 카드의 결제가 차단되었습니다.")
+                    Map.entry("confirmMessage", "모든 카드가 안전하게 정지되었어요! 분실된 카드의 결제가 차단되었습니다."),
+                    Map.entry("action", action("CARD_FREEZE_ALL", Map.of()))
             );
 
             case "atm_smart_withdrawal" -> Map.ofEntries(
@@ -280,7 +297,8 @@ public class WidgetDataService {
                             "복사한 인증번호 입력",
                             "출금할 금액 입력",
                             "현금 수령"
-                    ))
+                    )),
+                    Map.entry("action", action("SMART_WITHDRAWAL_CODE", Map.of()))
             );
 
             case "id_reissue_status_widget" -> Map.ofEntries(
@@ -298,5 +316,13 @@ public class WidgetDataService {
                     Map.entry("title", "알 수 없는 위젯: " + widgetId)
             );
         };
+        return withAvailableActions(widget);
+    }
+
+    private Map<String, Object> withAvailableActions(Map<String, Object> widget) {
+        if (demoActionsEnabled || !widget.containsKey("action")) return widget;
+        var displayWidget = new LinkedHashMap<>(widget);
+        displayWidget.remove("action");
+        return Map.copyOf(displayWidget);
     }
 }

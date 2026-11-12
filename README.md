@@ -31,25 +31,30 @@
 ```text
 사용자 자연어
   → POST /api/canvas
-  → GPT-4o-mini Function Calling
+  → jev 위젯 선택 (1회 호출)
+  → 서버 검증·명확한 여행 파라미터 추출
   → 승인 위젯 선택 및 파라미터 추출
   → 서버 데이터 빌드·환율 조회
   → CanvasResponse JSON
 ```
 
-AI는 필요한 금융 기능을 선택하고, 정확한 환율과 계산 값은 서버가 담당합니다. 생성 가능한 범위는 9개 위젯 enum으로 제한되어 있습니다.
+AI는 필요한 금융 기능을 선택하고, 정확한 환율과 계산 값은 서버가 담당합니다. 새 흐름과 입력 제한은 [jev 화면 생성](docs/JEV_CANVAS.md)을 참고하세요. 생성 가능한 범위는 9개 위젯 enum으로 제한되어 있습니다.
 
 ## 주요 기능
 
-- `gpt-4o-mini` Function Calling 기반 복합 의도 분석
+- jev 기반 위젯 선택: `/api/canvas`에서 1회 호출, GPT 추가 호출 없음
 - 최대 3개 금융 위젯 선택 및 조합
-- 여행지, ISO 4217 통화, 요청 금액, 여행 기간, 모임명 추출
+- 알려진 여행지·통화 및 명확한 외화 금액·여행 기간을 서버에서 추출 (제한된 규칙 기반)
+- 깨비는 짧은 고정 문구만 반환하며 별도 설명 생성은 보류
+- 불확실한 위젯 선택이나 충돌하는 파라미터는 확인 요청
 - `open.er-api.com` 기반 실시간 환율 조회
 - 환율 데이터 6시간 인메모리 캐시
-- OpenAI 또는 환율 API 장애 시 안전한 폴백
+- jev 장애는 명시적 오류 응답, 환율 API 장애는 기존 캐시·지원 불가 처리
 - 로컬 Vite 및 Netlify 배포 주소 CORS 허용
 
 ## API
+
+모의 금융 실행·감사 조회를 로컬에서 시연할 때는 `APP_ACTION_DEMO_ENABLED=true ./mvnw spring-boot:run`으로 시작한다.
 
 ### `POST /api/canvas`
 
@@ -97,34 +102,34 @@ AI는 필요한 금융 기능을 선택하고, 정확한 환율과 계산 값은
 
 ### 1. LLM과 금융 계산 분리
 
-`OpenAiApiService`는 사용자의 의도와 통화 코드를 추론하지만 환율 숫자를 생성하지 않습니다. `ExchangeRateService`가 외부 API에서 실제 값을 조회하고 `WidgetDataService`가 최종 위젯 데이터를 계산합니다.
+`JevCanvasService`는 jev가 고른 위젯을 검증하고 `CanvasParameters`로 명확한 통화·금액·기간을 읽습니다. AI가 환율 숫자를 생성하지 않습니다. `ExchangeRateService`가 외부 API에서 실제 값을 조회하고 `WidgetDataService`가 최종 위젯 데이터를 계산합니다.
 
 ### 2. 승인된 위젯만 생성
 
-Function Calling의 `enum`으로 허용 위젯을 제한합니다. 프론트엔드에서 구현되지 않은 임의의 컴포넌트나 코드를 실행하지 않습니다.
+고정된 9개 후보에 대한 jev 판정만 받고, 서버가 허용 목록·최대 3개·중복·검토 필요 여부를 검사합니다. 프론트엔드에서 구현되지 않은 임의의 컴포넌트나 코드를 실행하지 않습니다.
 
 ### 3. 장애 폴백
 
-빈 메시지는 LLM을 호출하지 않습니다. OpenAI 네트워크 오류, 인증 오류, 사용량 제한 또는 응답 파싱 실패가 발생하면 빈 위젯 목록을 반환합니다. 환율 API 장애 시 기존 캐시를 유지하며, 캐시도 없으면 지원 불가 상태를 반환합니다.
+빈 메시지는 AI를 호출하지 않습니다. jev 호출 실패·잘못된 응답은 502/504, 키 미설정은 503으로 반환합니다. 불확실한 선택이나 모호한 파라미터는 `status=needs_clarification`과 빈 위젯으로 확인을 요청합니다. 환율 API 장애 시 기존 캐시를 유지하며, 캐시도 없으면 지원 불가 상태를 반환합니다.
 
 ## 실행 방법
 
 ### 요구사항
 
 - Java 17+
-- OpenAI API Key
+- JEV API Key (`JEV_AI_API_KEY`)
 
 ### macOS / Linux
 
 ```bash
-export OPENAI_API_KEY="your-openai-api-key"
+export JEV_AI_API_KEY="your-jev-api-key"
 ./mvnw spring-boot:run
 ```
 
 ### Windows PowerShell
 
 ```powershell
-$env:OPENAI_API_KEY="your-openai-api-key"
+$env:JEV_AI_API_KEY="your-jev-api-key"
 ./mvnw.cmd spring-boot:run
 ```
 
@@ -134,7 +139,10 @@ $env:OPENAI_API_KEY="your-openai-api-key"
 
 | 이름 | 필수 | 설명 |
 | --- | --- | --- |
-| `OPENAI_API_KEY` | Yes | OpenAI Chat Completions API 인증 키 |
+| `JEV_AI_API_KEY` | Yes | 기본 화면 생성용 jev 인증 키 |
+| `JEV_MODEL` | No | 기본 `jev-latest` |
+| `JEV_MIN_CONFIDENCE` | No | 기본 0.6, 확률 보정이 검증된 값은 아님 |
+| `OPENAI_API_KEY` | No | 기존 GPT 비교 실험에만 필요 |
 
 
 ## 테스트
@@ -151,26 +159,36 @@ curl -X POST http://localhost:8080/api/canvas \
   -d '{"message":"지갑을 잃어버렸어. 긴급 조치 화면을 만들어줘"}'
 ```
 
+## 백엔드 확장 (KB 테크포럼)
+
+jev 위젯 선택 이후를 백엔드가 책임지도록 확장했습니다. 상세 설계와 시연 순서는 [백엔드 확장 문서](docs/BACKEND_EXTENSIONS.md)를 참고하세요.
+
+| 기능 | API |
+| --- | --- |
+| 빠진 정보만 되묻고 세션으로 이어가기 | `POST /api/canvas` (`sessionId`) |
+| 정책 엔진 + 추가 인증 + 1회 실행 | `POST /api/actions`, `POST /api/actions/{id}/confirm` |
+| 해시체인 감사 로그 검증 | `GET /api/audit/verify` |
+| 화면 구성 판단 근거 | `GET /api/canvas/{requestId}/trace` |
+| 반응 기반 위젯 순서 보정 | `POST /api/feedback`, `GET /api/feedback/scores` |
+
 ## 프로젝트 구조
 
 ```text
 src/main/java/com/example/kb_ai_backend
-├── config
-│   └── CorsConfig.java
-├── controller
-│   └── CanvasController.java
-└── service
-    ├── OpenAiApiService.java
-    ├── WidgetDataService.java
-    └── ExchangeRateService.java
+├── action        # 정책 엔진, 규칙, 안전 실행, 실행 어댑터
+├── audit         # 해시체인 감사 로그
+├── config        # 빈 등록, CORS, requestId 필터
+├── controller    # canvas, actions/audit, feedback, 선택 비교 실험
+├── feedback      # 위젯 반응 점수와 순서 보정
+├── service       # jev 화면 구성, 파라미터 추출, 위젯 데이터, 환율
+├── session       # 대화 세션, 슬롯, 필수 슬롯 정의
+└── trace         # 판단 근거 트레이스
 ```
 
 ## 향후 확장
 
-- KB 계좌·카드 API 어댑터
-- OAuth 및 본인인증
+- 세션·멱등키 Redis, 감사 로그·피드백 DB 영속화
+- 628개 기능 카탈로그 기반 필수 슬롯·실행 정의
+- KB 계좌·카드 API 어댑터 (`ActionExecutor` 구현체 교체)
+- OAuth 및 본인인증 (`X-User-Id` 대체)
 - 정부24·경찰청 공공 API
-- 결제·ATM·보험 API
-- 감사 로그, 개인정보 암호화, 운영 모니터링
-
-> 핵심 생성 기술은 이미 구현되어 있으며, 이후 확장은 인증·보안·외부 금융 API를 단계적으로 연결하는 엔지니어링 과제입니다.
