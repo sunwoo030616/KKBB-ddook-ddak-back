@@ -8,11 +8,14 @@ import com.example.kb_ai_backend.action.rules.VelocityRule;
 import com.example.kb_ai_backend.audit.HashChainAuditLog;
 import com.example.kb_ai_backend.feedback.FeedbackRanker;
 import com.example.kb_ai_backend.session.InMemorySessionStore;
+import com.example.kb_ai_backend.session.RedisSessionStore;
 import com.example.kb_ai_backend.session.SessionStore;
 import com.example.kb_ai_backend.trace.TraceStore;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.time.Clock;
 import java.time.Duration;
@@ -33,10 +36,14 @@ public class BackendConfig {
     }
 
     @Bean
-    public SessionStore sessionStore(Clock clock,
+    public SessionStore sessionStore(Clock clock, StringRedisTemplate redis, ObjectMapper mapper,
+                                     @Value("${app.session.redis-enabled:false}") boolean redisEnabled,
+                                     @Value("${app.session.redis-key-prefix:kkbb:session:}") String redisKeyPrefix,
                                      @Value("${app.session.ttl-minutes:30}") long ttlMinutes,
                                      @Value("${app.session.max-sessions:10000}") int maxSessions) {
-        return new InMemorySessionStore(clock, Duration.ofMinutes(ttlMinutes), maxSessions);
+        Duration ttl = Duration.ofMinutes(ttlMinutes);
+        return redisEnabled ? new RedisSessionStore(redis, mapper, clock, ttl, redisKeyPrefix)
+                : new InMemorySessionStore(clock, ttl, maxSessions);
     }
 
     @Bean
