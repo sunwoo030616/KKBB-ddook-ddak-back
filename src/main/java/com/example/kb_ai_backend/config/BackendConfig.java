@@ -8,6 +8,7 @@ import com.example.kb_ai_backend.action.rules.VelocityRule;
 import com.example.kb_ai_backend.audit.HashChainAuditLog;
 import com.example.kb_ai_backend.session.InMemorySessionStore;
 import com.example.kb_ai_backend.session.SessionStore;
+import com.example.kb_ai_backend.trace.TraceStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,6 +35,13 @@ public class BackendConfig {
                                      @Value("${app.session.ttl-minutes:30}") long ttlMinutes,
                                      @Value("${app.session.max-sessions:10000}") int maxSessions) {
         return new InMemorySessionStore(clock, Duration.ofMinutes(ttlMinutes), maxSessions);
+    }
+
+    @Bean
+    public TraceStore traceStore(Clock clock,
+                                 @Value("${app.trace.retention-minutes:60}") long retentionMinutes,
+                                 @Value("${app.trace.max-traces:500}") int maxTraces) {
+        return new TraceStore(clock, Duration.ofMinutes(retentionMinutes), maxTraces);
     }
 
     @Bean

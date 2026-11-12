@@ -1,6 +1,8 @@
 package com.example.kb_ai_backend.controller;
 
 import com.example.kb_ai_backend.service.JevCanvasService;
+import com.example.kb_ai_backend.trace.DecisionTrace;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +29,14 @@ public class CanvasController {
         return request.sessionId() == null
                 ? canvas.compose(request.message())
                 : canvas.compose(request.message(), request.sessionId());
+    }
+
+    /** 화면이 왜 이렇게 구성됐는지: 위젯별 판정·신뢰도, 슬롯, 되묻기 여부, 단계별 지연 */
+    @GetMapping("/{requestId}/trace")
+    public Map<String, Object> trace(@PathVariable String requestId) {
+        return canvas.trace(requestId)
+                .map(DecisionTrace::toMap)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "트레이스를 찾을 수 없습니다. (보관 기간 1시간)"));
     }
 
     @ExceptionHandler(ResponseStatusException.class)
