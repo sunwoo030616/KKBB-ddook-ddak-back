@@ -20,8 +20,8 @@ public class RequestTimingFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        return !java.util.Set.of("/api/canvas", "/api/experiments/widget-selection")
-                .contains(request.getServletPath());
+        // 화면 생성뿐 아니라 실행·피드백 API도 같은 requestId로 추적한다
+        return !request.getServletPath().startsWith("/api/");
     }
 
     @Override

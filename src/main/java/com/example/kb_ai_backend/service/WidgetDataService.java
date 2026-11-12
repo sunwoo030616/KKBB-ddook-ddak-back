@@ -128,7 +128,8 @@ public class WidgetDataService {
                 Map.entry("chargeButtonLabel", "뚝딱 충전하기"),
                 Map.entry("quickAmounts", List.of(100, 500, 1000)),
                 Map.entry("suggestedAmount", suggestedAmount),
-                Map.entry("estimatedKrw", estimatedKrw)
+                Map.entry("estimatedKrw", estimatedKrw),
+                Map.entry("action", action("TRAVEL_CARD_CHARGE", Map.of("amountKrw", estimatedKrw, "currency", code)))
         );
     }
 
@@ -228,6 +229,14 @@ public class WidgetDataService {
         );
     }
 
+    /**
+     * 위젯 버튼이 호출할 실행 정보. 위젯은 "무엇을 할 수 있는지"만 알려주고,
+     * 실제 실행 여부는 POST /api/actions 에서 정책 평가·추가 인증을 거쳐 결정된다.
+     */
+    private static Map<String, Object> action(String type, Map<String, Object> params) {
+        return Map.of("type", type, "endpoint", "/api/actions", "params", params);
+    }
+
     public Map<String, Object> buildWidget(String widgetId) {
         return switch (widgetId) {
 
@@ -262,7 +271,8 @@ public class WidgetDataService {
                             Map.ofEntries(Map.entry("cardName", "톡톡카드"), Map.entry("frozen", true))
                     )),
                     Map.entry("warningText", "분실된 카드의 모든 결제가 차단됩니다."),
-                    Map.entry("confirmMessage", "모든 카드가 안전하게 정지되었어요! 분실된 카드의 결제가 차단되었습니다.")
+                    Map.entry("confirmMessage", "모든 카드가 안전하게 정지되었어요! 분실된 카드의 결제가 차단되었습니다."),
+                    Map.entry("action", action("CARD_FREEZE_ALL", Map.of()))
             );
 
             case "atm_smart_withdrawal" -> Map.ofEntries(
@@ -280,7 +290,8 @@ public class WidgetDataService {
                             "복사한 인증번호 입력",
                             "출금할 금액 입력",
                             "현금 수령"
-                    ))
+                    )),
+                    Map.entry("action", action("SMART_WITHDRAWAL_CODE", Map.of()))
             );
 
             case "id_reissue_status_widget" -> Map.ofEntries(
