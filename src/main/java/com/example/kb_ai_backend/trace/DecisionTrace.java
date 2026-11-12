@@ -25,7 +25,6 @@ public final class DecisionTrace {
     private final Map<String, Object> slots = new LinkedHashMap<>();
     private final Map<String, Double> rankingScores = new LinkedHashMap<>();
     private final Map<String, EnumSet<FeedbackEvent>> feedback = new HashMap<>();
-    private String sessionId;
     private boolean resumedFromSession;
     private String provider;
     private String model;
@@ -52,7 +51,7 @@ public final class DecisionTrace {
         stages.add(new Stage(name, (System.nanoTime() - startNanos) / 1_000_000, note));
     }
 
-    public void session(String id, boolean resumed) { this.sessionId = id; this.resumedFromSession = resumed; }
+    public void markResumedFromSession() { this.resumedFromSession = true; }
 
     public void selection(String provider, String model, boolean needsReview, List<String> selected, List<Candidate> candidates) {
         this.provider = provider;
@@ -103,7 +102,6 @@ public final class DecisionTrace {
         map.put("status", status);
         if (error != null) map.put("error", error);
         map.put("totalMs", totalMs);
-        map.put("sessionId", sessionId);
         map.put("resumedFromSession", resumedFromSession);
         if (provider != null) {
             map.put("selection", Map.of(

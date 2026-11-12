@@ -129,6 +129,8 @@ jev 기반 위젯 선택(PR #8) 위에, 화면이 만들어진 **이후**를 백
 
 ## 시연 순서 (curl)
 
+모의 실행·감사 조회를 시연하려면 로컬에서 `APP_ACTION_DEMO_ENABLED=true ./mvnw spring-boot:run`으로 서버를 시작한다. 기본 설정에서는 해당 API와 위젯의 실행 정보가 비활성화된다.
+
 ```bash
 # 1) 되묻기
 curl -s localhost:8080/api/canvas -H 'Content-Type: application/json' \

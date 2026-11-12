@@ -40,6 +40,7 @@ class JevCanvasTraceTest {
         var trace = service.trace((String) response.get("requestId")).orElseThrow().toMap();
 
         assertEquals("ready", trace.get("status"));
+        assertFalse(trace.containsKey("sessionId"));
         assertEquals(List.of("travel_insurance_widget"), trace.get("renderedWidgets"));
         var selection = (Map<String, Object>) trace.get("selection");
         assertEquals(2, ((List<?>) selection.get("candidates")).size());

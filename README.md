@@ -54,6 +54,8 @@ AI는 필요한 금융 기능을 선택하고, 정확한 환율과 계산 값은
 
 ## API
 
+모의 금융 실행·감사 조회를 로컬에서 시연할 때는 `APP_ACTION_DEMO_ENABLED=true ./mvnw spring-boot:run`으로 시작한다.
+
 ### `POST /api/canvas`
 
 요청:

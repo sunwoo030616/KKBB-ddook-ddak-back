@@ -5,6 +5,7 @@ import com.example.kb_ai_backend.audit.AuditEntry;
 import com.example.kb_ai_backend.audit.AuditVerification;
 import com.example.kb_ai_backend.audit.HashChainAuditLog;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import java.util.Map;
  * 사용자 식별은 시연용으로 X-User-Id 헤더를 쓰고, 운영에서는 인증 토큰의 사용자로 대체한다.
  */
 @RestController
+@ConditionalOnProperty(name = "app.action.demo-enabled", havingValue = "true")
 @RequestMapping("/api")
 public class ActionController {
 

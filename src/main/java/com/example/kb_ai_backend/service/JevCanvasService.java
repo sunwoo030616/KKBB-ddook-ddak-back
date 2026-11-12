@@ -95,7 +95,6 @@ public class JevCanvasService {
         ConversationSession session = sessions.find(sessionId).orElseGet(sessions::create);
         boolean continuing = session.id().equals(sessionId);
         trace.stage("session", started, continuing ? "기존 세션 이어감" : "새 세션");
-        trace.session(session.id(), false);
 
         // 직전 응답에서 되물은 정보에 답한 경우: 선택을 다시 하지 않고 보류된 위젯을 마저 그린다
         if (session.awaitingClarification()) {
@@ -134,7 +133,7 @@ public class JevCanvasService {
             return null;
         }
         trace.stage("resume", started, "되묻기 응답으로 판단, 위젯 선택 생략");
-        trace.session(session.id(), true);
+        trace.markResumedFromSession();
         return render(session.pendingWidgets(), session.slots().mergedWith(answer), session, "알려주신 정보로 마저 채웠어요.", trace);
     }
 
