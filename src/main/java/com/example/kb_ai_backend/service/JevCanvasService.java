@@ -162,19 +162,19 @@ public class JevCanvasService {
         var widgets = new ArrayList<Map<String, Object>>();
         for (String id : ready) {
             widgets.add(data.buildWidget(id, slots.currency(), slots.destination(), slots.amount(), null, slots.tripDays()));
-            ranker.record(id, FeedbackEvent.SHOWN);
         }
 
         var missing = SlotRequirements.missingFor(blocked, slots);
         trace.missingSlots(missing);
         trace.stage("build", started, ready.size() + "개 위젯 구성");
-        if (missing.isEmpty()) {
-            sessions.save(session.withSlots(slots).resolved());
-            return response(readyGreeting, "ready", widgets, session.id());
+        ConversationSession updated = session.withSlots(slots);
+        if (!sessions.save(missing.isEmpty() ? updated.resolved() : updated.awaiting(blocked, missing))) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "대화가 다른 요청에서 갱신됐거나 만료됐어요. 다시 보내 주세요.");
         }
+        ready.forEach(id -> ranker.record(id, FeedbackEvent.SHOWN));
+        if (missing.isEmpty()) return response(readyGreeting, "ready", widgets, session.id());
 
         widgets.add(clarificationWidget(blocked, missing));
-        sessions.save(session.withSlots(slots).awaiting(blocked, missing));
         String question = SlotRequirements.guide(missing.get(0)).question();
         String greeting = ready.isEmpty() ? question : "준비된 기능부터 보여드릴게요. " + question;
         return response(greeting, "needs_clarification", widgets, session.id());

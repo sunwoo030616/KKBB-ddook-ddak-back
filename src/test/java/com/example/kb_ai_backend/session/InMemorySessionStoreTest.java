@@ -26,7 +26,7 @@ class InMemorySessionStoreTest {
         var session = store.create();
 
         clock.advance(Duration.ofMinutes(20));
-        store.save(session.withSlots(new TravelSlots("JPY", "일본", null, null)));
+        assertTrue(store.save(session.withSlots(new TravelSlots("JPY", "일본", null, null))));
         clock.advance(Duration.ofMinutes(20));
         assertEquals("JPY", store.find(session.id()).orElseThrow().slots().currency());
 
@@ -47,6 +47,36 @@ class InMemorySessionStoreTest {
         assertTrue(store.find(first.id()).isEmpty());
         assertTrue(store.find(second.id()).isPresent());
         assertTrue(store.find(third.id()).isPresent());
+    }
+
+    @Test void concurrentRepliesCannotOverwriteANewerRevision() {
+        var store = new InMemorySessionStore(new MovableClock(), Duration.ofMinutes(30), 100);
+        var first = store.create();
+        var slowReply = first.withSlots(new TravelSlots("JPY", "일본", null, null));
+        var fastReply = first.withSlots(new TravelSlots("USD", "미국", null, null));
+
+        assertTrue(store.save(fastReply));
+        assertFalse(store.save(slowReply));
+        assertEquals("USD", store.find(first.id()).orElseThrow().slots().currency());
+    }
+
+    @Test void slowReplyCannotRecreateAnExpiredSession() {
+        var clock = new MovableClock();
+        var store = new InMemorySessionStore(clock, Duration.ofMinutes(30), 2);
+        var session = store.create();
+        clock.advance(Duration.ofMinutes(30));
+
+        assertFalse(store.save(session));
+        assertTrue(store.find(session.id()).isEmpty());
+    }
+
+    @Test void newlyCreatedSessionSurvivesEvictionEvenAtTheSameClockTick() {
+        var store = new InMemorySessionStore(new MovableClock(), Duration.ofMinutes(30), 1);
+        var first = store.create();
+        var second = store.create();
+
+        assertTrue(store.find(first.id()).isEmpty());
+        assertTrue(store.find(second.id()).isPresent());
     }
 
     @Test void unknownOrBlankIdReturnsEmpty() {
