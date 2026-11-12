@@ -28,6 +28,7 @@ public class PresentationScenarios {
             "상하이로 3박 4일 여행 가는데 준비해줘", OVERSEAS_TRAVEL,
             "테니스 동아리 총무야. 이번 달 회비 수납 현황이랑 지출 리포트, 카드 안전 설정 보여줘", CLUB_DUES,
             "여행 환전이랑 보험 알려줘", List.of("travel_card_charge_widget", "travel_insurance_widget"),
+            "여행 환전과 QR 결제 준비해줘", List.of("travel_card_charge_widget", "overseas_qr_payment_widget"),
             "분실 카드 정지해줘", List.of("card_freeze_all"));
 
     public WidgetSelectionExperimentService.Result select(String message) {
