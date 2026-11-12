@@ -157,26 +157,36 @@ curl -X POST http://localhost:8080/api/canvas \
   -d '{"message":"지갑을 잃어버렸어. 긴급 조치 화면을 만들어줘"}'
 ```
 
+## 백엔드 확장 (KB 테크포럼)
+
+jev 위젯 선택 이후를 백엔드가 책임지도록 확장했습니다. 상세 설계와 시연 순서는 [백엔드 확장 문서](docs/BACKEND_EXTENSIONS.md)를 참고하세요.
+
+| 기능 | API |
+| --- | --- |
+| 빠진 정보만 되묻고 세션으로 이어가기 | `POST /api/canvas` (`sessionId`) |
+| 정책 엔진 + 추가 인증 + 1회 실행 | `POST /api/actions`, `POST /api/actions/{id}/confirm` |
+| 해시체인 감사 로그 검증 | `GET /api/audit/verify` |
+| 화면 구성 판단 근거 | `GET /api/canvas/{requestId}/trace` |
+| 반응 기반 위젯 순서 보정 | `POST /api/feedback`, `GET /api/feedback/scores` |
+
 ## 프로젝트 구조
 
 ```text
 src/main/java/com/example/kb_ai_backend
-├── config
-│   └── CorsConfig.java
-├── controller
-│   └── CanvasController.java
-└── service
-    ├── OpenAiApiService.java
-    ├── WidgetDataService.java
-    └── ExchangeRateService.java
+├── action        # 정책 엔진, 규칙, 안전 실행, 실행 어댑터
+├── audit         # 해시체인 감사 로그
+├── config        # 빈 등록, CORS, requestId 필터
+├── controller    # canvas, actions/audit, feedback, 선택 비교 실험
+├── feedback      # 위젯 반응 점수와 순서 보정
+├── service       # jev 화면 구성, 파라미터 추출, 위젯 데이터, 환율
+├── session       # 대화 세션, 슬롯, 필수 슬롯 정의
+└── trace         # 판단 근거 트레이스
 ```
 
 ## 향후 확장
 
-- KB 계좌·카드 API 어댑터
-- OAuth 및 본인인증
+- 세션·멱등키 Redis, 감사 로그·피드백 DB 영속화
+- 628개 기능 카탈로그 기반 필수 슬롯·실행 정의
+- KB 계좌·카드 API 어댑터 (`ActionExecutor` 구현체 교체)
+- OAuth 및 본인인증 (`X-User-Id` 대체)
 - 정부24·경찰청 공공 API
-- 결제·ATM·보험 API
-- 감사 로그, 개인정보 암호화, 운영 모니터링
-
-> 핵심 생성 기술은 이미 구현되어 있으며, 이후 확장은 인증·보안·외부 금융 API를 단계적으로 연결하는 엔지니어링 과제입니다.
