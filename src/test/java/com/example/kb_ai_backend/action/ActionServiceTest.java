@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import java.time.*;
 import java.util.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -115,9 +118,48 @@ class ActionServiceTest {
         assertNotEquals(first.actionId(), other.actionId());
     }
 
+    @Test void sameKeyWithDifferentAmountIsRejected() {
+        service.prepare("u1", ActionType.TRAVEL_CARD_CHARGE, Map.of("amountKrw", 30_000), "charge");
+        var error = assertThrows(ActionException.class,
+                () -> service.prepare("u1", ActionType.TRAVEL_CARD_CHARGE, Map.of("amountKrw", 50_000), "charge"));
+        assertEquals(ActionException.Code.IDEMPOTENCY_CONFLICT, error.code());
+    }
+
+    @Test void concurrentPrepareRequestsWithTheSameKeyCanOnlyExecuteOnce() throws Exception {
+        var start = new CountDownLatch(1);
+        var pool = Executors.newFixedThreadPool(8);
+        try {
+            var requests = new ArrayList<java.util.concurrent.Future<ActionView>>();
+            for (int i = 0; i < 8; i++) {
+                requests.add(pool.submit(() -> {
+                    start.await();
+                    return service.prepare("u1", ActionType.CARD_FREEZE_ALL, Map.of(), "freeze");
+                }));
+            }
+            start.countDown();
+            var ids = new HashSet<String>();
+            for (var request : requests) {
+                var action = request.get(5, TimeUnit.SECONDS);
+                ids.add(action.actionId());
+                service.confirm("u1", action.actionId(), null);
+            }
+            assertEquals(1, ids.size());
+            assertEquals(1, executions.get());
+        } finally {
+            pool.shutdownNow();
+        }
+    }
+
+    @Test void chargeAmountCannotOverflowThePolicyInput() {
+        var amount = new java.math.BigInteger("18446744073709551617");
+        var error = assertThrows(ActionException.class,
+                () -> service.prepare("u1", ActionType.TRAVEL_CARD_CHARGE, Map.of("amountKrw", amount), null));
+        assertEquals(ActionException.Code.INVALID_REQUEST, error.code());
+    }
+
     @Test void expiredActionIsRejected() {
         var prepared = service.prepare("u1", ActionType.CARD_FREEZE_ALL, Map.of(), null);
-        clock.now = clock.now.plus(Duration.ofMinutes(6));
+        clock.now = clock.now.plus(Duration.ofMinutes(5));
         var error = assertThrows(ActionException.class, () -> service.confirm("u1", prepared.actionId(), null));
         assertEquals(ActionException.Code.EXPIRED, error.code());
         assertEquals(0, executions.get());

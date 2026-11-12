@@ -2,6 +2,7 @@ package com.example.kb_ai_backend.action;
 
 import com.example.kb_ai_backend.audit.HashChainAuditLog;
 
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -34,7 +35,9 @@ public class ActionService {
 
     private final SecureRandom random = new SecureRandom();
     private final ConcurrentHashMap<String, PendingAction> actions = new ConcurrentHashMap<>();
-    private final ConcurrentHashMap<String, String> idempotencyKeys = new ConcurrentHashMap<>();
+    private final Map<IdempotencyScope, String> idempotencyKeys = new HashMap<>();
+
+    private record IdempotencyScope(String userId, String key) {}
     private final ConcurrentHashMap<String, Deque<Instant>> attempts = new ConcurrentHashMap<>();
 
     public ActionService(PolicyEngine policy, ActionExecutor executor, OtpSender otpSender, HashChainAuditLog audit,
@@ -49,18 +52,26 @@ public class ActionService {
         this.maxOtpAttempts = maxOtpAttempts;
     }
 
-    public ActionView prepare(String userId, ActionType type, Map<String, Object> params, String idempotencyKey) {
+    public synchronized ActionView prepare(String userId, ActionType type, Map<String, Object> params, String idempotencyKey) {
         if (userId == null || userId.isBlank()) throw new ActionException(ActionException.Code.INVALID_REQUEST, "사용자 정보가 없습니다.");
         if (type == null) throw new ActionException(ActionException.Code.INVALID_REQUEST, "허용되지 않은 액션입니다.");
-        Map<String, Object> safeParams = params == null ? Map.of() : Map.copyOf(params);
-
-        if (idempotencyKey != null && !idempotencyKey.isBlank()) {
-            String existingId = idempotencyKeys.get(userId + ":" + idempotencyKey);
+        Map<String, Object> safeParams;
+        try {
+            safeParams = params == null ? Map.of() : Map.copyOf(params);
+        } catch (NullPointerException invalid) {
+            throw new ActionException(ActionException.Code.INVALID_REQUEST, "파라미터에 빈 값을 보낼 수 없습니다.");
+        }
+        Instant now = clock.instant();
+        purgeOld(now);
+        IdempotencyScope scope = idempotencyKey == null || idempotencyKey.isBlank()
+                ? null : new IdempotencyScope(userId, idempotencyKey);
+        if (scope != null) {
+            String existingId = idempotencyKeys.get(scope);
             if (existingId != null) {
                 PendingAction existing = actions.get(existingId);
                 if (existing != null) {
-                    if (existing.type != type) {
-                        throw new ActionException(ActionException.Code.IDEMPOTENCY_CONFLICT, "같은 요청 키로 다른 액션을 요청했습니다.");
+                    if (existing.type != type || !existing.params.equals(safeParams)) {
+                        throw new ActionException(ActionException.Code.IDEMPOTENCY_CONFLICT, "같은 요청 키로 다른 액션 또는 파라미터를 보냈습니다.");
                     }
                     return existing.view();
                 }
@@ -68,8 +79,6 @@ public class ActionService {
         }
 
         Long amountKrw = amountFor(type, safeParams);
-        Instant now = clock.instant();
-        purgeOld(now);
         int recent = recordAttempt(userId, type, now);
         PolicyDecision decision = policy.evaluate(new ActionContext(userId, type, amountKrw, now, recent));
 
@@ -84,17 +93,14 @@ public class ActionService {
             }
             case ALLOW -> action.status = ActionStatus.AWAITING_CONFIRM;
         }
-        actions.put(action.id, action);
-        if (idempotencyKey != null && !idempotencyKey.isBlank()) {
-            idempotencyKeys.putIfAbsent(userId + ":" + idempotencyKey, action.id);
-        }
-
         var details = new LinkedHashMap<String, Object>();
         details.put("type", type.name());
         details.put("decision", decision.outcome().name());
         details.put("rules", String.join(",", decision.findings().stream().map(PolicyFinding::ruleId).toList()));
         if (amountKrw != null) details.put("amountKrw", amountKrw);
         audit.append(decision.outcome() == PolicyOutcome.DENY ? "ACTION_DENIED" : "ACTION_PREPARED", userId, action.id, details);
+        actions.put(action.id, action);
+        if (scope != null) idempotencyKeys.put(scope, action.id);
         return action.view();
     }
 
@@ -109,7 +115,7 @@ public class ActionService {
                 case FAILED -> throw new ActionException(ActionException.Code.EXECUTION_FAILED, "실행에 실패한 요청입니다. 다시 요청해주세요.");
                 default -> { }
             }
-            if (clock.instant().isAfter(action.expiresAt)) {
+            if (!clock.instant().isBefore(action.expiresAt)) {
                 action.status = ActionStatus.EXPIRED;
                 audit.append("ACTION_EXPIRED", userId, action.id, Map.of("type", action.type.name()));
                 throw new ActionException(ActionException.Code.EXPIRED, "확인 시간이 지났습니다. 다시 요청해주세요.");
@@ -166,7 +172,13 @@ public class ActionService {
     private static Long amountFor(ActionType type, Map<String, Object> params) {
         if (type != ActionType.TRAVEL_CARD_CHARGE) return null;
         Object raw = params.get("amountKrw");
-        if (raw instanceof Number n && n.doubleValue() == Math.floor(n.doubleValue())) return n.longValue();
+        if (raw instanceof Number n) {
+            try {
+                return new BigDecimal(n.toString()).longValueExact();
+            } catch (ArithmeticException | NumberFormatException invalid) {
+                // 소수, 범위를 벗어난 금액, 비유한 수는 요청 오류로 처리한다.
+            }
+        }
         throw new ActionException(ActionException.Code.INVALID_REQUEST, "충전 금액(amountKrw)을 원 단위 정수로 보내주세요.");
     }
 
@@ -219,7 +231,7 @@ public class ActionService {
             this.expiresAt = expiresAt;
         }
 
-        ActionView view() {
+        synchronized ActionView view() {
             return new ActionView(id, type, type.label(), status, decision.outcome(), decision.reasons(),
                     status == ActionStatus.AWAITING_OTP, expiresAt, result);
         }
