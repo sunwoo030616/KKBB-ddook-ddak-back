@@ -39,6 +39,7 @@ public class JevCanvasService {
     private final TraceStore traces;
     private final FeedbackRanker ranker;
     private final Clock clock;
+    private final Optional<PresentationScenarios> presentation;
 
     public JevCanvasService(WidgetSelectionExperimentService selector, CanvasParameters parameters, WidgetDataService data) {
         this(selector, parameters, data, new InMemorySessionStore(Clock.systemUTC(), Duration.ofMinutes(30), 10_000));
@@ -55,12 +56,19 @@ public class JevCanvasService {
                 new FeedbackRanker(WidgetSelectionExperimentService.WIDGETS.keySet(), 20), clock);
     }
 
-    @Autowired
     public JevCanvasService(WidgetSelectionExperimentService selector, CanvasParameters parameters,
                             WidgetDataService data, SessionStore sessions, TraceStore traces,
                             FeedbackRanker ranker, Clock clock) {
+        this(selector, parameters, data, sessions, traces, ranker, clock, Optional.empty());
+    }
+
+    @Autowired
+    public JevCanvasService(WidgetSelectionExperimentService selector, CanvasParameters parameters,
+                            WidgetDataService data, SessionStore sessions, TraceStore traces,
+                            FeedbackRanker ranker, Clock clock, Optional<PresentationScenarios> presentation) {
         this.selector = selector; this.parameters = parameters; this.data = data;
         this.sessions = sessions; this.traces = traces; this.ranker = ranker; this.clock = clock;
+        this.presentation = presentation;
     }
 
     public Optional<DecisionTrace> trace(String requestId) {
@@ -77,6 +85,8 @@ public class JevCanvasService {
         try {
             Map<String, Object> body = compose(message, sessionId, trace);
             body.put("requestId", requestId);
+            body.put("resumedFromSession", trace.resumedFromSession());
+            if (presentation.isPresent()) body.put("demo", true);
             trace.finish((String) body.get("status"), renderedTypes(body));
             return body;
         } catch (RuntimeException e) {
@@ -103,8 +113,8 @@ public class JevCanvasService {
         }
 
         started = System.nanoTime();
-        var selection = selector.select(message, "jev");
-        trace.stage("selection", started, "jev 응답 " + selection.durationMs() + "ms");
+        var selection = presentation.map(demo -> demo.select(message)).orElseGet(() -> selector.select(message, "jev"));
+        trace.stage("selection", started, selection.provider() + " 응답 " + selection.durationMs() + "ms");
         trace.selection(selection.provider(), selection.model(), selection.needsReview(), selection.widgets(), candidates(selection));
         var ids = selection.widgets();
         if (ids == null || ids.size() > 3 || new HashSet<>(ids).size() != ids.size()
