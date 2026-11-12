@@ -69,6 +69,24 @@ class JevCanvasClarificationTest {
         verify(data).buildWidget("travel_card_charge_widget", "JPY", "일본", null, null, 4);
     }
 
+    @Test void missingInputsCanBeAnsweredInSeparateTurnsWithoutReselectingWidgets() {
+        String message = "여행 환전과 QR 결제 준비해줘";
+        selected(message, List.of("travel_card_charge_widget", "overseas_qr_payment_widget"));
+        var initial = service.compose(message);
+        String sessionId = (String) initial.get("sessionId");
+        assertEquals(List.of("clarification_widget"), types(initial));
+
+        var firstAnswer = service.compose("엔화", sessionId);
+        assertEquals("needs_clarification", firstAnswer.get("status"));
+        assertEquals(List.of("travel_card_charge_widget", "clarification_widget"), types(firstAnswer));
+
+        var secondAnswer = service.compose("도쿄", sessionId);
+        assertEquals("ready", secondAnswer.get("status"));
+        assertEquals(List.of("overseas_qr_payment_widget"), types(secondAnswer));
+        verify(data).buildWidget("overseas_qr_payment_widget", "JPY", "도쿄", null, null, null);
+        verify(selector, times(1)).select(anyString(), eq("jev"));
+    }
+
     @Test void changingCurrencyDoesNotReuseThePreviousCurrencyAmount() {
         var widget = List.of("travel_card_charge_widget");
         selected("여행 환전", widget);

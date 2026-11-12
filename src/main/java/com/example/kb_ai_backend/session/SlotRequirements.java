@@ -15,7 +15,8 @@ public final class SlotRequirements {
     public record SlotGuide(String slot, String label, String question, List<String> examples) {}
 
     private static final Map<String, List<String>> REQUIRED = Map.of(
-            "travel_card_charge_widget", List.of("currency"));
+            "travel_card_charge_widget", List.of("currency"),
+            "overseas_qr_payment_widget", List.of("destination"));
 
     private static final Map<String, SlotGuide> GUIDES = Map.of(
             "currency", new SlotGuide("currency", "통화", "어떤 통화로 환전할까요?",

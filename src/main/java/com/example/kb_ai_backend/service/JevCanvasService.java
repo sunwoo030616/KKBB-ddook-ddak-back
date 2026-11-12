@@ -137,14 +137,13 @@ public class JevCanvasService {
         long started = System.nanoTime();
         var values = parameters.extract(message);
         if (values.needsReview()) return null;
-        var answer = toSlots(values);
-        if (!parameters.isSlotAnswer(message)
-                || SlotRequirements.missingFor(session.pendingWidgets(), answer).size() >= session.missingSlots().size()) {
-            return null;
-        }
+        if (!parameters.isSlotAnswer(message)) return null;
+        var merged = session.slots().mergedWith(toSlots(values));
+        var stillMissing = SlotRequirements.missingFor(session.pendingWidgets(), merged);
+        if (stillMissing.containsAll(session.missingSlots())) return null;
         trace.stage("resume", started, "되묻기 응답으로 판단, 위젯 선택 생략");
         trace.markResumedFromSession();
-        return render(session.pendingWidgets(), session.slots().mergedWith(answer), session, "알려주신 정보로 마저 채웠어요.", trace);
+        return render(session.pendingWidgets(), merged, session, "알려주신 정보로 마저 채웠어요.", trace);
     }
 
     private Map<String, Object> render(List<String> ids, TravelSlots slots, ConversationSession session,
