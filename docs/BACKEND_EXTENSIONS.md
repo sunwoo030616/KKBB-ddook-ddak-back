@@ -121,7 +121,8 @@ jev 기반 위젯 선택(PR #8) 위에, 화면이 만들어진 **이후**를 백
 
 ## 4. 피드백 랭킹
 
-- `POST /api/feedback {widgetType, event: CLICKED|COMPLETED|DISMISSED}`, `GET /api/feedback/scores`
+- `POST /api/feedback {requestId, widgetType, event: CLICKED|COMPLETED|DISMISSED}`, `GET /api/feedback/scores`
+- 해당 화면에서 표시한 위젯만 접수하고 같은 요청·위젯·이벤트는 한 번만 집계한다. 트레이스가 만료되면 404를 반환한다.
 - 노출(SHOWN)은 화면을 만들 때 서버가 자동으로 기록한다.
 - 점수 = (min(클릭 + 0.5×완료, 노출) + 1) / (노출 + 닫기 + 2). 노출 20회 미만이면 중립값 0.5로 원래 순서를 유지한다.
 - **선택된 위젯의 순서만** 바꾼다. 어떤 위젯을 띄울지는 jev와 서버 검증이 정하고, 학습 결과가 그 범위를 넓히지 않는다.

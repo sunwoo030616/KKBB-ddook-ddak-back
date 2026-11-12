@@ -1,5 +1,7 @@
 package com.example.kb_ai_backend.trace;
 
+import com.example.kb_ai_backend.feedback.FeedbackEvent;
+
 import java.time.Instant;
 import java.util.*;
 
@@ -22,6 +24,7 @@ public final class DecisionTrace {
     private final List<Candidate> candidates = new ArrayList<>();
     private final Map<String, Object> slots = new LinkedHashMap<>();
     private final Map<String, Double> rankingScores = new LinkedHashMap<>();
+    private final Map<String, EnumSet<FeedbackEvent>> feedback = new HashMap<>();
     private String sessionId;
     private boolean resumedFromSession;
     private String provider;
@@ -76,6 +79,14 @@ public final class DecisionTrace {
         this.status = "error";
         this.error = e.getClass().getSimpleName() + (e.getMessage() == null ? "" : ": " + e.getMessage());
         this.totalMs = (System.nanoTime() - startedNanos) / 1_000_000;
+    }
+
+    public boolean containsRenderedWidget(String widget) {
+        return rendered.contains(widget);
+    }
+
+    public synchronized boolean markFeedback(String widget, FeedbackEvent event) {
+        return feedback.computeIfAbsent(widget, ignored -> EnumSet.noneOf(FeedbackEvent.class)).add(event);
     }
 
     public List<Stage> stages() { return List.copyOf(stages); }

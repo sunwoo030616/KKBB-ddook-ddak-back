@@ -36,9 +36,13 @@ public class FeedbackRanker {
         this.minExposures = minExposures;
     }
 
+    public boolean supports(String widget) {
+        return widget != null && knownWidgets.contains(widget);
+    }
+
     /** 허용 목록에 없는 위젯 이름은 받지 않는다 (임의 키로 메모리가 늘어나는 것 방지) */
     public void record(String widget, FeedbackEvent event) {
-        if (widget == null || !knownWidgets.contains(widget)) throw new IllegalArgumentException("알 수 없는 위젯입니다: " + widget);
+        if (!supports(widget)) throw new IllegalArgumentException("알 수 없는 위젯입니다: " + widget);
         Counter c = counters.computeIfAbsent(widget, k -> new Counter());
         switch (event) {
             case SHOWN -> c.shown.increment();
