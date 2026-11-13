@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.Clock;
+import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -53,21 +55,34 @@ public class WidgetSelectionExperimentService {
     private final String openaiKey;
     private final String jevModel;
     private final double minConfidence;
+    private final Map<String, AiProviderCircuit> circuits;
 
     @Autowired
     public WidgetSelectionExperimentService(ObjectMapper mapper,
             @Value("${JEV_AI_API_KEY:}") String jevKey,
             @Value("${OPENAI_API_KEY:}") String openaiKey,
             @Value("${JEV_MODEL:jev-latest}") String jevModel,
-            @Value("${JEV_MIN_CONFIDENCE:0.6}") double minConfidence) {
-        this(newClient(), mapper, jevKey, openaiKey, jevModel, minConfidence);
+            @Value("${JEV_MIN_CONFIDENCE:0.6}") double minConfidence,
+            Clock clock,
+            @Value("${app.ai.circuit-failures:3}") int circuitFailures,
+            @Value("${app.ai.circuit-cooldown-seconds:30}") long cooldownSeconds) {
+        this(newClient(), mapper, jevKey, openaiKey, jevModel, minConfidence,
+                clock, circuitFailures, Duration.ofSeconds(cooldownSeconds));
     }
     WidgetSelectionExperimentService(RestTemplate client, ObjectMapper mapper,
             String jevKey, String openaiKey, String jevModel, double minConfidence) {
+        this(client, mapper, jevKey, openaiKey, jevModel, minConfidence, Clock.systemUTC(), 3, Duration.ofSeconds(30));
+    }
+
+    WidgetSelectionExperimentService(RestTemplate client, ObjectMapper mapper,
+            String jevKey, String openaiKey, String jevModel, double minConfidence,
+            Clock clock, int circuitFailures, Duration cooldown) {
         if (!Double.isFinite(minConfidence) || minConfidence < 0 || minConfidence > 1)
             throw new IllegalArgumentException("Confidence threshold must be between 0 and 1");
         this.client = client; this.mapper = mapper; this.jevKey = jevKey;
         this.openaiKey = openaiKey; this.jevModel = jevModel; this.minConfidence = minConfidence;
+        this.circuits = Map.of("jev", new AiProviderCircuit(clock, circuitFailures, cooldown),
+                "openai", new AiProviderCircuit(clock, circuitFailures, cooldown));
     }
     private static RestTemplate newClient() {
         var factory = new SimpleClientHttpRequestFactory();
@@ -90,7 +105,7 @@ public class WidgetSelectionExperimentService {
         if (key == null || key.isBlank())
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
                     jev ? "JEV_AI_API_KEY가 실행 환경에 없습니다." : "OPENAI_API_KEY가 실행 환경에 없습니다.");
-        var state = Map.of("selection_policy", POLICY, "widget_catalog", WIDGETS, "user_request", message);
+        var state = Map.of("selection_policy", POLICY, "widget_catalog", WIDGETS, "user_request", AiRequestRedactor.redact(message));
         var questions = new LinkedHashMap<String, Object>();
         WIDGETS.forEach((id, description) -> questions.put(id, Map.of(
                 "type", "choice", "instructions", "선택 규칙에 따라 '" + description + "' 위젯을 표시해야 하는가?",
@@ -117,6 +132,10 @@ public class WidgetSelectionExperimentService {
         var headers = new HttpHeaders();
         headers.setBearerAuth(key);
         headers.setContentType(MediaType.APPLICATION_JSON);
+        var circuit = circuits.get(provider);
+        long ticket = circuit.acquire().orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.SERVICE_UNAVAILABLE, "위젯 선택 서비스가 잠시 쉬고 있어요. 잠시 뒤 다시 시도해 주세요."));
+        boolean providerFailure = true;
         long started = System.nanoTime();
         try {
             JsonNode response = client.postForObject(jev ? JEV_URL : OPENAI_URL,
@@ -150,9 +169,12 @@ public class WidgetSelectionExperimentService {
             String actualModel = response.path("model").asText(model);
             log.info("performance requestId={} stage=widget_selection provider={} model={} durationMs={} inputTokens={} outputTokens={} needsReview={}",
                     MDC.get("requestId"), provider, actualModel, elapsed, input, output, review);
+            providerFailure = false;
             return new Result(provider, actualModel, "widget_selection_only", List.copyOf(selected),
                     Collections.unmodifiableMap(decisions), review, elapsed, input, output);
         } catch (HttpStatusCodeException e) {
+            int status = e.getStatusCode().value();
+            providerFailure = status >= 500 || status == 429 || status == 401 || status == 403;
             log.warn("Widget selector provider={} upstreamStatus={}", provider, e.getStatusCode().value());
             throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,
                     provider + " API 오류: HTTP " + e.getStatusCode().value());
@@ -162,6 +184,8 @@ public class WidgetSelectionExperimentService {
             throw e;
         } catch (Exception e) {
             throw invalidResponse();
+        } finally {
+            circuit.finish(ticket, providerFailure);
         }
     }
     private String serialize(Object value) {

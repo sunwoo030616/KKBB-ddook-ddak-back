@@ -8,6 +8,11 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
+import java.time.Clock;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.*;
@@ -82,5 +87,62 @@ class WidgetSelectionExperimentServiceTest {
         assertEquals(List.of("travel_card_charge_widget"), result.widgets());
         assertNull(result.decisions().get("travel_card_charge_widget").confidence());
         assertEquals("widget_selection_only", result.scope()); server.verify();
+    }
+    @Test void sendsRedactedTextWhileKeepingTravelIntentAndAmount() throws Exception {
+        server.expect(requestTo("https://api.typesafe.ai/v1/systemone"))
+                .andExpect(jsonPath("$.state.user_request").value(
+                        "도쿄에서 엔화 3만원 환전, 연락처 [민감정보], 이메일 [민감정보], [민감정보]"))
+                .andRespond(withSuccess(jevResponse(Set.of("travel_card_charge_widget"), 0.95), MediaType.APPLICATION_JSON));
+        var result = service.select("도쿄에서 엔화 3만원 환전, 연락처 010-1234-5678, 이메일 demo@example.invalid, 계좌번호 111-22-333333", "jev");
+        assertEquals(List.of("travel_card_charge_widget"), result.widgets());
+        server.verify();
+    }
+
+    @Test void repeatedProviderFailuresStopCallsAndRecoveryAllowsCallsAgain() throws Exception {
+        var clock = new TestClock();
+        service = new WidgetSelectionExperimentService(client, mapper, "test-jev", "test-openai",
+                "jev-latest", 0.6, clock, 2, Duration.ofSeconds(30));
+        for (int i = 0; i < 2; i++) {
+            server.expect(requestTo("https://api.typesafe.ai/v1/systemone"))
+                    .andRespond(withStatus(HttpStatus.TOO_MANY_REQUESTS));
+        }
+        server.expect(requestTo("https://api.typesafe.ai/v1/systemone"))
+                .andRespond(withSuccess(jevResponse(Set.of(), 0.95), MediaType.APPLICATION_JSON));
+        for (int i = 0; i < 2; i++) {
+            assertEquals(502, assertThrows(ResponseStatusException.class,
+                    () -> service.select("환전", "jev")).getStatusCode().value());
+        }
+        assertEquals(503, assertThrows(ResponseStatusException.class,
+                () -> service.select("환전", "jev")).getStatusCode().value());
+        clock.now = clock.now.plusSeconds(30);
+        assertTrue(service.select("환전", "jev").widgets().isEmpty());
+        server.verify();
+    }
+
+    @Test void admitsOneRecoveryProbeAndIgnoresOldSuccessfulCalls() {
+        var clock = new TestClock();
+        var circuit = new AiProviderCircuit(clock, 1, Duration.ofSeconds(30));
+        long old = circuit.acquire().orElseThrow();
+        long failed = circuit.acquire().orElseThrow();
+        circuit.finish(failed, true);
+        circuit.finish(old, false);
+        assertTrue(circuit.acquire().isEmpty());
+        clock.now = clock.now.plusSeconds(30);
+        long probe = circuit.acquire().orElseThrow();
+        assertTrue(circuit.acquire().isEmpty());
+        circuit.finish(probe, true);
+        assertTrue(circuit.acquire().isEmpty());
+        clock.now = clock.now.plusSeconds(30);
+        circuit.finish(circuit.acquire().orElseThrow(), false);
+        assertTrue(circuit.acquire().isPresent());
+        assertTrue(circuit.acquire().isPresent());
+    }
+
+    private static final class TestClock extends Clock {
+        private Instant now = Instant.parse("2026-11-13T00:00:00Z");
+
+        @Override public ZoneId getZone() { return ZoneOffset.UTC; }
+        @Override public Clock withZone(ZoneId zone) { return Clock.fixed(now, zone); }
+        @Override public Instant instant() { return now; }
     }
 }
