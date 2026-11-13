@@ -1,8 +1,6 @@
 package com.example.kb_ai_backend.feedback;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.LongAdder;
 
 /**
  * 위젯별 반응을 모아 "선택된 위젯들의 순서"만 보정한다.
@@ -19,21 +17,19 @@ public class FeedbackRanker {
 
     public record Stats(long shown, long clicked, long completed, long dismissed, double score) {}
 
-    private static final class Counter {
-        final LongAdder shown = new LongAdder();
-        final LongAdder clicked = new LongAdder();
-        final LongAdder completed = new LongAdder();
-        final LongAdder dismissed = new LongAdder();
-    }
-
     private final Set<String> knownWidgets;
     private final int minExposures;
-    private final ConcurrentHashMap<String, Counter> counters = new ConcurrentHashMap<>();
+    private final FeedbackStore store;
 
     public FeedbackRanker(Set<String> knownWidgets, int minExposures) {
+        this(knownWidgets, minExposures, new InMemoryFeedbackStore());
+    }
+
+    public FeedbackRanker(Set<String> knownWidgets, int minExposures, FeedbackStore store) {
         if (minExposures < 0) throw new IllegalArgumentException("minExposures는 0 이상");
         this.knownWidgets = Set.copyOf(knownWidgets);
         this.minExposures = minExposures;
+        this.store = store;
     }
 
     public boolean supports(String widget) {
@@ -43,13 +39,7 @@ public class FeedbackRanker {
     /** 허용 목록에 없는 위젯 이름은 받지 않는다 (임의 키로 메모리가 늘어나는 것 방지) */
     public void record(String widget, FeedbackEvent event) {
         if (!supports(widget)) throw new IllegalArgumentException("알 수 없는 위젯입니다: " + widget);
-        Counter c = counters.computeIfAbsent(widget, k -> new Counter());
-        switch (event) {
-            case SHOWN -> c.shown.increment();
-            case CLICKED -> c.clicked.increment();
-            case COMPLETED -> c.completed.increment();
-            case DISMISSED -> c.dismissed.increment();
-        }
+        store.increment(widget, event);
     }
 
     public double score(String widget) {
@@ -57,9 +47,12 @@ public class FeedbackRanker {
     }
 
     public Stats stats(String widget) {
-        Counter c = counters.get(widget);
-        if (c == null) return new Stats(0, 0, 0, 0, NEUTRAL);
-        long shown = c.shown.sum(), clicked = c.clicked.sum(), completed = c.completed.sum(), dismissed = c.dismissed.sum();
+        if (!supports(widget)) return new Stats(0, 0, 0, 0, NEUTRAL);
+        var counts = store.counts(widget);
+        long shown = counts.getOrDefault(FeedbackEvent.SHOWN, 0L);
+        long clicked = counts.getOrDefault(FeedbackEvent.CLICKED, 0L);
+        long completed = counts.getOrDefault(FeedbackEvent.COMPLETED, 0L);
+        long dismissed = counts.getOrDefault(FeedbackEvent.DISMISSED, 0L);
         double score = shown < minExposures ? NEUTRAL
                 : (Math.min(clicked + 0.5 * completed, shown) + 1.0) / (shown + dismissed + 2.0);
         return new Stats(shown, clicked, completed, dismissed, score);

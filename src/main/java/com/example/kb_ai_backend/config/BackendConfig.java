@@ -6,7 +6,9 @@ import com.example.kb_ai_backend.action.rules.NightTimeRule;
 import com.example.kb_ai_backend.action.rules.RiskLevelRule;
 import com.example.kb_ai_backend.action.rules.VelocityRule;
 import com.example.kb_ai_backend.audit.HashChainAuditLog;
+import com.example.kb_ai_backend.audit.RedisAuditStore;
 import com.example.kb_ai_backend.feedback.FeedbackRanker;
+import com.example.kb_ai_backend.feedback.RedisFeedbackStore;
 import com.example.kb_ai_backend.session.InMemorySessionStore;
 import com.example.kb_ai_backend.session.RedisSessionStore;
 import com.example.kb_ai_backend.session.SessionStore;
@@ -54,12 +56,17 @@ public class BackendConfig {
     }
 
     @Bean
-    public FeedbackRanker feedbackRanker(@Value("${app.feedback.min-exposures:20}") int minExposures) {
+    public FeedbackRanker feedbackRanker(StringRedisTemplate redis,
+                                         @Value("${app.feedback.redis-enabled:false}") boolean redisEnabled,
+                                         @Value("${app.feedback.redis-key-prefix:kkbb:feedback:}") String keyPrefix,
+                                         @Value("${app.feedback.min-exposures:20}") int minExposures) {
         // 위젯 허용 목록과 같은 9개만 받는다
-        return new FeedbackRanker(Set.of(
+        var widgets = Set.of(
                 "travel_card_charge_widget", "overseas_qr_payment_widget", "travel_insurance_widget",
                 "group_account_status", "expense_report_widget", "group_card_safety_widget",
-                "card_freeze_all", "atm_smart_withdrawal", "id_reissue_status_widget"), minExposures);
+                "card_freeze_all", "atm_smart_withdrawal", "id_reissue_status_widget");
+        return redisEnabled ? new FeedbackRanker(widgets, minExposures, new RedisFeedbackStore(redis, keyPrefix))
+                : new FeedbackRanker(widgets, minExposures);
     }
 
     @Bean
@@ -77,8 +84,11 @@ public class BackendConfig {
     }
 
     @Bean
-    public HashChainAuditLog auditLog(Clock clock) {
-        return new HashChainAuditLog(clock);
+    public HashChainAuditLog auditLog(Clock clock, StringRedisTemplate redis, ObjectMapper mapper,
+                                     @Value("${app.audit.redis-enabled:false}") boolean redisEnabled,
+                                     @Value("${app.audit.redis-key:kkbb:audit:entries}") String redisKey) {
+        return redisEnabled ? new HashChainAuditLog(clock, new RedisAuditStore(redis, mapper, redisKey))
+                : new HashChainAuditLog(clock);
     }
 
     @Bean
