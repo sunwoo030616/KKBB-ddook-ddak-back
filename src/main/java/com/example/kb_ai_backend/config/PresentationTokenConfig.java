@@ -17,7 +17,7 @@ import java.security.SecureRandom;
 import java.util.Base64;
 
 @Configuration
-@Profile("presentation")
+@Profile("presentation & !oidc-demo")
 public class PresentationTokenConfig {
     public static final String ISSUER = "urn:kkbb:presentation";
     public static final String AUDIENCE = "kkbb-actions";
