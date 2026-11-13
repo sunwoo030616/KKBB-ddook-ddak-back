@@ -173,6 +173,15 @@ python3 scripts/benchmark_widget_selection.py --base-url http://localhost:8080 \
   --providers jev --output target/jev-widget-selection.json
 ```
 
+기존 평가 JSON을 케이스 단위 JSONL로 변환할 수 있습니다. 이 변환은 로컬 파일만 읽습니다.
+
+```bash
+python3 scripts/export_widget_evaluation_jsonl.py target/jev-widget-selection.json \
+  --provider jev --output target/jev-regression.jsonl
+```
+
+JSONL에는 케이스 ID, 정답 여부, 모델 응답 시간(ms), 빠진 위젯과 추가된 위젯이 들어갑니다. API 실패는 위젯 불일치와 구분해 `error`를 기록합니다. 회귀 비교에는 기존 33문항과 동일한 공급자·반복 횟수를 사용하고, 새 문항은 별도 평가 파일로 관리합니다. 이 저장소의 README는 기존 실측 33/33의 요약 기준선입니다. 케이스별 원본이 있는 경우 원본에서 변환해야 당시 지연 시간까지 비교할 수 있습니다.
+
 API 직접 호출:
 
 ```bash
