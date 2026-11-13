@@ -84,8 +84,11 @@ public final class DecisionTrace {
         return rendered.contains(widget);
     }
 
-    public synchronized boolean markFeedback(String widget, FeedbackEvent event) {
-        return feedback.computeIfAbsent(widget, ignored -> EnumSet.noneOf(FeedbackEvent.class)).add(event);
+    public synchronized void recordFeedbackOnce(String widget, FeedbackEvent event, Runnable persist) {
+        var recorded = feedback.computeIfAbsent(widget, ignored -> EnumSet.noneOf(FeedbackEvent.class));
+        if (recorded.contains(event)) return;
+        persist.run();
+        recorded.add(event);
     }
 
     public List<Stage> stages() { return List.copyOf(stages); }

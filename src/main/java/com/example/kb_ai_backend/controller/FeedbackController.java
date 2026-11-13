@@ -48,9 +48,8 @@ public class FeedbackController {
         if (!trace.get().containsRenderedWidget(request.widgetType())) {
             return ResponseEntity.badRequest().body(Map.of("error", "이 화면에 표시된 위젯만 기록할 수 있습니다."));
         }
-        if (trace.get().markFeedback(request.widgetType(), event)) {
-            ranker.record(request.widgetType(), event);
-        }
+        trace.get().recordFeedbackOnce(request.widgetType(), event,
+                () -> ranker.record(request.widgetType(), event));
         return ResponseEntity.status(HttpStatus.ACCEPTED)
                 .body(Map.of("widgetType", request.widgetType(), "score", ranker.score(request.widgetType())));
     }
