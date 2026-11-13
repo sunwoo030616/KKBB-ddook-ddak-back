@@ -147,6 +147,10 @@ $env:JEV_AI_API_KEY="your-jev-api-key"
 | `OPENAI_API_KEY` | No | 기존 GPT 비교 실험에만 필요 |
 
 
+## 커밋 메시지
+
+`feat: 감사 로그 저장 추가`, `fix: 카드 정지 요청 만료 처리`처럼 타입은 영어로, 제목은 한국어로 작성합니다. [커밋 규칙](AGENTS.md)
+
 ## 테스트
 
 ```bash
