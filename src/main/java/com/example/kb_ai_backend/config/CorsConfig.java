@@ -1,7 +1,6 @@
 package com.example.kb_ai_backend.config;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -28,6 +27,10 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/api/presentation/token")
+                .allowedOriginPatterns("http://localhost:[*]", "http://127.0.0.1:[*]", "http://[::1]:[*]")
+                .allowedMethods("POST")
+                .allowedHeaders("Content-Type");
         registry.addMapping("/api/**")
                 .allowedOrigins(allowedOrigins)
                 .allowedMethods("GET", "POST")
