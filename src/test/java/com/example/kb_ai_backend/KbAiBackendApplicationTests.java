@@ -25,6 +25,7 @@ class KbAiBackendApplicationTests {
                                 """))
                 .andExpect(status().isNotFound());
         mvc.perform(get("/api/audit/verify")).andExpect(status().isNotFound());
+        mvc.perform(post("/api/presentation/token")).andExpect(status().isNotFound());
         assertFalse(widgets.buildWidget("card_freeze_all").containsKey("action"));
     }
 }

@@ -56,7 +56,7 @@ AI는 필요한 금융 기능을 선택하고, 정확한 환율과 계산 값은
 
 키 없이 화면을 시연하려면 `SPRING_PROFILES_ACTIVE=presentation ./mvnw spring-boot:run`을 사용한다. [발표 순서](docs/BACKEND_EXTENSIONS.md#발표용-로컬-프로필)
 
-모의 금융 실행·감사 조회만 로컬에서 시연할 때는 `APP_ACTION_DEMO_ENABLED=true ./mvnw spring-boot:run`으로 시작한다.
+액션 API는 서명된 Bearer 토큰을 사용합니다. 로컬 발표 프로필에서는 프론트가 시연용 토큰을 받아 카드 정지를 실행합니다. 외부 토큰 발급자와 감사 조회 권한 설정은 [백엔드 확장 문서](docs/BACKEND_EXTENSIONS.md#모의-실행-api-인증)를 참고하세요.
 
 ### `POST /api/canvas`
 
@@ -212,5 +212,5 @@ src/main/java/com/example/kb_ai_backend
 - 세션·멱등키 Redis, 감사 로그·피드백 DB 영속화
 - 628개 기능 카탈로그 기반 필수 슬롯·실행 정의
 - KB 계좌·카드 API 어댑터 (`ActionExecutor` 구현체 교체)
-- OAuth 및 본인인증 (`X-User-Id` 대체)
+- 실제 로그인 제공자 연동 및 본인인증
 - 정부24·경찰청 공공 API

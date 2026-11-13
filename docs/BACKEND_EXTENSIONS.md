@@ -144,9 +144,14 @@ jev 기반 위젯 선택(PR #8) 위에, 화면이 만들어진 **이후**를 백
 
 ## 시연 순서 (curl)
 
-모의 실행·감사 조회를 시연하려면 로컬에서 `APP_ACTION_DEMO_ENABLED=true ./mvnw spring-boot:run`으로 서버를 시작한다. 기본 설정에서는 해당 API와 위젯의 실행 정보가 비활성화된다.
+### 모의 실행 API 인증
 
-모의 카드 일괄 정지 결과를 재시작 후에도 조회하려면 Redis를 실행하고 `APP_ACTION_REDIS_ENABLED=true`와 `SPRING_DATA_REDIS_URL`을 설정한다. 같은 `X-User-Id`와 `Idempotency-Key`로 재요청하면 완료된 액션 ID와 결과를 반환한다. 저장된 액션 ID로 조회하거나 다시 확인할 수도 있다. 보관 기간은 `app.action.receipt-retention-minutes`로 설정하며 기본값은 24시간이다. 보관 기간 동안 Redis 키가 유지되어야 하므로 Redis 자체도 재시작하는 환경에서는 영속화와 키 축출 정책을 설정한다.
+액션 생성·조회·확인에는 `Authorization: Bearer <access_token>`과 `actions:execute` 스코프가 필요하다. 액션 소유자는 서버가 검증한 JWT의 발급자(`iss`)와 사용자 ID(`sub`)로 구분한다. 토큰이 없거나 유효하지 않으면 401, 스코프가 없으면 403, 다른 사용자의 액션이면 404를 반환한다.
+
+- 로컬 `presentation` 프로필에서 `POST /api/presentation/token`은 무작위 사용자 ID가 담긴 8시간짜리 시연 토큰을 발급한다. 프론트는 토큰을 열린 페이지의 메모리에 보관한다. 재시작 전 발급한 시연 토큰을 계속 사용하려면 같은 Base64 서명 키(`APP_ACTION_PRESENTATION_SIGNING_KEY`, 최소 32바이트)를 설정한다. 기본 서명 키는 시작할 때마다 새로 생성한다.
+- 외부 발급자 토큰으로 모의 실행 API를 사용하려면 `APP_ACTION_DEMO_ENABLED=true`, `APP_ACTION_AUTH_ISSUER`, `APP_ACTION_AUTH_AUDIENCE`를 설정한다. 서버는 발급자의 공개 키와 발급자·대상·만료 시각을 검증한다. `/api/audit`와 `/api/audit/verify`에는 별도 `actions:audit` 스코프가 필요하다.
+
+모의 카드 일괄 정지 결과를 재시작 후에도 조회하려면 Redis를 실행하고 `APP_ACTION_REDIS_ENABLED=true`와 `SPRING_DATA_REDIS_URL`을 설정한다. 같은 토큰 사용자와 `Idempotency-Key`로 재요청하면 완료된 액션 ID와 결과를 반환한다. 저장된 액션 ID로 조회하거나 다시 확인할 수도 있다. 보관 기간은 `app.action.receipt-retention-minutes`로 설정하며 기본값은 24시간이다. 보관 기간 동안 Redis 키가 유지되어야 하므로 Redis 자체도 재시작하는 환경에서는 영속화와 키 축출 정책을 설정한다.
 
 실행 직전에 Redis에 실행권을 먼저 기록한다. 완료 결과를 기록하기 전에 프로세스가 중단되면 기존 키는 보관 기간 동안 `EXECUTION_IN_PROGRESS`를 반환하고 자동 재실행하지 않는다. 확인 대기와 OTP는 프로세스 메모리에 보관한다.
 
@@ -162,19 +167,20 @@ curl -s localhost:8080/api/canvas -H 'Content-Type: application/json' \
 curl -s localhost:8080/api/canvas/<requestId>/trace
 
 # 3) 보호성 액션: 바로 확인 후 실행
-curl -s localhost:8080/api/actions -H 'Content-Type: application/json' -d '{"type":"CARD_FREEZE_ALL"}'
-curl -s -X POST localhost:8080/api/actions/<actionId>/confirm
+token=$(curl -fsS -X POST localhost:8080/api/presentation/token | jq -r .accessToken)
+curl -s localhost:8080/api/actions -H "Authorization: Bearer $token" -H 'Content-Type: application/json' -d '{"type":"CARD_FREEZE_ALL"}'
+curl -s -X POST "localhost:8080/api/actions/${action_id}/confirm" -H "Authorization: Bearer $token"
 
 # 4) 고위험 액션: OTP (시연 환경은 demoOtp로 응답)
-curl -s localhost:8080/api/actions -H 'Content-Type: application/json' -d '{"type":"SMART_WITHDRAWAL_CODE"}'
-curl -s localhost:8080/api/actions/<actionId>/confirm -H 'Content-Type: application/json' -d '{"otp":"<demoOtp>"}'
+curl -s localhost:8080/api/actions -H "Authorization: Bearer $token" -H 'Content-Type: application/json' -d '{"type":"SMART_WITHDRAWAL_CODE"}'
+curl -s "localhost:8080/api/actions/${action_id}/confirm" -H "Authorization: Bearer $token" -H 'Content-Type: application/json' -d '{"otp":"<demoOtp>"}'
 
 # 5) 한도 초과 차단
-curl -s localhost:8080/api/actions -H 'Content-Type: application/json' \
+curl -s localhost:8080/api/actions -H "Authorization: Bearer $token" -H 'Content-Type: application/json' \
   -d '{"type":"TRAVEL_CARD_CHARGE","params":{"amountKrw":9000000}}'
 
-# 6) 감사 로그 검증
-curl -s localhost:8080/api/audit/verify
+# 6) 외부 발급자의 감사 조회용 토큰으로 검증
+curl -s localhost:8080/api/audit/verify -H "Authorization: Bearer $audit_token"
 ```
 
 ## 테스트
@@ -193,6 +199,6 @@ curl -s localhost:8080/api/audit/verify
 ## 한계와 다음 단계
 
 - Redis 옵션으로 대화 세션과 모의 카드 정지 실행 기록을 각각 복구할 수 있다. 그 외 모의 액션, 감사 로그, 트레이스, 피드백은 메모리에 보관한다.
-- 사용자 식별은 시연용 `X-User-Id` 헤더다. 운영에서는 인증 토큰의 사용자로 대체한다.
+- 운영 환경의 로그인 제공자와 금융기관 본인인증은 별도 연동이 필요하다.
 - 필수 슬롯은 환전 통화 하나만 정의했다. 628개 기능 카탈로그가 들어오면 기능별 파라미터 스키마에서 필수 슬롯을 읽도록 바꾼다.
 - 피드백 점수는 전체 사용자 기준이다. 사용자별·시간대별 분리는 데이터가 쌓인 뒤 판단한다.

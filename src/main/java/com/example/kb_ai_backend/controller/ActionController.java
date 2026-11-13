@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashMap;
@@ -16,7 +18,7 @@ import java.util.Map;
 
 /**
  * 위젯의 버튼(카드 정지, 출금 번호 발급, 충전)이 호출하는 실행 API.
- * 사용자 식별은 시연용으로 X-User-Id 헤더를 쓰고, 운영에서는 인증 토큰의 사용자로 대체한다.
+ * 검증된 토큰의 사용자만 자신의 액션을 조회하고 확인할 수 있다.
  */
 @RestController
 @ConditionalOnProperty(name = "app.action.demo-enabled", havingValue = "true")
@@ -41,25 +43,30 @@ public class ActionController {
     public record ConfirmRequest(String otp) {}
 
     @PostMapping("/actions")
-    public Map<String, Object> prepare(@RequestHeader(value = "X-User-Id", defaultValue = "demo-user") String userId,
+    public Map<String, Object> prepare(@AuthenticationPrincipal Jwt principal,
                                        @RequestHeader(value = "Idempotency-Key", required = false) String idempotencyKey,
                                        @RequestBody PrepareRequest request) {
         ActionType type = parseType(request == null ? null : request.type());
-        ActionView view = actions.prepare(userId, type, request.params(), idempotencyKey);
+        ActionView view = actions.prepare(owner(principal), type, request.params(), idempotencyKey);
         return body(view, true);
     }
 
     @PostMapping("/actions/{actionId}/confirm")
-    public Map<String, Object> confirm(@RequestHeader(value = "X-User-Id", defaultValue = "demo-user") String userId,
+    public Map<String, Object> confirm(@AuthenticationPrincipal Jwt principal,
                                        @PathVariable String actionId,
                                        @RequestBody(required = false) ConfirmRequest request) {
-        return body(actions.confirm(userId, actionId, request == null ? null : request.otp()), false);
+        return body(actions.confirm(owner(principal), actionId, request == null ? null : request.otp()), false);
     }
 
     @GetMapping("/actions/{actionId}")
-    public Map<String, Object> get(@RequestHeader(value = "X-User-Id", defaultValue = "demo-user") String userId,
+    public Map<String, Object> get(@AuthenticationPrincipal Jwt principal,
                                    @PathVariable String actionId) {
-        return body(actions.get(userId, actionId), false);
+        return body(actions.get(owner(principal), actionId), false);
+    }
+
+    private static String owner(Jwt principal) {
+        String issuer = principal.getClaimAsString("iss");
+        return "jwt:" + issuer.length() + ":" + issuer + principal.getSubject();
     }
 
     @GetMapping("/audit/verify")

@@ -5,7 +5,12 @@ import com.example.kb_ai_backend.action.rules.RiskLevelRule;
 import com.example.kb_ai_backend.audit.HashChainAuditLog;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.web.method.annotation.AuthenticationPrincipalArgumentResolver;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -28,7 +33,19 @@ class ActionControllerTest {
         var audit = new HashChainAuditLog(clock);
         var service = new ActionService(new PolicyEngine(List.of(new RiskLevelRule())), new MockActionExecutor(clock),
                 otp, audit, clock, Duration.ofMinutes(5), Duration.ofMinutes(10), 3);
-        mvc = MockMvcBuilders.standaloneSetup(new ActionController(service, audit, otp, true)).build();
+        mvc = MockMvcBuilders.standaloneSetup(new ActionController(service, audit, otp, true))
+                .setCustomArgumentResolvers(new AuthenticationPrincipalArgumentResolver()).build();
+        authenticate("owner");
+    }
+
+    @AfterEach void clearAuthentication() {
+        SecurityContextHolder.clearContext();
+    }
+
+    private void authenticate(String subject) {
+        var token = Jwt.withTokenValue("test").header("alg", "RS256").issuer("https://issuer.example")
+                .subject(subject).build();
+        SecurityContextHolder.getContext().setAuthentication(new JwtAuthenticationToken(token));
     }
 
     String prepare(String type) throws Exception {
@@ -73,7 +90,8 @@ class ActionControllerTest {
 
     @Test void otherUserGetsNotFound() throws Exception {
         String id = prepare("CARD_FREEZE_ALL");
-        mvc.perform(post("/api/actions/" + id + "/confirm").header("X-User-Id", "someone-else"))
+        authenticate("someone-else");
+        mvc.perform(post("/api/actions/" + id + "/confirm"))
                 .andExpect(status().isNotFound());
     }
 
