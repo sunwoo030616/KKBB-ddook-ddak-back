@@ -153,6 +153,26 @@ $env:JEV_AI_API_KEY="your-jev-api-key"
 ./mvnw test
 ```
 
+### JEV 위젯 선택 평가
+
+2026년 11월 13일, 실제 JEV API의 `jev-1.14.0` 모델로 [평가 문항 33개](src/test/resources/widget-selection-cases.json)를 각각 한 번 실행했습니다. 선택한 위젯의 순서를 제외하고 정답 목록과 비교했습니다.
+
+| 항목 | 결과 |
+| --- | ---: |
+| 정답 목록과 정확히 일치 | 33/33 (100%) |
+| 필요한 위젯을 빠뜨린 문항 | 0건 |
+| 불필요한 위젯을 추가한 문항 | 0건 |
+| 추가 확인이 필요하다고 표시된 문항 | 0건 |
+
+이 평가는 준비한 문항에서 위젯 선택만 측정합니다. 여행 정보 추출, 화면 렌더링, 금융 액션 실행은 평가 범위 밖입니다.
+
+재현하려면 `JEV_AI_API_KEY`를 설정한 백엔드를 실행한 뒤 아래 명령을 사용합니다. 실행할 때마다 JEV API를 33회 호출합니다.
+
+```bash
+python3 scripts/benchmark_widget_selection.py --base-url http://localhost:8080 \
+  --providers jev --output target/jev-widget-selection.json
+```
+
 API 직접 호출:
 
 ```bash
