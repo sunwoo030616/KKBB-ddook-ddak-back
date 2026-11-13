@@ -44,7 +44,7 @@ public class ActionSecurityConfig {
     }
 
     @Bean
-    @Profile("!presentation")
+    @Profile("!presentation | oidc-demo")
     @ConditionalOnProperty(name = "app.action.demo-enabled", havingValue = "true")
     JwtDecoder actionJwtDecoder(@Value("${app.action.auth.issuer:}") String issuer,
                                 @Value("${app.action.auth.audience:}") String audience) {
@@ -71,7 +71,7 @@ public class ActionSecurityConfig {
                     && jwt.getAudience() != null && jwt.getAudience().contains(audience)) {
                 return OAuth2TokenValidatorResult.success();
             }
-            return OAuth2TokenValidatorResult.failure(new OAuth2Error("invalid_token"));
+            return OAuth2TokenValidatorResult.failure(new OAuth2Error("invalid_token", "The access token must include an expiration, a subject, and the configured audience", null));
         });
     }
 }

@@ -9,7 +9,7 @@ import java.util.Map;
 
 /** 발표 시연에서만 사용하는 고정 입력과 예시 환율. */
 @Component
-@Profile("presentation")
+@Profile({"presentation", "oidc-demo"})
 public class PresentationScenarios {
 
     private static final List<String> LOST_WALLET = List.of(

@@ -190,6 +190,8 @@ jev 위젯 선택 이후를 백엔드가 책임지도록 확장했습니다. 상
 | 빠진 정보만 되묻고 세션으로 이어가기 | `POST /api/canvas` (`sessionId`) |
 | 정책 엔진 + 추가 인증 + 1회 실행 | `POST /api/actions`, `POST /api/actions/{id}/confirm` |
 | 해시체인 감사 로그 검증 | `GET /api/audit/verify` |
+
+외부 계정으로 로그인한 뒤 모의 카드 정지까지 확인하려면 [OIDC 로그인 설정](docs/OIDC_LOGIN.md)을 참고하세요.
 | 화면 구성 판단 근거 | `GET /api/canvas/{requestId}/trace` |
 | 반응 기반 위젯 순서 보정 | `POST /api/feedback`, `GET /api/feedback/scores` |
 
@@ -212,5 +214,5 @@ src/main/java/com/example/kb_ai_backend
 - 세션·멱등키 Redis, 감사 로그·피드백 DB 영속화
 - 628개 기능 카탈로그 기반 필수 슬롯·실행 정의
 - KB 계좌·카드 API 어댑터 (`ActionExecutor` 구현체 교체)
-- 실제 로그인 제공자 연동 및 본인인증
+- 팀 운영 로그인 제공자 설정 및 금융기관 본인인증 연동
 - 정부24·경찰청 공공 API

@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@Profile("presentation")
+@Profile("presentation & !oidc-demo")
 public class PresentationTokenController {
     private final JwtEncoder encoder;
     private final Clock clock;
