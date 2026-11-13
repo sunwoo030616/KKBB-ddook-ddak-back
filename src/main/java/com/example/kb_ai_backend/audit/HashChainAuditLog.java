@@ -12,7 +12,7 @@ import java.util.*;
  * - verify()로 처음부터 다시 계산해 위·변조, 삭제, 순서 변경을 찾아낸다
  * - OTP·인증번호·계좌번호 같은 민감값은 저장 전에 마스킹한다
  *
- * 지금은 메모리에 보관하고, 운영에서는 같은 계산 방식으로 DB/WORM 스토리지에 쌓으면 된다.
+ * 메모리와 Redis에서 같은 해시 계산 방식을 사용한다.
  */
 public class HashChainAuditLog {
 
@@ -20,29 +20,36 @@ public class HashChainAuditLog {
     private static final Set<String> SENSITIVE_KEYS = Set.of("otp", "code", "authcode", "password", "pin", "account", "accountnumber", "cardnumber");
 
     private final Clock clock;
-    private final List<AuditEntry> entries = new ArrayList<>();
+    private final AuditStore store;
 
     public HashChainAuditLog(Clock clock) {
+        this(clock, new InMemoryAuditStore());
+    }
+
+    public HashChainAuditLog(Clock clock, AuditStore store) {
         this.clock = clock;
+        this.store = store;
     }
 
     public synchronized AuditEntry append(String event, String actor, String subject, Map<String, ?> details) {
-        long seq = entries.size() + 1L;
-        String prev = entries.isEmpty() ? GENESIS : entries.get(entries.size() - 1).hash();
         var masked = mask(details);
-        var at = clock.instant();
-        String hash = hash(prev, seq, at.toString(), event, actor, subject, masked);
-        var entry = new AuditEntry(seq, at, event, actor, subject, masked, prev, hash);
-        entries.add(entry);
-        return entry;
+        for (int attempt = 0; attempt < 32; attempt++) {
+            var head = store.head();
+            long seq = head.size() + 1;
+            var at = clock.instant();
+            String hash = hash(head.hash(), seq, at.toString(), event, actor, subject, masked);
+            var entry = new AuditEntry(seq, at, event, actor, subject, masked, head.hash(), hash);
+            if (store.append(head, entry)) return entry;
+        }
+        throw new IllegalStateException("감사 로그가 동시에 갱신되어 추가하지 못했습니다.");
     }
 
-    public synchronized List<AuditEntry> entries() {
-        return List.copyOf(entries);
+    public List<AuditEntry> entries() {
+        return store.entries();
     }
 
-    public synchronized List<AuditEntry> entriesFor(String subject) {
-        return entries.stream().filter(e -> Objects.equals(e.subject(), subject)).toList();
+    public List<AuditEntry> entriesFor(String subject) {
+        return entries().stream().filter(e -> Objects.equals(e.subject(), subject)).toList();
     }
 
     public AuditVerification verify() {
