@@ -1,0 +1,9 @@
+test_invalid_gold_rejected (test_evaluate.EvaluationTests) ... ok
+test_multigold_macro_not_hit_rate_and_errors_in_denominator (test_evaluate.EvaluationTests) ... ok
+test_normalization (test_evaluate.EvaluationTests) ... ok
+test_repeated_ids_cannot_inflate_recall (test_evaluate.EvaluationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
