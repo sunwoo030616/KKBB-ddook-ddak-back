@@ -1,0 +1,7 @@
+{"status": "ready", "model": "intfloat/multilingual-e5-small", "menus": 585, "port": 18083}
+Verified fresh E5 candidates against actual JEV trace: 2
+Verified fresh E5 candidates against actual JEV trace: 0
+Verified fresh E5 candidates against actual JEV trace: 9
+/private/tmp/kkbb-umap-venv/lib/python3.9/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Generated 585 real E5 points, 3 validated E5/JEV examples
