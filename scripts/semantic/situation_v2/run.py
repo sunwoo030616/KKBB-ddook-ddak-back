@@ -24,7 +24,7 @@ def main():
  calls=[];rows=[];template={'selection_policy':selection_policy};lock=threading.Lock();rate={};out=args.output.parent;out.mkdir(parents=True,exist_ok=True)
  def upstream(provider,payload):
   url='https://api.typesafe.ai/v1/systemone' if provider=='e5_jev' else 'https://api.openai.com/v1/chat/completions';key=env['JEV_AI_API_KEY' if provider=='e5_jev' else 'OPENAI_API_KEY']
-  data=json.dumps(payload,ensure_ascii=False).encode();record={'provider':provider,'stage':'routing' if 'route' in payload.get('questions',{}) else 'binary_filter' if any(q.get('type')=='noul' for q in payload.get('questions',{}).values()) else 'single_selection' if 'menu' in payload.get('questions',{}) else 'menu_selection' if provider=='e5_jev' else 'full_catalog','request_payload_bytes':len(data)}
+  data=json.dumps(payload,ensure_ascii=False).encode();record={'provider':provider,'stage':'routing' if any(k.startswith('route_') for k in payload.get('questions',{})) or 'route' in payload.get('questions',{}) else 'binary_filter' if any(q.get('type')=='noul' for q in payload.get('questions',{}).values()) else 'single_selection' if 'menu' in payload.get('questions',{}) else 'menu_selection' if provider=='e5_jev' else 'full_catalog','request_payload_bytes':len(data)}
   t=time.perf_counter()
   try:
    req=urllib.request.Request(url,data=data,headers={'Content-Type':'application/json','Authorization':'Bearer '+key})

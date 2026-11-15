@@ -36,13 +36,11 @@ public class SemanticMenuRecommendationService {
         신청/조회/해지, 분실신고/해제를 구분하고 요청을 직접 처리하는 가장 구체적인 메뉴를 고른다.
         알려지지 않은 사실·국가별 이용 가능 여부·가입·거래 완료를 주장하지 않는다. 단순 자금 부족만으로 대출·리볼빙을 추천하지 않는다.
         """;
-    static final Map<String,String> ROUTES=Map.of(
-        "single","한 가지 구체적인 기능·결과 요청. 이름 대신 상황으로 설명했어도 원하는 결과가 하나면 여기에 해당. 상품 추천·목록·조회도 명확한 업무다.",
-        "multiple","서로 독립적인 두세 가지 구체적인 기능·결과를 함께 요청함.",
-        "travel","포괄적인 해외여행 희망·준비 또는 기본 여행 준비 묶음의 일부 완료·제외 상황. 특정 기능 하나만 요청한 경우는 single이다.",
-        "open","여러 기능이 도움이 될 수 있는 그 밖의 상황. 범위를 단정하지 말고 실제 메뉴 후보를 확인한다.",
-        "ambiguous","무엇을 하려는지 전혀 특정할 수 없는 금융 요청. 명확한 상품 추천·조회 요청을 여기에 넣지 않는다.",
-        "unrelated","요리·번역·날씨 등 은행 메뉴와 명확히 무관한 요청.");
+    static final Map<String,String> ROUTE_FLAGS=Map.of(
+        "route_travel","원문은 포괄적인 해외여행 희망·준비 또는 그 기본 준비 묶음에서 일부 완료·제외 후 나머지를 묻는 상황인가? 특정 기능 하나만 요구하면 아니오다.",
+        "route_multiple","현재 서로 구별되는 두 개 이상의 업무 결과를 명시적으로 요청하고 있는가? 이미 끝났거나 제외한 업무는 세지 않는다. 업무명 없는 일반 해외여행 희망 자체는 아니오다.",
+        "route_unrelated","원문은 은행 앱의 금융·여행·생활 메뉴 범위와 명백히 무관한 요리법·직접 번역·날씨·경기 결과·작명 요청인가? 금융상품·서비스 요청은 아니오다.",
+        "route_ambiguous","사용자가 원하는 업무 결과나 대상이 전혀 제시되지 않아 어떤 메뉴도 특정할 수 없는가? 맞춤 상품 추천·상품 검색·특정 조회 요청은 명확한 업무이므로 아니오다.");
     public SemanticMenuRecommendationService(JevDecisionClient jev,SemanticMenuRetriever retriever,MenuCatalog catalog,SemanticMenuSelectionService single,
             @Value("${JEV_MIN_CONFIDENCE:0.6}") double confidence,@Value("${JEV_RECOMMEND_INCLUDE_PROBABILITY:0.7}") double includeProbability){
         if(!Double.isFinite(confidence)||confidence<0||confidence>1||!Double.isFinite(includeProbability)||includeProbability<=.5||includeProbability>1)throw new IllegalArgumentException("Invalid thresholds");
@@ -51,9 +49,11 @@ public class SemanticMenuRecommendationService {
     public Result compose(String original){
         if(original==null||original.isBlank()||original.length()>2000)throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"message는 1~2000자로 입력하세요.");
         String message=AiRequestRedactor.redact(original);
-        var route=jev.decide(Map.of("user_request",message,"policy",POLICY),Map.of("route",new JevDecisionClient.Question("원문에 필요한 처리 경로 하나를 고른다. 정의된 업무 목록으로 사용자의 지원 가능 여부를 판단하지 않는다.",ROUTES)));
-        String mode=route.answers().get("route").choice();long planning=route.durationMs();
-        if(Set.of("ambiguous","unrelated").contains(mode)&&route.answers().get("route").confidence()>=confidence)return new Result(mode.equals("unrelated")?"no_match":"needs_clarification",List.of(),new Metrics("semantic_only",planning,0,0,1));
+        var route=jev.judge(Map.of("user_request",message,"policy",POLICY),ROUTE_FLAGS);
+        long planning=route.durationMs();var flags=route.answers();
+        if(flags.get("route_unrelated")>=.9)return new Result("no_match",List.of(),new Metrics("semantic_only",planning,0,0,1));
+        if(flags.get("route_ambiguous")>=.9)return new Result("needs_clarification",List.of(),new Metrics("semantic_only",planning,0,0,1));
+        String mode=flags.get("route_travel")>=.7?"travel":flags.get("route_multiple")>=.7||splitRequests(message).size()>1?"multiple":"single";
         if(mode.equals("single")){
             // Reuse the unchanged successful single-menu path, including its masking/validation.
             var r=single.select(message);String status=r.status().equals("selected")?"ready":r.status();
@@ -93,7 +93,17 @@ public class SemanticMenuRecommendationService {
         return jev.decide(Map.of("user_request",message,"policy",POLICY,"tasks",contexts),questions);
     }
     private Result filterCandidates(String message,long planning){
-        long start=System.nanoTime();var candidates=retriever.retrieve(message,40);long retrieval=elapsed(start);
+        long start=System.nanoTime();
+        var queries=new LinkedHashSet<String>();queries.add(message);
+        // Expansion affects retrieval only; the full original request still governs every decision.
+        String focus=message.replaceFirst("(?s)^.*(?:이번에는|이번엔|추가 추천 없이)","").strip();
+        if(!focus.equals(message)&&focus.length()>=2)queries.add(focus);
+        for(var part:focus.split("(?:과|와)\\s+|\\s+및\\s+|[,/]"))if(part.strip().length()>=2)queries.add(part.strip());
+        var lists=new ArrayList<List<MenuCatalog.Menu>>();int count=0;
+        for(var query:queries){if(count++>=4)break;lists.add(retriever.retrieve(query,query.equals(message)?40:12));}
+        var merged=new LinkedHashMap<String,MenuCatalog.Menu>();
+        for(int rank=0;rank<40&&merged.size()<60;rank++)for(var list:lists)if(rank<list.size()&&merged.size()<60)merged.putIfAbsent(list.get(rank).id(),list.get(rank));
+        var candidates=List.copyOf(merged.values());long retrieval=elapsed(start);
         var questions=new LinkedHashMap<String,String>();for(var menu:candidates)questions.put(menu.id(),"메뉴 「"+menu.id()+" / "+menu.name()+"」는 원문이 요청한 결과를 직접 처리하는 가장 구체적인 메뉴로서 반환할 필요가 있는가? 단순 관련성·상위 모음·대체 상품만으로는 아니오이며 명시적 제외는 아니오다.");
         var judged=jev.judge(Map.of("user_request",message,"policy",POLICY,"menus",candidates.stream().map(SemanticMenuRecommendationService::compact).toList()),questions);
         var ordered=candidates.stream().filter(m->judged.answers().get(m.id())>=includeProbability).sorted(Comparator.comparingDouble((MenuCatalog.Menu m)->judged.answers().get(m.id())).reversed()).toList();
