@@ -32,3 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 .run/
+
+.semantic-runtime/
+__pycache__/

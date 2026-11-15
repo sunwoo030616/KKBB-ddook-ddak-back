@@ -1,0 +1,230 @@
+{
+  "source_path": "/Users/seonwoo-choi/Desktop/kb_real_decider/kb_starbanking_menu_structure_cleaned.json",
+  "source_sha256": "2c79c01b7172a3ef2c863ad65bd89bf63df0c69405e84a494f6fde99c4d0dc88",
+  "integrated_sha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+  "active_count": 585,
+  "excluded_count": 43,
+  "unique_ids": 585,
+  "unique_names": 585,
+  "removed_active_menus": [],
+  "changes": [
+    {
+      "id": "kb_menu_0206",
+      "name": "자동이체",
+      "before": {
+        "description": "예정된 자동이체와 처리내역을 확인하고 등록하는 화면.",
+        "select_when": [
+          "자동이체 일정·처리내역을 보거나 자동이체를 등록할 때"
+        ]
+      },
+      "after": {
+        "description": "예정된 자동이체와 처리내역을 확인하고 신규 자동이체를 등록하는 화면. 기존 자동이체 변경·해지는 별도 메뉴를 사용한다.",
+        "select_when": [
+          "자동이체를 새로 등록할 때",
+          "자동이체 예정 일정이나 처리내역을 확인할 때. 기존 자동이체 변경·해지는 조회/변경/해지 메뉴를 선택한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0207",
+      "name": "자동이체 조회/변경/해지",
+      "before": {
+        "description": "자동이체 관리 진입점.",
+        "select_when": [
+          "자동이체 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+        ]
+      },
+      "after": {
+        "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+        "select_when": [
+          "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+          "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0226",
+      "name": "공과금 납부/조회",
+      "before": {
+        "description": "세금·생활공과금의 납부와 납부내역 조회 화면.",
+        "select_when": [
+          "공과금 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+        ]
+      },
+      "after": {
+        "description": "세금·생활공과금의 납부와 납부내역 조회 화면.",
+        "select_when": [
+          "납부할 세금·생활공과금을 확인하거나 공과금 납부를 시작할 때. 이미 납부한 내역만 찾으면 공과금 납부 내역 조회를 선택한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0246",
+      "name": "공과금 납부 내역 조회",
+      "before": {
+        "description": "국세·지방세·범칙금·4대보험료와 생활공과금 납부내역 조회.",
+        "select_when": [
+          "공과금 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+        ]
+      },
+      "after": {
+        "description": "국세·지방세·범칙금·4대보험료와 생활공과금 납부내역 조회.",
+        "select_when": [
+          "이미 납부한 국세·지방세·범칙금·4대보험료·생활공과금의 납부내역을 확인할 때. 신규 납부는 선택하지 않는다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0348",
+      "name": "거래외국환은행 지정",
+      "before": {
+        "description": "거래외국환은행 지정 신청·조회와 해외유학생 서류 연장 화면.",
+        "select_when": [
+          "거래외국환은행 지정 관련 업무를 찾을 때"
+        ]
+      },
+      "after": {
+        "description": "거래외국환은행 지정 신청·조회와 해외유학생 서류 연장 화면.",
+        "select_when": [
+          "거래외국환은행 지정 업무의 전체 안내나 해외유학생 서류 연장을 찾을 때. 신규 지정 신청은 지정 신청, 기존 지정 내역 확인은 지정 조회를 선택한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0503",
+      "name": "OTP 발급",
+      "before": {
+        "description": "OTP 신규 발급 진입점.",
+        "select_when": [
+          "OTP를 발급하려 할 때"
+        ]
+      },
+      "after": {
+        "description": "OTP 신규 발급 진입점.",
+        "select_when": [
+          "OTP를 처음 신규 발급하려 할 때. 기존 OTP의 분실·훼손에 따른 교체는 OTP 재발급을 선택한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0076",
+      "name": "무배당 교보생명 신탁제공용 이율보증형보험(DC/IRP,3년)",
+      "before": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품.",
+        "select_when": [
+          "해당 보험사·기간의 퇴직연금 운용상품 상세를 찾을 때"
+        ]
+      },
+      "after": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품. 상품명: 무배당 교보생명 신탁제공용 이율보증형보험(DC/IRP,3년).",
+        "select_when": [
+          "무배당 교보생명 신탁제공용 이율보증형보험(DC/IRP,3년) 상품을 지정하여 상세 정보를 찾을 때. 다른 보험사나 다른 이름의 상품과 구분한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0077",
+      "name": "무배당 메리츠화재 이율보증형보험3(개인형IRP,3년)",
+      "before": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품.",
+        "select_when": [
+          "해당 보험사·기간의 퇴직연금 운용상품 상세를 찾을 때"
+        ]
+      },
+      "after": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품. 상품명: 무배당 메리츠화재 이율보증형보험3(개인형IRP,3년).",
+        "select_when": [
+          "무배당 메리츠화재 이율보증형보험3(개인형IRP,3년) 상품을 지정하여 상세 정보를 찾을 때. 다른 보험사나 다른 이름의 상품과 구분한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0078",
+      "name": "KB손해보험 퇴직연금 이율보증형보험(DC/IRP,3년제)",
+      "before": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품.",
+        "select_when": [
+          "해당 보험사·기간의 퇴직연금 운용상품 상세를 찾을 때"
+        ]
+      },
+      "after": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품. 상품명: KB손해보험 퇴직연금 이율보증형보험(DC/IRP,3년제).",
+        "select_when": [
+          "KB손해보험 퇴직연금 이율보증형보험(DC/IRP,3년제) 상품을 지정하여 상세 정보를 찾을 때. 다른 보험사나 다른 이름의 상품과 구분한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0079",
+      "name": "DB손해보험 무배당 스마트 퇴직연금 이율보증형보험 3년",
+      "before": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품.",
+        "select_when": [
+          "해당 보험사·기간의 퇴직연금 운용상품 상세를 찾을 때"
+        ]
+      },
+      "after": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품. 상품명: DB손해보험 무배당 스마트 퇴직연금 이율보증형보험 3년.",
+        "select_when": [
+          "DB손해보험 무배당 스마트 퇴직연금 이율보증형보험 3년 상품을 지정하여 상세 정보를 찾을 때. 다른 보험사나 다른 이름의 상품과 구분한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0080",
+      "name": "삼성생명 신탁제공용 이율보증형보험(DC/IRP,3년제)",
+      "before": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품.",
+        "select_when": [
+          "해당 보험사·기간의 퇴직연금 운용상품 상세를 찾을 때"
+        ]
+      },
+      "after": {
+        "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품. 상품명: 삼성생명 신탁제공용 이율보증형보험(DC/IRP,3년제).",
+        "select_when": [
+          "삼성생명 신탁제공용 이율보증형보험(DC/IRP,3년제) 상품을 지정하여 상세 정보를 찾을 때. 다른 보험사나 다른 이름의 상품과 구분한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0129",
+      "name": "(무)KB세번의약속e연금보험Plus",
+      "before": {
+        "description": "화면에 표시된 보험상품 상세 진입점.",
+        "select_when": [
+          "해당 연금보험 상세를 찾을 때"
+        ]
+      },
+      "after": {
+        "description": "화면에 표시된 보험상품 상세 진입점. 상품명: (무)KB세번의약속e연금보험Plus.",
+        "select_when": [
+          "(무)KB세번의약속e연금보험Plus 상품을 지정하여 상세 정보를 찾을 때. 다른 보험사나 다른 이름의 상품과 구분한다."
+        ]
+      }
+    },
+    {
+      "id": "kb_menu_0130",
+      "name": "KB하이브리드e연금보험 무배당",
+      "before": {
+        "description": "화면에 표시된 보험상품 상세 진입점.",
+        "select_when": [
+          "해당 연금보험 상세를 찾을 때"
+        ]
+      },
+      "after": {
+        "description": "화면에 표시된 보험상품 상세 진입점. 상품명: KB하이브리드e연금보험 무배당.",
+        "select_when": [
+          "KB하이브리드e연금보험 무배당 상품을 지정하여 상세 정보를 찾을 때. 다른 보험사나 다른 이름의 상품과 구분한다."
+        ]
+      }
+    }
+  ],
+  "remaining_shared_descriptions": [
+    [
+      "kb_menu_0131",
+      "kb_menu_0132"
+    ]
+  ],
+  "remaining_shared_selection_conditions": [],
+  "limitations": "ID/name/field equality and lexical near-name audit plus manual review of flagged families. Not a proof of no semantic overlap; no live bank menu verification."
+}
