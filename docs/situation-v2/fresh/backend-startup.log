@@ -1,0 +1,202 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-15T19:59:42.911+09:00  INFO 49926 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : Starting KbAiBackendApplication using Java 26.0.1 with PID 49926 (/private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-9p32oj1v/target/classes started by seonwoo-choi in /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-9p32oj1v)
+2026-11-15T19:59:42.911+09:00  INFO 49926 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : The following 1 profile is active: "default"
+2026-11-15T19:59:43.207+09:00  INFO 49926 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-15T19:59:43.208+09:00  INFO 49926 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-15T19:59:43.225+09:00  INFO 49926 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2026-11-15T19:59:43.372+09:00  INFO 49926 --- [kb-ai-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 18502 (http)
+2026-11-15T19:59:43.377+09:00  INFO 49926 --- [kb-ai-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-15T19:59:43.377+09:00  INFO 49926 --- [kb-ai-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-15T19:59:43.398+09:00  INFO 49926 --- [kb-ai-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-15T19:59:43.398+09:00  INFO 49926 --- [kb-ai-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 473 ms
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (file:/Users/seonwoo-choi/.m2/repository/io/netty/netty-common/4.1.135.Final/netty-common-4.1.135.Final.jar)
+WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
+WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
+2026-11-15T19:59:43.860+09:00  INFO 49926 --- [kb-ai-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 18502 (http) with context path '/'
+2026-11-15T19:59:43.867+09:00  INFO 49926 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : Started KbAiBackendApplication in 1.096 seconds (process running for 1.202)
+2026-11-15T19:59:43.868+09:00  WARN 49926 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-15T19:59:43.868+09:00  WARN 49926 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-15T19:59:44.209+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-15T19:59:44.209+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-15T19:59:44.210+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-15T19:59:44.339+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 113 ms
+2026-11-15T19:59:44.993+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=331755cd-3335-45d0-8766-2ebcc4e408ba stage=request durationMs=640 status=200 completed=true
+2026-11-15T19:59:52.259+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=4ce9b3ed-e0f0-4b1c-a7c0-d49d1d43681b stage=request durationMs=866 status=200 completed=true
+2026-11-15T19:59:52.916+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=a6820567-74ca-4e8e-bb8f-853b170aa2ef stage=request durationMs=650 status=200 completed=true
+2026-11-15T19:59:57.237+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=68e46bb1-ba61-412a-8ae8-a61f477a6bb7 stage=request durationMs=542 status=200 completed=true
+2026-11-15T19:59:57.891+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=c0d1d9ce-bb31-4596-a645-228726e34551 stage=request durationMs=648 status=200 completed=true
+2026-11-15T20:00:01.914+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=b26ba16e-a4a6-4707-835f-96e7d83353d1 stage=request durationMs=543 status=200 completed=true
+2026-11-15T20:00:02.512+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=e4c642e8-8275-4d16-8a0b-aeaa12e0855e stage=request durationMs=589 status=200 completed=true
+2026-11-15T20:00:06.739+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=be4cdff9-8c0d-4cce-975a-cb5663d70499 stage=request durationMs=615 status=200 completed=true
+2026-11-15T20:00:07.431+09:00  INFO 49926 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=318705b8-6b7a-4a64-88a4-c5f2bfa96387 stage=request durationMs=684 status=200 completed=true
+2026-11-15T20:00:11.333+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=de6ac077-fa4f-44a9-8f81-83de865e1b54 stage=request durationMs=597 status=200 completed=true
+2026-11-15T20:00:11.867+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=62e75ea0-dcc8-49f2-8d26-bd08f0de773c stage=request durationMs=525 status=200 completed=true
+2026-11-15T20:00:15.943+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=d6c8bb5e-44fd-4907-89d2-96414f682fb3 stage=request durationMs=671 status=200 completed=true
+2026-11-15T20:00:16.554+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=93fa32d7-1155-4cf8-b5d9-c0ab2294a985 stage=request durationMs=602 status=200 completed=true
+2026-11-15T20:00:20.750+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=4c8a1307-5146-414a-958d-513a1aa317f0 stage=request durationMs=671 status=200 completed=true
+2026-11-15T20:00:21.332+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=dbb1e061-5e39-4544-9449-b4f90a2f9d3a stage=request durationMs=571 status=200 completed=true
+2026-11-15T20:00:25.250+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=1d052335-fd6b-4b1b-90af-3ce5fb69b33e stage=request durationMs=664 status=200 completed=true
+2026-11-15T20:00:26.025+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=16906376-396c-455e-8ee9-e5dd6ec8540f stage=request durationMs=764 status=200 completed=true
+2026-11-15T20:00:29.940+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=9af6fb44-3a6a-4042-9e99-e78184cee893 stage=request durationMs=554 status=200 completed=true
+2026-11-15T20:00:30.462+09:00  INFO 49926 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=d8e49a46-ee6b-4c66-bf9b-165b9eecf7dd stage=request durationMs=510 status=200 completed=true
+2026-11-15T20:00:35.290+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=ac3185ed-1f92-4773-bf4f-ed2abf276cf4 stage=request durationMs=576 status=200 completed=true
+2026-11-15T20:00:35.907+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=1af09c46-8fd7-4210-986d-b6b468d6f06e stage=request durationMs=605 status=200 completed=true
+2026-11-15T20:00:39.643+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=9cb8f91d-8ea7-48b0-9fc1-03b74a2a5961 stage=request durationMs=616 status=200 completed=true
+2026-11-15T20:00:40.236+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=9372d5e2-4fed-4ce4-bb39-538b69bc32b1 stage=request durationMs=579 status=200 completed=true
+2026-11-15T20:00:43.920+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=4eabcd7e-fdd6-433a-9a6e-9672c44b64fb stage=request durationMs=558 status=200 completed=true
+2026-11-15T20:00:44.496+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=de2fe542-9b13-4f4c-8e5b-bdd0683a1211 stage=request durationMs=561 status=200 completed=true
+2026-11-15T20:00:48.586+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=1facef57-9605-47d0-af89-b0ddd970e884 stage=request durationMs=546 status=200 completed=true
+2026-11-15T20:00:49.359+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=91dbd128-884f-4ec9-9473-aa7f3697028f stage=request durationMs=758 status=200 completed=true
+2026-11-15T20:00:53.842+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=03ecf2cc-db32-4349-b541-3e761982e5b6 stage=request durationMs=707 status=200 completed=true
+2026-11-15T20:00:54.410+09:00  INFO 49926 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=5beec8f6-72a9-41c5-8f54-3d6b5dd6356a stage=request durationMs=552 status=200 completed=true
+2026-11-15T20:00:58.229+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=aec9d47f-b79d-461c-bf36-351b179bf684 stage=request durationMs=539 status=200 completed=true
+2026-11-15T20:00:58.856+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=e6a1ecc2-9968-4568-8495-502f6deb6bc5 stage=request durationMs=611 status=200 completed=true
+2026-11-15T20:01:02.918+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=7ff4f00c-ce1c-40e8-8ce8-b6576e7d1544 stage=request durationMs=599 status=200 completed=true
+2026-11-15T20:01:04.066+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=e9a5ef0b-d285-48db-820a-895378a72a6a stage=request durationMs=1130 status=200 completed=true
+2026-11-15T20:01:07.935+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=4bcc9d3b-9170-4a6b-a59a-a666c1f5e1b0 stage=request durationMs=640 status=200 completed=true
+2026-11-15T20:01:08.498+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=c6d3b218-1d28-4748-832a-1b31cfd3e636 stage=request durationMs=544 status=200 completed=true
+2026-11-15T20:01:12.504+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=7cc5b7b3-8a26-478e-8b41-0992f5569ce3 stage=request durationMs=564 status=200 completed=true
+2026-11-15T20:01:13.070+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=6eb56c48-bf4f-475b-a35a-42c62ec7f5d3 stage=request durationMs=544 status=200 completed=true
+2026-11-15T20:01:17.389+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=9ccf8c95-b311-4bc5-b04e-887ba7f8bc66 stage=request durationMs=588 status=200 completed=true
+2026-11-15T20:01:18.029+09:00  INFO 49926 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=a4b62ace-c881-4454-ae62-7d8c997d93a3 stage=request durationMs=620 status=200 completed=true
+2026-11-15T20:01:21.913+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=321b79b5-9243-4861-a3c7-7109d9279c00 stage=request durationMs=587 status=200 completed=true
+2026-11-15T20:01:23.670+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=a64ebc67-717c-4a2f-ac3a-bf0e6e11a696 stage=request durationMs=1735 status=200 completed=true
+2026-11-15T20:01:27.555+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=d24981f8-a88e-40e5-9e20-068c62b13121 stage=request durationMs=667 status=200 completed=true
+2026-11-15T20:01:28.219+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=950e6e2f-e4bd-47c9-b1cf-75a1dcaf490b stage=request durationMs=642 status=200 completed=true
+2026-11-15T20:01:33.399+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=7678176f-bd92-4171-ba89-1806809d10be stage=request durationMs=1731 status=200 completed=true
+2026-11-15T20:01:34.006+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=c810e47c-1471-4080-b130-2af777e2fd6a stage=request durationMs=583 status=200 completed=true
+2026-11-15T20:01:38.399+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=dd2901bd-31e0-423e-b45a-ce269a21ac4d stage=request durationMs=584 status=200 completed=true
+2026-11-15T20:01:38.962+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=1c7cfd42-51ed-4831-a12f-7517ed0c2de2 stage=request durationMs=539 status=200 completed=true
+2026-11-15T20:01:42.805+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=ebcdfd26-25d0-49f2-a0b6-cae6f666f6ab stage=request durationMs=638 status=200 completed=true
+2026-11-15T20:01:43.400+09:00  INFO 49926 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=d7dbd55f-6b5f-4c10-b98b-ca7a740fc3eb stage=request durationMs=570 status=200 completed=true
+2026-11-15T20:01:47.528+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=6dc395da-48d0-4ffb-b399-43a1d3879155 stage=request durationMs=681 status=200 completed=true
+2026-11-15T20:01:48.128+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=15775562-9ea0-4389-8adc-982d74faa5f0 stage=request durationMs=575 status=200 completed=true
+2026-11-15T20:01:52.304+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=60fe7d8b-9eb9-4e50-9d6f-3c841d042305 stage=request durationMs=660 status=200 completed=true
+2026-11-15T20:01:52.928+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=fbb70972-5a1d-434d-9618-3c7f1a1d011a stage=request durationMs=597 status=200 completed=true
+2026-11-15T20:01:56.946+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=59efec14-a54e-4f69-8d01-7a89a7cef0da stage=request durationMs=657 status=200 completed=true
+2026-11-15T20:01:57.555+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=9f9351a0-b280-49ca-98e3-988ef8aea5e4 stage=request durationMs=581 status=200 completed=true
+2026-11-15T20:02:01.421+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=16ac0f84-432c-43cd-9af1-2f88753773a6 stage=request durationMs=667 status=200 completed=true
+2026-11-15T20:02:01.984+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=d2ea5950-9d8b-4a02-b7d8-0d3a75494bc8 stage=request durationMs=535 status=200 completed=true
+2026-11-15T20:02:05.609+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=3ff11b61-a4a5-4951-9bff-44ee9cb19a1c stage=request durationMs=619 status=200 completed=true
+2026-11-15T20:02:06.224+09:00  INFO 49926 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=b2ccd50d-b82e-4620-b09a-1f4fc43fb021 stage=request durationMs=587 status=200 completed=true
+2026-11-15T20:02:10.164+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=2e0d6158-9bbc-4587-967c-cf469f09175b stage=request durationMs=652 status=200 completed=true
+2026-11-15T20:02:10.737+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=b7760907-bbef-4dfe-a402-7a4783b2fd75 stage=request durationMs=543 status=200 completed=true
+2026-11-15T20:02:14.543+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=0674a046-1c9c-4958-a54f-1b801fbeaa39 stage=request durationMs=612 status=200 completed=true
+2026-11-15T20:02:15.083+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=3dbd9039-163a-4216-a530-ecf0e05e20d5 stage=request durationMs=509 status=200 completed=true
+2026-11-15T20:02:20.567+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=a7ae96a2-098f-46a6-bd3e-1766b0f9085f stage=request durationMs=617 status=200 completed=true
+2026-11-15T20:02:21.133+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=36bc49aa-5c75-4ae6-b60a-3b798dbb844f stage=request durationMs=531 status=200 completed=true
+2026-11-15T20:02:25.156+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=93fc341b-b14c-4f18-9a81-5d22bfda7436 stage=request durationMs=545 status=200 completed=true
+2026-11-15T20:02:25.885+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=a4c0db58-ae63-496b-9db7-d8c3c3565a68 stage=request durationMs=695 status=200 completed=true
+2026-11-15T20:02:30.855+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=cd4c968d-1050-4317-a51d-38b2d2f48d0f stage=request durationMs=527 status=200 completed=true
+2026-11-15T20:02:31.457+09:00  INFO 49926 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=dedcaf3e-1ec3-483d-bc6d-d1c63319c3c6 stage=request durationMs=569 status=200 completed=true
+2026-11-15T20:02:35.628+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=142ca673-1c9e-4028-a05d-0c69fae4ebf0 stage=request durationMs=560 status=200 completed=true
+2026-11-15T20:02:36.469+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=f414f76c-a75e-4e27-a793-f7cb71639c49 stage=request durationMs=807 status=200 completed=true
+2026-11-15T20:02:40.484+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=3a013e8b-4341-4eb5-a148-e7dfb748b209 stage=request durationMs=597 status=200 completed=true
+2026-11-15T20:02:41.079+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=1d184a62-f7ab-4db0-90c0-be7158a00767 stage=request durationMs=566 status=200 completed=true
+2026-11-15T20:02:45.023+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=7a1d2491-6283-4228-9e80-58971a21cb51 stage=request durationMs=582 status=200 completed=true
+2026-11-15T20:02:45.674+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=c5b1a3a3-b48a-4c21-9b62-8dec8e34097c stage=request durationMs=623 status=200 completed=true
+2026-11-15T20:02:50.751+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=c0620ee9-ece5-4744-9d7c-4d9107a9a8e7 stage=request durationMs=628 status=200 completed=true
+2026-11-15T20:02:51.561+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=d5501539-31b5-43df-85ad-66ee0121ddae stage=request durationMs=772 status=200 completed=true
+2026-11-15T20:02:58.784+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=cf192dd7-d871-4efe-8215-ab486e8b70da stage=request durationMs=577 status=200 completed=true
+2026-11-15T20:02:59.382+09:00  INFO 49926 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=e61c7f03-92b9-4593-97af-28f74a3a7c4c stage=request durationMs=562 status=200 completed=true
+2026-11-15T20:03:03.539+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=b2e128e8-d7e3-403b-a4bc-7c5402c7428a stage=request durationMs=642 status=200 completed=true
+2026-11-15T20:03:04.091+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=952bd8f3-2a4c-471a-92c4-2cbf812c2583 stage=request durationMs=516 status=200 completed=true
+2026-11-15T20:03:08.137+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=4080e001-c631-4cc4-9188-dfb4a9c782a0 stage=request durationMs=627 status=200 completed=true
+2026-11-15T20:03:08.770+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=92ba379a-c133-4459-880d-aac4115e77c1 stage=request durationMs=596 status=200 completed=true
+2026-11-15T20:03:12.516+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=e737b4ac-d57b-430d-8cff-eb98571e0fde stage=request durationMs=681 status=200 completed=true
+2026-11-15T20:03:13.097+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=d7de69e3-56cb-4b13-b5cb-79fcf8d88797 stage=request durationMs=544 status=200 completed=true
+2026-11-15T20:03:17.188+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=8011563c-e3d1-46bb-94a8-670d272c1673 stage=request durationMs=641 status=200 completed=true
+2026-11-15T20:03:17.784+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=b2f24639-d52b-4ee6-af6f-aeeafdfc7d7b stage=request durationMs=557 status=200 completed=true
+2026-11-15T20:03:22.908+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=28af30cc-7f31-408a-a993-95535114967a stage=request durationMs=573 status=200 completed=true
+2026-11-15T20:03:23.544+09:00  INFO 49926 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=97244009-c28f-422e-a543-b72067d7efb3 stage=request durationMs=596 status=200 completed=true
+2026-11-15T20:03:27.933+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=ceade5a2-53d2-44da-bbed-72f303e73fa4 stage=request durationMs=633 status=200 completed=true
+2026-11-15T20:03:28.197+09:00  INFO 49926 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=19a8e937-05d2-487a-962e-74f88987d48a stage=request durationMs=225 status=200 completed=true
+2026-11-15T20:03:28.276+09:00  INFO 49926 --- [kb-ai-backend] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-15T20:03:28.277+09:00  INFO 49926 --- [kb-ai-backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-15T20:07:11.423+09:00  INFO 50285 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : Starting KbAiBackendApplication using Java 26.0.1 with PID 50285 (/private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-h522bclc/target/classes started by seonwoo-choi in /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-h522bclc)
+2026-11-15T20:07:11.424+09:00  INFO 50285 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : The following 1 profile is active: "default"
+2026-11-15T20:07:11.755+09:00  INFO 50285 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-15T20:07:11.756+09:00  INFO 50285 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-15T20:07:11.774+09:00  INFO 50285 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2026-11-15T20:07:11.945+09:00  INFO 50285 --- [kb-ai-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 18502 (http)
+2026-11-15T20:07:11.950+09:00  INFO 50285 --- [kb-ai-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-15T20:07:11.950+09:00  INFO 50285 --- [kb-ai-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-15T20:07:11.973+09:00  INFO 50285 --- [kb-ai-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-15T20:07:11.973+09:00  INFO 50285 --- [kb-ai-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 535 ms
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (file:/Users/seonwoo-choi/.m2/repository/io/netty/netty-common/4.1.135.Final/netty-common-4.1.135.Final.jar)
+WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
+WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
+2026-11-15T20:07:12.437+09:00  INFO 50285 --- [kb-ai-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 18502 (http) with context path '/'
+2026-11-15T20:07:12.444+09:00  INFO 50285 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : Started KbAiBackendApplication in 1.171 seconds (process running for 1.302)
+2026-11-15T20:07:12.446+09:00  WARN 50285 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-15T20:07:12.446+09:00  WARN 50285 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-15T20:07:12.645+09:00  INFO 50285 --- [kb-ai-backend] [.1-18502-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-15T20:07:12.645+09:00  INFO 50285 --- [kb-ai-backend] [.1-18502-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-15T20:07:12.646+09:00  INFO 50285 --- [kb-ai-backend] [.1-18502-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-15T20:07:12.784+09:00  INFO 50285 --- [kb-ai-backend] [.1-18502-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 120 ms
+2026-11-15T20:07:12.847+09:00  INFO 50285 --- [kb-ai-backend] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-15T20:07:12.850+09:00  INFO 50285 --- [kb-ai-backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-15T20:07:36.503+09:00  INFO 50444 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : Starting KbAiBackendApplication using Java 26.0.1 with PID 50444 (/private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-lv9efglh/target/classes started by seonwoo-choi in /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-lv9efglh)
+2026-11-15T20:07:36.504+09:00  INFO 50444 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : The following 1 profile is active: "default"
+2026-11-15T20:07:36.801+09:00  INFO 50444 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-15T20:07:36.802+09:00  INFO 50444 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-15T20:07:36.815+09:00  INFO 50444 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2026-11-15T20:07:36.976+09:00  INFO 50444 --- [kb-ai-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 18502 (http)
+2026-11-15T20:07:36.980+09:00  INFO 50444 --- [kb-ai-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-15T20:07:36.980+09:00  INFO 50444 --- [kb-ai-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-15T20:07:36.998+09:00  INFO 50444 --- [kb-ai-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-15T20:07:36.998+09:00  INFO 50444 --- [kb-ai-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 478 ms
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (file:/Users/seonwoo-choi/.m2/repository/io/netty/netty-common/4.1.135.Final/netty-common-4.1.135.Final.jar)
+WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
+WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
+2026-11-15T20:07:37.478+09:00  INFO 50444 --- [kb-ai-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 18502 (http) with context path '/'
+2026-11-15T20:07:37.485+09:00  INFO 50444 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : Started KbAiBackendApplication in 1.123 seconds (process running for 1.223)
+2026-11-15T20:07:37.486+09:00  WARN 50444 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-15T20:07:37.486+09:00  WARN 50444 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-15T20:07:37.796+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-15T20:07:37.796+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-15T20:07:37.796+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-11-15T20:07:37.942+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 128 ms
+2026-11-15T20:07:42.008+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=4a49ed5a-3893-4c17-8853-093a0b0983b2 stage=request durationMs=313 status=200 completed=true
+2026-11-15T20:07:42.292+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=98d5ddcd-ff3d-4b99-88e8-1621b118b327 stage=request durationMs=250 status=200 completed=true
+2026-11-15T20:07:46.028+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=53366571-8aa9-4035-b1fa-3029d0868eb7 stage=request durationMs=274 status=200 completed=true
+2026-11-15T20:07:46.291+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=e6251c9f-4f28-48fa-8bd8-f64951d9c10e stage=request durationMs=222 status=200 completed=true
+2026-11-15T20:07:50.902+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=3b2a3e78-ad31-4ac9-97dd-0abfa8d157b9 stage=request durationMs=864 status=200 completed=true
+2026-11-15T20:07:51.494+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=2037ce09-03bf-4534-80f9-075ab7180410 stage=request durationMs=559 status=200 completed=true
+2026-11-15T20:07:55.103+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=dae679b0-78c5-400b-9c13-8799dc6b5580 stage=request durationMs=276 status=200 completed=true
+2026-11-15T20:07:55.362+09:00  INFO 50444 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=d225e727-6350-4f8f-b63a-ff7577194593 stage=request durationMs=216 status=200 completed=true
+2026-11-15T20:07:58.993+09:00  INFO 50444 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=8075d969-40a8-4634-bd3a-0c84fca84ed5 stage=request durationMs=503 status=200 completed=true
+2026-11-15T20:07:59.080+09:00  INFO 50444 --- [kb-ai-backend] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-15T20:07:59.081+09:00  INFO 50444 --- [kb-ai-backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

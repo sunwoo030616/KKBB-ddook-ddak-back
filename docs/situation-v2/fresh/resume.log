@@ -1,0 +1,31 @@
+Actual v2 evaluation: 100 cases; providers=['e5_jev', 'llm_full_catalog']; no retries
+Traceback (most recent call last):
+  File "/private/tmp/kkbb-recall-300-work/scripts/semantic/situation_v2/resume.py", line 19, in <module>
+    exec(compile(source,str(path),'exec'),namespace)
+  File "/private/tmp/kkbb-recall-300-work/scripts/semantic/situation_v2/run.py", line 153, in <module>
+  File "/private/tmp/kkbb-recall-300-work/scripts/semantic/situation_v2/run.py", line 125, in main
+    queued=queue_wait() if provider=='llm_full_catalog' else 0;before=len(calls);t=time.perf_counter();row={**case,'provider':provider,'queue_wait_ms':queued}
+  File "/private/tmp/kkbb-recall-300-work/scripts/semantic/situation_v2/run.py", line 125, in <genexpr>
+    queued=queue_wait() if provider=='llm_full_catalog' else 0;before=len(calls);t=time.perf_counter();row={**case,'provider':provider,'queue_wait_ms':queued}
+KeyError: 'id'
+Actual v2 evaluation: 100 cases; providers=['e5_jev', 'llm_full_catalog']; no retries
+91/100 llm_full_catalog no_match exact=True P=None R=None ms=2129 calls=1
+92/100 llm_full_catalog no_match exact=True P=None R=None ms=1532 calls=1
+92/100 e5_jev no_match exact=True P=None R=None ms=316 calls=1
+93/100 e5_jev no_match exact=True P=None R=None ms=253 calls=1
+93/100 llm_full_catalog no_match exact=True P=None R=None ms=1629 calls=1
+94/100 llm_full_catalog no_match exact=True P=None R=None ms=1722 calls=1
+94/100 e5_jev no_match exact=True P=None R=None ms=276 calls=1
+95/100 e5_jev no_match exact=True P=None R=None ms=225 calls=1
+95/100 llm_full_catalog no_match exact=True P=None R=None ms=1824 calls=1
+96/100 llm_full_catalog ready exact=False P=None R=None ms=1812 calls=1
+96/100 e5_jev needs_clarification exact=True P=None R=None ms=867 calls=2
+97/100 e5_jev needs_clarification exact=True P=None R=None ms=562 calls=2
+97/100 llm_full_catalog needs_clarification exact=True P=None R=None ms=1584 calls=1
+98/100 llm_full_catalog needs_clarification exact=True P=None R=None ms=1630 calls=1
+98/100 e5_jev needs_clarification exact=True P=None R=None ms=280 calls=1
+99/100 e5_jev needs_clarification exact=True P=None R=None ms=219 calls=1
+99/100 llm_full_catalog needs_clarification exact=True P=None R=None ms=1294 calls=1
+100/100 llm_full_catalog ready exact=False P=None R=None ms=1715 calls=1
+100/100 e5_jev needs_clarification exact=True P=None R=None ms=506 calls=2
+{"e5_jev": {"cases": 100, "positive_cases": 90, "negative_cases": 10, "errors": 0, "menu_exact_correct": 87, "menu_exact_accuracy": 0.87, "status_and_menu_correct": 87, "status_and_menu_accuracy": 0.87, "macro_precision": 0.95, "macro_recall": 0.9074074074074074, "macro_f1": 0.9218518518518518, "micro_precision": 0.9848484848484849, "micro_recall": 0.8904109589041096, "micro_f1": 0.935251798561151, "true_positive_menus": 130, "extra_menus": 2, "missing_menus": 16, "cases_with_extra_menus": 2, "cases_with_missing_menus": 13, "mean_http_ms": 614.6021841499994, "median_http_ms": 591.9122914999981, "p95_http_ms": 809.21062500002, "actual_upstream_calls": 195, "tokens": {"input": {"observed_calls": 195, "sum": 697242, "mean_per_case": 6972.42}, "output": {"observed_calls": 195, "sum": 75545, "mean_per_case": 755.45}, "cached_input": {"observed_calls": 0, "sum": null, "mean_per_case": null}}, "statuses": {"needs_clarification": 7, "no_match": 6, "ready": 87}}, "llm_full_catalog": {"cases": 100, "positive_cases": 90, "negative_cases": 10, "errors": 0, "menu_exact_correct": 77, "menu_exact_accuracy": 0.77, "status_and_menu_correct": 77, "status_and_menu_accuracy": 0.77, "macro_precision": 0.8611111111111112, "macro_recall": 0.8833333333333333, "macro_f1": 0.8685185185185185, "micro_precision": 0.8164556962025317, "micro_recall": 0.8835616438356164, "micro_f1": 0.8486842105263158, "true_positive_menus": 129, "extra_menus": 29, "missing_menus": 17, "cases_with_extra_menus": 23, "cases_with_missing_menus": 17, "mean_http_ms": 1791.11892625, "median_http_ms": 1659.2478544999985, "p95_http_ms": 2795.641166999985, "actual_upstream_calls": 100, "tokens": {"input": {"observed_calls": 100, "sum": 4346535, "mean_per_case": 43465.35}, "output": {"observed_calls": 100, "sum": 5977, "mean_per_case": 59.77}, "cached_input": {"observed_calls": 100, "sum": 4245120, "mean_per_case": 42451.2}}, "statuses": {"needs_clarification": 3, "no_match": 5, "ready": 92}}}
