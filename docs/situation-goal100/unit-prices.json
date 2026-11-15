@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-11-15",
+  "currency": "USD",
+  "per_tokens": 1000000,
+  "gpt-4.1-2025-04-14": {"input": 2.0, "cached_input": 0.5, "output": 8.0, "source": "https://developers.openai.com/api/docs/models/gpt-4.1"},
+  "jev-1.14.0": {"input": 0.042, "output": 0.0, "source": "https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost"},
+  "exclusions": ["local E5 compute and hosting", "tax", "account-specific discounts", "development calls", "quota-failed attempts excluded by user request"],
+  "meaning": "Usage-based published-standard-rate estimate, not an invoice. Cached input is a subset of input."
+}
