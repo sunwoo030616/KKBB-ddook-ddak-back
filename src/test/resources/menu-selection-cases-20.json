@@ -1,0 +1,82 @@
+[
+  {
+    "query": "국민카드를 잃어버렸어요. 분실신고하고 싶어요.",
+    "expected": "kb_menu_0554"
+  },
+  {
+    "query": "분실신고했던 국민카드를 다시 찾았어요. 분실해제하고 싶어요.",
+    "expected": "kb_menu_0555"
+  },
+  {
+    "query": "일본 여행 전에 엔화로 환전 신청하고 싶어요.",
+    "expected": "kb_menu_0323"
+  },
+  {
+    "query": "오늘 달러 환율이 얼마인지 보고 싶어요.",
+    "expected": "kb_menu_0316"
+  },
+  {
+    "query": "해외여행 가기 전에 여행자보험을 찾고 싶어요.",
+    "expected": "kb_menu_0602"
+  },
+  {
+    "query": "여권을 잃어버려서 재발급 신청을 하고 싶어요.",
+    "expected": "kb_menu_0385"
+  },
+  {
+    "query": "매달 부모님 계좌로 자동이체를 등록하고 싶어요.",
+    "expected": "kb_menu_0206"
+  },
+  {
+    "query": "등록해둔 자동이체를 해지하고 싶어요.",
+    "expected": "kb_menu_0207"
+  },
+  {
+    "query": "아까 보낸 계좌이체가 정상 처리됐는지 확인하고 싶어요.",
+    "expected": "kb_menu_0205"
+  },
+  {
+    "query": "연락처로 친구한테 돈 보내고 싶어요.",
+    "expected": "kb_menu_0203"
+  },
+  {
+    "query": "급하게 소액이 필요해서 비상금 대출 알아보고 싶어요.",
+    "expected": "kb_menu_0030"
+  },
+  {
+    "query": "개인 신용대출 상품들을 찾아보고 싶어요.",
+    "expected": "kb_menu_0023"
+  },
+  {
+    "query": "내가 가진 대출들을 확인하고 싶어요.",
+    "expected": "kb_menu_0056"
+  },
+  {
+    "query": "청년 주택드림 청약통장을 만들고 싶어요.",
+    "expected": "kb_menu_0101"
+  },
+  {
+    "query": "내가 이미 가입한 청약통장을 확인하고 싶어요.",
+    "expected": "kb_menu_0103"
+  },
+  {
+    "query": "관리비를 납부하고 싶어요.",
+    "expected": "kb_menu_0240"
+  },
+  {
+    "query": "공과금을 특정 날짜에 예약해서 내고 싶어요.",
+    "expected": "kb_menu_0244"
+  },
+  {
+    "query": "내 신용점수를 확인하고 싶어요.",
+    "expected": "kb_menu_0048"
+  },
+  {
+    "query": "아이 이름으로 적금을 만들고 싶어요.",
+    "expected": "kb_menu_0180"
+  },
+  {
+    "query": "해외에서 받을 송금 정보를 상대방에게 알려주고 싶어요.",
+    "expected": "kb_menu_0346"
+  }
+]

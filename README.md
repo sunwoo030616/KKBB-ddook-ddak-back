@@ -237,3 +237,9 @@ src/main/java/com/example/kb_ai_backend
 - KB 계좌·카드 API 어댑터 (`ActionExecutor` 구현체 교체)
 - 팀 운영 로그인 제공자 설정 및 금융기관 본인인증 연동
 - 정부24·경찰청 공공 API
+
+## E5 → JEV 정제 메뉴 검색
+
+기존 9개 위젯 화면과 별도로, `POST /api/menus/select`에서 585개 정제 메뉴 → 로컬 E5 Top-40 → JEV 1회 선택을 제공합니다. 메뉴 중복 점검, 설치·실행, 평가와 한계는 [E5/JEV 메뉴 검색](docs/E5_JEV_MENUS.md)을 참고하세요.
+
+정제 메뉴 E5→JEV 실측(2026-11-15): `jev-1.14.0`, Top-40, 제공된 개발 문항 20개 각 1회에서 20/20 일치, 오류 0건, 평균 260.30ms/P95 312.75ms. 독립 평가·실사용 정확도 보장은 아닙니다. [문항별 결과](docs/menu-e5-jev-evaluation.json)
