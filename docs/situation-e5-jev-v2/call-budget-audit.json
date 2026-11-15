@@ -1,0 +1,12 @@
+{
+  "actual_jev_calls": {
+    "development-sets": 20,
+    "development-roles": 20,
+    "regression": 200,
+    "fresh": 300
+  },
+  "total": 540,
+  "openai_calls": 0,
+  "development_api_cost_estimate_usd": 0.009728376,
+  "no_label_changes": true
+}

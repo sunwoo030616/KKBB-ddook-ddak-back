@@ -1,0 +1,34 @@
+"""Generic listwise set selection from real candidates; no situation labels or lookup tables."""
+import itertools,math,re
+import numpy as np
+
+def shortlist(candidate_ids,probabilities,vectors,index,limit=10):
+ remaining=[i for i in candidate_ids if probabilities[i]>=.3];chosen=[]
+ while remaining and len(chosen)<limit:
+  def score(mid):
+   similarity=max(float(vectors[index[mid]]@vectors[index[x]]) for x in chosen) if chosen else 0
+   return .7*probabilities[mid]-.3*similarity
+  best=max(remaining,key=score);chosen.append(best);remaining.remove(best)
+ return chosen
+
+def role(menu):
+ text=menu['name']+' '+menu['description']
+ for label,pattern in [('professional_advice','상담'),('calculator','계산기'),('data_connection','연결|불러오기|다른금융 등록'),('information','현황|조회|시세|내역'),('protection','보험'),('execution','신청|예약|예매|발급|출금|판매'),('product','대출|적금|정기예금'),('general_content','안내|가이드|Tip|정보|골든라이프')]:
+  if re.search(pattern,text):return label
+ return 'other'
+
+def build_choice(message,pool,menus,policy):
+ mapping={};criteria={}
+ for n in [min(3,len(pool))] if pool else []:
+  for group in itertools.combinations(pool,n):
+   key='set_'+str(len(mapping)+1);mapping[key]=list(group);criteria[key]=' / '.join(menus[i]['name'] for i in group)
+ criteria['none']='적절한 후보가 없음';criteria['unsure']='사용자의 목적을 확인해야 함'
+ assert len(criteria)<=255
+ state={'user_request':message,'policy':policy,'candidates':[{'id':i,'name':menus[i]['name'],'purpose':menus[i]['description'],'when':menus[i]['select_when'],'functional_role':role(menus[i])} for i in pool]}
+ question={'type':'choice','instructions':'원문 상황을 지금 준비하는 데 가장 도움이 되는 메뉴 조합 하나를 선택한다. 개별 메뉴 점수를 더하는 문제가 아니라 조합 전체의 도움을 판단한다. 가능한 세 가지 보완적 준비를 제시한다. 같은 역할의 유사 조회 화면만 모으지 말고 정보 확인·자료 연결·전문 상담·실제 진행 등 서로 다른 지원 역할을 검토한다. 단 사용자가 같은 역할의 다른 대상을 요청하면 각각 다룬다. 정보 파악이라는 목표를 임의의 자금 이동이나 신규 상품 가입으로 바꾸지 않는다. 서로 보완하는 결과를 다루고, 같은 목적의 유사한 메뉴나 상위 홍보 진입점을 중복 나열하지 않는다. 근거 없는 상품 자격·완료·보유 상태를 가정하지 않는다. 사용자가 원하지 않은 대출·투자 가입을 준비의 필수 조건으로 삼지 않는다. 일반 안내보다 실제로 살펴보거나 진행할 수 있는 구체적 기능을 우선한다. 부적절한 메뉴를 추가하느니 더 작은 조합을 선택한다. 후보가 없으면 none, 목적 불명은 unsure.','criteria':criteria}
+ return {'state':state,'questions':{'menu_set':question}},mapping
+
+def decode(response,mapping):
+ a=response.get('answers',{}).get('menu_set',{});choice=a.get('choice');confidence=a.get('confidence')
+ if a.get('type')!='choice' or choice not in set(mapping)|{'none','unsure'} or isinstance(confidence,bool) or not isinstance(confidence,(int,float)) or not math.isfinite(confidence) or not 0<=confidence<=1:raise ValueError('Invalid set choice')
+ return mapping.get(choice,[]),'ready' if choice in mapping else 'no_match' if choice=='none' else 'needs_clarification',confidence
