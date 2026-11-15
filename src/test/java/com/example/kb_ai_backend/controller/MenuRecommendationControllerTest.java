@@ -9,7 +9,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 class MenuRecommendationControllerTest {
     @Test void returnsMenuBundleAndRejectsBlankInput() throws Exception {
-        var service=mock(SemanticMenuRecommendationService.class);var catalog=new MenuCatalog(new ObjectMapper());
+        var service=mock(GeneralMenuRecommendationService.class);var catalog=new MenuCatalog(new ObjectMapper());
         var menu=catalog.find("kb_menu_0323");
         when(service.compose("일본 여행")).thenReturn(new SemanticMenuRecommendationService.Result("ready",
             List.of(new SemanticMenuRecommendationService.Recommendation(menu,"foreign_exchange","환전","suggested","상황 제안")),

@@ -1,6 +1,7 @@
 package com.example.kb_ai_backend.controller;
 
 import com.example.kb_ai_backend.service.MenuCatalog;
+import com.example.kb_ai_backend.service.GeneralMenuRecommendationService;
 import com.example.kb_ai_backend.service.SemanticMenuRecommendationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +12,9 @@ import java.util.*;
 @RestController
 @RequestMapping("/api/menus/recommend")
 public class MenuRecommendationController {
-    private final SemanticMenuRecommendationService service;
+    private final GeneralMenuRecommendationService service;
     private final MenuCatalog catalog;
-    public MenuRecommendationController(SemanticMenuRecommendationService service, MenuCatalog catalog) {
+    public MenuRecommendationController(GeneralMenuRecommendationService service, MenuCatalog catalog) {
         this.service=service; this.catalog=catalog;
     }
     public record Request(String message) {}
