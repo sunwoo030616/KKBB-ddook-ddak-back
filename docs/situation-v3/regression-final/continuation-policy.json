@@ -1,0 +1,7 @@
+{
+  "prior": "/private/tmp/kkbb-recall-300-work/docs/situation-v3/regression-completed/results.json",
+  "preserved_nonquota_rows": 25,
+  "excluded_prior_quota_rows": 9,
+  "quota_only_replacement_authorized": true,
+  "excluded_quota_tokens": true
+}

@@ -1,0 +1,36 @@
+{
+  "reason": "Provider response was audited during graceful interruption but not committed to a case row. Preserve observed usage separately; do not invent a case score or drop its incurred usage.",
+  "calls": [
+    {
+      "answers": null,
+      "baseline_content": null,
+      "http_status": 200,
+      "model": "gpt-4.1-2025-04-14",
+      "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"basis\":\"explicit\",\"query\":\"달러 환율조회\",\"evidence\":\"현재 환율을 보고\"},{\"basis\":\"explicit\",\"query\":\"달러 관심통화 등록\",\"evidence\":\"그 통화를 관심 목록에 넣고 싶어요\"}]}",
+      "provider": "llm_task_planner",
+      "provider_http_ms": 62025.359666,
+      "rate_headers": {
+        "x-ratelimit-limit-tokens": "450000",
+        "x-ratelimit-remaining-tokens": "430699",
+        "x-ratelimit-reset-tokens": "2.573s"
+      },
+      "request_payload_bytes": 72872,
+      "stage": "task_planning",
+      "usage": {
+        "completion_tokens": 57,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens": 17247,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "total_tokens": 17304
+      }
+    }
+  ]
+}

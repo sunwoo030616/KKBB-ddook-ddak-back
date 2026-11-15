@@ -1,0 +1,523 @@
+{
+  "policy": "User requested quota-only replacement and exclusion of original quota-attempt tokens from comparison totals; original attempts preserved separately. Missing usage is unknown, not zero. Different original calls may be visible in multiple historical logs; this list counts quota-failed rows only, never retained nonquota rows.",
+  "excluded_attempt_rows": 21,
+  "excluded_upstream_calls": {
+    "llm_task_planner": 18,
+    "llm_full_catalog": 3
+  },
+  "observed_usage_and_unknowns": {
+    "llm_task_planner": {
+      "input_observed": 0,
+      "output_observed": 0,
+      "missing_usage_calls": 18
+    },
+    "llm_full_catalog": {
+      "input_observed": 0,
+      "output_observed": 0,
+      "missing_usage_calls": 3
+    }
+  },
+  "attempts": [
+    {
+      "source": "docs/situation-v3/regression/results.json",
+      "case_id": "single_019",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72811,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "provider_http_ms": 602.2427919999984
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression/results.json",
+      "case_id": "single_020",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72798,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "provider_http_ms": 746.3533330000018
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression/results.json",
+      "case_id": "single_021",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72810,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "provider_http_ms": 887.7692920000015
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression/results.json",
+      "case_id": "single_022",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72800,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {},
+          "error_detail": {
+            "code": "credit_balance_exhausted",
+            "type": "insufficient_quota",
+            "param": null,
+            "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+          },
+          "provider_http_ms": 852.9257080000008
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression/results.json",
+      "case_id": "single_023",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72818,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {},
+          "error_detail": {
+            "code": "credit_balance_exhausted",
+            "type": "insufficient_quota",
+            "param": null,
+            "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+          },
+          "provider_http_ms": 629.5565000000014
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression/results.json",
+      "case_id": "single_024",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72823,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {},
+          "error_detail": {
+            "code": "credit_balance_exhausted",
+            "type": "insufficient_quota",
+            "param": null,
+            "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+          },
+          "provider_http_ms": 573.2577079999999
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression-completed/results.json",
+      "case_id": "single_023",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72818,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {
+            "retry-after": "1",
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "12758",
+            "x-ratelimit-limit-requests": "5000",
+            "x-ratelimit-remaining-requests": "4999",
+            "x-ratelimit-reset-tokens": "58.298s",
+            "x-ratelimit-reset-requests": "12ms"
+          },
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null,
+            "message": "Rate limit reached for gpt-4.1-2025-04-14 (for limit gpt-4.1) in organization [redacted] on tokens per min (TPM): Limit 450000, Used 437242, Requested 16847. Please try again in 546ms. Visit https://platform.openai.com/account/rate-limits to learn more."
+          },
+          "provider_http_ms": 342.30050000000034
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression-completed/results.json",
+      "case_id": "single_024",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72823,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {
+            "retry-after": "1",
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "15519",
+            "x-ratelimit-limit-requests": "5000",
+            "x-ratelimit-remaining-requests": "4999",
+            "x-ratelimit-reset-tokens": "57.93s",
+            "x-ratelimit-reset-requests": "12ms"
+          },
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null,
+            "message": "Rate limit reached for gpt-4.1-2025-04-14 (for limit gpt-4.1) in organization [redacted] on tokens per min (TPM): Limit 450000, Used 434481, Requested 16848. Please try again in 178ms. Visit https://platform.openai.com/account/rate-limits to learn more."
+          },
+          "provider_http_ms": 527.5923339999977
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression-completed/results.json",
+      "case_id": "single_026",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72826,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {
+            "retry-after": "1",
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "13272",
+            "x-ratelimit-limit-requests": "5000",
+            "x-ratelimit-remaining-requests": "4999",
+            "x-ratelimit-reset-tokens": "58.23s",
+            "x-ratelimit-reset-requests": "12ms"
+          },
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null,
+            "message": "Rate limit reached for gpt-4.1-2025-04-14 (for limit gpt-4.1) in organization [redacted] on tokens per min (TPM): Limit 450000, Used 436728, Requested 16849. Please try again in 477ms. Visit https://platform.openai.com/account/rate-limits to learn more."
+          },
+          "provider_http_ms": 379.5594589999993
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression-completed/results.json",
+      "case_id": "single_027",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72831,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {
+            "retry-after": "1",
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "16410",
+            "x-ratelimit-limit-requests": "5000",
+            "x-ratelimit-remaining-requests": "4999",
+            "x-ratelimit-reset-tokens": "57.811s",
+            "x-ratelimit-reset-requests": "12ms"
+          },
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null,
+            "message": "Rate limit reached for gpt-4.1-2025-04-14 (for limit gpt-4.1) in organization [redacted] on tokens per min (TPM): Limit 450000, Used 433590, Requested 16850. Please try again in 59ms. Visit https://platform.openai.com/account/rate-limits to learn more."
+          },
+          "provider_http_ms": 339.961584000001
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression-completed/results.json",
+      "case_id": "single_029",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72803,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {
+            "retry-after": "1",
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "12485",
+            "x-ratelimit-limit-requests": "5000",
+            "x-ratelimit-remaining-requests": "4999",
+            "x-ratelimit-reset-tokens": "58.335s",
+            "x-ratelimit-reset-requests": "12ms"
+          },
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null,
+            "message": "Rate limit reached for gpt-4.1-2025-04-14 (for limit gpt-4.1) in organization [redacted] on tokens per min (TPM): Limit 450000, Used 437515, Requested 16843. Please try again in 582ms. Visit https://platform.openai.com/account/rate-limits to learn more."
+          },
+          "provider_http_ms": 330.129375000002
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression-completed/results.json",
+      "case_id": "single_030",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72822,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {
+            "retry-after": "1",
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "15296",
+            "x-ratelimit-limit-requests": "5000",
+            "x-ratelimit-remaining-requests": "4999",
+            "x-ratelimit-reset-tokens": "57.96s",
+            "x-ratelimit-reset-requests": "12ms"
+          },
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null,
+            "message": "Rate limit reached for gpt-4.1-2025-04-14 (for limit gpt-4.1) in organization [redacted] on tokens per min (TPM): Limit 450000, Used 434704, Requested 16848. Please try again in 207ms. Visit https://platform.openai.com/account/rate-limits to learn more."
+          },
+          "provider_http_ms": 359.38233400000286
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression-completed/results.json",
+      "case_id": "single_032",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72807,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {
+            "retry-after": "1",
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "9354",
+            "x-ratelimit-limit-requests": "5000",
+            "x-ratelimit-remaining-requests": "4999",
+            "x-ratelimit-reset-tokens": "58.752s",
+            "x-ratelimit-reset-requests": "12ms"
+          },
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null,
+            "message": "Rate limit reached for gpt-4.1-2025-04-14 (for limit gpt-4.1) in organization [redacted] on tokens per min (TPM): Limit 450000, Used 440646, Requested 16844. Please try again in 999ms. Visit https://platform.openai.com/account/rate-limits to learn more."
+          },
+          "provider_http_ms": 354.32337500000347
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression-completed/results.json",
+      "case_id": "single_033",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72820,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {
+            "retry-after": "1",
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "11931",
+            "x-ratelimit-limit-requests": "5000",
+            "x-ratelimit-remaining-requests": "4999",
+            "x-ratelimit-reset-tokens": "58.409s",
+            "x-ratelimit-reset-requests": "12ms"
+          },
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null,
+            "message": "Rate limit reached for gpt-4.1-2025-04-14 (for limit gpt-4.1) in organization [redacted] on tokens per min (TPM): Limit 450000, Used 438069, Requested 16847. Please try again in 656ms. Visit https://platform.openai.com/account/rate-limits to learn more."
+          },
+          "provider_http_ms": 326.3643750000007
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-v3/regression-completed/results.json",
+      "case_id": "single_034",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72826,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {
+            "retry-after": "1",
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "14718",
+            "x-ratelimit-limit-requests": "5000",
+            "x-ratelimit-remaining-requests": "4999",
+            "x-ratelimit-reset-tokens": "58.037s",
+            "x-ratelimit-reset-requests": "12ms"
+          },
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null,
+            "message": "Rate limit reached for gpt-4.1-2025-04-14 (for limit gpt-4.1) in organization [redacted] on tokens per min (TPM): Limit 450000, Used 435282, Requested 16849. Please try again in 285ms. Visit https://platform.openai.com/account/rate-limits to learn more."
+          },
+          "provider_http_ms": 345.33950000000146
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-compare-v3/paired/results.json",
+      "case_id": "context_passport_roaming_2",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72878,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null
+          },
+          "provider_http_ms": 345.6484999999958
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-compare-v3/paired/results.json",
+      "case_id": "context_fx_tracking_1",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72872,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null
+          },
+          "provider_http_ms": 537.3440000000045
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-compare-v3/paired/results.json",
+      "case_id": "context_fx_tracking_1",
+      "provider": "llm_full_catalog",
+      "calls": [
+        {
+          "provider": "llm_full_catalog",
+          "stage": "full_catalog",
+          "request_payload_bytes": 95457,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null
+          },
+          "provider_http_ms": 361.13379200000395
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-compare-v3/paired/results.json",
+      "case_id": "context_fx_tracking_2",
+      "provider": "llm_full_catalog",
+      "calls": [
+        {
+          "provider": "llm_full_catalog",
+          "stage": "full_catalog",
+          "request_payload_bytes": 95441,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null
+          },
+          "provider_http_ms": 346.5616659999995
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-compare-v3/paired/results.json",
+      "case_id": "context_fx_collection_1",
+      "provider": "hybrid",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72877,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null
+          },
+          "provider_http_ms": 494.7580000000045
+        }
+      ]
+    },
+    {
+      "source": "docs/situation-compare-v3/paired/results.json",
+      "case_id": "context_fx_collection_1",
+      "provider": "llm_full_catalog",
+      "calls": [
+        {
+          "provider": "llm_full_catalog",
+          "stage": "full_catalog",
+          "request_payload_bytes": 95462,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_detail": {
+            "code": "rate_limit_exceeded",
+            "type": "tokens",
+            "param": null
+          },
+          "provider_http_ms": 534.3237089999917
+        }
+      ]
+    }
+  ]
+}

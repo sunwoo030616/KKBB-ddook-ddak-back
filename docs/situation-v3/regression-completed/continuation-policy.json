@@ -1,0 +1,16 @@
+{
+  "prior": "/private/tmp/kkbb-recall-300-work/docs/situation-v3/regression/results.json",
+  "preserved_nonquota_rows": 18,
+  "quota_case_ids_to_replace": [
+    "single_019",
+    "single_020",
+    "single_021",
+    "single_022",
+    "single_023",
+    "single_024"
+  ],
+  "unattempted_cases": 276,
+  "excluded_original_quota_attempts": 6,
+  "user_authorized_replacement": true,
+  "original_attempts_preserved": true
+}

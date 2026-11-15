@@ -1,0 +1,339 @@
+{
+  "approval": "pending_user_review",
+  "not_a_completed_evaluation": true,
+  "rows": [
+    {
+      "id": "S01",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "포괄 목표",
+      "input_example": "일본 여행 가고 싶어.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "환전 준비",
+          "acceptable_ids": [
+            "kb_menu_0323"
+          ]
+        },
+        {
+          "outcome": "해외 결제 준비",
+          "acceptable_ids": [
+            "kb_menu_0413"
+          ]
+        },
+        {
+          "outcome": "해외여행보험 검토",
+          "acceptable_ids": [
+            "kb_menu_0602"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [
+        {
+          "outcome": "일반 해외결제 진입점",
+          "acceptable_ids": [
+            "kb_menu_0608"
+          ]
+        },
+        {
+          "outcome": "여행용 체크카드",
+          "acceptable_ids": [
+            "kb_menu_0603"
+          ]
+        },
+        {
+          "outcome": "로밍",
+          "acceptable_ids": [
+            "kb_menu_0612"
+          ]
+        }
+      ],
+      "forbidden": "불필요한 대출·투자, 거래·가입 완료 주장",
+      "review_note": "환전·QR·보험은 사용자 예시. 일반 해외결제·여행카드를 QR의 대체 정답으로 인정할지는 검토 필요.",
+      "inference_policy": false
+    },
+    {
+      "id": "S02",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "포괄 목표+제약",
+      "input_example": "차 없이 부모님과 부산에서 1박 하고 오려고 해.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "철도 이동 준비",
+          "acceptable_ids": [
+            "kb_menu_0384"
+          ]
+        },
+        {
+          "outcome": "숙박 예약 탐색",
+          "acceptable_ids": [
+            "kb_menu_0604"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [],
+      "forbidden": "근거 없는 캠핑·휴양림 한정, 여행자보험 필수화",
+      "review_note": "교통·숙박을 독립 준비로 제안한다는 제품 기준 초안. 특정 휴양림·캠핑장으로 임의 축소하지 않음.",
+      "inference_policy": false
+    },
+    {
+      "id": "S03",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "포괄 목표",
+      "input_example": "작은 카페를 처음 열려고 해.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "사업자 금융 기반 준비",
+          "acceptable_ids": [
+            "kb_menu_0630"
+          ]
+        },
+        {
+          "outcome": "창업 지원 탐색",
+          "acceptable_ids": [
+            "kb_menu_0017"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [
+        {
+          "outcome": "소상공인 상담",
+          "acceptable_ids": [
+            "kb_menu_0629"
+          ]
+        },
+        {
+          "outcome": "카드 가맹점 준비",
+          "acceptable_ids": [
+            "kb_menu_0626"
+          ]
+        }
+      ],
+      "forbidden": "대출 자동 추천, 신용한도 확정, 임의 적금 가입",
+      "review_note": "계좌 준비·정책 지원을 기본 추천으로 볼지는 사용자 검토 필요. 대출 자격·지원금 수급 가능성을 보장하지 않음.",
+      "inference_policy": false
+    },
+    {
+      "id": "S04",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "포괄 목표",
+      "input_example": "처음으로 집을 사려고 알아보는 중이야.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "가격 정보 확인",
+          "acceptable_ids": [
+            "kb_menu_0588"
+          ]
+        },
+        {
+          "outcome": "부동산 세금 검토",
+          "acceptable_ids": [
+            "kb_menu_0591"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [
+        {
+          "outcome": "집 찾기",
+          "acceptable_ids": [
+            "kb_menu_0586"
+          ]
+        },
+        {
+          "outcome": "공공주택 정보",
+          "acceptable_ids": [
+            "kb_menu_0587"
+          ]
+        }
+      ],
+      "forbidden": "자격 미확인 전용 상품 강제, 임의 대출 신청",
+      "review_note": "시세·세금 검토를 필수 제안으로 볼지는 검토 필요. 특정 대출이나 청년 자격을 가정하지 않음.",
+      "inference_policy": false
+    },
+    {
+      "id": "S05",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "포괄 목표",
+      "input_example": "타던 차를 이제 팔려고 해.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "차량 가격 확인",
+          "acceptable_ids": [
+            "kb_menu_0597"
+          ]
+        },
+        {
+          "outcome": "판매 진입",
+          "acceptable_ids": [
+            "kb_menu_0596"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [],
+      "forbidden": "자동차 구매 대출·보험 가입을 필수 정답으로 추가",
+      "review_note": "가격 확인과 판매를 별도 준비로 제안한다는 초안. 내 차 관리 시작하기(595)를 가격 조회의 동등 대체로 볼지 검토.",
+      "inference_policy": false
+    },
+    {
+      "id": "S06",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "포괄 목표",
+      "input_example": "은퇴가 가까워져서 노후 준비를 해보려고.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "기존 연금 정보 파악",
+          "acceptable_ids": [
+            "kb_menu_0173"
+          ]
+        },
+        {
+          "outcome": "은퇴 준비 상담",
+          "acceptable_ids": [
+            "kb_menu_0176"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [
+        {
+          "outcome": "연금상품 탐색",
+          "acceptable_ids": [
+            "kb_menu_0175"
+          ]
+        },
+        {
+          "outcome": "총자산 현황",
+          "acceptable_ids": [
+            "kb_menu_0260"
+          ]
+        }
+      ],
+      "forbidden": "IRP·보험·투자상품 무조건 가입, 수익 보장",
+      "review_note": "정보 파악·상담을 기본 제안으로 둘지 검토 필요. 특정 상품 가입을 목표로 간주하지 않음.",
+      "inference_policy": false
+    },
+    {
+      "id": "S07",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "상황·제약",
+      "input_example": "국민 신용카드 든 지갑을 잃어버렸고 집에 갈 현금도 없어.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "분실 카드 사용 차단",
+          "acceptable_ids": [
+            "kb_menu_0554"
+          ]
+        },
+        {
+          "outcome": "카드 없는 현금 인출",
+          "acceptable_ids": [
+            "kb_menu_0210"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [],
+      "forbidden": "현금서비스·리볼빙을 출금의 대체로 추천",
+      "review_note": "손실 대응과 당장 필요한 현금을 별도 업무로 해석. 출금 도움말(211)만으로 해결로 볼지는 검토 필요.",
+      "inference_policy": false
+    },
+    {
+      "id": "S08",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "상황·제약",
+      "input_example": "다음 달 해외 출장인데 여권이 만료됐고 리브모바일을 쓰고 있어. 돈과 보험 준비는 끝났어.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "여권 재발급",
+          "acceptable_ids": [
+            "kb_menu_0385"
+          ]
+        },
+        {
+          "outcome": "해외 통신 준비",
+          "acceptable_ids": [
+            "kb_menu_0612"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [],
+      "forbidden": "완료한 환전·보험 재추천, 여권 유효성 확인만 하고 끝냄",
+      "review_note": "만료된 여권과 해외 통신을 별개 준비로 해석. 통신 추천을 필수로 둘지는 검토 필요.",
+      "inference_policy": false
+    },
+    {
+      "id": "S09",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "상황·제약",
+      "input_example": "새 가게 카드 매출이 늘었는데 돈이 잘 들어오는지 모르겠고 은행에서 받을 지원도 궁금해.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "매출·정산 파악",
+          "acceptable_ids": [
+            "kb_menu_0018"
+          ]
+        },
+        {
+          "outcome": "정책 지원 탐색",
+          "acceptable_ids": [
+            "kb_menu_0017"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [
+        {
+          "outcome": "세금·고용 지원 예상조회",
+          "acceptable_ids": [
+            "kb_menu_0019"
+          ]
+        }
+      ],
+      "forbidden": "매출채권 대출 등 미요청 대출 강제",
+      "review_note": "현금흐름 파악과 지원 탐색의 두 목적. 정책자금과 세금·고용혜택을 동등 대체로 볼지는 검토 필요.",
+      "inference_policy": false
+    },
+    {
+      "id": "S10",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "상황·제약",
+      "input_example": "여러 은행에 돈이 흩어져 있어서 내 재산이 얼마인지 감이 안 와.",
+      "required_outcome_groups_proposed": [
+        {
+          "outcome": "다른 금융 연결",
+          "acceptable_ids": [
+            "kb_menu_0164"
+          ]
+        },
+        {
+          "outcome": "전체 자산 파악",
+          "acceptable_ids": [
+            "kb_menu_0260"
+          ]
+        }
+      ],
+      "optional_outcomes_proposed": [],
+      "forbidden": "불필요한 자금 이체·잔액 모으기 강제",
+      "review_note": "연결이 이미 되어 있는지 모르면 확인을 허용할지, 안내 두 메뉴를 제안할지 검토 필요. 잔액 모으기는 실제 자금 이동이므로 자동 요구하지 않음.",
+      "inference_policy": false
+    },
+    {
+      "id": "C01",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "추가 확인",
+      "input_example": "이거 좀 처리해 줘.",
+      "required_outcome_groups_proposed": [],
+      "optional_outcomes_proposed": [],
+      "forbidden": "임의 메뉴 여러 개 반환",
+      "review_note": "대상 업무 자체를 알 수 없으므로 needs_clarification. 복합 요청 정확도 300개의 분모에 섞지 않음.",
+      "inference_policy": false
+    },
+    {
+      "id": "C02",
+      "status": "DRAFT_NOT_APPROVED",
+      "type": "추가 확인",
+      "input_example": "투자하고 싶어.",
+      "required_outcome_groups_proposed": [],
+      "optional_outcomes_proposed": [],
+      "forbidden": "특정 상품·투자금·수익률 단정",
+      "review_note": "투자 대상·목적·성향을 확인할지, 일반 안내 하나를 제안할지 제품 정책 검토. 복수 상품 가입을 정답으로 강제하지 않음.",
+      "inference_policy": false
+    }
+  ]
+}
