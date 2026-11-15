@@ -29,7 +29,7 @@ def main():
   try:
    req=urllib.request.Request(url,data=data,headers={'Content-Type':'application/json','Authorization':'Bearer '+key})
    with urllib.request.urlopen(req,timeout=65) as response:
-    body=json.load(response);record.update(model=body.get('model'),usage=body.get('usage'),http_status=response.status,
+    body=json.load(response);record.update(model=body.get('model'),usage=body.get('usage'),answers=body.get('answers') if provider=='e5_jev' else None,http_status=response.status,
      rate_headers={k:response.headers.get(k) for k in ['x-ratelimit-limit-tokens','x-ratelimit-remaining-tokens','x-ratelimit-reset-tokens'] if response.headers.get(k)})
     if provider=='llm_full_catalog':rate.update(record['rate_headers'])
    return body

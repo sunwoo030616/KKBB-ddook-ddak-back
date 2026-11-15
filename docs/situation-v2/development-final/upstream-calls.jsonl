@@ -1,0 +1,2 @@
+{"provider": "e5_jev", "stage": "routing", "request_payload_bytes": 2278, "model": "jev-1.14.0", "usage": {"input_tokens": 876, "output_tokens": 78}, "http_status": 200, "rate_headers": {}, "provider_http_ms": 237.77212499999933}
+{"provider": "e5_jev", "stage": "binary_filter", "request_payload_bytes": 30939, "model": "jev-1.14.0", "usage": {"input_tokens": 10500, "output_tokens": 1236}, "http_status": 200, "rate_headers": {}, "provider_http_ms": 403.1039160000001}

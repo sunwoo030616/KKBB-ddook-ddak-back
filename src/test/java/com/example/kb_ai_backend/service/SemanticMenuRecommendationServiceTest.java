@@ -22,4 +22,14 @@ class SemanticMenuRecommendationServiceTest {
     @Test void masksInputBeforeRoutingAndDelegatedSelection(){var m=catalog.find("kb_menu_0323");when(jev.judge(anyMap(),anyMap())).thenReturn(flags("single"));when(single.select(anyString())).thenReturn(selected(m));service.compose("환전 연락처 010-1234-5678");verify(single).select("환전 연락처 [민감정보]");}
     @Test void invalidAndOversizedRequestsNeverSilentlyTruncate(){assertThrows(ResponseStatusException.class,()->service.compose(" "));assertThrows(ResponseStatusException.class,()->service.compose("가".repeat(2001)));verifyNoInteractions(jev);when(jev.judge(anyMap(),anyMap())).thenReturn(flags("multiple"));assertEquals("needs_clarification",service.compose("통장사본 그리고 환전 그리고 보험 그리고 송금").status());verifyNoInteractions(retrieval);}
     @Test void unrelatedAndAmbiguousFlagsAreSeparateFromSingleChoiceConfidence(){when(jev.judge(anyMap(),anyMap())).thenReturn(flags("unrelated"),flags("ambiguous"));assertEquals("no_match",service.compose("요리법").status());assertEquals("needs_clarification",service.compose("뭐하지").status());verifyNoInteractions(retrieval,single);}
+    @Test void completedTravelDefaultsFallBackToOtherExplicitRequestsWithinThreeCalls(){
+        var a=catalog.find("kb_menu_0612");var b=catalog.find("kb_menu_0476");
+        when(jev.judge(anyMap(),anyMap())).thenReturn(flags("travel"),new JevDecisionClient.BinaryDecisions(Map.of(a.id(),.99,b.id(),.99),20));
+        when(retrieval.retrieve(anyString(),anyInt())).thenReturn(List.of(a,b));
+        when(jev.decide(anyMap(),anyMap())).thenReturn(answers(Map.of("foreign_exchange","skip","foreign_payment","skip","travel_insurance","skip")));
+        var r=service.compose("여행 기본 준비는 끝났고 이번에는 로밍과 여권 확인만 할래");
+        assertEquals(2,r.recommendations().size());assertEquals(3,r.metrics().jevCalls());
+        assertTrue(r.candidateIdsByNeed().containsKey("candidate_filter"));
+    }
+
 }

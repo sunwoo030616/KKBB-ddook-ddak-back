@@ -81,6 +81,11 @@ public class SemanticMenuRecommendationService {
             if(answer.confidence()<confidence||Set.of("no_match","unsure","skip").contains(answer.choice())){reviews.add(new Review("selection",task.id(),"unresolved_task",answer.choice(),answer.confidence()));continue;}
             selected.putIfAbsent(answer.choice(),new Recommendation(catalog.find(answer.choice()),task.id(),task.query(),task.basis(),task.basis().equals("suggested")?"상황 정책에 따른 제안":"요청한 업무",answer.confidence(),null));
         }
+        if(mode.equals("travel")&&selected.isEmpty()&&calls<3){
+            // Completed/excluded defaults do not imply that other explicitly requested work is unsupported.
+            var fallback=filterCandidates(message,planning);var allEvidence=new LinkedHashMap<>(evidence(candidates));allEvidence.putAll(fallback.candidateIdsByNeed());
+            return new Result(fallback.status(),fallback.recommendations(),new Metrics("semantic_only",planning,retrieval+fallback.metrics().retrievalMs(),selection+fallback.metrics().selectionMs(),calls+1),fallback.reviews(),Collections.unmodifiableMap(allEvidence));
+        }
         String status=selected.isEmpty()?"needs_clarification":reviews.isEmpty()?"ready":"partial";
         return new Result(status,List.copyOf(selected.values()),new Metrics("semantic_only",planning,retrieval,selection,calls),List.copyOf(reviews),evidence(candidates));
     }
