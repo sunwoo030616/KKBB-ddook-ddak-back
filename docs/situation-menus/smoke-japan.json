@@ -1,0 +1,138 @@
+{
+  "status": "ready",
+  "menus": [
+    {
+      "id": "kb_menu_0323",
+      "name": "환전신청",
+      "description": "KB환전서비스에서 환전하기로 진행하는 화면.",
+      "select_when": [
+        "환전 신규 신청을 진행하고 싶을 때"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "kb_menu_0413",
+      "name": "해외 QR 결제",
+      "description": "사용자가 알려준 해외결제의 QR 항목.",
+      "select_when": [
+        "해외 QR 결제를 이용하려 할 때"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "kb_menu_0602",
+      "name": "KB손해보험 다이렉트 해외여행보험",
+      "description": "여행 준비 영역의 해외여행보험 상품 안내.",
+      "select_when": [
+        "KB손해보험 다이렉트 해외여행보험을 찾을 때"
+      ],
+      "aliases": []
+    }
+  ],
+  "recommendations": [
+    {
+      "menu": {
+        "id": "kb_menu_0323",
+        "name": "환전신청",
+        "description": "KB환전서비스에서 환전하기로 진행하는 화면.",
+        "select_when": [
+          "환전 신규 신청을 진행하고 싶을 때"
+        ],
+        "aliases": []
+      },
+      "needId": "foreign_exchange",
+      "need": "해외여행 현지 통화 준비",
+      "basis": "suggested",
+      "explanation": "상황에 따라 검토할 수 있는 업무: 해외여행 현지 통화 준비",
+      "menuConfidence": 0.96,
+      "basisConfidence": 0.96
+    },
+    {
+      "menu": {
+        "id": "kb_menu_0413",
+        "name": "해외 QR 결제",
+        "description": "사용자가 알려준 해외결제의 QR 항목.",
+        "select_when": [
+          "해외 QR 결제를 이용하려 할 때"
+        ],
+        "aliases": []
+      },
+      "needId": "foreign_payment",
+      "need": "해외 현지 QR 결제 준비",
+      "basis": "suggested",
+      "explanation": "상황에 따라 검토할 수 있는 업무: 해외 현지 QR 결제 준비",
+      "menuConfidence": 0.99,
+      "basisConfidence": 0.98
+    },
+    {
+      "menu": {
+        "id": "kb_menu_0602",
+        "name": "KB손해보험 다이렉트 해외여행보험",
+        "description": "여행 준비 영역의 해외여행보험 상품 안내.",
+        "select_when": [
+          "KB손해보험 다이렉트 해외여행보험을 찾을 때"
+        ],
+        "aliases": []
+      },
+      "needId": "travel_insurance",
+      "need": "해외여행 보험 검토",
+      "basis": "suggested",
+      "explanation": "상황에 따라 검토할 수 있는 업무: 해외여행 보험 검토",
+      "menuConfidence": 0.92,
+      "basisConfidence": 0.96
+    }
+  ],
+  "metrics": {
+    "retrievalMode": "semantic_only",
+    "planningMs": 579,
+    "retrievalMs": 30,
+    "selectionMs": 290,
+    "jevCalls": 2
+  },
+  "reviews": [],
+  "candidateIdsByNeed": {
+    "foreign_exchange": [
+      "kb_menu_0323",
+      "kb_menu_0420",
+      "kb_menu_0421",
+      "kb_menu_0326",
+      "kb_menu_0329",
+      "kb_menu_0324",
+      "kb_menu_0332",
+      "kb_menu_0331",
+      "kb_menu_0316",
+      "kb_menu_0325",
+      "kb_menu_0327",
+      "kb_menu_0317"
+    ],
+    "travel_insurance": [
+      "kb_menu_0602",
+      "kb_menu_0566",
+      "kb_menu_0565",
+      "kb_menu_0570",
+      "kb_menu_0078",
+      "kb_menu_0575",
+      "kb_menu_0604",
+      "kb_menu_0571",
+      "kb_menu_0132",
+      "kb_menu_0162",
+      "kb_menu_0572",
+      "kb_menu_0134"
+    ],
+    "foreign_payment": [
+      "kb_menu_0413",
+      "kb_menu_0410",
+      "kb_menu_0211",
+      "kb_menu_0355",
+      "kb_menu_0343",
+      "kb_menu_0333",
+      "kb_menu_0334",
+      "kb_menu_0608",
+      "kb_menu_0345",
+      "kb_menu_0344",
+      "kb_menu_0415",
+      "kb_menu_0341"
+    ]
+  },
+  "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+}
