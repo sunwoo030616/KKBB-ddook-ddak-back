@@ -1,0 +1,12 @@
+{
+  "actual_calls_including_development_and_quota_failures": {
+    "llm_task_planner": 151,
+    "e5_jev": 144
+  },
+  "proposed_limit": {
+    "llm_task_planner": 440,
+    "e5_jev": 880
+  },
+  "remaining_regression_final_requests_after_funding": 282,
+  "remaining_planner_calls_within_proposed_limit": 289
+}
