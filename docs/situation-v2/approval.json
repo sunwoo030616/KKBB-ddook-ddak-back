@@ -1,0 +1,1 @@
+{"approved":true,"scope":{"development_requests_max":24,"regression_requests":300,"fresh_requests":100,"catalog_size":585,"jev_calls_max":1272,"gpt_calls_max":100,"jev_destination":"https://api.typesafe.ai/v1/systemone","gpt_destination":"https://api.openai.com/v1/chat/completions"},"storage":"local only; remote publication not approved"}

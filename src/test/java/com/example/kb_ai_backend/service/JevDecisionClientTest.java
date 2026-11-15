@@ -28,4 +28,16 @@ class JevDecisionClientTest {
         assertEquals(503,assertThrows(ResponseStatusException.class,()->service.decide(Map.of(),questions())).getStatusCode().value());server.verify();
     }
 
+    @Test void binaryAnswersAreProbabilitiesNotChoiceConfidence() {
+        var client=new RestTemplate();var server=MockRestServiceServer.createServer(client);
+        server.expect(anything()).andRespond(withSuccess("{\"answers\":{\"menu_a\":{\"type\":\"noul\",\"noul\":0.8}}}",MediaType.APPLICATION_JSON));
+        var result=new JevDecisionClient(client,"test-key","test-model").judge(Map.of(),Map.of("menu_a","필요한가?"));
+        assertEquals(.8,result.answers().get("menu_a"));server.verify();
+    }
+    @Test void binaryOutOfRangeIsRejected() {
+        var client=new RestTemplate();var server=MockRestServiceServer.createServer(client);
+        server.expect(anything()).andRespond(withSuccess("{\"answers\":{\"menu_a\":{\"type\":\"noul\",\"noul\":1.2}}}",MediaType.APPLICATION_JSON));
+        assertEquals(502,assertThrows(ResponseStatusException.class,()->new JevDecisionClient(client,"test-key","test-model").judge(Map.of(),Map.of("menu_a","필요한가?"))).getStatusCode().value());server.verify();
+    }
+
 }

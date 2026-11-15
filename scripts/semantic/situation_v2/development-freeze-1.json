@@ -1,0 +1,21 @@
+{
+  "base_commit": "aaa47748904947d3a7651dd0fa1c33ee6de20f96",
+  "files": {
+    "scripts/semantic/situation_v2/development-12.json": "a4ee568d41e0db9c0c4f32114221642da4512a79b0ac1d3eca4a010ac213bc79",
+    "scripts/semantic/situation_v2/regression-300.json": "c899e88a067134e5b12b0a480d059be14cefdeb1c801603bd1b24c727a748c12",
+    "scripts/semantic/situation_v2/fresh-100.json": "019906200853889dfe3e667a383964dd95dfd9795348e8b70a6fb9920124985c",
+    "scripts/semantic/situation_v2/fresh-labels.tsv": "808672df3b54d96fc3c7249da00f8c20f95f3127d18e149299674ba88d9a4ac4",
+    "scripts/semantic/situation_v2/run.py": "243538aa1f34df1f56bbfc28f4b8658f4cd26f24d3dcf35d7ead004f008ff5ab",
+    "scripts/semantic/situation_v2/metrics.py": "0d88d004b8ac0729d3934db71080ca8b61cc6fed6be85dc48765ec5c28b61602",
+    "scripts/semantic/situation_v2/common.py": "e43decd034b5aedba6ecc7c8b7b66017935efe10d4d086c3edc1a712c26e2c9b",
+    "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRecommendationService.java": "bd9b7de282d673205a0a5da114940aa67d80f3bd12b3f95e7dac278fe99dfbfd",
+    "src/main/java/com/example/kb_ai_backend/service/SemanticMenuSelectionService.java": "50dba1326cbdac98af0ccbf9974cc3cd741b0c6edc827a463305605bba334549",
+    "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRetriever.java": "c05a6a7c8ac1949cbfba4847fc63842122c1091f61e9347ba5958656dd99f77f",
+    "src/main/java/com/example/kb_ai_backend/service/JevDecisionClient.java": "93d07415fdb0ebce70aed6f1ba27658cc20fbc094bd0f30f8e6318166e490934",
+    "src/main/java/com/example/kb_ai_backend/service/MenuCatalog.java": "662c4dd6c37aef8e46a2c307be47e3218e06a57f2e0cef694c164a7405642435",
+    "src/main/resources/kb_starbanking_menu_structure_cleaned.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+    "scripts/semantic/server.py": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+    "scripts/semantic/model_manifest.json": "b71365e9063e74f6c34cdeff16e9bd16c6323ba6a4677cba7cf500b5e986d614",
+    "docs/situation-v2/PROTOCOL.md": "c81198b39627264928909db7edc693cc64f2496048860201a5e3f7f9d6e26fa0"
+  }
+}

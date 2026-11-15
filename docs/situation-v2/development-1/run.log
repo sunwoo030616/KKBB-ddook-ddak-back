@@ -1,0 +1,11 @@
+Actual v2 evaluation: 12 cases; providers=['e5_jev']; no retries
+Traceback (most recent call last):
+  File "/private/tmp/kkbb-recall-300-work/scripts/semantic/situation_v2/run.py", line 148, in <module>
+    if __name__=='__main__':main()
+  File "/private/tmp/kkbb-recall-300-work/scripts/semantic/situation_v2/run.py", line 136, in main
+    row['score']=case_metrics(row);rows.append(row);save()
+  File "/private/tmp/kkbb-recall-300-work/scripts/semantic/situation_v2/run.py", line 81, in save
+    result={'complete':complete,'started_at':started,'updated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'freeze':freeze,'planned_cases':len(cases),'cases_path':str(args.cases.relative_to(ROOT)),'providers':providers,'models':MODELS,'repeats':1,'retries':0,'results':rows,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py", line 929, in relative_to
+    raise ValueError("{!r} is not in the subpath of {!r}"
+ValueError: 'scripts/semantic/situation_v2/development-12.json' is not in the subpath of '/private/tmp/kkbb-recall-300-work' OR one path is relative and the other is absolute.

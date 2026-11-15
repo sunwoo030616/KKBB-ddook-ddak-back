@@ -1,0 +1,145 @@
+[
+  {
+    "case_id": "single_001",
+    "query": "내 상황에 맞는 금융상품을 추천받고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0002"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_001",
+    "label_source": "unchanged prior synthetic single-target label"
+  },
+  {
+    "case_id": "single_002",
+    "query": "직장인이나 사장님 같은 키워드로 상품을 골라보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0004"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_003",
+    "label_source": "unchanged prior synthetic single-target label"
+  },
+  {
+    "case_id": "single_004",
+    "query": "군 복무 중이라 장병내일준비적금 상품을 찾아요.",
+    "expected_ids": [
+      "kb_menu_0010"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_009",
+    "label_source": "unchanged prior synthetic single-target label"
+  },
+  {
+    "case_id": "single_079",
+    "query": "선착순 말고 휴양림 추첨에 신청할래.",
+    "expected_ids": [
+      "kb_menu_0470"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_211",
+    "label_source": "unchanged prior synthetic single-target label"
+  },
+  {
+    "case_id": "multi_001",
+    "query": "내 상황에 맞는 금융상품을 추천받고 싶어요. 그리고 별개의 업무로, 현재 계좌가 아니라 해지한 골드나 실버 계좌 내역을 볼래. 요청한 업무를 모두 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0002",
+      "kb_menu_0158"
+    ],
+    "expected_status": "ready",
+    "split": "explicit_multi",
+    "family_id": "combination_001",
+    "label_source": "two or three existing explicit requests combined before execution"
+  },
+  {
+    "case_id": "multi_005",
+    "query": "KB청년미래적금 상품 내용을 확인할래. 그리고 별개의 업무로, 친구들과 쓸 모임통장을 등록하려고 해. 요청한 업무를 모두 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0012",
+      "kb_menu_0171"
+    ],
+    "expected_status": "ready",
+    "split": "explicit_multi",
+    "family_id": "combination_005",
+    "label_source": "two or three existing explicit requests combined before execution"
+  },
+  {
+    "case_id": "multi_051",
+    "query": "출금에 쓰는 계좌를 추가하거나 관리할래. 순서만 바꾸려는 건 아니야. 그리고 별개의 업무로, 오늘 기록만 말고 달리자에 쌓인 내 기록을 볼래. 그리고 별개의 업무로, 신탁형 말고 일임형 ISA 상품을 알아볼래. 요청한 업무를 모두 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0215",
+      "kb_menu_0439",
+      "kb_menu_0107"
+    ],
+    "expected_status": "ready",
+    "split": "explicit_multi",
+    "family_id": "combination_051",
+    "label_source": "two or three existing explicit requests combined before execution"
+  },
+  {
+    "case_id": "multi_090",
+    "query": "제출할 예금잔액증명서를 발급받고 싶어. 그리고 별개의 업무로, DB손해보험 스마트 퇴직연금 이율보증형보험 3년 상품을 찾아요. 그리고 별개의 업무로, 내 자산이 어떤 종류로 구성돼 있는지 보고 싶어. 요청한 업무를 모두 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0492",
+      "kb_menu_0079",
+      "kb_menu_0259"
+    ],
+    "expected_status": "ready",
+    "split": "explicit_multi",
+    "family_id": "combination_090",
+    "label_source": "two or three existing explicit requests combined before execution"
+  },
+  {
+    "case_id": "situation_01_1",
+    "query": "일본 여행 가고 싶어. 은행 앱에서 준비할 것을 알려줘.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "split": "situation_bundle",
+    "family_id": "situation_family_01",
+    "label_source": "product-policy bundle or explicit outcomes in a situation; 20 families x 5 wording variants; not independent intents"
+  },
+  {
+    "case_id": "situation_04_1",
+    "query": "일본 여행 준비 중인데 보험은 이미 가입했어. 현금과 현지 QR 결제 준비는 아직이야.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413"
+    ],
+    "expected_status": "ready",
+    "split": "situation_bundle",
+    "family_id": "situation_family_04",
+    "label_source": "product-policy bundle or explicit outcomes in a situation; 20 families x 5 wording variants; not independent intents"
+  },
+  {
+    "case_id": "situation_08_1",
+    "query": "작은 가게를 열었어. 카드 매출 입금을 관리하고 정부 지원도 알아보려고 해.",
+    "expected_ids": [
+      "kb_menu_0018",
+      "kb_menu_0017"
+    ],
+    "expected_status": "ready",
+    "split": "situation_bundle",
+    "family_id": "situation_family_08",
+    "label_source": "product-policy bundle or explicit outcomes in a situation; 20 families x 5 wording variants; not independent intents"
+  },
+  {
+    "case_id": "situation_18_1",
+    "query": "해외여행 환전과 보험은 끝냈고 QR도 준비했어. 이번에는 로밍과 여권 만료일 확인만 할래.",
+    "expected_ids": [
+      "kb_menu_0612",
+      "kb_menu_0476"
+    ],
+    "expected_status": "ready",
+    "split": "situation_bundle",
+    "family_id": "situation_family_18",
+    "label_source": "product-policy bundle or explicit outcomes in a situation; 20 families x 5 wording variants; not independent intents"
+  }
+]

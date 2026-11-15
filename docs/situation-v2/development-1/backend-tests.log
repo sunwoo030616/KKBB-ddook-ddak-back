@@ -1,0 +1,227 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.example:kb-ai-backend >----------------------
+[INFO] Building kb-ai-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kb-ai-backend ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ kb-ai-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 68 source files with javac [debug parameters release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kb-ai-backend ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ kb-ai-backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 30 source files with javac [debug parameters release 17] to target/test-classes
+[INFO] /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-1f6kz20n/src/test/java/com/example/kb_ai_backend/service/SemanticMenuRecommendationServiceTest.java: /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-1f6kz20n/src/test/java/com/example/kb_ai_backend/service/SemanticMenuRecommendationServiceTest.java uses unchecked or unsafe operations.
+[INFO] /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-1f6kz20n/src/test/java/com/example/kb_ai_backend/service/SemanticMenuRecommendationServiceTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ kb-ai-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.kb_ai_backend.trace.TraceStoreTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in com.example.kb_ai_backend.trace.TraceStoreTest
+[INFO] Running com.example.kb_ai_backend.feedback.FeedbackRankerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.example.kb_ai_backend.feedback.FeedbackRankerTest
+[INFO] Running com.example.kb_ai_backend.controller.CanvasControllerTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+19:44:57.942 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 8.0.3.Final
+19:44:58.127 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.127 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.128 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.503 s -- in com.example.kb_ai_backend.controller.CanvasControllerTest
+[INFO] Running com.example.kb_ai_backend.controller.ActionControllerTest
+19:44:58.215 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.215 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.215 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+19:44:58.241 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.241 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.241 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+19:44:58.250 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.250 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.250 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+19:44:58.256 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.256 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.256 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+19:44:58.265 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.265 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.265 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 s -- in com.example.kb_ai_backend.controller.ActionControllerTest
+[INFO] Running com.example.kb_ai_backend.controller.MenuSelectionControllerTest
+19:44:58.296 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.296 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.296 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in com.example.kb_ai_backend.controller.MenuSelectionControllerTest
+[INFO] Running com.example.kb_ai_backend.controller.WidgetSelectionExperimentControllerTest
+19:44:58.321 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.321 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.321 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in com.example.kb_ai_backend.controller.WidgetSelectionExperimentControllerTest
+[INFO] Running com.example.kb_ai_backend.controller.FeedbackControllerTest
+19:44:58.333 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.333 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.333 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+19:44:58.342 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.342 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.342 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in com.example.kb_ai_backend.controller.FeedbackControllerTest
+[INFO] Running com.example.kb_ai_backend.controller.MenuRecommendationControllerTest
+19:44:58.389 [main] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+19:44:58.389 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+19:44:58.389 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 0 ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s -- in com.example.kb_ai_backend.controller.MenuRecommendationControllerTest
+[INFO] Running com.example.kb_ai_backend.action.ActionServiceTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in com.example.kb_ai_backend.action.ActionServiceTest
+[INFO] Running com.example.kb_ai_backend.action.PolicyEngineTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.example.kb_ai_backend.action.PolicyEngineTest
+[INFO] Running com.example.kb_ai_backend.action.RedisCardFreezeReceiptStoreTest
+[WARNING] Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0 s -- in com.example.kb_ai_backend.action.RedisCardFreezeReceiptStoreTest
+[INFO] Running com.example.kb_ai_backend.PresentationApplicationTests
+19:44:58.431 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.kb_ai_backend.PresentationApplicationTests]: PresentationApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:44:58.467 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.kb_ai_backend.KbAiBackendApplication for test class com.example.kb_ai_backend.PresentationApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-15T19:44:58.581+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.PresentationApplicationTests       : Starting PresentationApplicationTests using Java 26.0.1 with PID 48671 (started by seonwoo-choi in /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-1f6kz20n)
+2026-11-15T19:44:58.581+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.PresentationApplicationTests       : The following 1 profile is active: "presentation"
+2026-11-15T19:44:58.814+09:00  INFO 48671 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-15T19:44:58.814+09:00  INFO 48671 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-15T19:44:58.829+09:00  INFO 48671 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (file:/Users/seonwoo-choi/.m2/repository/io/netty/netty-common/4.1.135.Final/netty-common-4.1.135.Final.jar)
+WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
+WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
+2026-11-15T19:44:59.278+09:00  INFO 48671 --- [kb-ai-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-15T19:44:59.278+09:00  INFO 48671 --- [kb-ai-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-15T19:44:59.279+09:00  INFO 48671 --- [kb-ai-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-15T19:44:59.289+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.PresentationApplicationTests       : Started PresentationApplicationTests in 0.794 seconds (process running for 1.861)
+2026-11-15T19:44:59.289+09:00  WARN 48671 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-15T19:44:59.290+09:00  WARN 48671 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.931 s -- in com.example.kb_ai_backend.PresentationApplicationTests
+[INFO] Running com.example.kb_ai_backend.audit.HashChainAuditLogTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.example.kb_ai_backend.audit.HashChainAuditLogTest
+[INFO] Running com.example.kb_ai_backend.audit.RedisObservabilityStoreTest
+[WARNING] Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0 s -- in com.example.kb_ai_backend.audit.RedisObservabilityStoreTest
+[INFO] Running com.example.kb_ai_backend.OidcDemoApplicationTests
+2026-11-15T19:44:59.359+09:00  INFO 48671 --- [kb-ai-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.kb_ai_backend.OidcDemoApplicationTests]: OidcDemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-15T19:44:59.362+09:00  INFO 48671 --- [kb-ai-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.kb_ai_backend.KbAiBackendApplication for test class com.example.kb_ai_backend.OidcDemoApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-15T19:44:59.378+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.OidcDemoApplicationTests           : Starting OidcDemoApplicationTests using Java 26.0.1 with PID 48671 (started by seonwoo-choi in /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-1f6kz20n)
+2026-11-15T19:44:59.379+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.OidcDemoApplicationTests           : The following 1 profile is active: "oidc-demo"
+2026-11-15T19:44:59.442+09:00  INFO 48671 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-15T19:44:59.443+09:00  INFO 48671 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-15T19:44:59.446+09:00  INFO 48671 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-11-15T19:44:59.572+09:00  INFO 48671 --- [kb-ai-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-15T19:44:59.572+09:00  INFO 48671 --- [kb-ai-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-15T19:44:59.572+09:00  INFO 48671 --- [kb-ai-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-15T19:44:59.576+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.OidcDemoApplicationTests           : Started OidcDemoApplicationTests in 0.212 seconds (process running for 2.148)
+2026-11-15T19:44:59.576+09:00  WARN 48671 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-15T19:44:59.576+09:00  WARN 48671 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.231 s -- in com.example.kb_ai_backend.OidcDemoApplicationTests
+[INFO] Running com.example.kb_ai_backend.service.JevCanvasTraceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in com.example.kb_ai_backend.service.JevCanvasTraceTest
+[INFO] Running com.example.kb_ai_backend.service.SemanticMenuRetrieverTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in com.example.kb_ai_backend.service.SemanticMenuRetrieverTest
+[INFO] Running com.example.kb_ai_backend.service.JevDecisionClientTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.example.kb_ai_backend.service.JevDecisionClientTest
+[INFO] Running com.example.kb_ai_backend.service.ExchangeRateServiceTest
+2026-11-15T19:44:59.649+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.service.ExchangeRateService        : performance requestId=null stage=exchange_refresh durationMs=0 refreshed=true
+2026-11-15T19:44:59.650+09:00  INFO 48671 --- [kb-ai-backend] [pool-5-thread-1] c.e.k.service.ExchangeRateService        : performance requestId=null stage=exchange_refresh durationMs=0 refreshed=true
+2026-11-15T19:44:59.650+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.service.ExchangeRateService        : performance requestId=null stage=exchange_refresh durationMs=0 refreshed=true
+2026-11-15T19:44:59.650+09:00  WARN 48671 --- [kb-ai-backend] [           main] c.e.k.service.ExchangeRateService        : exchange_refresh_failed requestId=null errorType=IllegalStateException
+2026-11-15T19:44:59.650+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.service.ExchangeRateService        : performance requestId=null stage=exchange_refresh durationMs=0 refreshed=false
+2026-11-15T19:44:59.650+09:00  WARN 48671 --- [kb-ai-backend] [           main] c.e.k.service.ExchangeRateService        : exchange_refresh_failed requestId=null errorType=IllegalStateException
+2026-11-15T19:44:59.650+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.service.ExchangeRateService        : performance requestId=null stage=exchange_refresh durationMs=0 refreshed=false
+2026-11-15T19:44:59.651+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.service.ExchangeRateService        : performance requestId=null stage=exchange_refresh durationMs=0 refreshed=true
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.example.kb_ai_backend.service.ExchangeRateServiceTest
+[INFO] Running com.example.kb_ai_backend.service.SemanticMenuSelectionServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s -- in com.example.kb_ai_backend.service.SemanticMenuSelectionServiceTest
+[INFO] Running com.example.kb_ai_backend.service.WidgetSelectionExperimentServiceTest
+2026-11-15T19:44:59.720+09:00  WARN 48671 --- [kb-ai-backend] [           main] c.e.k.s.WidgetSelectionExperimentService : Widget selector provider=jev upstreamStatus=401
+2026-11-15T19:44:59.724+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.s.WidgetSelectionExperimentService : performance requestId=null stage=widget_selection provider=jev model=jev-test durationMs=1 inputTokens=100 outputTokens=30 needsReview=false
+2026-11-15T19:44:59.728+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.s.WidgetSelectionExperimentService : performance requestId=null stage=widget_selection provider=openai model=gpt-4o-mini-test durationMs=1 inputTokens=200 outputTokens=40 needsReview=false
+2026-11-15T19:44:59.731+09:00  WARN 48671 --- [kb-ai-backend] [           main] c.e.k.s.WidgetSelectionExperimentService : Widget selector provider=jev upstreamStatus=429
+2026-11-15T19:44:59.731+09:00  WARN 48671 --- [kb-ai-backend] [           main] c.e.k.s.WidgetSelectionExperimentService : Widget selector provider=jev upstreamStatus=429
+2026-11-15T19:44:59.731+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.s.WidgetSelectionExperimentService : performance requestId=null stage=widget_selection provider=jev model=jev-test durationMs=0 inputTokens=100 outputTokens=30 needsReview=false
+2026-11-15T19:44:59.734+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.s.WidgetSelectionExperimentService : performance requestId=null stage=widget_selection provider=jev model=jev-test durationMs=0 inputTokens=100 outputTokens=30 needsReview=false
+2026-11-15T19:44:59.737+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.s.WidgetSelectionExperimentService : performance requestId=null stage=widget_selection provider=jev model=jev-test durationMs=0 inputTokens=100 outputTokens=30 needsReview=true
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in com.example.kb_ai_backend.service.WidgetSelectionExperimentServiceTest
+[INFO] Running com.example.kb_ai_backend.service.CanvasParametersTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.example.kb_ai_backend.service.CanvasParametersTest
+[INFO] Running com.example.kb_ai_backend.service.JevCanvasRankingTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.example.kb_ai_backend.service.JevCanvasRankingTest
+[INFO] Running com.example.kb_ai_backend.service.JevCanvasClarificationTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.example.kb_ai_backend.service.JevCanvasClarificationTest
+[INFO] Running com.example.kb_ai_backend.service.JevCanvasServiceTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.example.kb_ai_backend.service.JevCanvasServiceTest
+[INFO] Running com.example.kb_ai_backend.service.SemanticMenuRecommendationServiceTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.060 s -- in com.example.kb_ai_backend.service.SemanticMenuRecommendationServiceTest
+[INFO] Running com.example.kb_ai_backend.DemoActionApplicationTests
+2026-11-15T19:44:59.818+09:00  INFO 48671 --- [kb-ai-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.kb_ai_backend.DemoActionApplicationTests]: DemoActionApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-15T19:44:59.818+09:00  INFO 48671 --- [kb-ai-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.kb_ai_backend.KbAiBackendApplication for test class com.example.kb_ai_backend.DemoActionApplicationTests
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in com.example.kb_ai_backend.DemoActionApplicationTests
+[INFO] Running com.example.kb_ai_backend.KbAiBackendApplicationTests
+2026-11-15T19:44:59.863+09:00  INFO 48671 --- [kb-ai-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.kb_ai_backend.KbAiBackendApplicationTests]: KbAiBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-15T19:44:59.864+09:00  INFO 48671 --- [kb-ai-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.kb_ai_backend.KbAiBackendApplication for test class com.example.kb_ai_backend.KbAiBackendApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-15T19:44:59.872+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplicationTests        : Starting KbAiBackendApplicationTests using Java 26.0.1 with PID 48671 (started by seonwoo-choi in /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-1f6kz20n)
+2026-11-15T19:44:59.872+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2026-11-15T19:44:59.926+09:00  INFO 48671 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-15T19:44:59.926+09:00  INFO 48671 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-15T19:44:59.929+09:00  INFO 48671 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2026-11-15T19:44:59.991+09:00  INFO 48671 --- [kb-ai-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-15T19:44:59.991+09:00  INFO 48671 --- [kb-ai-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-15T19:44:59.992+09:00  INFO 48671 --- [kb-ai-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-15T19:44:59.995+09:00  INFO 48671 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplicationTests        : Started KbAiBackendApplicationTests in 0.13 seconds (process running for 2.568)
+2026-11-15T19:44:59.995+09:00  WARN 48671 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-15T19:44:59.995+09:00  WARN 48671 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 s -- in com.example.kb_ai_backend.KbAiBackendApplicationTests
+[INFO] Running com.example.kb_ai_backend.session.RedisSessionStoreTest
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0 s -- in com.example.kb_ai_backend.session.RedisSessionStoreTest
+[INFO] Running com.example.kb_ai_backend.session.InMemorySessionStoreTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.example.kb_ai_backend.session.InMemorySessionStoreTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 135, Failures: 0, Errors: 0, Skipped: 6
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.261 s
+[INFO] Finished at: 2026-11-15T19:45:00+09:00
+[INFO] ------------------------------------------------------------------------

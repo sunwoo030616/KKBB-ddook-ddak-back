@@ -1,0 +1,6 @@
+{
+  "scripts/semantic/situation_v2/development-12.json": "a4ee568d41e0db9c0c4f32114221642da4512a79b0ac1d3eca4a010ac213bc79",
+  "scripts/semantic/situation_v2/regression-300.json": "c899e88a067134e5b12b0a480d059be14cefdeb1c801603bd1b24c727a748c12",
+  "scripts/semantic/situation_v2/fresh-100.json": "019906200853889dfe3e667a383964dd95dfd9795348e8b70a6fb9920124985c",
+  "scripts/semantic/situation_v2/fresh-labels.tsv": "808672df3b54d96fc3c7249da00f8c20f95f3127d18e149299674ba88d9a4ac4"
+}

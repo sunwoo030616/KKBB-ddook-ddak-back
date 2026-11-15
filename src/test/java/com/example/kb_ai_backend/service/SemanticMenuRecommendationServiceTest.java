@@ -1,111 +1,64 @@
 package com.example.kb_ai_backend.service;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.web.server.ResponseStatusException;
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 import static org.mockito.ArgumentMatchers.*;
-
 class SemanticMenuRecommendationServiceTest {
     JevDecisionClient jev=mock(JevDecisionClient.class);
-    SemanticMenuRetriever semantic=mock(SemanticMenuRetriever.class);
-    MenuCatalog catalog;
-    SemanticMenuRecommendationService service;
-    @BeforeEach void setup() throws Exception {
-        var mapper=new ObjectMapper();catalog=new MenuCatalog(mapper);service=new SemanticMenuRecommendationService(jev,semantic,catalog,mapper,.6);
+    SemanticMenuRetriever retrieval=mock(SemanticMenuRetriever.class);
+    SemanticMenuSelectionService single=mock(SemanticMenuSelectionService.class);
+    MenuCatalog catalog;SemanticMenuRecommendationService service;
+    @BeforeEach void setup() throws Exception {catalog=new MenuCatalog(new ObjectMapper());service=new SemanticMenuRecommendationService(jev,retrieval,catalog,single,.6,.7);}
+    JevDecisionClient.Choice choice(String value){return new JevDecisionClient.Choice(value,.95);}
+    JevDecisionClient.Decisions route(String mode){return new JevDecisionClient.Decisions(Map.of("route",choice(mode)),10);}
+    JevDecisionClient.Decisions answers(Map<String,String> values){var out=new LinkedHashMap<String,JevDecisionClient.Choice>();values.forEach((k,v)->out.put(k,choice(v)));return new JevDecisionClient.Decisions(out,20);}
+    @Test void preservesOriginalSingleSelectionAndDoesNotUseFixedNeedTaxonomy(){
+        var m=catalog.find("kb_menu_0002");when(jev.decide(anyMap(),anyMap())).thenReturn(route("single"));
+        when(single.select("맞춤 상품 추천")).thenReturn(new SemanticMenuSelectionService.Result("selected",List.of(m),List.of(m.id()),.95,"e5_jev",catalog.sha256(),10,20,1));
+        var result=service.compose("맞춤 상품 추천");assertEquals("ready",result.status());assertEquals(m,result.recommendations().get(0).menu());assertEquals(2,result.metrics().jevCalls());verifyNoInteractions(retrieval);
     }
-    JevDecisionClient.Choice choice(String id){return new JevDecisionClient.Choice(id,.95);}
-    JevDecisionClient.Decisions plan(String... ids) {
-        var answers=new LinkedHashMap<String,JevDecisionClient.Choice>();for(int i=0;i<3;i++)answers.put("need_"+(i+1),choice(i<ids.length?ids[i]:"none"));
-        return new JevDecisionClient.Decisions(answers,100);
+    @Test void independentlySelectsActualClausesIncludingTwoPreviouslyUnmappedRequests(){
+        var a=catalog.find("kb_menu_0002");var b=catalog.find("kb_menu_0158");
+        when(jev.decide(anyMap(),anyMap())).thenReturn(route("multiple"),answers(Map.of("request_1",a.id(),"request_2",b.id())));
+        when(retrieval.retrieve("맞춤 상품 추천",20)).thenReturn(List.of(a));when(retrieval.retrieve("해지 골드 계좌 조회",20)).thenReturn(List.of(b));
+        var result=service.compose("맞춤 상품 추천 그리고 별개의 업무로, 해지 골드 계좌 조회");
+        assertEquals(Set.of(a.id(),b.id()),result.recommendations().stream().map(r->r.menu().id()).collect(java.util.stream.Collectors.toSet()));
+        assertEquals(2,result.metrics().jevCalls());verify(jev,times(2)).decide(anyMap(),anyMap());
     }
-    MenuCatalog.Menu menu(String name){return catalog.all().stream().filter(m->m.name().equals(name)).findFirst().orElseThrow();}
-    @Test void interpretsSituationBeforeSemanticSearchAndReturnsMultipleSuggestions() {
-        var exchange=menu("환전신청");var payment=menu("해외 QR 결제");var insurance=menu("KB손해보험 다이렉트 해외여행보험");
-        when(semantic.retrieve("환전신청",12)).thenReturn(List.of(exchange));
-        when(semantic.retrieve("해외 QR 결제",12)).thenReturn(List.of(payment));
-        when(semantic.retrieve("KB손해보험 다이렉트 해외여행보험",12)).thenReturn(List.of(insurance));
-        var answers=new LinkedHashMap<String,JevDecisionClient.Choice>();int i=1;
-        for(var m:List.of(exchange,payment,insurance)){answers.put("task_"+i,choice(m.id()));answers.put("task_"+i+"_basis",choice("suggested"));i++;}
-        when(jev.decide(anyMap(),anyMap())).thenReturn(plan("foreign_exchange","foreign_payment","travel_insurance"),new JevDecisionClient.Decisions(answers,130));
-        var result=service.compose("다음 달 일본으로 처음 여행 가. 뭘 준비할까?");
-        assertEquals("ready",result.status());assertEquals(3,result.recommendations().size());
-        assertTrue(result.recommendations().stream().allMatch(r->r.basis().equals("suggested")));
-        var order=inOrder(jev,semantic);order.verify(jev).decide(anyMap(),anyMap());order.verify(semantic).retrieve("환전신청",12);
-        verify(jev,times(2)).decide(anyMap(),anyMap());assertEquals("semantic_only",result.metrics().retrievalMode());
+    @Test void expandsCandidateBudgetOnlyForUnresolvedTasks(){
+        var m=catalog.find("kb_menu_0203");when(jev.decide(anyMap(),anyMap())).thenReturn(route("travel"),answers(Map.of("foreign_exchange","no_match","foreign_payment","skip","travel_insurance","skip")),answers(Map.of("foreign_exchange",m.id())));
+        when(retrieval.retrieve(anyString(),eq(12))).thenReturn(List.of(m));when(retrieval.retrieve("환전신청",40)).thenReturn(List.of(m));
+        var result=service.compose("개발용 후보 확대 시나리오");assertEquals(3,result.metrics().jevCalls());verify(retrieval).retrieve("환전신청",40);verify(retrieval,never()).retrieve("해외 QR 결제",40);
     }
-    @Test void searchesOnlyPlannedNeedAndPreservesExplicitBasis() {
-        var m=menu("환전신청");when(semantic.retrieve("환전신청",40)).thenReturn(List.of(m));
-        when(jev.decide(anyMap(),anyMap())).thenReturn(plan("foreign_exchange"),new JevDecisionClient.Decisions(Map.of("task_1",choice(m.id()),"task_1_basis",choice("explicit")),100));
-        var result=service.compose("보험은 이미 가입했고 환전만 할래");assertEquals("explicit",result.recommendations().get(0).basis());
-        verify(semantic).retrieve("환전신청",40);verifyNoMoreInteractions(semantic);
+    @Test void travelBundleReturnsThreeAndSkipsAlreadyCompletedInsurance(){
+        var a=catalog.find("kb_menu_0323");var b=catalog.find("kb_menu_0413");var c=catalog.find("kb_menu_0602");
+        when(retrieval.retrieve("환전신청",12)).thenReturn(List.of(a));when(retrieval.retrieve("해외 QR 결제",12)).thenReturn(List.of(b));when(retrieval.retrieve("KB손해보험 다이렉트 해외여행보험",12)).thenReturn(List.of(c));
+        when(jev.decide(anyMap(),anyMap())).thenReturn(route("travel"),answers(Map.of("foreign_exchange",a.id(),"foreign_payment",b.id(),"travel_insurance",c.id())),route("travel"),answers(Map.of("foreign_exchange",a.id(),"foreign_payment",b.id(),"travel_insurance","skip")));
+        assertEquals(3,service.compose("일본 여행 가고 싶어").recommendations().size());assertEquals(2,service.compose("일본 여행인데 보험은 완료했어").recommendations().size());
     }
-    @Test void ambiguousOrUnrelatedSituationDoesNotSearchOrSelectMenus() {
-        when(jev.decide(anyMap(),anyMap())).thenReturn(plan("unsure"),plan("no_match"));
-        assertEquals("needs_clarification",service.compose("도와줘").status());assertEquals("no_match",service.compose("요리법").status());verifyNoInteractions(semantic);
+    @Test void unparsedMultipleRequestsUseIndependentBinaryMenuQuestions(){
+        var a=catalog.find("kb_menu_0493");var b=catalog.find("kb_menu_0492");when(jev.decide(anyMap(),anyMap())).thenReturn(route("multiple"));when(retrieval.retrieve(anyString(),eq(40))).thenReturn(List.of(a,b));
+        when(jev.judge(anyMap(),anyMap())).thenReturn(new JevDecisionClient.BinaryDecisions(Map.of(a.id(),.99,b.id(),.95),20));
+        var result=service.compose("통장사본 잔액증명서 둘 다 발급");assertEquals(2,result.recommendations().size());verify(jev,times(1)).decide(anyMap(),anyMap());verify(jev).judge(anyMap(),anyMap());
     }
-    @Test void blankAndTooLongInputsDoNotCallJev() {
-        assertEquals("empty",service.compose(" ").status());
-        assertEquals(400,assertThrows(ResponseStatusException.class,()->service.compose("가".repeat(2001))).getStatusCode().value());verifyNoInteractions(jev,semantic);
+    @Test void routeUncertaintyDoesNotDiscardOtherwiseSearchableRequest(){
+        var m=catalog.find("kb_menu_0493");when(jev.decide(anyMap(),anyMap())).thenReturn(new JevDecisionClient.Decisions(Map.of("route",new JevDecisionClient.Choice("ambiguous",.2)),10));
+        when(retrieval.retrieve(anyString(),eq(40))).thenReturn(List.of(m));when(jev.judge(anyMap(),anyMap())).thenReturn(new JevDecisionClient.BinaryDecisions(Map.of(m.id(),.95),20));
+        assertEquals("ready",service.compose("내 계좌 증빙").status());
     }
-    @Test void semanticFailureNeverFallsBackToKeywords() {
-        when(jev.decide(anyMap(),anyMap())).thenReturn(plan("account_proof"));
-        when(semantic.retrieve(anyString(),anyInt())).thenThrow(new ResponseStatusException(org.springframework.http.HttpStatus.SERVICE_UNAVAILABLE));
-        assertEquals(503,assertThrows(ResponseStatusException.class,()->service.compose("회사 제출용 계좌 증빙")).getStatusCode().value());verify(jev,times(1)).decide(anyMap(),anyMap());
+    @Test void masksSensitiveInputBeforeBothRouteAndDelegatedSingleSelection(){
+        var m=catalog.find("kb_menu_0323");when(jev.decide(anyMap(),anyMap())).thenReturn(route("single"));
+        when(single.select(anyString())).thenReturn(new SemanticMenuSelectionService.Result("selected",List.of(m),List.of(m.id()),.95,"e5_jev",catalog.sha256(),1,1,1));service.compose("환전 연락처 010-1234-5678");
+        verify(single).select("환전 연락처 [민감정보]");var states=org.mockito.ArgumentCaptor.forClass(Map.class);verify(jev).decide(states.capture(),anyMap());assertFalse(states.getValue().toString().contains("010-1234-5678"));
     }
-    @Test void multipleUnresolvedNeedsDoNotForceOneArbitraryMenu() {
-        var m=menu("환전신청");when(semantic.retrieve("환전신청",40)).thenReturn(List.of(m));
-        when(jev.decide(anyMap(),anyMap())).thenReturn(plan("foreign_exchange"),new JevDecisionClient.Decisions(Map.of("task_1",choice("unsure"),"task_1_basis",choice("explicit")),100));
-        var result=service.compose("외화 준비");assertEquals("needs_clarification",result.status());assertTrue(result.recommendations().isEmpty());
-    }    @Test void uncertainRequestBasisDoesNotDiscardConfidentBusinessSupportMenu() {
-        var m=menu("정책자금 맞춤추천");
-        when(semantic.retrieve("정책자금 맞춤추천",40)).thenReturn(List.of(m));
-        when(jev.decide(anyMap(),anyMap())).thenReturn(plan("business_funding"),new JevDecisionClient.Decisions(Map.of(
-                "task_1",new JevDecisionClient.Choice(m.id(),1.0),
-                "task_1_basis",new JevDecisionClient.Choice("explicit",.32)),245));
-        var result=service.compose("나 사장인데 지원금 받고 싶어");
-        assertEquals("ready",result.status());assertEquals(m,result.recommendations().get(0).menu());
-        assertEquals("uncertain",result.recommendations().get(0).basis());
-        assertEquals(1.0,result.recommendations().get(0).menuConfidence());
-        assertEquals(.32,result.recommendations().get(0).basisConfidence());
-        assertEquals("basis_uncertain",result.reviews().get(0).reason());
+    @Test void invalidInputsAndTooManyExplicitTasksAreNotSilentlyTruncated(){
+        assertThrows(ResponseStatusException.class,()->service.compose(" "));assertThrows(ResponseStatusException.class,()->service.compose("가".repeat(2001)));verifyNoInteractions(jev);
+        when(jev.decide(anyMap(),anyMap())).thenReturn(route("multiple"));assertEquals("needs_clarification",service.compose("통장사본 그리고 환전 그리고 보험 그리고 송금").status());verifyNoInteractions(retrieval);
     }
-    @Test void uncertainMenuStillRequiresClarificationEvenWhenBasisIsCertain() {
-        var m=menu("정책자금 맞춤추천");when(semantic.retrieve("정책자금 맞춤추천",40)).thenReturn(List.of(m));
-        when(jev.decide(anyMap(),anyMap())).thenReturn(plan("business_funding"),new JevDecisionClient.Decisions(Map.of(
-                "task_1",new JevDecisionClient.Choice(m.id(),.3),"task_1_basis",choice("explicit")),100));
-        var result=service.compose("지원금 받고 싶어");assertEquals("needs_clarification",result.status());
-        assertTrue(result.recommendations().isEmpty());assertEquals("low_menu_confidence",result.reviews().get(0).reason());
+    @Test void unsupportedRequestsStopOnlyForExplicitCertainRoute(){
+        when(jev.decide(anyMap(),anyMap())).thenReturn(route("unrelated"),route("ambiguous"));assertEquals("no_match",service.compose("요리법").status());assertEquals("needs_clarification",service.compose("뭐하지").status());verifyNoInteractions(retrieval,single);
     }
-    @Test void lowConfidenceExtraSuggestionDoesNotVetoPrimaryNeed() {
-        var m=menu("정책자금 맞춤추천");when(semantic.retrieve("정책자금 맞춤추천",40)).thenReturn(List.of(m));
-        var planning=new JevDecisionClient.Decisions(Map.of(
-                "need_1",new JevDecisionClient.Choice("business_funding",.99),
-                "need_2",new JevDecisionClient.Choice("business_consulting",.26),
-                "need_3",new JevDecisionClient.Choice("business_funding",.38)),431);
-        when(jev.decide(anyMap(),anyMap())).thenReturn(planning,new JevDecisionClient.Decisions(Map.of("task_1",choice(m.id()),"task_1_basis",choice("explicit")),200));
-        var result=service.compose("나 사장인데 지원금 받고 싶어");assertEquals("ready",result.status());
-        assertEquals(1,result.recommendations().size());assertEquals(m,result.recommendations().get(0).menu());
-        assertEquals("optional_need_omitted",result.reviews().get(0).reason());verifyNoMoreInteractionsExceptFunding();
-    }
-    private void verifyNoMoreInteractionsExceptFunding() {
-        verify(semantic).retrieve("정책자금 맞춤추천",40);verifyNoMoreInteractions(semantic);
-    }
-
-    @Test void masksSensitiveDataInBothOutboundStagesAndReturnsCandidateEvidence() {
-        var m=menu("환전신청");when(semantic.retrieve("환전신청",40)).thenReturn(List.of(m));
-        when(jev.decide(anyMap(),anyMap())).thenReturn(plan("foreign_exchange"),new JevDecisionClient.Decisions(Map.of("task_1",choice(m.id()),"task_1_basis",choice("explicit")),100));
-        var result=service.compose("환전만 해줘 연락처 010-1234-5678");
-        var states=org.mockito.ArgumentCaptor.forClass(Map.class);
-        verify(jev,times(2)).decide(states.capture(),anyMap());
-        for(var state:states.getAllValues()) {
-            assertTrue(state.get("user_request").toString().contains("[민감정보]"));
-            assertFalse(state.get("user_request").toString().contains("010-1234-5678"));
-        }
-        assertEquals(List.of(m.id()),result.candidateIdsByNeed().get("foreign_exchange"));
-    }
-
 }
