@@ -1,0 +1,10 @@
+test_actual_selection (test_generate_umap.TraceTests) ... ok
+test_catalog_mismatch (test_generate_umap.TraceTests) ... ok
+test_ranking_mismatch (test_generate_umap.TraceTests) ... ok
+test_selection_outside_candidates (test_generate_umap.TraceTests) ... ok
+test_unmeasured_selection_rejected (test_generate_umap.TraceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

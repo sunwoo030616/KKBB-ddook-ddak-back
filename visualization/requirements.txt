@@ -1,0 +1,9 @@
+numpy==2.0.2
+onnxruntime==1.19.2
+tokenizers==0.20.3
+umap-learn==0.5.7
+numba==0.60.0
+scikit-learn==1.6.1
+scipy==1.13.1
+matplotlib==3.9.4
+plotly==5.24.1

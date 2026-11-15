@@ -1,0 +1,3 @@
+Verified all output hashes; 585 normalized real vectors and finite coordinates; 12 groups; 3 exact E5/JEV candidate and final-selection traces
+Repeated seeded UMAP: all 585 coordinates identical across two fresh embedding runs
+HTML static validation: no external script dependencies; browser interaction unverified (local file URL blocked by browser policy)
