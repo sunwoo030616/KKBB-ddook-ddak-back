@@ -1,0 +1,562 @@
+{
+  "actual_e5_jev_only": {
+    "cases": 100,
+    "partial_hit_correct": 84,
+    "partial_hit_rate": 0.84,
+    "at_least_one_required_outcome_correct": 82,
+    "at_least_one_required_outcome_rate": 0.82,
+    "partial_with_no_disallowed_correct": 27,
+    "partial_with_no_disallowed_rate": 0.27,
+    "predicted_menu_count": 273,
+    "allowed_predicted_menu_count": 150,
+    "menu_level_allowed_precision": 0.5494505494505495,
+    "mean_recommended_menus": 2.73,
+    "macro_required_outcome_recall": 0.6166666666666667,
+    "micro_required_outcome_recall": 0.6047619047619047,
+    "covered_required_groups": 127,
+    "required_groups": 210,
+    "errors": 0,
+    "response_order_budget_hits": {
+      "1": {
+        "hits": 64,
+        "rate": 0.64
+      },
+      "2": {
+        "hits": 75,
+        "rate": 0.75
+      },
+      "3": {
+        "hits": 84,
+        "rate": 0.84
+      }
+    },
+    "definition": "Hit if at least one predicted ID is in the union of preapproved acceptable answer sets, including approved optional suggestions. Errors fail. Extra wrong menus do not erase the hit, so precision and recommendation count must be reported. Response-order budgets are not guaranteed relevance rankings.",
+    "mean_http_ms": 442.68121372999985,
+    "p95_http_ms": 574.1141250000012,
+    "input_tokens": 1983877,
+    "output_tokens": 176400,
+    "estimated_api_usd": 0.083322834,
+    "openai_calls": 0,
+    "jev_calls": 100
+  },
+  "failure_counts": {
+    "ranked_below_top3": 12,
+    "candidate_missing": 3,
+    "below_threshold": 1
+  },
+  "reference_gap_candidates": 9,
+  "failure_details": [
+    {
+      "case_id": "S01_06",
+      "query": "부모님과 일본에 놀러 가기로 했어. 여행 전에 챙겨둘 걸 추천해 줘.",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0316",
+          "name": "환율조회"
+        },
+        {
+          "id": "kb_menu_0604",
+          "name": "KB Pay 여행"
+        },
+        {
+          "id": "kb_menu_0324",
+          "name": "환전조회/관리"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0603",
+          "name": "트래블러스 체크카드",
+          "noul": 0.8
+        },
+        {
+          "id": "kb_menu_0323",
+          "name": "환전신청",
+          "noul": 0.8
+        }
+      ],
+      "possible_reference_gap": false
+    },
+    {
+      "case_id": "S01_07",
+      "query": "혼자 일본으로 첫 해외여행을 갈까 해. 은행 앱이 도와줄 수 있을까?",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0415",
+          "name": "해외 ATM 출금"
+        },
+        {
+          "id": "kb_menu_0604",
+          "name": "KB Pay 여행"
+        },
+        {
+          "id": "kb_menu_0418",
+          "name": "국민지갑 여행"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0323",
+          "name": "환전신청",
+          "noul": 0.81
+        },
+        {
+          "id": "kb_menu_0608",
+          "name": "스타뱅킹 해외결제",
+          "noul": 0.8
+        },
+        {
+          "id": "kb_menu_0602",
+          "name": "KB손해보험 다이렉트 해외여행보험",
+          "noul": 0.74
+        },
+        {
+          "id": "kb_menu_0413",
+          "name": "해외 QR 결제",
+          "noul": 0.62
+        }
+      ],
+      "possible_reference_gap": false
+    },
+    {
+      "case_id": "S03_03",
+      "query": "생애 처음으로 카페 사장이 되려고 해. 은행 앱에서 챙겨볼 걸 알려줘.",
+      "reason": "candidate_missing",
+      "selected": [
+        {
+          "id": "kb_menu_0423",
+          "name": "KB사장님+통장"
+        },
+        {
+          "id": "kb_menu_0624",
+          "name": "사장님 Tip"
+        },
+        {
+          "id": "kb_menu_0308",
+          "name": "금융팁 키워드 검색"
+        }
+      ],
+      "allowed_candidates": [],
+      "possible_reference_gap": false
+    },
+    {
+      "case_id": "S03_10",
+      "query": "첫 장사를 카페로 시작하려고 해. 은행에서 미리 챙기면 좋을 게 뭐야?",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0422",
+          "name": "KB사장님+금고"
+        },
+        {
+          "id": "kb_menu_0423",
+          "name": "KB사장님+통장"
+        },
+        {
+          "id": "kb_menu_0624",
+          "name": "사장님 Tip"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0626",
+          "name": "카드 가맹점 등록·결제계좌 변경",
+          "noul": 0.71
+        }
+      ],
+      "possible_reference_gap": false
+    },
+    {
+      "case_id": "S04_03",
+      "query": "전세를 벗어나 생애 첫 집을 사려고 해. 은행에서 챙길 걸 알려줘.",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0025",
+          "name": "개인 부동산대출 상품 찾기"
+        },
+        {
+          "id": "kb_menu_0498",
+          "name": "은행에 서류 제출"
+        },
+        {
+          "id": "kb_menu_0050",
+          "name": "대출상품 비교"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0591",
+          "name": "부동산 세금계산기",
+          "noul": 0.74
+        },
+        {
+          "id": "kb_menu_0587",
+          "name": "공공주택 청약·매물정보",
+          "noul": 0.63
+        },
+        {
+          "id": "kb_menu_0588",
+          "name": "부동산 시세 간편조회",
+          "noul": 0.61
+        },
+        {
+          "id": "kb_menu_0594",
+          "name": "KB 부동산",
+          "noul": 0.52
+        },
+        {
+          "id": "kb_menu_0586",
+          "name": "집찾는 AI",
+          "noul": 0.52
+        }
+      ],
+      "possible_reference_gap": false
+    },
+    {
+      "case_id": "S04_09",
+      "query": "처음 자가를 마련하려는 중이야. 은행 앱에서 무엇을 살펴보면 좋을까?",
+      "reason": "candidate_missing",
+      "selected": [
+        {
+          "id": "kb_menu_0049",
+          "name": "최적의 대출상품 조회"
+        },
+        {
+          "id": "kb_menu_0577",
+          "name": "내게 맞는 대출 찾기"
+        },
+        {
+          "id": "kb_menu_0057",
+          "name": "대출 상품 둘러보기"
+        }
+      ],
+      "allowed_candidates": [],
+      "possible_reference_gap": false
+    },
+    {
+      "case_id": "S05_09",
+      "query": "자가용을 중고로 처분해 보려는데 스타뱅킹에서 시작할 수 있을까?",
+      "reason": "candidate_missing",
+      "selected": [
+        {
+          "id": "kb_menu_0003",
+          "name": "직접검색"
+        }
+      ],
+      "allowed_candidates": [],
+      "possible_reference_gap": false
+    },
+    {
+      "case_id": "S06_02",
+      "query": "몇 년 뒤면 직장을 그만둘 나이라 노후가 걱정돼. 준비를 시작하고 싶어.",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0292",
+          "name": "나의 은퇴자산 현황"
+        },
+        {
+          "id": "kb_menu_0294",
+          "name": "은퇴준비를 위한 KB골든라이프"
+        },
+        {
+          "id": "kb_menu_0291",
+          "name": "나의 연금자산"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0175",
+          "name": "연금상품 보기",
+          "noul": 0.8
+        },
+        {
+          "id": "kb_menu_0176",
+          "name": "골든라이프센터 상담",
+          "noul": 0.8
+        },
+        {
+          "id": "kb_menu_0173",
+          "name": "연금 정보 불러오기",
+          "noul": 0.33
+        }
+      ],
+      "possible_reference_gap": true
+    },
+    {
+      "case_id": "S06_03",
+      "query": "정년이 얼마 안 남았는데 은퇴 이후를 어떻게 준비해야 할지 막막해.",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0269",
+          "name": "골든라이프와 함께"
+        },
+        {
+          "id": "kb_menu_0292",
+          "name": "나의 은퇴자산 현황"
+        },
+        {
+          "id": "kb_menu_0294",
+          "name": "은퇴준비를 위한 KB골든라이프"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0176",
+          "name": "골든라이프센터 상담",
+          "noul": 0.85
+        },
+        {
+          "id": "kb_menu_0175",
+          "name": "연금상품 보기",
+          "noul": 0.66
+        },
+        {
+          "id": "kb_menu_0173",
+          "name": "연금 정보 불러오기",
+          "noul": 0.35
+        }
+      ],
+      "possible_reference_gap": true
+    },
+    {
+      "case_id": "S06_04",
+      "query": "퇴직할 날이 다가오니 노후 살림이 걱정돼. 은행 앱으로 준비할 걸 알려줘.",
+      "reason": "below_threshold",
+      "selected": [
+        {
+          "id": "kb_menu_0292",
+          "name": "나의 은퇴자산 현황"
+        },
+        {
+          "id": "kb_menu_0294",
+          "name": "은퇴준비를 위한 KB골든라이프"
+        },
+        {
+          "id": "kb_menu_0291",
+          "name": "나의 연금자산"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0175",
+          "name": "연금상품 보기",
+          "noul": 0.64
+        },
+        {
+          "id": "kb_menu_0173",
+          "name": "연금 정보 불러오기",
+          "noul": 0.37
+        }
+      ],
+      "possible_reference_gap": true
+    },
+    {
+      "case_id": "S06_05",
+      "query": "은퇴를 앞두고 있어. 앞으로의 생활 준비에 도움이 되는 기능을 보고 싶어.",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0269",
+          "name": "골든라이프와 함께"
+        },
+        {
+          "id": "kb_menu_0292",
+          "name": "나의 은퇴자산 현황"
+        },
+        {
+          "id": "kb_menu_0294",
+          "name": "은퇴준비를 위한 KB골든라이프"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0175",
+          "name": "연금상품 보기",
+          "noul": 0.76
+        }
+      ],
+      "possible_reference_gap": true
+    },
+    {
+      "case_id": "S06_06",
+      "query": "곧 정년퇴직을 하게 돼서 노후 준비를 차근차근 시작하려고 해.",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0292",
+          "name": "나의 은퇴자산 현황"
+        },
+        {
+          "id": "kb_menu_0294",
+          "name": "은퇴준비를 위한 KB골든라이프"
+        },
+        {
+          "id": "kb_menu_0291",
+          "name": "나의 연금자산"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0176",
+          "name": "골든라이프센터 상담",
+          "noul": 0.84
+        },
+        {
+          "id": "kb_menu_0175",
+          "name": "연금상품 보기",
+          "noul": 0.76
+        },
+        {
+          "id": "kb_menu_0173",
+          "name": "연금 정보 불러오기",
+          "noul": 0.38
+        }
+      ],
+      "possible_reference_gap": true
+    },
+    {
+      "case_id": "S06_07",
+      "query": "은퇴 이후 생활이 걱정되는데 스타뱅킹에서 먼저 살펴볼 걸 알려줘.",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0269",
+          "name": "골든라이프와 함께"
+        },
+        {
+          "id": "kb_menu_0292",
+          "name": "나의 은퇴자산 현황"
+        },
+        {
+          "id": "kb_menu_0294",
+          "name": "은퇴준비를 위한 KB골든라이프"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0260",
+          "name": "총자산현황",
+          "noul": 0.71
+        },
+        {
+          "id": "kb_menu_0175",
+          "name": "연금상품 보기",
+          "noul": 0.68
+        }
+      ],
+      "possible_reference_gap": true
+    },
+    {
+      "case_id": "S06_08",
+      "query": "직장 생활이 끝나갈 때가 돼서 노후 대비를 점검하고 싶어.",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0292",
+          "name": "나의 은퇴자산 현황"
+        },
+        {
+          "id": "kb_menu_0294",
+          "name": "은퇴준비를 위한 KB골든라이프"
+        },
+        {
+          "id": "kb_menu_0291",
+          "name": "나의 연금자산"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0260",
+          "name": "총자산현황",
+          "noul": 0.77
+        },
+        {
+          "id": "kb_menu_0176",
+          "name": "골든라이프센터 상담",
+          "noul": 0.76
+        },
+        {
+          "id": "kb_menu_0175",
+          "name": "연금상품 보기",
+          "noul": 0.6
+        },
+        {
+          "id": "kb_menu_0173",
+          "name": "연금 정보 불러오기",
+          "noul": 0.39
+        }
+      ],
+      "possible_reference_gap": true
+    },
+    {
+      "case_id": "S06_09",
+      "query": "퇴직 후를 제대로 준비했는지 자신이 없어. 은행에서 도움받을 곳이 있을까?",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0269",
+          "name": "골든라이프와 함께"
+        },
+        {
+          "id": "kb_menu_0292",
+          "name": "나의 은퇴자산 현황"
+        },
+        {
+          "id": "kb_menu_0294",
+          "name": "은퇴준비를 위한 KB골든라이프"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0175",
+          "name": "연금상품 보기",
+          "noul": 0.74
+        }
+      ],
+      "possible_reference_gap": true
+    },
+    {
+      "case_id": "S06_10",
+      "query": "정년을 앞둔 사람에게 필요한 노후 준비를 은행 앱에서 시작해 보고 싶어.",
+      "reason": "ranked_below_top3",
+      "selected": [
+        {
+          "id": "kb_menu_0292",
+          "name": "나의 은퇴자산 현황"
+        },
+        {
+          "id": "kb_menu_0294",
+          "name": "은퇴준비를 위한 KB골든라이프"
+        },
+        {
+          "id": "kb_menu_0291",
+          "name": "나의 연금자산"
+        }
+      ],
+      "allowed_candidates": [
+        {
+          "id": "kb_menu_0260",
+          "name": "총자산현황",
+          "noul": 0.83
+        },
+        {
+          "id": "kb_menu_0175",
+          "name": "연금상품 보기",
+          "noul": 0.7
+        },
+        {
+          "id": "kb_menu_0173",
+          "name": "연금 정보 불러오기",
+          "noul": 0.49
+        }
+      ],
+      "possible_reference_gap": true
+    }
+  ],
+  "not_new_blind_test": true
+}

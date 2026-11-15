@@ -1,0 +1,19 @@
+{
+  "docs/situation-e5-jev100/summary.json": "16375e163e9e8eeeda4a09212194fc3d9143524943dafefae35c1c179181faca",
+  "docs/situation-e5-jev100/selection-tests.log": "33060fd73862c5e1af97335504d5b45211fce6d229657f556d8deceeadc52ce4",
+  "docs/situation-e5-jev100/README.md": "b9538bedabc7afcb74d816b4f0fcf618fe04287fd70755b6a813736d82a8eff1",
+  "docs/situation-e5-jev100/diversity-audit.json": "7830643fa3fef109fdd4c06406787fc07e9dfeec28c62c5aba87f9195eaa82f9",
+  "docs/situation-e5-jev100/retrieval-audit.json": "4d4f3804d463563e01471cbd5249f2cdbbbcacc17728928c0a14663b73b0ad10",
+  "docs/situation-e5-jev100/PROTOCOL.md": "1e0252d83fc68f1b1748d4c5077416c2dd3bb86a4aa9deae8d9f3ff1b355eef2",
+  "docs/situation-e5-jev100/run/upstream-calls.jsonl": "0d5d6b6ac5e16abcbd28e48840d0dfdd2557989d3cea39948ea6a4e428f6ccc4",
+  "docs/situation-e5-jev100/run/results.json": "8fee589bc696caad705921a1594025547210b2db347b9a5c040c9964655f946d",
+  "docs/situation-e5-jev100/run/verification.log": "4576f49846dcf7c982c2825e8b153f2b29422e9d29044e6a1991c147f5b971fa",
+  "scripts/semantic/situation_e5_jev100/diversity_audit.py": "b7419954d266a07156a877c29a2b84b57080133528d119e069d7bf1669b91e74",
+  "scripts/semantic/situation_e5_jev100/run.py": "a8f0f30490fd2f822f2cce49b052e54564d8df8a139b47e88033d3e3b036e87d",
+  "scripts/semantic/situation_e5_jev100/test_selection.py": "c0902c7e924bc538c2d266ea95643231593c2460e9f1984eae220585592c2b96",
+  "scripts/semantic/situation_e5_jev100/policy.txt": "58ed9ee03595dbd90668ad37cc251f118ea310c78d6469cacef6738d01c242d9",
+  "scripts/semantic/situation_e5_jev100/selection.py": "ecfb28ee722a0accb10323f47c7b889aaf5929c3aedbf0e314256e3ea06cf9eb",
+  "scripts/semantic/situation_e5_jev100/retrieval_audit.py": "7fd4ca935d74d82b31b5a7eeeac4db5463122078b6db03ea36aab52beeaec41b",
+  "scripts/semantic/situation_e5_jev100/report.py": "6cf6ad5a8ad23d213a6de6f082dced2c9b782fa82269ee50d617c967d0f2ad8b",
+  "scripts/semantic/situation_e5_jev100/freeze.json": "6bf0c664189682f0f09690248884a38b82d2ba04888a61e18463ff644420e821"
+}
