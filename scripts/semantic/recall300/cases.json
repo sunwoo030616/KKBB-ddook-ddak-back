@@ -1,0 +1,3332 @@
+[
+  {
+    "case_id": "recall300_001",
+    "query": "내 상황에 맞는 금융상품을 추천받고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0002"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_002",
+    "query": "이름을 아는 금융상품을 검색어로 찾아볼래요.",
+    "expected_ids": [
+      "kb_menu_0003"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_003",
+    "query": "직장인이나 사장님 같은 키워드로 상품을 골라보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0004"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_004",
+    "query": "신청하다 중단한 금융상품 가입을 이어서 할래.",
+    "expected_ids": [
+      "kb_menu_0005"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_005",
+    "query": "내가 찜해 둔 금융상품 목록을 보여줘.",
+    "expected_ids": [
+      "kb_menu_0006"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_006",
+    "query": "조금 전에 둘러본 상품들을 다시 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0007"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_007",
+    "query": "예금과 적금 중 어떤 종류로 가입할지 고르는 화면을 열어줘.",
+    "expected_ids": [
+      "kb_menu_0008"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_008",
+    "query": "KB카드쓰담적금에 대해 알아보고 싶습니다.",
+    "expected_ids": [
+      "kb_menu_0009"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_009",
+    "query": "군 복무 중이라 장병내일준비적금 상품을 찾아요.",
+    "expected_ids": [
+      "kb_menu_0010"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_010",
+    "query": "KB아이사랑적금에 가입하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0011"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_011",
+    "query": "KB청년미래적금 상품 내용을 확인할래.",
+    "expected_ids": [
+      "kb_menu_0012"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_012",
+    "query": "걸으면서 이용하는 KB달리자적금을 알아보려고 해.",
+    "expected_ids": [
+      "kb_menu_0013"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_013",
+    "query": "KB Star 정기예금 상품을 열어줘.",
+    "expected_ids": [
+      "kb_menu_0014"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_014",
+    "query": "예금 중에서 지수에 연동되는 상품을 찾아보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0015"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_015",
+    "query": "개인사업자용 KB사장님 플러스 적금을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0016"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_016",
+    "query": "새 상품 추천 말고 이미 가입한 예금과 적금 목록을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0020"
+    ],
+    "domain": "상품예금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_017",
+    "query": "예금을 새로 신청했는데 신규 처리가 됐는지 확인할래.",
+    "expected_ids": [
+      "kb_menu_0021"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_018",
+    "query": "비과세종합저축 관련 자료를 은행에 제출하려고 해.",
+    "expected_ids": [
+      "kb_menu_0022"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_019",
+    "query": "아동수당 받을 전용 통장 상품을 알아보려고 해요.",
+    "expected_ids": [
+      "kb_menu_0059"
+    ],
+    "domain": "상품예금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_020",
+    "query": "청년 전용 말고 일반 주택청약종합저축 상품을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0100"
+    ],
+    "domain": "상품예금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_021",
+    "query": "보증금 마련용 전월세 대출 상품들을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0024"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_022",
+    "query": "부동산을 담보로 받을 개인 대출 상품을 알아보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0025"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_023",
+    "query": "보유한 예금을 담보로 대출받을 수 있는 상품을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0026"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_024",
+    "query": "자동차 구입용 개인 대출 상품을 둘러보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0027"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_025",
+    "query": "내 조건에 맞는 신용대출을 찾아주는 메뉴를 열어줘.",
+    "expected_ids": [
+      "kb_menu_0028"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_026",
+    "query": "KB스타 신용대출을 신규로 신청할래.",
+    "expected_ids": [
+      "kb_menu_0029"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_027",
+    "query": "기존에 받은 대출을 다른 대출로 갈아타고 싶어.",
+    "expected_ids": [
+      "kb_menu_0031"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_028",
+    "query": "신청해 둔 대출의 진행 상태를 보고 실행이나 예약을 할래.",
+    "expected_ids": [
+      "kb_menu_0033"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_029",
+    "query": "한국신용정보원에서 내 개인 대출 현황을 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0034"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_030",
+    "query": "대출 신청에 필요한 서류를 스마트 서류제출로 보낼래.",
+    "expected_ids": [
+      "kb_menu_0035"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_031",
+    "query": "대출받은 뒤 추가로 내야 하는 서류가 있어.",
+    "expected_ids": [
+      "kb_menu_0036"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_032",
+    "query": "남편이 신청한 대출 때문에 배우자 정보 제공에 동의해야 해.",
+    "expected_ids": [
+      "kb_menu_0037"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_033",
+    "query": "세대원으로서 대출 관련 정보 제공 동의를 하려고 해요.",
+    "expected_ids": [
+      "kb_menu_0038"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_034",
+    "query": "다른 사람 대출에 담보를 제공하는 동의 절차를 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0039"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_035",
+    "query": "부동산 담보대출 계약에 전자서명을 하려고 해.",
+    "expected_ids": [
+      "kb_menu_0040"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_036",
+    "query": "상품 신청 대신 대출금과 이자를 계산해 볼래.",
+    "expected_ids": [
+      "kb_menu_0041"
+    ],
+    "domain": "대출",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_037",
+    "query": "중도금이 아니라 아파트 집단 잔금대출을 알아보고 있어.",
+    "expected_ids": [
+      "kb_menu_0042"
+    ],
+    "domain": "대출",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_038",
+    "query": "입주 잔금이 아니라 집단 중도금대출이 필요해.",
+    "expected_ids": [
+      "kb_menu_0043"
+    ],
+    "domain": "대출",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_039",
+    "query": "재개발로 이사할 때 쓰는 집단 이주비대출을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0044"
+    ],
+    "domain": "대출",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_040",
+    "query": "주택도시기금 대출 중 집 구입 말고 전세자금용을 알아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0045"
+    ],
+    "domain": "대출",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_041",
+    "query": "TDF가 어떤 펀드인지 설명을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0081"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_042",
+    "query": "테마별 수익률 상위 열 개를 보여줘.",
+    "expected_ids": [
+      "kb_menu_0082"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_043",
+    "query": "펀드 상품을 이름으로 검색해 볼래요.",
+    "expected_ids": [
+      "kb_menu_0083"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_044",
+    "query": "투자하는 나라나 펀드 종류를 기준으로 펀드를 찾고 싶어.",
+    "expected_ids": [
+      "kb_menu_0084"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_045",
+    "query": "펀드를 고르기 전에 투자 성향을 분석하고 상품을 볼래.",
+    "expected_ids": [
+      "kb_menu_0085"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_046",
+    "query": "수익률 말고 판매가 많이 된 펀드 순위를 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0086"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_047",
+    "query": "많이 팔린 순서 말고 수익률이 좋은 펀드 목록을 볼래.",
+    "expected_ids": [
+      "kb_menu_0087"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_048",
+    "query": "추천해 주는 펀드 상품들을 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0088"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_049",
+    "query": "최근 새로 나온 펀드 상품이 뭐가 있는지 궁금해.",
+    "expected_ids": [
+      "kb_menu_0089"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_050",
+    "query": "펀드들이 많이 보유한 상위 열 종목을 보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0090"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_051",
+    "query": "우리 아이 이름으로 펀드를 만들어 주려고 해.",
+    "expected_ids": [
+      "kb_menu_0091"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_052",
+    "query": "연금저축펀드 상품을 알아보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0092"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_053",
+    "query": "모집 중인 목표전환형 펀드를 찾아주세요.",
+    "expected_ids": [
+      "kb_menu_0093"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_054",
+    "query": "케이봇쌤이 구성하는 포트폴리오를 확인할래.",
+    "expected_ids": [
+      "kb_menu_0094"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_055",
+    "query": "펀드 이용 방법을 알려주는 가이드를 읽고 싶어.",
+    "expected_ids": [
+      "kb_menu_0098"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_056",
+    "query": "ISA가 무엇인지 기본 안내부터 보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0106"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_057",
+    "query": "신탁형 말고 일임형 ISA 상품을 알아볼래.",
+    "expected_ids": [
+      "kb_menu_0107"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_058",
+    "query": "일임형이 아니라 신탁형 ISA를 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0108"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_059",
+    "query": "다른 곳의 계좌를 일임형 ISA로 옮기는 신청을 하려고 해.",
+    "expected_ids": [
+      "kb_menu_0109"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_060",
+    "query": "현재 계좌 말고 이미 해지한 ISA 계좌를 조회하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0111"
+    ],
+    "domain": "펀드ISA",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_061",
+    "query": "퇴직연금을 처음 알아보는데 전체 안내를 볼 수 있을까?",
+    "expected_ids": [
+      "kb_menu_0069"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_062",
+    "query": "개인형 IRP 계좌를 새로 가입하려고 해요.",
+    "expected_ids": [
+      "kb_menu_0070"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_063",
+    "query": "다른 금융회사에 있는 연금을 이 은행으로 가져오고 싶어.",
+    "expected_ids": [
+      "kb_menu_0071"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_064",
+    "query": "퇴직연금 상품을 정하기 전에 투자 성향을 확인할래.",
+    "expected_ids": [
+      "kb_menu_0072"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_065",
+    "query": "퇴직연금에서 수익률이 좋은 펀드를 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0073"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_066",
+    "query": "퇴직연금 상품 중 수익률 상위 ETF를 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0074"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_067",
+    "query": "퇴직연금 운용 상품 중 원리금보장형을 찾아요.",
+    "expected_ids": [
+      "kb_menu_0075"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_068",
+    "query": "교보생명의 DC나 IRP용 3년 이율보증형보험 상품을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0076"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_069",
+    "query": "메리츠화재의 개인형 IRP 3년 이율보증형보험3을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0077"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_070",
+    "query": "퇴직연금용 KB손해보험 3년제 이율보증형보험을 알아볼래.",
+    "expected_ids": [
+      "kb_menu_0078"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_071",
+    "query": "DB손해보험 스마트 퇴직연금 이율보증형보험 3년 상품을 찾아요.",
+    "expected_ids": [
+      "kb_menu_0079"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_072",
+    "query": "삼성생명에서 제공하는 DC IRP용 3년 이율보증형보험을 열어줘.",
+    "expected_ids": [
+      "kb_menu_0080"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_073",
+    "query": "신탁 상품을 이용하기 전에 기초 가이드를 읽어볼래.",
+    "expected_ids": [
+      "kb_menu_0139"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_074",
+    "query": "신탁 투자에 앞서 투자 성향을 분석하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0140"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_075",
+    "query": "신탁으로 ETF에 투자하는 상품을 알아보려고 해.",
+    "expected_ids": [
+      "kb_menu_0141"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_076",
+    "query": "골드통장 말고 신탁 금현물 상품을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0142"
+    ],
+    "domain": "연금신탁",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_077",
+    "query": "신탁 상품 중 ELS가 아닌 ELB를 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0143"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_078",
+    "query": "신탁 ELB 말고 ELS 상품을 알아보고 있어.",
+    "expected_ids": [
+      "kb_menu_0144"
+    ],
+    "domain": "연금신탁",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_079",
+    "query": "내 재산을 사후에 넘기는 유언대용신탁을 알아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0145"
+    ],
+    "domain": "연금신탁",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_080",
+    "query": "운용 중인 신탁이 아니라 해지한 신탁 계좌를 조회할래.",
+    "expected_ids": [
+      "kb_menu_0147"
+    ],
+    "domain": "연금신탁",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_081",
+    "query": "노후 저축이나 연금을 준비하는 목적의 보험들을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0127"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_082",
+    "query": "저축용 말고 위험을 보장하는 보험을 목적별로 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0128"
+    ],
+    "domain": "보험골드",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_083",
+    "query": "KB세번의약속e연금보험Plus 상품을 확인할래.",
+    "expected_ids": [
+      "kb_menu_0129"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_084",
+    "query": "KB하이브리드e연금보험 무배당 상품을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0130"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_085",
+    "query": "치매보장형 KB골든라이프e안심보험을 보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0131"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_086",
+    "query": "모바일용 KB 슬기로운 간편건강보험 25년 7월 상품을 알아볼래.",
+    "expected_ids": [
+      "kb_menu_0132"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_087",
+    "query": "보험 관련 비과세 한도가 얼마나 되는지 알아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0133"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_088",
+    "query": "내가 가진 보험에서 어떤 보장을 받는지 진단받고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0134"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_089",
+    "query": "보험 이용 중 자주 나오는 질문과 답을 볼래.",
+    "expected_ids": [
+      "kb_menu_0135"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_090",
+    "query": "보험회사에 전화해야 해서 회사별 대표 연락처를 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0136"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_091",
+    "query": "예전에 어떤 보험에 가입했는지 이력을 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0137"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_092",
+    "query": "내 보험 계약 서류를 다시 열어보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0138"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_093",
+    "query": "금뿐 아니라 은의 현재 시세도 함께 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0148"
+    ],
+    "domain": "보험골드",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_094",
+    "query": "금이나 은 투자 상품의 종류를 고르는 메뉴를 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0149"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_095",
+    "query": "실물 금괴 대신 KB골드투자통장 상품을 알아보고 있어.",
+    "expected_ids": [
+      "kb_menu_0150"
+    ],
+    "domain": "보험골드",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_096",
+    "query": "금괴 구매 중에서 지점 구매 전용 골드바 메뉴를 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0152"
+    ],
+    "domain": "보험골드",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_097",
+    "query": "골드바가 아니라 실버바를 알아보려고 해.",
+    "expected_ids": [
+      "kb_menu_0153"
+    ],
+    "domain": "보험골드",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_098",
+    "query": "내 통장 말고 아이를 위한 KB골드투자통장을 만들고 싶어.",
+    "expected_ids": [
+      "kb_menu_0154"
+    ],
+    "domain": "보험골드",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_099",
+    "query": "내 골드 계좌 말고 다른 사람에게 골드를 입금할래.",
+    "expected_ids": [
+      "kb_menu_0155"
+    ],
+    "domain": "보험골드",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_100",
+    "query": "현재 계좌가 아니라 해지한 골드나 실버 계좌 내역을 볼래.",
+    "expected_ids": [
+      "kb_menu_0158"
+    ],
+    "domain": "보험골드",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_101",
+    "query": "내 계좌들을 한 번에 모아서 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0159"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_102",
+    "query": "여러 계좌의 거래 내역을 통합해서 볼래.",
+    "expected_ids": [
+      "kb_menu_0160"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_103",
+    "query": "가족 금융을 관리하는 패밀리뱅킹을 이용하고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0161"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_104",
+    "query": "잊고 있던 휴면예금이나 보험금을 찾아볼래.",
+    "expected_ids": [
+      "kb_menu_0162"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_105",
+    "query": "다른 금융회사 계좌를 새로 등록하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0164"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_106",
+    "query": "다른 금융회사 전체 잔액을 보여주는 데 동의할래.",
+    "expected_ids": [
+      "kb_menu_0165"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_107",
+    "query": "전체 계좌 목록에서 보이는 방식과 순서를 바꾸고 싶어.",
+    "expected_ids": [
+      "kb_menu_0166"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_108",
+    "query": "여러 계좌에 흩어진 잔액을 한 곳으로 모을래.",
+    "expected_ids": [
+      "kb_menu_0167"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_109",
+    "query": "특정 계좌만 보는 전용 화면으로 들어가고 싶어.",
+    "expected_ids": [
+      "kb_menu_0169"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_110",
+    "query": "통합 거래 내역을 날짜별 달력으로 볼 수 있을까?",
+    "expected_ids": [
+      "kb_menu_0170"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_111",
+    "query": "친구들과 쓸 모임통장을 등록하려고 해.",
+    "expected_ids": [
+      "kb_menu_0171"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_112",
+    "query": "우리 부부의 노후자금 현황을 같이 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0172"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_113",
+    "query": "내 연금 정보를 불러와서 확인하려고 해.",
+    "expected_ids": [
+      "kb_menu_0173"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_114",
+    "query": "배우자와 노후자금 정보를 공유하는 설정을 바꿀래.",
+    "expected_ids": [
+      "kb_menu_0174"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_115",
+    "query": "노후 준비 관련해서 골든라이프센터 상담을 받고 싶어.",
+    "expected_ids": [
+      "kb_menu_0176"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_116",
+    "query": "새 통장 개설 전에 가족 서비스에 자녀를 등록할래.",
+    "expected_ids": [
+      "kb_menu_0177"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_117",
+    "query": "아이 적금 말고 입출금통장을 만들어 주고 싶어.",
+    "expected_ids": [
+      "kb_menu_0178"
+    ],
+    "domain": "계좌가족",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_118",
+    "query": "아이를 위한 청약통장을 만들고 싶어. 일반 입출금통장은 아니야.",
+    "expected_ids": [
+      "kb_menu_0179"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_119",
+    "query": "내 교통카드 말고 자녀 티머니 교통카드를 충전해 줄래.",
+    "expected_ids": [
+      "kb_menu_0181"
+    ],
+    "domain": "계좌가족",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_120",
+    "query": "가족의 생일 같은 기념일을 등록하고 알림을 받고 싶어.",
+    "expected_ids": [
+      "kb_menu_0185"
+    ],
+    "domain": "계좌가족",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_121",
+    "query": "목록에 보이는 계좌를 숨기고 싶어.",
+    "expected_ids": [
+      "kb_menu_0191"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_122",
+    "query": "KB내맘대로계좌번호 서비스를 이용하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0192"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_123",
+    "query": "어카운트인포 계좌통합관리서비스로 들어갈래.",
+    "expected_ids": [
+      "kb_menu_0193"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_124",
+    "query": "연금이 들어오는 계좌를 확인하고 바꾸고 싶어.",
+    "expected_ids": [
+      "kb_menu_0194"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_125",
+    "query": "이미 해지한 계좌들을 조회할래요.",
+    "expected_ids": [
+      "kb_menu_0195"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_126",
+    "query": "계좌 비밀번호를 다른 번호로 바꾸고 싶어.",
+    "expected_ids": [
+      "kb_menu_0197"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_127",
+    "query": "계좌 비밀번호를 여러 번 틀려서 잠긴 걸 풀고 싶어.",
+    "expected_ids": [
+      "kb_menu_0198"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_128",
+    "query": "계좌에 비밀번호를 처음으로 등록하려고 해.",
+    "expected_ids": [
+      "kb_menu_0199"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_129",
+    "query": "한 사람씩 말고 여러 건을 한꺼번에 송금할래.",
+    "expected_ids": [
+      "kb_menu_0201"
+    ],
+    "domain": "이체설정",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_130",
+    "query": "종이에 적힌 계좌를 카메라로 찍어서 이체하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0202"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_131",
+    "query": "이체받는 계좌로 저장된 목록을 정리하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0204"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_132",
+    "query": "자동이체 말고 자동납부로 등록한 내역을 조회하고 해지할래.",
+    "expected_ids": [
+      "kb_menu_0208"
+    ],
+    "domain": "이체설정",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_133",
+    "query": "지로 자동납부에 입력한 해지를 처리하려고 해.",
+    "expected_ids": [
+      "kb_menu_0209"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_134",
+    "query": "계좌 송금 말고 ATM이나 지점에서 현금을 출금할래.",
+    "expected_ids": [
+      "kb_menu_0210"
+    ],
+    "domain": "이체설정",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_135",
+    "query": "ATM과 지점 출금에 사용할 계좌를 등록하려고 해요.",
+    "expected_ids": [
+      "kb_menu_0213"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_136",
+    "query": "출금에 쓰는 계좌를 추가하거나 관리할래. 순서만 바꾸려는 건 아니야.",
+    "expected_ids": [
+      "kb_menu_0215"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_137",
+    "query": "출금계좌 목록 말고 출금계좌를 등록하는 방법 설정을 바꾸고 싶어.",
+    "expected_ids": [
+      "kb_menu_0216"
+    ],
+    "domain": "이체설정",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_138",
+    "query": "계좌를 추가하지 말고 출금계좌가 나타나는 순서를 바꿀래.",
+    "expected_ids": [
+      "kb_menu_0217"
+    ],
+    "domain": "이체설정",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_139",
+    "query": "오래 이체를 안 해서 걸린 이용 제한을 해제하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0222"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_140",
+    "query": "잔액 모으기를 이미 예약했는데 그 예약을 관리할래.",
+    "expected_ids": [
+      "kb_menu_0225"
+    ],
+    "domain": "이체설정",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_141",
+    "query": "국세를 납부하려고 해요.",
+    "expected_ids": [
+      "kb_menu_0227"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_142",
+    "query": "지방세 고지서를 납부하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0228"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_143",
+    "query": "관세를 은행 앱에서 내려고 해.",
+    "expected_ids": [
+      "kb_menu_0229"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_144",
+    "query": "기금이나 국고 납부 업무를 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0230"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_145",
+    "query": "세금이 아닌 세외수입 납부를 하려고 해.",
+    "expected_ids": [
+      "kb_menu_0231"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_146",
+    "query": "환경개선부담금 고지서를 받았는데 납부할래.",
+    "expected_ids": [
+      "kb_menu_0232"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_147",
+    "query": "교통 위반으로 나온 범칙금을 내고 싶어.",
+    "expected_ids": [
+      "kb_menu_0233"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_148",
+    "query": "검찰청에서 나온 벌과금을 납부하려고 해.",
+    "expected_ids": [
+      "kb_menu_0234"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_149",
+    "query": "건강보험 같은 4대 보험료를 낼 수 있는 곳을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0235"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_150",
+    "query": "지로 번호가 적힌 고지서를 납부하고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0236"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_151",
+    "query": "KT 통신 요금을 납부하려고 해.",
+    "expected_ids": [
+      "kb_menu_0237"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_152",
+    "query": "전기요금과 TV 수신료를 내려고 해요.",
+    "expected_ids": [
+      "kb_menu_0238"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_153",
+    "query": "상하수도 요금 고지서를 처리하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0239"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_154",
+    "query": "대학교 등록금을 은행 앱으로 낼래.",
+    "expected_ids": [
+      "kb_menu_0241"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_155",
+    "query": "번호를 일일이 적지 않고 고지서 사진을 찍어서 납부할래.",
+    "expected_ids": [
+      "kb_menu_0242"
+    ],
+    "domain": "공과금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_156",
+    "query": "이번 한 번 예약이 아니라 공과금을 자동으로 내도록 설정하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0243"
+    ],
+    "domain": "공과금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_157",
+    "query": "지방세와 세외수입에 대한 알림을 받아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0245"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_158",
+    "query": "납부를 새로 하는 게 아니라 전에 낸 공과금 내역을 확인할래.",
+    "expected_ids": [
+      "kb_menu_0246"
+    ],
+    "domain": "공과금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_159",
+    "query": "법원 공탁금을 납부해야 하는데 어디로 가야 해?",
+    "expected_ids": [
+      "kb_menu_0248"
+    ],
+    "domain": "공과금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_160",
+    "query": "소송 인지대 말고 법원 송달료를 내려고 해.",
+    "expected_ids": [
+      "kb_menu_0249"
+    ],
+    "domain": "공과금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_161",
+    "query": "돌려받을 국세 환급금이 있는지 조회하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0256"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_162",
+    "query": "고용보험이나 산재보험에서 돌려받을 보험료를 알아볼래.",
+    "expected_ids": [
+      "kb_menu_0257"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_163",
+    "query": "내 자산이 어떤 종류로 구성돼 있는지 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0259"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_164",
+    "query": "내 전체 자산 현황을 확인할래.",
+    "expected_ids": [
+      "kb_menu_0260"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_165",
+    "query": "자산을 불러오도록 금융기관을 연결하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0261"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_166",
+    "query": "디지털PB에서 또래 사람들의 자산을 비교해 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0262"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_167",
+    "query": "내 자산 상태를 진단받으려고 해.",
+    "expected_ids": [
+      "kb_menu_0263"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_168",
+    "query": "내가 투자한 현황을 AI가 정리해서 알려줬으면 해.",
+    "expected_ids": [
+      "kb_menu_0266"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_169",
+    "query": "오늘 챙겨야 할 금융 일정을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0267"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_170",
+    "query": "2030 자산 미래리포트로 앞으로의 자산을 예측해 볼래.",
+    "expected_ids": [
+      "kb_menu_0268"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_171",
+    "query": "상속에 대비해서 나만의 상속노트를 작성하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0271"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_172",
+    "query": "들어오고 나가는 돈의 흐름을 보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0273"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_173",
+    "query": "카드별로 앞으로 결제될 금액이 얼마인지 확인할래.",
+    "expected_ids": [
+      "kb_menu_0274"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_174",
+    "query": "매번 반복해서 나가는 정기 지출을 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0275"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_175",
+    "query": "보험료 납부가 아니라 건강보험료를 줄일 수 있는지 계산해 볼래.",
+    "expected_ids": [
+      "kb_menu_0296"
+    ],
+    "domain": "자산세금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_176",
+    "query": "연금을 받는 계좌 변경 말고 수령액을 늘리는 계산을 해보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0297"
+    ],
+    "domain": "자산세금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_177",
+    "query": "상속세나 증여세를 줄이는 방법을 계산기로 확인할래.",
+    "expected_ids": [
+      "kb_menu_0298"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_178",
+    "query": "양도세가 아니라 재산세와 종합부동산세를 계산하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0299"
+    ],
+    "domain": "자산세금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_179",
+    "query": "양도소득세 말고 종합소득세를 계산해 볼래.",
+    "expected_ids": [
+      "kb_menu_0300"
+    ],
+    "domain": "자산세금",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_180",
+    "query": "부동산을 팔 때의 양도소득세를 계산하려고 해.",
+    "expected_ids": [
+      "kb_menu_0301"
+    ],
+    "domain": "자산세금",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_181",
+    "query": "원화를 외화로 바꾸면 얼마인지 환율 계산기를 쓸래.",
+    "expected_ids": [
+      "kb_menu_0112"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_182",
+    "query": "외화예금 상품을 종류별로 고르고 싶어.",
+    "expected_ids": [
+      "kb_menu_0113"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_183",
+    "query": "바로보는 외화통장 상품을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0114"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_184",
+    "query": "외화보통예금을 알아보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0116"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_185",
+    "query": "목돈을 한 번 넣는 상품 말고 KB 적립식 외화정기예금을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0121"
+    ],
+    "domain": "외환",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_186",
+    "query": "KB두근두근외화적금 상품을 알아볼래.",
+    "expected_ids": [
+      "kb_menu_0122"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_187",
+    "query": "해외로 보내는 게 아니라 국내 계좌끼리 외화를 이체하려고 해.",
+    "expected_ids": [
+      "kb_menu_0125"
+    ],
+    "domain": "외환",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_188",
+    "query": "KB Star FX 서비스를 이용하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0126"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_189",
+    "query": "자주 확인할 통화를 관심 목록에 등록하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0317"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_190",
+    "query": "특정 통화의 자세한 환율 정보를 보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0318"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_191",
+    "query": "외환시장에 어떤 소식이 있는지 뉴스를 읽어볼래.",
+    "expected_ids": [
+      "kb_menu_0320"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_192",
+    "query": "오늘의 일일 환율 동향을 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0321"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_193",
+    "query": "하루 말고 이번 주 환율 흐름을 볼래.",
+    "expected_ids": [
+      "kb_menu_0322"
+    ],
+    "domain": "외환",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_194",
+    "query": "전에 신청한 환전 건을 조회하고 관리하려고 해.",
+    "expected_ids": [
+      "kb_menu_0324"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_195",
+    "query": "로그인하지 않고 신청한 환전 내역을 조회할래.",
+    "expected_ids": [
+      "kb_menu_0325"
+    ],
+    "domain": "외환",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_196",
+    "query": "환율을 계속 확인하기 어려워서 알림으로 받고 싶어.",
+    "expected_ids": [
+      "kb_menu_0326"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_197",
+    "query": "환전은 했는데 아직 안 찾아간 돈이 있는지 확인할래.",
+    "expected_ids": [
+      "kb_menu_0329"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_198",
+    "query": "이미 보낸 해외송금의 내용을 고치거나 반환을 신청할래.",
+    "expected_ids": [
+      "kb_menu_0339"
+    ],
+    "domain": "외환",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_199",
+    "query": "미입금분 말고 이미 받은 해외송금 내역을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0344"
+    ],
+    "domain": "외환",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_200",
+    "query": "해외에서 올 송금 중 아직 계좌에 입금되지 않은 건을 조회할래.",
+    "expected_ids": [
+      "kb_menu_0345"
+    ],
+    "domain": "외환",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_201",
+    "query": "내 반려동물을 등록하는 서비스를 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0183"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_202",
+    "query": "도서관 이용증을 앱에 등록하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0184"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_203",
+    "query": "박물관이나 미술관 무료관람 서비스를 보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0188"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_204",
+    "query": "자연휴양림을 예약하려고 해요.",
+    "expected_ids": [
+      "kb_menu_0383"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_205",
+    "query": "KTX나 SRT 기차표를 예매할래.",
+    "expected_ids": [
+      "kb_menu_0384"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_206",
+    "query": "스마트항공권 서비스를 열어줘.",
+    "expected_ids": [
+      "kb_menu_0386"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_207",
+    "query": "내 티머니 교통카드 잔액을 충전하려고 해.",
+    "expected_ids": [
+      "kb_menu_0387"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_208",
+    "query": "캠핑장이나 글램핑 장소를 찾아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0389"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_209",
+    "query": "은행 지점 위치를 보고 모바일 번호표를 뽑을래.",
+    "expected_ids": [
+      "kb_menu_0391"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_210",
+    "query": "휴양림 예약 중 선착순으로 신청하는 걸 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0469"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_211",
+    "query": "선착순 말고 휴양림 추첨에 신청할래.",
+    "expected_ids": [
+      "kb_menu_0470"
+    ],
+    "domain": "여행생활",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_212",
+    "query": "휴양림 목록을 조회하면서 어디가 있는지 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0471"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_213",
+    "query": "휴양림마다 예약 가능한 자리가 남았는지 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0472"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_214",
+    "query": "내가 관심 등록한 휴양림 목록을 볼래.",
+    "expected_ids": [
+      "kb_menu_0473"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_215",
+    "query": "휴양림 계정을 오래 안 써서 휴면 상태인데 풀고 싶어.",
+    "expected_ids": [
+      "kb_menu_0474"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_216",
+    "query": "표를 결제하기 전에 탈 수 있는 기차편을 조회할래.",
+    "expected_ids": [
+      "kb_menu_0475"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_217",
+    "query": "재발급 신청이 아니라 여권 유효기간이 언제 끝나는지 확인할래.",
+    "expected_ids": [
+      "kb_menu_0476"
+    ],
+    "domain": "여행생활",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_218",
+    "query": "스마트항공권이 가능한 항공사 목록을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0477"
+    ],
+    "domain": "여행생활",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_219",
+    "query": "청년정책 전반 말고 장학금과 학자금 정보를 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0487"
+    ],
+    "domain": "여행생활",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_220",
+    "query": "은행 지점이 아니라 편의점 제휴 ATM 위치를 찾고 싶어.",
+    "expected_ids": [
+      "kb_menu_0490"
+    ],
+    "domain": "여행생활",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_221",
+    "query": "스타포인트 메뉴로 들어가고 싶어.",
+    "expected_ids": [
+      "kb_menu_0354"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_222",
+    "query": "공공알리미로 도착한 문서를 확인할래.",
+    "expected_ids": [
+      "kb_menu_0361"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_223",
+    "query": "공공알리미 수신 서비스를 신청하거나 관리할래.",
+    "expected_ids": [
+      "kb_menu_0362"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_224",
+    "query": "이벤트 응모했는데 당첨 여부를 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0366"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_225",
+    "query": "은행 앱의 설문조사에 참여해 볼래.",
+    "expected_ids": [
+      "kb_menu_0367"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_226",
+    "query": "운세에 사용하는 내 사주 정보를 수정할래.",
+    "expected_ids": [
+      "kb_menu_0374"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_227",
+    "query": "운세를 알림으로 받아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0375"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_228",
+    "query": "매일 걷기 서비스에서 걷기 활동을 확인할래.",
+    "expected_ids": [
+      "kb_menu_0378"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_229",
+    "query": "참여할 만한 이벤트를 검색어로 찾아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0429"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_230",
+    "query": "포인트 선물상자를 열어보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0430"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_231",
+    "query": "포인트를 받을 수 있는 행운뽑기를 해볼래.",
+    "expected_ids": [
+      "kb_menu_0431"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_232",
+    "query": "시간마다 받을 수 있는 포인트 적립을 하려고 해.",
+    "expected_ids": [
+      "kb_menu_0432"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_233",
+    "query": "쇼핑 혜택으로 포인트를 적립하는 곳을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0434"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_234",
+    "query": "달리자에서 오늘의 운동 기록을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0438"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_235",
+    "query": "오늘 기록만 말고 달리자에 쌓인 내 기록을 볼래.",
+    "expected_ids": [
+      "kb_menu_0439"
+    ],
+    "domain": "포인트참여",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_236",
+    "query": "달리자 서비스를 설정하는 메뉴로 갈래.",
+    "expected_ids": [
+      "kb_menu_0442"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_237",
+    "query": "달리자 메달과 응모 당첨 내역을 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0445"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_238",
+    "query": "달리자에서 함께 활동할 크루를 새로 만들래.",
+    "expected_ids": [
+      "kb_menu_0447"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_239",
+    "query": "머니트리 이름을 바꾸고 싶어. 물 주기는 아니야.",
+    "expected_ids": [
+      "kb_menu_0457"
+    ],
+    "domain": "포인트참여",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_240",
+    "query": "쿠폰을 새로 구독하지 말고 현재 내 구독 현황을 확인할래.",
+    "expected_ids": [
+      "kb_menu_0467"
+    ],
+    "domain": "포인트참여",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_241",
+    "query": "제출할 예금잔액증명서를 발급받고 싶어.",
+    "expected_ids": [
+      "kb_menu_0492"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_242",
+    "query": "계좌개설확인서나 통장사본을 발급받으려고 해.",
+    "expected_ids": [
+      "kb_menu_0493"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_243",
+    "query": "연말정산용 증명서를 발급받을래.",
+    "expected_ids": [
+      "kb_menu_0494"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_244",
+    "query": "금융거래종합보고서를 받고 싶어.",
+    "expected_ids": [
+      "kb_menu_0496"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_245",
+    "query": "신청한 증명서가 발급되고 배송됐는지 확인할래.",
+    "expected_ids": [
+      "kb_menu_0497"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_246",
+    "query": "은행 업무를 대신 맡기려고 비대면 위임장을 제출할래.",
+    "expected_ids": [
+      "kb_menu_0499"
+    ],
+    "domain": "증명보안",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_247",
+    "query": "받은 증명서가 진짜인지 확인하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0500"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_248",
+    "query": "통장이나 인감을 잃어버려서 다시 발급받으려고 해.",
+    "expected_ids": [
+      "kb_menu_0501"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_249",
+    "query": "보안카드를 새로 재발급받고 싶어.",
+    "expected_ids": [
+      "kb_menu_0502"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_250",
+    "query": "OTP를 처음 발급받으려고 해요.",
+    "expected_ids": [
+      "kb_menu_0503"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_251",
+    "query": "기존 OTP 대신 새 OTP로 재발급받을래.",
+    "expected_ids": [
+      "kb_menu_0504"
+    ],
+    "domain": "증명보안",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_252",
+    "query": "은행 거래 전자영수증을 조회하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0506"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_253",
+    "query": "통장과 인감을 잃어버려서 사고신고를 할래.",
+    "expected_ids": [
+      "kb_menu_0509"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_254",
+    "query": "현금카드를 잃어버려서 분실 신고하려고 해.",
+    "expected_ids": [
+      "kb_menu_0510"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_255",
+    "query": "보안카드를 잃었어. 재발급보다 우선 분실 사고신고를 할래.",
+    "expected_ids": [
+      "kb_menu_0511"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_256",
+    "query": "OTP를 분실했어. 발급이 아니라 사고신고 메뉴를 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0512"
+    ],
+    "domain": "증명보안",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_257",
+    "query": "분실신고한 보안카드를 찾았으니 분실등록을 해제할래.",
+    "expected_ids": [
+      "kb_menu_0514"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_258",
+    "query": "OTP를 다시 찾았어. 재발급 말고 분실등록을 해제할래.",
+    "expected_ids": [
+      "kb_menu_0515"
+    ],
+    "domain": "증명보안",
+    "question_type": "contrast_or_negation",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_259",
+    "query": "오픈뱅킹으로 잘못 송금해서 반환을 신청하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0519"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_260",
+    "query": "잘못 송금된 돈을 받은 쪽이야. 돌려주는 데 동의하려고 해.",
+    "expected_ids": [
+      "kb_menu_0520"
+    ],
+    "domain": "증명보안",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_261",
+    "query": "주식 시장을 1분으로 정리한 브리핑을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0539"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_262",
+    "query": "KB증권 계좌 자산의 평가 금액을 확인할래.",
+    "expected_ids": [
+      "kb_menu_0540"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_263",
+    "query": "KB증권에서 낸 주문 내역을 보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0541"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_264",
+    "query": "KB증권에 관심 등록한 종목을 확인할래.",
+    "expected_ids": [
+      "kb_menu_0542"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_265",
+    "query": "국내 주식의 현재 가격을 보고 주문하려고 해.",
+    "expected_ids": [
+      "kb_menu_0543"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_266",
+    "query": "해외 주식 현재가와 주문 화면을 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0544"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_267",
+    "query": "소수점 단위 주식을 정기적으로 구매하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0547"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_268",
+    "query": "AI투자일임 자율주행 서비스를 알아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0548"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_269",
+    "query": "청약할 수 있는 공모주를 모아서 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0549"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_270",
+    "query": "부동산 서비스에 우리 집을 등록하려고 해.",
+    "expected_ids": [
+      "kb_menu_0583"
+    ],
+    "domain": "부동산차",
+    "question_type": "explicit_service_request",
+    "label_source": "catalog-authored synthetic, previously evaluated single target",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_271",
+    "query": "요즘 관심이 많은 분양 정보가 궁금해. 그리고 별개로, 내 상황에 맞는 금융상품을 추천받고 싶어요. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0584",
+      "kb_menu_0002"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_272",
+    "query": "원룸이나 투룸 매물을 따로 모아 보고 싶어요. 그리고 별개로, 이름을 아는 금융상품을 검색어로 찾아볼래요. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0585",
+      "kb_menu_0003"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_273",
+    "query": "집찾는 AI로 집을 찾아보고 싶어. 그리고 별개로, 직장인이나 사장님 같은 키워드로 상품을 골라보고 싶어. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0586",
+      "kb_menu_0004"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_274",
+    "query": "공공주택 청약이나 매물 정보를 확인할래. 그리고 별개로, 신청하다 중단한 금융상품 가입을 이어서 할래. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0587",
+      "kb_menu_0005"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_275",
+    "query": "세금 계산 대신 부동산 시세를 간편하게 조회하고 싶어. 그리고 별개로, 내가 찜해 둔 금융상품 목록을 보여줘. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0006"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_276",
+    "query": "전세 계약이 안전한지 진단받고 싶어. 그리고 별개로, 조금 전에 둘러본 상품들을 다시 보고 싶어. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0589",
+      "kb_menu_0007"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_277",
+    "query": "집의 등기 내용에 변동이 생기면 알림을 받고 싶어. 그리고 별개로, 예금과 적금 중 어떤 종류로 가입할지 고르는 화면을 열어줘. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0592",
+      "kb_menu_0008"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_278",
+    "query": "차를 사는 게 아니라 팔아줘 차차차로 내 차를 팔고 싶어. 그리고 별개로, KB카드쓰담적금에 대해 알아보고 싶습니다. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0009"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_279",
+    "query": "중고차 매물 목록 말고 내 차량 시세를 조회하려고 해. 그리고 별개로, 군 복무 중이라 장병내일준비적금 상품을 찾아요. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0597",
+      "kb_menu_0010"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_280",
+    "query": "내 차 판매가 아니라 KB의 중고차 매물을 둘러보고 싶어. 그리고 별개로, KB아이사랑적금에 가입하고 싶어. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0598",
+      "kb_menu_0011"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_281",
+    "query": "사장님에게 맞는 정책자금을 추천받고 싶어요. 그리고 별개로, KB청년미래적금 상품 내용을 확인할래. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0012"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_282",
+    "query": "우리 가게에서 발생한 카드 매출을 확인할래. 그리고 별개로, 걸으면서 이용하는 KB달리자적금을 알아보려고 해. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0018",
+      "kb_menu_0013"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_283",
+    "query": "사업하면서 돌려받을 세금이나 고용지원금 예상액을 조회하고 싶어. 그리고 별개로, KB Star 정기예금 상품을 열어줘. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0019",
+      "kb_menu_0014"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_284",
+    "query": "KB소상공인 신용대출 상품을 찾아줘. 그리고 별개로, 예금 중에서 지수에 연동되는 상품을 찾아보고 싶어요. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0051",
+      "kb_menu_0015"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_285",
+    "query": "KB사장님 플러스 마이너스통장 대출을 알아볼래. 그리고 별개로, 개인사업자용 KB사장님 플러스 적금을 찾아줘. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0052",
+      "kb_menu_0016"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_286",
+    "query": "소상공인 정책자금대출 상품을 보고 싶어요. 그리고 별개로, 새 상품 추천 말고 이미 가입한 예금과 적금 목록을 보고 싶어. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0053",
+      "kb_menu_0020"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_287",
+    "query": "지역재단 보증서를 쓰는 KB소상공인 대출을 찾아줘. 그리고 별개로, 예금을 새로 신청했는데 신규 처리가 됐는지 확인할래. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0054",
+      "kb_menu_0021"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_288",
+    "query": "개인사업자인데 기존 대출을 갈아타려고 해. 그리고 별개로, 비과세종합저축 관련 자료를 은행에 제출하려고 해. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0055",
+      "kb_menu_0022"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_289",
+    "query": "국민카드로 사용한 결제 내역을 조회할래. 그리고 별개로, 아동수당 받을 전용 통장 상품을 알아보려고 해요. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0552",
+      "kb_menu_0059"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_290",
+    "query": "국민카드 결제대금을 바로 출금해서 갚고 싶어. 그리고 별개로, 청년 전용 말고 일반 주택청약종합저축 상품을 보고 싶어. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0553",
+      "kb_menu_0100"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_291",
+    "query": "단기카드대출인 현금서비스를 알아보고 있어. 그리고 별개로, 보증금 마련용 전월세 대출 상품들을 찾아줘. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0559",
+      "kb_menu_0024"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_292",
+    "query": "카드 결제금 일부를 다음 달로 넘기는 리볼빙을 찾고 있어. 그리고 별개로, 부동산을 담보로 받을 개인 대출 상품을 알아보고 싶어요. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0560",
+      "kb_menu_0025"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_293",
+    "query": "렌터카를 하루 운전할 때 쓸 하루자동차보험을 찾아줘. 그리고 별개로, 보유한 예금을 담보로 대출받을 수 있는 상품을 찾아줘. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0567",
+      "kb_menu_0026"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_294",
+    "query": "실손24로 보험금을 간편하게 청구할래. 그리고 별개로, 자동차 구입용 개인 대출 상품을 둘러보고 싶어. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0568",
+      "kb_menu_0027"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_295",
+    "query": "새 청구가 아니라 실손24에 접수한 청구 내역을 확인할래. 그리고 별개로, 내 조건에 맞는 신용대출을 찾아주는 메뉴를 열어줘. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0569",
+      "kb_menu_0028"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_296",
+    "query": "실손24가 아닌 KB손해보험 간편청구를 할래. 그리고 별개로, KB스타 신용대출을 신규로 신청할래. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0570",
+      "kb_menu_0029"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_297",
+    "query": "해외에서 쓸 리브모바일 로밍 서비스를 찾고 있어. 그리고 별개로, 기존에 받은 대출을 다른 대출로 갈아타고 싶어. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0612",
+      "kb_menu_0031"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_298",
+    "query": "개인용 말고 사업용 계좌 설정을 바꾸려고 해. 그리고 별개로, 신청해 둔 대출의 진행 상태를 보고 실행이나 예약을 할래. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0619",
+      "kb_menu_0033"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_299",
+    "query": "카드 가맹점으로 등록하거나 결제대금 받는 계좌를 변경하려고 해. 그리고 별개로, 한국신용정보원에서 내 개인 대출 현황을 확인하고 싶어. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0626",
+      "kb_menu_0034"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  },
+  {
+    "case_id": "recall300_300",
+    "query": "소상공인 경영에 대해 전문가에게 컨설팅 상담을 신청할래. 그리고 별개로, 대출 신청에 필요한 서류를 스마트 서류제출로 보낼래. 두 업무를 모두 찾고 있어.",
+    "expected_ids": [
+      "kb_menu_0629",
+      "kb_menu_0035"
+    ],
+    "domain": "multi_domain",
+    "question_type": "multi_intent",
+    "label_source": "two explicit independent requests joined before rerun; targets inherited from prior synthetic cases",
+    "label_review": "not independently reviewed"
+  }
+]

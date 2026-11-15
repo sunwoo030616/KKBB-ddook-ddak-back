@@ -1,0 +1,9 @@
+{
+  "base_commit": "3d65ad0",
+  "files": {
+    "scripts/semantic/recall300/cases.json": "07a994269fcf4deb5aa6678c10efb5ffef28302618d9d2717b6fd138ade7bc43",
+    "scripts/semantic/server.py": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+    "scripts/semantic/model_manifest.json": "b71365e9063e74f6c34cdeff16e9bd16c6323ba6a4677cba7cf500b5e986d614",
+    "src/main/resources/kb_starbanking_menu_structure_cleaned.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+  }
+}
