@@ -1,0 +1,32 @@
+Actual production E5 and compiled backend ready; jev-1.14.0; K=40; threshold=.6; 300 cases; no retries
+10/300 status=selected policy_success=True
+20/300 status=selected policy_success=True
+30/300 status=selected policy_success=True
+40/300 status=selected policy_success=True
+50/300 status=selected policy_success=True
+60/300 status=selected policy_success=True
+70/300 status=selected policy_success=True
+80/300 status=selected policy_success=True
+90/300 status=selected policy_success=True
+100/300 status=selected policy_success=True
+110/300 status=selected policy_success=True
+120/300 status=selected policy_success=True
+130/300 status=selected policy_success=True
+140/300 status=selected policy_success=True
+150/300 status=selected policy_success=True
+160/300 status=selected policy_success=True
+170/300 status=selected policy_success=True
+180/300 status=selected policy_success=True
+190/300 status=selected policy_success=True
+200/300 status=selected policy_success=True
+210/300 status=selected policy_success=True
+220/300 status=selected policy_success=True
+230/300 status=selected policy_success=True
+240/300 status=selected policy_success=True
+250/300 status=selected policy_success=True
+260/300 status=selected policy_success=True
+270/300 status=selected policy_success=True
+280/300 status=needs_clarification policy_success=True
+290/300 status=needs_clarification policy_success=True
+300/300 status=needs_clarification policy_success=True
+{"cases": 300, "errors": 0, "reported_jev_calls": 300, "single_cases": 270, "single_exact_correct": 267, "single_exact_accuracy": 0.9888888888888889, "single_selected_cases": 268, "single_accuracy_among_selected": 0.996268656716418, "multi_cases": 30, "multi_clarification_correct": 30, "multi_clarification_rate": 1.0, "policy_success_count": 297, "policy_success_rate": 0.99, "statuses": {"needs_clarification": 32, "selected": 268}, "single_candidate_hit_at_40": 1.0, "single_retrieval_hit_but_final_failed": ["recall300_142", "recall300_216", "recall300_228"], "mean_http_ms": 257.0003151566668, "p95_http_ms": 383.62199999999547}

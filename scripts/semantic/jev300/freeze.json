@@ -1,0 +1,19 @@
+{
+  "base_commit": "698b38a13d48d9afbbaf3358dc256da73217182d",
+  "model": "jev-1.14.0",
+  "top_k": 40,
+  "confidence_threshold": 0.6,
+  "retries": 0,
+  "case_order": "original 300 order",
+  "multi_expected_behavior": "needs_clarification; either raw unsure or low confidence is indistinguishable in public API",
+  "files": {
+    "scripts/semantic/recall300/cases.json": "07a994269fcf4deb5aa6678c10efb5ffef28302618d9d2717b6fd138ade7bc43",
+    "scripts/semantic/server.py": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+    "scripts/semantic/model_manifest.json": "b71365e9063e74f6c34cdeff16e9bd16c6323ba6a4677cba7cf500b5e986d614",
+    "src/main/resources/kb_starbanking_menu_structure_cleaned.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+    "src/main/java/com/example/kb_ai_backend/service/SemanticMenuSelectionService.java": "50dba1326cbdac98af0ccbf9974cc3cd741b0c6edc827a463305605bba334549",
+    "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRetriever.java": "c05a6a7c8ac1949cbfba4847fc63842122c1091f61e9347ba5958656dd99f77f",
+    "src/main/java/com/example/kb_ai_backend/service/AiRequestRedactor.java": "5bddbcc1cefae4c8234f37a1fecefb97a4ee1a6ab94098ca0a84e66997425947",
+    "scripts/semantic/jev300/evaluate.py": "8897c73852d4fadbfa9ffcff43582f4b1a48b3c987a490b72311719521dd9710"
+  }
+}
