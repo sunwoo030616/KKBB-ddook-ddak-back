@@ -1,0 +1,14 @@
+Actual v2 evaluation: 12 cases; providers=['e5_jev']; no retries
+1/12 e5_jev ready exact=True P=1.00 R=1.00 ms=595 calls=2
+2/12 e5_jev ready exact=True P=1.00 R=1.00 ms=601 calls=2
+3/12 e5_jev ready exact=True P=1.00 R=1.00 ms=664 calls=2
+4/12 e5_jev no_match exact=False P=0.00 R=0.00 ms=259 calls=1
+5/12 e5_jev ready exact=True P=1.00 R=1.00 ms=603 calls=2
+6/12 e5_jev ready exact=True P=1.00 R=1.00 ms=565 calls=2
+7/12 e5_jev ready exact=True P=1.00 R=1.00 ms=857 calls=2
+8/12 e5_jev ready exact=True P=1.00 R=1.00 ms=641 calls=2
+9/12 e5_jev ready exact=True P=1.00 R=1.00 ms=533 calls=2
+10/12 e5_jev ready exact=False P=1.00 R=0.50 ms=675 calls=2
+11/12 e5_jev ready exact=True P=1.00 R=1.00 ms=596 calls=2
+12/12 e5_jev ready exact=False P=1.00 R=0.50 ms=659 calls=2
+{"e5_jev": {"cases": 12, "positive_cases": 12, "negative_cases": 0, "errors": 0, "menu_exact_correct": 9, "menu_exact_accuracy": 0.75, "status_and_menu_correct": 9, "status_and_menu_accuracy": 0.75, "macro_precision": 0.9166666666666666, "macro_recall": 0.8333333333333334, "macro_f1": 0.8611111111111112, "micro_precision": 1.0, "micro_recall": 0.8695652173913043, "micro_f1": 0.9302325581395349, "true_positive_menus": 20, "extra_menus": 0, "missing_menus": 3, "cases_with_extra_menus": 0, "cases_with_missing_menus": 3, "mean_http_ms": 604.0601144999999, "median_http_ms": 601.9274790000004, "p95_http_ms": 857.0890419999984, "actual_upstream_calls": 23, "tokens": {"input": {"observed_calls": 23, "sum": 82201, "mean_per_case": 6850.083333333333}, "output": {"observed_calls": 23, "sum": 8754, "mean_per_case": 729.5}, "cached_input": {"observed_calls": 0, "sum": null, "mean_per_case": null}}, "statuses": {"no_match": 1, "ready": 11}}}

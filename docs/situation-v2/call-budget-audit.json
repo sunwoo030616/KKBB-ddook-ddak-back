@@ -1,0 +1,28 @@
+{
+  "recorded_calls_by_phase": {
+    "development-2": {
+      "e5_jev": 23
+    },
+    "development-3": {
+      "e5_jev": 20
+    },
+    "development-final": {
+      "e5_jev": 2
+    },
+    "regression": {
+      "e5_jev": 603
+    },
+    "fresh": {
+      "e5_jev": 195,
+      "llm_full_catalog": 100
+    }
+  },
+  "recorded_total": {
+    "e5_jev": 843,
+    "llm_full_catalog": 100
+  },
+  "unknown_development_save_failure_jev_upper_bound": 3,
+  "conservative_jev_upper_bound": 846,
+  "approved_jev_limit": 1272,
+  "approved_gpt_limit": 100
+}

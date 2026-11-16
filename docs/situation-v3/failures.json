@@ -1,0 +1,870 @@
+{
+  "holdout": [
+    {
+      "case_id": "context_lost_card_cash_1",
+      "query": "국민 신용카드를 밖에서 잃어버렸고 당장 현금도 필요해요. 잃은 카드는 막고 카드 없이 돈을 찾는 방법을 열어 주세요.",
+      "expected_ids": [
+        "kb_menu_0554",
+        "kb_menu_0210"
+      ],
+      "selected_ids": null,
+      "status": "error",
+      "error": "HTTP 502",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72905,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"basis\":\"explicit\",\"evidence\":\"국민 신용카드를 밖에서 잃어버렸고\",\"query\":\"국민카드 분실신고\"},{\"basis\":\"explicit\",\"evidence\":\"잃은 카드는 막고\",\"query\":\"국민카드 분실신고\"},{\"basis\":\"explicit\",\"evidence\":\"카드 없이 돈을 찾는 방법을 열어 주세요\",\"query\":\"ATM/지점출금\"}]}",
+          "usage": {
+            "prompt_tokens": 17262,
+            "completion_tokens": 97,
+            "total_tokens": 17359,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "429444",
+            "x-ratelimit-reset-tokens": "2.74s"
+          },
+          "provider_http_ms": 1522.2321250000005
+        }
+      ]
+    },
+    {
+      "case_id": "context_forest_1",
+      "query": "휴양림에 남은 자리가 있는지 먼저 보고 자리가 있으면 예약 신청까지 할 수 있는 곳을 각각 열어 주세요.",
+      "expected_ids": [
+        "kb_menu_0472",
+        "kb_menu_0383"
+      ],
+      "selected_ids": [
+        "kb_menu_0472",
+        "kb_menu_0469",
+        "kb_menu_0470"
+      ],
+      "status": "ready",
+      "error": null,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72886,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"basis\":\"explicit\",\"evidence\":\"휴양림에 남은 자리가 있는지 먼저 보고\",\"query\":\"휴양림별 잔여현황 보기\"},{\"basis\":\"explicit\",\"evidence\":\"자리가 있으면 예약 신청까지 할 수 있는 곳을 각각 열어 주세요.\",\"query\":\"휴양림 선착순 예약\"},{\"basis\":\"explicit\",\"evidence\":\"자리가 있으면 예약 신청까지 할 수 있는 곳을 각각 열어 주세요.\",\"query\":\"휴양림 추첨 신청\"}]}",
+          "usage": {
+            "prompt_tokens": 17249,
+            "completion_tokens": 109,
+            "total_tokens": 17358,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "370058",
+            "x-ratelimit-reset-tokens": "10.658s"
+          },
+          "provider_http_ms": 1371.6035409999954
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 18820,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 7809,
+            "output_tokens": 918
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0472",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0472": 1.0,
+                "kb_menu_0471": 0.0,
+                "kb_menu_0473": 0.0,
+                "kb_menu_0383": 0.0,
+                "kb_menu_0469": 0.0,
+                "kb_menu_0474": 0.0,
+                "kb_menu_0304": 0.0,
+                "kb_menu_0470": 0.0,
+                "kb_menu_0292": 0.0,
+                "kb_menu_0291": 0.0,
+                "kb_menu_0269": 0.0,
+                "kb_menu_0273": 0.0,
+                "kb_menu_0612": 0.0,
+                "kb_menu_0033": 0.0,
+                "kb_menu_0418": 0.0,
+                "kb_menu_0225": 0.0,
+                "kb_menu_0462": 0.0,
+                "kb_menu_0272": 0.0,
+                "kb_menu_0132": 0.0,
+                "kb_menu_0266": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0469",
+              "confidence": 0.98,
+              "probabilities": {
+                "kb_menu_0469": 0.98,
+                "kb_menu_0383": 0.02,
+                "kb_menu_0471": 0.0,
+                "kb_menu_0473": 0.0,
+                "kb_menu_0470": 0.0,
+                "kb_menu_0472": 0.0,
+                "kb_menu_0474": 0.0,
+                "kb_menu_0389": 0.0,
+                "kb_menu_0176": 0.0,
+                "kb_menu_0185": 0.0,
+                "kb_menu_0604": 0.0,
+                "kb_menu_0132": 0.0,
+                "kb_menu_0097": 0.0,
+                "kb_menu_0244": 0.0,
+                "kb_menu_0269": 0.0,
+                "kb_menu_0033": 0.0,
+                "kb_menu_0225": 0.0,
+                "kb_menu_0174": 0.0,
+                "kb_menu_0375": 0.0,
+                "kb_menu_0529": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_3": {
+              "type": "choice",
+              "choice": "kb_menu_0470",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0470": 1.0,
+                "kb_menu_0383": 0.0,
+                "kb_menu_0471": 0.0,
+                "kb_menu_0472": 0.0,
+                "kb_menu_0473": 0.0,
+                "kb_menu_0469": 0.0,
+                "kb_menu_0474": 0.0,
+                "kb_menu_0485": 0.0,
+                "kb_menu_0101": 0.0,
+                "kb_menu_0176": 0.0,
+                "kb_menu_0185": 0.0,
+                "kb_menu_0132": 0.0,
+                "kb_menu_0484": 0.0,
+                "kb_menu_0364": 0.0,
+                "kb_menu_0534": 0.0,
+                "kb_menu_0529": 0.0,
+                "kb_menu_0583": 0.0,
+                "kb_menu_0279": 0.0,
+                "kb_menu_0612": 0.0,
+                "kb_menu_0097": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 318.6575000000005
+        }
+      ]
+    },
+    {
+      "case_id": "context_domestic_trip_1",
+      "query": "이번엔 국내로 가요. KTX 좌석을 잡고 잘 숙소도 예약할 수 있게 두 곳을 찾아 주세요.",
+      "expected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ],
+      "selected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0389"
+      ],
+      "status": "ready",
+      "error": null,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72858,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"basis\":\"explicit\",\"evidence\":\"KTX 좌석을 잡고\",\"query\":\"기차표(KTX·SRT) 예매\"},{\"basis\":\"explicit\",\"evidence\":\"숙소도 예약할 수 있게 두 곳을 찾아 주세요\",\"query\":\"캠핑/글램핑\"}]}",
+          "usage": {
+            "prompt_tokens": 17248,
+            "completion_tokens": 68,
+            "total_tokens": 17316,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "363141",
+            "x-ratelimit-reset-tokens": "11.581s"
+          },
+          "provider_http_ms": 1026.5868330000033
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 11615,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 4995,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0384",
+              "confidence": 0.99,
+              "probabilities": {
+                "kb_menu_0384": 0.99,
+                "kb_menu_0475": 0.01,
+                "kb_menu_0604": 0.0,
+                "kb_menu_0596": 0.0,
+                "kb_menu_0382": 0.0,
+                "kb_menu_0018": 0.0,
+                "kb_menu_0033": 0.0,
+                "kb_menu_0418": 0.0,
+                "kb_menu_0601": 0.0,
+                "kb_menu_0274": 0.0,
+                "kb_menu_0353": 0.0,
+                "kb_menu_0014": 0.0,
+                "kb_menu_0126": 0.0,
+                "kb_menu_0354": 0.0,
+                "kb_menu_0105": 0.0,
+                "kb_menu_0416": 0.0,
+                "kb_menu_0006": 0.0,
+                "kb_menu_0591": 0.0,
+                "kb_menu_0521": 0.0,
+                "kb_menu_0595": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0389",
+              "confidence": 0.9,
+              "probabilities": {
+                "kb_menu_0389": 0.9,
+                "kb_menu_0383": 0.03,
+                "kb_menu_0471": 0.0,
+                "kb_menu_0604": 0.01,
+                "kb_menu_0473": 0.0,
+                "kb_menu_0469": 0.02,
+                "kb_menu_0472": 0.0,
+                "kb_menu_0225": 0.0,
+                "kb_menu_0309": 0.0,
+                "kb_menu_0618": 0.0,
+                "kb_menu_0584": 0.0,
+                "kb_menu_0606": 0.0,
+                "kb_menu_0269": 0.0,
+                "kb_menu_0470": 0.0,
+                "kb_menu_0624": 0.0,
+                "kb_menu_0605": 0.0,
+                "kb_menu_0176": 0.0,
+                "kb_menu_0438": 0.0,
+                "kb_menu_0244": 0.0,
+                "kb_menu_0238": 0.0,
+                "no_match": 0.03,
+                "unsure": 0.01,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 256.0938330000013
+        }
+      ]
+    },
+    {
+      "case_id": "context_fx_tracking_2",
+      "query": "엔화 시세를 확인한 다음 자주 보는 통화로 등록할래요. 두 기능 모두 찾아 주세요.",
+      "expected_ids": [
+        "kb_menu_0316",
+        "kb_menu_0317"
+      ],
+      "selected_ids": [
+        "kb_menu_0318",
+        "kb_menu_0317"
+      ],
+      "status": "ready",
+      "error": null,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72856,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"basis\":\"explicit\",\"evidence\":\"엔화 시세를 확인\",\"query\":\"통화별 상세 환율\"},{\"basis\":\"explicit\",\"evidence\":\"자주 보는 통화로 등록할래요\",\"query\":\"관심통화 등록\"}]}",
+          "usage": {
+            "prompt_tokens": 17245,
+            "completion_tokens": 58,
+            "total_tokens": 17303,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "334454",
+            "x-ratelimit-reset-tokens": "15.406s"
+          },
+          "provider_http_ms": 1334.601874999997
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 11603,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 4965,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0318",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0318": 1.0,
+                "kb_menu_0316": 0.0,
+                "kb_menu_0112": 0.0,
+                "kb_menu_0317": 0.0,
+                "kb_menu_0331": 0.0,
+                "kb_menu_0114": 0.0,
+                "kb_menu_0322": 0.0,
+                "kb_menu_0321": 0.0,
+                "kb_menu_0326": 0.0,
+                "kb_menu_0121": 0.0,
+                "kb_menu_0329": 0.0,
+                "kb_menu_0324": 0.0,
+                "kb_menu_0309": 0.0,
+                "kb_menu_0311": 0.0,
+                "kb_menu_0332": 0.0,
+                "kb_menu_0421": 0.0,
+                "kb_menu_0325": 0.0,
+                "kb_menu_0423": 0.0,
+                "kb_menu_0304": 0.0,
+                "kb_menu_0058": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0317",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0317": 1.0,
+                "kb_menu_0171": 0.0,
+                "kb_menu_0006": 0.0,
+                "kb_menu_0583": 0.0,
+                "kb_menu_0177": 0.0,
+                "kb_menu_0473": 0.0,
+                "kb_menu_0199": 0.0,
+                "kb_menu_0184": 0.0,
+                "kb_menu_0316": 0.0,
+                "kb_menu_0005": 0.0,
+                "kb_menu_0208": 0.0,
+                "kb_menu_0309": 0.0,
+                "kb_menu_0164": 0.0,
+                "kb_menu_0288": 0.0,
+                "kb_menu_0220": 0.0,
+                "kb_menu_0241": 0.0,
+                "kb_menu_0584": 0.0,
+                "kb_menu_0183": 0.0,
+                "kb_menu_0493": 0.0,
+                "kb_menu_0454": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 254.94808300000216
+        }
+      ]
+    },
+    {
+      "case_id": "context_security_restore_1",
+      "query": "찾은 보안카드와 현금·직불카드가 둘 다 분실 등록 상태예요. 각각 등록을 풀어야 해요.",
+      "expected_ids": [
+        "kb_menu_0514",
+        "kb_menu_0516"
+      ],
+      "selected_ids": null,
+      "status": "error",
+      "error": "HTTP 502",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72863,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"basis\":\"explicit\",\"evidence\":\"보안카드가 분실 등록 상태예요. 각각 등록을 풀어야 해요.\",\"query\":\"보안카드 분실등록 해제\"},{\"basis\":\"explicit\",\"evidence\":\"현금·직불카드가 분실 등록 상태예요. 각각 등록을 풀어야 해요.\",\"query\":\"현금·직불카드 분실등록 해제\"}]}",
+          "usage": {
+            "prompt_tokens": 17253,
+            "completion_tokens": 95,
+            "total_tokens": 17348,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "263557",
+            "x-ratelimit-reset-tokens": "24.858s"
+          },
+          "provider_http_ms": 1274.9947080000013
+        }
+      ]
+    }
+  ],
+  "regression_partial": [
+    {
+      "case_id": "single_010",
+      "query": "내 조건에 맞는 신용대출을 찾아주는 메뉴를 열어줘.",
+      "expected_ids": [
+        "kb_menu_0028"
+      ],
+      "selected_ids": [
+        "kb_menu_0049"
+      ],
+      "status": "ready",
+      "error": null,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72816,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"내 조건에 맞는 신용대출을 찾아주는 메뉴를 열어줘.\",\"query\":\"최적의 대출상품 조회\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17240,
+            "completion_tokens": 44,
+            "total_tokens": 17284,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "340285",
+            "x-ratelimit-reset-tokens": "14.628s"
+          },
+          "provider_http_ms": 1219.9430000000007
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 5999,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 2698,
+            "output_tokens": 308
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0049",
+              "confidence": 0.63,
+              "probabilities": {
+                "kb_menu_0049": 0.65,
+                "kb_menu_0057": 0.0,
+                "kb_menu_0023": 0.3,
+                "kb_menu_0050": 0.0,
+                "kb_menu_0279": 0.0,
+                "kb_menu_0577": 0.01,
+                "kb_menu_0034": 0.0,
+                "kb_menu_0579": 0.0,
+                "kb_menu_0024": 0.0,
+                "kb_menu_0028": 0.04,
+                "kb_menu_0025": 0.0,
+                "kb_menu_0026": 0.0,
+                "kb_menu_0041": 0.0,
+                "kb_menu_0310": 0.0,
+                "kb_menu_0056": 0.0,
+                "kb_menu_0002": 0.0,
+                "kb_menu_0187": 0.0,
+                "kb_menu_0309": 0.0,
+                "kb_menu_0035": 0.0,
+                "kb_menu_0313": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 361.7990410000011
+        }
+      ]
+    },
+    {
+      "case_id": "single_011",
+      "query": "신청해 둔 대출의 진행 상태를 보고 실행이나 예약을 할래.",
+      "expected_ids": [
+        "kb_menu_0033"
+      ],
+      "selected_ids": [
+        "kb_menu_0033"
+      ],
+      "status": "partial",
+      "error": null,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72824,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"신청해 둔 대출의 진행 상태를 보고\",\"query\":\"비대면으로 신청한 대출의 진행상태 조회\",\"basis\":\"explicit\"},{\"evidence\":\"실행이나 예약을 할래\",\"query\":\"비대면으로 신청한 대출 실행\",\"basis\":\"explicit\"},{\"evidence\":\"실행이나 예약을 할래\",\"query\":\"비대면으로 신청한 대출 예약\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17241,
+            "completion_tokens": 99,
+            "total_tokens": 17340,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "335176",
+            "x-ratelimit-reset-tokens": "15.309s"
+          },
+          "provider_http_ms": 1442.297374999999
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 18811,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 7856,
+            "output_tokens": 918
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0033",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0033": 1.0,
+                "kb_menu_0034": 0.0,
+                "kb_menu_0137": 0.0,
+                "kb_menu_0049": 0.0,
+                "kb_menu_0340": 0.0,
+                "kb_menu_0056": 0.0,
+                "kb_menu_0030": 0.0,
+                "kb_menu_0041": 0.0,
+                "kb_menu_0036": 0.0,
+                "kb_menu_0051": 0.0,
+                "kb_menu_0499": 0.0,
+                "kb_menu_0345": 0.0,
+                "kb_menu_0160": 0.0,
+                "kb_menu_0026": 0.0,
+                "kb_menu_0055": 0.0,
+                "kb_menu_0339": 0.0,
+                "kb_menu_0344": 0.0,
+                "kb_menu_0505": 0.0,
+                "kb_menu_0577": 0.0,
+                "kb_menu_0341": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0033",
+              "confidence": 0.99,
+              "probabilities": {
+                "kb_menu_0033": 0.99,
+                "kb_menu_0030": 0.0,
+                "kb_menu_0051": 0.0,
+                "kb_menu_0056": 0.0,
+                "kb_menu_0034": 0.0,
+                "kb_menu_0028": 0.0,
+                "kb_menu_0499": 0.0,
+                "kb_menu_0035": 0.0,
+                "kb_menu_0029": 0.0,
+                "kb_menu_0137": 0.0,
+                "kb_menu_0054": 0.0,
+                "kb_menu_0049": 0.0,
+                "kb_menu_0036": 0.0,
+                "kb_menu_0423": 0.0,
+                "kb_menu_0577": 0.0,
+                "kb_menu_0026": 0.0,
+                "kb_menu_0579": 0.0,
+                "kb_menu_0027": 0.0,
+                "kb_menu_0340": 0.0,
+                "kb_menu_0184": 0.0,
+                "no_match": 0.01,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_3": {
+              "type": "choice",
+              "choice": "kb_menu_0033",
+              "confidence": 0.99,
+              "probabilities": {
+                "kb_menu_0033": 0.99,
+                "kb_menu_0030": 0.0,
+                "kb_menu_0056": 0.0,
+                "kb_menu_0051": 0.0,
+                "kb_menu_0028": 0.0,
+                "kb_menu_0029": 0.0,
+                "kb_menu_0604": 0.0,
+                "kb_menu_0137": 0.0,
+                "kb_menu_0027": 0.0,
+                "kb_menu_0035": 0.0,
+                "kb_menu_0577": 0.0,
+                "kb_menu_0034": 0.0,
+                "kb_menu_0024": 0.0,
+                "kb_menu_0245": 0.0,
+                "kb_menu_0054": 0.0,
+                "kb_menu_0025": 0.0,
+                "kb_menu_0044": 0.0,
+                "kb_menu_0042": 0.0,
+                "kb_menu_0423": 0.0,
+                "kb_menu_0579": 0.0,
+                "no_match": 0.01,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 279.6777499999976
+        }
+      ]
+    },
+    {
+      "case_id": "single_019",
+      "query": "최근 새로 나온 펀드 상품이 뭐가 있는지 궁금해.",
+      "expected_ids": [
+        "kb_menu_0089"
+      ],
+      "selected_ids": null,
+      "status": "error",
+      "error": "HTTP 502",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72811,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "provider_http_ms": 602.2427919999984
+        }
+      ]
+    },
+    {
+      "case_id": "single_020",
+      "query": "연금저축펀드 상품을 알아보고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0092"
+      ],
+      "selected_ids": null,
+      "status": "error",
+      "error": "HTTP 502",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72798,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "provider_http_ms": 746.3533330000018
+        }
+      ]
+    },
+    {
+      "case_id": "single_021",
+      "query": "펀드 이용 방법을 알려주는 가이드를 읽고 싶어.",
+      "expected_ids": [
+        "kb_menu_0098"
+      ],
+      "selected_ids": null,
+      "status": "error",
+      "error": "HTTP 502",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72810,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "provider_http_ms": 887.7692920000015
+        }
+      ]
+    },
+    {
+      "case_id": "single_022",
+      "query": "신탁형 말고 일임형 ISA 상품을 알아볼래.",
+      "expected_ids": [
+        "kb_menu_0107"
+      ],
+      "selected_ids": null,
+      "status": "error",
+      "error": "HTTP 502",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72800,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {},
+          "error_detail": {
+            "code": "credit_balance_exhausted",
+            "type": "insufficient_quota",
+            "param": null,
+            "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+          },
+          "provider_http_ms": 852.9257080000008
+        }
+      ]
+    },
+    {
+      "case_id": "single_023",
+      "query": "현재 계좌 말고 이미 해지한 ISA 계좌를 조회하고 싶어.",
+      "expected_ids": [
+        "kb_menu_0111"
+      ],
+      "selected_ids": null,
+      "status": "error",
+      "error": "HTTP 502",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72818,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {},
+          "error_detail": {
+            "code": "credit_balance_exhausted",
+            "type": "insufficient_quota",
+            "param": null,
+            "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+          },
+          "provider_http_ms": 629.5565000000014
+        }
+      ]
+    },
+    {
+      "case_id": "single_024",
+      "query": "다른 금융회사에 있는 연금을 이 은행으로 가져오고 싶어.",
+      "expected_ids": [
+        "kb_menu_0071"
+      ],
+      "selected_ids": null,
+      "status": "error",
+      "error": "HTTP 502",
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72823,
+          "error": "HTTP 429",
+          "http_status": 429,
+          "error_headers": {},
+          "error_detail": {
+            "code": "credit_balance_exhausted",
+            "type": "insufficient_quota",
+            "param": null,
+            "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+          },
+          "provider_http_ms": 573.2577079999999
+        }
+      ]
+    }
+  ]
+}

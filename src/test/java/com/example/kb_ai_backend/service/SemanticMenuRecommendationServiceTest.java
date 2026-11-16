@@ -1,0 +1,35 @@
+package com.example.kb_ai_backend.service;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.*;
+import org.springframework.web.server.ResponseStatusException;
+import java.util.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+import static org.mockito.ArgumentMatchers.*;
+class SemanticMenuRecommendationServiceTest {
+    JevDecisionClient jev=mock(JevDecisionClient.class);SemanticMenuRetriever retrieval=mock(SemanticMenuRetriever.class);SemanticMenuSelectionService single=mock(SemanticMenuSelectionService.class);
+    MenuCatalog catalog;SemanticMenuRecommendationService service;
+    @BeforeEach void setup() throws Exception{catalog=new MenuCatalog(new ObjectMapper());service=new SemanticMenuRecommendationService(jev,retrieval,catalog,single,.6,.7);}
+    JevDecisionClient.BinaryDecisions flags(String mode){var m=new LinkedHashMap<String,Double>();for(String k:List.of("travel","multiple","unrelated","ambiguous"))m.put("route_"+k,k.equals(mode)?1.0:0.0);return new JevDecisionClient.BinaryDecisions(m,10);}
+    JevDecisionClient.Decisions answers(Map<String,String> values){var a=new LinkedHashMap<String,JevDecisionClient.Choice>();values.forEach((k,v)->a.put(k,new JevDecisionClient.Choice(v,.95)));return new JevDecisionClient.Decisions(a,20);}
+    SemanticMenuSelectionService.Result selected(MenuCatalog.Menu m){return new SemanticMenuSelectionService.Result("selected",List.of(m),List.of(m.id()),.95,"e5_jev",catalog.sha256(),10,20,1);}
+    @Test void preservesSinglePathWithoutNeedTaxonomy(){var m=catalog.find("kb_menu_0002");when(jev.judge(anyMap(),anyMap())).thenReturn(flags("single"));when(single.select(anyString())).thenReturn(selected(m));var r=service.compose("맞춤 상품 추천");assertEquals("ready",r.status());assertEquals(m,r.recommendations().get(0).menu());assertEquals(2,r.metrics().jevCalls());verifyNoInteractions(retrieval);verify(jev,never()).decide(anyMap(),anyMap());}
+    @Test void independentlySelectsPreviouslyUnmappedClauses(){var a=catalog.find("kb_menu_0002");var b=catalog.find("kb_menu_0158");when(jev.judge(anyMap(),anyMap())).thenReturn(flags("multiple"));when(jev.decide(anyMap(),anyMap())).thenReturn(answers(Map.of("request_1",a.id(),"request_2",b.id())));when(retrieval.retrieve("맞춤 상품 추천",20)).thenReturn(List.of(a));when(retrieval.retrieve("해지 골드 계좌 조회",20)).thenReturn(List.of(b));var r=service.compose("맞춤 상품 추천 그리고 별개의 업무로, 해지 골드 계좌 조회");assertEquals(Set.of(a.id(),b.id()),r.recommendations().stream().map(x->x.menu().id()).collect(java.util.stream.Collectors.toSet()));verify(jev,times(1)).decide(anyMap(),anyMap());}
+    @Test void expandsOnlyUnresolvedTask(){var m=catalog.find("kb_menu_0323");when(jev.judge(anyMap(),anyMap())).thenReturn(flags("travel"));when(jev.decide(anyMap(),anyMap())).thenReturn(answers(Map.of("foreign_exchange","no_match","foreign_payment","skip","travel_insurance","skip")),answers(Map.of("foreign_exchange",m.id())));when(retrieval.retrieve(anyString(),eq(12))).thenReturn(List.of(m));when(retrieval.retrieve("환전신청",40)).thenReturn(List.of(m));assertEquals(3,service.compose("개발용 확대").metrics().jevCalls());verify(retrieval,never()).retrieve("해외 QR 결제",40);}
+    @Test void travelReturnsThreeAndRespectsInsuranceSkip(){var a=catalog.find("kb_menu_0323");var b=catalog.find("kb_menu_0413");var c=catalog.find("kb_menu_0602");when(jev.judge(anyMap(),anyMap())).thenReturn(flags("travel"));when(retrieval.retrieve("환전신청",12)).thenReturn(List.of(a));when(retrieval.retrieve("해외 QR 결제",12)).thenReturn(List.of(b));when(retrieval.retrieve("KB손해보험 다이렉트 해외여행보험",12)).thenReturn(List.of(c));when(jev.decide(anyMap(),anyMap())).thenReturn(answers(Map.of("foreign_exchange",a.id(),"foreign_payment",b.id(),"travel_insurance",c.id())),answers(Map.of("foreign_exchange",a.id(),"foreign_payment",b.id(),"travel_insurance","skip")));assertEquals(3,service.compose("일본 여행").recommendations().size());assertEquals(2,service.compose("여행 보험은 완료").recommendations().size());}
+    @Test void unparsedMultipleUsesIndependentBinaryCandidates(){var a=catalog.find("kb_menu_0493");var b=catalog.find("kb_menu_0492");when(jev.judge(anyMap(),anyMap())).thenReturn(flags("multiple"),new JevDecisionClient.BinaryDecisions(Map.of(a.id(),.99,b.id(),.95),20));when(retrieval.retrieve(anyString(),eq(40))).thenReturn(List.of(a,b));assertEquals(2,service.compose("통장사본 잔액증명서 둘 다 발급").recommendations().size());verify(jev,never()).decide(anyMap(),anyMap());}
+    @Test void focusExpansionDoesNotRemoveOriginalExclusions(){var a=catalog.find("kb_menu_0612");var b=catalog.find("kb_menu_0476");when(jev.judge(anyMap(),anyMap())).thenReturn(flags("multiple"),new JevDecisionClient.BinaryDecisions(Map.of(a.id(),.99,b.id(),.99),20));when(retrieval.retrieve(anyString(),anyInt())).thenReturn(List.of(a,b));service.compose("환전과 보험은 완료했어. 이번에는 로밍과 여권 확인만 할래");verify(retrieval).retrieve("로밍",12);var states=org.mockito.ArgumentCaptor.forClass(Map.class);verify(jev,times(2)).judge(states.capture(),anyMap());assertTrue(states.getAllValues().get(1).get("user_request").toString().contains("보험은 완료"));}
+    @Test void masksInputBeforeRoutingAndDelegatedSelection(){var m=catalog.find("kb_menu_0323");when(jev.judge(anyMap(),anyMap())).thenReturn(flags("single"));when(single.select(anyString())).thenReturn(selected(m));service.compose("환전 연락처 010-1234-5678");verify(single).select("환전 연락처 [민감정보]");}
+    @Test void invalidAndOversizedRequestsNeverSilentlyTruncate(){assertThrows(ResponseStatusException.class,()->service.compose(" "));assertThrows(ResponseStatusException.class,()->service.compose("가".repeat(2001)));verifyNoInteractions(jev);when(jev.judge(anyMap(),anyMap())).thenReturn(flags("multiple"));assertEquals("needs_clarification",service.compose("통장사본 그리고 환전 그리고 보험 그리고 송금").status());verifyNoInteractions(retrieval);}
+    @Test void unrelatedAndAmbiguousFlagsAreSeparateFromSingleChoiceConfidence(){when(jev.judge(anyMap(),anyMap())).thenReturn(flags("unrelated"),flags("ambiguous"));assertEquals("no_match",service.compose("요리법").status());assertEquals("needs_clarification",service.compose("뭐하지").status());verifyNoInteractions(retrieval,single);}
+    @Test void completedTravelDefaultsFallBackToOtherExplicitRequestsWithinThreeCalls(){
+        var a=catalog.find("kb_menu_0612");var b=catalog.find("kb_menu_0476");
+        when(jev.judge(anyMap(),anyMap())).thenReturn(flags("travel"),new JevDecisionClient.BinaryDecisions(Map.of(a.id(),.99,b.id(),.99),20));
+        when(retrieval.retrieve(anyString(),anyInt())).thenReturn(List.of(a,b));
+        when(jev.decide(anyMap(),anyMap())).thenReturn(answers(Map.of("foreign_exchange","skip","foreign_payment","skip","travel_insurance","skip")));
+        var r=service.compose("여행 기본 준비는 끝났고 이번에는 로밍과 여권 확인만 할래");
+        assertEquals(2,r.recommendations().size());assertEquals(3,r.metrics().jevCalls());
+        assertTrue(r.candidateIdsByNeed().containsKey("candidate_filter"));
+    }
+
+}

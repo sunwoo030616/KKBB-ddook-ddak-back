@@ -1,0 +1,1038 @@
+[
+  {
+    "case_id": "single_new_01",
+    "query": "엔화를 새로 바꾸는 신청 절차로 가고 싶습니다.",
+    "expected_ids": [
+      "kb_menu_0323"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_02",
+    "query": "이전에 신청한 환전을 확인하고 관리할 화면이 필요해요.",
+    "expected_ids": [
+      "kb_menu_0324"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_03",
+    "query": "달러의 현재 환율을 확인하려고 합니다.",
+    "expected_ids": [
+      "kb_menu_0316"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_04",
+    "query": "계좌번호를 받지 않고 상대 휴대전화 연락처로 송금할래요.",
+    "expected_ids": [
+      "kb_menu_0203"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_05",
+    "query": "보낸 돈의 이체 내역을 점검하고 싶습니다.",
+    "expected_ids": [
+      "kb_menu_0205"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_06",
+    "query": "정해진 날짜마다 보내는 자동이체를 새로 설정할게요.",
+    "expected_ids": [
+      "kb_menu_0206"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_07",
+    "query": "기존 자동이체를 더 이상 보내지 않도록 해지하려고요.",
+    "expected_ids": [
+      "kb_menu_0207"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_08",
+    "query": "하루에 송금 가능한 한도를 변경하는 곳을 찾습니다.",
+    "expected_ids": [
+      "kb_menu_0214"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_09",
+    "query": "회사에 계좌를 증빙할 통장 사본을 제출해야 합니다.",
+    "expected_ids": [
+      "kb_menu_0493"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_10",
+    "query": "예금 잔액을 증명하는 공식 서류를 발급할래요.",
+    "expected_ids": [
+      "kb_menu_0492"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_11",
+    "query": "국민 신용카드가 없어져서 분실 신고를 해야겠어요.",
+    "expected_ids": [
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_12",
+    "query": "찾은 국민 신용카드의 분실 상태를 해제하려 합니다.",
+    "expected_ids": [
+      "kb_menu_0555"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_13",
+    "query": "KB손해보험 다이렉트의 해외 여행자보험을 알아볼래요.",
+    "expected_ids": [
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_14",
+    "query": "국외에서 QR로 결제하는 메뉴가 필요해요.",
+    "expected_ids": [
+      "kb_menu_0413"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_15",
+    "query": "오픈뱅킹에서 잘못 송금한 돈의 반환을 신청할래요.",
+    "expected_ids": [
+      "kb_menu_0519"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_16",
+    "query": "실손24에서 보험금을 새로 청구하고 싶습니다.",
+    "expected_ids": [
+      "kb_menu_0568"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_17",
+    "query": "실손24에 접수해 둔 청구 내역을 확인할게요.",
+    "expected_ids": [
+      "kb_menu_0569"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_18",
+    "query": "우리 가게의 카드 매출과 입금 현황을 보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_19",
+    "query": "사업에 맞는 정책자금을 추천받는 메뉴가 필요합니다.",
+    "expected_ids": [
+      "kb_menu_0017"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_20",
+    "query": "가맹점 카드 매출이 들어오는 결제 계좌를 바꿀래요.",
+    "expected_ids": [
+      "kb_menu_0626"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_21",
+    "query": "여권의 유효기간이 언제 끝나는지 확인하려고요.",
+    "expected_ids": [
+      "kb_menu_0476"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_22",
+    "query": "리브모바일 해외 로밍을 준비하는 메뉴로 가고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_23",
+    "query": "원룸과 투룸 매물을 모아서 탐색할래요.",
+    "expected_ids": [
+      "kb_menu_0585"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_24",
+    "query": "전세 보증금 위험을 점검하는 전세안전진단을 찾습니다.",
+    "expected_ids": [
+      "kb_menu_0589"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_25",
+    "query": "부동산 등기 내용이 바뀔 때 알림을 받고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0592"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_26",
+    "query": "하루만 차를 몰 때의 자동차보험을 준비할래요.",
+    "expected_ids": [
+      "kb_menu_0567"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_27",
+    "query": "KTX나 SRT 열차표를 예매하고 싶습니다.",
+    "expected_ids": [
+      "kb_menu_0384"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_28",
+    "query": "KB Pay 여행의 항공과 숙박 예약 화면을 찾고 있어요.",
+    "expected_ids": [
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_29",
+    "query": "아이의 학생증 체크카드를 만들려고 합니다.",
+    "expected_ids": [
+      "kb_menu_0068"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "single_new_30",
+    "query": "장학금과 학자금 지원 정보를 알아보려 합니다.",
+    "expected_ids": [
+      "kb_menu_0487"
+    ],
+    "expected_status": "ready",
+    "split": "single_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_01",
+    "query": "통장 사본과 예금 잔액 증명서를 각각 발급하려고 해요.",
+    "expected_ids": [
+      "kb_menu_0493",
+      "kb_menu_0492"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_02",
+    "query": "국민카드 분실 신고를 할게요. 그리고 카드 없이 ATM에서 돈 찾는 법도 필요해요.",
+    "expected_ids": [
+      "kb_menu_0554",
+      "kb_menu_0210"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_03",
+    "query": "기존 자동이체는 해지하고 송금 한도는 늘리고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0207",
+      "kb_menu_0214"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_04",
+    "query": "매출 입금 현황도 필요하고 정책자금 지원도 알아보려 해요.",
+    "expected_ids": [
+      "kb_menu_0018",
+      "kb_menu_0017"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_05",
+    "query": "환전을 신청하고 해외 QR 결제도 준비하려고요.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_06",
+    "query": "여행자보험과 리브모바일 로밍을 따로 준비할래요.",
+    "expected_ids": [
+      "kb_menu_0602",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_07",
+    "query": "실손24 청구내역 확인 / 통장사본 발급을 할래요.",
+    "expected_ids": [
+      "kb_menu_0569",
+      "kb_menu_0493"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_08",
+    "query": "보낸 이체 내역을 보고 오픈뱅킹 착오송금 반환도 신청할래요.",
+    "expected_ids": [
+      "kb_menu_0205",
+      "kb_menu_0519"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_09",
+    "query": "국민카드 분실 해제와 OTP 분실 해제를 각각 처리할게요.",
+    "expected_ids": [
+      "kb_menu_0555",
+      "kb_menu_0515"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_10",
+    "query": "휴양림 남은 자리 조회 그리고 휴양림 예약 화면을 찾습니다.",
+    "expected_ids": [
+      "kb_menu_0472",
+      "kb_menu_0383"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_11",
+    "query": "아이 학생증 체크카드와 장학금 정보를 함께 찾아주세요.",
+    "expected_ids": [
+      "kb_menu_0068",
+      "kb_menu_0487"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_12",
+    "query": "KB Pay 여행 예약과 하루자동차보험을 준비하려 합니다.",
+    "expected_ids": [
+      "kb_menu_0604",
+      "kb_menu_0567"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_13",
+    "query": "원투룸 매물 탐색 그리고 전세안전진단을 하고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0585",
+      "kb_menu_0589"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_14",
+    "query": "여권 만료일과 현재 달러 환율을 둘 다 확인할래요.",
+    "expected_ids": [
+      "kb_menu_0476",
+      "kb_menu_0316"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_15",
+    "query": "가맹점 결제계좌 변경, 우리 가게 카드 매출 조회가 필요합니다.",
+    "expected_ids": [
+      "kb_menu_0626",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_16",
+    "query": "전화번호 송금과 새 자동이체 등록 메뉴를 함께 찾아줘요.",
+    "expected_ids": [
+      "kb_menu_0203",
+      "kb_menu_0206"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_17",
+    "query": "해지된 골드 계좌 내역을 보고 맞춤 금융상품 추천도 따로 받을래요.",
+    "expected_ids": [
+      "kb_menu_0158",
+      "kb_menu_0002"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_18",
+    "query": "최근 본 상품을 보고 찜한 상품도 확인하려고 해요.",
+    "expected_ids": [
+      "kb_menu_0006",
+      "kb_menu_0007"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_19",
+    "query": "예금잔액증명서 / 여권 만료일 확인 / 해외 로밍 준비가 필요해요.",
+    "expected_ids": [
+      "kb_menu_0492",
+      "kb_menu_0476",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_20",
+    "query": "통장사본을 발급하고, KTX를 예매하고, 하루 운전 보험도 찾을래요.",
+    "expected_ids": [
+      "kb_menu_0493",
+      "kb_menu_0384",
+      "kb_menu_0567"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_21",
+    "query": "자동이체 해지와 이체한도 변경, 연락처 송금을 모두 하고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0207",
+      "kb_menu_0214",
+      "kb_menu_0203"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_22",
+    "query": "가게 카드 매출 관리와 정책자금 추천, 가맹점 계좌 변경을 준비할래요.",
+    "expected_ids": [
+      "kb_menu_0018",
+      "kb_menu_0017",
+      "kb_menu_0626"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_23",
+    "query": "국민카드 분실신고; 통장 재발급; 카드 없이 출금 메뉴가 필요해요.",
+    "expected_ids": [
+      "kb_menu_0554",
+      "kb_menu_0501",
+      "kb_menu_0210"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_24",
+    "query": "실손24 새 청구와 기존 청구내역 조회를 둘 다 할래요.",
+    "expected_ids": [
+      "kb_menu_0568",
+      "kb_menu_0569"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_25",
+    "query": "환율 확인과 환전 신청을 각각 진행하려고요.",
+    "expected_ids": [
+      "kb_menu_0316",
+      "kb_menu_0323"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_26",
+    "query": "등기 변동 알림, 전세안전진단을 함께 신청하고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0592",
+      "kb_menu_0589"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_27",
+    "query": "국민카드 분실을 풀고 자동이체 등록도 새로 하고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0555",
+      "kb_menu_0206"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_28",
+    "query": "여권 만료일을 확인하고 아이 학생증 체크카드도 준비할래요.",
+    "expected_ids": [
+      "kb_menu_0476",
+      "kb_menu_0068"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_29",
+    "query": "KB Pay 여행 화면과 휴양림 예약 서비스를 따로 찾습니다.",
+    "expected_ids": [
+      "kb_menu_0604",
+      "kb_menu_0383"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "multi_new_30",
+    "query": "보험은 제외하고 환전 신청과 해외 QR 결제만 부탁해요.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413"
+    ],
+    "expected_status": "ready",
+    "split": "multi_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_01",
+    "query": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_02",
+    "query": "대만으로 첫 해외휴가를 떠날 예정입니다. 금융 준비를 시작하려고요.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_03",
+    "query": "유럽 여행이 처음이라 출국 전에 뭘 준비할지 은행 앱에서 찾고 있어요.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_04",
+    "query": "중국으로 휴가를 가는데 보험 가입은 끝났습니다. 나머지 기본 준비를 도와줘요.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_05",
+    "query": "일본에 갈 예정이고 현지 현금은 이미 바꿨어요. 남은 기본 준비가 궁금해요.",
+    "expected_ids": [
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_06",
+    "query": "해외여행을 가요. QR 결제 준비는 마쳤고 나머지 기본 준비를 할래요.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_07",
+    "query": "해외여행에 필요한 것은 준비하려는데 환전만 필요합니다.",
+    "expected_ids": [
+      "kb_menu_0323"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_08",
+    "query": "해외여행 준비 중 보험은 필요 없고 현금 환전과 QR 결제만 할래요.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_09",
+    "query": "한국 안에서 기차 타고 여행할 거예요. 열차와 숙박을 예약하고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_10",
+    "query": "새 가게를 열어서 매출 입금 상황을 살피고 정책 지원을 찾고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0018",
+      "kb_menu_0017"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_11",
+    "query": "친구 계좌는 못 받았고 전화번호만 알아요. 연락처로 돈을 보내야겠어요.",
+    "expected_ids": [
+      "kb_menu_0203"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_12",
+    "query": "회사에서 급여 받을 계좌의 통장 사본을 달라고 했어요.",
+    "expected_ids": [
+      "kb_menu_0493"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_13",
+    "query": "비자 때문에 은행 잔액을 서류로 증명하고 여권이 유효한지도 확인해야 해요.",
+    "expected_ids": [
+      "kb_menu_0492",
+      "kb_menu_0476"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_14",
+    "query": "이번 주말 렌터카를 하루 쓸 거라 그 하루의 자동차보험이 필요해요.",
+    "expected_ids": [
+      "kb_menu_0567"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_15",
+    "query": "정기적으로 집주인에게 나가던 돈을 이제 멈추고 싶습니다.",
+    "expected_ids": [
+      "kb_menu_0207"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_16",
+    "query": "이사 잔금 송금 전에 이체 한도를 높이고 거래 내역도 확인하려 합니다.",
+    "expected_ids": [
+      "kb_menu_0214",
+      "kb_menu_0205"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_17",
+    "query": "아이 학교생활에 쓸 학생증 카드와 장학금 지원 정보가 필요해요.",
+    "expected_ids": [
+      "kb_menu_0068",
+      "kb_menu_0487"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_18",
+    "query": "국민 신용카드를 분실했고 ATM에서 현금도 찾아야 하는 상황이에요.",
+    "expected_ids": [
+      "kb_menu_0554",
+      "kb_menu_0210"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_19",
+    "query": "분실했던 국민카드를 찾았으니 다시 쓸 수 있게 풀고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0555"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_20",
+    "query": "보험금은 이미 실손24에 청구했어요. 새 접수 말고 진행 내역만 볼래요.",
+    "expected_ids": [
+      "kb_menu_0569"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_21",
+    "query": "휴양림에서 쉬고 싶어서 빈자리 확인과 예약을 같이 준비할래요.",
+    "expected_ids": [
+      "kb_menu_0472",
+      "kb_menu_0383"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_22",
+    "query": "처음 집을 빌려 살려고요. 원투룸 매물을 찾고 전세금 위험도 살펴볼래요.",
+    "expected_ids": [
+      "kb_menu_0585",
+      "kb_menu_0589"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_23",
+    "query": "해외 통신이 필요해서 리브모바일 로밍 화면을 찾고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_24",
+    "query": "가게 카드 매출이 들어올 계좌를 바꾸면서 입금 현황도 보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0626",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_25",
+    "query": "일본 여행의 환전과 보험은 마쳤고 QR 결제만 준비하면 돼요.",
+    "expected_ids": [
+      "kb_menu_0413"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_26",
+    "query": "해외여행에 QR과 보험은 준비됐고 현금 환전만 남았어요.",
+    "expected_ids": [
+      "kb_menu_0323"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_27",
+    "query": "해외휴가를 앞두고 환전과 QR은 완료했어요. 여행보험만 알아볼래요.",
+    "expected_ids": [
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_28",
+    "query": "통장을 잃어 재발급받아야 하고 예금 잔액증명서도 필요해요.",
+    "expected_ids": [
+      "kb_menu_0501",
+      "kb_menu_0492"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_29",
+    "query": "오픈뱅킹 송금을 잘못했어요. 내역 확인과 반환 신청을 도와줘요.",
+    "expected_ids": [
+      "kb_menu_0205",
+      "kb_menu_0519"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "situation_new_30",
+    "query": "해외여행의 환전·QR·보험은 모두 준비했어요. 추가 추천 없이 여권 만료일만 확인할래요.",
+    "expected_ids": [
+      "kb_menu_0476"
+    ],
+    "expected_status": "ready",
+    "split": "situation_new",
+    "label_source": "new catalog/policy-authored synthetic wording; no independent human review"
+  },
+  {
+    "case_id": "negative_new_01",
+    "query": "감자로 만들 수 있는 요리법 알려줘요.",
+    "expected_ids": [],
+    "expected_status": "no_match",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  },
+  {
+    "case_id": "negative_new_02",
+    "query": "이 문장을 프랑스어로 번역해줘요.",
+    "expected_ids": [],
+    "expected_status": "no_match",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  },
+  {
+    "case_id": "negative_new_03",
+    "query": "내일 비가 오는지 알려주세요.",
+    "expected_ids": [],
+    "expected_status": "no_match",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  },
+  {
+    "case_id": "negative_new_04",
+    "query": "축구 경기 결과를 알려주세요.",
+    "expected_ids": [],
+    "expected_status": "no_match",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  },
+  {
+    "case_id": "negative_new_05",
+    "query": "고양이 이름을 지어주세요.",
+    "expected_ids": [],
+    "expected_status": "no_match",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  },
+  {
+    "case_id": "negative_new_06",
+    "query": "돈 관련해서 뭔가 하려는데 정확히 뭘 할지는 모르겠어요.",
+    "expected_ids": [],
+    "expected_status": "needs_clarification",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  },
+  {
+    "case_id": "negative_new_07",
+    "query": "조회하고 싶은데 무엇인지는 아직 정하지 못했어요.",
+    "expected_ids": [],
+    "expected_status": "needs_clarification",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  },
+  {
+    "case_id": "negative_new_08",
+    "query": "은행 업무 좀 해줘요. 어떤 업무인지는 잘 모르겠어요.",
+    "expected_ids": [],
+    "expected_status": "needs_clarification",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  },
+  {
+    "case_id": "negative_new_09",
+    "query": "내가 지금 뭘 누르면 좋을까요? 설명할 정보가 없어요.",
+    "expected_ids": [],
+    "expected_status": "needs_clarification",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  },
+  {
+    "case_id": "negative_new_10",
+    "query": "금융 쪽으로 도와줘요. 구체적으로 정한 건 없어요.",
+    "expected_ids": [],
+    "expected_status": "needs_clarification",
+    "split": "negative_new",
+    "label_source": "synthetic unrelated/underspecified request"
+  }
+]

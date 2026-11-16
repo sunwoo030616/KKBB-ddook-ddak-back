@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "situation_18_1",
+    "query": "해외여행 환전과 보험은 끝냈고 QR도 준비했어. 이번에는 로밍과 여권 만료일 확인만 할래.",
+    "expected_ids": [
+      "kb_menu_0612",
+      "kb_menu_0476"
+    ],
+    "expected_status": "ready",
+    "split": "situation_bundle",
+    "family_id": "situation_family_18",
+    "label_source": "product-policy bundle or explicit outcomes in a situation; 20 families x 5 wording variants; not independent intents"
+  }
+]

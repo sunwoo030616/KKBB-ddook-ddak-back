@@ -1,0 +1,12 @@
+Actual v2 evaluation: 10 cases; providers=['e5_jev']; no retries
+1/10 e5_jev ready exact=True P=1.00 R=1.00 ms=694 calls=2
+2/10 e5_jev ready exact=True P=1.00 R=1.00 ms=563 calls=2
+3/10 e5_jev ready exact=True P=1.00 R=1.00 ms=538 calls=2
+4/10 e5_jev ready exact=True P=1.00 R=1.00 ms=638 calls=2
+5/10 e5_jev ready exact=True P=1.00 R=1.00 ms=612 calls=2
+6/10 e5_jev ready exact=True P=1.00 R=1.00 ms=651 calls=2
+7/10 e5_jev ready exact=True P=1.00 R=1.00 ms=687 calls=2
+8/10 e5_jev ready exact=True P=1.00 R=1.00 ms=683 calls=2
+9/10 e5_jev ready exact=True P=1.00 R=1.00 ms=673 calls=2
+10/10 e5_jev needs_clarification exact=False P=0.00 R=0.00 ms=789 calls=2
+{"e5_jev": {"cases": 10, "positive_cases": 10, "negative_cases": 0, "errors": 0, "menu_exact_correct": 9, "menu_exact_accuracy": 0.9, "status_and_menu_correct": 9, "status_and_menu_accuracy": 0.9, "macro_precision": 0.9, "macro_recall": 0.9, "macro_f1": 0.9, "micro_precision": 1.0, "micro_recall": 0.9, "micro_f1": 0.9473684210526315, "true_positive_menus": 18, "extra_menus": 0, "missing_menus": 2, "cases_with_extra_menus": 0, "cases_with_missing_menus": 1, "mean_http_ms": 652.7846585000002, "median_http_ms": 662.0298130000002, "p95_http_ms": 788.6485830000005, "actual_upstream_calls": 20, "tokens": {"input": {"observed_calls": 20, "sum": 66569, "mean_per_case": 6656.9}, "output": {"observed_calls": 20, "sum": 7310, "mean_per_case": 731.0}, "cached_input": {"observed_calls": 0, "sum": null, "mean_per_case": null}}, "statuses": {"needs_clarification": 1, "ready": 9}}}

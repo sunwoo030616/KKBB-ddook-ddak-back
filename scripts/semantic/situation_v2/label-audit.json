@@ -1,0 +1,17 @@
+{
+  "regression_same_cases_and_gold_as_v1": true,
+  "fresh_cases": 100,
+  "fresh_split_counts": {
+    "single_new": 30,
+    "multi_new": 30,
+    "situation_new": 30,
+    "negative_new": 10
+  },
+  "fresh_normalized_duplicates": 0,
+  "fresh_exact_overlap_with_regression": 0,
+  "independently_reviewed": false,
+  "limits": [
+    "New wording shares menu targets and situation families with development data.",
+    "Catalog/policy-authored synthetic labels; not production traffic or blind expert validation."
+  ]
+}

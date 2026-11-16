@@ -1,0 +1,6 @@
+Actual production E5 and compiled backend ready; jev-1.14.0; K=40; threshold=.6; 300 cases; no retries
+{"status": "ready", "menus": [["kb_menu_0323", "환전신청"], ["kb_menu_0602", "KB손해보험 다이렉트 해외여행보험"]], "metrics": {"retrievalMode": "semantic_only", "planningMs": 462, "retrievalMs": 26, "selectionMs": 197, "jevCalls": 2}}
+Traceback (most recent call last):
+  File "/private/tmp/run_kkbb_situation_smoke.py", line 41, in <module>
+    assert body['status']=='ready' and {m['id'] for m in body['menus']}==expected,'Japan smoke test failed; preserve actual response'
+AssertionError: Japan smoke test failed; preserve actual response

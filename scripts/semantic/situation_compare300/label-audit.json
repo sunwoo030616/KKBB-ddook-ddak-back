@@ -1,0 +1,25 @@
+{
+  "cases": 300,
+  "split_counts": {
+    "single_explicit": 100,
+    "explicit_multi": 100,
+    "situation_bundle": 100
+  },
+  "gold_size_counts": {
+    "1": 100,
+    "2": 135,
+    "3": 65
+  },
+  "unique_queries": 300,
+  "independent_review": false,
+  "situation_intent_families": 20,
+  "situation_variants_per_family": 5,
+  "prior_single_labels_reused": 100,
+  "limits": [
+    "All synthetic; catalog-authored labels and policy bundles, no independent expert review.",
+    "Situation variants reuse intent families; 300 cases are not 300 independent intents.",
+    "The Japan example is a development smoke case, not held-out.",
+    "All cases are positive requests; no unrelated/ambiguous negative performance estimate.",
+    "The router has 54 predefined needs plus an other-explicit fallback; unsupported compound intents can be missed."
+  ]
+}

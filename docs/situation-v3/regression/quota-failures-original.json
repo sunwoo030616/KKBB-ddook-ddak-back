@@ -1,0 +1,239 @@
+[
+  {
+    "case_id": "single_019",
+    "query": "최근 새로 나온 펀드 상품이 뭐가 있는지 궁금해.",
+    "expected_ids": [
+      "kb_menu_0089"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_049",
+    "label_source": "unchanged prior synthetic single-target label",
+    "provider": "hybrid",
+    "queue_wait_ms": 0,
+    "status": "error",
+    "error": "HTTP 502",
+    "http_ms": 625.1136659999972,
+    "calls": [
+      {
+        "provider": "llm_task_planner",
+        "stage": "task_planning",
+        "request_payload_bytes": 72811,
+        "error": "HTTP 429",
+        "http_status": 429,
+        "provider_http_ms": 602.2427919999984
+      }
+    ],
+    "score": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0,
+      "menu_exact": false,
+      "status_and_menu_exact": false
+    }
+  },
+  {
+    "case_id": "single_020",
+    "query": "연금저축펀드 상품을 알아보고 싶어요.",
+    "expected_ids": [
+      "kb_menu_0092"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_052",
+    "label_source": "unchanged prior synthetic single-target label",
+    "provider": "hybrid",
+    "queue_wait_ms": 0,
+    "status": "error",
+    "error": "HTTP 502",
+    "http_ms": 757.1328339999966,
+    "calls": [
+      {
+        "provider": "llm_task_planner",
+        "stage": "task_planning",
+        "request_payload_bytes": 72798,
+        "error": "HTTP 429",
+        "http_status": 429,
+        "provider_http_ms": 746.3533330000018
+      }
+    ],
+    "score": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0,
+      "menu_exact": false,
+      "status_and_menu_exact": false
+    }
+  },
+  {
+    "case_id": "single_021",
+    "query": "펀드 이용 방법을 알려주는 가이드를 읽고 싶어.",
+    "expected_ids": [
+      "kb_menu_0098"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_055",
+    "label_source": "unchanged prior synthetic single-target label",
+    "provider": "hybrid",
+    "queue_wait_ms": 0,
+    "status": "error",
+    "error": "HTTP 502",
+    "http_ms": 899.3675420000002,
+    "calls": [
+      {
+        "provider": "llm_task_planner",
+        "stage": "task_planning",
+        "request_payload_bytes": 72810,
+        "error": "HTTP 429",
+        "http_status": 429,
+        "provider_http_ms": 887.7692920000015
+      }
+    ],
+    "score": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0,
+      "menu_exact": false,
+      "status_and_menu_exact": false
+    }
+  },
+  {
+    "case_id": "single_022",
+    "query": "신탁형 말고 일임형 ISA 상품을 알아볼래.",
+    "expected_ids": [
+      "kb_menu_0107"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_057",
+    "label_source": "unchanged prior synthetic single-target label",
+    "provider": "hybrid",
+    "queue_wait_ms": 0,
+    "status": "error",
+    "error": "HTTP 502",
+    "http_ms": 886.2384999999992,
+    "calls": [
+      {
+        "provider": "llm_task_planner",
+        "stage": "task_planning",
+        "request_payload_bytes": 72800,
+        "error": "HTTP 429",
+        "http_status": 429,
+        "error_headers": {},
+        "error_detail": {
+          "code": "credit_balance_exhausted",
+          "type": "insufficient_quota",
+          "param": null,
+          "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+        },
+        "provider_http_ms": 852.9257080000008
+      }
+    ],
+    "score": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0,
+      "menu_exact": false,
+      "status_and_menu_exact": false
+    }
+  },
+  {
+    "case_id": "single_023",
+    "query": "현재 계좌 말고 이미 해지한 ISA 계좌를 조회하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0111"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_060",
+    "label_source": "unchanged prior synthetic single-target label",
+    "provider": "hybrid",
+    "queue_wait_ms": 2108.203999999999,
+    "status": "error",
+    "error": "HTTP 502",
+    "http_ms": 645.8950829999992,
+    "calls": [
+      {
+        "provider": "llm_task_planner",
+        "stage": "task_planning",
+        "request_payload_bytes": 72818,
+        "error": "HTTP 429",
+        "http_status": 429,
+        "error_headers": {},
+        "error_detail": {
+          "code": "credit_balance_exhausted",
+          "type": "insufficient_quota",
+          "param": null,
+          "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+        },
+        "provider_http_ms": 629.5565000000014
+      }
+    ],
+    "score": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0,
+      "menu_exact": false,
+      "status_and_menu_exact": false
+    }
+  },
+  {
+    "case_id": "single_024",
+    "query": "다른 금융회사에 있는 연금을 이 은행으로 가져오고 싶어.",
+    "expected_ids": [
+      "kb_menu_0071"
+    ],
+    "expected_status": "ready",
+    "split": "single_explicit",
+    "family_id": "recall300_063",
+    "label_source": "unchanged prior synthetic single-target label",
+    "provider": "hybrid",
+    "queue_wait_ms": 2350.2799579999996,
+    "status": "error",
+    "error": "HTTP 502",
+    "http_ms": 587.1504590000001,
+    "calls": [
+      {
+        "provider": "llm_task_planner",
+        "stage": "task_planning",
+        "request_payload_bytes": 72823,
+        "error": "HTTP 429",
+        "http_status": 429,
+        "error_headers": {},
+        "error_detail": {
+          "code": "credit_balance_exhausted",
+          "type": "insufficient_quota",
+          "param": null,
+          "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+        },
+        "provider_http_ms": 573.2577079999999
+      }
+    ],
+    "score": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0,
+      "menu_exact": false,
+      "status_and_menu_exact": false
+    }
+  }
+]

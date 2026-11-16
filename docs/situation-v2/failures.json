@@ -1,0 +1,1695 @@
+{
+  "regression_v2": [
+    {
+      "case_id": "multi_010",
+      "provider": "e5_jev",
+      "query": "내 조건에 맞는 신용대출을 찾아주는 메뉴를 열어줘. 그리고 별개의 업무로, 이미 해지한 계좌들을 조회할래요. 요청한 업무를 모두 찾아줘.",
+      "expected_ids": [
+        "kb_menu_0028",
+        "kb_menu_0195"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0195"
+      ],
+      "status": "partial",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": [
+        {
+          "stage": "selection",
+          "needId": "request_1",
+          "reason": "unresolved_task",
+          "choice": "kb_menu_0023",
+          "confidence": 0.58
+        }
+      ]
+    },
+    {
+      "case_id": "multi_073",
+      "provider": "e5_jev",
+      "query": "로그인하지 않고 신청한 환전 내역을 조회할래. 그리고 별개의 업무로, 내 조건에 맞는 신용대출을 찾아주는 메뉴를 열어줘. 그리고 별개의 업무로, 아이 적금 말고 입출금통장을 만들어 주고 싶어. 요청한 업무를 모두 찾아줘.",
+      "expected_ids": [
+        "kb_menu_0325",
+        "kb_menu_0028",
+        "kb_menu_0178"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0325",
+        "kb_menu_0178"
+      ],
+      "status": "partial",
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": [
+        {
+          "stage": "selection",
+          "needId": "request_2",
+          "reason": "unresolved_task",
+          "choice": "kb_menu_0028",
+          "confidence": 0.45
+        }
+      ]
+    },
+    {
+      "case_id": "situation_02_5",
+      "provider": "e5_jev",
+      "query": "처음 중국으로 여행을 가려고 해. 현지에서 지낼 준비를 하고 싶어. 요청하지 않은 업무는 추가하지 말아줘.",
+      "expected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [],
+      "status": "needs_clarification",
+      "score": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_07_1",
+      "provider": "e5_jev",
+      "query": "부산으로 국내 여행을 가려고 해. 기차와 숙박을 예약하고 싶어.",
+      "expected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0384"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_07_2",
+      "provider": "e5_jev",
+      "query": "내 상황을 설명할게. 부산으로 국내 여행을 가려고 해. 기차와 숙박을 예약하고 싶어.",
+      "expected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0384"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_07_3",
+      "provider": "e5_jev",
+      "query": "부산으로 국내 여행을 가려고 해. 기차와 숙박을 예약하고 싶어. 이 상황에 필요한 메뉴를 함께 보여줘.",
+      "expected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0384"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_07_4",
+      "provider": "e5_jev",
+      "query": "은행 앱으로 다음 준비를 하고 싶어. 부산으로 국내 여행을 가려고 해. 기차와 숙박을 예약하고 싶어.",
+      "expected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0384"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_07_5",
+      "provider": "e5_jev",
+      "query": "부산으로 국내 여행을 가려고 해. 기차와 숙박을 예약하고 싶어. 요청하지 않은 업무는 추가하지 말아줘.",
+      "expected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0384"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_08_4",
+      "provider": "e5_jev",
+      "query": "은행 앱으로 다음 준비를 하고 싶어. 작은 가게를 열었어. 카드 매출 입금을 관리하고 정부 지원도 알아보려고 해.",
+      "expected_ids": [
+        "kb_menu_0018",
+        "kb_menu_0017"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0017"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_09_1",
+      "provider": "e5_jev",
+      "query": "가게 카드 매출이 잘 들어오는지 보고 입금 계좌도 바꾸려고 해.",
+      "expected_ids": [
+        "kb_menu_0018",
+        "kb_menu_0626"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0626"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_09_2",
+      "provider": "e5_jev",
+      "query": "내 상황을 설명할게. 가게 카드 매출이 잘 들어오는지 보고 입금 계좌도 바꾸려고 해.",
+      "expected_ids": [
+        "kb_menu_0018",
+        "kb_menu_0626"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0626"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_09_4",
+      "provider": "e5_jev",
+      "query": "은행 앱으로 다음 준비를 하고 싶어. 가게 카드 매출이 잘 들어오는지 보고 입금 계좌도 바꾸려고 해.",
+      "expected_ids": [
+        "kb_menu_0018",
+        "kb_menu_0626"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0626"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_09_5",
+      "provider": "e5_jev",
+      "query": "가게 카드 매출이 잘 들어오는지 보고 입금 계좌도 바꾸려고 해. 요청하지 않은 업무는 추가하지 말아줘.",
+      "expected_ids": [
+        "kb_menu_0018",
+        "kb_menu_0626"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0626"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_10_1",
+      "provider": "e5_jev",
+      "query": "처음 자취방을 구하고 있어. 원룸 매물을 찾고 전세 보증금이 안전한지도 점검할래.",
+      "expected_ids": [
+        "kb_menu_0585",
+        "kb_menu_0589"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [],
+      "status": "needs_clarification",
+      "score": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_10_2",
+      "provider": "e5_jev",
+      "query": "내 상황을 설명할게. 처음 자취방을 구하고 있어. 원룸 매물을 찾고 전세 보증금이 안전한지도 점검할래.",
+      "expected_ids": [
+        "kb_menu_0585",
+        "kb_menu_0589"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0589"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_10_4",
+      "provider": "e5_jev",
+      "query": "은행 앱으로 다음 준비를 하고 싶어. 처음 자취방을 구하고 있어. 원룸 매물을 찾고 전세 보증금이 안전한지도 점검할래.",
+      "expected_ids": [
+        "kb_menu_0585",
+        "kb_menu_0589"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [],
+      "status": "needs_clarification",
+      "score": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_10_5",
+      "provider": "e5_jev",
+      "query": "처음 자취방을 구하고 있어. 원룸 매물을 찾고 전세 보증금이 안전한지도 점검할래. 요청하지 않은 업무는 추가하지 말아줘.",
+      "expected_ids": [
+        "kb_menu_0585",
+        "kb_menu_0589"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [],
+      "status": "needs_clarification",
+      "score": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_11_1",
+      "provider": "e5_jev",
+      "query": "국민 신용카드를 잃어버렸어. 카드 신고를 하고 카드 없이 현금도 찾아야 해.",
+      "expected_ids": [
+        "kb_menu_0554",
+        "kb_menu_0210"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0554"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_11_2",
+      "provider": "e5_jev",
+      "query": "내 상황을 설명할게. 국민 신용카드를 잃어버렸어. 카드 신고를 하고 카드 없이 현금도 찾아야 해.",
+      "expected_ids": [
+        "kb_menu_0554",
+        "kb_menu_0210"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0554"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_12_4",
+      "provider": "e5_jev",
+      "query": "은행 앱으로 다음 준비를 하고 싶어. 통장도 잃어버렸고 국민 신용카드도 없어졌어. 통장은 재발급받고 카드는 신고하려고 해.",
+      "expected_ids": [
+        "kb_menu_0501",
+        "kb_menu_0554"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0554"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_13_1",
+      "provider": "e5_jev",
+      "query": "해외 비자를 준비 중이야. 보유 자금을 증명하는 서류를 발급받고 여권 유효기간도 확인할래.",
+      "expected_ids": [
+        "kb_menu_0492",
+        "kb_menu_0476"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0476",
+        "kb_menu_0495"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_13_2",
+      "provider": "e5_jev",
+      "query": "내 상황을 설명할게. 해외 비자를 준비 중이야. 보유 자금을 증명하는 서류를 발급받고 여권 유효기간도 확인할래.",
+      "expected_ids": [
+        "kb_menu_0492",
+        "kb_menu_0476"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0476",
+        "kb_menu_0356"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_13_3",
+      "provider": "e5_jev",
+      "query": "해외 비자를 준비 중이야. 보유 자금을 증명하는 서류를 발급받고 여권 유효기간도 확인할래. 이 상황에 필요한 메뉴를 함께 보여줘.",
+      "expected_ids": [
+        "kb_menu_0492",
+        "kb_menu_0476"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0476"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_13_4",
+      "provider": "e5_jev",
+      "query": "은행 앱으로 다음 준비를 하고 싶어. 해외 비자를 준비 중이야. 보유 자금을 증명하는 서류를 발급받고 여권 유효기간도 확인할래.",
+      "expected_ids": [
+        "kb_menu_0492",
+        "kb_menu_0476"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0476",
+        "kb_menu_0495"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_13_5",
+      "provider": "e5_jev",
+      "query": "해외 비자를 준비 중이야. 보유 자금을 증명하는 서류를 발급받고 여권 유효기간도 확인할래. 요청하지 않은 업무는 추가하지 말아줘.",
+      "expected_ids": [
+        "kb_menu_0492",
+        "kb_menu_0476"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0476",
+        "kb_menu_0356"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_15_1",
+      "provider": "e5_jev",
+      "query": "오픈뱅킹 송금을 잘못 보냈어. 보낸 이체 내역을 보고 반환도 신청할래.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0519"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_15_2",
+      "provider": "e5_jev",
+      "query": "내 상황을 설명할게. 오픈뱅킹 송금을 잘못 보냈어. 보낸 이체 내역을 보고 반환도 신청할래.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0519"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_15_3",
+      "provider": "e5_jev",
+      "query": "오픈뱅킹 송금을 잘못 보냈어. 보낸 이체 내역을 보고 반환도 신청할래. 이 상황에 필요한 메뉴를 함께 보여줘.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0519"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_15_4",
+      "provider": "e5_jev",
+      "query": "은행 앱으로 다음 준비를 하고 싶어. 오픈뱅킹 송금을 잘못 보냈어. 보낸 이체 내역을 보고 반환도 신청할래.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0519"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_15_5",
+      "provider": "e5_jev",
+      "query": "오픈뱅킹 송금을 잘못 보냈어. 보낸 이체 내역을 보고 반환도 신청할래. 요청하지 않은 업무는 추가하지 말아줘.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0519"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    }
+  ],
+  "fresh": [
+    {
+      "case_id": "single_new_02",
+      "provider": "e5_jev",
+      "query": "이전에 신청한 환전을 확인하고 관리할 화면이 필요해요.",
+      "expected_ids": [
+        "kb_menu_0324"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [],
+      "status": "needs_clarification",
+      "score": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": [
+        {
+          "stage": "selection",
+          "needId": "request_1",
+          "reason": "unresolved_task",
+          "choice": "kb_menu_0324",
+          "confidence": 0.56
+        },
+        {
+          "stage": "selection",
+          "needId": "request_2",
+          "reason": "unresolved_task",
+          "choice": "unsure",
+          "confidence": 0.62
+        }
+      ]
+    },
+    {
+      "case_id": "single_new_08",
+      "provider": "llm_full_catalog",
+      "query": "하루에 송금 가능한 한도를 변경하는 곳을 찾습니다.",
+      "expected_ids": [
+        "kb_menu_0214"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0200"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "single_new_15",
+      "provider": "llm_full_catalog",
+      "query": "오픈뱅킹에서 잘못 송금한 돈의 반환을 신청할래요.",
+      "expected_ids": [
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0520"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "single_new_17",
+      "provider": "llm_full_catalog",
+      "query": "실손24에 접수해 둔 청구 내역을 확인할게요.",
+      "expected_ids": [
+        "kb_menu_0569"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0571"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "single_new_21",
+      "provider": "llm_full_catalog",
+      "query": "여권의 유효기간이 언제 끝나는지 확인하려고요.",
+      "expected_ids": [
+        "kb_menu_0476"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0386"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "single_new_23",
+      "provider": "llm_full_catalog",
+      "query": "원룸과 투룸 매물을 모아서 탐색할래요.",
+      "expected_ids": [
+        "kb_menu_0585"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0585",
+        "kb_menu_0584",
+        "kb_menu_0586"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "single_new_30",
+      "provider": "llm_full_catalog",
+      "query": "장학금과 학자금 지원 정보를 알아보려 합니다.",
+      "expected_ids": [
+        "kb_menu_0487"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0486",
+        "kb_menu_0487"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "multi_new_04",
+      "provider": "e5_jev",
+      "query": "매출 입금 현황도 필요하고 정책자금 지원도 알아보려 해요.",
+      "expected_ids": [
+        "kb_menu_0018",
+        "kb_menu_0017"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0017"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "multi_new_07",
+      "provider": "llm_full_catalog",
+      "query": "실손24 청구내역 확인 / 통장사본 발급을 할래요.",
+      "expected_ids": [
+        "kb_menu_0569",
+        "kb_menu_0493"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0570",
+        "kb_menu_0493"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "multi_new_08",
+      "provider": "llm_full_catalog",
+      "query": "보낸 이체 내역을 보고 오픈뱅킹 착오송금 반환도 신청할래요.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0341",
+        "kb_menu_0205"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "multi_new_08",
+      "provider": "e5_jev",
+      "query": "보낸 이체 내역을 보고 오픈뱅킹 착오송금 반환도 신청할래요.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0519"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "multi_new_10",
+      "provider": "llm_full_catalog",
+      "query": "휴양림 남은 자리 조회 그리고 휴양림 예약 화면을 찾습니다.",
+      "expected_ids": [
+        "kb_menu_0472",
+        "kb_menu_0383"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0472",
+        "kb_menu_0471"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "multi_new_12",
+      "provider": "llm_full_catalog",
+      "query": "KB Pay 여행 예약과 하루자동차보험을 준비하려 합니다.",
+      "expected_ids": [
+        "kb_menu_0604",
+        "kb_menu_0567"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0604",
+        "kb_menu_0579"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "multi_new_21",
+      "provider": "e5_jev",
+      "query": "자동이체 해지와 이체한도 변경, 연락처 송금을 모두 하고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0207",
+        "kb_menu_0214",
+        "kb_menu_0203"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0207",
+        "kb_menu_0203"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "multi_new_27",
+      "provider": "llm_full_catalog",
+      "query": "국민카드 분실을 풀고 자동이체 등록도 새로 하고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0555",
+        "kb_menu_0206"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0554",
+        "kb_menu_0206"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "multi_new_28",
+      "provider": "llm_full_catalog",
+      "query": "여권 만료일을 확인하고 아이 학생증 체크카드도 준비할래요.",
+      "expected_ids": [
+        "kb_menu_0476",
+        "kb_menu_0068"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0476",
+        "kb_menu_0066"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "situation_new_01",
+      "provider": "e5_jev",
+      "query": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+      "expected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0604"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_new_04",
+      "provider": "llm_full_catalog",
+      "query": "중국으로 휴가를 가는데 보험 가입은 끝났습니다. 나머지 기본 준비를 도와줘요.",
+      "expected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0413"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0420"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "situation_new_05",
+      "provider": "llm_full_catalog",
+      "query": "일본에 갈 예정이고 현지 현금은 이미 바꿨어요. 남은 기본 준비가 궁금해요.",
+      "expected_ids": [
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0413",
+        "kb_menu_0420",
+        "kb_menu_0604"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.3333333333333333,
+        "recall": 0.5,
+        "f1": 0.4,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "situation_new_06",
+      "provider": "llm_full_catalog",
+      "query": "해외여행을 가요. QR 결제 준비는 마쳤고 나머지 기본 준비를 할래요.",
+      "expected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0602"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0420"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "situation_new_09",
+      "provider": "e5_jev",
+      "query": "한국 안에서 기차 타고 여행할 거예요. 열차와 숙박을 예약하고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [],
+      "status": "needs_clarification",
+      "score": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_new_10",
+      "provider": "e5_jev",
+      "query": "새 가게를 열어서 매출 입금 상황을 살피고 정책 지원을 찾고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0018",
+        "kb_menu_0017"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0017"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_new_13",
+      "provider": "llm_full_catalog",
+      "query": "비자 때문에 은행 잔액을 서류로 증명하고 여권이 유효한지도 확인해야 해요.",
+      "expected_ids": [
+        "kb_menu_0492",
+        "kb_menu_0476"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0492",
+        "kb_menu_0385"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "situation_new_15",
+      "provider": "e5_jev",
+      "query": "정기적으로 집주인에게 나가던 돈을 이제 멈추고 싶습니다.",
+      "expected_ids": [
+        "kb_menu_0207"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [],
+      "status": "no_match",
+      "score": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_new_16",
+      "provider": "llm_full_catalog",
+      "query": "이사 잔금 송금 전에 이체 한도를 높이고 거래 내역도 확인하려 합니다.",
+      "expected_ids": [
+        "kb_menu_0214",
+        "kb_menu_0205"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0214",
+        "kb_menu_0200"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "situation_new_16",
+      "provider": "e5_jev",
+      "query": "이사 잔금 송금 전에 이체 한도를 높이고 거래 내역도 확인하려 합니다.",
+      "expected_ids": [
+        "kb_menu_0214",
+        "kb_menu_0205"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0214",
+        "kb_menu_0160"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_new_17",
+      "provider": "llm_full_catalog",
+      "query": "아이 학교생활에 쓸 학생증 카드와 장학금 지원 정보가 필요해요.",
+      "expected_ids": [
+        "kb_menu_0068",
+        "kb_menu_0487"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0066",
+        "kb_menu_0487"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "situation_new_18",
+      "provider": "e5_jev",
+      "query": "국민 신용카드를 분실했고 ATM에서 현금도 찾아야 하는 상황이에요.",
+      "expected_ids": [
+        "kb_menu_0554",
+        "kb_menu_0210"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0554"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_new_21",
+      "provider": "e5_jev",
+      "query": "휴양림에서 쉬고 싶어서 빈자리 확인과 예약을 같이 준비할래요.",
+      "expected_ids": [
+        "kb_menu_0472",
+        "kb_menu_0383"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0383"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_new_21",
+      "provider": "llm_full_catalog",
+      "query": "휴양림에서 쉬고 싶어서 빈자리 확인과 예약을 같이 준비할래요.",
+      "expected_ids": [
+        "kb_menu_0472",
+        "kb_menu_0383"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0471",
+        "kb_menu_0472"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "situation_new_22",
+      "provider": "llm_full_catalog",
+      "query": "처음 집을 빌려 살려고요. 원투룸 매물을 찾고 전세금 위험도 살펴볼래요.",
+      "expected_ids": [
+        "kb_menu_0585",
+        "kb_menu_0589"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0585",
+        "kb_menu_0590"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "situation_new_24",
+      "provider": "e5_jev",
+      "query": "가게 카드 매출이 들어올 계좌를 바꾸면서 입금 현황도 보고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0626",
+        "kb_menu_0018"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0626"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_new_29",
+      "provider": "e5_jev",
+      "query": "오픈뱅킹 송금을 잘못했어요. 내역 확인과 반환 신청을 도와줘요.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0519"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": []
+    },
+    {
+      "case_id": "situation_new_29",
+      "provider": "llm_full_catalog",
+      "query": "오픈뱅킹 송금을 잘못했어요. 내역 확인과 반환 신청을 도와줘요.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "selected_ids": [
+        "kb_menu_0521",
+        "kb_menu_0519"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "negative_new_06",
+      "provider": "llm_full_catalog",
+      "query": "돈 관련해서 뭔가 하려는데 정확히 뭘 할지는 모르겠어요.",
+      "expected_ids": [],
+      "expected_status": "needs_clarification",
+      "selected_ids": [
+        "kb_menu_0002",
+        "kb_menu_0003",
+        "kb_menu_0004"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    },
+    {
+      "case_id": "negative_new_10",
+      "provider": "llm_full_catalog",
+      "query": "금융 쪽으로 도와줘요. 구체적으로 정한 건 없어요.",
+      "expected_ids": [],
+      "expected_status": "needs_clarification",
+      "selected_ids": [
+        "kb_menu_0002",
+        "kb_menu_0003",
+        "kb_menu_0004"
+      ],
+      "status": "ready",
+      "score": {
+        "tp": 0,
+        "fp": 3,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      },
+      "reviews": null
+    }
+  ]
+}

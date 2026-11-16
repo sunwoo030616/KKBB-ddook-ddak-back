@@ -1,0 +1,1701 @@
+{
+  "complete": true,
+  "started_at": "2026-11-15T10:51:02.122224+00:00",
+  "updated_at": "2026-11-15T10:51:16.098372+00:00",
+  "freeze": {
+    "base_commit": "7ad187e1e7af4c080f0fb0fba9c92477d8f2100f",
+    "files": {
+      "scripts/semantic/situation_v2/development-12.json": "a4ee568d41e0db9c0c4f32114221642da4512a79b0ac1d3eca4a010ac213bc79",
+      "scripts/semantic/situation_v2/regression-300.json": "c899e88a067134e5b12b0a480d059be14cefdeb1c801603bd1b24c727a748c12",
+      "scripts/semantic/situation_v2/fresh-100.json": "019906200853889dfe3e667a383964dd95dfd9795348e8b70a6fb9920124985c",
+      "scripts/semantic/situation_v2/fresh-labels.tsv": "808672df3b54d96fc3c7249da00f8c20f95f3127d18e149299674ba88d9a4ac4",
+      "scripts/semantic/situation_v2/run.py": "00747f349d706b5a37b023449b8195c07ab702716735800fd7a999246719f587",
+      "scripts/semantic/situation_v2/metrics.py": "0d88d004b8ac0729d3934db71080ca8b61cc6fed6be85dc48765ec5c28b61602",
+      "scripts/semantic/situation_v2/common.py": "e43decd034b5aedba6ecc7c8b7b66017935efe10d4d086c3edc1a712c26e2c9b",
+      "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRecommendationService.java": "e3e6d1493d3461d40ae9126968f1e97cf124def2a0eb89d0626d52a65ad9d9f6",
+      "src/main/java/com/example/kb_ai_backend/service/SemanticMenuSelectionService.java": "50dba1326cbdac98af0ccbf9974cc3cd741b0c6edc827a463305605bba334549",
+      "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRetriever.java": "c05a6a7c8ac1949cbfba4847fc63842122c1091f61e9347ba5958656dd99f77f",
+      "src/main/java/com/example/kb_ai_backend/service/JevDecisionClient.java": "93d07415fdb0ebce70aed6f1ba27658cc20fbc094bd0f30f8e6318166e490934",
+      "src/main/java/com/example/kb_ai_backend/service/MenuCatalog.java": "662c4dd6c37aef8e46a2c307be47e3218e06a57f2e0cef694c164a7405642435",
+      "src/main/resources/kb_starbanking_menu_structure_cleaned.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+      "scripts/semantic/server.py": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+      "scripts/semantic/model_manifest.json": "b71365e9063e74f6c34cdeff16e9bd16c6323ba6a4677cba7cf500b5e986d614",
+      "docs/situation-v2/PROTOCOL.md": "7b25aafa0be7ef41c76efee597c0086a6ee8ad0a63d1fe3edfa9794e8915e195"
+    }
+  },
+  "planned_cases": 10,
+  "cases_path": "scripts/semantic/situation_v2/development-10.json",
+  "providers": [
+    "e5_jev"
+  ],
+  "models": {
+    "e5_jev": "jev-1.14.0",
+    "llm_full_catalog": "gpt-4o-mini-2024-07-18"
+  },
+  "repeats": 1,
+  "retries": 0,
+  "results": [
+    {
+      "case_id": "single_001",
+      "query": "내 상황에 맞는 금융상품을 추천받고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0002"
+      ],
+      "expected_status": "ready",
+      "split": "single_explicit",
+      "family_id": "recall300_001",
+      "label_source": "unchanged prior synthetic single-target label",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0002"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0002",
+            "name": "맞춤 금융상품 추천",
+            "description": "사용자에게 맞는 상품을 소개하는 영역.",
+            "select_when": [
+              "나에게 맞춘 금융상품 추천을 보고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "direct",
+          "need": "내 상황에 맞는 금융상품을 추천받고 싶어요.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 0.99,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 331,
+        "retrievalMs": 21,
+        "selectionMs": 319,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "direct": [
+          "kb_menu_0002",
+          "kb_menu_0310",
+          "kb_menu_0279",
+          "kb_menu_0187",
+          "kb_menu_0577",
+          "kb_menu_0313",
+          "kb_menu_0050",
+          "kb_menu_0049",
+          "kb_menu_0579",
+          "kb_menu_0309",
+          "kb_menu_0003",
+          "kb_menu_0028",
+          "kb_menu_0264",
+          "kb_menu_0308",
+          "kb_menu_0017",
+          "kb_menu_0287",
+          "kb_menu_0422",
+          "kb_menu_0307",
+          "kb_menu_0306",
+          "kb_menu_0175",
+          "kb_menu_0023",
+          "kb_menu_0314",
+          "kb_menu_0127",
+          "kb_menu_0584",
+          "kb_menu_0295",
+          "kb_menu_0134",
+          "kb_menu_0311",
+          "kb_menu_0052",
+          "kb_menu_0580",
+          "kb_menu_0266",
+          "kb_menu_0312",
+          "kb_menu_0138",
+          "kb_menu_0135",
+          "kb_menu_0291",
+          "kb_menu_0622",
+          "kb_menu_0025",
+          "kb_menu_0177",
+          "kb_menu_0088",
+          "kb_menu_0058",
+          "kb_menu_0004"
+        ]
+      },
+      "http_ms": 694.0140419999991,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2218,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 856,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 311.99779199999966
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "single_selection",
+          "request_payload_bytes": 11938,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 5088,
+            "output_tokens": 559
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 311.54449999999923
+        }
+      ],
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "single_002",
+      "query": "직장인이나 사장님 같은 키워드로 상품을 골라보고 싶어.",
+      "expected_ids": [
+        "kb_menu_0004"
+      ],
+      "expected_status": "ready",
+      "split": "single_explicit",
+      "family_id": "recall300_003",
+      "label_source": "unchanged prior synthetic single-target label",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0004"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0004",
+            "name": "검색 키워드",
+            "description": "직장인·세테크·우리아이 첫 통장 선물하기·사장님·노란우산 키워드.",
+            "select_when": [
+              "고객 특성이나 목적을 기준으로 상품을 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "direct",
+          "need": "직장인이나 사장님 같은 키워드로 상품을 골라보고 싶어.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 0.98,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 287,
+        "retrievalMs": 14,
+        "selectionMs": 255,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "direct": [
+          "kb_menu_0004",
+          "kb_menu_0003",
+          "kb_menu_0422",
+          "kb_menu_0287",
+          "kb_menu_0002",
+          "kb_menu_0311",
+          "kb_menu_0283",
+          "kb_menu_0624",
+          "kb_menu_0187",
+          "kb_menu_0618",
+          "kb_menu_0621",
+          "kb_menu_0310",
+          "kb_menu_0423",
+          "kb_menu_0279",
+          "kb_menu_0050",
+          "kb_menu_0307",
+          "kb_menu_0308",
+          "kb_menu_0306",
+          "kb_menu_0007",
+          "kb_menu_0006",
+          "kb_menu_0309",
+          "kb_menu_0127",
+          "kb_menu_0313",
+          "kb_menu_0288",
+          "kb_menu_0175",
+          "kb_menu_0083",
+          "kb_menu_0622",
+          "kb_menu_0049",
+          "kb_menu_0095",
+          "kb_menu_0577",
+          "kb_menu_0434",
+          "kb_menu_0128",
+          "kb_menu_0314",
+          "kb_menu_0579",
+          "kb_menu_0057",
+          "kb_menu_0023",
+          "kb_menu_0058",
+          "kb_menu_0016",
+          "kb_menu_0312",
+          "kb_menu_0072"
+        ]
+      },
+      "http_ms": 563.4600420000008,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2234,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 861,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 284.65616599999953
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "single_selection",
+          "request_payload_bytes": 12103,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 5138,
+            "output_tokens": 559
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 252.32987499999916
+        }
+      ],
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "single_079",
+      "query": "선착순 말고 휴양림 추첨에 신청할래.",
+      "expected_ids": [
+        "kb_menu_0470"
+      ],
+      "expected_status": "ready",
+      "split": "single_explicit",
+      "family_id": "recall300_211",
+      "label_source": "unchanged prior synthetic single-target label",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0470"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0470",
+            "name": "휴양림 추첨 신청",
+            "description": "휴양림 예약 화면의 추첨 신청 선택 항목.",
+            "select_when": [
+              "휴양림 추첨 신규 신청을 진행하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "direct",
+          "need": "선착순 말고 휴양림 추첨에 신청할래.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 238,
+        "retrievalMs": 15,
+        "selectionMs": 277,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "direct": [
+          "kb_menu_0383",
+          "kb_menu_0469",
+          "kb_menu_0470",
+          "kb_menu_0471",
+          "kb_menu_0473",
+          "kb_menu_0472",
+          "kb_menu_0474",
+          "kb_menu_0584",
+          "kb_menu_0185",
+          "kb_menu_0375",
+          "kb_menu_0101",
+          "kb_menu_0033",
+          "kb_menu_0183",
+          "kb_menu_0389",
+          "kb_menu_0097",
+          "kb_menu_0604",
+          "kb_menu_0017",
+          "kb_menu_0529",
+          "kb_menu_0583",
+          "kb_menu_0268",
+          "kb_menu_0174",
+          "kb_menu_0132",
+          "kb_menu_0176",
+          "kb_menu_0476",
+          "kb_menu_0618",
+          "kb_menu_0351",
+          "kb_menu_0269",
+          "kb_menu_0005",
+          "kb_menu_0190",
+          "kb_menu_0485",
+          "kb_menu_0309",
+          "kb_menu_0592",
+          "kb_menu_0279",
+          "kb_menu_0177",
+          "kb_menu_0245",
+          "kb_menu_0019",
+          "kb_menu_0138",
+          "kb_menu_0358",
+          "kb_menu_0423",
+          "kb_menu_0606"
+        ]
+      },
+      "http_ms": 538.26675,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2208,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 853,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 234.97933400000016
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "single_selection",
+          "request_payload_bytes": 12624,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 5276,
+            "output_tokens": 559
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 273.59529099999946
+        }
+      ],
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "multi_001",
+      "query": "내 상황에 맞는 금융상품을 추천받고 싶어요. 그리고 별개의 업무로, 현재 계좌가 아니라 해지한 골드나 실버 계좌 내역을 볼래. 요청한 업무를 모두 찾아줘.",
+      "expected_ids": [
+        "kb_menu_0002",
+        "kb_menu_0158"
+      ],
+      "expected_status": "ready",
+      "split": "explicit_multi",
+      "family_id": "combination_001",
+      "label_source": "two or three existing explicit requests combined before execution",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0002",
+        "kb_menu_0158"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0002",
+            "name": "맞춤 금융상품 추천",
+            "description": "사용자에게 맞는 상품을 소개하는 영역.",
+            "select_when": [
+              "나에게 맞춘 금융상품 추천을 보고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "request_1",
+          "need": "내 상황에 맞는 금융상품을 추천받고 싶어요.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0158",
+            "name": "골드/실버 해지계좌조회",
+            "description": "해지된 골드 관련 계좌 조회.",
+            "select_when": [
+              "이미 해지한 골드 실버 계좌 계좌 정보를 확인하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "request_2",
+          "need": "현재 계좌가 아니라 해지한 골드나 실버 계좌 내역을 볼래. 요청한 업무를 모두 찾아줘.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 314,
+        "retrievalMs": 32,
+        "selectionMs": 274,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "request_1": [
+          "kb_menu_0002",
+          "kb_menu_0310",
+          "kb_menu_0279",
+          "kb_menu_0187",
+          "kb_menu_0577",
+          "kb_menu_0313",
+          "kb_menu_0050",
+          "kb_menu_0049",
+          "kb_menu_0579",
+          "kb_menu_0309",
+          "kb_menu_0003",
+          "kb_menu_0028",
+          "kb_menu_0264",
+          "kb_menu_0308",
+          "kb_menu_0017",
+          "kb_menu_0287",
+          "kb_menu_0422",
+          "kb_menu_0307",
+          "kb_menu_0306",
+          "kb_menu_0175"
+        ],
+        "request_2": [
+          "kb_menu_0158",
+          "kb_menu_0149",
+          "kb_menu_0156",
+          "kb_menu_0159",
+          "kb_menu_0194",
+          "kb_menu_0019",
+          "kb_menu_0167",
+          "kb_menu_0344",
+          "kb_menu_0311",
+          "kb_menu_0254",
+          "kb_menu_0324",
+          "kb_menu_0166",
+          "kb_menu_0111",
+          "kb_menu_0340",
+          "kb_menu_0155",
+          "kb_menu_0049",
+          "kb_menu_0422",
+          "kb_menu_0147",
+          "kb_menu_0619",
+          "kb_menu_0247"
+        ]
+      },
+      "http_ms": 637.5055000000013,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2366,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 896,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 310.75491700000055
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 13011,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 5398,
+            "output_tokens": 613
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 269.807084
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "multi_005",
+      "query": "KB청년미래적금 상품 내용을 확인할래. 그리고 별개의 업무로, 친구들과 쓸 모임통장을 등록하려고 해. 요청한 업무를 모두 찾아줘.",
+      "expected_ids": [
+        "kb_menu_0012",
+        "kb_menu_0171"
+      ],
+      "expected_status": "ready",
+      "split": "explicit_multi",
+      "family_id": "combination_005",
+      "label_source": "two or three existing explicit requests combined before execution",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0012",
+        "kb_menu_0171"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0012",
+            "name": "KB청년미래적금",
+            "description": "청년의 미래 준비를 위한 적금.",
+            "select_when": [
+              "청년 대상 적금을 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "request_1",
+          "need": "KB청년미래적금 상품 내용을 확인할래.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0171",
+            "name": "모임통장 등록",
+            "description": "우리집 모임통장을 등록하는 버튼.",
+            "select_when": [
+              "모임통장 신규 등록을 진행하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "request_2",
+          "need": "친구들과 쓸 모임통장을 등록하려고 해. 요청한 업무를 모두 찾아줘.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 321,
+        "retrievalMs": 28,
+        "selectionMs": 257,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "request_1": [
+          "kb_menu_0012",
+          "kb_menu_0016",
+          "kb_menu_0423",
+          "kb_menu_0011",
+          "kb_menu_0422",
+          "kb_menu_0534",
+          "kb_menu_0533",
+          "kb_menu_0160",
+          "kb_menu_0604",
+          "kb_menu_0571",
+          "kb_menu_0577",
+          "kb_menu_0159",
+          "kb_menu_0122",
+          "kb_menu_0030",
+          "kb_menu_0536",
+          "kb_menu_0529",
+          "kb_menu_0486",
+          "kb_menu_0010",
+          "kb_menu_0535",
+          "kb_menu_0078"
+        ],
+        "request_2": [
+          "kb_menu_0171",
+          "kb_menu_0224",
+          "kb_menu_0423",
+          "kb_menu_0167",
+          "kb_menu_0624",
+          "kb_menu_0583",
+          "kb_menu_0225",
+          "kb_menu_0164",
+          "kb_menu_0529",
+          "kb_menu_0177",
+          "kb_menu_0618",
+          "kb_menu_0375",
+          "kb_menu_0005",
+          "kb_menu_0185",
+          "kb_menu_0052",
+          "kb_menu_0184",
+          "kb_menu_0484",
+          "kb_menu_0352",
+          "kb_menu_0531",
+          "kb_menu_0604"
+        ]
+      },
+      "http_ms": 612.1152090000006,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2332,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 888,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 318.8245419999998
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 12749,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 5316,
+            "output_tokens": 613
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 253.6162080000004
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "multi_051",
+      "query": "출금에 쓰는 계좌를 추가하거나 관리할래. 순서만 바꾸려는 건 아니야. 그리고 별개의 업무로, 오늘 기록만 말고 달리자에 쌓인 내 기록을 볼래. 그리고 별개의 업무로, 신탁형 말고 일임형 ISA 상품을 알아볼래. 요청한 업무를 모두 찾아줘.",
+      "expected_ids": [
+        "kb_menu_0215",
+        "kb_menu_0439",
+        "kb_menu_0107"
+      ],
+      "expected_status": "ready",
+      "split": "explicit_multi",
+      "family_id": "combination_051",
+      "label_source": "two or three existing explicit requests combined before execution",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0215",
+        "kb_menu_0439",
+        "kb_menu_0107"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0215",
+            "name": "출금계좌 등록/관리",
+            "description": "이체용 출금계좌 등록과 관리.",
+            "select_when": [
+              "이체에 쓸 출금계좌를 등록하거나 관리할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "request_1",
+          "need": "출금에 쓰는 계좌를 추가하거나 관리할래. 순서만 바꾸려는 건 아니야.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 0.96,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0439",
+            "name": "달리자 내 기록 보기",
+            "description": "오늘의 기록 영역에 표시된 내 기록 보기 버튼.",
+            "select_when": [
+              "달리자에서 내 기록 보기 메뉴를 열 때"
+            ],
+            "aliases": []
+          },
+          "needId": "request_2",
+          "need": "오늘 기록만 말고 달리자에 쌓인 내 기록을 볼래.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0107",
+            "name": "일임형 ISA",
+            "description": "선택한 포트폴리오를 투자전문가가 운용하는 유형.",
+            "select_when": [
+              "전문가가 운용하는 ISA 유형의 가입을 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "request_3",
+          "need": "신탁형 말고 일임형 ISA 상품을 알아볼래. 요청한 업무를 모두 찾아줘.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 0.84,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 238,
+        "retrievalMs": 40,
+        "selectionMs": 366,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "request_1": [
+          "kb_menu_0217",
+          "kb_menu_0215",
+          "kb_menu_0216",
+          "kb_menu_0166",
+          "kb_menu_0200",
+          "kb_menu_0218",
+          "kb_menu_0425",
+          "kb_menu_0191",
+          "kb_menu_0213",
+          "kb_menu_0224",
+          "kb_menu_0626",
+          "kb_menu_0422",
+          "kb_menu_0163",
+          "kb_menu_0221",
+          "kb_menu_0177",
+          "kb_menu_0210",
+          "kb_menu_0197",
+          "kb_menu_0207",
+          "kb_menu_0196",
+          "kb_menu_0424"
+        ],
+        "request_2": [
+          "kb_menu_0438",
+          "kb_menu_0439",
+          "kb_menu_0443",
+          "kb_menu_0442",
+          "kb_menu_0441",
+          "kb_menu_0445",
+          "kb_menu_0446",
+          "kb_menu_0440",
+          "kb_menu_0444",
+          "kb_menu_0309",
+          "kb_menu_0310",
+          "kb_menu_0377",
+          "kb_menu_0291",
+          "kb_menu_0358",
+          "kb_menu_0371",
+          "kb_menu_0273",
+          "kb_menu_0271",
+          "kb_menu_0259",
+          "kb_menu_0096",
+          "kb_menu_0292"
+        ],
+        "request_3": [
+          "kb_menu_0108",
+          "kb_menu_0110",
+          "kb_menu_0109",
+          "kb_menu_0107",
+          "kb_menu_0111",
+          "kb_menu_0097",
+          "kb_menu_0139",
+          "kb_menu_0141",
+          "kb_menu_0106",
+          "kb_menu_0007",
+          "kb_menu_0080",
+          "kb_menu_0146",
+          "kb_menu_0279",
+          "kb_menu_0140",
+          "kb_menu_0144",
+          "kb_menu_0004",
+          "kb_menu_0283",
+          "kb_menu_0187",
+          "kb_menu_0147",
+          "kb_menu_0143"
+        ]
+      },
+      "http_ms": 651.1082090000002,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2473,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 931,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 234.65958400000096
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 18914,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 7828,
+            "output_tokens": 918
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 363.0984589999997
+        }
+      ],
+      "score": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "multi_090",
+      "query": "제출할 예금잔액증명서를 발급받고 싶어. 그리고 별개의 업무로, DB손해보험 스마트 퇴직연금 이율보증형보험 3년 상품을 찾아요. 그리고 별개의 업무로, 내 자산이 어떤 종류로 구성돼 있는지 보고 싶어. 요청한 업무를 모두 찾아줘.",
+      "expected_ids": [
+        "kb_menu_0492",
+        "kb_menu_0079",
+        "kb_menu_0259"
+      ],
+      "expected_status": "ready",
+      "split": "explicit_multi",
+      "family_id": "combination_090",
+      "label_source": "two or three existing explicit requests combined before execution",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0492",
+        "kb_menu_0079",
+        "kb_menu_0259"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0492",
+            "name": "예금잔액증명서 발급",
+            "description": "자주 찾는 금융거래 증명서의 예금잔액증명서 발급 링크.",
+            "select_when": [
+              "예금잔액증명서 발급을 시작할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "request_1",
+          "need": "제출할 예금잔액증명서를 발급받고 싶어.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0079",
+            "name": "DB손해보험 무배당 스마트 퇴직연금 이율보증형보험 3년",
+            "description": "캡처에서 원리금보장으로 분류된 이율보증형보험 상품. 상품명: DB손해보험 무배당 스마트 퇴직연금 이율보증형보험 3년.",
+            "select_when": [
+              "DB손해보험 무배당 스마트 퇴직연금 이율보증형보험 3년 상품을 지정하여 상세 정보를 찾을 때. 다른 보험사나 다른 이름의 상품과 구분한다."
+            ],
+            "aliases": []
+          },
+          "needId": "request_2",
+          "need": "DB손해보험 스마트 퇴직연금 이율보증형보험 3년 상품을 찾아요.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0259",
+            "name": "자산구성 보기",
+            "description": "나의 총자산 카드의 자산구성 보기 버튼.",
+            "select_when": [
+              "총자산의 구성 내역을 보려 할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "request_3",
+          "need": "내 자산이 어떤 종류로 구성돼 있는지 보고 싶어. 요청한 업무를 모두 찾아줘.",
+          "basis": "explicit",
+          "explanation": "요청한 업무",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 343,
+        "retrievalMs": 39,
+        "selectionMs": 298,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "request_1": [
+          "kb_menu_0492",
+          "kb_menu_0495",
+          "kb_menu_0427",
+          "kb_menu_0497",
+          "kb_menu_0494",
+          "kb_menu_0356",
+          "kb_menu_0500",
+          "kb_menu_0498",
+          "kb_menu_0021",
+          "kb_menu_0035",
+          "kb_menu_0310",
+          "kb_menu_0618",
+          "kb_menu_0423",
+          "kb_menu_0422",
+          "kb_menu_0224",
+          "kb_menu_0344",
+          "kb_menu_0068",
+          "kb_menu_0138",
+          "kb_menu_0026",
+          "kb_menu_0165"
+        ],
+        "request_2": [
+          "kb_menu_0079",
+          "kb_menu_0078",
+          "kb_menu_0080",
+          "kb_menu_0076",
+          "kb_menu_0077",
+          "kb_menu_0127",
+          "kb_menu_0075",
+          "kb_menu_0072",
+          "kb_menu_0187",
+          "kb_menu_0304",
+          "kb_menu_0175",
+          "kb_menu_0137",
+          "kb_menu_0069",
+          "kb_menu_0128",
+          "kb_menu_0132",
+          "kb_menu_0291",
+          "kb_menu_0422",
+          "kb_menu_0310",
+          "kb_menu_0035",
+          "kb_menu_0564"
+        ],
+        "request_3": [
+          "kb_menu_0311",
+          "kb_menu_0310",
+          "kb_menu_0422",
+          "kb_menu_0259",
+          "kb_menu_0313",
+          "kb_menu_0187",
+          "kb_menu_0307",
+          "kb_menu_0291",
+          "kb_menu_0263",
+          "kb_menu_0278",
+          "kb_menu_0247",
+          "kb_menu_0252",
+          "kb_menu_0624",
+          "kb_menu_0260",
+          "kb_menu_0261",
+          "kb_menu_0629",
+          "kb_menu_0309",
+          "kb_menu_0002",
+          "kb_menu_0423",
+          "kb_menu_0004"
+        ]
+      },
+      "http_ms": 686.6054170000009,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2465,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 928,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 340.0025409999987
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 20488,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 8404,
+            "output_tokens": 918
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 295.12420800000075
+        }
+      ],
+      "score": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "situation_01_1",
+      "query": "일본 여행 가고 싶어. 은행 앱에서 준비할 것을 알려줘.",
+      "expected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      "expected_status": "ready",
+      "split": "situation_bundle",
+      "family_id": "situation_family_01",
+      "label_source": "product-policy bundle or explicit outcomes in a situation; 20 families x 5 wording variants; not independent intents",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0323",
+            "name": "환전신청",
+            "description": "KB환전서비스에서 환전하기로 진행하는 화면.",
+            "select_when": [
+              "환전 신규 신청을 진행하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "foreign_exchange",
+          "need": "환전신청",
+          "basis": "suggested",
+          "explanation": "상황 정책에 따른 제안",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0413",
+            "name": "해외 QR 결제",
+            "description": "사용자가 알려준 해외결제의 QR 항목.",
+            "select_when": [
+              "해외 QR 결제를 이용하려 할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "foreign_payment",
+          "need": "해외 QR 결제",
+          "basis": "suggested",
+          "explanation": "상황 정책에 따른 제안",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0602",
+            "name": "KB손해보험 다이렉트 해외여행보험",
+            "description": "여행 준비 영역의 해외여행보험 상품 안내.",
+            "select_when": [
+              "KB손해보험 다이렉트 해외여행보험을 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "travel_insurance",
+          "need": "KB손해보험 다이렉트 해외여행보험",
+          "basis": "suggested",
+          "explanation": "상황 정책에 따른 제안",
+          "menuConfidence": 0.98,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 285,
+        "retrievalMs": 26,
+        "selectionMs": 364,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "foreign_exchange": [
+          "kb_menu_0323",
+          "kb_menu_0420",
+          "kb_menu_0421",
+          "kb_menu_0326",
+          "kb_menu_0329",
+          "kb_menu_0324",
+          "kb_menu_0332",
+          "kb_menu_0331",
+          "kb_menu_0316",
+          "kb_menu_0325",
+          "kb_menu_0327",
+          "kb_menu_0317"
+        ],
+        "foreign_payment": [
+          "kb_menu_0413",
+          "kb_menu_0410",
+          "kb_menu_0211",
+          "kb_menu_0355",
+          "kb_menu_0343",
+          "kb_menu_0333",
+          "kb_menu_0334",
+          "kb_menu_0608",
+          "kb_menu_0345",
+          "kb_menu_0344",
+          "kb_menu_0415",
+          "kb_menu_0341"
+        ],
+        "travel_insurance": [
+          "kb_menu_0602",
+          "kb_menu_0566",
+          "kb_menu_0565",
+          "kb_menu_0570",
+          "kb_menu_0078",
+          "kb_menu_0575",
+          "kb_menu_0604",
+          "kb_menu_0571",
+          "kb_menu_0132",
+          "kb_menu_0162",
+          "kb_menu_0572",
+          "kb_menu_0134"
+        ]
+      },
+      "http_ms": 683.1714159999987,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2231,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 858,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 282.65420800000027
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 12230,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 5092,
+            "output_tokens": 605
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 361.72350000000006
+        }
+      ],
+      "score": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "situation_04_1",
+      "query": "일본 여행 준비 중인데 보험은 이미 가입했어. 현금과 현지 QR 결제 준비는 아직이야.",
+      "expected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0413"
+      ],
+      "expected_status": "ready",
+      "split": "situation_bundle",
+      "family_id": "situation_family_04",
+      "label_source": "product-policy bundle or explicit outcomes in a situation; 20 families x 5 wording variants; not independent intents",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0413"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0323",
+            "name": "환전신청",
+            "description": "KB환전서비스에서 환전하기로 진행하는 화면.",
+            "select_when": [
+              "환전 신규 신청을 진행하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "foreign_exchange",
+          "need": "환전신청",
+          "basis": "suggested",
+          "explanation": "상황 정책에 따른 제안",
+          "menuConfidence": 0.99,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0413",
+            "name": "해외 QR 결제",
+            "description": "사용자가 알려준 해외결제의 QR 항목.",
+            "select_when": [
+              "해외 QR 결제를 이용하려 할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "foreign_payment",
+          "need": "해외 QR 결제",
+          "basis": "suggested",
+          "explanation": "상황 정책에 따른 제안",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 262,
+        "retrievalMs": 25,
+        "selectionMs": 378,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "foreign_exchange": [
+          "kb_menu_0323",
+          "kb_menu_0420",
+          "kb_menu_0421",
+          "kb_menu_0326",
+          "kb_menu_0329",
+          "kb_menu_0324",
+          "kb_menu_0332",
+          "kb_menu_0331",
+          "kb_menu_0316",
+          "kb_menu_0325",
+          "kb_menu_0327",
+          "kb_menu_0317"
+        ],
+        "foreign_payment": [
+          "kb_menu_0413",
+          "kb_menu_0410",
+          "kb_menu_0211",
+          "kb_menu_0355",
+          "kb_menu_0343",
+          "kb_menu_0333",
+          "kb_menu_0334",
+          "kb_menu_0608",
+          "kb_menu_0345",
+          "kb_menu_0344",
+          "kb_menu_0415",
+          "kb_menu_0341"
+        ],
+        "travel_insurance": [
+          "kb_menu_0602",
+          "kb_menu_0566",
+          "kb_menu_0565",
+          "kb_menu_0570",
+          "kb_menu_0078",
+          "kb_menu_0575",
+          "kb_menu_0604",
+          "kb_menu_0571",
+          "kb_menu_0132",
+          "kb_menu_0162",
+          "kb_menu_0572",
+          "kb_menu_0134"
+        ]
+      },
+      "http_ms": 672.9514170000002,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2270,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 869,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 259.4261670000009
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 12269,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 5103,
+            "output_tokens": 599
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 376.14508299999903
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "situation_18_1",
+      "query": "해외여행 환전과 보험은 끝냈고 QR도 준비했어. 이번에는 로밍과 여권 만료일 확인만 할래.",
+      "expected_ids": [
+        "kb_menu_0612",
+        "kb_menu_0476"
+      ],
+      "expected_status": "ready",
+      "split": "situation_bundle",
+      "family_id": "situation_family_18",
+      "label_source": "product-policy bundle or explicit outcomes in a situation; 20 families x 5 wording variants; not independent intents",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "needs_clarification",
+      "selected_ids": [],
+      "recommendations": [],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 501,
+        "retrievalMs": 27,
+        "selectionMs": 253,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "foreign_exchange": [
+          "kb_menu_0323",
+          "kb_menu_0420",
+          "kb_menu_0421",
+          "kb_menu_0326",
+          "kb_menu_0329",
+          "kb_menu_0324",
+          "kb_menu_0332",
+          "kb_menu_0331",
+          "kb_menu_0316",
+          "kb_menu_0325",
+          "kb_menu_0327",
+          "kb_menu_0317"
+        ],
+        "foreign_payment": [
+          "kb_menu_0413",
+          "kb_menu_0410",
+          "kb_menu_0211",
+          "kb_menu_0355",
+          "kb_menu_0343",
+          "kb_menu_0333",
+          "kb_menu_0334",
+          "kb_menu_0608",
+          "kb_menu_0345",
+          "kb_menu_0344",
+          "kb_menu_0415",
+          "kb_menu_0341"
+        ],
+        "travel_insurance": [
+          "kb_menu_0602",
+          "kb_menu_0566",
+          "kb_menu_0565",
+          "kb_menu_0570",
+          "kb_menu_0078",
+          "kb_menu_0575",
+          "kb_menu_0604",
+          "kb_menu_0571",
+          "kb_menu_0132",
+          "kb_menu_0162",
+          "kb_menu_0572",
+          "kb_menu_0134"
+        ]
+      },
+      "http_ms": 788.6485830000005,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2278,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 876,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 498.19345800000116
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 12277,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 5110,
+            "output_tokens": 587
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 250.60708299999845
+        }
+      ],
+      "score": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      }
+    }
+  ],
+  "summary": {
+    "e5_jev": {
+      "cases": 10,
+      "positive_cases": 10,
+      "negative_cases": 0,
+      "errors": 0,
+      "menu_exact_correct": 9,
+      "menu_exact_accuracy": 0.9,
+      "status_and_menu_correct": 9,
+      "status_and_menu_accuracy": 0.9,
+      "macro_precision": 0.9,
+      "macro_recall": 0.9,
+      "macro_f1": 0.9,
+      "micro_precision": 1.0,
+      "micro_recall": 0.9,
+      "micro_f1": 0.9473684210526315,
+      "true_positive_menus": 18,
+      "extra_menus": 0,
+      "missing_menus": 2,
+      "cases_with_extra_menus": 0,
+      "cases_with_missing_menus": 1,
+      "mean_http_ms": 652.7846585000002,
+      "median_http_ms": 662.0298130000002,
+      "p95_http_ms": 788.6485830000005,
+      "actual_upstream_calls": 20,
+      "tokens": {
+        "input": {
+          "observed_calls": 20,
+          "sum": 66569,
+          "mean_per_case": 6656.9
+        },
+        "output": {
+          "observed_calls": 20,
+          "sum": 7310,
+          "mean_per_case": 731.0
+        },
+        "cached_input": {
+          "observed_calls": 0,
+          "sum": null,
+          "mean_per_case": null
+        }
+      },
+      "statuses": {
+        "needs_clarification": 1,
+        "ready": 9
+      }
+    }
+  },
+  "by_split": {
+    "e5_jev": {
+      "explicit_multi": {
+        "cases": 4,
+        "positive_cases": 4,
+        "negative_cases": 0,
+        "errors": 0,
+        "menu_exact_correct": 4,
+        "menu_exact_accuracy": 1.0,
+        "status_and_menu_correct": 4,
+        "status_and_menu_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "true_positive_menus": 10,
+        "extra_menus": 0,
+        "missing_menus": 0,
+        "cases_with_extra_menus": 0,
+        "cases_with_missing_menus": 0,
+        "mean_http_ms": 646.8335837500008,
+        "median_http_ms": 644.3068545000008,
+        "p95_http_ms": 686.6054170000009,
+        "actual_upstream_calls": 8,
+        "tokens": {
+          "input": {
+            "observed_calls": 8,
+            "sum": 30589,
+            "mean_per_case": 7647.25
+          },
+          "output": {
+            "observed_calls": 8,
+            "sum": 3374,
+            "mean_per_case": 843.5
+          },
+          "cached_input": {
+            "observed_calls": 0,
+            "sum": null,
+            "mean_per_case": null
+          }
+        },
+        "statuses": {
+          "ready": 4
+        }
+      },
+      "single_explicit": {
+        "cases": 3,
+        "positive_cases": 3,
+        "negative_cases": 0,
+        "errors": 0,
+        "menu_exact_correct": 3,
+        "menu_exact_accuracy": 1.0,
+        "status_and_menu_correct": 3,
+        "status_and_menu_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "true_positive_menus": 3,
+        "extra_menus": 0,
+        "missing_menus": 0,
+        "cases_with_extra_menus": 0,
+        "cases_with_missing_menus": 0,
+        "mean_http_ms": 598.580278,
+        "median_http_ms": 563.4600420000008,
+        "p95_http_ms": 694.0140419999991,
+        "actual_upstream_calls": 6,
+        "tokens": {
+          "input": {
+            "observed_calls": 6,
+            "sum": 18072,
+            "mean_per_case": 6024.0
+          },
+          "output": {
+            "observed_calls": 6,
+            "sum": 1911,
+            "mean_per_case": 637.0
+          },
+          "cached_input": {
+            "observed_calls": 0,
+            "sum": null,
+            "mean_per_case": null
+          }
+        },
+        "statuses": {
+          "ready": 3
+        }
+      },
+      "situation_bundle": {
+        "cases": 3,
+        "positive_cases": 3,
+        "negative_cases": 0,
+        "errors": 0,
+        "menu_exact_correct": 2,
+        "menu_exact_accuracy": 0.6666666666666666,
+        "status_and_menu_correct": 2,
+        "status_and_menu_accuracy": 0.6666666666666666,
+        "macro_precision": 0.6666666666666666,
+        "macro_recall": 0.6666666666666666,
+        "macro_f1": 0.6666666666666666,
+        "micro_precision": 1.0,
+        "micro_recall": 0.7142857142857143,
+        "micro_f1": 0.8333333333333334,
+        "true_positive_menus": 5,
+        "extra_menus": 0,
+        "missing_menus": 2,
+        "cases_with_extra_menus": 0,
+        "cases_with_missing_menus": 1,
+        "mean_http_ms": 714.9238053333331,
+        "median_http_ms": 683.1714159999987,
+        "p95_http_ms": 788.6485830000005,
+        "actual_upstream_calls": 6,
+        "tokens": {
+          "input": {
+            "observed_calls": 6,
+            "sum": 17908,
+            "mean_per_case": 5969.333333333333
+          },
+          "output": {
+            "observed_calls": 6,
+            "sum": 2025,
+            "mean_per_case": 675.0
+          },
+          "cached_input": {
+            "observed_calls": 0,
+            "sum": null,
+            "mean_per_case": null
+          }
+        },
+        "statuses": {
+          "needs_clarification": 1,
+          "ready": 2
+        }
+      }
+    }
+  }
+}

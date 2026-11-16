@@ -1,0 +1,44 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-15T19:51:08.084+09:00  INFO 49227 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : Starting KbAiBackendApplication using Java 26.0.1 with PID 49227 (/private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-f7frh9io/target/classes started by seonwoo-choi in /private/var/folders/l0/0fnp3wtj5pj0mt4d6t1y0p500000gn/T/kkbb-situation-comparison-f7frh9io)
+2026-11-15T19:51:08.085+09:00  INFO 49227 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : The following 1 profile is active: "default"
+2026-11-15T19:51:08.402+09:00  INFO 49227 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-15T19:51:08.403+09:00  INFO 49227 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-15T19:51:08.418+09:00  INFO 49227 --- [kb-ai-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2026-11-15T19:51:08.579+09:00  INFO 49227 --- [kb-ai-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 18502 (http)
+2026-11-15T19:51:08.584+09:00  INFO 49227 --- [kb-ai-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-15T19:51:08.584+09:00  INFO 49227 --- [kb-ai-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-15T19:51:08.602+09:00  INFO 49227 --- [kb-ai-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-15T19:51:08.602+09:00  INFO 49227 --- [kb-ai-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 502 ms
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::allocateMemory has been called by io.netty.util.internal.PlatformDependent0$2 (file:/Users/seonwoo-choi/.m2/repository/io/netty/netty-common/4.1.135.Final/netty-common-4.1.135.Final.jar)
+WARNING: Please consider reporting this to the maintainers of class io.netty.util.internal.PlatformDependent0$2
+WARNING: sun.misc.Unsafe::allocateMemory will be removed in a future release
+2026-11-15T19:51:09.063+09:00  INFO 49227 --- [kb-ai-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 18502 (http) with context path '/'
+2026-11-15T19:51:09.070+09:00  INFO 49227 --- [kb-ai-backend] [           main] c.e.k.KbAiBackendApplication             : Started KbAiBackendApplication in 1.125 seconds (process running for 1.235)
+2026-11-15T19:51:09.071+09:00  WARN 49227 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-15T19:51:09.071+09:00  WARN 49227 --- [kb-ai-backend] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-15T19:51:09.394+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-15T19:51:09.394+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-15T19:51:09.395+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-11-15T19:51:09.530+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 118 ms
+2026-11-15T19:51:10.238+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-5] c.e.k.config.RequestTimingFilter         : performance requestId=688eb657-ce94-4530-b8a2-1b2dcc728ac5 stage=request durationMs=692 status=200 completed=true
+2026-11-15T19:51:10.803+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-2] c.e.k.config.RequestTimingFilter         : performance requestId=6510d100-cea7-4817-ab53-cf49fe0018b2 stage=request durationMs=561 status=200 completed=true
+2026-11-15T19:51:11.343+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-6] c.e.k.config.RequestTimingFilter         : performance requestId=31920aa3-a915-4e35-8c14-499011da433f stage=request durationMs=535 status=200 completed=true
+2026-11-15T19:51:11.983+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-7] c.e.k.config.RequestTimingFilter         : performance requestId=ec14281e-8c85-45da-92d9-739944337e3e stage=request durationMs=635 status=200 completed=true
+2026-11-15T19:51:12.596+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-3] c.e.k.config.RequestTimingFilter         : performance requestId=0de5673c-ec4a-462e-99ae-bb0dd4450b1e stage=request durationMs=610 status=200 completed=true
+2026-11-15T19:51:13.250+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-8] c.e.k.config.RequestTimingFilter         : performance requestId=a6d7fd23-3515-41df-ad14-5543c18baf04 stage=request durationMs=648 status=200 completed=true
+2026-11-15T19:51:13.939+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-4] c.e.k.config.RequestTimingFilter         : performance requestId=8992e86a-fd3a-4e04-9629-79fbb774cc03 stage=request durationMs=683 status=200 completed=true
+2026-11-15T19:51:14.625+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-9] c.e.k.config.RequestTimingFilter         : performance requestId=9bb0d8bf-42f4-480a-9a8f-b52a0bc150ee stage=request durationMs=680 status=200 completed=true
+2026-11-15T19:51:15.301+09:00  INFO 49227 --- [kb-ai-backend] [1-18502-exec-10] c.e.k.config.RequestTimingFilter         : performance requestId=9994d870-2b88-43f3-960b-22ae769c36b8 stage=request durationMs=670 status=200 completed=true
+2026-11-15T19:51:16.094+09:00  INFO 49227 --- [kb-ai-backend] [.1-18502-exec-1] c.e.k.config.RequestTimingFilter         : performance requestId=43ec3693-a449-4cb4-a581-a071cfae7d5d stage=request durationMs=785 status=200 completed=true
+2026-11-15T19:51:16.145+09:00  INFO 49227 --- [kb-ai-backend] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-15T19:51:16.147+09:00  INFO 49227 --- [kb-ai-backend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

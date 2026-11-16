@@ -1,0 +1,65 @@
+{
+  "holdout": {
+    "included_calls": 198,
+    "excluded_http429_calls": 0,
+    "excluded_calls_with_returned_usage": 0,
+    "provider_usage": {
+      "e5_jev": {
+        "input": {
+          "observed_sum": 713426,
+          "observed_calls": 98,
+          "missing_usage_calls": 0
+        },
+        "output": {
+          "observed_sum": 82644,
+          "observed_calls": 98,
+          "missing_usage_calls": 0
+        }
+      },
+      "llm_task_planner": {
+        "input": {
+          "observed_sum": 1725629,
+          "observed_calls": 100,
+          "missing_usage_calls": 0
+        },
+        "output": {
+          "observed_sum": 8763,
+          "observed_calls": 100,
+          "missing_usage_calls": 0
+        }
+      }
+    }
+  },
+  "regression": {
+    "included_calls": 36,
+    "excluded_http429_calls": 6,
+    "excluded_calls_with_returned_usage": 0,
+    "provider_usage": {
+      "e5_jev": {
+        "input": {
+          "observed_sum": 54583,
+          "observed_calls": 18,
+          "missing_usage_calls": 0
+        },
+        "output": {
+          "observed_sum": 6154,
+          "observed_calls": 18,
+          "missing_usage_calls": 0
+        }
+      },
+      "llm_task_planner": {
+        "input": {
+          "observed_sum": 310300,
+          "observed_calls": 18,
+          "missing_usage_calls": 0
+        },
+        "output": {
+          "observed_sum": 835,
+          "observed_calls": 18,
+          "missing_usage_calls": 0
+        }
+      }
+    }
+  },
+  "policy": "Per user instruction, HTTP 429 attempts are excluded from final comparison token totals. Their actual attempt logs remain separate. Missing usage is unknown, not zero. Retry usage will be included when execution becomes possible."
+}

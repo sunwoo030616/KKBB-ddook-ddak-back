@@ -1,0 +1,2 @@
+Actual E5 and multi-menu backend ready; one Japan development smoke query; no retries
+{"status": "ready", "menus": [["kb_menu_0323", "환전신청"], ["kb_menu_0413", "해외 QR 결제"], ["kb_menu_0602", "KB손해보험 다이렉트 해외여행보험"]], "metrics": {"retrievalMode": "semantic_only", "planningMs": 579, "retrievalMs": 30, "selectionMs": 290, "jevCalls": 2}}

@@ -1,0 +1,4318 @@
+{
+  "complete": true,
+  "started_at": "2026-11-15T11:26:31.807558+00:00",
+  "updated_at": "2026-11-15T11:27:00.317734+00:00",
+  "freeze": {
+    "base_commit": "3d9801326fc727e9005e8d7a0f6f52fc20346516",
+    "files": {
+      "src/main/java/com/example/kb_ai_backend/service/AiProviderCircuit.java": "56af4bf6e21917f5a5d19aaf03b6c5735e74644e5fedc2b0d7d4fd97b9082958",
+      "src/main/java/com/example/kb_ai_backend/service/AiRequestRedactor.java": "5bddbcc1cefae4c8234f37a1fecefb97a4ee1a6ab94098ca0a84e66997425947",
+      "src/main/java/com/example/kb_ai_backend/service/CanvasParameters.java": "4270ab6971c672c053da312b4ea7f8f17ab5ad364489e849976d445b99f4f708",
+      "src/main/java/com/example/kb_ai_backend/service/ExchangeRateService.java": "6da70c4e8dad9b5211dba0fbeca212897a5bd7f9d977f7ab362ae84efcdb76a7",
+      "src/main/java/com/example/kb_ai_backend/service/GeneralMenuRecommendationService.java": "c0a8a595af09bb322da98767b83ef9235596889cdc96cf07642a5ff29e7387e0",
+      "src/main/java/com/example/kb_ai_backend/service/JevCanvasService.java": "59b9a04853e22fdd4966ccaa7dbac3e65252ece83b9562a3e27cdb1fdee1840f",
+      "src/main/java/com/example/kb_ai_backend/service/JevDecisionClient.java": "93d07415fdb0ebce70aed6f1ba27658cc20fbc094bd0f30f8e6318166e490934",
+      "src/main/java/com/example/kb_ai_backend/service/MenuCatalog.java": "662c4dd6c37aef8e46a2c307be47e3218e06a57f2e0cef694c164a7405642435",
+      "src/main/java/com/example/kb_ai_backend/service/MenuTaskPlanner.java": "a993ba6de3cd6177f824a1163e81197e4c8a1c774b3bd39a85758fefa0f62685",
+      "src/main/java/com/example/kb_ai_backend/service/OpenAiApiService.java": "efaaebeb7c410b7ca6fb9dc9c312c90a73ccd6f2abf40caabbe73d25ddbf3e80",
+      "src/main/java/com/example/kb_ai_backend/service/PlannedMenuSelector.java": "da5d3bafa8fbfb74a31efd89778a01e7a23b073e6113284a5f6d5fc1399b7c43",
+      "src/main/java/com/example/kb_ai_backend/service/PresentationScenarios.java": "b3c8a62f4e685ceef4ad828d3672441338c01be7d98bb815c938bd958aab65b0",
+      "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRecommendationService.java": "86586b84f713a027c249e35173462ed8cef6e379418520be1c1bbdaa58155afd",
+      "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRetriever.java": "c05a6a7c8ac1949cbfba4847fc63842122c1091f61e9347ba5958656dd99f77f",
+      "src/main/java/com/example/kb_ai_backend/service/SemanticMenuSelectionService.java": "50dba1326cbdac98af0ccbf9974cc3cd741b0c6edc827a463305605bba334549",
+      "src/main/java/com/example/kb_ai_backend/service/WidgetDataService.java": "f776fd1c995e9814f1d49eadad3435f30bd84152df58ecb65981ebd67640e559",
+      "src/main/java/com/example/kb_ai_backend/service/WidgetSelectionExperimentService.java": "38a045a377977d45d3a8ba8cd234c2a8f16f24958685124a2e0ccb4ec1821366",
+      "src/main/java/com/example/kb_ai_backend/controller/GeneralMenuRecommendationController.java": "36ea5f3a3835922f40a53dffcdc25871fe1a1594e1170d2ca14c8b5f614c0f06",
+      "src/main/java/com/example/kb_ai_backend/controller/MenuRecommendationController.java": "991a84451d3f75305b6625a6313edf71f3478be1f07cd0b3fa8c806c6e890e92",
+      "scripts/semantic/situation_v3/build_holdout.py": "9920fd59df4ca2c9148045f196f9fdc20cba9f9481ba9e8d94c0c2804db6cf49",
+      "scripts/semantic/situation_v3/common.py": "e43decd034b5aedba6ecc7c8b7b66017935efe10d4d086c3edc1a712c26e2c9b",
+      "scripts/semantic/situation_v3/freeze.py": "96ec22e24ea544e381667de91463e0dd07b004c1a6f1182a3fb695e0f7c53e56",
+      "scripts/semantic/situation_v3/metrics.py": "0d88d004b8ac0729d3934db71080ca8b61cc6fed6be85dc48765ec5c28b61602",
+      "scripts/semantic/situation_v3/run.py": "0e35bc355c5cc8b7e97eb88ea14c4d7a9f45cdf75a3edd133b9d5605f0cbe4d4",
+      "scripts/semantic/situation_v3/test_metrics.py": "287f875662cb4c761d8463642b6e3422497f61dcd0e3ece2e7305dd40d457085",
+      "scripts/semantic/situation_v3/development-12.json": "ac425cceb8bb40e6958a4b8b7145260b9de6fa8ef916a8a2f8daac28ccfdad0e",
+      "scripts/semantic/situation_v3/holdout-100.json": "a02add3613e578a5d04bf627bab9bb1d4b7bb3f08a63261d4111ed506400bcc4",
+      "scripts/semantic/situation_v3/regression-300.json": "c899e88a067134e5b12b0a480d059be14cefdeb1c801603bd1b24c727a748c12",
+      "scripts/semantic/situation_v3/holdout-labels.tsv": "0e652b4f855a67736874afd014226c7e3e5ef044f73e745afd373ae85dc095bf",
+      "docs/situation-v3/PROTOCOL.md": "a3afbb36a1cddfbec8e682238fb0098f3d3a1ce04d48a30977340a158afb4f28",
+      "src/main/resources/kb_starbanking_menu_structure_cleaned.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+      "scripts/semantic/server.py": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+      "scripts/semantic/model_manifest.json": "b71365e9063e74f6c34cdeff16e9bd16c6323ba6a4677cba7cf500b5e986d614"
+    }
+  },
+  "planned_cases": 12,
+  "cases_path": "scripts/semantic/situation_v3/development-12.json",
+  "providers": [
+    "hybrid"
+  ],
+  "models": {
+    "e5_jev": "jev-1.14.0",
+    "llm_full_catalog": "gpt-4o-mini-2024-07-18",
+    "llm_task_planner": "gpt-4.1-2025-04-14",
+    "hybrid": "llm_planner_e5_jev"
+  },
+  "repeats": 1,
+  "retries": 0,
+  "results": [
+    {
+      "case_id": "single_new_07",
+      "query": "기존 자동이체를 더 이상 보내지 않도록 해지하려고요.",
+      "expected_ids": [
+        "kb_menu_0207"
+      ],
+      "expected_status": "ready",
+      "split": "single_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0207",
+            "name": "자동이체 조회/변경/해지",
+            "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+            "select_when": [
+              "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+              "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0207",
+              "name": "자동이체 조회/변경/해지",
+              "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+              "select_when": [
+                "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+                "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "자동이체 해지",
+            "basis": "explicit",
+            "explanation": "기존 자동이체를 더 이상 보내지 않도록 해지하려고요.",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1782,
+          "retrievalMs": 18,
+          "selectionMs": 283,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0207",
+            "kb_menu_0206",
+            "kb_menu_0208",
+            "kb_menu_0222",
+            "kb_menu_0337",
+            "kb_menu_0219",
+            "kb_menu_0200",
+            "kb_menu_0201",
+            "kb_menu_0203",
+            "kb_menu_0220",
+            "kb_menu_0214",
+            "kb_menu_0205",
+            "kb_menu_0191",
+            "kb_menu_0215",
+            "kb_menu_0209",
+            "kb_menu_0195",
+            "kb_menu_0243",
+            "kb_menu_0168",
+            "kb_menu_0218",
+            "kb_menu_0147"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0207"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0207",
+            "name": "자동이체 조회/변경/해지",
+            "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+            "select_when": [
+              "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+              "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "자동이체 해지",
+          "basis": "explicit",
+          "explanation": "기존 자동이체를 더 이상 보내지 않도록 해지하려고요.",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1782,
+        "retrievalMs": 18,
+        "selectionMs": 283,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0207",
+          "kb_menu_0206",
+          "kb_menu_0208",
+          "kb_menu_0222",
+          "kb_menu_0337",
+          "kb_menu_0219",
+          "kb_menu_0200",
+          "kb_menu_0201",
+          "kb_menu_0203",
+          "kb_menu_0220",
+          "kb_menu_0214",
+          "kb_menu_0205",
+          "kb_menu_0191",
+          "kb_menu_0215",
+          "kb_menu_0209",
+          "kb_menu_0195",
+          "kb_menu_0243",
+          "kb_menu_0168",
+          "kb_menu_0218",
+          "kb_menu_0147"
+        ]
+      },
+      "http_ms": 2105.794750000001,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72642,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"기존 자동이체를 더 이상 보내지 않도록 해지하려고요.\",\"query\":\"자동이체 해지\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17203,
+            "completion_tokens": 42,
+            "total_tokens": 17245,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "433197",
+            "x-ratelimit-reset-tokens": "2.24s"
+          },
+          "provider_http_ms": 1750.5887500000003
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 6474,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 2827,
+            "output_tokens": 308
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0207",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0207": 1.0,
+                "kb_menu_0206": 0.0,
+                "kb_menu_0208": 0.0,
+                "kb_menu_0222": 0.0,
+                "kb_menu_0337": 0.0,
+                "kb_menu_0219": 0.0,
+                "kb_menu_0200": 0.0,
+                "kb_menu_0201": 0.0,
+                "kb_menu_0203": 0.0,
+                "kb_menu_0220": 0.0,
+                "kb_menu_0214": 0.0,
+                "kb_menu_0205": 0.0,
+                "kb_menu_0191": 0.0,
+                "kb_menu_0215": 0.0,
+                "kb_menu_0209": 0.0,
+                "kb_menu_0195": 0.0,
+                "kb_menu_0243": 0.0,
+                "kb_menu_0168": 0.0,
+                "kb_menu_0218": 0.0,
+                "kb_menu_0147": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 277.968916999999
+        }
+      ],
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "multi_new_02",
+      "query": "국민카드 분실 신고를 할게요. 그리고 카드 없이 ATM에서 돈 찾는 법도 필요해요.",
+      "expected_ids": [
+        "kb_menu_0554",
+        "kb_menu_0210"
+      ],
+      "expected_status": "ready",
+      "split": "multi_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0554",
+            "name": "국민카드 분실신고",
+            "description": "KB국민카드 분실신고 진입점.",
+            "select_when": [
+              "국민카드 분실 또는 도난으로 사고 신고가 필요할 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0211",
+            "name": "ATM출금 방법 보기",
+            "description": "QR코드를 이용하는 ATM출금 방법 안내.",
+            "select_when": [
+              "국내 ATM에서 QR 출금 방법을 확인할 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0554",
+              "name": "국민카드 분실신고",
+              "description": "KB국민카드 분실신고 진입점.",
+              "select_when": [
+                "국민카드 분실 또는 도난으로 사고 신고가 필요할 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "국민카드 분실신고 실행",
+            "basis": "explicit",
+            "explanation": "국민카드 분실 신고를 할게요.",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0211",
+              "name": "ATM출금 방법 보기",
+              "description": "QR코드를 이용하는 ATM출금 방법 안내.",
+              "select_when": [
+                "국내 ATM에서 QR 출금 방법을 확인할 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_2",
+            "need": "ATM/지점출금 방법 안내 조회",
+            "basis": "explicit",
+            "explanation": "카드 없이 ATM에서 돈 찾는 법도 필요해요.",
+            "menuConfidence": 0.77,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1604,
+          "retrievalMs": 22,
+          "selectionMs": 256,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0554",
+            "kb_menu_0555",
+            "kb_menu_0511",
+            "kb_menu_0510",
+            "kb_menu_0552",
+            "kb_menu_0516",
+            "kb_menu_0514",
+            "kb_menu_0553",
+            "kb_menu_0556",
+            "kb_menu_0627",
+            "kb_menu_0416",
+            "kb_menu_0353",
+            "kb_menu_0509",
+            "kb_menu_0065",
+            "kb_menu_0513",
+            "kb_menu_0418",
+            "kb_menu_0352",
+            "kb_menu_0560",
+            "kb_menu_0194",
+            "kb_menu_0626"
+          ],
+          "task_2": [
+            "kb_menu_0213",
+            "kb_menu_0210",
+            "kb_menu_0212",
+            "kb_menu_0211",
+            "kb_menu_0391",
+            "kb_menu_0209",
+            "kb_menu_0208",
+            "kb_menu_0490",
+            "kb_menu_0344",
+            "kb_menu_0345",
+            "kb_menu_0195",
+            "kb_menu_0505",
+            "kb_menu_0048",
+            "kb_menu_0207",
+            "kb_menu_0227",
+            "kb_menu_0049",
+            "kb_menu_0018",
+            "kb_menu_0256",
+            "kb_menu_0350",
+            "kb_menu_0331"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0554",
+        "kb_menu_0211"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0554",
+            "name": "국민카드 분실신고",
+            "description": "KB국민카드 분실신고 진입점.",
+            "select_when": [
+              "국민카드 분실 또는 도난으로 사고 신고가 필요할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "국민카드 분실신고 실행",
+          "basis": "explicit",
+          "explanation": "국민카드 분실 신고를 할게요.",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0211",
+            "name": "ATM출금 방법 보기",
+            "description": "QR코드를 이용하는 ATM출금 방법 안내.",
+            "select_when": [
+              "국내 ATM에서 QR 출금 방법을 확인할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_2",
+          "need": "ATM/지점출금 방법 안내 조회",
+          "basis": "explicit",
+          "explanation": "카드 없이 ATM에서 돈 찾는 법도 필요해요.",
+          "menuConfidence": 0.77,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1604,
+        "retrievalMs": 22,
+        "selectionMs": 256,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0554",
+          "kb_menu_0555",
+          "kb_menu_0511",
+          "kb_menu_0510",
+          "kb_menu_0552",
+          "kb_menu_0516",
+          "kb_menu_0514",
+          "kb_menu_0553",
+          "kb_menu_0556",
+          "kb_menu_0627",
+          "kb_menu_0416",
+          "kb_menu_0353",
+          "kb_menu_0509",
+          "kb_menu_0065",
+          "kb_menu_0513",
+          "kb_menu_0418",
+          "kb_menu_0352",
+          "kb_menu_0560",
+          "kb_menu_0194",
+          "kb_menu_0626"
+        ],
+        "task_2": [
+          "kb_menu_0213",
+          "kb_menu_0210",
+          "kb_menu_0212",
+          "kb_menu_0211",
+          "kb_menu_0391",
+          "kb_menu_0209",
+          "kb_menu_0208",
+          "kb_menu_0490",
+          "kb_menu_0344",
+          "kb_menu_0345",
+          "kb_menu_0195",
+          "kb_menu_0505",
+          "kb_menu_0048",
+          "kb_menu_0207",
+          "kb_menu_0227",
+          "kb_menu_0049",
+          "kb_menu_0018",
+          "kb_menu_0256",
+          "kb_menu_0350",
+          "kb_menu_0331"
+        ]
+      },
+      "http_ms": 1889.8466670000005,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72675,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"국민카드 분실 신고를 할게요.\",\"query\":\"국민카드 분실신고 실행\",\"basis\":\"explicit\"},{\"evidence\":\"카드 없이 ATM에서 돈 찾는 법도 필요해요.\",\"query\":\"ATM/지점출금 방법 안내 조회\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17211,
+            "completion_tokens": 73,
+            "total_tokens": 17284,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "429514",
+            "x-ratelimit-reset-tokens": "2.731s"
+          },
+          "provider_http_ms": 1598.0698750000001
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 12827,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 5329,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0554",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0554": 1.0,
+                "kb_menu_0555": 0.0,
+                "kb_menu_0511": 0.0,
+                "kb_menu_0510": 0.0,
+                "kb_menu_0552": 0.0,
+                "kb_menu_0516": 0.0,
+                "kb_menu_0514": 0.0,
+                "kb_menu_0553": 0.0,
+                "kb_menu_0556": 0.0,
+                "kb_menu_0627": 0.0,
+                "kb_menu_0416": 0.0,
+                "kb_menu_0353": 0.0,
+                "kb_menu_0509": 0.0,
+                "kb_menu_0065": 0.0,
+                "kb_menu_0513": 0.0,
+                "kb_menu_0418": 0.0,
+                "kb_menu_0352": 0.0,
+                "kb_menu_0560": 0.0,
+                "kb_menu_0194": 0.0,
+                "kb_menu_0626": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0211",
+              "confidence": 0.77,
+              "probabilities": {
+                "kb_menu_0213": 0.0,
+                "kb_menu_0210": 0.15,
+                "kb_menu_0212": 0.04,
+                "kb_menu_0211": 0.78,
+                "kb_menu_0391": 0.0,
+                "kb_menu_0209": 0.0,
+                "kb_menu_0208": 0.0,
+                "kb_menu_0490": 0.0,
+                "kb_menu_0344": 0.0,
+                "kb_menu_0345": 0.0,
+                "kb_menu_0195": 0.0,
+                "kb_menu_0505": 0.0,
+                "kb_menu_0048": 0.0,
+                "kb_menu_0207": 0.0,
+                "kb_menu_0227": 0.0,
+                "kb_menu_0049": 0.0,
+                "kb_menu_0018": 0.0,
+                "kb_menu_0256": 0.0,
+                "kb_menu_0350": 0.0,
+                "kb_menu_0331": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.03,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 252.9825419999998
+        }
+      ],
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      }
+    },
+    {
+      "case_id": "multi_new_03",
+      "query": "기존 자동이체는 해지하고 송금 한도는 늘리고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0207",
+        "kb_menu_0214"
+      ],
+      "expected_status": "ready",
+      "split": "multi_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0207",
+            "name": "자동이체 조회/변경/해지",
+            "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+            "select_when": [
+              "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+              "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0214",
+            "name": "이체한도 상세조회/변경",
+            "description": "나의 이체한도와 상세조회·변경 메뉴.",
+            "select_when": [
+              "이체한도 상세 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0207",
+              "name": "자동이체 조회/변경/해지",
+              "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+              "select_when": [
+                "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+                "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "자동이체 해지",
+            "basis": "explicit",
+            "explanation": "기존 자동이체는 해지하고",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0214",
+              "name": "이체한도 상세조회/변경",
+              "description": "나의 이체한도와 상세조회·변경 메뉴.",
+              "select_when": [
+                "이체한도 상세 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_2",
+            "need": "이체한도 변경",
+            "basis": "explicit",
+            "explanation": "송금 한도는 늘리고 싶어요.",
+            "menuConfidence": 0.88,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1332,
+          "retrievalMs": 19,
+          "selectionMs": 259,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0207",
+            "kb_menu_0206",
+            "kb_menu_0208",
+            "kb_menu_0222",
+            "kb_menu_0337",
+            "kb_menu_0219",
+            "kb_menu_0200",
+            "kb_menu_0201",
+            "kb_menu_0203",
+            "kb_menu_0220",
+            "kb_menu_0214",
+            "kb_menu_0205",
+            "kb_menu_0191",
+            "kb_menu_0215",
+            "kb_menu_0209",
+            "kb_menu_0195",
+            "kb_menu_0243",
+            "kb_menu_0168",
+            "kb_menu_0218",
+            "kb_menu_0147"
+          ],
+          "task_2": [
+            "kb_menu_0214",
+            "kb_menu_0200",
+            "kb_menu_0206",
+            "kb_menu_0207",
+            "kb_menu_0205",
+            "kb_menu_0201",
+            "kb_menu_0215",
+            "kb_menu_0220",
+            "kb_menu_0222",
+            "kb_menu_0204",
+            "kb_menu_0374",
+            "kb_menu_0166",
+            "kb_menu_0168",
+            "kb_menu_0191",
+            "kb_menu_0125",
+            "kb_menu_0218",
+            "kb_menu_0217",
+            "kb_menu_0304",
+            "kb_menu_0202",
+            "kb_menu_0203"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0207",
+        "kb_menu_0214"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0207",
+            "name": "자동이체 조회/변경/해지",
+            "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+            "select_when": [
+              "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+              "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "자동이체 해지",
+          "basis": "explicit",
+          "explanation": "기존 자동이체는 해지하고",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0214",
+            "name": "이체한도 상세조회/변경",
+            "description": "나의 이체한도와 상세조회·변경 메뉴.",
+            "select_when": [
+              "이체한도 상세 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_2",
+          "need": "이체한도 변경",
+          "basis": "explicit",
+          "explanation": "송금 한도는 늘리고 싶어요.",
+          "menuConfidence": 0.88,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1332,
+        "retrievalMs": 19,
+        "selectionMs": 259,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0207",
+          "kb_menu_0206",
+          "kb_menu_0208",
+          "kb_menu_0222",
+          "kb_menu_0337",
+          "kb_menu_0219",
+          "kb_menu_0200",
+          "kb_menu_0201",
+          "kb_menu_0203",
+          "kb_menu_0220",
+          "kb_menu_0214",
+          "kb_menu_0205",
+          "kb_menu_0191",
+          "kb_menu_0215",
+          "kb_menu_0209",
+          "kb_menu_0195",
+          "kb_menu_0243",
+          "kb_menu_0168",
+          "kb_menu_0218",
+          "kb_menu_0147"
+        ],
+        "task_2": [
+          "kb_menu_0214",
+          "kb_menu_0200",
+          "kb_menu_0206",
+          "kb_menu_0207",
+          "kb_menu_0205",
+          "kb_menu_0201",
+          "kb_menu_0215",
+          "kb_menu_0220",
+          "kb_menu_0222",
+          "kb_menu_0204",
+          "kb_menu_0374",
+          "kb_menu_0166",
+          "kb_menu_0168",
+          "kb_menu_0191",
+          "kb_menu_0125",
+          "kb_menu_0218",
+          "kb_menu_0217",
+          "kb_menu_0304",
+          "kb_menu_0202",
+          "kb_menu_0203"
+        ]
+      },
+      "http_ms": 1617.2030419999999,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72642,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"기존 자동이체는 해지하고\",\"query\":\"자동이체 해지\",\"basis\":\"explicit\"},{\"evidence\":\"송금 한도는 늘리고 싶어요.\",\"query\":\"이체한도 변경\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17204,
+            "completion_tokens": 59,
+            "total_tokens": 17263,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "427221",
+            "x-ratelimit-reset-tokens": "3.037s"
+          },
+          "provider_http_ms": 1326.2461670000007
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 12744,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 5347,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0207",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0207": 1.0,
+                "kb_menu_0206": 0.0,
+                "kb_menu_0208": 0.0,
+                "kb_menu_0222": 0.0,
+                "kb_menu_0337": 0.0,
+                "kb_menu_0219": 0.0,
+                "kb_menu_0200": 0.0,
+                "kb_menu_0201": 0.0,
+                "kb_menu_0203": 0.0,
+                "kb_menu_0220": 0.0,
+                "kb_menu_0214": 0.0,
+                "kb_menu_0205": 0.0,
+                "kb_menu_0191": 0.0,
+                "kb_menu_0215": 0.0,
+                "kb_menu_0209": 0.0,
+                "kb_menu_0195": 0.0,
+                "kb_menu_0243": 0.0,
+                "kb_menu_0168": 0.0,
+                "kb_menu_0218": 0.0,
+                "kb_menu_0147": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0214",
+              "confidence": 0.88,
+              "probabilities": {
+                "kb_menu_0214": 0.89,
+                "kb_menu_0200": 0.11,
+                "kb_menu_0206": 0.0,
+                "kb_menu_0207": 0.0,
+                "kb_menu_0205": 0.0,
+                "kb_menu_0201": 0.0,
+                "kb_menu_0215": 0.0,
+                "kb_menu_0220": 0.0,
+                "kb_menu_0222": 0.0,
+                "kb_menu_0204": 0.0,
+                "kb_menu_0374": 0.0,
+                "kb_menu_0166": 0.0,
+                "kb_menu_0168": 0.0,
+                "kb_menu_0191": 0.0,
+                "kb_menu_0125": 0.0,
+                "kb_menu_0218": 0.0,
+                "kb_menu_0217": 0.0,
+                "kb_menu_0304": 0.0,
+                "kb_menu_0202": 0.0,
+                "kb_menu_0203": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 256.215083999999
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "situation_new_01",
+      "query": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+      "expected_ids": [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      "expected_status": "ready",
+      "split": "situation_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0602",
+            "name": "KB손해보험 다이렉트 해외여행보험",
+            "description": "여행 준비 영역의 해외여행보험 상품 안내.",
+            "select_when": [
+              "KB손해보험 다이렉트 해외여행보험을 찾을 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0323",
+            "name": "환전신청",
+            "description": "KB환전서비스에서 환전하기로 진행하는 화면.",
+            "select_when": [
+              "환전 신규 신청을 진행하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0603",
+            "name": "트래블러스 체크카드",
+            "description": "여행 준비 영역의 트래블러스 체크카드 상품 안내.",
+            "select_when": [
+              "트래블러스 체크카드를 찾을 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0608",
+            "name": "스타뱅킹 해외결제",
+            "description": "환전·카드 없이 해외여행하기를 안내하는 해외결제 진입점.",
+            "select_when": [
+              "스타뱅킹 해외결제 안내를 찾을 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0602",
+              "name": "KB손해보험 다이렉트 해외여행보험",
+              "description": "여행 준비 영역의 해외여행보험 상품 안내.",
+              "select_when": [
+                "KB손해보험 다이렉트 해외여행보험을 찾을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "해외여행보험 상품 안내",
+            "basis": "suggested",
+            "explanation": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0323",
+              "name": "환전신청",
+              "description": "KB환전서비스에서 환전하기로 진행하는 화면.",
+              "select_when": [
+                "환전 신규 신청을 진행하고 싶을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_2",
+            "need": "환전신청",
+            "basis": "suggested",
+            "explanation": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+            "menuConfidence": 0.96,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0603",
+              "name": "트래블러스 체크카드",
+              "description": "여행 준비 영역의 트래블러스 체크카드 상품 안내.",
+              "select_when": [
+                "트래블러스 체크카드를 찾을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_3",
+            "need": "트래블러스 체크카드 안내",
+            "basis": "suggested",
+            "explanation": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0608",
+              "name": "스타뱅킹 해외결제",
+              "description": "환전·카드 없이 해외여행하기를 안내하는 해외결제 진입점.",
+              "select_when": [
+                "스타뱅킹 해외결제 안내를 찾을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_4",
+            "need": "해외결제 안내",
+            "basis": "suggested",
+            "explanation": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+            "menuConfidence": 0.93,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1567,
+          "retrievalMs": 33,
+          "selectionMs": 597,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0602",
+            "kb_menu_0420",
+            "kb_menu_0187",
+            "kb_menu_0343",
+            "kb_menu_0132",
+            "kb_menu_0129",
+            "kb_menu_0335",
+            "kb_menu_0604",
+            "kb_menu_0564",
+            "kb_menu_0131",
+            "kb_menu_0346",
+            "kb_menu_0603",
+            "kb_menu_0339",
+            "kb_menu_0128",
+            "kb_menu_0566",
+            "kb_menu_0353",
+            "kb_menu_0078",
+            "kb_menu_0324",
+            "kb_menu_0137",
+            "kb_menu_0175"
+          ],
+          "task_2": [
+            "kb_menu_0323",
+            "kb_menu_0420",
+            "kb_menu_0421",
+            "kb_menu_0326",
+            "kb_menu_0329",
+            "kb_menu_0324",
+            "kb_menu_0332",
+            "kb_menu_0331",
+            "kb_menu_0316",
+            "kb_menu_0325",
+            "kb_menu_0327",
+            "kb_menu_0317",
+            "kb_menu_0349",
+            "kb_menu_0348",
+            "kb_menu_0608",
+            "kb_menu_0112",
+            "kb_menu_0256",
+            "kb_menu_0318",
+            "kb_menu_0344",
+            "kb_menu_0114"
+          ],
+          "task_3": [
+            "kb_menu_0603",
+            "kb_menu_0535",
+            "kb_menu_0553",
+            "kb_menu_0521",
+            "kb_menu_0068",
+            "kb_menu_0067",
+            "kb_menu_0560",
+            "kb_menu_0604",
+            "kb_menu_0035",
+            "kb_menu_0384",
+            "kb_menu_0523",
+            "kb_menu_0210",
+            "kb_menu_0446",
+            "kb_menu_0066",
+            "kb_menu_0444",
+            "kb_menu_0627",
+            "kb_menu_0132",
+            "kb_menu_0559",
+            "kb_menu_0628",
+            "kb_menu_0621"
+          ],
+          "task_4": [
+            "kb_menu_0608",
+            "kb_menu_0343",
+            "kb_menu_0413",
+            "kb_menu_0414",
+            "kb_menu_0346",
+            "kb_menu_0336",
+            "kb_menu_0335",
+            "kb_menu_0333",
+            "kb_menu_0415",
+            "kb_menu_0344",
+            "kb_menu_0341",
+            "kb_menu_0345",
+            "kb_menu_0339",
+            "kb_menu_0334",
+            "kb_menu_0348",
+            "kb_menu_0342",
+            "kb_menu_0337",
+            "kb_menu_0324",
+            "kb_menu_0419",
+            "kb_menu_0410"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0602",
+        "kb_menu_0323",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0602",
+            "name": "KB손해보험 다이렉트 해외여행보험",
+            "description": "여행 준비 영역의 해외여행보험 상품 안내.",
+            "select_when": [
+              "KB손해보험 다이렉트 해외여행보험을 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "해외여행보험 상품 안내",
+          "basis": "suggested",
+          "explanation": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0323",
+            "name": "환전신청",
+            "description": "KB환전서비스에서 환전하기로 진행하는 화면.",
+            "select_when": [
+              "환전 신규 신청을 진행하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_2",
+          "need": "환전신청",
+          "basis": "suggested",
+          "explanation": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+          "menuConfidence": 0.96,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0603",
+            "name": "트래블러스 체크카드",
+            "description": "여행 준비 영역의 트래블러스 체크카드 상품 안내.",
+            "select_when": [
+              "트래블러스 체크카드를 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_3",
+          "need": "트래블러스 체크카드 안내",
+          "basis": "suggested",
+          "explanation": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0608",
+            "name": "스타뱅킹 해외결제",
+            "description": "환전·카드 없이 해외여행하기를 안내하는 해외결제 진입점.",
+            "select_when": [
+              "스타뱅킹 해외결제 안내를 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_4",
+          "need": "해외결제 안내",
+          "basis": "suggested",
+          "explanation": "내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.",
+          "menuConfidence": 0.93,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1567,
+        "retrievalMs": 33,
+        "selectionMs": 597,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0602",
+          "kb_menu_0420",
+          "kb_menu_0187",
+          "kb_menu_0343",
+          "kb_menu_0132",
+          "kb_menu_0129",
+          "kb_menu_0335",
+          "kb_menu_0604",
+          "kb_menu_0564",
+          "kb_menu_0131",
+          "kb_menu_0346",
+          "kb_menu_0603",
+          "kb_menu_0339",
+          "kb_menu_0128",
+          "kb_menu_0566",
+          "kb_menu_0353",
+          "kb_menu_0078",
+          "kb_menu_0324",
+          "kb_menu_0137",
+          "kb_menu_0175"
+        ],
+        "task_2": [
+          "kb_menu_0323",
+          "kb_menu_0420",
+          "kb_menu_0421",
+          "kb_menu_0326",
+          "kb_menu_0329",
+          "kb_menu_0324",
+          "kb_menu_0332",
+          "kb_menu_0331",
+          "kb_menu_0316",
+          "kb_menu_0325",
+          "kb_menu_0327",
+          "kb_menu_0317",
+          "kb_menu_0349",
+          "kb_menu_0348",
+          "kb_menu_0608",
+          "kb_menu_0112",
+          "kb_menu_0256",
+          "kb_menu_0318",
+          "kb_menu_0344",
+          "kb_menu_0114"
+        ],
+        "task_3": [
+          "kb_menu_0603",
+          "kb_menu_0535",
+          "kb_menu_0553",
+          "kb_menu_0521",
+          "kb_menu_0068",
+          "kb_menu_0067",
+          "kb_menu_0560",
+          "kb_menu_0604",
+          "kb_menu_0035",
+          "kb_menu_0384",
+          "kb_menu_0523",
+          "kb_menu_0210",
+          "kb_menu_0446",
+          "kb_menu_0066",
+          "kb_menu_0444",
+          "kb_menu_0627",
+          "kb_menu_0132",
+          "kb_menu_0559",
+          "kb_menu_0628",
+          "kb_menu_0621"
+        ],
+        "task_4": [
+          "kb_menu_0608",
+          "kb_menu_0343",
+          "kb_menu_0413",
+          "kb_menu_0414",
+          "kb_menu_0346",
+          "kb_menu_0336",
+          "kb_menu_0335",
+          "kb_menu_0333",
+          "kb_menu_0415",
+          "kb_menu_0344",
+          "kb_menu_0341",
+          "kb_menu_0345",
+          "kb_menu_0339",
+          "kb_menu_0334",
+          "kb_menu_0348",
+          "kb_menu_0342",
+          "kb_menu_0337",
+          "kb_menu_0324",
+          "kb_menu_0419",
+          "kb_menu_0410"
+        ]
+      },
+      "http_ms": 2206.3507080000004,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72675,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.\",\"query\":\"해외여행보험 상품 안내\",\"basis\":\"suggested\"},{\"evidence\":\"내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.\",\"query\":\"환전신청\",\"basis\":\"suggested\"},{\"evidence\":\"내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.\",\"query\":\"트래블러스 체크카드 안내\",\"basis\":\"suggested\"},{\"evidence\":\"내년 봄 일본에 처음 가보려 해요. 은행에서 여행 준비를 돕는 기능을 알려줘요.\",\"query\":\"해외결제 안내\",\"basis\":\"suggested\"}]}",
+          "usage": {
+            "prompt_tokens": 17213,
+            "completion_tokens": 189,
+            "total_tokens": 17402,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "421622",
+            "x-ratelimit-reset-tokens": "3.783s"
+          },
+          "provider_http_ms": 1560.222249999999
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 25482,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 10545,
+            "output_tokens": 1223
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0602",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0602": 1.0,
+                "kb_menu_0420": 0.0,
+                "kb_menu_0187": 0.0,
+                "kb_menu_0343": 0.0,
+                "kb_menu_0132": 0.0,
+                "kb_menu_0129": 0.0,
+                "kb_menu_0335": 0.0,
+                "kb_menu_0604": 0.0,
+                "kb_menu_0564": 0.0,
+                "kb_menu_0131": 0.0,
+                "kb_menu_0346": 0.0,
+                "kb_menu_0603": 0.0,
+                "kb_menu_0339": 0.0,
+                "kb_menu_0128": 0.0,
+                "kb_menu_0566": 0.0,
+                "kb_menu_0353": 0.0,
+                "kb_menu_0078": 0.0,
+                "kb_menu_0324": 0.0,
+                "kb_menu_0137": 0.0,
+                "kb_menu_0175": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0323",
+              "confidence": 0.96,
+              "probabilities": {
+                "kb_menu_0323": 0.96,
+                "kb_menu_0420": 0.0,
+                "kb_menu_0421": 0.0,
+                "kb_menu_0326": 0.0,
+                "kb_menu_0329": 0.0,
+                "kb_menu_0324": 0.0,
+                "kb_menu_0332": 0.0,
+                "kb_menu_0331": 0.0,
+                "kb_menu_0316": 0.0,
+                "kb_menu_0325": 0.0,
+                "kb_menu_0327": 0.0,
+                "kb_menu_0317": 0.0,
+                "kb_menu_0349": 0.0,
+                "kb_menu_0348": 0.0,
+                "kb_menu_0608": 0.0,
+                "kb_menu_0112": 0.0,
+                "kb_menu_0256": 0.0,
+                "kb_menu_0318": 0.0,
+                "kb_menu_0344": 0.0,
+                "kb_menu_0114": 0.0,
+                "no_match": 0.04,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_3": {
+              "type": "choice",
+              "choice": "kb_menu_0603",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0603": 1.0,
+                "kb_menu_0535": 0.0,
+                "kb_menu_0553": 0.0,
+                "kb_menu_0521": 0.0,
+                "kb_menu_0068": 0.0,
+                "kb_menu_0067": 0.0,
+                "kb_menu_0560": 0.0,
+                "kb_menu_0604": 0.0,
+                "kb_menu_0035": 0.0,
+                "kb_menu_0384": 0.0,
+                "kb_menu_0523": 0.0,
+                "kb_menu_0210": 0.0,
+                "kb_menu_0446": 0.0,
+                "kb_menu_0066": 0.0,
+                "kb_menu_0444": 0.0,
+                "kb_menu_0627": 0.0,
+                "kb_menu_0132": 0.0,
+                "kb_menu_0559": 0.0,
+                "kb_menu_0628": 0.0,
+                "kb_menu_0621": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_4": {
+              "type": "choice",
+              "choice": "kb_menu_0608",
+              "confidence": 0.93,
+              "probabilities": {
+                "kb_menu_0608": 0.93,
+                "kb_menu_0343": 0.0,
+                "kb_menu_0413": 0.02,
+                "kb_menu_0414": 0.0,
+                "kb_menu_0346": 0.0,
+                "kb_menu_0336": 0.0,
+                "kb_menu_0335": 0.0,
+                "kb_menu_0333": 0.0,
+                "kb_menu_0415": 0.01,
+                "kb_menu_0344": 0.0,
+                "kb_menu_0341": 0.0,
+                "kb_menu_0345": 0.0,
+                "kb_menu_0339": 0.0,
+                "kb_menu_0334": 0.0,
+                "kb_menu_0348": 0.0,
+                "kb_menu_0342": 0.0,
+                "kb_menu_0337": 0.0,
+                "kb_menu_0324": 0.0,
+                "kb_menu_0419": 0.0,
+                "kb_menu_0410": 0.0,
+                "no_match": 0.01,
+                "unsure": 0.03,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 593.9574170000004
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.6666666666666666,
+        "f1": 0.5714285714285715,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      }
+    },
+    {
+      "case_id": "situation_new_09",
+      "query": "한국 안에서 기차 타고 여행할 거예요. 열차와 숙박을 예약하고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ],
+      "expected_status": "ready",
+      "split": "situation_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0384",
+            "name": "기차표(KTX·SRT) 예매",
+            "description": "출발역·도착역·가는날·왕복 여부·인원을 선택하고 기차를 조회하는 화면.",
+            "select_when": [
+              "기차 예매를 위한 열차 조회를 시작할 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0383",
+            "name": "휴양림 예약서비스",
+            "description": "여행지·숙소타입·여행일·인원으로 휴양림을 조회하고 선착순 예약·추첨 신청을 선택하는 화면.",
+            "select_when": [
+              "휴양림 예약이나 추첨 신청을 시작할 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0384",
+              "name": "기차표(KTX·SRT) 예매",
+              "description": "출발역·도착역·가는날·왕복 여부·인원을 선택하고 기차를 조회하는 화면.",
+              "select_when": [
+                "기차 예매를 위한 열차 조회를 시작할 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "기차표 예매",
+            "basis": "explicit",
+            "explanation": "열차와 숙박을 예약하고 싶어요.",
+            "menuConfidence": 0.99,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0383",
+              "name": "휴양림 예약서비스",
+              "description": "여행지·숙소타입·여행일·인원으로 휴양림을 조회하고 선착순 예약·추첨 신청을 선택하는 화면.",
+              "select_when": [
+                "휴양림 예약이나 추첨 신청을 시작할 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_2",
+            "need": "휴양림 예약서비스",
+            "basis": "explicit",
+            "explanation": "열차와 숙박을 예약하고 싶어요.",
+            "menuConfidence": 0.62,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1326,
+          "retrievalMs": 18,
+          "selectionMs": 322,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0384",
+            "kb_menu_0475",
+            "kb_menu_0604",
+            "kb_menu_0418",
+            "kb_menu_0353",
+            "kb_menu_0274",
+            "kb_menu_0416",
+            "kb_menu_0596",
+            "kb_menu_0018",
+            "kb_menu_0595",
+            "kb_menu_0383",
+            "kb_menu_0535",
+            "kb_menu_0527",
+            "kb_menu_0244",
+            "kb_menu_0471",
+            "kb_menu_0601",
+            "kb_menu_0476",
+            "kb_menu_0597",
+            "kb_menu_0033",
+            "kb_menu_0529"
+          ],
+          "task_2": [
+            "kb_menu_0383",
+            "kb_menu_0469",
+            "kb_menu_0471",
+            "kb_menu_0470",
+            "kb_menu_0473",
+            "kb_menu_0472",
+            "kb_menu_0474",
+            "kb_menu_0389",
+            "kb_menu_0176",
+            "kb_menu_0612",
+            "kb_menu_0604",
+            "kb_menu_0097",
+            "kb_menu_0269",
+            "kb_menu_0225",
+            "kb_menu_0185",
+            "kb_menu_0606",
+            "kb_menu_0033",
+            "kb_menu_0613",
+            "kb_menu_0132",
+            "kb_menu_0560"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0384",
+        "kb_menu_0383"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0384",
+            "name": "기차표(KTX·SRT) 예매",
+            "description": "출발역·도착역·가는날·왕복 여부·인원을 선택하고 기차를 조회하는 화면.",
+            "select_when": [
+              "기차 예매를 위한 열차 조회를 시작할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "기차표 예매",
+          "basis": "explicit",
+          "explanation": "열차와 숙박을 예약하고 싶어요.",
+          "menuConfidence": 0.99,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0383",
+            "name": "휴양림 예약서비스",
+            "description": "여행지·숙소타입·여행일·인원으로 휴양림을 조회하고 선착순 예약·추첨 신청을 선택하는 화면.",
+            "select_when": [
+              "휴양림 예약이나 추첨 신청을 시작할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_2",
+          "need": "휴양림 예약서비스",
+          "basis": "explicit",
+          "explanation": "열차와 숙박을 예약하고 싶어요.",
+          "menuConfidence": 0.62,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1326,
+        "retrievalMs": 18,
+        "selectionMs": 322,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0384",
+          "kb_menu_0475",
+          "kb_menu_0604",
+          "kb_menu_0418",
+          "kb_menu_0353",
+          "kb_menu_0274",
+          "kb_menu_0416",
+          "kb_menu_0596",
+          "kb_menu_0018",
+          "kb_menu_0595",
+          "kb_menu_0383",
+          "kb_menu_0535",
+          "kb_menu_0527",
+          "kb_menu_0244",
+          "kb_menu_0471",
+          "kb_menu_0601",
+          "kb_menu_0476",
+          "kb_menu_0597",
+          "kb_menu_0033",
+          "kb_menu_0529"
+        ],
+        "task_2": [
+          "kb_menu_0383",
+          "kb_menu_0469",
+          "kb_menu_0471",
+          "kb_menu_0470",
+          "kb_menu_0473",
+          "kb_menu_0472",
+          "kb_menu_0474",
+          "kb_menu_0389",
+          "kb_menu_0176",
+          "kb_menu_0612",
+          "kb_menu_0604",
+          "kb_menu_0097",
+          "kb_menu_0269",
+          "kb_menu_0225",
+          "kb_menu_0185",
+          "kb_menu_0606",
+          "kb_menu_0033",
+          "kb_menu_0613",
+          "kb_menu_0132",
+          "kb_menu_0560"
+        ]
+      },
+      "http_ms": 1673.3764999999999,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72664,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"열차와 숙박을 예약하고 싶어요.\",\"query\":\"기차표 예매\",\"basis\":\"explicit\"},{\"evidence\":\"열차와 숙박을 예약하고 싶어요.\",\"query\":\"휴양림 예약서비스\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17209,
+            "completion_tokens": 61,
+            "total_tokens": 17270,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "422283",
+            "x-ratelimit-reset-tokens": "3.695s"
+          },
+          "provider_http_ms": 1319.5484579999998
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 12239,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 5214,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0384",
+              "confidence": 0.99,
+              "probabilities": {
+                "kb_menu_0384": 0.99,
+                "kb_menu_0475": 0.01,
+                "kb_menu_0604": 0.0,
+                "kb_menu_0418": 0.0,
+                "kb_menu_0353": 0.0,
+                "kb_menu_0274": 0.0,
+                "kb_menu_0416": 0.0,
+                "kb_menu_0596": 0.0,
+                "kb_menu_0018": 0.0,
+                "kb_menu_0595": 0.0,
+                "kb_menu_0383": 0.0,
+                "kb_menu_0535": 0.0,
+                "kb_menu_0527": 0.0,
+                "kb_menu_0244": 0.0,
+                "kb_menu_0471": 0.0,
+                "kb_menu_0601": 0.0,
+                "kb_menu_0476": 0.0,
+                "kb_menu_0597": 0.0,
+                "kb_menu_0033": 0.0,
+                "kb_menu_0529": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0383",
+              "confidence": 0.62,
+              "probabilities": {
+                "kb_menu_0383": 0.64,
+                "kb_menu_0469": 0.22,
+                "kb_menu_0471": 0.0,
+                "kb_menu_0470": 0.0,
+                "kb_menu_0473": 0.0,
+                "kb_menu_0472": 0.0,
+                "kb_menu_0474": 0.0,
+                "kb_menu_0389": 0.0,
+                "kb_menu_0176": 0.0,
+                "kb_menu_0612": 0.0,
+                "kb_menu_0604": 0.01,
+                "kb_menu_0097": 0.0,
+                "kb_menu_0269": 0.0,
+                "kb_menu_0225": 0.0,
+                "kb_menu_0185": 0.0,
+                "kb_menu_0606": 0.0,
+                "kb_menu_0033": 0.0,
+                "kb_menu_0613": 0.0,
+                "kb_menu_0132": 0.0,
+                "kb_menu_0560": 0.0,
+                "no_match": 0.09,
+                "unsure": 0.03,
+                "skip": 0.01
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 319.7118329999995
+        }
+      ],
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      }
+    },
+    {
+      "case_id": "situation_new_10",
+      "query": "새 가게를 열어서 매출 입금 상황을 살피고 정책 지원을 찾고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0018",
+        "kb_menu_0017"
+      ],
+      "expected_status": "ready",
+      "split": "situation_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0018",
+            "name": "우리가게 카드매출",
+            "description": "카드매출액과 입금액을 안내하는 서비스와 가입 진입점.",
+            "select_when": [
+              "가게 카드매출액·입금액 확인 서비스를 찾을 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0017",
+            "name": "정책자금 맞춤추천",
+            "description": "정부·지자체 지원을 안내하는 정책자금 맞춤추천과 신청 진입점.",
+            "select_when": [
+              "사업자에게 맞는 정책자금·지원 추천을 찾을 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0018",
+              "name": "우리가게 카드매출",
+              "description": "카드매출액과 입금액을 안내하는 서비스와 가입 진입점.",
+              "select_when": [
+                "가게 카드매출액·입금액 확인 서비스를 찾을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "우리가게 카드매출 조회",
+            "basis": "explicit",
+            "explanation": "매출 입금 상황을 살피고",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0017",
+              "name": "정책자금 맞춤추천",
+              "description": "정부·지자체 지원을 안내하는 정책자금 맞춤추천과 신청 진입점.",
+              "select_when": [
+                "사업자에게 맞는 정책자금·지원 추천을 찾을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_2",
+            "need": "정책자금 맞춤추천 조회",
+            "basis": "explicit",
+            "explanation": "정책 지원을 찾고 싶어요",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1282,
+          "retrievalMs": 22,
+          "selectionMs": 257,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0018",
+            "kb_menu_0627",
+            "kb_menu_0626",
+            "kb_menu_0552",
+            "kb_menu_0068",
+            "kb_menu_0272",
+            "kb_menu_0160",
+            "kb_menu_0246",
+            "kb_menu_0422",
+            "kb_menu_0345",
+            "kb_menu_0210",
+            "kb_menu_0226",
+            "kb_menu_0208",
+            "kb_menu_0553",
+            "kb_menu_0211",
+            "kb_menu_0309",
+            "kb_menu_0260",
+            "kb_menu_0511",
+            "kb_menu_0340",
+            "kb_menu_0274"
+          ],
+          "task_2": [
+            "kb_menu_0017",
+            "kb_menu_0310",
+            "kb_menu_0002",
+            "kb_menu_0486",
+            "kb_menu_0194",
+            "kb_menu_0053",
+            "kb_menu_0019",
+            "kb_menu_0049",
+            "kb_menu_0246",
+            "kb_menu_0309",
+            "kb_menu_0577",
+            "kb_menu_0028",
+            "kb_menu_0034",
+            "kb_menu_0023",
+            "kb_menu_0226",
+            "kb_menu_0268",
+            "kb_menu_0584",
+            "kb_menu_0187",
+            "kb_menu_0279",
+            "kb_menu_0308"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0018",
+        "kb_menu_0017"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0018",
+            "name": "우리가게 카드매출",
+            "description": "카드매출액과 입금액을 안내하는 서비스와 가입 진입점.",
+            "select_when": [
+              "가게 카드매출액·입금액 확인 서비스를 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "우리가게 카드매출 조회",
+          "basis": "explicit",
+          "explanation": "매출 입금 상황을 살피고",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0017",
+            "name": "정책자금 맞춤추천",
+            "description": "정부·지자체 지원을 안내하는 정책자금 맞춤추천과 신청 진입점.",
+            "select_when": [
+              "사업자에게 맞는 정책자금·지원 추천을 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_2",
+          "need": "정책자금 맞춤추천 조회",
+          "basis": "explicit",
+          "explanation": "정책 지원을 찾고 싶어요",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1282,
+        "retrievalMs": 22,
+        "selectionMs": 257,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0018",
+          "kb_menu_0627",
+          "kb_menu_0626",
+          "kb_menu_0552",
+          "kb_menu_0068",
+          "kb_menu_0272",
+          "kb_menu_0160",
+          "kb_menu_0246",
+          "kb_menu_0422",
+          "kb_menu_0345",
+          "kb_menu_0210",
+          "kb_menu_0226",
+          "kb_menu_0208",
+          "kb_menu_0553",
+          "kb_menu_0211",
+          "kb_menu_0309",
+          "kb_menu_0260",
+          "kb_menu_0511",
+          "kb_menu_0340",
+          "kb_menu_0274"
+        ],
+        "task_2": [
+          "kb_menu_0017",
+          "kb_menu_0310",
+          "kb_menu_0002",
+          "kb_menu_0486",
+          "kb_menu_0194",
+          "kb_menu_0053",
+          "kb_menu_0019",
+          "kb_menu_0049",
+          "kb_menu_0246",
+          "kb_menu_0309",
+          "kb_menu_0577",
+          "kb_menu_0028",
+          "kb_menu_0034",
+          "kb_menu_0023",
+          "kb_menu_0226",
+          "kb_menu_0268",
+          "kb_menu_0584",
+          "kb_menu_0187",
+          "kb_menu_0279",
+          "kb_menu_0308"
+        ]
+      },
+      "http_ms": 1568.5108330000012,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72661,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"매출 입금 상황을 살피고\",\"query\":\"우리가게 카드매출 조회\",\"basis\":\"explicit\"},{\"evidence\":\"정책 지원을 찾고 싶어요\",\"query\":\"정책자금 맞춤추천 조회\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17208,
+            "completion_tokens": 63,
+            "total_tokens": 17271,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "416037",
+            "x-ratelimit-reset-tokens": "4.528s"
+          },
+          "provider_http_ms": 1275.9505830000003
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 13125,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 5489,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0018",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0018": 1.0,
+                "kb_menu_0627": 0.0,
+                "kb_menu_0626": 0.0,
+                "kb_menu_0552": 0.0,
+                "kb_menu_0068": 0.0,
+                "kb_menu_0272": 0.0,
+                "kb_menu_0160": 0.0,
+                "kb_menu_0246": 0.0,
+                "kb_menu_0422": 0.0,
+                "kb_menu_0345": 0.0,
+                "kb_menu_0210": 0.0,
+                "kb_menu_0226": 0.0,
+                "kb_menu_0208": 0.0,
+                "kb_menu_0553": 0.0,
+                "kb_menu_0211": 0.0,
+                "kb_menu_0309": 0.0,
+                "kb_menu_0260": 0.0,
+                "kb_menu_0511": 0.0,
+                "kb_menu_0340": 0.0,
+                "kb_menu_0274": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0017",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0017": 1.0,
+                "kb_menu_0310": 0.0,
+                "kb_menu_0002": 0.0,
+                "kb_menu_0486": 0.0,
+                "kb_menu_0194": 0.0,
+                "kb_menu_0053": 0.0,
+                "kb_menu_0019": 0.0,
+                "kb_menu_0049": 0.0,
+                "kb_menu_0246": 0.0,
+                "kb_menu_0309": 0.0,
+                "kb_menu_0577": 0.0,
+                "kb_menu_0028": 0.0,
+                "kb_menu_0034": 0.0,
+                "kb_menu_0023": 0.0,
+                "kb_menu_0226": 0.0,
+                "kb_menu_0268": 0.0,
+                "kb_menu_0584": 0.0,
+                "kb_menu_0187": 0.0,
+                "kb_menu_0279": 0.0,
+                "kb_menu_0308": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 254.42424999999957
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "situation_new_15",
+      "query": "정기적으로 집주인에게 나가던 돈을 이제 멈추고 싶습니다.",
+      "expected_ids": [
+        "kb_menu_0207"
+      ],
+      "expected_status": "ready",
+      "split": "situation_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0207",
+            "name": "자동이체 조회/변경/해지",
+            "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+            "select_when": [
+              "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+              "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0207",
+              "name": "자동이체 조회/변경/해지",
+              "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+              "select_when": [
+                "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+                "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "자동이체 조회/변경/해지에서 집주인에게 등록된 자동이체를 해지",
+            "basis": "explicit",
+            "explanation": "정기적으로 집주인에게 나가던 돈을 이제 멈추고 싶습니다.",
+            "menuConfidence": 0.99,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1038,
+          "retrievalMs": 19,
+          "selectionMs": 247,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0207",
+            "kb_menu_0206",
+            "kb_menu_0208",
+            "kb_menu_0205",
+            "kb_menu_0337",
+            "kb_menu_0214",
+            "kb_menu_0209",
+            "kb_menu_0191",
+            "kb_menu_0215",
+            "kb_menu_0195",
+            "kb_menu_0583",
+            "kb_menu_0592",
+            "kb_menu_0219",
+            "kb_menu_0243",
+            "kb_menu_0213",
+            "kb_menu_0218",
+            "kb_menu_0340",
+            "kb_menu_0222",
+            "kb_menu_0200",
+            "kb_menu_0147"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0207"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0207",
+            "name": "자동이체 조회/변경/해지",
+            "description": "기존에 등록한 자동이체를 조회·변경·해지하는 관리 메뉴.",
+            "select_when": [
+              "기존 자동이체 등록 내용을 조회하거나 금액·일정을 변경할 때",
+              "매달 보내는 자동이체를 중단하거나 해지할 때. 신규 등록은 자동이체 메뉴를 선택한다."
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "자동이체 조회/변경/해지에서 집주인에게 등록된 자동이체를 해지",
+          "basis": "explicit",
+          "explanation": "정기적으로 집주인에게 나가던 돈을 이제 멈추고 싶습니다.",
+          "menuConfidence": 0.99,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1038,
+        "retrievalMs": 19,
+        "selectionMs": 247,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0207",
+          "kb_menu_0206",
+          "kb_menu_0208",
+          "kb_menu_0205",
+          "kb_menu_0337",
+          "kb_menu_0214",
+          "kb_menu_0209",
+          "kb_menu_0191",
+          "kb_menu_0215",
+          "kb_menu_0195",
+          "kb_menu_0583",
+          "kb_menu_0592",
+          "kb_menu_0219",
+          "kb_menu_0243",
+          "kb_menu_0213",
+          "kb_menu_0218",
+          "kb_menu_0340",
+          "kb_menu_0222",
+          "kb_menu_0200",
+          "kb_menu_0147"
+        ]
+      },
+      "http_ms": 1311.6375829999995,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72648,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"정기적으로 집주인에게 나가던 돈을 이제 멈추고 싶습니다.\",\"query\":\"자동이체 조회/변경/해지에서 집주인에게 등록된 자동이체를 해지\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17205,
+            "completion_tokens": 62,
+            "total_tokens": 17267,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "410645",
+            "x-ratelimit-reset-tokens": "5.247s"
+          },
+          "provider_http_ms": 1032.2817079999993
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 6871,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 2937,
+            "output_tokens": 308
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0207",
+              "confidence": 0.99,
+              "probabilities": {
+                "kb_menu_0207": 0.99,
+                "kb_menu_0206": 0.0,
+                "kb_menu_0208": 0.01,
+                "kb_menu_0205": 0.0,
+                "kb_menu_0337": 0.0,
+                "kb_menu_0214": 0.0,
+                "kb_menu_0209": 0.0,
+                "kb_menu_0191": 0.0,
+                "kb_menu_0215": 0.0,
+                "kb_menu_0195": 0.0,
+                "kb_menu_0583": 0.0,
+                "kb_menu_0592": 0.0,
+                "kb_menu_0219": 0.0,
+                "kb_menu_0243": 0.0,
+                "kb_menu_0213": 0.0,
+                "kb_menu_0218": 0.0,
+                "kb_menu_0340": 0.0,
+                "kb_menu_0222": 0.0,
+                "kb_menu_0200": 0.0,
+                "kb_menu_0147": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 243.98725
+        }
+      ],
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "situation_new_16",
+      "query": "이사 잔금 송금 전에 이체 한도를 높이고 거래 내역도 확인하려 합니다.",
+      "expected_ids": [
+        "kb_menu_0214",
+        "kb_menu_0205"
+      ],
+      "expected_status": "ready",
+      "split": "situation_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0214",
+            "name": "이체한도 상세조회/변경",
+            "description": "나의 이체한도와 상세조회·변경 메뉴.",
+            "select_when": [
+              "이체한도 상세 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0160",
+            "name": "통합거래내역조회",
+            "description": "KB국민은행·다른금융의 월별 입출금 현황과 거래내역 조회.",
+            "select_when": [
+              "통합거래 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0214",
+              "name": "이체한도 상세조회/변경",
+              "description": "나의 이체한도와 상세조회·변경 메뉴.",
+              "select_when": [
+                "이체한도 상세 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "이체한도 상세조회/변경",
+            "basis": "explicit",
+            "explanation": "이체 한도를 높이고",
+            "menuConfidence": 0.99,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0160",
+              "name": "통합거래내역조회",
+              "description": "KB국민은행·다른금융의 월별 입출금 현황과 거래내역 조회.",
+              "select_when": [
+                "통합거래 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_2",
+            "need": "통합거래내역조회",
+            "basis": "explicit",
+            "explanation": "거래 내역도 확인하려 합니다.",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1460,
+          "retrievalMs": 23,
+          "selectionMs": 269,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0214",
+            "kb_menu_0200",
+            "kb_menu_0205",
+            "kb_menu_0206",
+            "kb_menu_0207",
+            "kb_menu_0340",
+            "kb_menu_0215",
+            "kb_menu_0204",
+            "kb_menu_0201",
+            "kb_menu_0191",
+            "kb_menu_0304",
+            "kb_menu_0339",
+            "kb_menu_0168",
+            "kb_menu_0218",
+            "kb_menu_0222",
+            "kb_menu_0220",
+            "kb_menu_0133",
+            "kb_menu_0203",
+            "kb_menu_0580",
+            "kb_menu_0208"
+          ],
+          "task_2": [
+            "kb_menu_0160",
+            "kb_menu_0580",
+            "kb_menu_0159",
+            "kb_menu_0170",
+            "kb_menu_0316",
+            "kb_menu_0340",
+            "kb_menu_0324",
+            "kb_menu_0205",
+            "kb_menu_0033",
+            "kb_menu_0021",
+            "kb_menu_0427",
+            "kb_menu_0588",
+            "kb_menu_0505",
+            "kb_menu_0341",
+            "kb_menu_0325",
+            "kb_menu_0519",
+            "kb_menu_0167",
+            "kb_menu_0226",
+            "kb_menu_0348",
+            "kb_menu_0423"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0214",
+        "kb_menu_0160"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0214",
+            "name": "이체한도 상세조회/변경",
+            "description": "나의 이체한도와 상세조회·변경 메뉴.",
+            "select_when": [
+              "이체한도 상세 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "이체한도 상세조회/변경",
+          "basis": "explicit",
+          "explanation": "이체 한도를 높이고",
+          "menuConfidence": 0.99,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0160",
+            "name": "통합거래내역조회",
+            "description": "KB국민은행·다른금융의 월별 입출금 현황과 거래내역 조회.",
+            "select_when": [
+              "통합거래 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_2",
+          "need": "통합거래내역조회",
+          "basis": "explicit",
+          "explanation": "거래 내역도 확인하려 합니다.",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1460,
+        "retrievalMs": 23,
+        "selectionMs": 269,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0214",
+          "kb_menu_0200",
+          "kb_menu_0205",
+          "kb_menu_0206",
+          "kb_menu_0207",
+          "kb_menu_0340",
+          "kb_menu_0215",
+          "kb_menu_0204",
+          "kb_menu_0201",
+          "kb_menu_0191",
+          "kb_menu_0304",
+          "kb_menu_0339",
+          "kb_menu_0168",
+          "kb_menu_0218",
+          "kb_menu_0222",
+          "kb_menu_0220",
+          "kb_menu_0133",
+          "kb_menu_0203",
+          "kb_menu_0580",
+          "kb_menu_0208"
+        ],
+        "task_2": [
+          "kb_menu_0160",
+          "kb_menu_0580",
+          "kb_menu_0159",
+          "kb_menu_0170",
+          "kb_menu_0316",
+          "kb_menu_0340",
+          "kb_menu_0324",
+          "kb_menu_0205",
+          "kb_menu_0033",
+          "kb_menu_0021",
+          "kb_menu_0427",
+          "kb_menu_0588",
+          "kb_menu_0505",
+          "kb_menu_0341",
+          "kb_menu_0325",
+          "kb_menu_0519",
+          "kb_menu_0167",
+          "kb_menu_0226",
+          "kb_menu_0348",
+          "kb_menu_0423"
+        ]
+      },
+      "http_ms": 1759.127166999999,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72664,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"이체 한도를 높이고\",\"query\":\"이체한도 상세조회/변경\",\"basis\":\"explicit\"},{\"evidence\":\"거래 내역도 확인하려 합니다.\",\"query\":\"통합거래내역조회\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17207,
+            "completion_tokens": 61,
+            "total_tokens": 17268,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "403722",
+            "x-ratelimit-reset-tokens": "6.17s"
+          },
+          "provider_http_ms": 1454.6739590000009
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 13575,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 5618,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0214",
+              "confidence": 0.99,
+              "probabilities": {
+                "kb_menu_0214": 0.99,
+                "kb_menu_0200": 0.01,
+                "kb_menu_0205": 0.0,
+                "kb_menu_0206": 0.0,
+                "kb_menu_0207": 0.0,
+                "kb_menu_0340": 0.0,
+                "kb_menu_0215": 0.0,
+                "kb_menu_0204": 0.0,
+                "kb_menu_0201": 0.0,
+                "kb_menu_0191": 0.0,
+                "kb_menu_0304": 0.0,
+                "kb_menu_0339": 0.0,
+                "kb_menu_0168": 0.0,
+                "kb_menu_0218": 0.0,
+                "kb_menu_0222": 0.0,
+                "kb_menu_0220": 0.0,
+                "kb_menu_0133": 0.0,
+                "kb_menu_0203": 0.0,
+                "kb_menu_0580": 0.0,
+                "kb_menu_0208": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0160",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0160": 1.0,
+                "kb_menu_0580": 0.0,
+                "kb_menu_0159": 0.0,
+                "kb_menu_0170": 0.0,
+                "kb_menu_0316": 0.0,
+                "kb_menu_0340": 0.0,
+                "kb_menu_0324": 0.0,
+                "kb_menu_0205": 0.0,
+                "kb_menu_0033": 0.0,
+                "kb_menu_0021": 0.0,
+                "kb_menu_0427": 0.0,
+                "kb_menu_0588": 0.0,
+                "kb_menu_0505": 0.0,
+                "kb_menu_0341": 0.0,
+                "kb_menu_0325": 0.0,
+                "kb_menu_0519": 0.0,
+                "kb_menu_0167": 0.0,
+                "kb_menu_0226": 0.0,
+                "kb_menu_0348": 0.0,
+                "kb_menu_0423": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 266.4749579999999
+        }
+      ],
+      "score": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      }
+    },
+    {
+      "case_id": "situation_new_18",
+      "query": "국민 신용카드를 분실했고 ATM에서 현금도 찾아야 하는 상황이에요.",
+      "expected_ids": [
+        "kb_menu_0554",
+        "kb_menu_0210"
+      ],
+      "expected_status": "ready",
+      "split": "situation_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0554",
+            "name": "국민카드 분실신고",
+            "description": "KB국민카드 분실신고 진입점.",
+            "select_when": [
+              "국민카드 분실 또는 도난으로 사고 신고가 필요할 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0210",
+            "name": "ATM/지점출금",
+            "description": "카드·통장 없이 ATM이나 지점에서 출금하기 위한 화면.",
+            "select_when": [
+              "카드·통장 없이 출금하는 기능을 찾을 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0554",
+              "name": "국민카드 분실신고",
+              "description": "KB국민카드 분실신고 진입점.",
+              "select_when": [
+                "국민카드 분실 또는 도난으로 사고 신고가 필요할 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "국민카드 분실신고",
+            "basis": "explicit",
+            "explanation": "국민 신용카드를 분실",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0210",
+              "name": "ATM/지점출금",
+              "description": "카드·통장 없이 ATM이나 지점에서 출금하기 위한 화면.",
+              "select_when": [
+                "카드·통장 없이 출금하는 기능을 찾을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_2",
+            "need": "ATM/지점출금",
+            "basis": "suggested",
+            "explanation": "ATM에서 현금도 찾아야 하는 상황",
+            "menuConfidence": 0.92,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1234,
+          "retrievalMs": 19,
+          "selectionMs": 289,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0554",
+            "kb_menu_0555",
+            "kb_menu_0511",
+            "kb_menu_0510",
+            "kb_menu_0552",
+            "kb_menu_0516",
+            "kb_menu_0514",
+            "kb_menu_0553",
+            "kb_menu_0627",
+            "kb_menu_0556",
+            "kb_menu_0353",
+            "kb_menu_0560",
+            "kb_menu_0065",
+            "kb_menu_0509",
+            "kb_menu_0416",
+            "kb_menu_0512",
+            "kb_menu_0626",
+            "kb_menu_0559",
+            "kb_menu_0352",
+            "kb_menu_0246"
+          ],
+          "task_2": [
+            "kb_menu_0210",
+            "kb_menu_0213",
+            "kb_menu_0212",
+            "kb_menu_0018",
+            "kb_menu_0391",
+            "kb_menu_0324",
+            "kb_menu_0152",
+            "kb_menu_0211",
+            "kb_menu_0209",
+            "kb_menu_0272",
+            "kb_menu_0208",
+            "kb_menu_0227",
+            "kb_menu_0415",
+            "kb_menu_0174",
+            "kb_menu_0591",
+            "kb_menu_0490",
+            "kb_menu_0422",
+            "kb_menu_0097",
+            "kb_menu_0155",
+            "kb_menu_0157"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0554",
+        "kb_menu_0210"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0554",
+            "name": "국민카드 분실신고",
+            "description": "KB국민카드 분실신고 진입점.",
+            "select_when": [
+              "국민카드 분실 또는 도난으로 사고 신고가 필요할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "국민카드 분실신고",
+          "basis": "explicit",
+          "explanation": "국민 신용카드를 분실",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0210",
+            "name": "ATM/지점출금",
+            "description": "카드·통장 없이 ATM이나 지점에서 출금하기 위한 화면.",
+            "select_when": [
+              "카드·통장 없이 출금하는 기능을 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_2",
+          "need": "ATM/지점출금",
+          "basis": "suggested",
+          "explanation": "ATM에서 현금도 찾아야 하는 상황",
+          "menuConfidence": 0.92,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1234,
+        "retrievalMs": 19,
+        "selectionMs": 289,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0554",
+          "kb_menu_0555",
+          "kb_menu_0511",
+          "kb_menu_0510",
+          "kb_menu_0552",
+          "kb_menu_0516",
+          "kb_menu_0514",
+          "kb_menu_0553",
+          "kb_menu_0627",
+          "kb_menu_0556",
+          "kb_menu_0353",
+          "kb_menu_0560",
+          "kb_menu_0065",
+          "kb_menu_0509",
+          "kb_menu_0416",
+          "kb_menu_0512",
+          "kb_menu_0626",
+          "kb_menu_0559",
+          "kb_menu_0352",
+          "kb_menu_0246"
+        ],
+        "task_2": [
+          "kb_menu_0210",
+          "kb_menu_0213",
+          "kb_menu_0212",
+          "kb_menu_0018",
+          "kb_menu_0391",
+          "kb_menu_0324",
+          "kb_menu_0152",
+          "kb_menu_0211",
+          "kb_menu_0209",
+          "kb_menu_0272",
+          "kb_menu_0208",
+          "kb_menu_0227",
+          "kb_menu_0415",
+          "kb_menu_0174",
+          "kb_menu_0591",
+          "kb_menu_0490",
+          "kb_menu_0422",
+          "kb_menu_0097",
+          "kb_menu_0155",
+          "kb_menu_0157"
+        ]
+      },
+      "http_ms": 1550.1718330000003,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72658,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"국민 신용카드를 분실\",\"query\":\"국민카드 분실신고\",\"basis\":\"explicit\"},{\"evidence\":\"ATM에서 현금도 찾아야 하는 상황\",\"query\":\"ATM/지점출금\",\"basis\":\"suggested\"}]}",
+          "usage": {
+            "prompt_tokens": 17206,
+            "completion_tokens": 63,
+            "total_tokens": 17269,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "399050",
+            "x-ratelimit-reset-tokens": "6.793s"
+          },
+          "provider_http_ms": 1228.5575409999972
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 12581,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 5314,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0554",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0554": 1.0,
+                "kb_menu_0555": 0.0,
+                "kb_menu_0511": 0.0,
+                "kb_menu_0510": 0.0,
+                "kb_menu_0552": 0.0,
+                "kb_menu_0516": 0.0,
+                "kb_menu_0514": 0.0,
+                "kb_menu_0553": 0.0,
+                "kb_menu_0627": 0.0,
+                "kb_menu_0556": 0.0,
+                "kb_menu_0353": 0.0,
+                "kb_menu_0560": 0.0,
+                "kb_menu_0065": 0.0,
+                "kb_menu_0509": 0.0,
+                "kb_menu_0416": 0.0,
+                "kb_menu_0512": 0.0,
+                "kb_menu_0626": 0.0,
+                "kb_menu_0559": 0.0,
+                "kb_menu_0352": 0.0,
+                "kb_menu_0246": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0210",
+              "confidence": 0.92,
+              "probabilities": {
+                "kb_menu_0210": 0.92,
+                "kb_menu_0213": 0.01,
+                "kb_menu_0212": 0.0,
+                "kb_menu_0018": 0.0,
+                "kb_menu_0391": 0.0,
+                "kb_menu_0324": 0.0,
+                "kb_menu_0152": 0.0,
+                "kb_menu_0211": 0.06,
+                "kb_menu_0209": 0.0,
+                "kb_menu_0272": 0.0,
+                "kb_menu_0208": 0.0,
+                "kb_menu_0227": 0.0,
+                "kb_menu_0415": 0.0,
+                "kb_menu_0174": 0.0,
+                "kb_menu_0591": 0.0,
+                "kb_menu_0490": 0.0,
+                "kb_menu_0422": 0.0,
+                "kb_menu_0097": 0.0,
+                "kb_menu_0155": 0.0,
+                "kb_menu_0157": 0.0,
+                "no_match": 0.01,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 286.1984579999977
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "situation_new_21",
+      "query": "휴양림에서 쉬고 싶어서 빈자리 확인과 예약을 같이 준비할래요.",
+      "expected_ids": [
+        "kb_menu_0472",
+        "kb_menu_0383"
+      ],
+      "expected_status": "ready",
+      "split": "situation_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0472",
+            "name": "휴양림별 잔여현황 보기",
+            "description": "휴양림별 예약 가능현황을 확인하도록 안내하는 링크.",
+            "select_when": [
+              "휴양림의 예약 가능한 잔여현황을 확인할 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0383",
+            "name": "휴양림 예약서비스",
+            "description": "여행지·숙소타입·여행일·인원으로 휴양림을 조회하고 선착순 예약·추첨 신청을 선택하는 화면.",
+            "select_when": [
+              "휴양림 예약이나 추첨 신청을 시작할 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0472",
+              "name": "휴양림별 잔여현황 보기",
+              "description": "휴양림별 예약 가능현황을 확인하도록 안내하는 링크.",
+              "select_when": [
+                "휴양림의 예약 가능한 잔여현황을 확인할 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "휴양림별 잔여현황 보기",
+            "basis": "explicit",
+            "explanation": "빈자리 확인",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0383",
+              "name": "휴양림 예약서비스",
+              "description": "여행지·숙소타입·여행일·인원으로 휴양림을 조회하고 선착순 예약·추첨 신청을 선택하는 화면.",
+              "select_when": [
+                "휴양림 예약이나 추첨 신청을 시작할 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_2",
+            "need": "휴양림 예약서비스",
+            "basis": "explicit",
+            "explanation": "예약을 같이 준비할래요",
+            "menuConfidence": 0.7,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1033,
+          "retrievalMs": 21,
+          "selectionMs": 268,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0472",
+            "kb_menu_0471",
+            "kb_menu_0473",
+            "kb_menu_0383",
+            "kb_menu_0469",
+            "kb_menu_0474",
+            "kb_menu_0304",
+            "kb_menu_0470",
+            "kb_menu_0292",
+            "kb_menu_0291",
+            "kb_menu_0269",
+            "kb_menu_0273",
+            "kb_menu_0612",
+            "kb_menu_0033",
+            "kb_menu_0418",
+            "kb_menu_0225",
+            "kb_menu_0462",
+            "kb_menu_0272",
+            "kb_menu_0132",
+            "kb_menu_0266"
+          ],
+          "task_2": [
+            "kb_menu_0383",
+            "kb_menu_0469",
+            "kb_menu_0471",
+            "kb_menu_0470",
+            "kb_menu_0473",
+            "kb_menu_0472",
+            "kb_menu_0474",
+            "kb_menu_0389",
+            "kb_menu_0176",
+            "kb_menu_0612",
+            "kb_menu_0604",
+            "kb_menu_0097",
+            "kb_menu_0269",
+            "kb_menu_0225",
+            "kb_menu_0185",
+            "kb_menu_0606",
+            "kb_menu_0033",
+            "kb_menu_0613",
+            "kb_menu_0132",
+            "kb_menu_0560"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0472",
+        "kb_menu_0383"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0472",
+            "name": "휴양림별 잔여현황 보기",
+            "description": "휴양림별 예약 가능현황을 확인하도록 안내하는 링크.",
+            "select_when": [
+              "휴양림의 예약 가능한 잔여현황을 확인할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "휴양림별 잔여현황 보기",
+          "basis": "explicit",
+          "explanation": "빈자리 확인",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0383",
+            "name": "휴양림 예약서비스",
+            "description": "여행지·숙소타입·여행일·인원으로 휴양림을 조회하고 선착순 예약·추첨 신청을 선택하는 화면.",
+            "select_when": [
+              "휴양림 예약이나 추첨 신청을 시작할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_2",
+          "need": "휴양림 예약서비스",
+          "basis": "explicit",
+          "explanation": "예약을 같이 준비할래요",
+          "menuConfidence": 0.7,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1033,
+        "retrievalMs": 21,
+        "selectionMs": 268,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0472",
+          "kb_menu_0471",
+          "kb_menu_0473",
+          "kb_menu_0383",
+          "kb_menu_0469",
+          "kb_menu_0474",
+          "kb_menu_0304",
+          "kb_menu_0470",
+          "kb_menu_0292",
+          "kb_menu_0291",
+          "kb_menu_0269",
+          "kb_menu_0273",
+          "kb_menu_0612",
+          "kb_menu_0033",
+          "kb_menu_0418",
+          "kb_menu_0225",
+          "kb_menu_0462",
+          "kb_menu_0272",
+          "kb_menu_0132",
+          "kb_menu_0266"
+        ],
+        "task_2": [
+          "kb_menu_0383",
+          "kb_menu_0469",
+          "kb_menu_0471",
+          "kb_menu_0470",
+          "kb_menu_0473",
+          "kb_menu_0472",
+          "kb_menu_0474",
+          "kb_menu_0389",
+          "kb_menu_0176",
+          "kb_menu_0612",
+          "kb_menu_0604",
+          "kb_menu_0097",
+          "kb_menu_0269",
+          "kb_menu_0225",
+          "kb_menu_0185",
+          "kb_menu_0606",
+          "kb_menu_0033",
+          "kb_menu_0613",
+          "kb_menu_0132",
+          "kb_menu_0560"
+        ]
+      },
+      "http_ms": 1331.0187089999986,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72655,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"빈자리 확인\",\"query\":\"휴양림별 잔여현황 보기\",\"basis\":\"explicit\"},{\"evidence\":\"예약을 같이 준비할래요\",\"query\":\"휴양림 예약서비스\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17205,
+            "completion_tokens": 56,
+            "total_tokens": 17261,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "393341",
+            "x-ratelimit-reset-tokens": "7.554s"
+          },
+          "provider_http_ms": 1028.2600409999993
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 12268,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 5226,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0472",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0472": 1.0,
+                "kb_menu_0471": 0.0,
+                "kb_menu_0473": 0.0,
+                "kb_menu_0383": 0.0,
+                "kb_menu_0469": 0.0,
+                "kb_menu_0474": 0.0,
+                "kb_menu_0304": 0.0,
+                "kb_menu_0470": 0.0,
+                "kb_menu_0292": 0.0,
+                "kb_menu_0291": 0.0,
+                "kb_menu_0269": 0.0,
+                "kb_menu_0273": 0.0,
+                "kb_menu_0612": 0.0,
+                "kb_menu_0033": 0.0,
+                "kb_menu_0418": 0.0,
+                "kb_menu_0225": 0.0,
+                "kb_menu_0462": 0.0,
+                "kb_menu_0272": 0.0,
+                "kb_menu_0132": 0.0,
+                "kb_menu_0266": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0383",
+              "confidence": 0.7,
+              "probabilities": {
+                "kb_menu_0383": 0.71,
+                "kb_menu_0469": 0.09,
+                "kb_menu_0471": 0.0,
+                "kb_menu_0470": 0.01,
+                "kb_menu_0473": 0.0,
+                "kb_menu_0472": 0.15,
+                "kb_menu_0474": 0.0,
+                "kb_menu_0389": 0.0,
+                "kb_menu_0176": 0.0,
+                "kb_menu_0612": 0.0,
+                "kb_menu_0604": 0.0,
+                "kb_menu_0097": 0.0,
+                "kb_menu_0269": 0.0,
+                "kb_menu_0225": 0.0,
+                "kb_menu_0185": 0.0,
+                "kb_menu_0606": 0.0,
+                "kb_menu_0033": 0.0,
+                "kb_menu_0613": 0.0,
+                "kb_menu_0132": 0.0,
+                "kb_menu_0560": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.04,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 266.0555420000002
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "situation_new_24",
+      "query": "가게 카드 매출이 들어올 계좌를 바꾸면서 입금 현황도 보고 싶어요.",
+      "expected_ids": [
+        "kb_menu_0626",
+        "kb_menu_0018"
+      ],
+      "expected_status": "ready",
+      "split": "situation_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "ready",
+        "menus": [
+          {
+            "id": "kb_menu_0626",
+            "name": "카드 가맹점 등록·결제계좌 변경",
+            "description": "카드매출 입금계좌를 함께 등록·변경하도록 안내하는 항목.",
+            "select_when": [
+              "카드 가맹점 결제계좌 신규 등록을 진행하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          {
+            "id": "kb_menu_0018",
+            "name": "우리가게 카드매출",
+            "description": "카드매출액과 입금액을 안내하는 서비스와 가입 진입점.",
+            "select_when": [
+              "가게 카드매출액·입금액 확인 서비스를 찾을 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0626",
+              "name": "카드 가맹점 등록·결제계좌 변경",
+              "description": "카드매출 입금계좌를 함께 등록·변경하도록 안내하는 항목.",
+              "select_when": [
+                "카드 가맹점 결제계좌 신규 등록을 진행하고 싶을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "카드 가맹점 결제계좌 변경",
+            "basis": "explicit",
+            "explanation": "가게 카드 매출이 들어올 계좌를 바꾸면서",
+            "menuConfidence": 1.0,
+            "basisConfidence": null
+          },
+          {
+            "menu": {
+              "id": "kb_menu_0018",
+              "name": "우리가게 카드매출",
+              "description": "카드매출액과 입금액을 안내하는 서비스와 가입 진입점.",
+              "select_when": [
+                "가게 카드매출액·입금액 확인 서비스를 찾을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_2",
+            "need": "우리가게 카드매출 입금액 조회",
+            "basis": "explicit",
+            "explanation": "입금 현황도 보고 싶어요.",
+            "menuConfidence": 0.99,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1460,
+          "retrievalMs": 22,
+          "selectionMs": 317,
+          "jevCalls": 1
+        },
+        "reviews": [],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0626",
+            "kb_menu_0627",
+            "kb_menu_0560",
+            "kb_menu_0018",
+            "kb_menu_0216",
+            "kb_menu_0166",
+            "kb_menu_0217",
+            "kb_menu_0197",
+            "kb_menu_0274",
+            "kb_menu_0419",
+            "kb_menu_0177",
+            "kb_menu_0555",
+            "kb_menu_0213",
+            "kb_menu_0553",
+            "kb_menu_0628",
+            "kb_menu_0193",
+            "kb_menu_0619",
+            "kb_menu_0554",
+            "kb_menu_0521",
+            "kb_menu_0552"
+          ],
+          "task_2": [
+            "kb_menu_0018",
+            "kb_menu_0626",
+            "kb_menu_0627",
+            "kb_menu_0345",
+            "kb_menu_0068",
+            "kb_menu_0246",
+            "kb_menu_0211",
+            "kb_menu_0422",
+            "kb_menu_0226",
+            "kb_menu_0344",
+            "kb_menu_0160",
+            "kb_menu_0208",
+            "kb_menu_0157",
+            "kb_menu_0274",
+            "kb_menu_0260",
+            "kb_menu_0552",
+            "kb_menu_0210",
+            "kb_menu_0340",
+            "kb_menu_0309",
+            "kb_menu_0194"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0626",
+        "kb_menu_0018"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0626",
+            "name": "카드 가맹점 등록·결제계좌 변경",
+            "description": "카드매출 입금계좌를 함께 등록·변경하도록 안내하는 항목.",
+            "select_when": [
+              "카드 가맹점 결제계좌 신규 등록을 진행하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "카드 가맹점 결제계좌 변경",
+          "basis": "explicit",
+          "explanation": "가게 카드 매출이 들어올 계좌를 바꾸면서",
+          "menuConfidence": 1.0,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0018",
+            "name": "우리가게 카드매출",
+            "description": "카드매출액과 입금액을 안내하는 서비스와 가입 진입점.",
+            "select_when": [
+              "가게 카드매출액·입금액 확인 서비스를 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_2",
+          "need": "우리가게 카드매출 입금액 조회",
+          "basis": "explicit",
+          "explanation": "입금 현황도 보고 싶어요.",
+          "menuConfidence": 0.99,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1460,
+        "retrievalMs": 22,
+        "selectionMs": 317,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0626",
+          "kb_menu_0627",
+          "kb_menu_0560",
+          "kb_menu_0018",
+          "kb_menu_0216",
+          "kb_menu_0166",
+          "kb_menu_0217",
+          "kb_menu_0197",
+          "kb_menu_0274",
+          "kb_menu_0419",
+          "kb_menu_0177",
+          "kb_menu_0555",
+          "kb_menu_0213",
+          "kb_menu_0553",
+          "kb_menu_0628",
+          "kb_menu_0193",
+          "kb_menu_0619",
+          "kb_menu_0554",
+          "kb_menu_0521",
+          "kb_menu_0552"
+        ],
+        "task_2": [
+          "kb_menu_0018",
+          "kb_menu_0626",
+          "kb_menu_0627",
+          "kb_menu_0345",
+          "kb_menu_0068",
+          "kb_menu_0246",
+          "kb_menu_0211",
+          "kb_menu_0422",
+          "kb_menu_0226",
+          "kb_menu_0344",
+          "kb_menu_0160",
+          "kb_menu_0208",
+          "kb_menu_0157",
+          "kb_menu_0274",
+          "kb_menu_0260",
+          "kb_menu_0552",
+          "kb_menu_0210",
+          "kb_menu_0340",
+          "kb_menu_0309",
+          "kb_menu_0194"
+        ]
+      },
+      "http_ms": 1807.5495830000002,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72660,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"가게 카드 매출이 들어올 계좌를 바꾸면서\",\"query\":\"카드 가맹점 결제계좌 변경\",\"basis\":\"explicit\"},{\"evidence\":\"입금 현황도 보고 싶어요.\",\"query\":\"우리가게 카드매출 입금액 조회\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17208,
+            "completion_tokens": 74,
+            "total_tokens": 17282,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "386127",
+            "x-ratelimit-reset-tokens": "8.516s"
+          },
+          "provider_http_ms": 1454.595874999999
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 13001,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 5409,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0626",
+              "confidence": 1.0,
+              "probabilities": {
+                "kb_menu_0626": 1.0,
+                "kb_menu_0627": 0.0,
+                "kb_menu_0560": 0.0,
+                "kb_menu_0018": 0.0,
+                "kb_menu_0216": 0.0,
+                "kb_menu_0166": 0.0,
+                "kb_menu_0217": 0.0,
+                "kb_menu_0197": 0.0,
+                "kb_menu_0274": 0.0,
+                "kb_menu_0419": 0.0,
+                "kb_menu_0177": 0.0,
+                "kb_menu_0555": 0.0,
+                "kb_menu_0213": 0.0,
+                "kb_menu_0553": 0.0,
+                "kb_menu_0628": 0.0,
+                "kb_menu_0193": 0.0,
+                "kb_menu_0619": 0.0,
+                "kb_menu_0554": 0.0,
+                "kb_menu_0521": 0.0,
+                "kb_menu_0552": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0018",
+              "confidence": 0.99,
+              "probabilities": {
+                "kb_menu_0018": 0.99,
+                "kb_menu_0626": 0.0,
+                "kb_menu_0627": 0.0,
+                "kb_menu_0345": 0.0,
+                "kb_menu_0068": 0.0,
+                "kb_menu_0246": 0.0,
+                "kb_menu_0211": 0.0,
+                "kb_menu_0422": 0.0,
+                "kb_menu_0226": 0.0,
+                "kb_menu_0344": 0.0,
+                "kb_menu_0160": 0.0,
+                "kb_menu_0208": 0.0,
+                "kb_menu_0157": 0.0,
+                "kb_menu_0274": 0.0,
+                "kb_menu_0260": 0.0,
+                "kb_menu_0552": 0.0,
+                "kb_menu_0210": 0.0,
+                "kb_menu_0340": 0.0,
+                "kb_menu_0309": 0.0,
+                "kb_menu_0194": 0.0,
+                "no_match": 0.01,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 314.1153330000002
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    },
+    {
+      "case_id": "situation_new_29",
+      "query": "오픈뱅킹 송금을 잘못했어요. 내역 확인과 반환 신청을 도와줘요.",
+      "expected_ids": [
+        "kb_menu_0205",
+        "kb_menu_0519"
+      ],
+      "expected_status": "ready",
+      "split": "situation_new",
+      "label_source": "new catalog/policy-authored synthetic wording; no independent human review",
+      "provider": "hybrid",
+      "queue_wait_ms": 0,
+      "raw_response": {
+        "status": "partial",
+        "menus": [
+          {
+            "id": "kb_menu_0519",
+            "name": "오픈뱅킹 착오송금 반환신청·조회",
+            "description": "고객이 잘못 보낸 오픈뱅킹 송금의 반환신청·조회 항목.",
+            "select_when": [
+              "오픈뱅킹 착오송금 반환 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+            ],
+            "aliases": []
+          }
+        ],
+        "recommendations": [
+          {
+            "menu": {
+              "id": "kb_menu_0519",
+              "name": "오픈뱅킹 착오송금 반환신청·조회",
+              "description": "고객이 잘못 보낸 오픈뱅킹 송금의 반환신청·조회 항목.",
+              "select_when": [
+                "오픈뱅킹 착오송금 반환 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+              ],
+              "aliases": []
+            },
+            "needId": "task_1",
+            "need": "오픈뱅킹 착오송금 반환신청·조회 내역 조회",
+            "basis": "explicit",
+            "explanation": "내역 확인",
+            "menuConfidence": 0.98,
+            "basisConfidence": null
+          }
+        ],
+        "metrics": {
+          "retrievalMode": "llm_planner_e5_jev",
+          "planningMs": 1170,
+          "retrievalMs": 9,
+          "selectionMs": 278,
+          "jevCalls": 1
+        },
+        "reviews": [
+          {
+            "stage": "coverage",
+            "needId": "task_2",
+            "reason": "independent_outcomes_collapsed_to_same_menu",
+            "choice": "kb_menu_0519",
+            "confidence": 0.97
+          }
+        ],
+        "candidateIdsByNeed": {
+          "task_1": [
+            "kb_menu_0519",
+            "kb_menu_0340",
+            "kb_menu_0339",
+            "kb_menu_0520",
+            "kb_menu_0341",
+            "kb_menu_0344",
+            "kb_menu_0345",
+            "kb_menu_0342",
+            "kb_menu_0226",
+            "kb_menu_0160",
+            "kb_menu_0505",
+            "kb_menu_0194",
+            "kb_menu_0331",
+            "kb_menu_0221",
+            "kb_menu_0324",
+            "kb_menu_0350",
+            "kb_menu_0348",
+            "kb_menu_0497",
+            "kb_menu_0518",
+            "kb_menu_0329"
+          ],
+          "task_2": [
+            "kb_menu_0519",
+            "kb_menu_0520",
+            "kb_menu_0339",
+            "kb_menu_0340",
+            "kb_menu_0221",
+            "kb_menu_0344",
+            "kb_menu_0426",
+            "kb_menu_0341",
+            "kb_menu_0420",
+            "kb_menu_0349",
+            "kb_menu_0335",
+            "kb_menu_0498",
+            "kb_menu_0422",
+            "kb_menu_0052",
+            "kb_menu_0345",
+            "kb_menu_0323",
+            "kb_menu_0348",
+            "kb_menu_0421",
+            "kb_menu_0168",
+            "kb_menu_0220"
+          ]
+        },
+        "catalogSha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+      },
+      "status": "partial",
+      "selected_ids": [
+        "kb_menu_0519"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0519",
+            "name": "오픈뱅킹 착오송금 반환신청·조회",
+            "description": "고객이 잘못 보낸 오픈뱅킹 송금의 반환신청·조회 항목.",
+            "select_when": [
+              "오픈뱅킹 착오송금 반환 관련 현재 정보나 기존 내역을 확인하고 싶을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "task_1",
+          "need": "오픈뱅킹 착오송금 반환신청·조회 내역 조회",
+          "basis": "explicit",
+          "explanation": "내역 확인",
+          "menuConfidence": 0.98,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [
+        {
+          "stage": "coverage",
+          "needId": "task_2",
+          "reason": "independent_outcomes_collapsed_to_same_menu",
+          "choice": "kb_menu_0519",
+          "confidence": 0.97
+        }
+      ],
+      "metrics": {
+        "retrievalMode": "llm_planner_e5_jev",
+        "planningMs": 1170,
+        "retrievalMs": 9,
+        "selectionMs": 278,
+        "jevCalls": 1
+      },
+      "candidateIdsByNeed": {
+        "task_1": [
+          "kb_menu_0519",
+          "kb_menu_0340",
+          "kb_menu_0339",
+          "kb_menu_0520",
+          "kb_menu_0341",
+          "kb_menu_0344",
+          "kb_menu_0345",
+          "kb_menu_0342",
+          "kb_menu_0226",
+          "kb_menu_0160",
+          "kb_menu_0505",
+          "kb_menu_0194",
+          "kb_menu_0331",
+          "kb_menu_0221",
+          "kb_menu_0324",
+          "kb_menu_0350",
+          "kb_menu_0348",
+          "kb_menu_0497",
+          "kb_menu_0518",
+          "kb_menu_0329"
+        ],
+        "task_2": [
+          "kb_menu_0519",
+          "kb_menu_0520",
+          "kb_menu_0339",
+          "kb_menu_0340",
+          "kb_menu_0221",
+          "kb_menu_0344",
+          "kb_menu_0426",
+          "kb_menu_0341",
+          "kb_menu_0420",
+          "kb_menu_0349",
+          "kb_menu_0335",
+          "kb_menu_0498",
+          "kb_menu_0422",
+          "kb_menu_0052",
+          "kb_menu_0345",
+          "kb_menu_0323",
+          "kb_menu_0348",
+          "kb_menu_0421",
+          "kb_menu_0168",
+          "kb_menu_0220"
+        ]
+      },
+      "http_ms": 1467.4132919999997,
+      "calls": [
+        {
+          "provider": "llm_task_planner",
+          "stage": "task_planning",
+          "request_payload_bytes": 72656,
+          "model": "gpt-4.1-2025-04-14",
+          "planner_content": "{\"status\":\"ready\",\"tasks\":[{\"evidence\":\"내역 확인\",\"query\":\"오픈뱅킹 착오송금 반환신청·조회 내역 조회\",\"basis\":\"explicit\"},{\"evidence\":\"반환 신청을 도와줘요\",\"query\":\"오픈뱅킹 착오송금 반환신청\",\"basis\":\"explicit\"}]}",
+          "usage": {
+            "prompt_tokens": 17210,
+            "completion_tokens": 73,
+            "total_tokens": 17283,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "answers": null,
+          "http_status": 200,
+          "rate_headers": {
+            "x-ratelimit-limit-tokens": "450000",
+            "x-ratelimit-remaining-tokens": "382744",
+            "x-ratelimit-reset-tokens": "8.967s"
+          },
+          "provider_http_ms": 1165.6790410000006
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "menu_selection",
+          "request_payload_bytes": 13826,
+          "model": "jev-1.14.0",
+          "planner_content": null,
+          "usage": {
+            "input_tokens": 5630,
+            "output_tokens": 613
+          },
+          "answers": {
+            "task_1": {
+              "type": "choice",
+              "choice": "kb_menu_0519",
+              "confidence": 0.98,
+              "probabilities": {
+                "kb_menu_0519": 0.98,
+                "kb_menu_0340": 0.02,
+                "kb_menu_0339": 0.0,
+                "kb_menu_0520": 0.0,
+                "kb_menu_0341": 0.0,
+                "kb_menu_0344": 0.0,
+                "kb_menu_0345": 0.0,
+                "kb_menu_0342": 0.0,
+                "kb_menu_0226": 0.0,
+                "kb_menu_0160": 0.0,
+                "kb_menu_0505": 0.0,
+                "kb_menu_0194": 0.0,
+                "kb_menu_0331": 0.0,
+                "kb_menu_0221": 0.0,
+                "kb_menu_0324": 0.0,
+                "kb_menu_0350": 0.0,
+                "kb_menu_0348": 0.0,
+                "kb_menu_0497": 0.0,
+                "kb_menu_0518": 0.0,
+                "kb_menu_0329": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            },
+            "task_2": {
+              "type": "choice",
+              "choice": "kb_menu_0519",
+              "confidence": 0.97,
+              "probabilities": {
+                "kb_menu_0519": 0.97,
+                "kb_menu_0520": 0.0,
+                "kb_menu_0339": 0.03,
+                "kb_menu_0340": 0.0,
+                "kb_menu_0221": 0.0,
+                "kb_menu_0344": 0.0,
+                "kb_menu_0426": 0.0,
+                "kb_menu_0341": 0.0,
+                "kb_menu_0420": 0.0,
+                "kb_menu_0349": 0.0,
+                "kb_menu_0335": 0.0,
+                "kb_menu_0498": 0.0,
+                "kb_menu_0422": 0.0,
+                "kb_menu_0052": 0.0,
+                "kb_menu_0345": 0.0,
+                "kb_menu_0323": 0.0,
+                "kb_menu_0348": 0.0,
+                "kb_menu_0421": 0.0,
+                "kb_menu_0168": 0.0,
+                "kb_menu_0220": 0.0,
+                "no_match": 0.0,
+                "unsure": 0.0,
+                "skip": 0.0
+              }
+            }
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 276.2916669999988
+        }
+      ],
+      "score": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "menu_exact": false,
+        "status_and_menu_exact": false
+      }
+    }
+  ],
+  "summary": {
+    "hybrid": {
+      "cases": 12,
+      "positive_cases": 12,
+      "negative_cases": 0,
+      "errors": 0,
+      "menu_exact_correct": 7,
+      "menu_exact_accuracy": 0.5833333333333334,
+      "status_and_menu_correct": 7,
+      "status_and_menu_accuracy": 0.5833333333333334,
+      "macro_precision": 0.8333333333333334,
+      "macro_recall": 0.8055555555555556,
+      "macro_f1": 0.8115079365079365,
+      "micro_precision": 0.782608695652174,
+      "micro_recall": 0.782608695652174,
+      "micro_f1": 0.782608695652174,
+      "true_positive_menus": 18,
+      "extra_menus": 5,
+      "missing_menus": 5,
+      "cases_with_extra_menus": 4,
+      "cases_with_missing_menus": 5,
+      "mean_http_ms": 1690.66672225,
+      "median_http_ms": 1645.2897709999997,
+      "p95_http_ms": 2206.3507080000004,
+      "actual_upstream_calls": 24,
+      "tokens": {
+        "input": {
+          "observed_calls": 24,
+          "sum": 271374,
+          "mean_per_case": 22614.5
+        },
+        "output": {
+          "observed_calls": 24,
+          "sum": 8232,
+          "mean_per_case": 686.0
+        },
+        "cached_input": {
+          "observed_calls": 12,
+          "sum": 153216,
+          "mean_per_case": 12768.0
+        }
+      },
+      "statuses": {
+        "partial": 1,
+        "ready": 11
+      }
+    }
+  },
+  "by_split": {
+    "hybrid": {
+      "multi_new": {
+        "cases": 2,
+        "positive_cases": 2,
+        "negative_cases": 0,
+        "errors": 0,
+        "menu_exact_correct": 1,
+        "menu_exact_accuracy": 0.5,
+        "status_and_menu_correct": 1,
+        "status_and_menu_accuracy": 0.5,
+        "macro_precision": 0.75,
+        "macro_recall": 0.75,
+        "macro_f1": 0.75,
+        "micro_precision": 0.75,
+        "micro_recall": 0.75,
+        "micro_f1": 0.75,
+        "true_positive_menus": 3,
+        "extra_menus": 1,
+        "missing_menus": 1,
+        "cases_with_extra_menus": 1,
+        "cases_with_missing_menus": 1,
+        "mean_http_ms": 1753.5248545000002,
+        "median_http_ms": 1753.5248545000002,
+        "p95_http_ms": 1889.8466670000005,
+        "actual_upstream_calls": 4,
+        "tokens": {
+          "input": {
+            "observed_calls": 4,
+            "sum": 45091,
+            "mean_per_case": 22545.5
+          },
+          "output": {
+            "observed_calls": 4,
+            "sum": 1358,
+            "mean_per_case": 679.0
+          },
+          "cached_input": {
+            "observed_calls": 2,
+            "sum": 17024,
+            "mean_per_case": 8512.0
+          }
+        },
+        "statuses": {
+          "ready": 2
+        }
+      },
+      "single_new": {
+        "cases": 1,
+        "positive_cases": 1,
+        "negative_cases": 0,
+        "errors": 0,
+        "menu_exact_correct": 1,
+        "menu_exact_accuracy": 1.0,
+        "status_and_menu_correct": 1,
+        "status_and_menu_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "true_positive_menus": 1,
+        "extra_menus": 0,
+        "missing_menus": 0,
+        "cases_with_extra_menus": 0,
+        "cases_with_missing_menus": 0,
+        "mean_http_ms": 2105.794750000001,
+        "median_http_ms": 2105.794750000001,
+        "p95_http_ms": 2105.794750000001,
+        "actual_upstream_calls": 2,
+        "tokens": {
+          "input": {
+            "observed_calls": 2,
+            "sum": 20030,
+            "mean_per_case": 20030.0
+          },
+          "output": {
+            "observed_calls": 2,
+            "sum": 350,
+            "mean_per_case": 350.0
+          },
+          "cached_input": {
+            "observed_calls": 1,
+            "sum": 0,
+            "mean_per_case": 0.0
+          }
+        },
+        "statuses": {
+          "ready": 1
+        }
+      },
+      "situation_new": {
+        "cases": 9,
+        "positive_cases": 9,
+        "negative_cases": 0,
+        "errors": 0,
+        "menu_exact_correct": 5,
+        "menu_exact_accuracy": 0.5555555555555556,
+        "status_and_menu_correct": 5,
+        "status_and_menu_accuracy": 0.5555555555555556,
+        "macro_precision": 0.8333333333333334,
+        "macro_recall": 0.7962962962962963,
+        "macro_f1": 0.8042328042328042,
+        "micro_precision": 0.7777777777777778,
+        "micro_recall": 0.7777777777777778,
+        "micro_f1": 0.7777777777777778,
+        "true_positive_menus": 14,
+        "extra_menus": 4,
+        "missing_menus": 4,
+        "cases_with_extra_menus": 3,
+        "cases_with_missing_menus": 4,
+        "mean_http_ms": 1630.5729119999999,
+        "median_http_ms": 1568.5108330000012,
+        "p95_http_ms": 2206.3507080000004,
+        "actual_upstream_calls": 18,
+        "tokens": {
+          "input": {
+            "observed_calls": 18,
+            "sum": 206253,
+            "mean_per_case": 22917.0
+          },
+          "output": {
+            "observed_calls": 18,
+            "sum": 6524,
+            "mean_per_case": 724.8888888888889
+          },
+          "cached_input": {
+            "observed_calls": 9,
+            "sum": 136192,
+            "mean_per_case": 15132.444444444445
+          }
+        },
+        "statuses": {
+          "partial": 1,
+          "ready": 8
+        }
+      }
+    }
+  }
+}

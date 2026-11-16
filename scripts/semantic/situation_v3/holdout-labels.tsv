@@ -1,0 +1,101 @@
+case_id	family_id	split	query	expected_ids
+context_employment_docs_1	employment_docs	contextual_multi	새 회사가 월급 받을 계좌 증빙과 현재 예금 잔액을 입증하는 서류를 각각 제출하래요. 두 서류를 준비해 주세요.	kb_menu_0493,kb_menu_0492
+context_employment_docs_2	employment_docs	contextual_multi	입사 서류 마감이라 급여 받을 통장 사본과 돈이 얼마나 있는지 은행 증명서를 함께 떼야 해요.	kb_menu_0493,kb_menu_0492
+context_lost_card_cash_1	lost_card_cash	contextual_multi	국민 신용카드를 밖에서 잃어버렸고 당장 현금도 필요해요. 잃은 카드는 막고 카드 없이 돈을 찾는 방법을 열어 주세요.	kb_menu_0554,kb_menu_0210
+context_lost_card_cash_2	lost_card_cash	contextual_multi	지갑 속 국민 신용카드가 사라졌어요. 먼저 사용을 막고 통장도 카드도 없이 은행 기계에서 현금을 꺼내야 해요.	kb_menu_0554,kb_menu_0210
+context_found_card_1	found_card	contextual_multi	분실로 막아 둔 국민 신용카드를 찾았어요. 다시 쓸 수 있게 풀고 그 사이 결제된 게 있는지도 보고 싶어요.	kb_menu_0555,kb_menu_0552
+context_found_card_2	found_card	contextual_multi	어제 잃어버려 정지한 국민 신용카드가 집에 있었네요. 사용 정지를 풀고 카드 이용 기록도 확인할래요.	kb_menu_0555,kb_menu_0552
+context_moving_1	moving	contextual_multi	이사 잔금을 보내야 하는데 하루 송금 가능액이 모자라요. 그 한도를 올리고 계좌에서 보낸 돈의 결과도 살펴볼래요.	kb_menu_0214,kb_menu_0205
+context_moving_2	moving	contextual_multi	집 계약 잔금일이에요. 은행 이체 한도를 먼저 늘리고 이전에 계좌로 송금한 결과를 따로 확인하려 해요.	kb_menu_0214,kb_menu_0205
+context_standing_order_1	standing_order	contextual_multi	새집 집주인에게 매달 보낼 돈을 자동으로 설정하고 예전 집으로 가던 자동 송금은 끊어야 해요.	kb_menu_0206,kb_menu_0207
+context_standing_order_2	standing_order	contextual_multi	월세 받을 사람이 바뀌었어요. 옛 자동이체는 종료하고 새 자동이체를 등록할래요.	kb_menu_0206,kb_menu_0207
+context_wrong_transfer_1	wrong_transfer	contextual_multi	오픈뱅킹으로 돈을 보낸 상대를 잘못 골랐어요. 은행 계좌 송금 결과를 확인한 뒤 착오송금 반환을 신청할래요.	kb_menu_0205,kb_menu_0519
+context_wrong_transfer_2	wrong_transfer	contextual_multi	오픈뱅킹으로 이체가 잘못된 사람에게 갔어요. 계좌 이체 결과 조회와 잘못 보낸 돈 반환 신청이 둘 다 필요해요.	kb_menu_0205,kb_menu_0519
+context_claim_1	claim	contextual_multi	KB손해보험 병원비 보상을 새로 접수하고 지난번에 접수한 보상 건은 어디까지 진행됐는지 확인할래요.	kb_menu_0570,kb_menu_0571
+context_claim_2	claim	contextual_multi	치료비 영수증이 생겨 KB손해보험에 청구하려 해요. 예전에 낸 보험금 청구 기록도 같이 보고 싶어요.	kb_menu_0570,kb_menu_0571
+context_forest_1	forest	contextual_multi	휴양림에 남은 자리가 있는지 먼저 보고 자리가 있으면 예약 신청까지 할 수 있는 곳을 각각 열어 주세요.	kb_menu_0472,kb_menu_0383
+context_forest_2	forest	contextual_multi	가족과 숲에서 잘 거라 휴양림별 빈자리 조회와 숙박 예약을 둘 다 준비할래요.	kb_menu_0472,kb_menu_0383
+context_domestic_trip_1	domestic_trip	contextual_multi	이번엔 국내로 가요. KTX 좌석을 잡고 잘 숙소도 예약할 수 있게 두 곳을 찾아 주세요.	kb_menu_0384,kb_menu_0604
+context_domestic_trip_2	domestic_trip	contextual_multi	부모님 모시고 국내 여행을 가려는데 SRT 승차권과 숙박 예약을 함께 준비해야 해요.	kb_menu_0384,kb_menu_0604
+context_passport_roaming_1	passport_roaming	contextual_multi	해외 출장은 환전과 결제 준비가 끝났어요. 유효기간이 끝난 여권을 다시 만들고 휴대폰 해외 로밍만 신청할래요.	kb_menu_0385,kb_menu_0612
+context_passport_roaming_2	passport_roaming	contextual_multi	보험과 돈 준비는 다 했고 출국 전에 만료된 여권 재발급 절차와 리브모바일 로밍 신청만 남았어요.	kb_menu_0385,kb_menu_0612
+context_fx_tracking_1	fx_tracking	contextual_multi	달러 값이 궁금해서 현재 환율을 보고 앞으로 찾기 쉽도록 그 통화를 관심 목록에 넣고 싶어요.	kb_menu_0316,kb_menu_0317
+context_fx_tracking_2	fx_tracking	contextual_multi	엔화 시세를 확인한 다음 자주 보는 통화로 등록할래요. 두 기능 모두 찾아 주세요.	kb_menu_0316,kb_menu_0317
+context_fx_collection_1	fx_collection	contextual_multi	전에 신청한 환전 건을 관리하고 아직 은행에서 받아 가지 않은 외화가 있는지도 따로 확인할래요.	kb_menu_0324,kb_menu_0329
+context_fx_collection_2	fx_collection	contextual_multi	이미 바꿔 둔 외화가 있어요. 환전 신청 내역 관리와 미수령 외화 내역 조회가 필요해요.	kb_menu_0324,kb_menu_0329
+context_lost_security_1	lost_security	contextual_multi	가방에서 OTP 기계와 보안카드를 둘 다 잃어버렸어요. 각각 사고 접수할 수 있는 곳을 열어 주세요.	kb_menu_0512,kb_menu_0511
+context_lost_security_2	lost_security	contextual_multi	인증에 쓰던 OTP와 보안카드가 없어졌어요. 둘 다 분실 신고를 해야 해요.	kb_menu_0512,kb_menu_0511
+context_lost_book_1	lost_book	contextual_multi	통장과 도장을 잃어 사고 신고를 접수하고 예전에 신고된 통장·인감 사고 기록도 확인할래요.	kb_menu_0509,kb_menu_0517
+context_lost_book_2	lost_book	contextual_multi	인감과 통장이 없어졌어요. 새 분실 신고와 통장·인감 신고 이력 조회를 각각 진행할래요.	kb_menu_0509,kb_menu_0517
+context_business_1	business	contextual_multi	가게 카드 매출이 입금될 은행 계좌를 바꾸고 실제 매출 입금 상황도 보고 싶어요.	kb_menu_0626,kb_menu_0018
+context_business_2	business	contextual_multi	매장 카드대금 받을 계좌가 달라져 변경해야 해요. 카드 매출 정산금이 들어왔는지도 별도로 확인할래요.	kb_menu_0626,kb_menu_0018
+context_business_support_1	business_support	contextual_multi	가게에서 놓친 세금 환급이나 고용 지원금이 있는지 조회하고 사업 운영 문제는 소상공인컨설팅 전문가와 상담 예약을 하고 싶어요.	kb_menu_0019,kb_menu_0629
+context_business_support_2	business_support	contextual_multi	사장으로서 세금 환급·고용 지원금 예상액을 알아보고 소상공인컨설팅 상담 신청도 함께 할래요.	kb_menu_0019,kb_menu_0629
+context_business_setup_1	business_setup	contextual_multi	새 가게를 열어 사업자 통장과 기업뱅킹을 만들고 기존에 쓰는 사업용 계좌도 한곳에 모아 설정하고 싶어요.	kb_menu_0630,kb_menu_0619
+context_business_setup_2	business_setup	contextual_multi	창업 준비로 사업자용 통장·기업뱅킹 신규 개설과 사업용계좌 설정이 각각 필요해요.	kb_menu_0630,kb_menu_0619
+context_security_restore_1	security_restore	contextual_multi	찾은 보안카드와 현금·직불카드가 둘 다 분실 등록 상태예요. 각각 등록을 풀어야 해요.	kb_menu_0514,kb_menu_0516
+context_security_restore_2	security_restore	contextual_multi	분실 신고했던 보안카드랑 현금카드를 찾았어요. 보안카드 해제와 현금·직불카드 해제를 함께 처리할래요.	kb_menu_0514,kb_menu_0516
+context_car_1	car	contextual_multi	타던 차를 팔 생각이에요. 현재 중고차 값을 조회하고 팔아줘 차차차로 판매 접수도 해 볼래요.	kb_menu_0597,kb_menu_0596
+context_car_2	car	contextual_multi	차를 처분하기 전에 내 차량 시세를 알아보고 내 차 판매 서비스도 열어 주세요.	kb_menu_0597,kb_menu_0596
+context_housing_1	housing	contextual_multi	집 매수를 고민 중인데 가격 시세와 부동산 세금을 계산하는 기능을 각각 보고 싶어요.	kb_menu_0588,kb_menu_0591
+context_housing_2	housing	contextual_multi	이사 갈 집의 부동산 시세를 조회하고 취득세 같은 부동산 세금도 계산할래요.	kb_menu_0588,kb_menu_0591
+context_taxes_1	taxes	contextual_multi	고지서가 두 장 왔는데 하나는 국세이고 다른 하나는 지방세예요. 각각 납부할 곳을 찾아 주세요.	kb_menu_0227,kb_menu_0228
+context_taxes_2	taxes	contextual_multi	국세와 지방세를 모두 내야 해요. 두 세금 납부 기능을 나눠서 열어 주세요.	kb_menu_0227,kb_menu_0228
+context_receipts_1	receipts	contextual_multi	은행 창구 거래 영수증은 전자로 받고 싶고 물건 산 카드·현금 영수증도 한곳에 모아 관리할래요.	kb_menu_0507,kb_menu_0508
+context_receipts_2	receipts	contextual_multi	창구 전자영수증 수신 설정과 결제 구매영수증 통합 관리 시작을 함께 할래요.	kb_menu_0507,kb_menu_0508
+context_stocks_1	stocks	contextual_multi	KB증권으로 낸 주식 주문 기록을 확인하고 관심종목 목록도 열어 주세요.	kb_menu_0541,kb_menu_0542
+context_stocks_2	stocks	contextual_multi	증권 주문이 어떻게 들어갔는지 보고 내가 관심 등록한 종목들도 확인할래요.	kb_menu_0541,kb_menu_0542
+context_account_product_1	account_product	contextual_multi	중간에 멈춘 상품 가입을 이어서 진행하고 다른 상품 하나는 이름으로 직접 검색해 보고 싶어요.	kb_menu_0005,kb_menu_0003
+context_account_product_2	account_product	contextual_multi	하던 금융상품 가입 절차를 다시 찾고 별도로 상품 키워드 직접 검색도 할래요.	kb_menu_0005,kb_menu_0003
+context_pension_1	pension	contextual_multi	개인형 IRP를 새로 가입하는 곳과 퇴직연금 투자성향을 분석해 운용상품을 보는 곳을 각각 열어 주세요.	kb_menu_0070,kb_menu_0072
+context_pension_2	pension	contextual_multi	노후 준비로 개인형 IRP 신규 가입을 하고 퇴직연금 투자성향 분석·상품 확인도 따로 진행할래요.	kb_menu_0070,kb_menu_0072
+explicit_001	cross_domain_1	explicit_multi	다음 업무를 각각 처리해 줘: 사업자 통장·기업뱅킹 만들기 그리고 여권 재발급 신청	kb_menu_0630,kb_menu_0385
+explicit_002	cross_domain_2	explicit_multi	아래 기능을 빠짐없이 찾아줘. 국민카드 분실신고; 국민카드 분실해제; 환전미수령내역	kb_menu_0554,kb_menu_0555,kb_menu_0329
+explicit_003	cross_domain_3	explicit_multi	오늘 처리할 일이 여러 개야. 지방세 납부도 필요하고 휴양림 예약서비스도 필요하고 개인형IRP 가입하기도 필요하고 KB증권 관심종목	kb_menu_0228,kb_menu_0383,kb_menu_0070,kb_menu_0542
+explicit_004	cross_domain_4	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: 환전미수령내역와 별도로 기차표(KTX·SRT) 예매와 별도로 세금환급 및 고용지원금 예상조회와 별도로 여권 재발급 신청와 별도로 퇴직연금 투자성향 분석 및 상품보기	kb_menu_0329,kb_menu_0384,kb_menu_0019,kb_menu_0385,kb_menu_0072
+explicit_005	cross_domain_5	explicit_multi	하나만 고르지 말고 전부 찾아줘: 계좌개설확인서·통장사본 발급 / 직접검색	kb_menu_0493,kb_menu_0003
+explicit_006	cross_domain_6	explicit_multi	다음 업무를 각각 처리해 줘: 예금잔액증명서 발급 그리고 KB손해보험 청구내역 그리고 국민카드 이용내역조회	kb_menu_0492,kb_menu_0571,kb_menu_0552
+explicit_007	cross_domain_7	explicit_multi	아래 기능을 빠짐없이 찾아줘. 통장·인감 사고신고 내역; 리브모바일 로밍서비스; KB Pay 여행; 환전조회/관리	kb_menu_0517,kb_menu_0612,kb_menu_0604,kb_menu_0324
+explicit_008	cross_domain_8	explicit_multi	오늘 처리할 일이 여러 개야. 환전미수령내역도 필요하고 구매영수증 시작하기도 필요하고 국세 납부도 필요하고 자동이체 조회/변경/해지도 필요하고 KB손해보험 청구내역	kb_menu_0329,kb_menu_0508,kb_menu_0227,kb_menu_0207,kb_menu_0571
+explicit_009	cross_domain_9	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: 직접검색와 별도로 소상공인컨설팅 전문가 상담신청	kb_menu_0003,kb_menu_0629
+explicit_010	cross_domain_10	explicit_multi	하나만 고르지 말고 전부 찾아줘: KB손해보험 간편청구 / KB증권 관심종목 / 국민카드 이용내역조회	kb_menu_0570,kb_menu_0542,kb_menu_0552
+explicit_011	cross_domain_11	explicit_multi	다음 업무를 각각 처리해 줘: 지방세 납부 그리고 퇴직연금 투자성향 분석 및 상품보기 그리고 KB증권 주문내역 그리고 구매영수증 시작하기	kb_menu_0228,kb_menu_0072,kb_menu_0541,kb_menu_0508
+explicit_012	cross_domain_12	explicit_multi	아래 기능을 빠짐없이 찾아줘. KB손해보험 청구내역; ATM/지점출금; 현금·직불카드 분실등록 해제; 창구 거래 전자영수증 받기; 부동산 세금계산기	kb_menu_0571,kb_menu_0210,kb_menu_0516,kb_menu_0507,kb_menu_0591
+explicit_013	cross_domain_13	explicit_multi	오늘 처리할 일이 여러 개야. 환전조회/관리도 필요하고 이체한도 상세조회/변경	kb_menu_0324,kb_menu_0214
+explicit_014	cross_domain_14	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: ATM/지점출금와 별도로 보안카드 분실·사고신고와 별도로 보안카드 분실등록 해제	kb_menu_0210,kb_menu_0511,kb_menu_0514
+explicit_015	cross_domain_15	explicit_multi	하나만 고르지 말고 전부 찾아줘: 현금·직불카드 분실등록 해제 / 기차표(KTX·SRT) 예매 / 예금잔액증명서 발급 / 사업용계좌 설정	kb_menu_0516,kb_menu_0384,kb_menu_0492,kb_menu_0619
+explicit_016	cross_domain_16	explicit_multi	다음 업무를 각각 처리해 줘: 차량 시세조회 그리고 보안카드 분실등록 해제 그리고 자동이체 조회/변경/해지 그리고 KB손해보험 청구내역 그리고 이체결과조회	kb_menu_0597,kb_menu_0514,kb_menu_0207,kb_menu_0571,kb_menu_0205
+explicit_017	cross_domain_17	explicit_multi	아래 기능을 빠짐없이 찾아줘. 우리가게 카드매출; 환전미수령내역	kb_menu_0018,kb_menu_0329
+explicit_018	cross_domain_18	explicit_multi	오늘 처리할 일이 여러 개야. 국민카드 이용내역조회도 필요하고 이체한도 상세조회/변경도 필요하고 개인형IRP 가입하기	kb_menu_0552,kb_menu_0214,kb_menu_0070
+explicit_019	cross_domain_19	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: 통장·인감 분실·사고신고와 별도로 오픈뱅킹 착오송금 반환신청·조회와 별도로 국민카드 분실신고와 별도로 KB증권 관심종목	kb_menu_0509,kb_menu_0519,kb_menu_0554,kb_menu_0542
+explicit_020	cross_domain_20	explicit_multi	하나만 고르지 말고 전부 찾아줘: 자동이체 / 사업자 통장·기업뱅킹 만들기 / 팔아줘 차차차 / KB증권 주문내역 / 현금·직불카드 분실등록 해제	kb_menu_0206,kb_menu_0630,kb_menu_0596,kb_menu_0541,kb_menu_0516
+explicit_021	cross_domain_21	explicit_multi	다음 업무를 각각 처리해 줘: 창구 거래 전자영수증 받기 그리고 여권 재발급 신청	kb_menu_0507,kb_menu_0385
+explicit_022	cross_domain_22	explicit_multi	아래 기능을 빠짐없이 찾아줘. 보안카드 분실·사고신고; KB손해보험 청구내역; 자동이체 조회/변경/해지	kb_menu_0511,kb_menu_0571,kb_menu_0207
+explicit_023	cross_domain_23	explicit_multi	오늘 처리할 일이 여러 개야. 세금환급 및 고용지원금 예상조회도 필요하고 부동산 세금계산기도 필요하고 OTP 분실·사고신고도 필요하고 ATM/지점출금	kb_menu_0019,kb_menu_0591,kb_menu_0512,kb_menu_0210
+explicit_024	cross_domain_24	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: 부동산 시세 간편조회와 별도로 카드 가맹점 등록·결제계좌 변경와 별도로 환전조회/관리와 별도로 기차표(KTX·SRT) 예매와 별도로 가입 이어하기	kb_menu_0588,kb_menu_0626,kb_menu_0324,kb_menu_0384,kb_menu_0005
+explicit_025	cross_domain_25	explicit_multi	하나만 고르지 말고 전부 찾아줘: KB Pay 여행 / KB손해보험 청구내역	kb_menu_0604,kb_menu_0571
+explicit_026	cross_domain_26	explicit_multi	다음 업무를 각각 처리해 줘: 사업용계좌 설정 그리고 국민카드 분실신고 그리고 리브모바일 로밍서비스	kb_menu_0619,kb_menu_0554,kb_menu_0612
+explicit_027	cross_domain_27	explicit_multi	아래 기능을 빠짐없이 찾아줘. 환율조회; 자동이체; 자동이체 조회/변경/해지; 직접검색	kb_menu_0316,kb_menu_0206,kb_menu_0207,kb_menu_0003
+explicit_028	cross_domain_28	explicit_multi	오늘 처리할 일이 여러 개야. 부동산 세금계산기도 필요하고 카드 가맹점 등록·결제계좌 변경도 필요하고 관심통화 등록도 필요하고 사업자 통장·기업뱅킹 만들기도 필요하고 국민카드 이용내역조회	kb_menu_0591,kb_menu_0626,kb_menu_0317,kb_menu_0630,kb_menu_0552
+explicit_029	cross_domain_29	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: 소상공인컨설팅 전문가 상담신청와 별도로 휴양림 예약서비스	kb_menu_0629,kb_menu_0383
+explicit_030	cross_domain_30	explicit_multi	하나만 고르지 말고 전부 찾아줘: 통장·인감 사고신고 내역 / 개인형IRP 가입하기 / 이체결과조회	kb_menu_0517,kb_menu_0070,kb_menu_0205
+explicit_031	cross_domain_31	explicit_multi	다음 업무를 각각 처리해 줘: 통장·인감 사고신고 내역 그리고 관심통화 등록 그리고 이체한도 상세조회/변경 그리고 차량 시세조회	kb_menu_0517,kb_menu_0317,kb_menu_0214,kb_menu_0597
+explicit_032	cross_domain_32	explicit_multi	아래 기능을 빠짐없이 찾아줘. 우리가게 카드매출; OTP 분실·사고신고; 오픈뱅킹 착오송금 반환신청·조회; 국민카드 이용내역조회; 사업용계좌 설정	kb_menu_0018,kb_menu_0512,kb_menu_0519,kb_menu_0552,kb_menu_0619
+explicit_033	cross_domain_33	explicit_multi	오늘 처리할 일이 여러 개야. 창구 거래 전자영수증 받기도 필요하고 휴양림별 잔여현황 보기	kb_menu_0507,kb_menu_0472
+explicit_034	cross_domain_34	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: 세금환급 및 고용지원금 예상조회와 별도로 소상공인컨설팅 전문가 상담신청와 별도로 관심통화 등록	kb_menu_0019,kb_menu_0629,kb_menu_0317
+explicit_035	cross_domain_35	explicit_multi	하나만 고르지 말고 전부 찾아줘: 기차표(KTX·SRT) 예매 / ATM/지점출금 / 개인형IRP 가입하기 / 이체한도 상세조회/변경	kb_menu_0384,kb_menu_0210,kb_menu_0070,kb_menu_0214
+explicit_036	cross_domain_36	explicit_multi	다음 업무를 각각 처리해 줘: 이체결과조회 그리고 가입 이어하기 그리고 휴양림 예약서비스 그리고 환전조회/관리 그리고 현금·직불카드 분실등록 해제	kb_menu_0205,kb_menu_0005,kb_menu_0383,kb_menu_0324,kb_menu_0516
+explicit_037	cross_domain_37	explicit_multi	아래 기능을 빠짐없이 찾아줘. 현금·직불카드 분실등록 해제; KB Pay 여행	kb_menu_0516,kb_menu_0604
+explicit_038	cross_domain_38	explicit_multi	오늘 처리할 일이 여러 개야. 계좌개설확인서·통장사본 발급도 필요하고 팔아줘 차차차도 필요하고 이체한도 상세조회/변경	kb_menu_0493,kb_menu_0596,kb_menu_0214
+explicit_039	cross_domain_39	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: 직접검색와 별도로 보안카드 분실등록 해제와 별도로 이체한도 상세조회/변경와 별도로 OTP 분실·사고신고	kb_menu_0003,kb_menu_0514,kb_menu_0214,kb_menu_0512
+explicit_040	cross_domain_40	explicit_multi	하나만 고르지 말고 전부 찾아줘: 지방세 납부 / 창구 거래 전자영수증 받기 / 소상공인컨설팅 전문가 상담신청 / 보안카드 분실등록 해제 / 현금·직불카드 분실등록 해제	kb_menu_0228,kb_menu_0507,kb_menu_0629,kb_menu_0514,kb_menu_0516
+explicit_041	cross_domain_41	explicit_multi	다음 업무를 각각 처리해 줘: 자동이체 그리고 가입 이어하기	kb_menu_0206,kb_menu_0005
+explicit_042	cross_domain_42	explicit_multi	아래 기능을 빠짐없이 찾아줘. 가입 이어하기; 통장·인감 분실·사고신고; 현금·직불카드 분실등록 해제	kb_menu_0005,kb_menu_0509,kb_menu_0516
+explicit_043	cross_domain_43	explicit_multi	오늘 처리할 일이 여러 개야. 휴양림별 잔여현황 보기도 필요하고 부동산 세금계산기도 필요하고 환전조회/관리도 필요하고 사업용계좌 설정	kb_menu_0472,kb_menu_0591,kb_menu_0324,kb_menu_0619
+explicit_044	cross_domain_44	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: 휴양림별 잔여현황 보기와 별도로 관심통화 등록와 별도로 환전조회/관리와 별도로 ATM/지점출금와 별도로 보안카드 분실·사고신고	kb_menu_0472,kb_menu_0317,kb_menu_0324,kb_menu_0210,kb_menu_0511
+explicit_045	cross_domain_45	explicit_multi	하나만 고르지 말고 전부 찾아줘: KB증권 관심종목 / 퇴직연금 투자성향 분석 및 상품보기	kb_menu_0542,kb_menu_0072
+explicit_046	cross_domain_46	explicit_multi	다음 업무를 각각 처리해 줘: 부동산 시세 간편조회 그리고 관심통화 등록 그리고 ATM/지점출금	kb_menu_0588,kb_menu_0317,kb_menu_0210
+explicit_047	cross_domain_47	explicit_multi	아래 기능을 빠짐없이 찾아줘. 관심통화 등록; 직접검색; 부동산 세금계산기; 구매영수증 시작하기	kb_menu_0317,kb_menu_0003,kb_menu_0591,kb_menu_0508
+explicit_048	cross_domain_48	explicit_multi	오늘 처리할 일이 여러 개야. KB손해보험 간편청구도 필요하고 차량 시세조회도 필요하고 환율조회도 필요하고 지방세 납부도 필요하고 OTP 분실·사고신고	kb_menu_0570,kb_menu_0597,kb_menu_0316,kb_menu_0228,kb_menu_0512
+explicit_049	cross_domain_49	explicit_multi	한 화면에 필요한 메뉴를 모두 보여줘: 퇴직연금 투자성향 분석 및 상품보기와 별도로 현금·직불카드 분실등록 해제	kb_menu_0072,kb_menu_0516
+explicit_050	cross_domain_50	explicit_multi	하나만 고르지 말고 전부 찾아줘: 지방세 납부 / 국민카드 분실해제 / 국민카드 분실신고	kb_menu_0228,kb_menu_0555,kb_menu_0554

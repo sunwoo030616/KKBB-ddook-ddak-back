@@ -1,0 +1,19 @@
+{
+  "base_commit": "dce96f01588b29ec820471e6dbf72cce1bef45ba",
+  "files": {
+    "scripts/semantic/situation_compare300/run.py": "f80ad6ca59c7846bd76122d303427b6d5e40367325e132870dfdaa6b03052ffb",
+    "scripts/semantic/situation_compare300/common.py": "e43decd034b5aedba6ecc7c8b7b66017935efe10d4d086c3edc1a712c26e2c9b",
+    "scripts/semantic/situation_compare300/metrics.py": "faf485643bda9b6cd5ed33896e64f5f3c374f29d0bce0f7426b0915dbc7b861a",
+    "scripts/semantic/situation_compare300/cases.json": "c899e88a067134e5b12b0a480d059be14cefdeb1c801603bd1b24c727a748c12",
+    "scripts/semantic/situation_compare300/label-audit.json": "c308f1b3b70e878fd1ff01b03d32ee30580f86030bd22ec111bf397e7f665cf3",
+    "src/main/java/com/example/kb_ai_backend/service/JevDecisionClient.java": "c37c58f108af4332abdf527b8bb0846e3ba21c512808bc028dab3ea22fb3bc0f",
+    "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRecommendationService.java": "ca1f0ca2bc4ef19992c03131d906ef4800e8995881a780a10ecf235ade7bd534",
+    "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRetriever.java": "c05a6a7c8ac1949cbfba4847fc63842122c1091f61e9347ba5958656dd99f77f",
+    "src/main/java/com/example/kb_ai_backend/service/MenuCatalog.java": "662c4dd6c37aef8e46a2c307be47e3218e06a57f2e0cef694c164a7405642435",
+    "src/main/resources/situation_needs.json": "36255470a362ae3483f0e854eaee6709c34f0d648012f8f5bcaf576e259de466",
+    "src/main/resources/kb_starbanking_menu_structure_cleaned.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+    "scripts/semantic/server.py": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+    "scripts/semantic/model_manifest.json": "b71365e9063e74f6c34cdeff16e9bd16c6323ba6a4677cba7cf500b5e986d614",
+    "docs/situation-compare300/PROTOCOL.md": "8b5c5190e2dbdc3d5f75e3c9ef664fc507bfc75ed5b704bd37eef70b6a82bed1"
+  }
+}

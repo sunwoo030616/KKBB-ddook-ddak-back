@@ -1,0 +1,8 @@
+test_errors_not_dropped_and_actual_calls_all_counted (test_metrics.V2MetricsTests) ... ok
+test_negative_empty_result_not_counted_as_positive_recall (test_metrics.V2MetricsTests) ... ok
+test_wrong_clarification_on_negative_still_fails_status (test_metrics.V2MetricsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

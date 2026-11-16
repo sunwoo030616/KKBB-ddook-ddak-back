@@ -1,0 +1,297 @@
+{
+  "complete": true,
+  "started_at": "2026-11-15T10:54:11.150577+00:00",
+  "updated_at": "2026-11-15T10:54:19.199272+00:00",
+  "freeze": {
+    "base_commit": "dbf38e5053c137a64d5e15c2012f4f87c8e632b8",
+    "files": {
+      "scripts/semantic/situation_v2/development-12.json": "a4ee568d41e0db9c0c4f32114221642da4512a79b0ac1d3eca4a010ac213bc79",
+      "scripts/semantic/situation_v2/regression-300.json": "c899e88a067134e5b12b0a480d059be14cefdeb1c801603bd1b24c727a748c12",
+      "scripts/semantic/situation_v2/fresh-100.json": "019906200853889dfe3e667a383964dd95dfd9795348e8b70a6fb9920124985c",
+      "scripts/semantic/situation_v2/fresh-labels.tsv": "808672df3b54d96fc3c7249da00f8c20f95f3127d18e149299674ba88d9a4ac4",
+      "scripts/semantic/situation_v2/run.py": "00747f349d706b5a37b023449b8195c07ab702716735800fd7a999246719f587",
+      "scripts/semantic/situation_v2/metrics.py": "0d88d004b8ac0729d3934db71080ca8b61cc6fed6be85dc48765ec5c28b61602",
+      "scripts/semantic/situation_v2/common.py": "e43decd034b5aedba6ecc7c8b7b66017935efe10d4d086c3edc1a712c26e2c9b",
+      "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRecommendationService.java": "86586b84f713a027c249e35173462ed8cef6e379418520be1c1bbdaa58155afd",
+      "src/main/java/com/example/kb_ai_backend/service/SemanticMenuSelectionService.java": "50dba1326cbdac98af0ccbf9974cc3cd741b0c6edc827a463305605bba334549",
+      "src/main/java/com/example/kb_ai_backend/service/SemanticMenuRetriever.java": "c05a6a7c8ac1949cbfba4847fc63842122c1091f61e9347ba5958656dd99f77f",
+      "src/main/java/com/example/kb_ai_backend/service/JevDecisionClient.java": "93d07415fdb0ebce70aed6f1ba27658cc20fbc094bd0f30f8e6318166e490934",
+      "src/main/java/com/example/kb_ai_backend/service/MenuCatalog.java": "662c4dd6c37aef8e46a2c307be47e3218e06a57f2e0cef694c164a7405642435",
+      "src/main/resources/kb_starbanking_menu_structure_cleaned.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+      "scripts/semantic/server.py": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+      "scripts/semantic/model_manifest.json": "b71365e9063e74f6c34cdeff16e9bd16c6323ba6a4677cba7cf500b5e986d614",
+      "docs/situation-v2/PROTOCOL.md": "24296e30687ce92b66d9bf68151360ed975ef6520f9338dafd6642ac6464f6ba"
+    }
+  },
+  "planned_cases": 1,
+  "cases_path": "scripts/semantic/situation_v2/development-final-1.json",
+  "providers": [
+    "e5_jev"
+  ],
+  "models": {
+    "e5_jev": "jev-1.14.0",
+    "llm_full_catalog": "gpt-4o-mini-2024-07-18"
+  },
+  "repeats": 1,
+  "retries": 0,
+  "results": [
+    {
+      "case_id": "situation_18_1",
+      "query": "해외여행 환전과 보험은 끝냈고 QR도 준비했어. 이번에는 로밍과 여권 만료일 확인만 할래.",
+      "expected_ids": [
+        "kb_menu_0612",
+        "kb_menu_0476"
+      ],
+      "expected_status": "ready",
+      "split": "situation_bundle",
+      "family_id": "situation_family_18",
+      "label_source": "product-policy bundle or explicit outcomes in a situation; 20 families x 5 wording variants; not independent intents",
+      "provider": "e5_jev",
+      "queue_wait_ms": 0,
+      "status": "ready",
+      "selected_ids": [
+        "kb_menu_0476",
+        "kb_menu_0612"
+      ],
+      "recommendations": [
+        {
+          "menu": {
+            "id": "kb_menu_0476",
+            "name": "여권 만료일 확인하기",
+            "description": "여권 재발급 신청 안내 하단의 만료일 확인 버튼.",
+            "select_when": [
+              "여권 만료일 확인을 시작할 때"
+            ],
+            "aliases": []
+          },
+          "needId": "candidate_filter",
+          "need": "해외여행 환전과 보험은 끝냈고 QR도 준비했어. 이번에는 로밍과 여권 만료일 확인만 할래.",
+          "basis": "uncertain",
+          "explanation": "원문과 메뉴의 필요 여부 판단",
+          "menuConfidence": null,
+          "basisConfidence": null
+        },
+        {
+          "menu": {
+            "id": "kb_menu_0612",
+            "name": "리브모바일 로밍서비스",
+            "description": "리브모바일 로밍서비스 진입점.",
+            "select_when": [
+              "리브모바일 해외 로밍을 찾을 때"
+            ],
+            "aliases": []
+          },
+          "needId": "candidate_filter",
+          "need": "해외여행 환전과 보험은 끝냈고 QR도 준비했어. 이번에는 로밍과 여권 만료일 확인만 할래.",
+          "basis": "uncertain",
+          "explanation": "원문과 메뉴의 필요 여부 판단",
+          "menuConfidence": null,
+          "basisConfidence": null
+        }
+      ],
+      "reviews": [],
+      "metrics": {
+        "retrievalMode": "semantic_only",
+        "planningMs": 255,
+        "retrievalMs": 39,
+        "selectionMs": 408,
+        "jevCalls": 2
+      },
+      "candidateIdsByNeed": {
+        "candidate_filter": [
+          "kb_menu_0476",
+          "kb_menu_0612",
+          "kb_menu_0385",
+          "kb_menu_0471",
+          "kb_menu_0007",
+          "kb_menu_0324",
+          "kb_menu_0309",
+          "kb_menu_0292",
+          "kb_menu_0604",
+          "kb_menu_0383",
+          "kb_menu_0329",
+          "kb_menu_0326",
+          "kb_menu_0377",
+          "kb_menu_0005",
+          "kb_menu_0418",
+          "kb_menu_0413",
+          "kb_menu_0185",
+          "kb_menu_0006",
+          "kb_menu_0475",
+          "kb_menu_0355",
+          "kb_menu_0366",
+          "kb_menu_0310",
+          "kb_menu_0534",
+          "kb_menu_0613",
+          "kb_menu_0105",
+          "kb_menu_0386",
+          "kb_menu_0358",
+          "kb_menu_0307",
+          "kb_menu_0364",
+          "kb_menu_0057",
+          "kb_menu_0353",
+          "kb_menu_0420",
+          "kb_menu_0500",
+          "kb_menu_0335",
+          "kb_menu_0325",
+          "kb_menu_0317",
+          "kb_menu_0187",
+          "kb_menu_0311",
+          "kb_menu_0410",
+          "kb_menu_0271",
+          "kb_menu_0211",
+          "kb_menu_0304",
+          "kb_menu_0260",
+          "kb_menu_0177",
+          "kb_menu_0316",
+          "kb_menu_0375",
+          "kb_menu_0224",
+          "kb_menu_0344",
+          "kb_menu_0618",
+          "kb_menu_0331",
+          "kb_menu_0225",
+          "kb_menu_0291",
+          "kb_menu_0602",
+          "kb_menu_0343",
+          "kb_menu_0273",
+          "kb_menu_0194"
+        ]
+      },
+      "http_ms": 733.9943330000001,
+      "calls": [
+        {
+          "provider": "e5_jev",
+          "stage": "routing",
+          "request_payload_bytes": 2278,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 876,
+            "output_tokens": 78
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 237.77212499999933
+        },
+        {
+          "provider": "e5_jev",
+          "stage": "binary_filter",
+          "request_payload_bytes": 30939,
+          "model": "jev-1.14.0",
+          "usage": {
+            "input_tokens": 10500,
+            "output_tokens": 1236
+          },
+          "http_status": 200,
+          "rate_headers": {},
+          "provider_http_ms": 403.1039160000001
+        }
+      ],
+      "score": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "menu_exact": true,
+        "status_and_menu_exact": true
+      }
+    }
+  ],
+  "summary": {
+    "e5_jev": {
+      "cases": 1,
+      "positive_cases": 1,
+      "negative_cases": 0,
+      "errors": 0,
+      "menu_exact_correct": 1,
+      "menu_exact_accuracy": 1.0,
+      "status_and_menu_correct": 1,
+      "status_and_menu_accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "micro_precision": 1.0,
+      "micro_recall": 1.0,
+      "micro_f1": 1.0,
+      "true_positive_menus": 2,
+      "extra_menus": 0,
+      "missing_menus": 0,
+      "cases_with_extra_menus": 0,
+      "cases_with_missing_menus": 0,
+      "mean_http_ms": 733.9943330000001,
+      "median_http_ms": 733.9943330000001,
+      "p95_http_ms": 733.9943330000001,
+      "actual_upstream_calls": 2,
+      "tokens": {
+        "input": {
+          "observed_calls": 2,
+          "sum": 11376,
+          "mean_per_case": 11376.0
+        },
+        "output": {
+          "observed_calls": 2,
+          "sum": 1314,
+          "mean_per_case": 1314.0
+        },
+        "cached_input": {
+          "observed_calls": 0,
+          "sum": null,
+          "mean_per_case": null
+        }
+      },
+      "statuses": {
+        "ready": 1
+      }
+    }
+  },
+  "by_split": {
+    "e5_jev": {
+      "situation_bundle": {
+        "cases": 1,
+        "positive_cases": 1,
+        "negative_cases": 0,
+        "errors": 0,
+        "menu_exact_correct": 1,
+        "menu_exact_accuracy": 1.0,
+        "status_and_menu_correct": 1,
+        "status_and_menu_accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "true_positive_menus": 2,
+        "extra_menus": 0,
+        "missing_menus": 0,
+        "cases_with_extra_menus": 0,
+        "cases_with_missing_menus": 0,
+        "mean_http_ms": 733.9943330000001,
+        "median_http_ms": 733.9943330000001,
+        "p95_http_ms": 733.9943330000001,
+        "actual_upstream_calls": 2,
+        "tokens": {
+          "input": {
+            "observed_calls": 2,
+            "sum": 11376,
+            "mean_per_case": 11376.0
+          },
+          "output": {
+            "observed_calls": 2,
+            "sum": 1314,
+            "mean_per_case": 1314.0
+          },
+          "cached_input": {
+            "observed_calls": 0,
+            "sum": null,
+            "mean_per_case": null
+          }
+        },
+        "statuses": {
+          "ready": 1
+        }
+      }
+    }
+  }
+}
