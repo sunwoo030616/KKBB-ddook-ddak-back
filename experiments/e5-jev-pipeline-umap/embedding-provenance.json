@@ -1,0 +1,45 @@
+{
+  "model": "intfloat/multilingual-e5-small",
+  "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "catalog_sha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+  "model_manifest": {
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "files": {
+      "model.onnx": "dd476dd0c2514e9b9be83aeb3853fac0763e0bdf4a71645407587d77c48a2d88",
+      "tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39"
+    }
+  },
+  "server_sha256": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+  "evidence_sha256": "6469426858c94c95727d16b59c73d09a01ca2e0324cb7ee23950f391fd137f43",
+  "evidence_started_at": "2026-11-15T05:11:29.915584+00:00",
+  "evidence_model": "jev-1.14.0",
+  "jev_mode": "replay of recorded actual E5→JEV evaluation, no new JEV calls",
+  "embedding_mode": "fresh inference through unchanged production encoder; no preexisting cache used",
+  "umap": {
+    "seed": 42,
+    "neighbors": 15,
+    "min_dist": 0.1,
+    "metric": "cosine",
+    "n_jobs": 1
+  },
+  "clusters": {
+    "algorithm": "KMeans on 384D normalized vectors",
+    "count": 12,
+    "seed": 42,
+    "iterations": 100,
+    "initialization": "sampled actual points",
+    "implementation": "scipy.cluster.vq.kmeans2"
+  },
+  "python": "3.9.6",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "outputs": {
+    "embeddings.npz": "51975073b3de0038c5b2ed4065f874ac621b35c8caaf35359349b00e2fa9b2c8",
+    "overview.png": "ac45992ae13e9a8165cd861296d107fcbc0f27b9d4775a6b622667f386911c99",
+    "data.json": "9134e5ed9f0816b15f64924044d350f9874262fa3ab82a0b1ac09c23d304dc6d",
+    "e5_umap.html": "4cf43fffe0c5f5cb2b1006525c1432b6b441f94230af253475afd63b15a762bd",
+    "example-1.png": "c4912723dc5613d1149030dccad74729f9c6f10bdad6573cfb9edb5f76d0c5a3",
+    "example-2.png": "d3530a0538d153d4ad052498e685d64d5acc1b9befc9dc07e5e94cc38f2dbfcc",
+    "example-3.png": "2ebb7eabcbfe5997175c2ef0ddd4da7f155342d876de800c321fd9c013bea961"
+  }
+}
