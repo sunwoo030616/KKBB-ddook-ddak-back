@@ -1,0 +1,1478 @@
+{
+  "case_id": "S01_03",
+  "family_id": "S01",
+  "situation": "해외여행",
+  "query": "휴가 때 오사카에 가볼 생각이야. 출발 전에 은행에서 챙길 걸 알려줘.",
+  "expected_ids": [
+    "kb_menu_0323",
+    "kb_menu_0413",
+    "kb_menu_0602"
+  ],
+  "expected_status": "ready",
+  "acceptable_sets": [
+    [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602",
+      "kb_menu_0603"
+    ],
+    [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602",
+      "kb_menu_0603",
+      "kb_menu_0612"
+    ],
+    [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602",
+      "kb_menu_0612"
+    ],
+    [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0603"
+    ],
+    [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0603",
+      "kb_menu_0608"
+    ],
+    [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0603",
+      "kb_menu_0608",
+      "kb_menu_0612"
+    ],
+    [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0603",
+      "kb_menu_0612"
+    ],
+    [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0608"
+    ],
+    [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0608",
+      "kb_menu_0612"
+    ]
+  ],
+  "required_groups": [
+    {
+      "outcome": "환전 준비",
+      "acceptable_ids": [
+        "kb_menu_0323"
+      ]
+    },
+    {
+      "outcome": "해외 결제 준비",
+      "acceptable_ids": [
+        "kb_menu_0413",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ]
+    },
+    {
+      "outcome": "여행보험 검토",
+      "acceptable_ids": [
+        "kb_menu_0602"
+      ]
+    }
+  ],
+  "split": "goal_only",
+  "label_source": "user-approved draft reference; concrete allowed sets frozen before API run; not independent expert validation",
+  "provider": "improved",
+  "calls": [
+    {
+      "provider": "e5_jev",
+      "stage": "candidate_judgement",
+      "model_requested": "jev-1.14.0",
+      "request_payload_sha256": "9c171bbfa836c631ed12306dd77b18362b7cb9f10e245f4a6b031e2fa4b35bdd",
+      "request_payload_bytes": 60557,
+      "http_status": 200,
+      "model": "jev-1.14.0",
+      "usage": {
+        "input_tokens": 20018,
+        "output_tokens": 1786
+      },
+      "answers": {
+        "kb_menu_0604": {
+          "type": "noul",
+          "noul": 0.36
+        },
+        "kb_menu_0498": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "kb_menu_0183": {
+          "type": "noul",
+          "noul": 0.01
+        },
+        "kb_menu_0310": {
+          "type": "noul",
+          "noul": 0.16
+        },
+        "kb_menu_0097": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "kb_menu_0324": {
+          "type": "noul",
+          "noul": 0.83
+        },
+        "kb_menu_0157": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0279": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0187": {
+          "type": "noul",
+          "noul": 0.34
+        },
+        "kb_menu_0224": {
+          "type": "noul",
+          "noul": 0.1
+        },
+        "kb_menu_0343": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "kb_menu_0577": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0469": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0175": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0602": {
+          "type": "noul",
+          "noul": 0.72
+        },
+        "kb_menu_0309": {
+          "type": "noul",
+          "noul": 0.1
+        },
+        "kb_menu_0336": {
+          "type": "noul",
+          "noul": 0.16
+        },
+        "kb_menu_0422": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0471": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0346": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0177": {
+          "type": "noul",
+          "noul": 0.01
+        },
+        "kb_menu_0418": {
+          "type": "noul",
+          "noul": 0.7
+        },
+        "kb_menu_0420": {
+          "type": "noul",
+          "noul": 0.55
+        },
+        "kb_menu_0326": {
+          "type": "noul",
+          "noul": 0.74
+        },
+        "kb_menu_0333": {
+          "type": "noul",
+          "noul": 0.13
+        },
+        "kb_menu_0349": {
+          "type": "noul",
+          "noul": 0.35
+        },
+        "kb_menu_0344": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "kb_menu_0476": {
+          "type": "noul",
+          "noul": 0.63
+        },
+        "kb_menu_0184": {
+          "type": "noul",
+          "noul": 0.01
+        },
+        "kb_menu_0244": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0056": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0603": {
+          "type": "noul",
+          "noul": 0.71
+        },
+        "kb_menu_0470": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0489": {
+          "type": "noul",
+          "noul": 0.07
+        },
+        "kb_menu_0221": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "kb_menu_0028": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0335": {
+          "type": "noul",
+          "noul": 0.13
+        },
+        "kb_menu_0391": {
+          "type": "noul",
+          "noul": 0.29
+        },
+        "kb_menu_0271": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0584": {
+          "type": "noul",
+          "noul": 0.01
+        },
+        "kb_menu_0024": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0194": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0519": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0624": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0035": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0339": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0323": {
+          "type": "noul",
+          "noul": 0.85
+        },
+        "kb_menu_0329": {
+          "type": "noul",
+          "noul": 0.48
+        },
+        "kb_menu_0494": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0473": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0500": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "kb_menu_0567": {
+          "type": "noul",
+          "noul": 0.08
+        },
+        "kb_menu_0134": {
+          "type": "noul",
+          "noul": 0.31
+        },
+        "kb_menu_0595": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0375": {
+          "type": "noul",
+          "noul": 0.01
+        },
+        "kb_menu_0162": {
+          "type": "noul",
+          "noul": 0.07
+        },
+        "kb_menu_0506": {
+          "type": "noul",
+          "noul": 0.13
+        },
+        "kb_menu_0350": {
+          "type": "noul",
+          "noul": 0.4
+        },
+        "kb_menu_0306": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0434": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0041": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0475": {
+          "type": "noul",
+          "noul": 0.11
+        },
+        "kb_menu_0358": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0311": {
+          "type": "noul",
+          "noul": 0.2
+        },
+        "kb_menu_0133": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0005": {
+          "type": "noul",
+          "noul": 0.13
+        },
+        "kb_menu_0268": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0317": {
+          "type": "noul",
+          "noul": 0.67
+        },
+        "kb_menu_0423": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0241": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0003": {
+          "type": "noul",
+          "noul": 0.56
+        },
+        "kb_menu_0225": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "kb_menu_0025": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0191": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "kb_menu_0378": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "kb_menu_0608": {
+          "type": "noul",
+          "noul": 0.86
+        },
+        "kb_menu_0583": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0307": {
+          "type": "noul",
+          "noul": 0.31
+        },
+        "kb_menu_0046": {
+          "type": "noul",
+          "noul": 0.01
+        },
+        "kb_menu_0045": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "kb_menu_0007": {
+          "type": "noul",
+          "noul": 0.18
+        }
+      },
+      "provider_http_ms": 378.35287500000004
+    },
+    {
+      "provider": "e5_jev",
+      "stage": "set_choice",
+      "model_requested": "jev-1.14.0",
+      "request_payload_sha256": "9eeb630e92acbe8db13a966d06d34ca70827316fe576361f9201594dc85807bb",
+      "request_payload_bytes": 15283,
+      "http_status": 200,
+      "model": "jev-1.14.0",
+      "usage": {
+        "input_tokens": 6535,
+        "output_tokens": 1247
+      },
+      "answers": {
+        "menu_set": {
+          "type": "choice",
+          "choice": "set_2",
+          "confidence": 0.27,
+          "probabilities": {
+            "set_1": 0.11,
+            "set_2": 0.28,
+            "set_3": 0.02,
+            "set_4": 0.0,
+            "set_5": 0.0,
+            "set_6": 0.02,
+            "set_7": 0.02,
+            "set_8": 0.0,
+            "set_9": 0.08,
+            "set_10": 0.0,
+            "set_11": 0.0,
+            "set_12": 0.0,
+            "set_13": 0.0,
+            "set_14": 0.01,
+            "set_15": 0.0,
+            "set_16": 0.0,
+            "set_17": 0.0,
+            "set_18": 0.0,
+            "set_19": 0.0,
+            "set_20": 0.0,
+            "set_21": 0.0,
+            "set_22": 0.0,
+            "set_23": 0.0,
+            "set_24": 0.0,
+            "set_25": 0.0,
+            "set_26": 0.0,
+            "set_27": 0.0,
+            "set_28": 0.0,
+            "set_29": 0.0,
+            "set_30": 0.0,
+            "set_31": 0.0,
+            "set_32": 0.0,
+            "set_33": 0.0,
+            "set_34": 0.0,
+            "set_35": 0.0,
+            "set_36": 0.0,
+            "set_37": 0.16,
+            "set_38": 0.01,
+            "set_39": 0.0,
+            "set_40": 0.0,
+            "set_41": 0.02,
+            "set_42": 0.02,
+            "set_43": 0.0,
+            "set_44": 0.02,
+            "set_45": 0.03,
+            "set_46": 0.02,
+            "set_47": 0.01,
+            "set_48": 0.03,
+            "set_49": 0.0,
+            "set_50": 0.0,
+            "set_51": 0.0,
+            "set_52": 0.0,
+            "set_53": 0.01,
+            "set_54": 0.0,
+            "set_55": 0.0,
+            "set_56": 0.0,
+            "set_57": 0.0,
+            "set_58": 0.0,
+            "set_59": 0.0,
+            "set_60": 0.0,
+            "set_61": 0.0,
+            "set_62": 0.0,
+            "set_63": 0.0,
+            "set_64": 0.0,
+            "set_65": 0.02,
+            "set_66": 0.02,
+            "set_67": 0.0,
+            "set_68": 0.02,
+            "set_69": 0.04,
+            "set_70": 0.0,
+            "set_71": 0.0,
+            "set_72": 0.0,
+            "set_73": 0.0,
+            "set_74": 0.0,
+            "set_75": 0.0,
+            "set_76": 0.0,
+            "set_77": 0.01,
+            "set_78": 0.0,
+            "set_79": 0.0,
+            "set_80": 0.0,
+            "set_81": 0.0,
+            "set_82": 0.0,
+            "set_83": 0.0,
+            "set_84": 0.0,
+            "set_85": 0.0,
+            "set_86": 0.0,
+            "set_87": 0.0,
+            "set_88": 0.0,
+            "set_89": 0.0,
+            "set_90": 0.0,
+            "set_91": 0.0,
+            "set_92": 0.0,
+            "set_93": 0.01,
+            "set_94": 0.0,
+            "set_95": 0.0,
+            "set_96": 0.01,
+            "set_97": 0.0,
+            "set_98": 0.0,
+            "set_99": 0.0,
+            "set_100": 0.0,
+            "set_101": 0.0,
+            "set_102": 0.0,
+            "set_103": 0.0,
+            "set_104": 0.0,
+            "set_105": 0.0,
+            "set_106": 0.0,
+            "set_107": 0.0,
+            "set_108": 0.0,
+            "set_109": 0.0,
+            "set_110": 0.0,
+            "set_111": 0.0,
+            "set_112": 0.0,
+            "set_113": 0.0,
+            "set_114": 0.0,
+            "set_115": 0.0,
+            "set_116": 0.0,
+            "set_117": 0.0,
+            "set_118": 0.0,
+            "set_119": 0.0,
+            "set_120": 0.0,
+            "none": 0.0,
+            "unsure": 0.0
+          }
+        }
+      },
+      "provider_http_ms": 290.30987500000015
+    }
+  ],
+  "candidate_ids": [
+    "kb_menu_0604",
+    "kb_menu_0498",
+    "kb_menu_0183",
+    "kb_menu_0310",
+    "kb_menu_0097",
+    "kb_menu_0324",
+    "kb_menu_0157",
+    "kb_menu_0279",
+    "kb_menu_0187",
+    "kb_menu_0224",
+    "kb_menu_0343",
+    "kb_menu_0577",
+    "kb_menu_0469",
+    "kb_menu_0175",
+    "kb_menu_0602",
+    "kb_menu_0309",
+    "kb_menu_0336",
+    "kb_menu_0422",
+    "kb_menu_0471",
+    "kb_menu_0346",
+    "kb_menu_0177",
+    "kb_menu_0418",
+    "kb_menu_0420",
+    "kb_menu_0326",
+    "kb_menu_0333",
+    "kb_menu_0349",
+    "kb_menu_0344",
+    "kb_menu_0476",
+    "kb_menu_0184",
+    "kb_menu_0244",
+    "kb_menu_0056",
+    "kb_menu_0603",
+    "kb_menu_0470",
+    "kb_menu_0489",
+    "kb_menu_0221",
+    "kb_menu_0028",
+    "kb_menu_0335",
+    "kb_menu_0391",
+    "kb_menu_0271",
+    "kb_menu_0584",
+    "kb_menu_0024",
+    "kb_menu_0194",
+    "kb_menu_0519",
+    "kb_menu_0624",
+    "kb_menu_0035",
+    "kb_menu_0339",
+    "kb_menu_0323",
+    "kb_menu_0329",
+    "kb_menu_0494",
+    "kb_menu_0473",
+    "kb_menu_0500",
+    "kb_menu_0567",
+    "kb_menu_0134",
+    "kb_menu_0595",
+    "kb_menu_0375",
+    "kb_menu_0162",
+    "kb_menu_0506",
+    "kb_menu_0350",
+    "kb_menu_0306",
+    "kb_menu_0434",
+    "kb_menu_0041",
+    "kb_menu_0475",
+    "kb_menu_0358",
+    "kb_menu_0311",
+    "kb_menu_0133",
+    "kb_menu_0005",
+    "kb_menu_0268",
+    "kb_menu_0317",
+    "kb_menu_0423",
+    "kb_menu_0241",
+    "kb_menu_0003",
+    "kb_menu_0225",
+    "kb_menu_0025",
+    "kb_menu_0191",
+    "kb_menu_0378",
+    "kb_menu_0608",
+    "kb_menu_0583",
+    "kb_menu_0307",
+    "kb_menu_0046",
+    "kb_menu_0045",
+    "kb_menu_0007"
+  ],
+  "original_candidate_ids": [
+    "kb_menu_0604",
+    "kb_menu_0498",
+    "kb_menu_0183",
+    "kb_menu_0310",
+    "kb_menu_0097",
+    "kb_menu_0324",
+    "kb_menu_0157",
+    "kb_menu_0279",
+    "kb_menu_0187",
+    "kb_menu_0224",
+    "kb_menu_0343",
+    "kb_menu_0577",
+    "kb_menu_0469",
+    "kb_menu_0175",
+    "kb_menu_0602",
+    "kb_menu_0309",
+    "kb_menu_0336",
+    "kb_menu_0422",
+    "kb_menu_0471",
+    "kb_menu_0346",
+    "kb_menu_0177",
+    "kb_menu_0418",
+    "kb_menu_0420",
+    "kb_menu_0326",
+    "kb_menu_0333",
+    "kb_menu_0349",
+    "kb_menu_0344",
+    "kb_menu_0476",
+    "kb_menu_0184",
+    "kb_menu_0244",
+    "kb_menu_0056",
+    "kb_menu_0603",
+    "kb_menu_0470",
+    "kb_menu_0489",
+    "kb_menu_0221",
+    "kb_menu_0028",
+    "kb_menu_0335",
+    "kb_menu_0391",
+    "kb_menu_0271",
+    "kb_menu_0584",
+    "kb_menu_0024",
+    "kb_menu_0194",
+    "kb_menu_0519",
+    "kb_menu_0624",
+    "kb_menu_0035",
+    "kb_menu_0339",
+    "kb_menu_0323",
+    "kb_menu_0329",
+    "kb_menu_0494",
+    "kb_menu_0473",
+    "kb_menu_0500",
+    "kb_menu_0567",
+    "kb_menu_0134",
+    "kb_menu_0595",
+    "kb_menu_0375",
+    "kb_menu_0162",
+    "kb_menu_0506",
+    "kb_menu_0350",
+    "kb_menu_0306",
+    "kb_menu_0434",
+    "kb_menu_0041",
+    "kb_menu_0475",
+    "kb_menu_0358",
+    "kb_menu_0311",
+    "kb_menu_0133",
+    "kb_menu_0005",
+    "kb_menu_0268",
+    "kb_menu_0317",
+    "kb_menu_0423",
+    "kb_menu_0241",
+    "kb_menu_0003",
+    "kb_menu_0225",
+    "kb_menu_0025",
+    "kb_menu_0191",
+    "kb_menu_0378",
+    "kb_menu_0608",
+    "kb_menu_0583",
+    "kb_menu_0307",
+    "kb_menu_0046",
+    "kb_menu_0045"
+  ],
+  "expanded_candidate_ids": [],
+  "lexical_candidate_ids": [
+    "kb_menu_0498",
+    "kb_menu_0007"
+  ],
+  "catalog_sha256": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+  "candidate_probabilities": {
+    "kb_menu_0604": 0.36,
+    "kb_menu_0498": 0.05,
+    "kb_menu_0183": 0.01,
+    "kb_menu_0310": 0.16,
+    "kb_menu_0097": 0.06,
+    "kb_menu_0324": 0.83,
+    "kb_menu_0157": 0.04,
+    "kb_menu_0279": 0.03,
+    "kb_menu_0187": 0.34,
+    "kb_menu_0224": 0.1,
+    "kb_menu_0343": 0.05,
+    "kb_menu_0577": 0.03,
+    "kb_menu_0469": 0.03,
+    "kb_menu_0175": 0.02,
+    "kb_menu_0602": 0.72,
+    "kb_menu_0309": 0.1,
+    "kb_menu_0336": 0.16,
+    "kb_menu_0422": 0.02,
+    "kb_menu_0471": 0.03,
+    "kb_menu_0346": 0.04,
+    "kb_menu_0177": 0.01,
+    "kb_menu_0418": 0.7,
+    "kb_menu_0420": 0.55,
+    "kb_menu_0326": 0.74,
+    "kb_menu_0333": 0.13,
+    "kb_menu_0349": 0.35,
+    "kb_menu_0344": 0.05,
+    "kb_menu_0476": 0.63,
+    "kb_menu_0184": 0.01,
+    "kb_menu_0244": 0.04,
+    "kb_menu_0056": 0.04,
+    "kb_menu_0603": 0.71,
+    "kb_menu_0470": 0.02,
+    "kb_menu_0489": 0.07,
+    "kb_menu_0221": 0.05,
+    "kb_menu_0028": 0.03,
+    "kb_menu_0335": 0.13,
+    "kb_menu_0391": 0.29,
+    "kb_menu_0271": 0.02,
+    "kb_menu_0584": 0.01,
+    "kb_menu_0024": 0.02,
+    "kb_menu_0194": 0.03,
+    "kb_menu_0519": 0.03,
+    "kb_menu_0624": 0.02,
+    "kb_menu_0035": 0.03,
+    "kb_menu_0339": 0.04,
+    "kb_menu_0323": 0.85,
+    "kb_menu_0329": 0.48,
+    "kb_menu_0494": 0.03,
+    "kb_menu_0473": 0.03,
+    "kb_menu_0500": 0.05,
+    "kb_menu_0567": 0.08,
+    "kb_menu_0134": 0.31,
+    "kb_menu_0595": 0.02,
+    "kb_menu_0375": 0.01,
+    "kb_menu_0162": 0.07,
+    "kb_menu_0506": 0.13,
+    "kb_menu_0350": 0.4,
+    "kb_menu_0306": 0.04,
+    "kb_menu_0434": 0.04,
+    "kb_menu_0041": 0.04,
+    "kb_menu_0475": 0.11,
+    "kb_menu_0358": 0.04,
+    "kb_menu_0311": 0.2,
+    "kb_menu_0133": 0.04,
+    "kb_menu_0005": 0.13,
+    "kb_menu_0268": 0.03,
+    "kb_menu_0317": 0.67,
+    "kb_menu_0423": 0.02,
+    "kb_menu_0241": 0.02,
+    "kb_menu_0003": 0.56,
+    "kb_menu_0225": 0.05,
+    "kb_menu_0025": 0.02,
+    "kb_menu_0191": 0.04,
+    "kb_menu_0378": 0.03,
+    "kb_menu_0608": 0.86,
+    "kb_menu_0583": 0.02,
+    "kb_menu_0307": 0.31,
+    "kb_menu_0046": 0.01,
+    "kb_menu_0045": 0.02,
+    "kb_menu_0007": 0.18
+  },
+  "shortlist": [
+    "kb_menu_0608",
+    "kb_menu_0323",
+    "kb_menu_0324",
+    "kb_menu_0602",
+    "kb_menu_0326",
+    "kb_menu_0603",
+    "kb_menu_0418",
+    "kb_menu_0317",
+    "kb_menu_0476",
+    "kb_menu_0003"
+  ],
+  "set_mapping": {
+    "set_1": [
+      "kb_menu_0608",
+      "kb_menu_0323",
+      "kb_menu_0324"
+    ],
+    "set_2": [
+      "kb_menu_0608",
+      "kb_menu_0323",
+      "kb_menu_0602"
+    ],
+    "set_3": [
+      "kb_menu_0608",
+      "kb_menu_0323",
+      "kb_menu_0326"
+    ],
+    "set_4": [
+      "kb_menu_0608",
+      "kb_menu_0323",
+      "kb_menu_0603"
+    ],
+    "set_5": [
+      "kb_menu_0608",
+      "kb_menu_0323",
+      "kb_menu_0418"
+    ],
+    "set_6": [
+      "kb_menu_0608",
+      "kb_menu_0323",
+      "kb_menu_0317"
+    ],
+    "set_7": [
+      "kb_menu_0608",
+      "kb_menu_0323",
+      "kb_menu_0476"
+    ],
+    "set_8": [
+      "kb_menu_0608",
+      "kb_menu_0323",
+      "kb_menu_0003"
+    ],
+    "set_9": [
+      "kb_menu_0608",
+      "kb_menu_0324",
+      "kb_menu_0602"
+    ],
+    "set_10": [
+      "kb_menu_0608",
+      "kb_menu_0324",
+      "kb_menu_0326"
+    ],
+    "set_11": [
+      "kb_menu_0608",
+      "kb_menu_0324",
+      "kb_menu_0603"
+    ],
+    "set_12": [
+      "kb_menu_0608",
+      "kb_menu_0324",
+      "kb_menu_0418"
+    ],
+    "set_13": [
+      "kb_menu_0608",
+      "kb_menu_0324",
+      "kb_menu_0317"
+    ],
+    "set_14": [
+      "kb_menu_0608",
+      "kb_menu_0324",
+      "kb_menu_0476"
+    ],
+    "set_15": [
+      "kb_menu_0608",
+      "kb_menu_0324",
+      "kb_menu_0003"
+    ],
+    "set_16": [
+      "kb_menu_0608",
+      "kb_menu_0602",
+      "kb_menu_0326"
+    ],
+    "set_17": [
+      "kb_menu_0608",
+      "kb_menu_0602",
+      "kb_menu_0603"
+    ],
+    "set_18": [
+      "kb_menu_0608",
+      "kb_menu_0602",
+      "kb_menu_0418"
+    ],
+    "set_19": [
+      "kb_menu_0608",
+      "kb_menu_0602",
+      "kb_menu_0317"
+    ],
+    "set_20": [
+      "kb_menu_0608",
+      "kb_menu_0602",
+      "kb_menu_0476"
+    ],
+    "set_21": [
+      "kb_menu_0608",
+      "kb_menu_0602",
+      "kb_menu_0003"
+    ],
+    "set_22": [
+      "kb_menu_0608",
+      "kb_menu_0326",
+      "kb_menu_0603"
+    ],
+    "set_23": [
+      "kb_menu_0608",
+      "kb_menu_0326",
+      "kb_menu_0418"
+    ],
+    "set_24": [
+      "kb_menu_0608",
+      "kb_menu_0326",
+      "kb_menu_0317"
+    ],
+    "set_25": [
+      "kb_menu_0608",
+      "kb_menu_0326",
+      "kb_menu_0476"
+    ],
+    "set_26": [
+      "kb_menu_0608",
+      "kb_menu_0326",
+      "kb_menu_0003"
+    ],
+    "set_27": [
+      "kb_menu_0608",
+      "kb_menu_0603",
+      "kb_menu_0418"
+    ],
+    "set_28": [
+      "kb_menu_0608",
+      "kb_menu_0603",
+      "kb_menu_0317"
+    ],
+    "set_29": [
+      "kb_menu_0608",
+      "kb_menu_0603",
+      "kb_menu_0476"
+    ],
+    "set_30": [
+      "kb_menu_0608",
+      "kb_menu_0603",
+      "kb_menu_0003"
+    ],
+    "set_31": [
+      "kb_menu_0608",
+      "kb_menu_0418",
+      "kb_menu_0317"
+    ],
+    "set_32": [
+      "kb_menu_0608",
+      "kb_menu_0418",
+      "kb_menu_0476"
+    ],
+    "set_33": [
+      "kb_menu_0608",
+      "kb_menu_0418",
+      "kb_menu_0003"
+    ],
+    "set_34": [
+      "kb_menu_0608",
+      "kb_menu_0317",
+      "kb_menu_0476"
+    ],
+    "set_35": [
+      "kb_menu_0608",
+      "kb_menu_0317",
+      "kb_menu_0003"
+    ],
+    "set_36": [
+      "kb_menu_0608",
+      "kb_menu_0476",
+      "kb_menu_0003"
+    ],
+    "set_37": [
+      "kb_menu_0323",
+      "kb_menu_0324",
+      "kb_menu_0602"
+    ],
+    "set_38": [
+      "kb_menu_0323",
+      "kb_menu_0324",
+      "kb_menu_0326"
+    ],
+    "set_39": [
+      "kb_menu_0323",
+      "kb_menu_0324",
+      "kb_menu_0603"
+    ],
+    "set_40": [
+      "kb_menu_0323",
+      "kb_menu_0324",
+      "kb_menu_0418"
+    ],
+    "set_41": [
+      "kb_menu_0323",
+      "kb_menu_0324",
+      "kb_menu_0317"
+    ],
+    "set_42": [
+      "kb_menu_0323",
+      "kb_menu_0324",
+      "kb_menu_0476"
+    ],
+    "set_43": [
+      "kb_menu_0323",
+      "kb_menu_0324",
+      "kb_menu_0003"
+    ],
+    "set_44": [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0326"
+    ],
+    "set_45": [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0603"
+    ],
+    "set_46": [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0418"
+    ],
+    "set_47": [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0317"
+    ],
+    "set_48": [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0476"
+    ],
+    "set_49": [
+      "kb_menu_0323",
+      "kb_menu_0602",
+      "kb_menu_0003"
+    ],
+    "set_50": [
+      "kb_menu_0323",
+      "kb_menu_0326",
+      "kb_menu_0603"
+    ],
+    "set_51": [
+      "kb_menu_0323",
+      "kb_menu_0326",
+      "kb_menu_0418"
+    ],
+    "set_52": [
+      "kb_menu_0323",
+      "kb_menu_0326",
+      "kb_menu_0317"
+    ],
+    "set_53": [
+      "kb_menu_0323",
+      "kb_menu_0326",
+      "kb_menu_0476"
+    ],
+    "set_54": [
+      "kb_menu_0323",
+      "kb_menu_0326",
+      "kb_menu_0003"
+    ],
+    "set_55": [
+      "kb_menu_0323",
+      "kb_menu_0603",
+      "kb_menu_0418"
+    ],
+    "set_56": [
+      "kb_menu_0323",
+      "kb_menu_0603",
+      "kb_menu_0317"
+    ],
+    "set_57": [
+      "kb_menu_0323",
+      "kb_menu_0603",
+      "kb_menu_0476"
+    ],
+    "set_58": [
+      "kb_menu_0323",
+      "kb_menu_0603",
+      "kb_menu_0003"
+    ],
+    "set_59": [
+      "kb_menu_0323",
+      "kb_menu_0418",
+      "kb_menu_0317"
+    ],
+    "set_60": [
+      "kb_menu_0323",
+      "kb_menu_0418",
+      "kb_menu_0476"
+    ],
+    "set_61": [
+      "kb_menu_0323",
+      "kb_menu_0418",
+      "kb_menu_0003"
+    ],
+    "set_62": [
+      "kb_menu_0323",
+      "kb_menu_0317",
+      "kb_menu_0476"
+    ],
+    "set_63": [
+      "kb_menu_0323",
+      "kb_menu_0317",
+      "kb_menu_0003"
+    ],
+    "set_64": [
+      "kb_menu_0323",
+      "kb_menu_0476",
+      "kb_menu_0003"
+    ],
+    "set_65": [
+      "kb_menu_0324",
+      "kb_menu_0602",
+      "kb_menu_0326"
+    ],
+    "set_66": [
+      "kb_menu_0324",
+      "kb_menu_0602",
+      "kb_menu_0603"
+    ],
+    "set_67": [
+      "kb_menu_0324",
+      "kb_menu_0602",
+      "kb_menu_0418"
+    ],
+    "set_68": [
+      "kb_menu_0324",
+      "kb_menu_0602",
+      "kb_menu_0317"
+    ],
+    "set_69": [
+      "kb_menu_0324",
+      "kb_menu_0602",
+      "kb_menu_0476"
+    ],
+    "set_70": [
+      "kb_menu_0324",
+      "kb_menu_0602",
+      "kb_menu_0003"
+    ],
+    "set_71": [
+      "kb_menu_0324",
+      "kb_menu_0326",
+      "kb_menu_0603"
+    ],
+    "set_72": [
+      "kb_menu_0324",
+      "kb_menu_0326",
+      "kb_menu_0418"
+    ],
+    "set_73": [
+      "kb_menu_0324",
+      "kb_menu_0326",
+      "kb_menu_0317"
+    ],
+    "set_74": [
+      "kb_menu_0324",
+      "kb_menu_0326",
+      "kb_menu_0476"
+    ],
+    "set_75": [
+      "kb_menu_0324",
+      "kb_menu_0326",
+      "kb_menu_0003"
+    ],
+    "set_76": [
+      "kb_menu_0324",
+      "kb_menu_0603",
+      "kb_menu_0418"
+    ],
+    "set_77": [
+      "kb_menu_0324",
+      "kb_menu_0603",
+      "kb_menu_0317"
+    ],
+    "set_78": [
+      "kb_menu_0324",
+      "kb_menu_0603",
+      "kb_menu_0476"
+    ],
+    "set_79": [
+      "kb_menu_0324",
+      "kb_menu_0603",
+      "kb_menu_0003"
+    ],
+    "set_80": [
+      "kb_menu_0324",
+      "kb_menu_0418",
+      "kb_menu_0317"
+    ],
+    "set_81": [
+      "kb_menu_0324",
+      "kb_menu_0418",
+      "kb_menu_0476"
+    ],
+    "set_82": [
+      "kb_menu_0324",
+      "kb_menu_0418",
+      "kb_menu_0003"
+    ],
+    "set_83": [
+      "kb_menu_0324",
+      "kb_menu_0317",
+      "kb_menu_0476"
+    ],
+    "set_84": [
+      "kb_menu_0324",
+      "kb_menu_0317",
+      "kb_menu_0003"
+    ],
+    "set_85": [
+      "kb_menu_0324",
+      "kb_menu_0476",
+      "kb_menu_0003"
+    ],
+    "set_86": [
+      "kb_menu_0602",
+      "kb_menu_0326",
+      "kb_menu_0603"
+    ],
+    "set_87": [
+      "kb_menu_0602",
+      "kb_menu_0326",
+      "kb_menu_0418"
+    ],
+    "set_88": [
+      "kb_menu_0602",
+      "kb_menu_0326",
+      "kb_menu_0317"
+    ],
+    "set_89": [
+      "kb_menu_0602",
+      "kb_menu_0326",
+      "kb_menu_0476"
+    ],
+    "set_90": [
+      "kb_menu_0602",
+      "kb_menu_0326",
+      "kb_menu_0003"
+    ],
+    "set_91": [
+      "kb_menu_0602",
+      "kb_menu_0603",
+      "kb_menu_0418"
+    ],
+    "set_92": [
+      "kb_menu_0602",
+      "kb_menu_0603",
+      "kb_menu_0317"
+    ],
+    "set_93": [
+      "kb_menu_0602",
+      "kb_menu_0603",
+      "kb_menu_0476"
+    ],
+    "set_94": [
+      "kb_menu_0602",
+      "kb_menu_0603",
+      "kb_menu_0003"
+    ],
+    "set_95": [
+      "kb_menu_0602",
+      "kb_menu_0418",
+      "kb_menu_0317"
+    ],
+    "set_96": [
+      "kb_menu_0602",
+      "kb_menu_0418",
+      "kb_menu_0476"
+    ],
+    "set_97": [
+      "kb_menu_0602",
+      "kb_menu_0418",
+      "kb_menu_0003"
+    ],
+    "set_98": [
+      "kb_menu_0602",
+      "kb_menu_0317",
+      "kb_menu_0476"
+    ],
+    "set_99": [
+      "kb_menu_0602",
+      "kb_menu_0317",
+      "kb_menu_0003"
+    ],
+    "set_100": [
+      "kb_menu_0602",
+      "kb_menu_0476",
+      "kb_menu_0003"
+    ],
+    "set_101": [
+      "kb_menu_0326",
+      "kb_menu_0603",
+      "kb_menu_0418"
+    ],
+    "set_102": [
+      "kb_menu_0326",
+      "kb_menu_0603",
+      "kb_menu_0317"
+    ],
+    "set_103": [
+      "kb_menu_0326",
+      "kb_menu_0603",
+      "kb_menu_0476"
+    ],
+    "set_104": [
+      "kb_menu_0326",
+      "kb_menu_0603",
+      "kb_menu_0003"
+    ],
+    "set_105": [
+      "kb_menu_0326",
+      "kb_menu_0418",
+      "kb_menu_0317"
+    ],
+    "set_106": [
+      "kb_menu_0326",
+      "kb_menu_0418",
+      "kb_menu_0476"
+    ],
+    "set_107": [
+      "kb_menu_0326",
+      "kb_menu_0418",
+      "kb_menu_0003"
+    ],
+    "set_108": [
+      "kb_menu_0326",
+      "kb_menu_0317",
+      "kb_menu_0476"
+    ],
+    "set_109": [
+      "kb_menu_0326",
+      "kb_menu_0317",
+      "kb_menu_0003"
+    ],
+    "set_110": [
+      "kb_menu_0326",
+      "kb_menu_0476",
+      "kb_menu_0003"
+    ],
+    "set_111": [
+      "kb_menu_0603",
+      "kb_menu_0418",
+      "kb_menu_0317"
+    ],
+    "set_112": [
+      "kb_menu_0603",
+      "kb_menu_0418",
+      "kb_menu_0476"
+    ],
+    "set_113": [
+      "kb_menu_0603",
+      "kb_menu_0418",
+      "kb_menu_0003"
+    ],
+    "set_114": [
+      "kb_menu_0603",
+      "kb_menu_0317",
+      "kb_menu_0476"
+    ],
+    "set_115": [
+      "kb_menu_0603",
+      "kb_menu_0317",
+      "kb_menu_0003"
+    ],
+    "set_116": [
+      "kb_menu_0603",
+      "kb_menu_0476",
+      "kb_menu_0003"
+    ],
+    "set_117": [
+      "kb_menu_0418",
+      "kb_menu_0317",
+      "kb_menu_0476"
+    ],
+    "set_118": [
+      "kb_menu_0418",
+      "kb_menu_0317",
+      "kb_menu_0003"
+    ],
+    "set_119": [
+      "kb_menu_0418",
+      "kb_menu_0476",
+      "kb_menu_0003"
+    ],
+    "set_120": [
+      "kb_menu_0317",
+      "kb_menu_0476",
+      "kb_menu_0003"
+    ]
+  },
+  "set_confidence": 0.27,
+  "selected_ids": [
+    "kb_menu_0608",
+    "kb_menu_0323",
+    "kb_menu_0602"
+  ],
+  "status": "ready",
+  "http_ms": 679.491834,
+  "score": {
+    "tp": 2,
+    "fp": 1,
+    "fn": 1,
+    "precision": 0.6666666666666666,
+    "recall": 0.6666666666666666,
+    "f1": 0.6666666666666666,
+    "menu_exact": true,
+    "status_and_menu_exact": true,
+    "canonical_menu_exact": false,
+    "canonical_status_and_menu_exact": false,
+    "accepted_menu_set_exact": true,
+    "required_outcome_recall": 1.0,
+    "allowed_menu_precision": 1.0,
+    "disallowed_menu_count": 0,
+    "missing_outcome_count": 0
+  }
+}

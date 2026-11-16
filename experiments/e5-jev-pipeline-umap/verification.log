@@ -1,0 +1,5 @@
+PASS original UMAP data SHA256 verified against metadata
+PASS catalog SHA256 matches actual trace
+PASS 585 unique points; 80 original; 81 candidates; 18 Noul >= 0.30; 10 shortlist; 120 sets; 3 selected
+PASS PNG inspected for Korean text and layout
+No new API calls; actual recorded trace replay
