@@ -1,0 +1,1 @@
+PASS 100 identical cases/labels; frozen inputs/source hashes; 585 menu coverage per question; all candidate payload hashes; all actual Noul scores; global top10 >= .30; Choice payload/mapping/decoding; selected ID constraints; independent partial-hit, latency/P95 and token aggregates for both arms.

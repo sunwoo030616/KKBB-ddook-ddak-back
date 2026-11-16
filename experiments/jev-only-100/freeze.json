@@ -1,0 +1,33 @@
+{
+  "protocol": {
+    "name": "jev-only-all585-chunked",
+    "model": "jev-1.14.0",
+    "cases": 100,
+    "chunk_size": 80,
+    "chunks": 8,
+    "concurrent_chunks": 4,
+    "max_output_menus": 3,
+    "shortlist_noul_min": 0.3,
+    "shortlist_size": 10,
+    "shortlist_method": "global Noul descending; ties catalog order; no E5 or MMR",
+    "choice": "same existing build_choice; up to120 triples + none/unsure",
+    "max_normal_calls": 900,
+    "max_attempts_per_call": 3,
+    "latency": "end-to-end per query includes chunk scheduling, HTTP, retries and final choice; excludes setup; 4 chunks in flight",
+    "cost": "sum successful recorded usage.input_tokens * 0.042 / 1e6; output free; failed rate-limit attempts excluded; all successful calls including calls in error rows counted",
+    "partial_hit": "same original100 acceptable menu union, at least one hit; errors fail",
+    "historical_baseline": "93%,753.005ms mean,930.680ms P95,$0.11344221/100; not simultaneous rerun",
+    "labels_sent_to_provider": false
+  },
+  "files": {
+    "run.py": "edd130a0000ca514832ef49b7ef36dbdc71814f2659d1a5a6766a9493f81f757",
+    "set_selection.py": "5e69f09a788f343749713eddc096b5a7d988e6c6bfb20f4535ced72b8cad1479",
+    "partial_metrics.py": "690b1e8c875a22f858b0f4769ab7a09f9cb562f06b9543f08d21a8191c034f51",
+    "cases.json": "f4363034ed9f80d65b15f9f5fea02762b6095dac00b0ef532bdde39f342ebef9",
+    "catalog.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+    "policy.txt": "58ed9ee03595dbd90668ad37cc251f118ea310c78d6469cacef6738d01c242d9",
+    "baseline.json": "b4bb308fb321154d347b9c52aa51ceae3ddfa71c86d6bc8a8acda4e8953baa04",
+    "baseline-summary.json": "c5222b1ed5b897f7d178353514c21d1af670af21ff78c4fd7e3657d0fc3fc72b",
+    "test_protocol.py": "bb7c3852cc472d9bc305abe29db16a5dc3f012976ba6f7f6a0697af17a2c1fe9"
+  }
+}

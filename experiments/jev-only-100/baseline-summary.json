@@ -1,0 +1,41 @@
+{
+  "cases": 100,
+  "partial_hit_correct": 93,
+  "partial_hit_rate": 0.93,
+  "at_least_one_required_outcome_correct": 92,
+  "at_least_one_required_outcome_rate": 0.92,
+  "partial_with_no_disallowed_correct": 20,
+  "partial_with_no_disallowed_rate": 0.2,
+  "predicted_menu_count": 300,
+  "allowed_predicted_menu_count": 179,
+  "menu_level_allowed_precision": 0.5966666666666667,
+  "mean_recommended_menus": 3.0,
+  "macro_required_outcome_recall": 0.735,
+  "micro_required_outcome_recall": 0.7238095238095238,
+  "covered_required_groups": 152,
+  "required_groups": 210,
+  "errors": 0,
+  "response_order_budget_hits": {
+    "1": {
+      "hits": 66,
+      "rate": 0.66
+    },
+    "2": {
+      "hits": 80,
+      "rate": 0.8
+    },
+    "3": {
+      "hits": 93,
+      "rate": 0.93
+    }
+  },
+  "definition": "Hit if at least one predicted ID is in the union of preapproved acceptable answer sets, including approved optional suggestions. Errors fail. Extra wrong menus do not erase the hit, so precision and recommendation count must be reported. Response-order budgets are not guaranteed relevance rankings.",
+  "mean_http_ms": 753.00524329,
+  "p95_http_ms": 930.680332999998,
+  "input_tokens": 2701005,
+  "output_tokens": 287706,
+  "jev_calls": 200,
+  "openai_calls": 0,
+  "accepted_set_correct": 6,
+  "estimated_api_usd": 0.11344221
+}
