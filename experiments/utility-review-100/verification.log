@@ -1,0 +1,1 @@
+PASS same 100 questions × 3 model arms; all selected IDs and order preserved; all 119 shared judgements defined before aggregation and freeze hashes verified; every menu judgement replayed; independent direct/inclusive count verification; no new inference/API calls; original files unchanged.

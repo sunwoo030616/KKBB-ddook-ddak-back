@@ -1,0 +1,56 @@
+"""Build offline, sanitized question/reference/model-answer comparison. No API calls."""
+import json,hashlib,html
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];OUT=Path(__file__).resolve().parent
+specs=[('llm','LLM 단독','situation-goal-100/report/run/results.json','llm_full_catalog'),('hybrid','LLM → E5 → JEV','situation-goal-100/report/run/results.json','hybrid'),('early','E5 → JEV 초기판','situation-e5-jev-only-100/report/run/results.json','e5_jev_only'),('improved','E5 → JEV 개선판','jev-only-100/baseline.json','improved'),('jev','JEV 단독 · 청킹','jev-only-100/results.json','jev_only_chunked')]
+catalog=json.loads((ROOT/'jev-only-100/catalog.json').read_text())['menus'];names={m['id']:m['name'] for m in catalog}
+base=json.loads((ROOT/'jev-only-100/baseline.json').read_text())['results'];sources={};models=[]
+for key,label,path,provider in specs:
+ source=ROOT/path
+ if not source.exists():
+  mapping={'situation-goal-100/report/run/results.json':'docs/situation-goal100/run/results.json','situation-e5-jev-only-100/report/run/results.json':'docs/situation-e5-jev100/run/results.json'}
+  source=ROOT.parent/mapping[path]
+ raw=source.read_bytes();d=json.loads(raw);assert d['complete'];rows=[r for r in d['results'] if r['provider']==provider];assert len(rows)==100
+ sources[key]={r['case_id']:r for r in rows};models.append({'id':key,'name':label,'source':path,'sha256':hashlib.sha256(raw).hexdigest(),'model_metadata':d.get('models')})
+questions=[]
+for b in base:
+ allow=set().union(*map(set,b['acceptable_sets']));item={k:b[k] for k in ['case_id','family_id','situation','query','expected_ids','acceptable_sets','required_groups','label_source']};item['answers']={}
+ for key,label,_,_ in specs:
+  r=sources[key][b['case_id']]
+  for field in ['query','expected_ids','acceptable_sets','required_groups']:assert r[field]==b[field],(key,b['case_id'],field)
+  selected=r.get('selected_ids',[]);assert len(selected)==len(set(selected));assert set(selected)<=set(names)
+  error=bool(r.get('error'));pred=set(selected) if not error else set()
+  item['answers'][key]={'ids':selected,'allowed_hits':len(pred&allow),'required_outcomes_covered':sum(bool(pred&set(g['acceptable_ids'])) for g in b['required_groups']),'required_outcome_count':len(b['required_groups']),'status':r.get('status'),'error':r.get('error'),'elapsed_ms':r.get('http_ms'),'accepted_set_exact':not error and any(pred==set(s) for s in b['acceptable_sets']) and r['status']==r['expected_status']}
+ questions.append(item)
+summary=[]
+for model in models:
+ key=model['id'];answers=[q['answers'][key] for q in questions]
+ summary.append({'id':key,'name':model['name'],'one_or_more':sum(a['allowed_hits']>=1 for a in answers),'two_or_more':sum(a['allowed_hits']>=2 for a in answers),'three':sum(a['allowed_hits']>=3 for a in answers),'exact_set_and_status':sum(a['accepted_set_exact'] for a in answers)})
+data={'models':models,'summary':summary,'names':names,'questions':questions,'note':'동일 100문항의 질문·정답표 일치 검증 완료. 기존 10개 상황의 각 10개 표현이며 실험별 실행 시점은 다름.'}
+(OUT/'answers.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+md=['# 100문항 모델별 실제 추천 결과','', '동일한 질문·대표 정답·허용 대체·필수 업무 기준의 일치를 검증했다. 모델별 실행 시점은 다르다. 허용 메뉴 수가 같아도 서로 다른 필수 업무를 충족한 수는 다를 수 있다. 대표 정답만 유일한 정답이 아니므로 허용 대체 기준을 함께 확인한다.','', '| 모델 | 1개 이상 | 2개 이상 | 3개 이상 적중 |','|---|---:|---:|---:|']
+for s in summary:md.append(f"| {s['name']} | {s['one_or_more']}% | {s['two_or_more']}% | {s['three']}% |")
+for q in questions:
+ md+=['',f"## {q['case_id']} · {q['situation']}",'',q['query'],'','대표 정답: '+', '.join(names[i] for i in q['expected_ids']),'','필수 업무별 허용 대체:']
+ for g in q['required_groups']:md.append('- '+g['outcome']+': '+' / '.join(names[i] for i in g['acceptable_ids']))
+ md+=['','| 모델 | 실제 추천 메뉴 | 허용 메뉴 적중 | 필수 업무 충족 |','|---|---|---:|---:|']
+ allow=set().union(*map(set,q['acceptable_sets']))
+ for key,label,_,_ in specs:
+  a=q['answers'][key];answer=' · '.join(('✓ ' if i in allow else '△ ')+names[i] for i in a['ids']) or '(선택 없음)'
+  md.append(f"| {label} | {answer} | {a['allowed_hits']}개 | {a['required_outcomes_covered']}/{a['required_outcome_count']} |")
+ md+=['','✓: 허용 정답표에 포함 · △: 허용 정답표 밖 (사람의 재검토 가능).']
+(OUT/'answers.md').write_text('\n'.join(md)+'\n')
+page='''<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>질문·정답·모델별 답 비교</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f3f5f8;color:#17253b;font-family:system-ui,-apple-system,sans-serif;line-height:1.6}main{max-width:1600px;margin:auto;padding:32px}h1{margin:0 0 8px;font-size:30px}p{margin:8px 0}.note{color:#58677c;font-size:14px}.controls{position:sticky;top:0;background:#f3f5f8ef;padding:15px 0;display:flex;gap:10px;flex-wrap:wrap;z-index:2}input,select,button{border:1px solid #ccd3df;border-radius:8px;background:white;padding:10px;font:inherit}input{flex:1;min-width:230px}button{cursor:pointer}table{border-collapse:collapse;width:100%;background:white}td,th{padding:10px 14px;border-bottom:1px solid #e2e7ef;text-align:left}th{background:#e9eef6;font-size:14px}.wrap{overflow-x:auto;border-radius:12px;margin:18px 0}.case{background:white;border:1px solid #dce3ed;border-radius:14px;padding:22px;margin:24px 0}.query{font-weight:700;font-size:21px;white-space:pre-wrap}.id{color:#52647e;font-size:14px}.refs{background:#f4f7fb;border-radius:10px;padding:15px;margin:18px 0}.groups{margin:10px 0;padding-left:22px}.modeltable{min-width:1250px;table-layout:fixed}.modeltable td{vertical-align:top;width:20%}.menu{padding:9px 10px;margin:8px 0;border-left:4px solid #0c8969;background:#edf9f5;border-radius:5px}.outside{border-color:#be7104;background:#fff5e5}.small{font-size:12px;color:#5c6b80}.score{font-weight:700;color:#174e91}.pagination{display:flex;gap:15px;align-items:center;margin:18px 0}details{margin:10px 0}summary{cursor:pointer;color:#2d5a8c}.error{color:#a83131}@media print{.controls,.pagination{display:none}main{padding:0}.case{break-inside:avoid}.modeltable{min-width:0;font-size:10px}td,th{padding:5px}body{background:white}}
+</style><main><h1>질문 / 정답 / 모델이 찾은 답</h1><p>같은 상황형 100문항에 대한 <b>5가지 모델 구성의 실제 실행 결과</b>입니다.</p><p class="note">질문·정답표 일치 검증 완료. 실험별 실행 시점과 구현·추천 개수가 다릅니다. 모델의 실제 응답 개수를 그대로 표시합니다. 정답은 대표 메뉴와 승인된 허용 대체를 함께 표시합니다. 평가셋은 기존 10개 상황 × 10개 표현이며 독립 전문가 검수 정답은 아닙니다.</p><div id="summary" class="wrap"></div><div class="controls"><input id="search" aria-label="질문·메뉴·문항ID 검색" placeholder="질문, 상황, 메뉴명, 문항 ID 검색"><select id="model" aria-label="필터 기준 모델"></select><select id="filter" aria-label="적중 기준"><option value="all">전체 결과</option><option value="two">2개 이상 적중</option><option value="belowtwo">2개 미만 적중</option><option value="zero">0개 적중</option><option value="three">3개 이상 적중</option></select><select id="size" aria-label="페이지당 문항수"><option value="10">10문항씩</option><option value="25">25문항씩</option><option value="100">100문항 모두</option></select></div><p id="count"></p><div class="pagination"><button onclick="move(-1)">이전</button><span id="page"></span><button onclick="move(1)">다음</button></div><div id="cases"></div><p class="note">초록: 허용 정답표에 포함 / 주황: 허용 정답표 밖. 표 밖 메뉴가 언제나 현실에서 부적절하다는 뜻은 아니며, 정답표 재검토 대상이 될 수 있습니다. 메뉴 2개 적중과 서로 다른 필수 업무 2개 충족은 구분합니다.</p></main><script>const DATA=__DATA__;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const name=id=>DATA.names[id]||id;let page=0,filtered=[];
+document.getElementById('model').innerHTML=DATA.models.map(m=>`<option value="${m.id}" ${m.id==='improved'?'selected':''}>${esc(m.name)} 기준 필터</option>`).join('');
+document.getElementById('summary').innerHTML='<table><thead><tr><th>모델 구성</th><th>1개 이상 적중</th><th>2개 이상 적중</th><th>3개 이상 적중</th></tr></thead><tbody>'+DATA.summary.map(s=>`<tr><td>${esc(s.name)}</td><td>${s.one_or_more}%</td><td><b>${s.two_or_more}%</b></td><td>${s.three}%</td></tr>`).join('')+'</tbody></table>';
+function refresh(reset=true){if(reset)page=0;const query=document.getElementById('search').value.toLowerCase().trim(),model=document.getElementById('model').value,filter=document.getElementById('filter').value;filtered=DATA.questions.filter(q=>{const text=[q.case_id,q.situation,q.query,...q.expected_ids.map(name),...Object.values(q.answers).flatMap(a=>a.ids.map(name))].join(' ').toLowerCase();const hit=q.answers[model].allowed_hits;return (!query||text.includes(query))&&(filter==='all'||filter==='two'&&hit>=2||filter==='belowtwo'&&hit<2||filter==='zero'&&hit===0||filter==='three'&&hit>=3)});render();}
+function render(){const size=+document.getElementById('size').value,pages=Math.max(1,Math.ceil(filtered.length/size));page=Math.max(0,Math.min(page,pages-1));document.getElementById('count').textContent=`100문항 중 ${filtered.length}문항 표시 대상`;document.getElementById('page').textContent=`${page+1} / ${pages} 페이지`;document.getElementById('cases').innerHTML=filtered.slice(page*size,(page+1)*size).map(q=>{const allow=new Set(q.acceptable_sets.flat());return `<article class="case"><div class="id">${esc(q.case_id)} · ${esc(q.situation)}</div><p class="query">${esc(q.query)}</p><div class="refs"><b>대표 정답:</b> ${q.expected_ids.map(name).map(esc).join(' · ')}<ul class="groups">${q.required_groups.map(g=>`<li><b>${esc(g.outcome)}</b>: ${g.acceptable_ids.map(name).map(esc).join(' / ')}</li>`).join('')}</ul><details><summary>평가에서 허용한 전체 정답 조합 ${q.acceptable_sets.length}종 보기</summary><ol>${q.acceptable_sets.map(s=>`<li>${s.map(name).map(esc).join(' · ')}</li>`).join('')}</ol></details></div><div class="wrap"><table class="modeltable"><thead><tr>${DATA.models.map(m=>`<th>${esc(m.name)}</th>`).join('')}</tr></thead><tbody><tr>${DATA.models.map(m=>{const a=q.answers[m.id];return `<td><p class="score">허용 메뉴 ${a.allowed_hits}개 적중</p><p class="small">필수 업무 ${a.required_outcomes_covered}/${a.required_outcome_count} 충족</p>${a.ids.map(id=>`<div class="menu ${allow.has(id)?'':'outside'}"><b>${allow.has(id)?'✓':'△'} ${esc(name(id))}</b><div class="small">${esc(id)}</div></div>`).join('')||'<p>선택 없음</p>'}<p class="small">상태: ${esc(a.status)} · ${a.elapsed_ms==null?'시간 기록 없음':(a.elapsed_ms/1000).toFixed(3)+'초'}</p>${a.error?`<p class="error">오류: ${esc(a.error)}</p>`:''}<p class="small">전체 조합·상태 일치: ${a.accepted_set_exact?'예':'아니오'}</p></td>`}).join('')}</tr></tbody></table></div></article>`}).join('');}
+function move(delta){page+=delta;render();}for(const id of ['search','model','filter','size'])document.getElementById(id).addEventListener(id==='search'?'input':'change',()=>refresh());refresh();
+</script></html>'''
+serialized=json.dumps(data,ensure_ascii=False).replace('<','\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029')
+(OUT/'answers.html').write_text(page.replace('__DATA__',serialized))
+(OUT/'verification.log').write_text('PASS 100 cases × 5 arms = 500 actual answers. Exact query, representative IDs, acceptable sets and required groups matched per case across all arms. Selected IDs unique and valid actual catalogue IDs. Sanitized export includes no API keys, call request bodies or credentials. No API calls.\n')
+print(json.dumps(summary,ensure_ascii=False,indent=2));print('Built answers.html, answers.md, answers.json; verified 500 actual answers')

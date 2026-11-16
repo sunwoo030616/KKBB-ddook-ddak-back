@@ -1,0 +1,170 @@
+{
+  "improved": {
+    "name": "E5 → JEV 개선판",
+    "old": {
+      "id": "improved",
+      "name": "E5 → JEV 개선판",
+      "one_or_more": 93,
+      "two_or_more": 66,
+      "three": 20,
+      "exact_set_and_status": 6
+    },
+    "direct": {
+      "cases": 100,
+      "at_least_one": 99,
+      "at_least_two": 95,
+      "at_least_three": 70,
+      "recommended_menus": 300,
+      "valid_menus": 264,
+      "menu_validity": 0.88,
+      "mean_recommendations": 3.0
+    },
+    "direct_or_conditional": {
+      "cases": 100,
+      "at_least_one": 100,
+      "at_least_two": 100,
+      "at_least_three": 85,
+      "recommended_menus": 300,
+      "valid_menus": 285,
+      "menu_validity": 0.95,
+      "mean_recommendations": 3.0
+    },
+    "first_three_direct": {
+      "cases": 100,
+      "at_least_one": 99,
+      "at_least_two": 95,
+      "at_least_three": 70,
+      "recommended_menus": 300,
+      "valid_menus": 264,
+      "menu_validity": 0.88,
+      "mean_recommendations": 3.0
+    },
+    "first_three_inclusive": {
+      "cases": 100,
+      "at_least_one": 100,
+      "at_least_two": 100,
+      "at_least_three": 85,
+      "recommended_menus": 300,
+      "valid_menus": 285,
+      "menu_validity": 0.95,
+      "mean_recommendations": 3.0
+    },
+    "label_counts": {
+      "D": 264,
+      "C": 21,
+      "N": 15
+    }
+  },
+  "llm": {
+    "name": "LLM 단독",
+    "old": {
+      "id": "llm",
+      "name": "LLM 단독",
+      "one_or_more": 89,
+      "two_or_more": 36,
+      "three": 15,
+      "exact_set_and_status": 16
+    },
+    "direct": {
+      "cases": 100,
+      "at_least_one": 95,
+      "at_least_two": 57,
+      "at_least_three": 36,
+      "recommended_menus": 294,
+      "valid_menus": 217,
+      "menu_validity": 0.7380952380952381,
+      "mean_recommendations": 2.94
+    },
+    "direct_or_conditional": {
+      "cases": 100,
+      "at_least_one": 98,
+      "at_least_two": 64,
+      "at_least_three": 42,
+      "recommended_menus": 294,
+      "valid_menus": 258,
+      "menu_validity": 0.8775510204081632,
+      "mean_recommendations": 2.94
+    },
+    "first_three_direct": {
+      "cases": 100,
+      "at_least_one": 93,
+      "at_least_two": 51,
+      "at_least_three": 22,
+      "recommended_menus": 217,
+      "valid_menus": 166,
+      "menu_validity": 0.7649769585253456,
+      "mean_recommendations": 2.17
+    },
+    "first_three_inclusive": {
+      "cases": 100,
+      "at_least_one": 98,
+      "at_least_two": 60,
+      "at_least_three": 36,
+      "recommended_menus": 217,
+      "valid_menus": 194,
+      "menu_validity": 0.8940092165898618,
+      "mean_recommendations": 2.17
+    },
+    "label_counts": {
+      "D": 217,
+      "C": 41,
+      "N": 36
+    }
+  },
+  "jev": {
+    "name": "JEV 단독 · 청킹",
+    "old": {
+      "id": "jev",
+      "name": "JEV 단독 · 청킹",
+      "one_or_more": 92,
+      "two_or_more": 70,
+      "three": 28,
+      "exact_set_and_status": 9
+    },
+    "direct": {
+      "cases": 100,
+      "at_least_one": 99,
+      "at_least_two": 97,
+      "at_least_three": 73,
+      "recommended_menus": 300,
+      "valid_menus": 269,
+      "menu_validity": 0.8966666666666666,
+      "mean_recommendations": 3.0
+    },
+    "direct_or_conditional": {
+      "cases": 100,
+      "at_least_one": 100,
+      "at_least_two": 100,
+      "at_least_three": 90,
+      "recommended_menus": 300,
+      "valid_menus": 290,
+      "menu_validity": 0.9666666666666667,
+      "mean_recommendations": 3.0
+    },
+    "first_three_direct": {
+      "cases": 100,
+      "at_least_one": 99,
+      "at_least_two": 97,
+      "at_least_three": 73,
+      "recommended_menus": 300,
+      "valid_menus": 269,
+      "menu_validity": 0.8966666666666666,
+      "mean_recommendations": 3.0
+    },
+    "first_three_inclusive": {
+      "cases": 100,
+      "at_least_one": 100,
+      "at_least_two": 100,
+      "at_least_three": 90,
+      "recommended_menus": 300,
+      "valid_menus": 290,
+      "menu_validity": 0.9666666666666667,
+      "mean_recommendations": 3.0
+    },
+    "label_counts": {
+      "D": 269,
+      "C": 21,
+      "N": 10
+    }
+  }
+}
