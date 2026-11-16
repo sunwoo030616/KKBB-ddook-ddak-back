@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json,html,hashlib,collections
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent;d=json.loads((ROOT/'reviewed-answers.json').read_text());s=d['summary'];keys=['improved','llm','jev'];names=d['names']
@@ -40,3 +41,6 @@ for key in keys:
  assert sum(x>=2 for x in ds)==s[key]['direct']['at_least_two'];assert sum(x>=2 for x in cs)==s[key]['direct_or_conditional']['at_least_two'];assert sum(ds)==s[key]['direct']['valid_menus']
 (ROOT/'verification.log').write_text('PASS same 100 questions × 3 model arms; all selected IDs and order preserved; all 119 shared judgements defined before aggregation and freeze hashes verified; every menu judgement replayed; independent direct/inclusive count verification; no new inference/API calls; original files unchanged.\n')
 print('Built README.md, answers.md, answers.html and verification.log. 300 answers verified.')
+
+from finalize_report import main as finalize_v3_report
+finalize_v3_report()

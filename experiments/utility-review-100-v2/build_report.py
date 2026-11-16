@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json,html,hashlib,collections
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent;d=json.loads((ROOT/'reviewed-answers.json').read_text());s=d['summary'];keys=['improved','llm','jev'];names=d['names']

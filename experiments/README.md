@@ -18,4 +18,4 @@ v3에서유효메뉴최소2개포함은100%/64%/100%,추천메뉴유효비율은
 
 `python experiments/utility-review-100-v3/build_report.py`
 
-마지막HTML생성후v3의명확한문구조정은기존answers.html스냅샷에서확인할수있다. 판정표·집계의재현과HTML문구조정은구분한다. 각verification.log와freeze해시로입력·판정·응답이보존됐는지확인한다. 개인환경경로와브라우저fileURL은당시의참조이며GitHub에서는상대경로자료를연다.
+v3의build_report.py는finalize_report.py를포함해사용자승인표현의HTML·보고서를생성한다. 각verification.log와freeze해시로입력·판정·응답이보존됐는지확인한다. 개인환경경로와브라우저fileURL은당시의참조이며GitHub에서는상대경로자료를연다.
