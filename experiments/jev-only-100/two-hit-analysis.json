@@ -1,0 +1,1230 @@
+{
+  "E5→JEV": {
+    "cases": 100,
+    "hit_count_distribution": {
+      "1": 27,
+      "3": 20,
+      "2": 46,
+      "0": 7
+    },
+    "at_least_two_allowed_menus": 66,
+    "at_least_two_required_outcomes": 59,
+    "at_least_three_allowed_menus": 20,
+    "details": [
+      {
+        "case_id": "S01_01",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_02",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_03",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 3,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_04",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_06",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_08",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_09",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S02_01",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_02",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_03",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_04",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_06",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_08",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_09",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_01",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_02",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_03",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_04",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_05",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_06",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_08",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_09",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_01",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_02",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_03",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_04",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_05",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_06",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_07",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_08",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_09",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_01",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_02",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_03",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_04",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_06",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_07",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_08",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_09",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_10",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_01",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_02",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_03",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_04",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_05",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_06",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_07",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_08",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_09",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_10",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_01",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_02",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_03",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_04",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_06",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_08",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_09",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_01",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_02",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_03",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_04",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_06",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_08",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_09",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_01",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_02",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_03",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_04",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_06",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_08",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_09",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_01",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_02",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_03",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_04",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_05",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_06",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_07",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_08",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_09",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_10",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      }
+    ]
+  },
+  "JEV 단독": {
+    "cases": 100,
+    "hit_count_distribution": {
+      "1": 22,
+      "0": 8,
+      "2": 42,
+      "3": 28
+    },
+    "at_least_two_allowed_menus": 70,
+    "at_least_two_required_outcomes": 60,
+    "at_least_three_allowed_menus": 28,
+    "details": [
+      {
+        "case_id": "S01_01",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_02",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_03",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_04",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_06",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_07",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_08",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_09",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S01_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 3
+      },
+      {
+        "case_id": "S02_01",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_02",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_03",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_04",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_06",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_08",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_09",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S02_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_01",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_02",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_03",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_04",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_06",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_07",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_08",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_09",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S03_10",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_01",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_02",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_03",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_04",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_06",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_08",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_09",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S04_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_01",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_02",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_03",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_04",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_05",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_06",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_07",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_08",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_09",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S05_10",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_01",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_02",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_03",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_04",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_05",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_06",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_07",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_08",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_09",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S06_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_01",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_02",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_03",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_04",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_06",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_07",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_08",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_09",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S07_10",
+        "allowed_menu_hits": 3,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_01",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_02",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_03",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_04",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_06",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_08",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_09",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S08_10",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_01",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_02",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_03",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_04",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_05",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_06",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_07",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_08",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_09",
+        "allowed_menu_hits": 2,
+        "required_outcomes_covered": 2,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S09_10",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_01",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_02",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_03",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_04",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_05",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_06",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_07",
+        "allowed_menu_hits": 0,
+        "required_outcomes_covered": 0,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_08",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_09",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      },
+      {
+        "case_id": "S10_10",
+        "allowed_menu_hits": 1,
+        "required_outcomes_covered": 1,
+        "required_outcomes": 2
+      }
+    ]
+  }
+}
