@@ -1,0 +1,19 @@
+{
+  "files": {
+    "scripts/semantic/situation_e5_jev100/run.py": "a8f0f30490fd2f822f2cce49b052e54564d8df8a139b47e88033d3e3b036e87d",
+    "scripts/semantic/situation_e5_jev100/test_selection.py": "c0902c7e924bc538c2d266ea95643231593c2460e9f1984eae220585592c2b96",
+    "scripts/semantic/situation_e5_jev100/selection.py": "ecfb28ee722a0accb10323f47c7b889aaf5929c3aedbf0e314256e3ea06cf9eb",
+    "scripts/semantic/situation_e5_jev100/retrieval_audit.py": "7fd4ca935d74d82b31b5a7eeeac4db5463122078b6db03ea36aab52beeaec41b",
+    "scripts/semantic/situation_e5_jev100/policy.txt": "58ed9ee03595dbd90668ad37cc251f118ea310c78d6469cacef6738d01c242d9",
+    "docs/situation-e5-jev100/PROTOCOL.md": "1e0252d83fc68f1b1748d4c5077416c2dd3bb86a4aa9deae8d9f3ff1b355eef2",
+    "scripts/semantic/situation_goal100/cases.json": "f4363034ed9f80d65b15f9f5fea02762b6095dac00b0ef532bdde39f342ebef9",
+    "scripts/semantic/situation_goal100/accepted-reference.json": "3b54efdeba7df095cb1a0fe8d99daec752eb5f13833e3f1b89a31521b0d8b304",
+    "scripts/semantic/situation_goal100/goal_metrics.py": "36a1ebac4a27c82eb89bf8a411d2a2ee89634d7533564cd216330eccc4d93d6e",
+    "scripts/semantic/situation_goal100/partial_metrics.py": "690b1e8c875a22f858b0f4769ab7a09f9cb562f06b9543f08d21a8191c034f51",
+    "scripts/semantic/situation_v3/metrics.py": "0d88d004b8ac0729d3934db71080ca8b61cc6fed6be85dc48765ec5c28b61602",
+    "scripts/semantic/situation_v3/common.py": "e43decd034b5aedba6ecc7c8b7b66017935efe10d4d086c3edc1a712c26e2c9b",
+    "scripts/semantic/server.py": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+    "scripts/semantic/model_manifest.json": "b71365e9063e74f6c34cdeff16e9bd16c6323ba6a4677cba7cf500b5e986d614",
+    "src/main/resources/kb_starbanking_menu_structure_cleaned.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76"
+  }
+}

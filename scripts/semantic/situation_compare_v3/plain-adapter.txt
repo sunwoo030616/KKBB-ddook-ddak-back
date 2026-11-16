@@ -1,0 +1,10 @@
+    elif self.path=='/plain':
+     compact_index=[{'id':m['id'],'name':m['name'],'purpose':m['description']} for m in menus]
+     schema={'type':'object','properties':{'status':{'type':'string','enum':['ready','partial','needs_clarification','no_match']},'selected_ids':{'type':'array','items':{'type':'string','enum':[m['id'] for m in menus]}}},'required':['status','selected_ids'],'additionalProperties':False}
+     payload={'model':MODELS['llm_full_catalog'],'temperature':0,'max_tokens':1200,'store':False,'messages':[{'role':'system','content':template['selection_policy']},{'role':'user','content':json.dumps({'capability_index':compact_index,'user_request':body['message']},ensure_ascii=False,separators=(',',':'))}],'response_format':{'type':'json_schema','json_schema':{'name':'direct_menu_selection','strict':True,'schema':schema}}}
+     raw=upstream('llm_full_catalog',payload);choice=raw['choices'][0]
+     if choice.get('finish_reason')!='stop' or choice['message'].get('refusal'):raise ValueError('Incomplete/refused baseline response')
+     answers=json.loads(choice['message']['content']);selected=answers['selected_ids'];status=answers['status']
+     if not isinstance(selected,list) or len(selected)>8 or len(set(selected))!=len(selected) or set(selected)-known:raise ValueError('Invalid menu set')
+     if status=='ready' and not selected or status in ['no_match','needs_clarification'] and selected:raise ValueError('Invalid status/set combination')
+     self.respond(200,{'status':status,'selected_ids':selected,'catalogSha256':digest})

@@ -1,0 +1,4832 @@
+[
+  {
+    "case_id": "fresh_S01_01",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "봄 휴가 목적지를 일본으로 정했어. 금융 준비는 어디부터 시작하지?",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S01_02",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "동생과 나고야에 다녀오려 해. 은행 앱으로 여행 준비를 해볼래.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S01_03",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "해외에 처음 나가는데 목적지는 도쿄야. 여행 전에 챙길 것을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S01_04",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "열흘 뒤 일본에서 휴가를 보낼 계획인데 준비가 하나도 안 됐어.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S01_05",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "가족들과 오사카로 출국할 예정이야. 금융 쪽으로 미리 할 일이 있을까?",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S01_06",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "다음 연휴는 삿포로에서 보내려 해. 은행에서 지원하는 여행 준비가 궁금해.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S01_07",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "내년에는 꼭 일본에 가보고 싶어서 은행 앱으로 준비를 시작하려고.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S01_08",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "친한 친구 둘과 일본으로 쉬러 갈 건데 출발 전에 뭘 챙기면 좋을까?",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S01_09",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "일본행 표를 알아보고 있어. 은행에서 여행 준비를 도와주는 기능을 보여줘.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S01_10",
+    "family_id": "S01",
+    "situation": "해외여행",
+    "query": "여름에 교토를 구경하고 오려고 해. 여행 준비를 은행 앱으로 해보려는데.",
+    "expected_ids": [
+      "kb_menu_0323",
+      "kb_menu_0413",
+      "kb_menu_0602"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0413",
+        "kb_menu_0602",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0603",
+        "kb_menu_0612"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608"
+      ],
+      [
+        "kb_menu_0323",
+        "kb_menu_0602",
+        "kb_menu_0608",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "환전 준비",
+        "acceptable_ids": [
+          "kb_menu_0323"
+        ]
+      },
+      {
+        "outcome": "해외 결제 준비",
+        "acceptable_ids": [
+          "kb_menu_0413",
+          "kb_menu_0603",
+          "kb_menu_0608"
+        ]
+      },
+      {
+        "outcome": "여행보험 검토",
+        "acceptable_ids": [
+          "kb_menu_0602"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_01",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "부산에서 부모님과 하루 자고 올 거야. 우리 가족은 차를 가지고 있지 않아.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_02",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "차 없이 부모님을 모시고 부산에서 주말 하룻밤을 보내려 해.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_03",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "운전할 차가 없는데 부모님 부산 여행을 1박 일정으로 준비하려고 해.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_04",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "아버지 어머니와 부산에서 1박할 예정이야. 자가용은 없는 상태고.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_05",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "자가용 없이 가족끼리 부산에 가서 밤을 보내고 올 계획이야.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_06",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "부모님 여행을 준비해 드리고 싶어. 차는 없고 부산에서 하루 묵으실 거야.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_07",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "우리 가족 부산 여행을 은행 앱으로 준비할래. 자동차 없이 가서 1박하려고.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_08",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "부모님과 차 없이 부산에서 하룻밤 머무는 일정이 생겼어. 준비를 도와줘.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_09",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "부산에서 부모님과 1박 여행을 하려고 해. 차가 없다는 점을 고려해 줘.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S02_10",
+    "family_id": "S02",
+    "situation": "차 없는 국내 1박여행",
+    "query": "부산 구경을 부모님과 함께하고 거기서 하루 자려고. 이용할 자동차는 없어.",
+    "expected_ids": [
+      "kb_menu_0384",
+      "kb_menu_0604"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0384",
+        "kb_menu_0604"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "철도 이동 준비",
+        "acceptable_ids": [
+          "kb_menu_0384"
+        ]
+      },
+      {
+        "outcome": "숙박 준비",
+        "acceptable_ids": [
+          "kb_menu_0604"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_01",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "카페를 처음 창업하는 사람인데 은행 앱이 도와줄 게 있을까?",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_02",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "동네에 작은 커피 전문점을 열 계획이 생겼어. 사업은 처음이야.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_03",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "올해 작은 카페를 오픈하려고 준비 중인데 은행에서 뭘 챙겨야 할까?",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_04",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "첫 창업을 커피숍으로 하게 됐어. 금융 준비가 낯설어서 도움받고 싶어.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_05",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "내 이름으로 작은 카페를 차릴 생각이야. 은행과 관련된 준비부터 알고 싶어.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_06",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "카페 개업 준비를 시작한 초보 사장이야. 은행 앱에서 도움 되는 걸 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_07",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "커피 가게를 열기로 했는데 창업 경험이 전혀 없어. 어디부터 준비하지?",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_08",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "소규모 카페를 시작하려고 해. 은행을 통해 받을 수 있는 도움이 궁금해.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_09",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "처음 카페를 개업하는데 금융 쪽 준비를 하나씩 살펴보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S03_10",
+    "family_id": "S03",
+    "situation": "카페 창업",
+    "query": "조그만 카페 사장이 될 예정이야. 장사 준비를 은행 앱에서 시작해 볼까 해.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0630"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0626",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0629",
+        "kb_menu_0630"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0630"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "사업자 금융 기반",
+        "acceptable_ids": [
+          "kb_menu_0630"
+        ]
+      },
+      {
+        "outcome": "정책 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_01",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "생애 첫 주택 매수를 준비하는 중인데 은행 앱을 활용하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_02",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "가족과 살 집을 처음 사볼 생각이야. 금융 준비에 도움이 되는 걸 보여줘.",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_03",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "전셋집 생활을 끝내고 첫 자가를 마련하려는데 어떤 준비가 필요할까?",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_04",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "내 집 구매를 처음 알아보는 사람에게 필요한 은행 기능이 궁금해.",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_05",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "처음 부동산을 매수하려고 해. 살 집을 준비할 때 볼 만한 것을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_06",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "아직 집을 사본 적 없는데 이번에 처음 마련하려고 계획 중이야.",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_07",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "우리 가족의 첫 주택을 사려는 중이야. 앱으로 준비를 도와줄 수 있을까?",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_08",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "내 명의 주택 구입은 처음이야. 은행에서 제공하는 준비 기능을 알려줘.",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_09",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "자가 없이 살다가 처음으로 집을 매입하려고 해. 준비를 시작해 보자.",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S04_10",
+    "family_id": "S04",
+    "situation": "첫 주택 구매",
+    "query": "내 집 마련을 위한 첫 매수 계획을 세우고 있어. 은행 앱을 어떻게 쓰면 좋지?",
+    "expected_ids": [
+      "kb_menu_0588",
+      "kb_menu_0591"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0586",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0587",
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ],
+      [
+        "kb_menu_0588",
+        "kb_menu_0591"
+      ],
+      [
+        "kb_menu_0591",
+        "kb_menu_0594"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "주택 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0588",
+          "kb_menu_0594"
+        ]
+      },
+      {
+        "outcome": "부동산 세금 검토",
+        "acceptable_ids": [
+          "kb_menu_0591"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_01",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "가지고 있는 자동차를 팔려는데 은행 앱에서도 도와줄까?",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_02",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "현재 타는 차를 중고로 매도할 생각이야. 준비할 수 있는 걸 보여줘.",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_03",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "더는 차가 필요하지 않아서 보유 차량을 처분하려고 해.",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_04",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "타던 승용차를 판매해 보려 해. 이런 일은 처음이라 어디부터 시작할지 모르겠어.",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_05",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "내 차를 팔 계획을 세웠어. 스타뱅킹에서 도움받을 기능을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_06",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "보유한 자가용을 중고 시장에 내놓으려고 해. 어떻게 준비하면 될까?",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_07",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "오랫동안 몰던 차를 다른 사람에게 팔고 싶어. 앱이 도와줄 수 있어?",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_08",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "가지고 있던 차량을 정리하기로 했는데 판매 준비가 궁금해.",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_09",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "중고로 내 차를 팔려는 사람이야. 은행 앱에 관련된 기능이 있을까?",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S05_10",
+    "family_id": "S05",
+    "situation": "보유 차량 판매",
+    "query": "내 소유 자동차를 이제 처분할 예정이야. 판매 준비부터 도와줘.",
+    "expected_ids": [
+      "kb_menu_0596",
+      "kb_menu_0597"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0595",
+        "kb_menu_0596"
+      ],
+      [
+        "kb_menu_0596",
+        "kb_menu_0597"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "차량 가격 확인",
+        "acceptable_ids": [
+          "kb_menu_0595",
+          "kb_menu_0597"
+        ]
+      },
+      {
+        "outcome": "판매 진입",
+        "acceptable_ids": [
+          "kb_menu_0596"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_01",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "정년이 다가오고 있어. 은행 앱으로 노후 대비를 시작할 수 있을까?",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_02",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "은퇴를 몇 년 앞두고 있는데 앞으로 생활 준비를 점검해 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_03",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "이제 퇴직 이후를 생각해야 할 나이가 됐어. 은행에서 도움을 받을 수 있을까?",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_04",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "직장을 떠날 시간이 가까워져 노후가 걱정이야. 준비할 기능을 찾아줘.",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_05",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "은퇴 이후 생활을 준비하는 데 은행 앱이 어떻게 도움을 줄 수 있지?",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_06",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "정년퇴직을 앞둔 사람에게 맞는 노후 준비를 시작하려고 해.",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_07",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "퇴직하고 난 뒤를 대비해야 하는데 은행에서 먼저 무엇을 보면 될까?",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_08",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "은퇴를 준비하는 중이야. 앞으로의 살림을 위해 앱에서 챙겨볼 걸 알려줘.",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_09",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "노후 준비가 충분한지 걱정돼. 정년이 가까워 은행 도움을 받아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S06_10",
+    "family_id": "S06",
+    "situation": "은퇴 준비",
+    "query": "퇴직 시점이 얼마 안 남아서 은행 앱에서 은퇴 준비를 시작하려 해.",
+    "expected_ids": [
+      "kb_menu_0173",
+      "kb_menu_0176"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0175",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176"
+      ],
+      [
+        "kb_menu_0173",
+        "kb_menu_0176",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "기존 연금 정보 파악",
+        "acceptable_ids": [
+          "kb_menu_0173"
+        ]
+      },
+      {
+        "outcome": "은퇴 상담",
+        "acceptable_ids": [
+          "kb_menu_0176"
+        ]
+      }
+    ],
+    "split": "goal_only",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_01",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "국민 신용카드가 들어 있던 지갑을 잃었어. 바깥인데 귀가할 현금도 없어.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_02",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "지갑을 분실해서 안의 국민 신용카드까지 없어졌어. 당장 쓸 현금이 필요해.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_03",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "밖에 나왔다가 국민 신용카드 든 지갑을 잃어 현금도 없는 처지야.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_04",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "국민 신용카드를 지갑과 함께 도난당했어. 집에 돌아갈 현금도 없고.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_05",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "카드랑 돈을 넣은 지갑이 사라졌어. 국민 신용카드였고 지금 현금이 없어.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_06",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "국민 신용카드가 지갑째 없어져 난감해. 밖에서 쓸 현금도 한 푼 없어.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_07",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "집에 가야 하는데 국민 신용카드 넣은 지갑을 분실했고 현금도 없네.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_08",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "국민 신용카드를 보관하던 지갑을 잃어버린 상태야. 당장 현금도 필요해.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_09",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "길에서 지갑을 잃었어. 국민 신용카드가 안에 있고 돌아갈 현금도 없어.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S07_10",
+    "family_id": "S07",
+    "situation": "국민 신용카드 분실·현금 필요",
+    "query": "국민 신용카드 든 지갑을 잃고 밖에 서 있어. 수중 현금도 없어 도움이 필요해.",
+    "expected_ids": [
+      "kb_menu_0210",
+      "kb_menu_0554"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0210",
+        "kb_menu_0554"
+      ],
+      [
+        "kb_menu_0211",
+        "kb_menu_0554"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "분실 카드 사용 차단",
+        "acceptable_ids": [
+          "kb_menu_0554"
+        ]
+      },
+      {
+        "outcome": "카드 없는 현금 마련",
+        "acceptable_ids": [
+          "kb_menu_0210",
+          "kb_menu_0211"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_01",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "해외 출장 일정이 잡혔는데 여권이 만료돼 있어. 리브모바일을 쓰고 돈과 보험은 챙겼어.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_02",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "출국해서 업무를 봐야 해. 여권은 기간이 끝났고 폰은 리브모바일, 돈과 보험은 준비 완료야.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_03",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "여권이 만료된 상태로 해외 출장 준비를 하고 있어. 리브모바일 고객이고 결제와 보험은 끝냈어.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_04",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "리브모바일 사용자야. 해외 출장이 다가오는데 여권은 만료됐고 돈과 보험은 준비했어.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_05",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "회사에서 해외 출장을 보내는데 여권 유효기간이 지났어. 리브모바일을 쓰며 금융과 보험 준비는 마쳤어.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_06",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "해외 업무 출국을 앞뒀어. 여권 만료, 리브모바일 이용 중이고 돈 쓸 수단과 보험은 완료했어.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_07",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "국외 출장을 가게 됐는데 여권 만료 상태야. 폰은 리브모바일이고 돈과 보험은 이미 챙겼어.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_08",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "해외에 출장 가려는 리브모바일 고객이야. 여권이 만료됐어. 결제 수단과 보험은 준비 끝이야.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_09",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "돈과 보험은 다 챙긴 해외 출장 준비 중이야. 여권은 만료돼 있고 리브모바일을 사용해.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S08_10",
+    "family_id": "S08",
+    "situation": "준비 일부 완료한 해외 출장",
+    "query": "리브모바일을 쓰는 내가 해외 출장을 가야 해. 여권은 만료됐지만 자금과 보험은 준비했어.",
+    "expected_ids": [
+      "kb_menu_0385",
+      "kb_menu_0612"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0385",
+        "kb_menu_0612"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "만료 여권 재발급",
+        "acceptable_ids": [
+          "kb_menu_0385"
+        ]
+      },
+      {
+        "outcome": "해외 통신 준비",
+        "acceptable_ids": [
+          "kb_menu_0612"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_01",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "가게 카드 매출은 많은데 돈이 제대로 들어오는지 불안해. 사업자 지원도 알아보고 싶고.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_02",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "작은 매장을 하는데 카드 매출이 늘어도 실제 입금이 잘 되는지 모르겠어. 받을 도움도 궁금해.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_03",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "카드 손님이 늘어난 가게 사장이야. 돈 들어오는 흐름과 사업자 지원 때문에 고민 중이야.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_04",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "매장 카드 매출은 좋아졌는데 통장에 돈이 맞게 들어오는지 모르겠어. 은행이나 정부 도움도 궁금해.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_05",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "장사하면서 카드로 많이 팔아도 입금 상황이 막막해. 지원받을 만한 게 있으면 좋겠어.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_06",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "가게 매출이 주로 카드로 나와. 돈이 제대로 들어오나 걱정되고 사장님 지원도 알고 싶어.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_07",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "작은 사업체의 카드 매출 입금이 헷갈려. 정부나 은행에서 받을 지원이 있는지도 궁금해.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_08",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "가게 손님들은 카드를 많이 써. 실제 돈이 들어오는 상황이 불안하고 사업자 도움도 필요해.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_09",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "카드 매출이 늘어난 우리 가게에 돈이 잘 들어오나 모르겠어. 사장으로서 받을 도움도 찾아보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S09_10",
+    "family_id": "S09",
+    "situation": "가게 매출·지원 고민",
+    "query": "가게에서 카드로 팔린 돈을 제대로 받고 있는지 걱정돼. 가능한 사업자 지원도 궁금해.",
+    "expected_ids": [
+      "kb_menu_0017",
+      "kb_menu_0018"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0017",
+        "kb_menu_0018"
+      ],
+      [
+        "kb_menu_0017",
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ],
+      [
+        "kb_menu_0018",
+        "kb_menu_0019"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "가게 매출·정산 파악",
+        "acceptable_ids": [
+          "kb_menu_0018"
+        ]
+      },
+      {
+        "outcome": "정책·세금·고용 지원 탐색",
+        "acceptable_ids": [
+          "kb_menu_0017",
+          "kb_menu_0019"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_01",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "여러 은행에 돈이 나뉘어 있는데 이 앱에 연결해 둔 적 없어. 내 재산을 파악하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_02",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "다른 은행에도 자산이 있고 아직 스타뱅킹과 연결하지 않았어. 내 전체 재산을 알고 싶어.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_03",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "금융기관 여러 곳을 쓰지만 앱에 연동해 본 적은 없어. 돈이 얼마나 있는지 감이 안 와.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_04",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "은행마다 돈이 있어 전체 규모가 헷갈려. 이 앱에 다른 은행 계좌를 가져온 적은 없어.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_05",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "스타뱅킹에 외부 은행을 연결하지 않은 상태야. 여기저기 있는 내 돈을 한눈에 파악하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_06",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "돈을 금융기관 여러 군데 두고 있는데 이 앱과 연결하지 않았어. 재산 규모를 이해하고 싶어.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_07",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "다른 은행 돈을 앱에 등록한 적은 없어. 흩어진 금융 자산이 총 얼마인지 궁금해.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_08",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "내 재산이 은행 여러 곳으로 나뉘어 있는데 앱과 연동은 안 했어. 전체 상황을 보고 싶어.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_09",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "아직 다른 금융기관을 스타뱅킹에 연결하지 않았어. 돈이 흩어져 있어 전체 재산이 헷갈려.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  },
+  {
+    "case_id": "fresh_S10_10",
+    "family_id": "S10",
+    "situation": "흩어진 금융 자산 파악",
+    "query": "여러 은행에 가진 돈이 있는데 이 앱에 모아본 적은 없어. 내 금융 자산 규모를 알고 싶어.",
+    "expected_ids": [
+      "kb_menu_0164",
+      "kb_menu_0260"
+    ],
+    "expected_status": "ready",
+    "acceptable_sets": [
+      [
+        "kb_menu_0164",
+        "kb_menu_0260"
+      ]
+    ],
+    "required_groups": [
+      {
+        "outcome": "다른 금융 연결",
+        "acceptable_ids": [
+          "kb_menu_0164"
+        ]
+      },
+      {
+        "outcome": "전체 자산 파악",
+        "acceptable_ids": [
+          "kb_menu_0260"
+        ]
+      }
+    ],
+    "split": "situation_constraints",
+    "label_source": "same user-approved v1 references; fresh expression written before final run, shared ten intents; no post-result label revision"
+  }
+]

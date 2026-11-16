@@ -1,0 +1,38 @@
+{
+  "com.example.kb_ai_backend.service.MenuTaskPlannerTest": {
+    "tests": 5,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "com.example.kb_ai_backend.controller.MenuRecommendationControllerTest": {
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "com.example.kb_ai_backend.service.JevDecisionClientTest": {
+    "tests": 5,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "com.example.kb_ai_backend.service.SemanticMenuRecommendationServiceTest": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "com.example.kb_ai_backend.service.GeneralMenuRecommendationServiceTest": {
+    "tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "com.example.kb_ai_backend.service.PlannedMenuSelectorTest": {
+    "tests": 6,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

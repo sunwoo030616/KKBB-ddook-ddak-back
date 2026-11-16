@@ -1,0 +1,7 @@
+{
+  "prior": "/private/tmp/kkbb-recall-300-work/docs/situation-compare-v3/paired/results.json",
+  "preserved_nonquota_rows": 40,
+  "excluded_prior_quota_rows": 6,
+  "quota_only_replacement_authorized": true,
+  "excluded_quota_tokens": true
+}

@@ -1,0 +1,24 @@
+{
+  "base_commit": "433211550c80324d2820df7ecb952d7a1c6a85cc",
+  "files": {
+    "scripts/semantic/situation_e5_jev_v2/run.py": "886969dcaac47db71111e5fd822eadb10f39c51e5a5ab3fc1ca45d389403b48f",
+    "scripts/semantic/situation_e5_jev_v2/build_fresh.py": "c47b8a5cdb9d62d7f2cad7913a24c3e8d734a9825011ae1a8347591a5278fdb8",
+    "scripts/semantic/situation_e5_jev_v2/retrieval.py": "a0913862850d8831a8daff065cda1450e8d8a55fa2547e69f52f3b6181619b01",
+    "scripts/semantic/situation_e5_jev_v2/test_algorithm.py": "2ebf461d015a485e7f0cb7c2193d060b3a45459eecdef0b5178d3774e034546f",
+    "scripts/semantic/situation_e5_jev_v2/set_selection.py": "5e69f09a788f343749713eddc096b5a7d988e6c6bfb20f4535ced72b8cad1479",
+    "scripts/semantic/situation_e5_jev_v2/dev_sets.py": "bd9d0d83de59c3b0fa659e4d5ff4271771c1aa0834782576a62b58994880f62a",
+    "scripts/semantic/situation_e5_jev_v2/fresh-100.json": "3def5afe253160438541f74e44f65f40076014a0553e2da04676e195d77751a2",
+    "scripts/semantic/situation_goal100/cases.json": "f4363034ed9f80d65b15f9f5fea02762b6095dac00b0ef532bdde39f342ebef9",
+    "scripts/semantic/situation_goal100/accepted-reference.json": "3b54efdeba7df095cb1a0fe8d99daec752eb5f13833e3f1b89a31521b0d8b304",
+    "scripts/semantic/situation_goal100/goal_metrics.py": "36a1ebac4a27c82eb89bf8a411d2a2ee89634d7533564cd216330eccc4d93d6e",
+    "scripts/semantic/situation_goal100/partial_metrics.py": "690b1e8c875a22f858b0f4769ab7a09f9cb562f06b9543f08d21a8191c034f51",
+    "scripts/semantic/situation_e5_jev100/policy.txt": "58ed9ee03595dbd90668ad37cc251f118ea310c78d6469cacef6738d01c242d9",
+    "scripts/semantic/situation_e5_jev100/selection.py": "ecfb28ee722a0accb10323f47c7b889aaf5929c3aedbf0e314256e3ea06cf9eb",
+    "scripts/semantic/situation_v3/metrics.py": "0d88d004b8ac0729d3934db71080ca8b61cc6fed6be85dc48765ec5c28b61602",
+    "scripts/semantic/situation_v3/common.py": "e43decd034b5aedba6ecc7c8b7b66017935efe10d4d086c3edc1a712c26e2c9b",
+    "scripts/semantic/server.py": "31a38d30135adbc0de15ff2ac7b5d4c7934b32d83694b31ec5b0c3dbdc51ca47",
+    "scripts/semantic/model_manifest.json": "b71365e9063e74f6c34cdeff16e9bd16c6323ba6a4677cba7cf500b5e986d614",
+    "src/main/resources/kb_starbanking_menu_structure_cleaned.json": "ed7c89a7aa6c7902178d83481f2882be8cd0f7ef32433fea1bbb4f6f3e6cef76",
+    "docs/situation-e5-jev-v2/PROTOCOL.md": "2c0d819e843c654002c5b1c966d9a655d171177d5bf9086643951221d3cb9c05"
+  }
+}
