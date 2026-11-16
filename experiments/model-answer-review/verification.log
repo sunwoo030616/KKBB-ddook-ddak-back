@@ -1,0 +1,1 @@
+PASS 100 cases × 5 arms = 500 actual answers. Exact query, representative IDs, acceptable sets and required groups matched per case across all arms. Selected IDs unique and valid actual catalogue IDs. Sanitized export includes no API keys, call request bodies or credentials. No API calls.

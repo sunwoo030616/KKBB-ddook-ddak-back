@@ -1,0 +1,209 @@
+{
+  "summary": {
+    "hybrid": {
+      "n": 100,
+      "mean_all_ms": 1957.3016791000061,
+      "p95_all_ms": 2762.3392909999893,
+      "stages": {
+        "llm_task_planner": {
+          "calls": 100,
+          "input": 1724892,
+          "output": 8943,
+          "cached_input": 1685376,
+          "estimated_usd": 0.9932639999999996,
+          "no_cache_estimated_usd": 3.521328,
+          "unknown_usage_calls": 0
+        },
+        "e5_jev": {
+          "calls": 106,
+          "input": 626458,
+          "output": 72103,
+          "cached_input": null,
+          "estimated_usd": 0.026311236,
+          "no_cache_estimated_usd": 0.026311236,
+          "unknown_usage_calls": 0
+        }
+      },
+      "cost_usd": 1.0195752359999997,
+      "no_cache_cost_usd": 3.547639236,
+      "input_mean": 23513.5,
+      "output_mean": 810.46,
+      "queue_ms": 307892.6823720001,
+      "accepted_set_correct": 22,
+      "accepted_set_accuracy": 0.22,
+      "required_outcome_recall": 0.54,
+      "allowed_menu_precision": 0.643452380952381,
+      "missing_outcomes": 93,
+      "disallowed_menus": 76,
+      "errors": 2,
+      "canonical_correct": 12
+    },
+    "llm_full_catalog": {
+      "n": 100,
+      "mean_all_ms": 1273.4070695700022,
+      "p95_all_ms": 1708.1953750000025,
+      "stages": {
+        "llm_full_catalog": {
+          "calls": 100,
+          "input": 2585592,
+          "output": 2665,
+          "cached_input": 2471424,
+          "estimated_usd": 1.4853679999999998,
+          "no_cache_estimated_usd": 5.192504000000002,
+          "unknown_usage_calls": 0
+        }
+      },
+      "cost_usd": 1.4853679999999998,
+      "no_cache_cost_usd": 5.192504000000002,
+      "input_mean": 25855.92,
+      "output_mean": 26.65,
+      "queue_ms": 351030.9795830003,
+      "accepted_set_correct": 16,
+      "accepted_set_accuracy": 0.16,
+      "required_outcome_recall": 0.5283333333333333,
+      "allowed_menu_precision": 0.5934761904761905,
+      "missing_outcomes": 95,
+      "disallowed_menus": 143,
+      "errors": 0,
+      "canonical_correct": 7
+    }
+  },
+  "family_results": {
+    "hybrid": {
+      "S01": {
+        "title": "해외여행",
+        "n": 10,
+        "correct": 8
+      },
+      "S02": {
+        "title": "차 없는 국내 1박여행",
+        "n": 10,
+        "correct": 2
+      },
+      "S03": {
+        "title": "카페 창업",
+        "n": 10,
+        "correct": 1
+      },
+      "S04": {
+        "title": "첫 주택 구매",
+        "n": 10,
+        "correct": 0
+      },
+      "S05": {
+        "title": "보유 차량 판매",
+        "n": 10,
+        "correct": 2
+      },
+      "S06": {
+        "title": "은퇴 준비",
+        "n": 10,
+        "correct": 0
+      },
+      "S07": {
+        "title": "국민 신용카드 분실·현금 필요",
+        "n": 10,
+        "correct": 2
+      },
+      "S08": {
+        "title": "준비 일부 완료한 해외 출장",
+        "n": 10,
+        "correct": 0
+      },
+      "S09": {
+        "title": "가게 매출·지원 고민",
+        "n": 10,
+        "correct": 7
+      },
+      "S10": {
+        "title": "흩어진 금융 자산 파악",
+        "n": 10,
+        "correct": 0
+      }
+    },
+    "llm_full_catalog": {
+      "S01": {
+        "title": "해외여행",
+        "n": 10,
+        "correct": 7
+      },
+      "S02": {
+        "title": "차 없는 국내 1박여행",
+        "n": 10,
+        "correct": 1
+      },
+      "S03": {
+        "title": "카페 창업",
+        "n": 10,
+        "correct": 0
+      },
+      "S04": {
+        "title": "첫 주택 구매",
+        "n": 10,
+        "correct": 0
+      },
+      "S05": {
+        "title": "보유 차량 판매",
+        "n": 10,
+        "correct": 2
+      },
+      "S06": {
+        "title": "은퇴 준비",
+        "n": 10,
+        "correct": 0
+      },
+      "S07": {
+        "title": "국민 신용카드 분실·현금 필요",
+        "n": 10,
+        "correct": 0
+      },
+      "S08": {
+        "title": "준비 일부 완료한 해외 출장",
+        "n": 10,
+        "correct": 2
+      },
+      "S09": {
+        "title": "가게 매출·지원 고민",
+        "n": 10,
+        "correct": 4
+      },
+      "S10": {
+        "title": "흩어진 금융 자산 파악",
+        "n": 10,
+        "correct": 0
+      }
+    }
+  },
+  "hybrid_relative_to_llm": {
+    "accuracy_pp": 6.0,
+    "mean_http_percent": 53.70589074559937,
+    "input_percent": -9.05951132274543,
+    "cost_percent": -31.358745038266623
+  },
+  "metric": "Exact match to one finite preapproved acceptable menu-ID set plus status. Required outcome recall and allowed-menu precision are separate.",
+  "dataset": "100 distinct expressions of 10 user-approved situation families, not 100 independent goals. 50 broad goals +50 circumstances.",
+  "price_sources": {
+    "checked_at": "2026-11-15",
+    "currency": "USD",
+    "per_tokens": 1000000,
+    "gpt-4.1-2025-04-14": {
+      "input": 2.0,
+      "cached_input": 0.5,
+      "output": 8.0,
+      "source": "https://developers.openai.com/api/docs/models/gpt-4.1"
+    },
+    "jev-1.14.0": {
+      "input": 0.042,
+      "output": 0.0,
+      "source": "https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost"
+    },
+    "exclusions": [
+      "local E5 compute and hosting",
+      "tax",
+      "account-specific discounts",
+      "development calls",
+      "quota-failed attempts excluded by user request"
+    ],
+    "meaning": "Usage-based published-standard-rate estimate, not an invoice. Cached input is a subset of input."
+  }
+}
